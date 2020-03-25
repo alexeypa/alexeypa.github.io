@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Рекомендации NASA по написанию безопасных программ</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Рекомендации NASA по написанию безопасных программ</h1>
+    <span class="post-date">Nov 30, 2010 &middot; <a href="https://blog.not-a-kernel-guy.com/2010/11/30/938/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C">Безопасность</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Програмирование</a>
+    </span>
+    <p>Читаю местами увлекательный документ «<a href="http://www.hq.nasa.gov/office/codeq/doctree/871913.pdf">NASA Software Safety Guidebook</a>». Документ содержит рекомендации по написанию безопасных программ. Тех самых, которые в космос летают. <a href="http://lurkmore.ru/%D0%A7%D1%83%D1%82%D1%8C_%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5_%D1%87%D0%B5%D0%BC">Чуть менее чем всё</a> из того, что там написано применимо и для обычного софта.</p>
+
+<p>Хотя есть и космический экстрим, конечно. Например, идет речь о мультипрограммировании (N-Version Programming). Одна и та же функциональность реализуется разными способами. Если разные версии возвращают одинаковый результат, то всё в порядке. Если результаты не совпадают, то используется голосование, чтобы определить какой результат наиболее достоверный. Для защиты от одного сбоя нужно написать три разных реализации; от двух – пять.</p>
+
+<p>Теперь интересное:</p>
+
+<blockquote>
+<p>One major problem with N-Version programming is that it increases complexity, which has a direct relationship with the number of errors. In one NASA study of an experimental aircraft, all of the software problems found during testing were the result of the errors in the redundancy management system. The control software operated flawlessly!</p>
+
+<p>Одна из главных проблем мультипрограммирования состоит в повышении сложности, что напрямую влияет на количество ошибок. Одно из исследований экспериментального самолета проведённое NASA показало, что все программные ошибки, найденные во время тестирования, были результатом ошибок в системе резервирования. Управляющее программное обеспечение работало безупречно!</p>
+</blockquote>
+
+<p>И еще:</p>
+
+<blockquote>
+<p>Another difficulty with N-Version programming is that achieving true independence is very difficult. <strong>Even if separate teams develop the software</strong>, studies have shown that <strong>the software is still often not truly independent</strong>.</p>
+
+<p>Другая сложность мультипрограммирования состоит в трудности достижения настоящей независимости (версий). <strong>Даже если программное обеспечение разрабатывается разными командами</strong>, исследования показывают, что <strong>разные версии все равно не являются по-настоящему независимыми</strong>.</p>
+</blockquote>
+
+<p>Секция про языки тоже забавна. Сначала речь идет о «безопасном подмножестве» языков. Из него исключаются все мало-мальски неоднозначные, сложные, спорные и просто неудачные языковые конструкции. Далее разбираются разные языки. Про Ada – не интересно. Язык специально создавался для подобных применений. Ассемблер принимается за необходимое зло. Про Си написано уже интереснее:</p>
+
+<blockquote>
+<p>In many ways, C is a higher level assembly language. This gives it great flexibility, and opens a Pandora’s box of possible errors.</p>
+
+<p>Во многом, Си – это ассемблер высокого уровня. Это даёт значительную гибкость и открывает ящик Пандоры с возможными ошибками.</p>
+</blockquote>
+
+<p>Ну да. Что есть, то есть.</p>
+
+<blockquote>
+<p>Restricting the C language to certain constructs would not be feasible because the resulting language would not have the necessary functionality.</p>
+
+<p>Ограничение языка Си до определенного набора разрешенных конструкций не представляется возможным, так как получившийся язык не обладал бы нужной функциональностью.</p>
+</blockquote>
+
+<p>Практически все конструкции языка придуманы, чтобы программист, в конце концов, прострелил себе ногу.</p>
+
+<p>С++:</p>
+
+<blockquote>
+<p>A standard &ldquo;safe subset&rdquo; of C++ does not presently exist.</p>
+
+<p>Стандартное «безопасное подмножество» C++ на данный момент не существует.</p>
+</blockquote>
+
+<p>… и вряд ли появится.</p>
+
+<blockquote>
+<p>Don’t use the RTTI (Run-Time Type Information). It was added to support object oriented data bases. <strong>If you think it’s necessary in your program, look again at your design.</strong></p>
+
+<p>Не используйте RTTI. Эта функциональность была добавлена для поддержки объектно-ориентированных баз данных. <strong>Если вы думаете RTTI необходима вашей программе, пересмотрите свой дизайн.</strong></p>
+</blockquote>
+
+<p>+1. Но пассаж про ОО базы данных непонятен.</p>
+
+<p>Про C# написали, что это интерпретируемый язык. Про NGEN они не в курсе. С другой стороны, ну зачем им сборщик мусора во встроенной железке?</p>
+
+<p>Forth:</p>
+
+<blockquote>
+<p>Forth has no “safety” features.</p>
+
+<p>В Форте нет «безопасных» конструкций.</p>
+</blockquote>
+
+<p>Просто и понятно. Ну и так далее. Там даже Visual Basic есть.</p>
+
+<p>В приложении есть рекомендации для каждого языка. Попадаются волшебные:</p>
+
+<blockquote>
+<p>Use comments to describe WHAT the procedure or section is meant to do. <strong>It is not always clear from the assembly code.</strong></p>
+
+<p>Используйте комментарии для описания того ЧТО процедура или секция должны делать. <strong>Это не всегда понятно из ассемблерного кода.</strong></p>
+</blockquote>
+
+<p>Черт, а я-то думал!</p>
+
+<p>Рекомендую чтиво, в общем.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2010/11/30/938/";
+        this.page.title = "Рекомендации NASA по написанию безопасных программ";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Как работает «раскрутчик» стека в x64</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Как работает «раскрутчик» стека в x64</h1>
+    <span class="post-date">Oct 27, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/10/27/364/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/amd64">amd64</a><a class="label" href="/tags/%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%B8%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9">Обработка исключений</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+    </span>
+    <p>В комментариях к предыдущем посте про исключения верно заметили, что exception chain в TEB используется только в x86 коде. И x64, и ia64 exception chain не используют вообще. Как же, в таком случае, выполняется «раскрутка» стека при обработке исключения?</p>
+
+<p>Когда создавалась архитектура x64, её создатели не хотели повторять ошибки прошлого и наступать на те же грабли, на которые наступили их предшественники. В частности для x64 существует <a href="http://msdn.microsoft.com/en-us/library/ms794533.aspx">стандарт соглашения о вызовах</a>, который регламентирует:</p>
+
+<ul>
+<li><p><a href="http://msdn.microsoft.com/en-us/library/ms794534.aspx">Выравнивание типов и структур</a>;</p></li>
+
+<li><p><a href="http://msdn.microsoft.com/en-us/library/ms794547.aspx">Правила использования регистров процессора</a>;</p></li>
+
+<li><p><a href="http://msdn.microsoft.com/en-us/library/ms794656.aspx">Порядок передачи параметров</a>;</p></li>
+
+<li><p><a href="http://msdn.microsoft.com/en-us/library/ms794332.aspx">Точный формат кадра стека</a> (stack frame);</p></li>
+
+<li><p><a href="http://msdn.microsoft.com/en-us/library/ms794319.aspx">Виды функций</a>, <a href="http://msdn.microsoft.com/en-us/library/ms794615.aspx">пролог и эпилог функций</a>;</p></li>
+
+<li><p><a href="http://msdn.microsoft.com/en-us/library/ms794615.aspx">Порядок обработки исключений</a> и <a href="http://msdn.microsoft.com/en-us/library/ms794681.aspx">алгоритм «раскрутки» стека</a>.</p></li>
+</ul>
+
+<p>Чем это лучше того, что твориться в мире x86 кода? Стандартный формат кадра стека позволяет получать достоверную трассировку стека в любой момент времени, при условии, конечно, что компилятор генерирует код соответствующий соглашению о вызовах и если информация о состоянии процессора корректна. При этом абсолютно не используются символы (.pdb). Сравните это с x86, где совершенно корректный код может запросто свести с ума любой отладчик.</p>
+
+<p>Далее, все функции делятся на два типа: «frame» и «leaf». К первым относится любая функция вызывающая другие функции, сохраняющая nonvolatile регистры или использующая исключения. Функции, динамически выделяющие память в стеке с помощью _alloca, также относятся к этой категории. Все остальные – это «leaf» функции. Для каждой «frame» функции компилятор генерирует её описание (function entry), где подробно описываются все действия, выполняемые в прологе функции: от выделения места в стеке до списка сохраняемых регистров вместе с их смещениями в стеке. Пример можно посмотреть, выполнив в отладчике команду “.fnent <symbol>”:</p>
+
+<pre><code class="language-no-highlight">0:000&gt; .fnent notepad!WinMain
+Debugger function entry 00000000`01f48250 for:
+(00000000`ff296dd4)   notepad!WinMain   |  (00000000`ff296fd0)   notepad!UpdateStatusBar
+Exact matches:
+    notepad!WinMain = &lt;no type information&gt;
+
+BeginAddress      = 00000000`00006dd4
+EndAddress        = 00000000`00006fc9
+UnwindInfoAddress = 00000000`0000dcc0
+
+Unwind info at 00000000`ff29dcc0, 14 bytes
+  version 1, flags 0, prolog 14, codes 8
+  frame reg 0, frame offs 0
+  00: offs 14, unwind op 4, op info 6
+  01: offs 12, unwind op 0, op info 0
+  02: offs 14, unwind op 4, op info 5
+  03: offs 11, unwind op 0, op info 0
+  04: offs 14, unwind op 4, op info 3
+  05: offs 10, unwind op 0, op info 0
+  06: offs 14, unwind op 2, op info d
+  07: offs 10, unwind op 0, op info 7
+</code></pre>
+
+<p>Более подробно об этом можно почитать <a href="http://msdn.microsoft.com/en-us/library/ms794374.aspx">здесь</a>. Имея подобное описание «раскрутчик» стека может достоверно определить границы кадров функций в стеке и восстановить значение non-volatile регистров в каждом кадре в любой момент времени.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2008/10/27/364/";
+        this.page.title = "Как работает «раскрутчик» стека в x64";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

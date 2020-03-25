@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microrosft on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/microrosft/</link>
+    <description>Recent content in Microrosft on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 04 Jun 2009 10:55:23 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/microrosft/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ФАС возбудила дело против Microsoft</title>
+      <link>https://blog.not-a-kernel-guy.com/2009/06/04/565/</link>
+      <pubDate>Thu, 04 Jun 2009 10:55:23 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2009/06/04/565/</guid>
+      <description>С Хабра:
+ Признаки нарушения антимонопольного законодательства со стороны корпорации Microsoft усматриваются в экономически или технологически не обоснованном прекращении производства и поставок на территорию Российской Федерации операционных систем (ОС) для персональных компьютеров (ПК) семейства «Microsoft Windows» коробочных версий — дистрибутивов ОС «Windows XP» и сокращении поставок данной ОС в качестве предустановленной при продаже нового компьютера, а также в установлении различных цен на ОС «Windows XP».
+ Прелесть какая! :-)</description>
+    </item>
+    
+  </channel>
+</rss>

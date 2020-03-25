@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Реестр on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80/</link>
+    <description>Recent content in Реестр on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 24 May 2012 15:00:30 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Как перевести SDDL в двоичный дескриптор безопасности</title>
+      <link>https://blog.not-a-kernel-guy.com/2012/05/24/1338/</link>
+      <pubDate>Thu, 24 May 2012 15:00:30 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2012/05/24/1338/</guid>
+      <description>&lt;p&gt;Некторые ключи реестра хранят дескрипторы безопасности (security descriptor) в двоичной форме (REG_BINARY). Пример - значение &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/windows/desktop/ms688679(v=vs.85).aspx&#34;&gt;AccessPermission&lt;/a&gt;, которое устанавливает дескриптор безопасности COM сервера. Редактировать такой дескриптор - одно удовольствие. :-)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2012/05/editing_reg_binary.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2012/05/editing_reg_binary.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>В чём разница между HKEY и HANDLE?</title>
+      <link>https://blog.not-a-kernel-guy.com/2006/12/25/120/</link>
+      <pubDate>Mon, 25 Dec 2006 23:19:55 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2006/12/25/120/</guid>
+      <description>&lt;p&gt;В комментариях к посту &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/10/31/93/&#34;&gt;про обертку для HANDLE&lt;/a&gt; зашла речь о разнице между HKEY и HANDLE. С одной стороны, они имеют много общего:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Ключ реестра это такой же объект ядра, как и файл. К примеру, CreateFile и RegCreateKeyEx используют одинаковые параметры для указания требуемого уровня доступа и прав доступа к ключу/файлу;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;HKEY, также как и HANDLE, можно скопировать с помощью функции DuplicateHandle.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

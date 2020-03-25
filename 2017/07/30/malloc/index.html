@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Непредсказуемость динамической памяти</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Непредсказуемость динамической памяти</h1>
+    <span class="post-date">Jul 30, 2017 &middot; <a href="https://blog.not-a-kernel-guy.com/2017/07/30/malloc/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/c&#43;&#43;">C&#43;&#43;</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+    </span>
+    <p>Написал небольшую программу, демонстрирующую непредсказуемую стоимость выделения
+динамической памяти. Программа выделяет и освобождает N блоков одного размена и
+измеряет среднее время, затраченное на один вызов malloc() и один вызов free():</p>
+
+<pre><code>#include &lt;functional&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string&gt;
+#include &lt;time.h&gt;
+#include &lt;vector&gt;
+
+/*
+ * Get current time reported by the monotonic clock, in seconds.
+ */
+double get_monotonic_time()
+{
+    timespec tp = {};
+    clock_gettime(CLOCK_MONOTONIC, &amp;tp);
+    return double(tp.tv_sec) + double(tp.tv_nsec) / 1000000000.0;
+}
+
+/*
+ * Measure the duration of `fn()` call, in seconds.
+ */
+double measure(std::function&lt;void ()&gt; fn)
+{
+    const double start = get_monotonic_time();
+    fn();
+    const double stop = get_monotonic_time();
+
+    return stop - start;
+}
+
+/*
+ * Measure the duration of a single malloc and free when allocating
+ * N chunks of M bytes.
+ */
+void malloc_free(const size_t M, const size_t N)
+{
+    std::vector&lt;void*&gt; ptrs(N);
+
+    auto malloc_fn = [&amp;]
+    {
+        for (size_t i = 0; i &lt; N; ++i)
+        {
+            ptrs[i] = malloc(M);
+        }
+    };
+    printf(&quot;malloc %lu\t%.10fs\n&quot;, M, measure(malloc_fn) / N);
+
+    auto free_fn = [&amp;]
+    {
+        for (size_t i = 0; i &lt; N; ++i)
+        {
+            free(ptrs[i]);
+        }
+    };
+    printf(&quot;free   %lu\t%.10fs\n&quot;, M, measure(free_fn) / N);
+}
+
+int main()
+{
+    for (size_t i = 4; i &lt;= 1024; i *= 2)
+    {
+        malloc_free(i, 1000000);
+    }
+
+    return 0;
+}
+</code></pre>
+
+<p>Запускаем и видим вполне ожидаемую картину: выделение памяти стоит копейки,
+выделение маленьких блоков дешевле&hellip; Ничего особенного:</p>
+
+<pre><code>➜  taskset -c 0 ./bazel-bin/malloc_free
+malloc 4        0.0000000545s
+free   4        0.0000000214s
+malloc 8        0.0000000328s
+free   8        0.0000000172s
+malloc 16       0.0000000263s
+free   16       0.0000000150s
+malloc 32       0.0000000267s
+free   32       0.0000000142s
+malloc 64       0.0000000347s
+free   64       0.0000000166s
+malloc 128      0.0000000464s
+free   128      0.0000000354s
+malloc 256      0.0000000725s
+free   256      0.0000000487s
+malloc 512      0.0000001146s
+free   512      0.0000000621s
+malloc 1024     0.0000002077s
+free   1024     0.0000000791s
+</code></pre>
+
+<p>Однако если изменить <code>main()</code> как показано ниже, то получается совсем другая
+картина:</p>
+
+<pre><code>int main()
+{
+    malloc_free(4, 10000000);
+    malloc_free(1024, 1);
+
+    return 0;
+}
+</code></pre>
+
+<pre><code>➜  taskset -c 0 ./bazel-bin/malloc_free
+malloc 4        0.0000000343s
+free   4        0.0000000138s
+malloc 1024     0.0512933510s
+free   1024     0.0000010190s
+</code></pre>
+
+<p>Выделение одного блока на 1024 байт заняло 51 миллисекунду - более чем в <em>200000</em>
+раз дольше, чем среднее время выше. Почему так получается? Если вкратце, то
+glibc оптимизирует выделение блоков меньшего размера, откладывая более дорогие
+манипуляции с памятью до тех пор, пока не будет выделен блок памяти покрупнее.
+В сценарии выше, вызов, выделяющий 1024 байт, вынужден также выполнять работу
+отложенную 10000000 вызовами free() &ldquo;на потом&rdquo;.</p>
+
+<p>В большинстве случаев такое поведение не доставляет проблем. Во-первых, обычно
+выделение памяти достаточно случайно. Во-вторых, такая задержка во многих
+случаях пройдет незамеченной. Однако в других приложениях (видео игры,
+воспроизведение видео, системы реального времени) такая задержка будет как
+минимум заметна, как максимум - фатальна.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2017/07/30/malloc/";
+        this.page.title = "Непредсказуемость динамической памяти";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

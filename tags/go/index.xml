@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/go/</link>
+    <description>Recent content in Go on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Mon, 04 Dec 2017 22:50:05 -0800</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Отладка злого бага в Go runtime</title>
+      <link>https://blog.not-a-kernel-guy.com/2017/12/04/evil-go-runtime-bug/</link>
+      <pubDate>Mon, 04 Dec 2017 22:50:05 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2017/12/04/evil-go-runtime-bug/</guid>
+      <description>&lt;p&gt;Отличная &lt;a href=&#34;https://marcan.st/2017/12/debugging-an-evil-go-runtime-bug/&#34;&gt;статья про ловлю злого бага в Go runtime&lt;/a&gt;. Мне больше всего
+понравился момент, когда выясняется, что ошибочное поведение зависит от значения
+флага &lt;code&gt;CONFIG_OPTIMIZE_INLINING&lt;/code&gt;. Вроде бы и вот она причина, и вместе с тем
+значение флага никак не указывает на проблемный участок кода. Автор
+расследования находит отличный выход из положения&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sun, 30 Jul 2017 13:03:30 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Непредсказуемость динамической памяти</title>
+      <link>https://blog.not-a-kernel-guy.com/2017/07/30/malloc/</link>
+      <pubDate>Sun, 30 Jul 2017 13:03:30 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2017/07/30/malloc/</guid>
+      <description>&lt;p&gt;Написал небольшую программу, демонстрирующую непредсказуемую стоимость выделения
+динамической памяти. Программа выделяет и освобождает N блоков одного размена и
+измеряет среднее время, затраченное на один вызов malloc() и один вызов free():&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Office on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/office/</link>
+    <description>Recent content in Office on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Tue, 19 Feb 2008 16:35:54 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/office/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Почему форматы файлов Microsoft Office настолько сложны?</title>
+      <link>https://blog.not-a-kernel-guy.com/2008/02/19/290/</link>
+      <pubDate>Tue, 19 Feb 2008 16:35:54 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2008/02/19/290/</guid>
+      <description>Вслед за публикацией спецификаций, описывающих формат файлов Microsoft Office, Joel Spolsky написал неплохую статью, объясняющую почему формат этих файлов настолько сложен и, на первый взгляд, специально запутан до невозможности.
+ A normal programmer would conclude that Office&amp;rsquo;s binary file formats:
+ are deliberately obfuscated
+ are the product of a demented Borg mind
+ were created by insanely bad programmers
+ and are impossible to read or create correctly.
+   Если коротко, то проблема в том, что эти форматы имеют длинную историю и при их разработке преследовались совсем другие цели нежели преследовались бы при разработке формата «офисных» файлов сейчас.</description>
+    </item>
+    
+  </channel>
+</rss>

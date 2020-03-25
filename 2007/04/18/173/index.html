@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Регистрация COM объектов. Часть II. 64-х разрядная специфика</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Регистрация COM объектов. Часть II. 64-х разрядная специфика</h1>
+    <span class="post-date">Apr 18, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/04/18/173/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/com">COM</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/windows">Windows</a><a class="label" href="/tags/wow64">Wow64</a>
+    </span>
+    <p>Итак, продолжаем начатое в <a href="/2007/04/13/172/">первой части</a>. 64-х разрядные версии Windows не разрешают смешивать 32-х и 64-х битный код в пределах одного процесса. В результате этого ограничения некоторые ветви реестра были также разделены на 32-х и 64-х разрядные. В частности, были разделены ключи, отвечающие за регистрацию COM компонент. Этот механизм называется <a href="http://msdn2.microsoft.com/en-us/library/aa384232.aspx">перенаправлением реестра (registry redirection)</a> и реализуется средствами <a href="http://en.wikipedia.org/wiki/WOW64">Wow64</a>. Механизм более или менее прозрачен для приложений в том смысле, что и 32-x и 64-х битные приложения используют одинаковые пути вида «HKEY_CLASSES_ROOT\Classes{…}», но работают, в конечном итоге, с разными ключами.</p>
+
+<p>Практически вышесказанное означает, что 64-х битные версии системы поддерживают как 32-х так и 64-х разрядные COM компоненты, а также то, что 32-х и 64-х битные компоненты регистрируются отдельно. По большому счету 32-х и 64-х разрядные окружения можно рассматривать как разные компьютеры. Например, чтобы 32-х битный клиент и 64-х битный сервер могли общаться друг с другом, каждый из них должен использовать Proxy/Stub DLL соответствующей разрядности. Единственная разница между сценариями, когда клиент и сервер разнесены по разным машинам и когда они установлены на одном и том же компьютере, но имеют разную разрядность, – это протокол, используемый для передачи RPC сообщений.</p>
+
+<p>Интересное, но не всегда очевидное следствие этого, – при установке COM компонента также должны регистрироваться две (32-х и 64-х битные) Proxy/Stub DLL, иначе компонент не будет доступен для клиентов с «неправильной» разрядностью. Замечу, что большинство 32-х разрядных приложений этого не делают и продолжают нормально работать. В чем же дело? Причина в том, что:</p>
+
+<ol>
+<li><p>Это правило касается только out-of-proc COM компонент;</p></li>
+
+<li><p>Либо все клиенты данного COM сервера имеют одинаковую с ним разрядность;</p></li>
+
+<li><p>Либо COM сервер использует интерфейсы, помеченные атрибутом [dual] или [automation].</p></li>
+</ol>
+
+<p>В остальных случаях без регистрации двух Proxy/Stub DLL не обойтись.</p>
+
+<p>Помимо перенаправления реестра, о котором я говорил выше, wow64 также реализует второй механизм, которой называется <a href="http://msdn2.microsoft.com/en-us/library/aa384235.aspx">отражение реестра (registry reflection)</a>.</p>
+
+<p><em>Нужно сказать, что эти два механизма путают все кому не лень. Каждый раз когда приходит письмо с вопросом об одном их них, приходится догадываться что именно имел ввиду спрашивающий. Неудачное название, в общем. :-)</em></p>
+
+<p>Отражение реестра заключается в синхронизации некоторых из перенаправляемых ветвей реестра по определённым правилам. Этот механизм не что иное, как способ обеспечить совместимость существующих 32-х битных COM компонент с 64-х разрядных окружением. Каким образом? А вот каким. Посмотрим что происходит при регистрации 32-х битного COM компонента на 64-х разрядной системе.</p>
+
+<p><img src="/2007/04/com_registration_raw.png" alt="Регистрация COM сервера, использующего raw интерфейсы" /></p>
+
+<p>В случае, если сервер использует raw интерфейсы и собственную Proxy/Stub DLL в реестре регистрируется:</p>
+
+<ol>
+<li><p>Сам COM компонент;</p></li>
+
+<li><p>Его интерфейсы;</p></li>
+
+<li><p>Proxy/Stub DLLs.</p></li>
+</ol>
+
+<p>Wow64 отражает (копирует) эти данные в соответствующие 64-битные ключи. При этом регистрация Proxy/Stub DLL не копируется, так как Proxy и Stub представляют собой не что иное как in-proc COM компонент, т.е. 32-х разрядная Proxy/Stub DLL всё равно не может быть загружена в 64-х битный процесс. Сам объект, тем не менее, может быть создан 64-х битным клиентом.</p>
+
+<p>Вывод: raw интерфейсы требует регистрации 2-х Proxy/Stub DLL.</p>
+
+<p>В случае, если сервер использует дуальные интерфейсы (помеченные атрибутом [dual] или [automation]) регистрация выглядит немного иначе:</p>
+
+<p><img src="/2007/04/com_registration_dual.png" alt="Регистрация COM сервера, использующего дуальные интерфейсы" /></p>
+
+<p>При этом вместо Proxy/Stub DLLs регистрируются библиотеки типов, регистрационные данные которых свободно копируются в 64-х ветвь реестра. В результате такой COM компонент может использоваться 64-х битными компонентами безо всяких дополнительных усилий. Конвертация 32-х битной библиотеки типов в 64-х разрядную происходит на лету.</p>
+
+<p>Вывод: дуальные интерфейсы не требуют регистрации 2-х библиотек типов, однако регистрация обоих вариантов библиотеки положительно влияет на производительность.</p>
+
+<p>Механизм отражения реестра достаточно корректно работает и в случаях когда регистрируются оба варианта COM сервера и сопутствующих Proxy/Stub DLL или библиотек типов.</p>
+
+<p>Осталось ответить на последний вопрос – какой способ регистрации считается самым «правильным» с точки зрения взаимодействия 32-х и 64-х разрядных компонент? Ответ – приложение должно регистрировать все необходимые компоненты, включая все варианты Proxy/Stub DLLs и библиотек типов. Иными словами, приложение не должно рассчитывать на вспомогательные механизмы операционной системы, включая отражение реестра, так как их цель – обеспечение совместимости с существующими программами. Именно поэтому, кстати, я не описывал конкретных правил, в соответствии с которыми данные синхронизируются между 32-х и 64-х ветвями реестра. Конкретный набор правил, да и сам механизм отображения реестра может быть изменен или полностью убран из будущих версий Windows.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2007/04/18/173/";
+        this.page.title = "Регистрация COM объектов. Часть II. 64-х разрядная специфика";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Тезисы моего доклада на РИТ&#43;&#43; 2011</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Тезисы моего доклада на РИТ&#43;&#43; 2011</h1>
+    <span class="post-date">Apr 20, 2011 &middot; <a href="https://blog.not-a-kernel-guy.com/2011/04/20/1027/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D1%80%D0%B8%D1%82&#43;&#43;">РИТ&#43;&#43;</a>
+    </span>
+    <p>Цель <a href="http://ritconf.ru/2011/abstracts/770.html">доклада</a> – познакомить разработчиков с принципами работы стека TCP/IP в Windows, его основными компонентами и связями между ними; объяснить, что именно происходит с данными на пути к приложению и от него, и как работа сетевого стека сказывается на приложениях. В докладе описываются NDIS, существующие возможности аппаратного ускорения, работа с прерываниями и асинхронным вводом-выводом, возможности настройки сетевых адаптеров и протокола TCP/IP, перечисляются программные интерфейсы, описывается Windows Filtering Platform и её связь с IPsec, антивирусными сканнерами и фаерволами.</p>
+
+<ol>
+<li><p>Архитектура стека TCP/IP.</p>
+
+<ol>
+<li><p>Стек драйверов в NDIS.</p></li>
+
+<li><p>tcpip.sys.</p></li>
+
+<li><p>Программные интерфейсы.</p></li>
+</ol></li>
+
+<li><p>Путь данных вверх и вниз.</p>
+
+<ol>
+<li><p>Обработка принятых пакетов и что происходит при посылке данных.</p></li>
+
+<li><p>Как пакеты хранятся в памяти.</p></li>
+
+<li><p>Прямой доступ в память.</p></li>
+
+<li><p>Прерывания и уведомление приложений.</p></li>
+</ol></li>
+
+<li><p>Настройки и аппаратное ускорение.</p>
+
+<ol>
+<li><p>Аппаратное ускорение.</p></li>
+
+<li><p>Настройки сетевого адаптера и TCP/IP.</p></li>
+</ol></li>
+
+<li><p>Фильтры и мониторинг трафика.</p>
+
+<ol>
+<li><p>NDIS фильтры.</p></li>
+
+<li><p>Диагностика NDIS с помощью расширения отладчика !ndiskd.</p></li>
+
+<li><p>Windows Filtering Platform (WFP).</p></li>
+
+<li><p>IPSec.</p></li>
+
+<li><p>Мониторинг WFP.</p></li>
+</ol></li>
+</ol>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2011/04/20/1027/";
+        this.page.title = "Тезисы моего доклада на РИТ++ 2011";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Построение абстрактного синтаксического дерева</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Построение абстрактного синтаксического дерева</h1>
+    <span class="post-date">Sep 2, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/09/02/233/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/win32.utf8">Win32.Utf8</a>
+    </span>
+    <p>Алгоритм работы Win32.Utf8 состоит из трех основных шагов:</p>
+
+<ol>
+<li><p>Исходные заголовки пропускаются через стандартный препроцессор;</p></li>
+
+<li><p>Полученный код парсится и трансформируется в дерево объектов, описывающее функции, типы и связи между ними;</p></li>
+
+<li><p>Полученное дерево используется для генерации кода по заданным шаблонам.</p></li>
+</ol>
+
+<p>На данный момент я работаю над вторым этапом. Цель – построенное дерево должно быть компактным, его структура должна облегчать последующий анализ во время генерации кода. В тоже время дерево должно включать всю информацию необходимую для генерации корректного кода.</p>
+
+<p>DParser позволяет задавать правила следующим образом:</p>
+
+<pre><code class="language-python">def d_rule(t):
+    ''' production : foo '+' bar '''
+    return t[0] + t[2]
+
+def d_terminals(t):
+    '''
+        foo : 'foo' ;
+        bar : 'bar'
+    '''
+    pass
+</code></pre>
+
+<p>Правило &ldquo;d_rule&rdquo; будет вызвано каждый раз , когда парсер обнаружит в анализируемом тексте последовательность &ldquo;foo + bar&rdquo;. В качестве параметр правила &ldquo;t&rdquo; будет передан список значений, соответствующих обнаруженным символам. Поскольку правило для “foo” и “bar” не выполняет никаких действий, то в &ldquo;d_rule&rdquo; всегда будет передаваться список из трех строк: [ &lsquo;foo&rsquo;, &lsquo;+&rsquo;, &lsquo;bar&rsquo; ]. Значение, возвращаемое из &ldquo;d_rule&rdquo;, будет присвоено нетерминалу &ldquo;production&rdquo; и будет передано в любое правило, включающее этот символ.</p>
+
+<p>Как видно из примера выше, один и тот же обработчик может вызываться для нескольких (или всех) правил. Используя эту возможность можно полное генерировать дерево разбора с помощью всего нескольких строк кода.</p>
+
+<pre><code class="language-python">class Node:
+    def __init__(self, type, children):
+        self.type = type
+        self.children = children
+
+def create_node(type, children):
+    return Node(type, children)
+
+def d_grammar(t, this):
+    '''
+        production : foo '+' bar ;
+        foo : 'foo' ;
+        bar : 'bar'
+    '''
+    return create_node(this.symbol, t)
+</code></pre>
+
+<p>Дополнительный параметр &ldquo;this&rdquo; позволяет получить доступ к имени нетерминала, т.е. имени слева от &ldquo;:&rdquo; - &ldquo;this.symbol&rdquo;.</p>
+
+<p>Это работает доя простых грамматик, однако грамматика C к таковым не относится. Немного уменьшить глубину дерева можно если отказаться от создания узлов дерева с единственным ребенком:</p>
+
+<pre><code class="language-python">def create_node(type, children):
+        if len(children) &gt; 1:
+            return Node(type, children)
+        else:
+            return children[0]
+</code></pre>
+
+<p>Некоторые узлы, возможно, будут важны при последующем анализе дерева. Для них можно завести список исключений:</p>
+
+<pre><code class="language-python">key_nodes = set([ 'foo' ])
+
+def create_node(type, children):
+    if len(children) &gt; 1 or type in key_nodes:
+        return Node(type, children)
+    else:
+        return children[0]
+</code></pre>
+
+<p>DParser позволяет использовать в правилах операторы повторения ‘*’, ‘+’ и ‘?’, а также группировать символы, заключая их в скобки:</p>
+
+<pre><code class="language-python">def d_grammar(t, this):
+    '''
+        start : production+ ;
+        production : foo* ( '+' bar )+ ;
+        foo : 'foo' ;
+        bar : 'bar'
+    '''
+    pass
+</code></pre>
+
+<p>В этом случае в соответствующей позиции списка &ldquo;t&rdquo; вместо единичного значения, будет передан список значений. Например в случае правила “start : production+ ” “t” будет состоять из одного элемента, однако значен7ие этого элемента будет списком значений для символа “production”. Функция создания узла дерева должна это учитывать, разворачивая вложенные списки на лету:</p>
+
+<pre><code class="language-python">key_nodes = set([ 'foo' ])
+
+def unwrap(children):
+    nodes = []
+
+    for c in children:
+        if isinstance(c, list):
+            nodes.extend(unwrap(c))
+        else:
+            nodes.append(c)
+
+    return nodes
+
+def create_node(type, children):
+    nodes = unwrap(children)
+
+    if len(nodes) &gt; 1 or type in key_nodes:
+        return Node(type, nodes)
+    else:
+        return nodes[0]
+</code></pre>
+
+<p>Стоит также учесть, что грамматика может использовать правую/левую рекурсию, вместо операторов повторения:</p>
+
+<pre><code class="language-python">def d_grammar(t, this):
+    '''
+        production_list 
+            : production
+            | production_list production
+    '''
+    pass
+</code></pre>
+
+<p>Об этом также стоит позаботиться:</p>
+
+<pre><code class="language-python">def create_node(type, children):
+    nodes = unwrap(children)
+
+    left = nodes[0]
+    if isinstance(left, Node) and type == left.type:
+        left.children.extend(nodes[1:])
+        return left
+
+    right = nodes[-1]
+    if isinstance(right, Node) and type == right.type:
+        nodes.pop(-1)
+        nodes.extend(right.children)
+        right.children = nodes
+        return right
+
+    if len(nodes) &gt; 1 or type in key_nodes:
+        return Node(type, nodes)
+    else:
+        return nodes[0]
+</code></pre>
+
+<p>В результате получаем дерево почти пригодное для анализа. Я говорю &ldquo;почти&rdquo;, потому как его можно упростить еще больше. Об этом - в следующем посте.</p>
+
+<p><em>Примечание: код набирался прямо в браузере и приведён только в качестве иллюстрации. Он даже может не компилироваться, не говоря уже о том, чтобы работать.</em></p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2007/09/02/233/";
+        this.page.title = "Построение абстрактного синтаксического дерева";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

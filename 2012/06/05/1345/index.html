@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Дело о пропавшем файле &#39;ammintrin.h&#39;</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Дело о пропавшем файле &#39;ammintrin.h&#39;</h1>
+    <span class="post-date">Jun 5, 2012 &middot; <a href="https://blog.not-a-kernel-guy.com/2012/06/05/1345/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/sdk">SDK</a><a class="label" href="/tags/visual-studio">Visual Studio</a>
+    </span>
+    <p>Начну издалека. Мой любимый редактор кода на данный момент - <a href="http://www.sublimetext.com/2">Sublime Text 2</a>. До него я пользовался <a href="http://www.flos-freeware.ch/notepad2.html">Notepad2</a>, <a href="http://www.sourceinsight.com/">Source Insight</a>, <a href="http://www.farmanager.com/">Far</a> (естественно после того, как появился <a href="http://colorer.sourceforge.net/farplugin.html">Colorer</a>). Что было до Far-а с Colorer-ом я уже не очень помню. Точно был Borland Pascal и Turbo C. Редактор кода Visual Studio в этом списке должен быть где-то между Borland-ом и Far-ом. Не помню, чтобы я пользовался им продолжительное время.</p>
+
+<p>Отладчику из Visual Studio повезло чуть больше, так как правильно держать WinDbg я научился уже после замены Far-а на Notepad2 пополам с Source Insight. Остальной инструментарий из набора Visual Studio я использую не очень часто, особенно учитывая, что компилятор и другие инструменты все равно есть в отдельно стоящем SDK. Так и получается, что сама по себе Visual Studio мне в общем-то и не нужна.</p>
+
+<p>Единственная неприятность заключается в том, что такая конфигурация (SDK есть, а Visual Studio нет) явно попадает в категорию экзотики. И, как следствие, не поддерживается и не тестируется как следует. Приходится самому.</p>
+
+<p>Последняя проблема вылезла в самый неожиданный момент. Мне понадобилось обновить компилятор из SDK до версии из Visual Studio 2010 SP1. Зачем понадобилось - это отдельная история. На сайте Microsoft соответствующее обновление имеется: <a href="http://www.microsoft.com/en-us/download/details.aspx?id=4422">KB2519277</a> (и ставиться, надо сказать, не в пример быстрее Visual Studio 2010 SP1). Однако после установки обновления сборка Chrome начала ругаться на отсутсвующий заголовок ‘ammintrin.h’.</p>
+
+<p>Здесь нужно добавить, что в 2010-ой версии Visual Studio с инсталляциями <a href="http://www.johndcook.com/blog/2010/04/22/visual-studio-2010-is-a-pig/">не заладилось с самого начала</a>. Достаточно посмотреть на readme файл к вышеупомянутому обновлению. А если учесть, что само обновление вышло не для того, чтобы обновить версию компилятора и SDK, а как исправление для Visual Studio 2010 SP1, который портил установленный SDK&hellip;</p>
+
+<p>Вернемся к нашим баранам. Заголовок ‘ammintrin.h’ включался из ‘intrin.h’, который, в свою очередь, находился в “%ProgramFiles(x86)%\Microsoft Visual Studio 10.0\VC\include”. Что было похоже на проблемы с инсталляцией. Беглый поиск в интернете показал, что проблема решается переустановкой SP1. SP1 мне поставить не удалось в виду отсутствия Visual Studio на машине, так что я переставил SDK и обновление к нему с нуля. Естественно не помогло.</p>
+
+<p>В процессе установки однако, я сохранил копию ‘intrin.h’. Выяснилось, что KB2519277 обновляет ‘intrin.h’, добавляя ссылку на ‘ammintrin.h’, но сам ‘ammintrin.h’ не ставит.
+Покопавшись в интернете еще немного выяснилось (по аналогии с ‘immintrin.h’, ‘pmmintrin.h’), что <a href="http://opensource.apple.com/source/gcc/gcc-5646/gcc/config/i386/ammintrin.h">‘ammintrin.h’</a> должен содержать intrinsics для SSE4A, которые специфичны AMD и в проекте не используются.</p>
+
+<blockquote>
+<p><a href="http://docs.oracle.com/cd/E24457_01/html/E21991/gliwk.html">http://docs.oracle.com/cd/E24457_01/html/E21991/gliwk.html</a>:
+Note that ammintrin.h is published by AMD and is not included in any of the Intel intrinsic headers. ammintrin.h includes pmmintrin.h, so by including ammintrin.h, all AMD SSE4A as well as Intel SSE3, SSE2, SSE and MMX functions are declared.</p>
+</blockquote>
+
+<p>Родилось простое решение - был создан пустой заголовок ‘ammintrin.h’ и положен рядышком с ‘intrin.h’. Тем, кому функции все-таки нужны, могу посоветовать восстановить их <a href="http://opensource.apple.com/source/gcc/gcc-5646/gcc/config/i386/ammintrin.h">по образцу</a> либо таки скопировать этот файл с машины, где стоит SP1 (но это не спортивно). :-)</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2012/06/05/1345/";
+        this.page.title = "Дело о пропавшем файле 'ammintrin.h'";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

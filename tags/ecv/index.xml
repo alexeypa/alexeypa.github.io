@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ecv on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/ecv/</link>
+    <description>Recent content in Ecv on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 10 Oct 2009 20:37:24 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/ecv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exception Chain Validation (ECV, SEHOP)</title>
+      <link>https://blog.not-a-kernel-guy.com/2009/10/10/647/</link>
+      <pubDate>Sat, 10 Oct 2009 20:37:24 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2009/10/10/647/</guid>
+      <description>&lt;p&gt;Structure Exception Handler (SEH) overwrite - один из популярных способов передачи управления на вредоносный код, внедренный через ту или иную уязвимость (обычно – переполнение буфера). Иными словами, это один из способов подхватить заразу на свой компьютер через непропатченый браузер просто зайдя куда-нибудь с &lt;a href=&#34;http://www.thehun.net&#34;&gt;http://www.thehun.net&lt;/a&gt; почитать Пушкина на сон грядущий.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

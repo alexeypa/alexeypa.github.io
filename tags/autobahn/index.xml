@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Autobahn on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/autobahn/</link>
+    <description>Recent content in Autobahn on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Wed, 13 Oct 2010 21:27:12 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/autobahn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>«Меняю highway на autobahn с доплатой»</title>
+      <link>https://blog.not-a-kernel-guy.com/2010/10/13/899/</link>
+      <pubDate>Wed, 13 Oct 2010 21:27:12 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2010/10/13/899/</guid>
+      <description>На прошлой неделе ездил в командировку с Кёльн и немного покатался по немецким автобанам. Надо сказать, что отсутствие верхнего лимита скорости не только приятно само по себе, но и явно положительно влияет на поведение водителей на дороге. Во-первых, они не торчат в левой полосе. С удовольствием перестраиваются право при первой возможности. Не важно, как быстро едешь ты, сзади всегда найдется тот, кто едет быстрее. Во-вторых, они не обоняют/опережают справа. Для этого есть левая полоса.</description>
+    </item>
+    
+  </channel>
+</rss>

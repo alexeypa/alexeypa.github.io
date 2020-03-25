@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thread Hijacking on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/thread-hijacking/</link>
+    <description>Recent content in Thread Hijacking on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Tue, 04 May 2010 23:21:24 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/thread-hijacking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>«Угон» потоков</title>
+      <link>https://blog.not-a-kernel-guy.com/2010/05/04/812/</link>
+      <pubDate>Tue, 04 May 2010 23:21:24 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2010/05/04/812/</guid>
+      <description>&lt;p&gt;Бывает так, что требуется выполнить свой код в контексте произвольного потока. Либо в своем потоке, но в то время когда поток выполняет чужой код. Например, сборщик мусора может хотеть перехватить управление, даже если поток крутит бесконечный цикл. Один из методов перехвата – использование функций &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms679362%28VS.85%29.aspx&#34;&gt;GetThreadContext&lt;/a&gt; и &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms680632%28v=VS.85%29.aspx&#34;&gt;SetThreadContext&lt;/a&gt;. Эти функции позволяют манипулировать контекстом потока – т.е. состоянием регистров процессора, в том числе и указателем на текущую выполняемую инструкцию. В простейшем случае перехватчик приостанавливает поток, сохраняет текущий контекст, модифицирует EIP, чтобы тот показывал на нужный код, и снова запускает поток. При обратном переключении просто восстанавливается ранее сохраненный контекст и все. Метод простой, эффективный и … неработающий. :-)&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

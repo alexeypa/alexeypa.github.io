@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Трассировка описателей. Вторая серия</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Трассировка описателей. Вторая серия</h1>
+    <span class="post-date">Jan 9, 2013 &middot; <a href="https://blog.not-a-kernel-guy.com/2013/01/09/1456/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%B8%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9">Обработка исключений</a><a class="label" href="/tags/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8">Ошибки</a><a class="label" href="/tags/windows">Windows</a><a class="label" href="/tags/wow64">Wow64</a><a class="label" href="/tags/x64">x64</a>
+    </span>
+    <p>Краткое содержание <a href="/2012/12/04/1437/">первой части</a>:</p>
+
+<blockquote>
+<p>Не получается продолжить выполнение кода после того, как было сгенерировано исключение STATUS_INVALID_HANDLE - почему-то портится сохраненный контекст процессора. В частности, не сохраняются non-volatile регистры esi и edi.</p>
+</blockquote>
+
+<p>Некто Indy засомневался в том, что происходит именно это. Следует сказать, что засомневался он не без оснований. На самом деле, способы возбудить исключение пользовательского режима из кода в ядре можно пересчитать по пальцам одной руки и все они формируют конекст процессора одинаково. Получается, что если бы регистры не сохранялись, то не работали бы все исключения, а не избирательно STATUS_INVALID_HANDLE.</p>
+
+<p>Покопавшись в отладчике я понял в чем дело.</p>
+
+<p>Начну издалека. Системные вызовы из 32-х битных приложений перехватываются Wow64. Wow64 транслирует 32-х битные параметры в 64-х битные, а затем выполняет системный вызов. Когда, например, приложение вызывает функцию ReleaseMutex() получается такая цепочка вызовов:</p>
+
+<p><a href="/2013/01/wow64_call_stack.png"><img src="/2013/01/wow64_call_stack.png" alt="" /></a></p>
+
+<pre><code class="language-no-highlight">0:000:x86&gt; uf ntdll32!NtReleaseMutant
+ntdll32!ZwReleaseMutant:
+77c1fb6c b81d000000      mov     eax,1Dh
+77c1fb71 b907000000      mov     ecx,7
+77c1fb76 8d542404        lea     edx,[esp+4]
+77c1fb7a 64ff15c0000000  call    dword ptr fs:[0C0h]
+77c1fb81 83c404          add     esp,4
+77c1fb84 c20800          ret     8
+</code></pre>
+
+<p>Инструкция call выше выполняет переход на точку входа внутри Wow64. Для сравнения в 64-х разрядной версии используется инструкция syscall, которая выполняет переход в ядро:</p>
+
+<pre><code class="language-no-highlight">0:000&gt; uf ntdll!NtReleaseMutant
+ntdll!NtReleaseMutant:
+00000000`77a71510 4c8bd1          mov     r10,rcx
+00000000`77a71513 b81d000000      mov     eax,1Dh
+00000000`77a71518 0f05            syscall
+00000000`77a7151a c3              ret
+</code></pre>
+
+<p>При переключении между 32-х и 64-х битным кодом, Wow64 первым делом сохраняет 32-х разрядный контекст процессора (включая esi и edi) в специальной структуре CPUCONTEXT, на которую указывает TlsSlots[1] в 64-х битной версии TEB (Thread Environment Block). Когда ядро генерирует исключение пользовательского режима, первым дело управление получает Wow64. Wow64 формирует 32-х битный контекст, используя значения, сохраненные в CPUCONTEXT, и генерирует 32-х разрядное исключение с этим контекстом. В том числе, восстанавливаются и прежние значения esi и edi.</p>
+
+<p>Почему же это не работает с исключением STATUS_INVALID_HANDLE? Дело в том, что Wow64 использует упрощенный (и более быстрый) вариант трансляции 32-х битных параметров в 64-х для некоторых системных вызовов. В том числе, для NtReleaseMutant. Смотрите:</p>
+
+<pre><code class="language-no-highlight">Breakpoint 0 hit
+eax=0000001d ebx=6a4f5584 ecx=00000007 edx=003ef764 esi=00000900 edi=00000000
+eip=77c1fb7a esp=003ef760 ebp=003ef76c iopl=0         nv up ei pl nz ac pe nc
+cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000216
+ntdll32!ZwReleaseMutant+0xe:
+77c1fb7a 64ff15c0000000  call    dword ptr fs:[0C0h]  fs:0053:000000c0=00000000
+0:000:x86&gt; t
+wow64cpu!X86SwitchTo64BitMode:
+74ae2320 ea1e27ae743300  jmp     0033:74AE271E
+0:000:x86&gt;
+wow64cpu!CpupReturnFromSimulatedCode:
+00000000`74ae271e 67448b0424      mov     r8d,dword ptr [esp]
+</code></pre>
+
+<p>Функция wow64cpu!CpupReturnFromSimulatedCode - это точка возврата из x86 кода в Wow64:</p>
+
+<pre><code class="language-no-highlight">0:000&gt; u wow64cpu!CpupReturnFromSimulatedCode
+wow64cpu!CpupReturnFromSimulatedCode:
+00000000`74ae271e 67448b0424      mov     r8d,dword ptr [esp]
+00000000`74ae2723 458985bc000000  mov     dword ptr [r13+0BCh],r8d
+00000000`74ae272a 4189a5c8000000  mov     dword ptr [r13+0C8h],esp
+00000000`74ae2731 498ba42480140000 mov     rsp,qword ptr [r12+1480h]
+00000000`74ae2739 4983a4248014000000 and   qword ptr [r12+1480h],0
+00000000`74ae2742 448bda          mov     r11d,edx
+wow64cpu!TurboDispatchJumpAddressStart:
+00000000`74ae2745 41ff24cf        jmp     qword ptr [r15+rcx*8]
+wow64cpu!TurboDispatchJumpAddressEnd:
+00000000`74ae2749 4189b5a4000000  mov     dword ptr [r13+0A4h],esi
+00000000`74ae2750 4189bda0000000  mov     dword ptr [r13+0A0h],edi
+00000000`74ae2757 41899da8000000  mov     dword ptr [r13+0A8h],ebx
+00000000`74ae275e 4189adb8000000  mov     dword ptr [r13+0B8h],ebp
+</code></pre>
+
+<p>Первые три инструкции сохраняют eip и esp в CPUCONTEXT; две следующие - переключаются на 64-х битный стек. Инструкция по адресу wow64cpu!TurboDispatchJumpAddressStart выбирает обработчик, который будет конвертировать параметры в 64-х битный формат и выполнит системный вызов. Большинство системных вызовов обслуживаются обработчиком под индексом 0 (Индекс обработчика указывается в регистре rcx). Он начинается с метки wow64cpu!TurboDispatchJumpAddressEnd. Первым делом он как раз и сохраняет non-volatile регстры в CPUCONTEXT.</p>
+
+<p>NtReleaseMutant использует обработчик с индексом 7, он же - wow64cpu!Thunk2ArgSpNSp:</p>
+
+<pre><code class="language-no-highlight">0:000&gt; u wow64cpu!Thunk2ArgSpNSp
+wow64cpu!Thunk2ArgSpNSp:
+00000000`74ae2d84 4d6313          movsxd  r10,dword ptr [r11]
+00000000`74ae2d87 418b5304        mov     edx,dword ptr [r11+4]
+00000000`74ae2d8b eb2d            jmp     wow64cpu!Thunk0Arg (00000000`74ae2dba)
+0:000&gt; u wow64cpu!Thunk0Arg
+wow64cpu!Thunk0Arg:
+00000000`74ae2dba e841000000      call    wow64cpu!CpupSyscallStub (00000000`74ae2e00)
+0:000&gt; u wow64cpu!CpupSyscallStub
+wow64cpu!CpupSyscallStub:
+00000000`74ae2e00 4189adb8000000  mov     dword ptr [r13+0B8h],ebp
+00000000`74ae2e07 0f05            syscall
+00000000`74ae2e09 c3              ret
+</code></pre>
+
+<p>Видно, что non-volatile регистры не сохраняются в CPUCONTEXT и системный вызов выполняется из wow64cpu!CpupSyscallStub, а не ntdll!NtReleaseMutant.</p>
+
+<p>Хотя esi и edi не сохраняются в CPUCONTEXT, они не используются в wow64cpu!Thunk2ArgSpNSp и, соответственно, ядро их корректно восстанавливает. В этом можно убедится посмотрев на конекст исключения в 64-х разрядном диспетчере:</p>
+
+<pre><code class="language-no-highlight">Breakpoint 1 hit
+ntdll!KiUserExceptionDispatcher:
+00000000`77a7124a fc              cld
+0:000&gt; .cxr @rsp
+rax=0000000049af579a rbx=000000006a4f5584 rcx=000000000017ddb0
+rdx=0000000074ae2dbf rsi=0000000000000900 rdi=0000000000000000
+rip=0000000077a712f7 rsp=000000000017e3c0 rbp=00000000003ef76c
+ r8=000000000017e488  r9=00000000003ef76c r10=0000000000000000
+r11=0000000000000246 r12=000000007efdb000 r13=000000000017fd20
+r14=000000000017e500 r15=0000000074ae2450
+iopl=0         nv up ei pl nz na po nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000204
+ntdll!KiRaiseUserExceptionDispatcher+0x3a:
+00000000`77a712f7 8b8424c0000000  mov     eax,dword ptr [rsp+0C0h] ss:00000000`0017e480=c0000008
+</code></pre>
+
+<p>Значения регистров портятся позже, когда Wow64 транслирует 64-х битное исключение в 32-х битное. Значения регистров при этом, как я уже упоминал, берутся из структуры CPUCONTEXT, содержимое которой к этому моменту устарело:</p>
+
+<pre><code class="language-no-highlight">0:000&gt; dt poi(@$teb+1488)+4 ntdll32!_CONTEXT
+   +0x000 ContextFlags     : 0x1002f
+   ...
+   +0x09c Edi              : 0x40
+   +0x0a0 Esi              : 0x28
+   +0x0a4 Ebx              : 0x6a327f
+   +0x0a8 Edx              : 0
+   ...
+</code></pre>
+
+<p>Пару слов о том, почему wow64cpu!Thunk2ArgSpNSp и другие “быстрые” обработчики не сохраняются эти регистры. Системные вызовы, как правило, не генерируют исключений. Вместо этого возвращаются код ошибки, тот же STATUS_ACCESS_DENIED. В случае же, когда исключение все-же случается, то либо оно и так фатально (скажем страница, хранящая CPUCONTEXT стала вдруг недоступна), либо используется полновестный обработчик (тот, что с нулевым индексом). Про трассировку описателей и исключение STATUS_INVALID_HANDLE, скороее всего, просто забыли. Что и не удивительно, если учесть, что все, в принципе, работает, если не пытаться продолжить выполниение после исключения STATUS_INVALID_HANDLE.</p>
+
+<p>Самой простой вариант избежать этой проблемы - запретить “быстрые” обработчики ключём (недокументированным, вестимо) в реестре. Можно, затереть nop-ами код между wow64cpu!TurboDispatchJumpAddressStart и wow64cpu!TurboDispatchJumpAddressEnd. Еще вериант - перехварить ntdll!KiUserExceptionDispatcher. Или даже ntdll!KiRaiseUserExceptionDispatcher. Способы один другого краше.</p>
+
+<p>Вот така х&hellip;ня, малята! ;-)</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2013/01/09/1456/";
+        this.page.title = "Трассировка описателей. Вторая серия";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

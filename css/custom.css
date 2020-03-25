@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'Menlo Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Menlo Regular'), url('/Menlo-Regular.woff') format('woff');
+}
+
+code,
+pre {
+  font-family: 'Menlo Regular', monospace;
+}
+
+.sidebar-nav .gsc-search-box .gsc-input {
+  background-color: #202020;
+  border: none;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  padding : 0;
+  padding-bottom : 0;
+  padding-left : 0;
+  padding-right : 0;
+  padding-top : 0;
+}
+
+.sidebar-nav .gsc-search-box .gsc-input-box {
+  border: 0;
+}
+
+.sidebar-nav .gsc-search-box .gsc-input-box td {
+  border: 0;
+  padding: 4px 4px 4px 8px;
+}
+
+.sidebar-nav .gsc-search-box .gsc-input table {
+  border: 0;
+  margin: 0;
+}
+
+.sidebar-nav .gsc-search-box .gsc-input input {
+  border-radius: 3px;
+}
+
+.sidebar-nav .gsc-search-box .gsc-search-button {
+  background-color: #202020;
+  border: none;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  padding : 0;
+  padding-bottom : 0;
+  padding-left : 0;
+  padding-right : 0;
+  padding-top : 0;
+}
+
+.sidebar-nav .gsc-search-box .gsc-search-button > input {
+  background-color: #337ab7;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: normal;
+  height: auto;
+  font-size: 0.9rem;
+  padding: 0.2rem;
+}
+
+.sidebar-nav .gsc-search-box .gsc-clear-button {
+  display: none;
+}
+
+figure {
+  display: block;
+  margin: 0 0 1rem;
+}

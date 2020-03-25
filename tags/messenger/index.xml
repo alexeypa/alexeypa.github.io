@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Messenger on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/messenger/</link>
+    <description>Recent content in Messenger on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 07 Feb 2008 23:34:14 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/messenger/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Меркурий вблизи</title>
+      <link>https://blog.not-a-kernel-guy.com/2008/02/07/287/</link>
+      <pubDate>Thu, 07 Feb 2008 23:34:14 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2008/02/07/287/</guid>
+      <description>Это уже совсем не новость, конечно. 14-ого января Messenger пролетел в двух сотнях километров от поверхности Меркурия. Это первое посещение планеты за более чем 30 лет со времен полёта Mariner 10. В отличие от своего предшественника, Messenger должен выйти на орбиту Меркурия 18 марта 2011 года, выполнив еще два пролёта в октябре 2008 и сентябре 2009 года. Кроме всего прочего, планируется полностью картографировать поверхность с разрешением 250 метров на пиксель. Будет в Google Earth слой Mercury, как пить дать.</description>
+    </item>
+    
+  </channel>
+</rss>

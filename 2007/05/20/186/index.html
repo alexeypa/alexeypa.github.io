@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>An extended error has occurred</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">An extended error has occurred</h1>
+    <span class="post-date">May 20, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/05/20/186/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/troubleshooting">Troubleshooting</a><a class="label" href="/tags/windows">Windows</a>
+    </span>
+    <p>Пару месяцев назад, я, за какой-то надобностью, попытался установить компонент Peer-to-Peer из сетевых компонент Windows XP, но у меня ничего не вышло. Сначала инсталлятор запросил дополнительные файлы из “C:\Windows\ServicePackFiles\i386”, которые я к тому времени успешно удалил за ненадобностью, затем он отказался от одноимённых файлов с инсталляционного диска Windows XP и, наконец, инсталляция прервалась, выдав напоследок очень понятное сообщение: «An extended error has occurred».</p>
+
+<p>«Ну, нет - так нет», подумал я тогда и забыл о проблеме. Однако на днях захотелось выяснить, в чём же было дело. Повторная инсталляция закончилась всё тем же невразумительным сообщением об ошибке. При этом в каталоге Windows обнаружилось несколько свежих логов, в том числе «setupapi.log»:</p>
+
+<pre><code class="language-no-highlight">[2007/05/17 19:36:17 2760.37]
+#-198 Command line processed: &quot;C:\\WINDOWS\\system32\\sysocmgr.exe&quot; /y /i:C:\\WINDOWS\\system32\\sysoc.inf
+#-006 Setting security on key HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\PeerNet\\PNRP to &quot;D:(A;OICI;KA;;;SY)(A;OICI;KA;;;BA)(A;OICI;KA;;;LS)(A;OICI;KA;;;CO)(A;OICI;KR;;;AU)&quot;
+#E033 Error 1208: An extended error has occurred.
+#-035 Processing service Add/Delete section [p2p.Services].
+#E277 Add Service: Failed to secure service &quot;p2psvc&quot;. Error 1208: An extended error has occurred.
+#E033 Error 1208: An extended error has occurred.
+#E275 Error while installing services. Error 1208: An extended error has occurred.
+</code></pre>
+
+<p>Очевидно, что что-то не так было с установкой службы «p2psvc». В реестре не обнаружилось никаких следов службы «p2psvc». Копание в .inf файлах, ответственных за установку этой службы, ясности тоже не прибавило. Однако Sysnternal’овский Process Monitor показал, что происходит во время инсталляции – сервис под именем «p2psvc» регистрируется, как и положено, однако из-за возникающей ошибки все изменения в реестре откатываются назад. Гм.</p>
+
+<p>Попробовал зайти с другого конца – выяснить какую роль играет «sysocmgr.exe». Оказалось что это тот самый инсталлятор, который запускается при нажатии на «Add/Remove Windows Components».</p>
+
+<p><img src="/2007/05/windows_components_wizard.png" alt="Windows Components Wizard" /></p>
+
+<p>Если запустить его без параметров, показывается подсказка по допустимым параметрам командной строки, один из которых, «/f» - вызывает принудительную переустановку компонент «с чистого листа»:</p>
+
+<p><img src="/2007/05/windows_xp_setup.png" alt="Windows XP Setup" /></p>
+
+<p>Казалось бы, вот оно решение, но на появление непонятной ошибки этот ключ никак не повлиял.</p>
+
+<p>В конце концов поиск в Google вывел меня на страницу <a href="http://www.jsifaq.com/SF/Tips/Tip.aspx?id=7558">JSI FAQ</a>. Не могу сказать, что описание проблемы было сильно похоже на мою, но сочетание слов security, setup и сообщения «Setup cannot copy the file» имели к ней прямое отношение. Как ни странно, восстановление secedit.sdb  с помощью вот этой команды помогло:</p>
+
+<pre><code class="language-no-highlight">esentutl /p %SystemRoot%\\security\\database\\secedit.sdb
+</code></pre>
+
+<p>И после перезагрузки установка прошла как по маслу…</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2007/05/20/186/";
+        this.page.title = "An extended error has occurred";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

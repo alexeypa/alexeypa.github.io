@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Disassembler on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/disassembler/</link>
+    <description>Recent content in Disassembler on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 31 Jul 2008 22:51:40 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/disassembler/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>diStorm64 disassembler</title>
+      <link>https://blog.not-a-kernel-guy.com/2008/07/31/323/</link>
+      <pubDate>Thu, 31 Jul 2008 22:51:40 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2008/07/31/323/</guid>
+      <description>Наткнулся на хороший open source disassembler, понимающий и 80x86 и amd64, и распространяемый под BSD лицензией: diStorm64.
+ diStorm is a binary stream disassembler. It&amp;rsquo;s capable of disassembling 80x86 instructions in 64 bits (AMD64, X86-64) and both in 16 and 32 bits. In addition, it disassembles FPU, MMX, SSE, SSE2, SSE3, SSSE3, SSE4, 3DNow! (w/ extensions), new x86-64 instruction sets, VMX, and AMD&amp;rsquo;s SVM! diStorm was written to decode quickly every instruction as accurately as possible.</description>
+    </item>
+    
+  </channel>
+</rss>

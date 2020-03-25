@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Расширение для WinDbg: «Outline»</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Расширение для WinDbg: «Outline»</h1>
+    <span class="post-date">May 16, 2009 &middot; <a href="https://blog.not-a-kernel-guy.com/2009/05/16/512/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0">Отладка</a><a class="label" href="/tags/outline">Outline</a>
+    </span>
+    <p>Мне частенько приходится разбираться с отладкой исключений, произошедших из-за порчи стека или на фоне порчи стека. В таких случаях обычно приходится трассировать стек вручную. Дело это муторное, поэтому я решил написать расширение для WinDbg, несколько облегчающее эту задачу.</p>
+
+<p>На данный момент реализована только одна команда «!fnframe». Она показывает структуру стекового фрейма для произвольной функции: локальные переменные и параметры, сохраненные регистры, указатель фрейма. На x64 помимо символов используется сгенерированная компилятором <a href="http://msdn.microsoft.com/en-us/library/ms794374.aspx">unwind information</a>, что обеспечивает большую достоверность результатов. Поддержка Itanium пока в планах.</p>
+
+<p>Скачать:</p>
+
+<ul>
+<li><p><a href="/outline/1.0.1/x86/outline.dll">Outline 1.0.1 x86</a> (SHA1: 6dd2edb49940ac4d48016e49fb5c6ffe4d53d56d)</p></li>
+
+<li><p><a href="/outline/1.0.1/x64/outline.dll">Outline 1.0.1 x64</a> (SHA1: 47b6c5e9b63c783126cc823e979a8d2882c6492f)</p></li>
+</ul>
+
+<p>Примеры:</p>
+
+<p>x86 сборка Far Manager 2.0 с включенным frame pointer omission:</p>
+
+<pre><code class="language-no-highlight">0:000:x86&gt; .load outline
+0:000:x86&gt; !fnframe far!wmain
+ Start of frame               --&gt; -0x78
+   -0x78   Saved registers      : 0x10 bytes
+   -0x64   strViewName          : class UnicodeString, 0x4 bytes
+   -0x60   strEditName          : class UnicodeString, 0x4 bytes
+   -0x5c   StartLine            : int, 0x4 bytes
+   -0x58   CntDestName          : int, 0x4 bytes
+   -0x54   DestNames            : class UnicodeString [2], 0x8 bytes
+   -0x4c   RectoreConsole       : int, 0x4 bytes
+   -0x48   StartChar            : int, 0x4 bytes
+   -0x44   __ConsoleRestore     : class TConsoleRestore, 0x24 bytes
+   -0x20   buf                  : char [15], 0xf bytes
+   +0x0    Return address       : 0x4 bytes
+   +0x4    Argc                 : int, 0x4 bytes
+   +0x8    Argv                 : wchar_t **, 0x4 bytes
+ End of frame                 --&gt; +0xc
+0:000:x86&gt;
+</code></pre>
+
+<p>x64 сборка того же Far Manager 2.0:</p>
+
+<pre><code class="language-no-highlight">0:000&gt; !fnframe far!wmain
+ Start of frame               --&gt; +0x0
+   +0x0    rcx home             : 0x8 bytes
+   +0x8    rdx home             : 0x8 bytes
+   +0x10   r8 home              : 0x8 bytes
+   +0x18   r9 home              : 0x8 bytes
+   +0x40   strEditName          : class UnicodeString, 0x8 bytes
+   +0x48   strViewName          : class UnicodeString, 0x8 bytes
+   +0x50   DestNames            : class UnicodeString [2], 0x10 bytes
+   +0x60   __ConsoleRestore     : class TConsoleRestore, 0x30 bytes
+   +0x98   buf                  : char [15], 0xf bytes
+   +0xb0   r15                  : 0x8 bytes
+   +0xb8   r14                  : 0x8 bytes
+   +0xc0   r13                  : 0x8 bytes
+   +0xc8   r12                  : 0x8 bytes
+   +0xd0   rdi                  : 0x8 bytes
+   +0xd8   rsi                  : 0x8 bytes
+   +0xe0   rbp                  : 0x8 bytes
+   +0xe8   Return address       : 0x8 bytes
+ End of frame                 --&gt; +0xf0
+   +0xf0   Argc                 : int, 0x4 bytes
+   +0xf8   Argv                 : wchar_t **, 0x8 bytes
+   +0x100  rbx                  : 0x8 bytes
+0:000&gt;
+</code></pre>
+
+<p>Публичные символы не описывают ntdll!KiUserExceptionDispatcher (точка входа диспетчера исключений пользовательского режима), но включенная в бинарный файл unwind information дает кое-какое представление об этой функции:</p>
+
+<pre><code class="language-no-highlight">0:000&gt; !fnframe ntdll!KiUserExceptionDispatcher
+ Start of frame               --&gt; +0x0
+   +0x0    rcx home             : 0x8 bytes
+   +0x8    rdx home             : 0x8 bytes
+   +0x10   r8 home              : 0x8 bytes
+   +0x18   r9 home              : 0x8 bytes
+   +0x90   rbx                  : 0x8 bytes
+   +0xa0   rbp                  : 0x8 bytes
+   +0xa8   rsi                  : 0x8 bytes
+   +0xb0   rdi                  : 0x8 bytes
+   +0xd8   r12                  : 0x8 bytes
+   +0xe0   r13                  : 0x8 bytes
+   +0xe8   r14                  : 0x8 bytes
+   +0xf0   r15                  : 0x8 bytes
+   +0x200  xmm6                 : 0x10 bytes
+   +0x210  xmm7                 : 0x10 bytes
+   +0x220  xmm8                 : 0x10 bytes
+   +0x230  xmm9                 : 0x10 bytes
+   +0x240  xmm10                : 0x10 bytes
+   +0x250  xmm11                : 0x10 bytes
+   +0x260  xmm12                : 0x10 bytes
+   +0x270  xmm13                : 0x10 bytes
+   +0x280  xmm14                : 0x10 bytes
+   +0x290  xmm15                : 0x10 bytes
+   +0x590  Machine frame        : 0x28 bytes
+ End of frame                 --&gt; +0x5b8
+0:000&gt;
+</code></pre>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2009/05/16/512/";
+        this.page.title = "Расширение для WinDbg: «Outline»";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wdk on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/wdk/</link>
+    <description>Recent content in Wdk on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 28 Oct 2010 01:37:35 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/wdk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Обход некоторых ограничений утилиты BUILD</title>
+      <link>https://blog.not-a-kernel-guy.com/2010/10/28/906/</link>
+      <pubDate>Thu, 28 Oct 2010 01:37:35 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2010/10/28/906/</guid>
+      <description>&lt;p&gt;Система сборки в &lt;a href=&#34;http://www.microsoft.com/whdc/devtools/WDK/default.mspx&#34;&gt;Windows Driver Kit&lt;/a&gt; базируется на &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ff542351(VS.85).aspx&#34;&gt;утилите BUILD&lt;/a&gt;. Эта утилита сканирует структуру проектов, отслеживает зависимости (к сожалению далеко не все) и подготавливает окружение для запуска &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/dd9y37ha.aspx&#34;&gt;NMAKE&lt;/a&gt;, который, собственно, и выполняет всю черновую работу по сборке. К сожалению, BUILD создавался и развивался по принципу «так получилось», исключительно эволюционным путем – как средство сборки исходников Windows. Так что эта утилита некоторыми неудобными ограничениями.&lt;/p&gt;
+
+&lt;p&gt;Одно из них – полное непонимание переменных и директив препроцессора.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

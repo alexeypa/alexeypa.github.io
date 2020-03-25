@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Безопасность on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C/</link>
+    <description>Recent content in Безопасность on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Tue, 30 Nov 2010 23:07:22 -0800</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Рекомендации NASA по написанию безопасных программ</title>
+      <link>https://blog.not-a-kernel-guy.com/2010/11/30/938/</link>
+      <pubDate>Tue, 30 Nov 2010 23:07:22 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2010/11/30/938/</guid>
+      <description>&lt;p&gt;Читаю местами увлекательный документ «&lt;a href=&#34;http://www.hq.nasa.gov/office/codeq/doctree/871913.pdf&#34;&gt;NASA Software Safety Guidebook&lt;/a&gt;». Документ содержит рекомендации по написанию безопасных программ. Тех самых, которые в космос летают. &lt;a href=&#34;http://lurkmore.ru/%D0%A7%D1%83%D1%82%D1%8C_%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5_%D1%87%D0%B5%D0%BC&#34;&gt;Чуть менее чем всё&lt;/a&gt; из того, что там написано применимо и для обычного софта.&lt;/p&gt;
+
+&lt;p&gt;Хотя есть и космический экстрим, конечно. Например, идет речь о мультипрограммировании (N-Version Programming). Одна и та же функциональность реализуется разными способами. Если разные версии возвращают одинаковый результат, то всё в порядке. Если результаты не совпадают, то используется голосование, чтобы определить какой результат наиболее достоверный. Для защиты от одного сбоя нужно написать три разных реализации; от двух – пять.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Проверка параметров функции</title>
+      <link>https://blog.not-a-kernel-guy.com/2008/07/21/321/</link>
+      <pubDate>Mon, 21 Jul 2008 23:17:55 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2008/07/21/321/</guid>
+      <description>&lt;p&gt;Предыдущий &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2008/06/30/316/&#34;&gt;пост про параметры функций&lt;/a&gt; вызвал на удивление много споров, так что я еще покручусь немного вокруг этой темы. Заранее прошу прощения у тех, кому эта тема оскомину набила. Итак, как следует проверять параметры функции? Вернее даже так, что нужно и, самое главное, что не нужно проверять?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Анализ: насколько опасны вирусы, использующие аппаратную поддержку виртуализации</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/07/02/205/</link>
+      <pubDate>Mon, 02 Jul 2007 11:18:03 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/07/02/205/</guid>
+      <description>&lt;p&gt;Статья полугодовой давности: &lt;a href=&#34;http://www.microsoft.com/whdc/system/platform/virtual/CPUVirtExt.mspx&#34;&gt;CPU Virtualization Extensions: Analysis of Rootkit Issues&lt;/a&gt;. Анализируется степень опасности, которую могут представлять вирусы и прочее вредоносное программное обеспечение, использующие аппаратную поддержку виртуализации, как средство контроля над операционной системой. Интересны выводы:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Прикольные дела творятся...</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/06/29/204/</link>
+      <pubDate>Fri, 29 Jun 2007 21:38:43 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/06/29/204/</guid>
+      <description>&lt;p&gt;Джоанна Рутковска (Joanna Rutkowska), stealth malware researcher из COSEINC Advanced Malware Labs прошлом , а ныне &lt;a href=&#34;http://blogs.zdnet.com/security/?p=199&#34;&gt;одна из двух основателей Invisible Things Labs&lt;/a&gt;, разработала &lt;a href=&#34;http://www.eweek.com/article2/0,1895,1983037,00.asp&#34;&gt;синюю таблетку (Blue Pill) – технологию, позволяющую создавать, как заявляется, 100% необнаруживаемые вирусы&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Список &#34;опасных&#34; функций</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/03/08/159/</link>
+      <pubDate>Thu, 08 Mar 2007 16:29:26 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/03/08/159/</guid>
+      <description>&lt;p&gt;В MSDN добавили &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/bb288454.aspx&#34;&gt;список &amp;ldquo;опасных&amp;rdquo; функций&lt;/a&gt; и рекомендуемых безопасных аналогов.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Цифровая подпись ядерного кода в Vista</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/01/05/129/</link>
+      <pubDate>Fri, 05 Jan 2007 10:43:38 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/01/05/129/</guid>
+      <description>&lt;p&gt;64-х битные версии Vista требуют, чтобы весь код, выполняемый в режиме ядра, был подписан в обязательном порядке. Система просто отказывается загружать неподписанные драйвера. Для 32-х битных версий требования не такие жесткие, тем не менее, Microsoft рекомендует производителям подписывать и 32-х битные версии драйверов. Очевидно, что со временем это требование станет обязательным и для 32-х битных систем. Кроме того, наличие неподписанных драйверов в системе может влиять на возможность проигрывания HD контента (HD-DVD, Blue Ray &amp;amp; Co.).&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

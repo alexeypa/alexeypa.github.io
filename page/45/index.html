@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.54.0" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Алексей Пахунов</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    <ul class="pagination">
+  <li class="active">
+    <span class="fa-lg"><a href="/page/44/" aria-label="Previous">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Новое
+      </a></span>
+  </li>
+
+  <li class="active">
+    <span class="fa-lg">
+      <a href="/post/">
+        Архив
+      </a>
+    <span>
+  </li>
+
+  <li class="active">
+    <span class="fa-lg"><a href="/page/46/" aria-label="Next">
+        Старое&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </a></span>
+  </li>
+</ul>
+
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2007/09/16/238/">Отладка абстрактного синтаксического дерева (AST)</a>
+      </h1>
+      <span class="post-date">Sep 16, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/09/16/238/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/win32.utf8">Win32.Utf8</a>
+      </span>
+      
+      <p>Во время работы над парсером постоянно возникала необходимость посмотреть как выглядит тот или иной кусок дерева или все дерево целиком. Недолго думая, я попробовал выводить его в виде XML, - получилось довольно неплохо.</p>
+
+<p>Исходный код на C:</p>
+
+<pre><code class="language-cpp">typedef void *LPVOID;
+</code></pre>
+
+<p>Дерево, полученное после синтаксического разбора:</p>
+
+<pre><code class="language-xml">&lt;translation_unit&gt;
+ &lt;external_declaration&gt;
+  &lt;declaration&gt;
+   &lt;init_list_declaration&gt;
+    &lt;declaration_specifiers&gt;
+     &lt;declaration_specifier&gt;
+      &lt;storage_class_specifier&gt;
+       typedef
+      &lt;/storage_class_specifier&gt;
+     &lt;/declaration_specifier&gt;
+     &lt;declaration_specifier&gt;
+      &lt;type_specifier&gt;
+       &lt;builtin_type&gt;
+        void
+       &lt;/builtin_type&gt;
+      &lt;/type_specifier&gt;
+     &lt;/declaration_specifier&gt;
+    &lt;/declaration_specifiers&gt;
+    &lt;init_declarator&gt;
+     &lt;declarator&gt;
+      &lt;pointer&gt;
+       *
+      &lt;/pointer&gt;
+      &lt;direct_declarator&gt;
+       LPVOID
+      &lt;/direct_declarator&gt;
+     &lt;/declarator&gt;
+    &lt;/init_declarator&gt;
+   &lt;/init_list_declaration&gt;
+   ;
+  &lt;/declaration&gt;
+ &lt;/external_declaration&gt;
+&lt;/translation_unit&gt;
+</code></pre>
+      <a href="https://blog.not-a-kernel-guy.com/2007/09/16/238/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2007/09/12/237/">Резюме на критику</a>
+      </h1>
+      <span class="post-date">Sep 12, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/09/12/237/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0">Работа</a>
+      </span>
+      
+      <p>По следам новости про <a href="/2007/08/29/232/">очередной набор разработчиков из России, Украины и остальных прилегающих стран</a>.</p>
+
+<p>На днях пришло письмо с просьбой покритиковать резюме, которое предполагалось послать на этот конкурс. Я уже было собирался отправить автора на <a href="http://forum.privet.com/viewforum.php?f=2&amp;sid=3864d972af0cb517aa8fc530c6e09582">forum.privet.com</a> – лучшее, на мой взгляд место, где можно обкатать резюме разработчика на соответствие американским стандартам. Или по крайней мере лучшее русскоязычное место. Но посмотрев на него внимательнее, я решил все-таки сделать это сам.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2007/09/12/237/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2007/09/08/236/">Свежеоткрытый в Ванкувере центр разработки нанимает</a>
+      </h1>
+      <span class="post-date">Sep 8, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/09/08/236/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0">Работа</a><a class="label" href="/tags/immigration">Immigration</a><a class="label" href="/tags/microsoft">Microsoft</a>
+      </span>
+      
+      http://www.microsoft.com/canada/employment/search.mspx:
+Искать по ключевым словам &ldquo;Canada&rdquo;, &ldquo;British Columbia&rdquo;, &ldquo;Vancouver&rdquo;.
+PS: Кстати, а знаете почему этот центр называется &ldquo;Microsoft Canada Development Centre&rdquo;, а не &ldquo;Microsoft Development Centre Canada&rdquo;? Потому что аббревиатура MDCC уже занята: Microsoft Development Center Copenhagen. :-)
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2007/09/06/235/">Спутник приобрести не желаете?</a>
+      </h1>
+      <span class="post-date">Sep 6, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/09/06/235/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81">Космос</a><a class="label" href="/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0">Техника</a><a class="label" href="/tags/%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5">Странное</a>
+      </span>
+      
+      Точнее - &ldquo;Спутник-1&rdquo;. Недорого. Самовывоз. http://cgi.ebay.com/ws/eBayISAPI.dll?ViewItem&item;=160155029889.
+Источник: http://www.astronomy.ru/forum/index.php/topic,30799.0.html
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2007/09/06/234/">Сбор и обработка логов. Пример из жизни</a>
+      </h1>
+      <span class="post-date">Sep 6, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/09/06/234/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8">Технологии</a>
+      </span>
+      
+      <p>Некоторое время назад мне нужно было проанализировать как различные приложения используют один из компонентов системы. Этот компонент (или, скажем , библиотека) предоставляет API из нескольких функций, которые почти никогда не вызываются приложениями напрямую. Вместо этого цепочка вызовов может идёт через довольно пухлого посредника, логика работы которого не до конца понятна и очевидна.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2007/09/06/234/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2007/09/02/233/">Построение абстрактного синтаксического дерева</a>
+      </h1>
+      <span class="post-date">Sep 2, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/09/02/233/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/win32.utf8">Win32.Utf8</a>
+      </span>
+      
+      <p>Алгоритм работы Win32.Utf8 состоит из трех основных шагов:</p>
+
+<ol>
+<li><p>Исходные заголовки пропускаются через стандартный препроцессор;</p></li>
+
+<li><p>Полученный код парсится и трансформируется в дерево объектов, описывающее функции, типы и связи между ними;</p></li>
+
+<li><p>Полученное дерево используется для генерации кода по заданным шаблонам.</p></li>
+</ol>
+
+<p>На данный момент я работаю над вторым этапом. Цель – построенное дерево должно быть компактным, его структура должна облегчать последующий анализ во время генерации кода. В тоже время дерево должно включать всю информацию необходимую для генерации корректного кода.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2007/09/02/233/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2007/08/29/232/">Microsoft will be recruiting candidates from Russia/Ukraine in October</a>
+      </h1>
+      <span class="post-date">Aug 29, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/08/29/232/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0">Работа</a><a class="label" href="/tags/microsoft">Microsoft</a>
+      </span>
+      
+      <p><strong>Options are Good.</strong>
+<strong>In life. And in your career.</strong></p>
+
+<p><strong>What fuels your passion?</strong></p>
+
+<p>Whether you are just about to receive your diploma from University or have been in the industry for years, we know deciding where to start your career or how to move to the next opportunity can be as nerve-wracking as it is exciting. Maybe you don’t know exactly what you want to do. The good thing is, at Microsoft, you have lots of options. Nowhere else will you have such a variety of products and technologies to get behind—or so many career paths to choose from. You’ll learn from people who have been in the industry for over 30 years. And most of all, you’ll have the resources to reach people all over the world with your work. It’s about taking your career as far as you want it to go—in any direction you choose.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2007/08/29/232/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2007/08/28/231/">Как собрать DParser for Python с помощью Visual C&#43;&#43; 2005?</a>
+      </h1>
+      <span class="post-date">Aug 28, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/08/28/231/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a><a class="label" href="/tags/win32.utf8">Win32.Utf8</a>
+      </span>
+      
+      <p>Существует два способа собрать DParser for Python под Windows:</p>
+
+<ol>
+<li><p>Легкий – воспользоваться GCC из MinGW и немного пошаманить;</p></li>
+
+<li><p>Интересный – попытаться сделать тоже самое с помощью Visual C++ 2005.</p></li>
+</ol>
+
+<p>Естественно, что я выбрал второй вариант. :-)</p>
+
+<p><em>(На самом деле причина довольно прозаична – не хотелось собирать один проект двумя разными компиляторами).</em></p>
+      <a href="https://blog.not-a-kernel-guy.com/2007/08/28/231/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2007/08/28/230/">Boost переехал в Subversion репозиторий</a>
+      </h1>
+      <span class="post-date">Aug 28, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/08/28/230/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/boost">Boost</a><a class="label" href="/tags/c/c&#43;&#43;">C/C&#43;&#43;</a>
+      </span>
+      
+      Я как-то упустил из виду. Похоже, что Boost наконец-то переехал в Subversion репозиторий, а баги теперь ведутся в Trac. Давно пора.
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2007/08/26/229/">Ракурс</a>
+      </h1>
+      <span class="post-date">Aug 26, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/08/26/229/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5">Странное</a>
+      </span>
+      
+      Вопрос на засыпку - что это?
+
+Upd: ответ.
+      
+      
+    </div>
+    
+    <ul class="pagination">
+  <li class="active">
+    <span class="fa-lg"><a href="/page/44/" aria-label="Previous">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Новое
+      </a></span>
+  </li>
+
+  <li class="active">
+    <span class="fa-lg">
+      <a href="/post/">
+        Архив
+      </a>
+    <span>
+  </li>
+
+  <li class="active">
+    <span class="fa-lg"><a href="/page/46/" aria-label="Next">
+        Старое&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </a></span>
+  </li>
+</ul>
+
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

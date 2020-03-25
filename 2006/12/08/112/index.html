@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Загадочный каталог “%SystemRoot%\Installer”</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Загадочный каталог “%SystemRoot%\Installer”</h1>
+    <span class="post-date">Dec 8, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/12/08/112/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/windows">Windows</a>
+    </span>
+    <p>Продолжаем <a href="/2006/12/05/109/">начатое ранее расследование</a>. Зачем нужен каталог “%SystemRoot%\Installer”? Поверхностное гугление показало, что я далеко не первый, кто задает такой вопрос и не получает ответ. Пришлось выяснять самому.</p>
+
+<p>В этом каталоге можно найти следующее:</p>
+
+<ol>
+<li><p>Некий “patch cache” (если судить по имени каталога “$PatchCache$”). Непонятно что это такое. В моем случае этом каталоге есть подкаталог “Managed”. Это может означать как то, что каталог имеет отношение к .NET так и то, что может существовать и другой подкаталог “Unmanaged”;</p></li>
+
+<li><p>Иконки, которые хранятся в произвольно именованных файлах в каталогах с именами вида “{CLSID}”. Часть иконок представлена .ico файлами, часть упакована в бинарные файлы в формате PE;</p></li>
+
+<li><p>Много .msi и .msp файлов с именами в виде шестнадцатеричных чисел;</p></li>
+
+<li><p>Несколько .tmp и других “случайных” файлов. Похоже, что этот каталог по совместительству может использоваться в качестве каталога временных файлов во время инсталляции.</p></li>
+</ol>
+
+<p>Часть странностей с иконками можно объяснить статьей из MSDN <a href="http://msdn2.microsoft.com/en-us/library/aa369210.aspx">Icon Table</a>:</p>
+
+<blockquote>
+<p>Icon files that are associated strictly with file extensions or CLSIDs can have any extension, such as .ico. <strong>However, Icon files that are associated with shortcuts must be in the EXE binary format and must be named such that their extension matches the extension of the target.</strong> The shortcut will not work if this rule is not followed. For example, if a shortcut is to point to a resource having the key file Red.bar, then the icon file must also have the extension .bar. Multiple icons can be stuffed into the same icon file as long as all of the target files have the same extension.</p>
+</blockquote>
+
+<p>В случае если иконка используется для создания ярлыка, расширение файла с иконкой должно совпадать с расширением файла, на который указывает ярлык. Это ограничение связано с механизмом <a href="http://msdn2.microsoft.com/en-us/library/aa367548.aspx">рекламы (Advertisement)</a>, используемом для реализации установки по требованию. Если расширения не будут совпадать, то для рекламируемого компонента будет показывается неверное контекстное меню (см. <a href="http://msdn2.microsoft.com/en-us/library/aa368981.aspx">Validation ICE50</a>).</p>
+
+<p>Я попытался создать простую инсталляцию, чтобы посмотреть, как именно иконки попадают в каталог “%SystemRoot%\Installer”. Взяв за основу <a href="/2006/10/25/90/">инсталляцию ShellLib</a>, добавил создание ярлыка в меню Start:</p>
+
+<pre><code>&lt;Product Name='ShellLib x64 1.0' … &gt;
+  …
+  &lt;Icon Id=&quot;appicon&quot; SourceFile=&quot;appicon.ico&quot;/&gt;
+  …
+    &lt;File Id='ShellLib64.DLL' …&gt;
+      &lt;Shortcut 
+        Id=&quot;Startmenu_ShellLib64.DLL&quot; 
+        Directory=&quot;ProgramMenuDir&quot; 
+        Name=&quot;ShellLib64.dll&quot; 
+        LongName=&quot;ShellLib64.dll&quot; 
+        WorkingDirectory='INSTALLDIR'
+        Icon=&quot;appicon&quot; 
+      /&gt;            
+    &lt;/File&gt;
+  …
+</code></pre>
+
+<p>После установки “appicon.ico” нашелся в каталоге “%APPDATA%\Microsoft\Installer{619B4162-1586-4FEE-B4BC-0A069B3CA9DA} ”. Из этого можно сделать выводы что:</p>
+
+<ul>
+<li><p>во-первых, per-user инсталляции используют пользовательский каталог “%APPDATA%\Microsoft\Installer”;</p></li>
+
+<li><p>во-вторых, в интересующий нас каталог иконки попадают из таблицы иконок (<a href="http://msdn2.microsoft.com/en-us/library/aa369210.aspx">Icon Table</a>) в .msi или её <a href="http://wix.sourceforge.net/manual-wix2/wix_xsd_icon.htm">WiX эквивалента</a> – списка элементов Icon.</p></li>
+</ul>
+
+<p>В качестве файла иконки можно указать .exe, .dll или любой другой файл в PE формате:</p>
+
+<pre><code>&lt;Icon Id=&quot;appicon&quot; SourceFile=&quot;appicon.exe&quot; /&gt;
+</code></pre>
+
+<p>В этом случае ссылка на иконку должна дополнительно включать индекс иконки:</p>
+
+<pre><code>&lt;Shortcut … Icon=&quot;appicon&quot; IconIndex=”1” /&gt;
+</code></pre>
+
+<p>Более того, в качестве файла иконки можно указать любой файл. Windows Installer <strong>просто копирует</strong> указанный файл в каталог “%SystemRoot%\Installer” <strong>без изменений</strong>. Это не означает, впрочем, что в качестве хранилища иконок нужно указывать .exe приложения. Обычно для этого используется специально созданный .exe. Чтобы убедиться в этом, достаточно сравнить файл приложения с файлом иконки. Вышеупомянутая статья <a href="http://msdn2.microsoft.com/en-us/library/aa369210.aspx">Icon Table</a> прямо указывает на это:</p>
+
+<blockquote>
+<p>The icons for shortcuts, file extensions, and CLSIDs must be stored in files that are separate from the target file itself. This is required because the installer should copy only the small icon files to the user&rsquo;s machine when advertising the resource. A developer of an installation package therefore needs to author separate files containing only the icons. These icon files are then stored as binary data in the Icon table.</p>
+</blockquote>
+
+<p>Теперь попробуем разобраться с .msi файлами с именами в виде шестнадцатеричных чисел. Первое наблюдение – новый .msi файл добавляется после каждой инсталляции. Декомпиляция с помощью <a href="http://wix.sourceforge.net/manual-wix2/dark.htm">dark.exe</a> подтвердила догадку - .msi файлы в каталоге “%SystemRoot%\Installer” были модифицированными версиями оригинальных файлов из инсталляции. Похоже, что модификация состояла в том, что из модифицированных версий были исключены все установочные файлы (.cab). Однако все custom actions, бинарные файлы и все остальные установки остались на месте. В результате, размер .msi файла может быть довольно велик. Максимальный размер в моем случае – 17 MB.</p>
+
+<p>Зачем нужны эти файлы? Они используются для деинсталляции и восстановления установленных приложений.</p>
+
+<p>Аналогичная ситуация наблюдается с .msp файлами. Если мне не изменяет память, расширение .msp зарезервировано для обновлений. Учитывая, что обновления ставятся каждый месяц, их должно накопиться приличное количество.</p>
+
+<p>В заключение, пройдемся по пунктам “обвинения” (шучу, шучу :-) ):</p>
+
+<blockquote>
+<p>“c:\WINDOWS\Installer” - если имеет отношения к Add/Remove Programs то весьма косвенное, и единственное применение этого каталога обнаруженное мной в следующем:
+ярлычки на программы установленные Windows Installer’ом завянные на вызов конкретных exe файлов ссылаются не на иконки этих exe файлов, а на иконки</p>
+</blockquote>
+
+<p>К Add/Remove Programs содержимое каталога (.msi и .msp файлы) относится напрямую. При удалении .msi файлов возникают проблемы с деинсталляцией приложений (если верить тому, что находит Гугл).</p>
+
+<blockquote>
+<p>просто копий тех же exe файлов (адрес см ниже) но с другим именем, которые конечно не могут работать отдельно от библиотек, которых нет рядом (откровенная профанация)</p>
+</blockquote>
+
+<p>На самом деле, эти файлы должны содержать только иконки, что, впрочем, зависит от разработчика инсталляции. Насколько я могу судить обычно так и есть.</p>
+
+<blockquote>
+<p>Очень странен сам способ хранения в каталогах файловой системы и без того неэффективной с длинными названиями соответствующими CLSID
+Наверно такое трюкачество нужно, чтобы показать, что если вы удалите этот “очень важный” каталог, то у Вас … ОЙ пропадут иконки …</p>
+</blockquote>
+
+<p>Отдельные копии иконок нужны для того, чтобы работала “установка по требованию”. В этом случае ярлык должен показывать правильную иконку даже в том случае, если файлы рекламируемого компонента не установлены вообще.</p>
+
+<blockquote>
+<p>получается такой каталог “копий иконок” обычно мегабайт на 300</p>
+</blockquote>
+
+<p>При большом количестве установленных программ и обновлений системы – да. На моей машине размер каталога 683 MB. Размер “иконочной” части – 7 MB. Количество установленных программ и обновлений – 219 штук (обновлений действительно очень много). По-моему вполне разумные цифры.</p>
+
+<p>Вопросы? :-)</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2006/12/08/112/";
+        this.page.title = "Загадочный каталог “%SystemRoot%\\Installer”";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

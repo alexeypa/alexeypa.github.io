@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>AppCompat</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">AppCompat</h1>
+    <span class="post-date">Dec 8, 2009 &middot; <a href="https://blog.not-a-kernel-guy.com/2009/12/08/703/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D1%81%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C">совместимость</a><a class="label" href="/tags/windows">Windows</a><a class="label" href="/tags/wow64">Wow64</a>
+    </span>
+    <p>Словечко «AppCompat», появившееся в моем лексиконе за время работы над <a href="/2009/06/09/571/">Wow64</a>, обозначает множество вещей. Чаще всего - геморрой. Иногда - великий геморрой. Происходит оно от «application compatibility» - т.е. совместимость OS с приложениями, она же - «обратная совместимость».</p>
+
+<p>Почему геморрой? Да потому, что эта совместимость, - она только для пользователей операционной системы полезна. Для разработчика OS эта совместимость хуже вреда. Скажем, исправляете вы ошибку в обработке некорректных параметров той или иной функции Win32. Как вы думаете, что случится после того, как исправление пройдёт все тесты и будет послано в репозиторий кода? Через пару недель-месяцев с вероятностью сильно отличной от нуля вы получите письмо от <a href="http://channel9.msdn.com/shows/Developer+Meet+Server/Application-Compatibility-Debugging/">Gov Maharaj</a>, что это исправление ломает то или иное приложение. Или хуже – ломает некую библиотеку, которой пользуется множество приложений. Да, это приложение сует непонятно что в параметры этой функции. Да, оно никогда не должно было работать. Но работало – значит будь добр, исправь. Бывает, конечно, и наоборот, OS делает непонятно что, и приложения работали просто чудом.</p>
+
+<p>Я тут собрал небольшую коллекцию багов, найденных примерно вышеописанным образом в процессе работы над Windows 7:</p>
+
+<ol>
+<li><p>Некий софт вызывал функцию <a href="http://msdn.microsoft.com/en-us/library/ms724859%28VS.85%29.aspx">RegEnableReflectionKey</a> в ситуации, когда она не делала ничего, просто возвращая ERROR_SUCCESS. Собственно говоря, она и не могла ничего сделать, даже если бы попыталась. Софт, тем не менее, тщательно проверял код возврата и отказывался работать в случае, если функция возвращала ошибку.</p></li>
+
+<li><p>Некий антивирус поломался, когда в один прекрасный момент изменился регистр букв в имени ключа «HKEY_LOCAL_MACHINE\Software\Wow6432Node». Пришлось вернуть прежнее начертание.</p></li>
+
+<li><p>Оригинальная версия механизма <a href="http://msdn.microsoft.com/en-us/library/aa384232%28VS.85%29.aspx">Registry Value Redirection</a> (замена «%ProgramFiles%» на «%ProgramFiles(x86)%») использовала чувствительное к регистру сравнение строк. Когда это было замечено и исправлено выяснилось, что несколько разных приложений используют строки другого регистра и, тем самым, обходят перенаправление. И как только перенаправление заработало «как положено» все очень сильно поломалось.</p></li>
+
+<li><p>Некий софт указывал оба флага <a href="http://msdn.microsoft.com/en-us/library/aa384129%28VS.85%29.aspx">KEY_WOW64_32KEY и KEY_WOW64_64KEY</a> при вызове <a href="http://msdn.microsoft.com/en-us/library/ms724844%28VS.85%29.aspx">RegCreateKeyEx</a>. Зачем и почему – не понятно. Но программа очень обиделась, когда функция начала возвращать ошибку. К счастью, в этом случае было проще исправить само приложение.</p></li>
+
+<li><p>В один не столь прекрасный момент, выяснилось, что функции <a href="http://msdn.microsoft.com/en-us/library/ms724844%28VS.85%29.aspx">RegCeateKeyEx</a> и <a href="http://msdn.microsoft.com/en-us/library/ms724897%28VS.85%29.aspx">RegOpenKeyEx</a> по разному реагируют на ведущий слеш в имени ключа. В зависимости от версии OS, разрядности приложения, комбинации <a href="http://msdn.microsoft.com/en-us/library/aa384129%28VS.85%29.aspx">флагов KEY_WOW64_XXX</a> и ветки реестра, где создавался ключ, можно было получить разный результат. К сожалению, к моменту, когда это было обнаружено, было уже поздно что-либо менять в коде реестра.</p></li>
+
+<li><p>Обнаружилось, что создатели некоторых программ изобретательно подошли к регистрации COM объектов в реестре во время инсталляции. <a href="/2007/04/13/172/">COM объекты регистрируются</a> в «HKEY_CLASSES_ROOT\CLSID». Этот ключ «перенаправляется» в Wow64, т.е. существуют две версии этого ключа 32-х и 64-х разрядная, которые синхронизируются между собой с помощью <a href="http://msdn.microsoft.com/en-us/library/aa384235%28VS.85%29.aspx">механизма Registry Reflection</a>. Так вот, содержимое некоторых из ключей создавалось по кусочкам, скажем «LocalServer32» брался из .msi и клался в 32-х битный ключ, а «ProgID» дописывался позднее из Custom Action в 64-х разрядный ключ. Это худо-бедно работало, пока из Windows 7 с корнем не выкорчевали Registry Reflection.</p></li>
+
+<li><p>Однажды  мне пришел баг, который был вызван тем, что строка, передаваемая в другой компонент Windows в формате <a href="http://msdn.microsoft.com/en-us/library/aa380518%28VS.85%29.aspx">UNICODE_STRING</a>, не завершалась нулем. Но позвольте, заметил я, UNICODE_STRING и не должен завершаться нулем! Но ведь раньше этот конкретный UNICODE_STRING завершался нулем, резонно возразили владельцы компонента. Пришлось вернуть ноль на место.</p></li>
+</ol>
+
+<p>Самое неприятное свойство подобных ошибок заключается в том, что исправлять приходится как раз «правильный» код. «Неправильный» код либо невозможно исправить (код уже выпущен, приложение не наше, разумного способа обновить инсталляции на дисках пользователей нет), либо сложнее исправить (например, этот код имеет гораздо больше зависимостей, которые нельзя протестировать в разумные сроки).</p>
+
+<p>Вот так и живем…</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2009/12/08/703/";
+        this.page.title = "AppCompat";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

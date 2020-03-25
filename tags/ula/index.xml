@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ula on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/ula/</link>
+    <description>Recent content in Ula on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Tue, 13 May 2014 08:57:43 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/ula/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>... и не писай в мой горшок!</title>
+      <link>https://blog.not-a-kernel-guy.com/2014/05/13/1654/</link>
+      <pubDate>Tue, 13 May 2014 08:57:43 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2014/05/13/1654/</guid>
+      <description>&lt;p&gt;Дмитрий Рогозин &lt;a href=&#34;http://rt.com/news/158680-russia-usa-rocket-gps/&#34;&gt;погрозил запретом использования российских двигателей для военных запусков в США&lt;/a&gt;. Мужики из United Launch Alliance, наверное, проклинают тот день, когда связялись с RD-180. Вдвойне жалко, что движок хороший. Может Роскосмос ему применение найдет таки?&lt;/p&gt;
+
+&lt;p&gt;Тем временем в замке у шефа:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/wvjmVVq.jpg&#34; alt=&#34;Elon Musk is an evil genius&#34; /&gt;Elon Musk is an evil genius&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Дележка EELV пирога</title>
+      <link>https://blog.not-a-kernel-guy.com/2014/04/03/1597/</link>
+      <pubDate>Thu, 03 Apr 2014 22:17:36 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2014/04/03/1597/</guid>
+      <description>&lt;p&gt;До сих пор все запуски по &lt;a href=&#34;http://en.wikipedia.org/wiki/Evolved_Expendable_Launch_Vehicle&#34;&gt;программе EELV&lt;/a&gt; выполняет &lt;a href=&#34;http://www.ulalaunch.com/site/default.shtml&#34;&gt;United launch Alliance (ULA)&lt;/a&gt;. SpaceX, понятное дело, тоже хочет откусить кусок этого пирога. Еще в 2012 году воздушные силы собирались определить до 14 запусков, которые будут выполнятся на конкурсной основе начиная с 2015. Однако согласно текущему проекту бюджета воздушных сил только 7 запусков в 2015-2017 годах планируется выполнить на конкурсной основе.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

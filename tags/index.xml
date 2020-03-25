@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/</link>
+    <description>Recent content in Tags on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Tue, 18 Dec 2007 23:33:41 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>.Net</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/.net/</link>
+      <pubDate>Tue, 18 Dec 2007 23:33:41 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/.net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>64bit</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/64bit/</link>
+      <pubDate>Mon, 05 Apr 2010 22:26:10 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/64bit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Amd64</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/amd64/</link>
+      <pubDate>Thu, 25 Mar 2010 22:50:47 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/amd64/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apple</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/apple/</link>
+      <pubDate>Mon, 28 Jun 2010 22:56:01 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/apple/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Arm</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/arm/</link>
+      <pubDate>Wed, 05 Jan 2011 16:04:44 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/arm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Autobahn</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/autobahn/</link>
+      <pubDate>Wed, 13 Oct 2010 21:27:12 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/autobahn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bcdedit</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/bcdedit/</link>
+      <pubDate>Tue, 20 May 2008 22:43:16 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/bcdedit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bfr</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/bfr/</link>
+      <pubDate>Mon, 17 Sep 2018 22:47:28 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/bfr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blue Origin Космос</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/blue-origin-%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81/</link>
+      <pubDate>Sat, 06 Aug 2016 10:14:07 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/blue-origin-%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Boost</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/boost/</link>
+      <pubDate>Tue, 28 Aug 2007 08:59:56 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/boost/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Boost.build</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/boost.build/</link>
+      <pubDate>Mon, 09 Mar 2009 13:22:01 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/boost.build/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Build</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/build/</link>
+      <pubDate>Wed, 02 Apr 2014 21:48:25 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/build/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/c&#43;&#43;/</link>
+      <pubDate>Sun, 30 Jul 2017 13:03:30 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C/C&#43;&#43;</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/c/c&#43;&#43;/</link>
+      <pubDate>Sun, 15 May 2011 22:10:44 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/c/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>California</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/california/</link>
+      <pubDate>Sun, 24 Jul 2016 12:04:50 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/california/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Channel 9</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/channel-9/</link>
+      <pubDate>Wed, 09 Jul 2008 08:26:20 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/channel-9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chrome</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/chrome/</link>
+      <pubDate>Mon, 25 Jul 2016 22:09:50 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/chrome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chromium</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/chromium/</link>
+      <pubDate>Tue, 05 Feb 2013 01:12:53 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/chromium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cmd.exe</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/cmd.exe/</link>
+      <pubDate>Sun, 15 Jun 2008 17:26:36 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/cmd.exe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code Patching</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/code-patching/</link>
+      <pubDate>Mon, 04 Aug 2008 23:11:46 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/code-patching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Com</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/com/</link>
+      <pubDate>Wed, 18 Apr 2007 10:57:42 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/com/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Crater Lake</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/crater-lake/</link>
+      <pubDate>Fri, 22 Apr 2011 08:54:29 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/crater-lake/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Directx</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/directx/</link>
+      <pubDate>Mon, 17 Aug 2009 09:17:37 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/directx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Disassembler</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/disassembler/</link>
+      <pubDate>Thu, 31 Jul 2008 22:51:40 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/disassembler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ecv</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/ecv/</link>
+      <pubDate>Sat, 10 Oct 2009 20:37:24 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/ecv/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

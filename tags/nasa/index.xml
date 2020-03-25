@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nasa on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/nasa/</link>
+    <description>Recent content in Nasa on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 17 Feb 2018 21:00:54 -0800</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/nasa/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Уроки разработки полетного софта</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/02/17/fsw-lessons/</link>
+      <pubDate>Sat, 17 Feb 2018 21:00:54 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/02/17/fsw-lessons/</guid>
+      <description>&lt;p&gt;Часто, когда речь заходит про космический софт, можно слышать &amp;ldquo;ну уж там-то код
+компилируется со всеми предупреждениями&amp;rdquo;, или &amp;ldquo;ну уж там-то наверняка запускается
+статический анализатор кода и все ошибки исправляются&amp;rdquo;, или &amp;ldquo;ну уж там то тесты
+покрывают код на 100%&amp;ldquo;. Как вы скорее всего уже догадались рая нет. Вернее, рай
+в планах был, но из-за превышения сметы успели достроить только ад. К счастью,
+костры успели развести только под половиной котлов, поскольку часть дров
+заменили бетонными шпалами, а расположение котлов забыли задокументировать.&lt;/p&gt;
+
+&lt;p&gt;Сайт &lt;a href=&#34;https://llis.nasa.gov&#34;&gt;NASA Lessons Learned&lt;/a&gt; полон таких историй. Сегодня мы пройдемся по
+результатам исследования &lt;a href=&#34;http://aisel.aisnet.org/cgi/viewcontent.cgi?article=1671&amp;amp;context=amcis2009&#34;&gt;Flight Software Engineering Lessons&lt;/a&gt; за авторством
+Ronald Kirk Kandt опубликованное на конференции AMCIS 2009 (Americas Conference
+on Information Systems). Автор исследования просуммировал результаты других
+работ, посвященных трудностям процесса разработки программного обеспечения, а
+также результаты расследования аварий реальных космических аппаратов.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Потеря связи с зондом Deep Impact в 2013 году</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/02/14/epoxi/</link>
+      <pubDate>Wed, 14 Feb 2018 20:15:47 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/02/14/epoxi/</guid>
+      <description>&lt;p&gt;12 января 2005 года с мыса Канаверал стартовал зонд Deep Impact, созданный для
+изучение внутреннего состава кометы 9P/Темпеля. Зонд достиг кометы в июле 2005
+года, после чего разделился на импактор и пролетную часть. 4 июля 2005 года
+370 килограммовый импактор успешно столкнулся с ядром кометы на скорости около
+10.3 км/с, выбросив в космос здоровенное облако пыли:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/3/3e/Deep_Impact_HRI.jpeg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/Deep_Impact_HRI.jpeg&#34; alt=&#34;&#34; title=&#34;Столкновение импактора с ядром кометы 9P/Темпеля&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Согласно измерениям, проведенным космическим аппаратом &lt;a href=&#34;https://en.wikipedia.org/wiki/Stardust_(spacecraft)&#34;&gt;Stardust&lt;/a&gt; в 2011
+году, диаметр кратера, образовавшегося в результате столкновения, составил около
+150 метров.&lt;/p&gt;
+
+&lt;p&gt;По завершению основной миссии, NASA направило зонд Deep Impact к комете
+103P/Хартли в рамках расширенной миссии &amp;ldquo;EPOXI&amp;rdquo;. Пролет этой кометы
+состоялся 4 ноября 2010 года:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/NASAHartley2Comet.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;В конце 2011 года, аппарат был отправлен на перехват астероида
+&lt;a href=&#34;https://en.wikipedia.org/wiki/(163249)_2002_GT&#34;&gt;(163249) 2002 GT&lt;/a&gt; пролет которого должен был состоятся в 2020 году. Однако
+в августе 2013 года контакт с аппаратом был потерян:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;3 сентября 2013&lt;/a&gt;:&lt;br /&gt;
+&amp;hellip; Связь с аппаратом утеряна между 11 и 14 августа (связь с аппаратом
+поддерживается раз в неделю). Последний сеанс связи был проведен 8 августа.
+Проведенное расследование позволило установить причину неполадки. Дальнейшие
+усилия направлены на определение лучшего способа восстановить связь с
+аппаратом.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;23 сентября 2013&lt;/a&gt;:&lt;br /&gt;
+&amp;hellip; все попытки передачи низкоуровневых аппаратных команд не увенчались
+успехом. На этом все возможные сценарии восстановления связи с аппаратом были
+исчерпаны. Мы рекомендовали NASA объявить аппарат утерянным. NASA официально
+заявило об утере аппарата в четверг 19 сентября.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Инциденты и аварии в пилотируемой программе НАСА</title>
+      <link>https://blog.not-a-kernel-guy.com/2017/09/09/manned-space-program-accidents/</link>
+      <pubDate>Sat, 09 Sep 2017 22:06:48 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2017/09/09/manned-space-program-accidents/</guid>
+      <description>&lt;p&gt;На NASA Technical Reports попались на глаза два документа:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19730010169.pdf&#34;&gt;Manned space programs accident/incident summaries (1963 - 1969)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19730010170_1973010170.pdf&#34;&gt;Manned space programs accident/incident summaries (1970 - 1971)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Эти два отчета содержат краткое описание 732-х инцидентов и аварий,
+произошедших при работе над пилотируемой программой НАСА в 1963 - 1971 годах,
+их причины и рекомендации к их предотвращению. Иными словами - эти отчеты
+находка для преподавателей &amp;ldquo;Безопасности жизнедеятельности&amp;rdquo;. Любители теорий
+заговора тоже будут рады.&lt;/p&gt;
+
+&lt;p&gt;Отчет классифицирует причины аварий в две группы: материальные (hardware) и
+программные (software). В первую группу вошли ошибки дизайна, сбои оборудования,
+несовместимость материалов и разрушение материалов. Во вторую - процедурные
+ошибки, несоблюдение процедур, ошибки инспекции, недостаточный тренинг
+персонала, ошибки планирования, ошибки управления и потеря контекста при
+передаче смены.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>NASA</title>
+      <link>https://blog.not-a-kernel-guy.com/2017/07/26/nasa/</link>
+      <pubDate>Wed, 26 Jul 2017 22:34:03 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2017/07/26/nasa/</guid>
+      <description>&lt;p&gt;Чтобы вы не думали, что NASA только шаттлы умеет в космос запускать:&lt;/p&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2017/07/nasa.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/07/nasa_small.jpg&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;:-)&lt;/p&gt;
+
+&lt;p&gt;Беглое гугление навело на их &lt;a href=&#34;http://nasaservices.com/&#34;&gt;логово&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;P.S. Чуваки за ящиком - это музыкальные фанаты (наверное), терпеливо ждущие
+своей очереди, чтобы попасть в &lt;a href=&#34;https://www.amoeba.com/&#34;&gt;Amoeba Music&lt;/a&gt;
+в Голливуде.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Руководство пользователя Space Shuttle</title>
+      <link>https://blog.not-a-kernel-guy.com/2016/07/30/shuttle_manual/</link>
+      <pubDate>Sat, 30 Jul 2016 19:33:19 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2016/07/30/shuttle_manual/</guid>
+      <description>&lt;p&gt;Чего только не найдешь у NASA в публичном доступе. Вот, например, - &lt;a href=&#34;https://www.nasa.gov/centers/johnson/pdf/390651main_shuttle_crew_operations_manual.pdf&#34;&gt;Руководство
+пользователя Space Shuttle&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The Shuttle Crew Operations Manual (SCOM)
+is a unique document containing information
+about each shuttle system and every phase of a
+generic space shuttle mission.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Небольшой документ, всего 1161 страница. В руководстве описывается:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>NASA делится исходниками</title>
+      <link>https://blog.not-a-kernel-guy.com/2014/04/26/1633/</link>
+      <pubDate>Sat, 26 Apr 2014 12:23:25 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2014/04/26/1633/</guid>
+      <description>&lt;p&gt;Каталог проектов NASA, исходный код которых доступен для изучения: &lt;a href=&#34;http://code.nasa.gov/project/nasa-technology-transfer-program-2014-software-catalog/&#34;&gt;http://code.nasa.gov/project/nasa-technology-transfer-program-2014-software-catalog/&lt;/a&gt;. Список из почти тысячи проектов разбит на 15 категорий:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>NASA приостанавливает сотрудничество с Россией</title>
+      <link>https://blog.not-a-kernel-guy.com/2014/04/02/1584/</link>
+      <pubDate>Wed, 02 Apr 2014 12:46:58 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2014/04/02/1584/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.theverge.com/2014/4/2/5574896/nasa-suspends-contracts-with-russia&#34;&gt;Офигеть&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;hellip; NASA told its officials today that the agency is suspending all contact with Russian government representatives. &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Ongoing International Space Station activities are exempt from this suspension, however, as are meetings with other countries held outside of Russia that include the participation of Russian officials.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Неожиданно. Если бы меня спросили вчера, я бы сказал, что NASA откажется от Союзов, как только будет готов пилотируемый Dragon. Или Orion. Или любой другой американский пилотируемый корабль. То есть через пару лет. А оно вон как вышло&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

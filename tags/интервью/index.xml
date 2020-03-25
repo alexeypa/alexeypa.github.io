@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Интервью on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E/</link>
+    <description>Recent content in Интервью on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sun, 17 Jun 2012 22:52:52 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Мое интервью на OpenQuality.ru</title>
+      <link>https://blog.not-a-kernel-guy.com/2012/06/17/1350/</link>
+      <pubDate>Sun, 17 Jun 2012 22:52:52 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2012/06/17/1350/</guid>
+      <description>Мое интервью на OpenQuality.ru: http://experience.openquality.ru/alexey-pakhunov-interview/.</description>
+    </item>
+    
+    <item>
+      <title>Разбор задачи про пакеты</title>
+      <link>https://blog.not-a-kernel-guy.com/2011/02/09/986/</link>
+      <pubDate>Wed, 09 Feb 2011 10:10:29 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2011/02/09/986/</guid>
+      <description>&lt;p&gt;В комментариях к &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2011/02/08/980/&#34;&gt;задаче про пакеты&lt;/a&gt; было задано много вопросов. Отвечу здесь.&lt;/p&gt;
+
+&lt;p&gt;Во-первых, задача действительно простая, иначе никак не уложиться в формат собеседования. На написание кода и сопутствующее общение есть всего около получаса. Плюс писать код на доске сложнее, чем в любимом редакторе. Тем не менее, в задаче любовно набросано граблей, на которые по возможности кандидат должен суметь не наступить. Условие задачи не полное (естественно!), не смотря на кажущееся обилие деталей. Кандидат всегда может прояснить у собеседующего недостающие детали и получить +1 к карме. Либо он может её решить, предположив разумные умолчания. В этом случае собеседующий всегда может добавить недостающее условие к задаче и попросить поправить код соответственно.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Задачка на интервью. Пакеты</title>
+      <link>https://blog.not-a-kernel-guy.com/2011/02/08/980/</link>
+      <pubDate>Tue, 08 Feb 2011 23:10:31 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2011/02/08/980/</guid>
+      <description>А хотите задачку, которую я даю претендентам на контрактную позицию в нашей команде? Вот она, родимая. Есть библиотечная функция:
+char get_byte();  Функция читает байт из некоего соединения. При необходимости, функция ждет, пока не придет очередной байт. По соединению пересылаются пакеты следующего формата: два байта длины, за которыми следует данные. Длина пакета включает в себя заголовок пакета, т.е. те самые два байта.
+
+Нужно написать функцию recv, получающую очередной пакет:</description>
+    </item>
+    
+    <item>
+      <title>О разнице взглядов на привычные вещи</title>
+      <link>https://blog.not-a-kernel-guy.com/2010/06/02/825/</link>
+      <pubDate>Wed, 02 Jun 2010 22:51:59 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2010/06/02/825/</guid>
+      <description>&lt;p&gt;За последнее время мне пришлось побеседовать со многими соискателями на место разработчика в нашей команде. Нужно сказать, это было очень познавательно. Иногда - даже слишком.&lt;/p&gt;
+
+&lt;p&gt;Один из кандидатов, судя по резюме, очень и очень подходил под наши требования. Кроме того, у неги имелся солидный опыт за плечами. Несколько законченных проектов, каждый из которых подтверждал то или иное требование нашей позиции. В общем, очень многообещающий кандидат.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

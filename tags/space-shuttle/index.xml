@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Space Shuttle on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/space-shuttle/</link>
+    <description>Recent content in Space Shuttle on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Mon, 22 Oct 2012 10:17:26 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/space-shuttle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Невероятно</title>
+      <link>https://blog.not-a-kernel-guy.com/2012/10/22/1431/</link>
+      <pubDate>Mon, 22 Oct 2012 10:17:26 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2012/10/22/1431/</guid>
+      <description>Шаттл на улицах Лос-Анджелеса:
+  Очень красиво!</description>
+    </item>
+    
+  </channel>
+</rss>

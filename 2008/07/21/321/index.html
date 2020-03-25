@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Проверка параметров функции</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Проверка параметров функции</h1>
+    <span class="post-date">Jul 21, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/07/21/321/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C">Безопасность</a><a class="label" href="/tags/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD">Дизайн</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+    </span>
+    <p>Предыдущий <a href="/2008/06/30/316/">пост про параметры функций</a> вызвал на удивление много споров, так что я еще покручусь немного вокруг этой темы. Заранее прошу прощения у тех, кому эта тема оскомину набила. Итак, как следует проверять параметры функции? Вернее даже так, что нужно и, самое главное, что не нужно проверять?</p>
+
+<p>Само собой однозначного ответа на этот вопрос не существует, тем более что этот вопрос вторгается в область coding guidelines, а последних, как известно, существует ровно столько, сколько есть программистов на Земле. Или около того. Как минимум ответ зависит от следующих факторов:</p>
+
+<ol>
+<li><p>Языка программирования, операционной системы и программного окружения;</p></li>
+
+<li><p>Степени доверия вызываемой функции к вызывающему коду.</p></li>
+</ol>
+
+<p>Пункт №1 мы, во избежание священной войны, положим константой - язык C/C++, OS - Windows, окружение - «обычный» user/kernel mode код.</p>
+
+<p>А вот пункт №2 стоит обсудить детально. Сравним два случая:</p>
+
+<ol>
+<li><p>Вызов функции внутри одного бинарного модуля;</p></li>
+
+<li><p>Вызов сервиса ядра из пользовательского кода.</p></li>
+</ol>
+
+<p>В отличие от «доверенного» вызова, службы ядра дополнительно проверяют, что:</p>
+
+<ol>
+<li><p>Все буфера целиком находятся в user space (ProbeXxx функции);</p></li>
+
+<li><p>Чтение/запись в user space завершается успешно (все операции с ними помещаются в блок try-except);</p></li>
+
+<li><p>Чтение любых данных из user space выполняется только один раз (данные копируются в локальный буфер);</p></li>
+
+<li><p>Все параметры, после того, как они были скопированы в kernel space, содержат допустимые значения (проверки на выход на пределы диапазона и прочее).</p></li>
+</ol>
+
+<p>Очевидно, что дополнительные проверки нужны потому, что пользовательский код менее привилегирован, чем код ядра, и более подвержен сбоям/атакам. Несколько менее очевидно, что дополнительные проверки на самом деле нужны потому, что сами данные приходят из менее привилегированного источника. О том, почему это важно - чуть ниже.</p>
+
+<p>Далее, данные никогда не представлены сами по себе. Данные всегда упаковываются в некий «контейнер». Контейнером могут быть языковые конструкции, например объект или переменная типа «int», или другие данные, например TCP пакет упаковывается в IP пакет. Следует различать проверки целостности контейнера и проверки целостности данных. В примере выше, пункты №№1 - 3 представляют ни что иное, как проверку целостности контейнера (буфера в user space). Проверка целостности самих данных представлена единственным пунктом №4.</p>
+
+<p>Нужно ли при каждом вызове выполнять все проверки? Конечно - нет. Какие проверки можно опустить? В приведенном примере с вызовом функции в пределах одного модуля, можно ожидать, что свойства контейнера с данными не изменятся. А если и изменятся, то только под воздействием внешних факторов, которые мы все равно не в состоянии контролировать (в пределах данного модуля). Соответственно, при «доверенном» вызове проверять целостность контейнера нецелесообразно.</p>
+
+<p>Если отвлечься от абстрактных контейнеров, это означает что большинство указателей при «доверенном» вызове не проверяется. Более того, такая проверка может быть вредна, так как затрудняет отлов ошибок, пряча попытки некорректного разыменования указателей.</p>
+
+<p>Количество проверок целостности самих данных тоже можно сократить до минимума - до одной. В теории, конечно. Для этого используется анализ потоков данных (Data Flow Analysis, DFD), суть которого состоит в том, что:</p>
+
+<ol>
+<li><p>Идентифицируются все участники обмена данными (т.е. все компоненты кода и внешние источники);</p></li>
+
+<li><p>Определяются характер передаваемых данных, а также, откуда и куда они передаются;</p></li>
+
+<li><p>Определяется уровень привилегированности каждого участника обмена данными.</p></li>
+</ol>
+
+<p>Передача данных от менее привилегированного к более привилегированному участнику считается передачей через границу доверия (Trust Boundary), при которой принимающая сторона должна проверить целостность полученных данных, включая как целостность контейнера, так и целостность данных. При составлении DFD диаграммы следует помнить, что данные (например, IP пакет) могут сами выступать в роли контейнера для другого компонента. В таком случае, для инкапсулированных данных граница доверия будет пролегать на один или несколько компонентов дальше.</p>
+
+<p>Итак, резюме:</p>
+
+<ol>
+<li><p>Следует различать контейнер и сами данные, и понимать, что проверка их целостности может выполняться разными компонентами;</p></li>
+
+<li><p>Проверка целостности контейнера выполняется только в случае, если передача данных идет через границу доверия. DFD диаграмма должна помочь в обнаружении всех границ доверия;</p></li>
+
+<li><p>Проверка целостности данных производится первым потребителем этих данных.</p></li>
+</ol>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2008/07/21/321/";
+        this.page.title = "Проверка параметров функции";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

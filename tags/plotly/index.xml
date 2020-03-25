@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plotly on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/plotly/</link>
+    <description>Recent content in Plotly on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 20 Jan 2018 14:17:33 -0800</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/plotly/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Драконы не летают по средам</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/01/20/spacexdata/</link>
+      <pubDate>Sat, 20 Jan 2018 14:17:33 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/01/20/spacexdata/</guid>
+      <description>&lt;p&gt;Я давно подозревал, что SpaceX предпочитает запускать на выходных, а не в
+будние дни. Проведя очередную субботу в &lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/4/49/SpaceX_Mission_Control_in_Hawthorne%2C_CA.jpg&#34;&gt;Mission Control&lt;/a&gt;,
+я решил проверить, так ли это (ну и за одно немного с javascript поиграться).&lt;/p&gt;
+
+&lt;p&gt;Фаны SpaceX составили и продолжают пополнять &lt;a href=&#34;https://github.com/r-spacex/SpaceX-API&#34;&gt;базу запусков SpaceX&lt;/a&gt;. В базе указывается время запуска, тип
+орбиты и масса другой полезной информации. Согласно этой базе получается вот
+такая картина:&lt;/p&gt;
+
+&lt;div id=&#34;launches_by_weekday&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Запуски к МКС обычно происходят в конце недели, а вот на ГПО летают чаще в
+начале недели. Вторник оказался самым незапускным днем.&lt;/p&gt;
+
+&lt;p&gt;А вот если разбить запуски по времени дня, то получается вот такой расклад:&lt;/p&gt;
+
+&lt;div id=&#34;launches_by_hour&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Запуски на низкую орбиту обычно идут в первой половине дня, а на ГПО летают все
+больше после обеда или в полночь. Время дня здесь - калифорнийское.&lt;/p&gt;
+
+&lt;p&gt;Данные для графиков тянутся напрямую с &lt;a href=&#34;https://api.spacexdata.com&#34;&gt;https://api.spacexdata.com&lt;/a&gt;, так что
+графики будут обновляться по мере пополнения базы.&lt;/p&gt;
+
+&lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.jquery.com/jquery-3.3.0.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://blog.not-a-kernel-guy.com/tz/date.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://blog.not-a-kernel-guy.com/2018/01/spacexdata.js&#34;&gt;&lt;/script&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

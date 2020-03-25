@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Тонкости взаимодействия 32 и 64-битных программ</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Тонкости взаимодействия 32 и 64-битных программ</h1>
+    <span class="post-date">Aug 18, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/08/18/30/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/wow64">Wow64</a>
+    </span>
+    <p>Wow64 это сокращение от «Windows on Windows64». Так обозначается эмулятор 32-битного, x86-совместимого окружения, позволяющего запускать 32-битные приложения на 64-битных версиях Windows. Соответствующий раздел в MSDN (<a href="http://windowssdk.msdn.microsoft.com/en-us/library/ms775191.aspx">http://windowssdk.msdn.microsoft.com/en-us/library/ms775191.aspx</a>) хорошо описывает отличия между окружением 32-битных и 64-битных приложений. Я же хотел бы рассказать о нескольких, очевидных и не очень, особенностях взаимодействия 32 и 64-битных приложений.</p>
+
+<p>Wow64 перехватывает все переходы между 32-битным кодом приложения и ядром системы, что включает в себя как вызовы сервисов ядра, так и обратные вызовы 32-битного кода из ядра. Для этого 64-битные версии Windows включают в себя специальные версии 32-битных Ntdll.dll, User32.dll и Gdi32.dll, которые передают управление Wow64 вместо обычного системного вызова. В свою очередь Wow64 переключается в 64-битный режим, преобразует переданные 32-битные указатели в 64-битные и выполняет системный вызов. По окончанию вызова, Wow64 выполняет обратное преобразование возвращаемых значений. Также перехватываются исключения и обратные вызовы (callbacks). Таким образом, 32-битное приложение полностью изолируется от системы и других 64-битных приложений.Одним из следствий подобной изоляции является запрет на смешивания 32-битного и 64-битного кода в рамках одного процесса. 64-битный код может вызывать системные сервисы, минуя Wow64, что, в свою очередь, может нарушить целостность внутренних структур Wow64. С очевидными последствиями.</p>
+
+<p>Наиболее неприятное следствие этого запрета – невозможность использования 32-битных in-process COM объектов 64-битными процессами. Это может стать серьезной проблемой при переносе 32-битного приложения в 64-битное окружение в случае, если исходные коды используемых in-process COM компонентов недоступны.</p>
+
+<p>32-битные и 64-битные процессы по-прежнему могут использовать все существующие средства межпроцессного взаимодействия. Wow64 берет на себя все заботы по преобразованию указателей.</p>
+
+<p>Как я уже писал ранее, Wow64 включает в себя файловый редиректор (file system redirector), который скрывает от 32-битных программ каталог «%windir%\System32», переправляя все запросы в «%windir%\SysWow64». В этом каталоге находятся 32-битные версии 64-разрядных компонентов из «%windir%\System32». Фактически «%windir%\SysWow64» это копия «%windir%\System32» 32-битной версии Windows.</p>
+
+<p>Подобный дизайн обладает неожиданным побочным эффектом – несмотря на то, что система не накладывает ограничений на запуск 64-битных приложений из 32-битных, 32-битные приложения не имеют возможности напрямую запустить приложение установленное в «%windir%\System32». Так, например, открыв окно 32-битного «cmd.exe» нельзя так просто переключиться в 64-битный «cmd.exe». Конечно же, существует способы бороться с этой проблемой, однако все они опираются на использование специфичных для 64-битной системы механизмов, о существовании которых большинство 32-битных приложений не подозревает.</p>
+
+<p>И последнее ограничение на сегодня - 64-битные версии Windows требуют, чтобы все драйвера в системе были 64-битными. На первый взгляд это не должно быть проблемой, однако это касается и драйверов принтеров, что автоматически затрагивает большинство программ PDF-генераторов. 32-битный драйвер виртуального принтера, который используется для генерации PDF, не работает на 64-битной системе. Точно также не работают старые версии эмуляторов различных устройств и некоторые программы для записи CD/DVD.</p>
+
+<p>Резюме. 32-битные приложения на удивление хорошо интегрируются в 64-битную систему. Особенно если учесть, что 32 и 64-битный бинарный код не совместим даже на Amd64, не говоря уже об Itanium (IA-64). Тем не менее, обеспечение совместимости добавит (и уже добавило) головной боли разработчикам.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2006/08/18/30/";
+        this.page.title = "Тонкости взаимодействия 32 и 64-битных программ";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Boost.build on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/boost.build/</link>
+    <description>Recent content in Boost.build on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Mon, 09 Mar 2009 13:22:01 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/boost.build/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>.NET toolset для Boost Build V2</title>
+      <link>https://blog.not-a-kernel-guy.com/2009/03/09/469/</link>
+      <pubDate>Mon, 09 Mar 2009 13:22:01 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2009/03/09/469/</guid>
+      <description>&lt;p&gt;Специально для любителей &lt;a href=&#34;http://www.boost.org/doc/tools/build/index.html&#34;&gt;Boost.Build V2&lt;/a&gt; – написал &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2009/03/dotnet.jam&#34;&gt;toolset&lt;/a&gt;, добавляющий поддержку C# и VB.NET компиляторов из .NET Framework. Toolset автоматически распознает все установленные версии .NET Framework:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-no-highlight&#34;&gt;using dotnet : all ;
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Как запустить C препроцессор в Boost.Build V2. Часть последняя</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/06/25/202/</link>
+      <pubDate>Mon, 25 Jun 2007 22:52:09 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/06/25/202/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/06/11/197/&#34;&gt;В таком виде генератор уже пригоден к использованию, однако его можно сделать ещё лучше. Как - читайте в следующей части.&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Если сравнить исходный код нашего генератора с реализацией генератора объектных файлов в “boost/tools/build/v2/tools/msvc.jam” можно обнаружить несколько отличий:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Как запустить C препроцессор в Boost.Build V2. Часть II</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/06/11/197/</link>
+      <pubDate>Mon, 11 Jun 2007 23:49:12 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/06/11/197/</guid>
+      <description>&lt;p&gt;Продолжаем &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/06/06/194/&#34;&gt;начатое ранее&lt;/a&gt;. Мы остановились на том, что сумели вызвать компилятор и передать ему нужную команду. Теперь нам нужно научиться передавать все настройки компилятора, уже известные Boost.Build, в созданную командную строку. Для сначала нужно выяснить как же, собственно, Boost.Build узнает где находится компилятор и как задаются параметры компиляции.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Как запустить C препроцессор в Boost.Build V2</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/06/06/194/</link>
+      <pubDate>Wed, 06 Jun 2007 21:31:22 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/06/06/194/</guid>
+      <description>&lt;p&gt;Библиотеки &lt;a href=&#34;http://www.boost.org&#34;&gt;Boost&lt;/a&gt; не использует make файлы или какую-либо другую более менее стандартную систему компиляции. Вместо этого Boost использует собственную систему сборки - &lt;a href=&#34;http://www.boost.org/tools/build/v2/index.html&#34;&gt;Boost.Build V2&lt;/a&gt;. Система построена вокруг Boost.Jam, который, в свою очередь, является наследником Perforce Jam, - интерпретатора скриптов Jam. Вокруг возможностей Boost.Jam, который, между прочем, состоит из единственного исполняемого файла, навёрнута система скриптов изолирующая разработчика от особенностей конкретного компилятора и платформы.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

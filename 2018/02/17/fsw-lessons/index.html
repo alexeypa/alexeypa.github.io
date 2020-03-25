@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Уроки разработки полетного софта</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Анализ ошибок в программном обеспечении приводящих к потере комических аппаратов">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Уроки разработки полетного софта</h1>
+    <span class="post-date">Feb 17, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/02/17/fsw-lessons/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/nasa">NASA</a><a class="label" href="/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81">Космос</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+    </span>
+    <p>Часто, когда речь заходит про космический софт, можно слышать &ldquo;ну уж там-то код
+компилируется со всеми предупреждениями&rdquo;, или &ldquo;ну уж там-то наверняка запускается
+статический анализатор кода и все ошибки исправляются&rdquo;, или &ldquo;ну уж там то тесты
+покрывают код на 100%&ldquo;. Как вы скорее всего уже догадались рая нет. Вернее, рай
+в планах был, но из-за превышения сметы успели достроить только ад. К счастью,
+костры успели развести только под половиной котлов, поскольку часть дров
+заменили бетонными шпалами, а расположение котлов забыли задокументировать.</p>
+
+<p>Сайт <a href="https://llis.nasa.gov">NASA Lessons Learned</a> полон таких историй. Сегодня мы пройдемся по
+результатам исследования <a href="http://aisel.aisnet.org/cgi/viewcontent.cgi?article=1671&amp;context=amcis2009">Flight Software Engineering Lessons</a> за авторством
+Ronald Kirk Kandt опубликованное на конференции AMCIS 2009 (Americas Conference
+on Information Systems). Автор исследования просуммировал результаты других
+работ, посвященных трудностям процесса разработки программного обеспечения, а
+также результаты расследования аварий реальных космических аппаратов.</p>
+
+<p>Начнем с того, что стоимость разработки софта превышает начальную смету на 50%
+в среднем. Этим, понятное дело, никого не удивишь. Гораздо интереснее знать
+почему это происходит. Итак:</p>
+
+<ul>
+<li>Срок выпуска софта определяется окнами запуска, которые очень сложно изменить.
+Иногда возможно переключится на другую траекторию полета. Иногда ждать
+следующей возможности приходится ждать годами.</li>
+<li>Софт и железо разрабатывается одновременно, что было бы очень здорово, если
+бы не несколько проблем:
+
+<ul>
+<li>Требования к софту постоянно меняются в процессе разработки. Многие
+требования фиксируются в последний момент. Изменения требований часто
+вызывает каскадную волну изменений сразу во многих подсистемах.</li>
+<li>Взаимодействие разработчиков софта и железа в части формулирования
+требований часто оставляет желать лучшего.</li>
+<li>Готовность тестового оборудования постоянно ползет вправо (естественно, оно
+же еще в разработке).</li>
+</ul></li>
+<li>Повторное использование кода случается гораздо реже, чем принято думать
+(повторное использование кода без изменений - это скорее исключение из правил;
+внесение изменений запускает цикл &ldquo;анализ требований&rdquo; - &ldquo;новый дизайн&rdquo; -
+&ldquo;новый код&rdquo;).</li>
+</ul>
+
+<p>От себя добавлю, что связность разных компонент космического аппарата очень
+высока. Изменения в одном компоненте часто влекут изменения во многих других
+компонентах. Причина тут в том, что космический аппарат - это сильно
+оптимизированная система. Например, если есть на аппарате определенный датчик,
+то им будут пользоваться все, даже если разным разным компонентам было бы
+удобнее пользоваться разными датчиками (так как им нужны слегка разные данные) -
+масса аппарата гораздо более важный параметр.</p>
+
+<p>Далее идет разбор конкретных аварий. Первопричина потери <a href="https://en.wikipedia.org/wiki/Mars_Climate_Orbiter">Mars Climate Orbiter</a>
+заключалась в использовании неправильных единиц измерения. Наземный софт,
+разработанный в Lockheed Martin, генерировал файл в который среди прочего
+сохранялся полный импульс в фунтах в секунду. Другая наземная система,
+разработанная NASA, использовала этот файл предполагая, что полный импульс
+записан в ньютонах в секунду. В результате аппарат приблизился к Марсу на 57 км
+- ниже минимальной высоты в 80 км, которую он мог выдержать.</p>
+
+<p><a href="https://commons.wikimedia.org/w/index.php?curid=12688947" title="Mars Climate Obriter TCM-4 by Xession - Own work, CC BY 3.0"><img src="/2018/02/mco_mishap.png" alt="" /></a></p>
+
+<p>Несоответствие не было выявлено ранее по целому комплексу причин:</p>
+
+<ul>
+<li>Изначально, файл генерировался с ошибками и операторы использовали другой
+способ получения нужных данных.</li>
+<li>Наземное программное обеспечение не было адекватно протестировано, в том
+числе не было проведено интерграционное тестирование (вспоминаем <a href="/2017/11/28/empyrean/">второй
+запуск с Восточного</a>).</li>
+<li>Коммуникационные проблемы:
+
+<ul>
+<li>Операторы навигации не участвовали в обзорах и одобрении проектного дизайна
+(preliminary &amp; critical design review).</li>
+<li>Несоответствие между измеренными и вычисленными параметрами были замечены
+как минимум двумя операторами, но их озабоченность была в конечном итоге
+проигнорирована.</li>
+<li>Один из маневров коррекции был запланирован, но так и не проведен.</li>
+</ul></li>
+</ul>
+
+<p><a href="https://en.wikipedia.org/wiki/Mars_Polar_Lander">Mars Polar Lander</a> был потерян во время посадки в 1999 году. Точная причина
+аварии не была установлена из-за отсутствии телеметрии. Расследование показало,
+что наиболее вероятная причина аварии заключалась в досрочном выключении
+посадочных двигателей из-за неадекватной реакции полетного ПО на временный
+сигнал в измерениях датчиков.</p>
+
+<p><a href="/2018/02/mpl_landing_diagram.png" title="Mars Polar Lander - Процедура посадки"><img src="/2018/02/mpl_landing_diagram_small.png" alt="" /></a></p>
+
+<p>Опять же, первопричина аварии нашлась не в софте:</p>
+
+<ul>
+<li>Запуск Mars Polar Lander проходил в условиях беспрецедентных технических и
+финансовых ограничений, многие из которых были явно нереалистичными.</li>
+<li>Из-за финансовых ограничений, моделирование и анализ использовались для замены
+инспекций и тестирования. Недочеты выявленные в процессе одобрения проектного
+дизайна не были устранены.</li>
+<li>Программное обеспечение не было достаточно протестировано. Софт не
+тестировался в полетной конфигурации.</li>
+</ul>
+
+<p>Как видите, разработка космического софта подвержена тем же проблемам, что и
+разработка обычного. Сроки поджимают, людей не хватает, железо не готово.
+В таких условиях требовать 100% покрытия кода тестами, полное отсутствие
+предупреждений компилятора, полную формальную верификацию софта и прочих
+приятных в теории вещей не очень практично. Вместо этого упор делается на
+совершенствовании процесса разработки. В процесс включаются практики, приносящие
+наибольшую пользу и при этом вписывающиеся в бюджет (времени, денег, ресурсов).
+Конечная цель - выбор такой комбинации практик, которая обеспечивает приемлемый
+уровень риска. Например, комбинация 80% кода тестами, обязательный просмотр
+кода и интеграционное тестирование, привязанное к каждому выпуску софта может
+обеспечить лучший результат, чем просто 100% покрытие кода тестами при тех же
+затратах времени на разработку.</p>
+
+<p>Остальные рекомендации этого исследования следуют этой же логике:</p>
+
+<ul>
+<li>Разработчики должны быть вовлечены в проектные решения, определяющие роль
+программного обеспечения в проекте, с самых ранних стадий разработки (иначе
+ошибочные решения потом вылезут боком).</li>
+<li>Симуляторы и тестовое железо должны быть доступны как можно ранее (иначе на
+тестирование софта не останется достаточно времени).</li>
+<li>Программная архитектура должна быть разработана до начала кодирования (иначе
+потом переделывать придется несколько раз).</li>
+<li>Референсная архитектура, включающая аппаратную и программную части, должна
+быть разработана заранее (чтобы проработать взаимодействие железа и софта).</li>
+<li>Используйте объективные метрики для мониторинга процесса разработки и оценки
+адекватности способов проверки софта (иначе откуда вы знаете, что движетесь в
+правильном направлении?).</li>
+</ul>
+
+<p>Из хороших новостей, замечу, что согласно <a href="https://www.nasa.gov/pdf/418878main_FSWC_Final_Report.pdf">исследованию NASA</a> за 2001 год:</p>
+
+<blockquote>
+<p>Исключительно хороший процесс разработки может снизить количество ошибок до
+уровня около одной ошибки на 10000 строк кода.</p>
+</blockquote>
+
+<p>Сравните с <a href="https://www.mayerdan.com/ruby/2012/11/11/bugs-per-line-of-code-ratio">типичной оценкой</a> в 1-10 ошибок на 1000 строк в коде коммерческих
+приложений.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2018/02/17/fsw-lessons/";
+        this.page.title = "Уроки разработки полетного софта";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

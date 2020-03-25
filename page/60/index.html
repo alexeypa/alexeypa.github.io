@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.54.0" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Алексей Пахунов</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    <ul class="pagination">
+  <li class="active">
+    <span class="fa-lg"><a href="/page/59/" aria-label="Previous">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Новое
+      </a></span>
+  </li>
+
+  <li class="active">
+    <span class="fa-lg">
+      <a href="/post/">
+        Архив
+      </a>
+    <span>
+  </li>
+
+  <li class="active">
+    <span class="fa-lg"><a href="/page/61/" aria-label="Next">
+        Старое&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </a></span>
+  </li>
+</ul>
+
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/10/11/82/">COM marshalling: создание proxy/stub на коленке</a>
+      </h1>
+      <span class="post-date">Oct 11, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/11/82/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/com">COM</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+      </span>
+      
+      <p>Хочу поделиться рецептом победы над коварным IShellLinkDataList (см. предыдущие посты <a href="/2006/10/07/78/">COM marshalling.</a> и <a href="/2006/10/04/76/">Shortcuts, shell and COM apartments.</a>)</p>
+
+<p>Итак, исходная задача: вызвать метод локального интерфейса (интерфейса, помеченного атрибутом [local]) удалённо.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2006/10/11/82/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/10/10/81/">Работа над ошибками</a>
+      </h1>
+      <span class="post-date">Oct 10, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/10/81/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/sal">SAL</a>
+      </span>
+      
+      Наткнулся сегодня на блог Александра Ложечкина и на его пост SAL - кое-что новое для С++ в частности. В двух словах SAL (Standard Annotation Language) - это способ дать компилятору немного больше информации о том, как та или иная функция использует переданные ей параметры: in/out аттрибуты, размеры буферов и т.п. Компилятор, используя эту информацию, может делать дополнительные проверки кода, находя, скажем, ошибки переполнение буфера. Более того, статические анализаторы кода, тот же PREfast, также могут использовать эту информацию, повышая тем самым эффективность и точность анализа.
+      <a href="https://blog.not-a-kernel-guy.com/2006/10/10/81/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/10/09/80/">COM marshalling, документация и все, все, все...</a>
+      </h1>
+      <span class="post-date">Oct 9, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/09/80/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/com">COM</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/microsoft">Microsoft</a>
+      </span>
+      
+      <p>Все-таки, наверное, Европейский Суд не зря судит Microsoft за недостаточно хорошую документацию. Пытаясь разобраться как, все таки, написать proxy для интерфейса IShellLinkDataList (см. предыдущие посты: <a href="/2006/10/07/78/">COM Marshalling.</a> и <a href="/2006/10/04/76/">Shortcuts, shell and COM apartments.</a>), перечитал уйму документации, пока не нашел толкового описания того, что я хочу сделать на сайте <a href="http://www.ddj.com/dept/windows/184416483">Dr. Dobb&rsquo;s</a>. Если попытаться описать весь процесс &ldquo;метаний&rdquo;, то выглядело это так:</p>
+      <a href="https://blog.not-a-kernel-guy.com/2006/10/09/80/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/10/08/79/">Ultimate Tag Warrior</a>
+      </h1>
+      <span class="post-date">Oct 8, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/08/79/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/wordpress">WordPress</a>
+      </span>
+      
+      Добавил поддержку тэгов в блоге. Из многочисленных плагинов для WordPress выбрал Ultimate Tag Warrior как наиболее функциональный. Кроме того, этот плагин позволяет безболезненно мигрировать со встроенной поддержки категорий на тэги, что тоже немаловажно.
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/10/07/78/">COM marshalling</a>
+      </h1>
+      <span class="post-date">Oct 7, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/07/78/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/com">COM</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+      </span>
+      
+      <p>Продолжение истории про <a href="/2006/10/04/76/">Shortcuts, shell and COM apartments</a>.</p>
+
+<p>Разбираясь с написанием proxy для интерфейса IShellLinkDataList, нашел несколько дельных статей в MSDN. Например, <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnesscom/html/chapter5apartments.asp">Standard Marshaling Architecture</a> толково описывает как собственно происходит marshalling во время вызова и какие объекты задействованы при этом. В двух словах всё происходит так:</p>
+      <a href="https://blog.not-a-kernel-guy.com/2006/10/07/78/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/10/05/77/">Google Code Search</a>
+      </h1>
+      <span class="post-date">Oct 5, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/05/77/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/google">Google</a>
+      </span>
+      
+      Google презентовал Google Code Search - поиск по исходникам. Я, само собой, тут же попробовал найти исходники Windows. Не находит. :-) Если серьезно, то похоже, что поиск сделан на совесть. Поддерживаются регулярные выражения. Результат удобно подсвечивается. Можно свободно перемещаться по соседним исходникам. Удобно. Не хватает только подсветки синтаксиса. :-)
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/10/04/76/">Shortcuts, shell and COM apartments</a>
+      </h1>
+      <span class="post-date">Oct 4, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/04/76/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/com">COM</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+      </span>
+      
+      <p><em>Дурная голова ногам покоя не даёт.</em></p>
+
+<p>Поставил свежий WDK и понял, что мне жутко надоело каждый раз исправлять все ярлыки, меняя шрифт на Lucida Console и размеры окна со стандартных 80x25 на более удобоваримые 170x75. Зачесались руки автоматизировать это дело.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2006/10/04/76/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/10/03/75/">The Bloglines Plumber</a>
+      </h1>
+      <span class="post-date">Oct 3, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/03/75/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%B2%D1%81%D1%8F%D0%BA%D0%B0%D1%8F-%D0%B2%D1%81%D1%8F%D1%87%D0%B8%D0%BD%D0%B0">Всякая всячина</a>
+      </span>
+      
+      Вот такая замечательная картинка была сегодня на www.bloglines.com:
+
+The Bloglines Plumber.
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/10/01/74/">Наталья Радулова: Большие мальчики</a>
+      </h1>
+      <span class="post-date">Oct 1, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/01/74/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%B2%D1%81%D1%8F%D0%BA%D0%B0%D1%8F-%D0%B2%D1%81%D1%8F%D1%87%D0%B8%D0%BD%D0%B0">Всякая всячина</a>
+      </span>
+      
+      Прикольная статья: http://www.vz.ru/columns/2006/9/28/50598.html. :-)
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/09/29/73/">О похожести языков...</a>
+      </h1>
+      <span class="post-date">Sep 29, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/09/29/73/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%B2%D1%81%D1%8F%D0%BA%D0%B0%D1%8F-%D0%B2%D1%81%D1%8F%D1%87%D0%B8%D0%BD%D0%B0">Всякая всячина</a>
+      </span>
+      
+      Обожаю когда меня спрашивают насколько похожи русский и украинский языки. Спрашивают, естественно, только иностранцы. Поскольку те, кто в Украине не живет украинским, как правило, не интересуются, а украинцы поголовно говорят на обоих, так что и спрашивать смысла нет никакого. Так вот, вся соль вопроса в том, что видя некоторую заминку в ответом (А как тут не замяться? Языки-то похожи, спору нет, а вот насколько они похожи?) собеседник приходит на помощь и предлагает еще одну пару похожих, по его мнению, языков для сравнения.
+      <a href="https://blog.not-a-kernel-guy.com/2006/09/29/73/">Read On &rarr;</a>
+      
+    </div>
+    
+    <ul class="pagination">
+  <li class="active">
+    <span class="fa-lg"><a href="/page/59/" aria-label="Previous">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Новое
+      </a></span>
+  </li>
+
+  <li class="active">
+    <span class="fa-lg">
+      <a href="/post/">
+        Архив
+      </a>
+    <span>
+  </li>
+
+  <li class="active">
+    <span class="fa-lg"><a href="/page/61/" aria-label="Next">
+        Старое&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </a></span>
+  </li>
+</ul>
+
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

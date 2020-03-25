@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Overclocking и его последствия</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Overclocking и его последствия</h1>
+    <span class="post-date">Sep 25, 2012 &middot; <a href="https://blog.not-a-kernel-guy.com/2012/09/25/1417/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0">Отладка</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/%D1%8E%D0%BC%D0%BE%D1%80">Юмор</a>
+    </span>
+    <p>А сегодня мы с вами прослушаем лекцию о том, как избежать появления растительности на ладонях и чем её потом выводить&hellip;</p>
+
+<p>Разбор crash dump-ов твоего приложения, собранных с пользовательских машин - занятие и увлекательное, и поучительное. Поучительное не столько потому, что демонстрирует твои собственные успехи во всей красе, но потому что не менее красиво показывает достижения других. Одновременно испытываешь и неловкость за содеянное (нахомутал, чего уж там) и гордость (да не так уж и нахомутал - посмотрите, как другие отличились), и облегчение (все одим миром мазаны). А сегодня мы разберем одно из часто встречающихся явлений - overclocking.</p>
+
+<p>Надо сказать, что раньше эта тема освещалась не так широко, как сейчас. Более того, разговоры на эту тему считались чем-то неприличным и даже - постыдным. Но обилие современной литературы открыло нам глаза. Оказалось, что этим, так или иначе, занимаются практически все, или, по крайней мере, очень многие. Даже целомудренные девицы, которые даже слово “джампер” никогда не слышали, и те, как оказалось, задирают, простите за вульгарность, коеффициент умножения только так. Более того, немало исследований, проведенных британскими учеными, показало, что подобное рукоблудие, в умеренных количествах, не только не опасно, но даже имеет небольшой положительный эффект - ускоряя загрузку Facebook на 0.1%.</p>
+
+<p>Тем не менее чрезмерное увлечение подобным, как выясняется, не так уж безобидно, как может показаться на первый взгляд. Возьмем свежий пример. Пять падений в одном и том же месте:</p>
+
+<pre><code class="language-no-highlight">remoting_me2me_host!net::URLRequestHttpJob::RecordTimer+0x1f
+remoting_me2me_host!net::URLRequestHttpJob::OnStartCompleted+0x24
+remoting_me2me_host!base::internal::Invoker&lt;1,base::internal::BindState&lt;base::internal::RunnableAdapter&lt;void (__thiscall net::ProxyService::*)(int)&gt;,void __cdecl(net::ProxyService *,int),void __cdecl(base::internal::UnretainedWrapper&lt;net::ProxyService&gt;)&gt;,void __cdecl(net::ProxyService *,int)&gt;::Run+0x17
+remoting_me2me_host!net::HttpNetworkTransaction::DoCallback+0x27
+...
+</code></pre>
+
+<p>Так, что у нас в exception record?</p>
+
+<pre><code class="language-no-highlight">ExceptionAddress: 006969ee (remoting_me2me_host!net::URLRequestHttpJob::RecordTimer+0x0000001f)
+   ExceptionCode: c0000005 (Access violation)
+  ExceptionFlags: 00000000
+NumberParameters: 2
+   Parameter[0]: 00000000
+   Parameter[1]: 8b571d14
+Attempt to read from address 8b571d14
+</code></pre>
+
+<p>Ага, значит хотим прочитать адрес 0x8b571d14. А откуда взялся этот адрес?</p>
+
+<pre><code class="language-no-highlight">remoting_me2me_host!net::URLRequestHttpJob::RecordTimer+1f 
+006969ee 0b8654020000    or      eax,dword ptr [esi+254h]
+</code></pre>
+
+<p>Очень странно. А ведь ESI отлично сохранился в context record:</p>
+
+<pre><code class="language-no-highlight">0:003&gt; r esi
+Last set context:
+esi=01246fd8
+</code></pre>
+
+<p>Из 0x01246fd8 + 0x254 совсем никак не получается 0x8b571d14&hellip; Ага, а вот и диагноз:</p>
+
+<pre><code class="language-no-highlight">EXCEPTION_DOESNOT_MATCH_CODE:  This indicates a hardware error.
+Instruction at 006969ee does not read/write to 8b571d14
+</code></pre>
+
+<p>Действительно, все пять дампов пришли с одной и той же машины. Все пять описывают идентичние падение при попытке чтения адреса 0x8b571d14, которому, по логике вещей, неоткуда было взяться. И все пять дампов сгенерированы в течение одной минуты.</p>
+
+<p>Завершает анамнез шестой дамп с той же машины, показывающий не менее интересное падение в другом месте:</p>
+
+<pre><code class="language-no-highlight">0xfe4040f0
+remoting_me2me_host!net::internal::`anonymous namespace'::AddLocalhostEntries+0x27b
+remoting_me2me_host!net::internal::DnsConfigServiceWin::HostsReader::DoWork+0x44 remoting_me2me_host!net::SerialWorker::DoWorkJob+0xe
+...
+</code></pre>
+
+<p>Интересно, откуда взялся этот адрес? А вот откуда - предыдущая инструкция пыталась выполнить переход на адрес 0x004040f0, а попала - на 0xfe4040f0.</p>
+
+<pre><code class="language-no-highlight">call    remoting_me2me_host!std::basic_string&lt;wchar_t,std::char_traits&lt;wchar_t&gt;,std::allocator&lt;wchar_t&gt; &gt;::assign (004040f0)
+</code></pre>
+
+<p>Шестой дамп был последним присланным с этой машины. То ли, владелец её разочаровался в нашем софте, то ли к вечеру похолодало - не известно.</p>
+
+<p>К этому моменту, думаю, что всем уже стало понятно, что практикуя рекреационный overclocking, следует помнить о мерах предосторожности. Почистите кулер, прогоните кота, и самое главное, - не перегибайте палку. Она вам еще пригодится.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2012/09/25/1417/";
+        this.page.title = "Overclocking и его последствия";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

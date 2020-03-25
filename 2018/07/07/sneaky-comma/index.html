@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Как я провел прошлую пятницу</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Как я провел прошлую пятницу</h1>
+    <span class="post-date">Jul 7, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/07/07/sneaky-comma/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%B3%D1%80%D0%B0%D0%B1%D0%BB%D0%B8">Грабли</a><a class="label" href="/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0">Отладка</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+    </span>
+    <p>Расскажу как я провел прошлую пятницу. Провел я её пытаясь понять, почему
+простой как доска тест-кейс не работает.</p>
+
+<p>Тест-кейс запускает код в среде, которая симулирует полетное окружение: среду
+выполнения, показания датчиков и т.д. Далее выполняется простой сценарий -
+тест-кейс получает телеметрию и выполняет действия/проверки по наступлению
+определенных событий. Например, тест-кейс может запустить ракету, выключить
+четвертый двигатель, когда высота превысит сотню метров, а затем проверить, что
+код корректно обработал нештатную ситуацию.</p>
+
+<p>Такие тест-кейсы, естественно, не пишутся с нуля. Кейс набирается из уже
+готовых, давно написанных блоков. Что может быть очень простым делом (если есть
+готовый шаблон), или не очень простым (когда такой шаблон нужно создать самому).
+В этот раз случился как раз второй вариант. Когда все компоненты теста правильно
+соединены остается только написать код, который ждет наступления интересных
+событий и реагирует на них нужным образом.</p>
+
+<p>К пятнице я добрался до момента, когда сценарий тест-кейса уже написан, но еще
+не работает. Сценарий вылетал по таймауту ожидая наступления одного из событий.
+При этом телеметрия четко показывала, что событие наступило и у теста был вагон
+времени, чтобы это заметить. Интересно, что точно такой же код, отслеживающий
+другую телеметрию работал как часы. Хм.</p>
+
+<p>Посмотрел логи библиотеки, которая собственно отслеживает наступление событий.
+Сравнил работающий и неработающий случаи. Никакой разницы, за исключением того,
+что первый срабатывает, а второй - нет.</p>
+
+<p>Посоветовался с коллегой. Тот пожал плечами и посоветовал вывалится в
+питоновскую консоль - тогда код тест-кейса можно будет подергать интерактивно и
+посмотреть что может быть не так. Попробовал. Подергал. Ничего особенного не
+надергал за исключением того, что интересующая меня телеметрия была помечена как
+&ldquo;старая&rdquo;. Ага!</p>
+
+<p>Еще через пару часов ковыряния нашлась причина &ldquo;старой&rdquo; телеметрии. Как
+оказалось я нахомутал при сборке кейса и это повлияло на передачу телеметрии.
+Починил. Запустил - кейс по-прежнему вылетает по таймауту. Хм.</p>
+
+<p>К этому моменту у меня закончились креативные идеи и я полез копаться в коде
+библиотеки обработки событий. Из этого описания может показаться, что это
+приличная библиотека. Но вы знаете, это как раз тот случай, когда первое
+впечатление обманчиво.</p>
+
+<p>Как я уже упоминал выше, библиотека написана на питоне. Я ничего не имею ввиду
+против питона, за исключением одного незначительного нюанса - в &ldquo;хорошо
+написанном&rdquo; коде на питоне концов не найти. Вот и в этом случае имеем клиента с
+отложенной инициализацией, который запускает отдельный сервер и разговаривает с
+ним по доморощенному RPC. Сервер получает телеметрию и пытается сопоставить её
+с активными событиями из списка. Все это счастье изрядно приправлено
+декораторами, функциями обратного вызова и прочими питонскими плюшками. В теории
+они позволяют писать красивый, понятный и компактный код, но на практике они
+помогают запутать код так, что черт ногу сломит.</p>
+
+<p>Помедитировав немного, я нашел место где собственно регистрируются события.
+Отладочные сообщения в логах очень помогли в поисках. Достаточно было поискать в
+коде текст сообщений о регистрации и удалении событий. После чего, я просто
+добавил отладочного вывода вокруг, чтобы понять, что именно происходит.</p>
+
+<p>Первые несколько запусков ситуацию прояснили не сильно. По-прежнему одно событие
+уверенно ловилось, а другое - нет. Через несколько итераций, я добрался до
+следующего самородка:</p>
+
+<pre><code class="language-python"># This does work! Actual parsing happens here.
+data = packet.data
+</code></pre>
+
+<p>Значит так, следите за руками. Есть функция которая парсит пакет с данными. Мы
+заворачиваем её в <a href="https://docs.python.org/2/library/functions.html#property"><code>@property</code></a>, чтобы она выглядела как данные. Затем мы
+пишем комментарий в вызывающем коде &ldquo;не верь глазам своим&rdquo;. Профит? Ни один
+вопрос &ldquo;нахрена?&rdquo; не был задан при написании этого кода&hellip;</p>
+
+<p>Впрочем, я отвлекаюсь. Отладочная печать показала, что в неработающем случае
+выполнение дальше строчки, показанной выше, не идет. Завернув её в <code>try-except</code>
+я получил ответ, который искал целый день - да, при парсинге пакета бросалось
+исключение; и да, исключение игнорировалось примерно вот так:</p>
+
+<pre><code class="language-python">    ...
+except ValueError:
+    # This error is handled elsewhere.
+    pass
+</code></pre>
+
+<p>Прямо классика. &ldquo;Я выстрелю себе в ногу, а чтобы было не больно, - я сначала
+отрублю её топором&rdquo;. Исключение, кстати, бросалось по делу. В пакет пробралась
+шальная запятая, которая, правда, игнорировалась всеми другими средствами
+для просмотра телеметрии.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2018/07/07/sneaky-comma/";
+        this.page.title = "Как я провел прошлую пятницу";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

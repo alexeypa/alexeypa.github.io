@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Документация on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F/</link>
+    <description>Recent content in Документация on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Mon, 30 Jun 2008 23:42:36 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Undefined behavior – это все, что явно не указано в документации</title>
+      <link>https://blog.not-a-kernel-guy.com/2008/06/30/316/</link>
+      <pubDate>Mon, 30 Jun 2008 23:42:36 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2008/06/30/316/</guid>
+      <description>&lt;p&gt;Навеяно &lt;a href=&#34;http://www.shcherbyna.com/?p=6&#34;&gt;постом про ExUuidCreate&lt;/a&gt; и в частности вот этой фразой:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Well, I suggest MSFT to documented this behavior, or at least explain this case in documentation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Вкратце, суть статьи сводится к тому, что функция &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa490133.aspx&#34;&gt;ExUuidCreate&lt;/a&gt; может изменять содержимое возвращаемого буфера даже в том случае, если она возвращает ошибку. Далее, в комментариях, завязался спор на тему имеет ли функция право трогать буфер в случае ошибки.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

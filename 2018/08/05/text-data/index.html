@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Текстовые данные в юнит тестах</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Текстовые данные в юнит тестах</h1>
+    <span class="post-date">Aug 5, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/08/05/text-data/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Тестирование</a><a class="label" href="/tags/%D1%8E%D0%BD%D0%B8%D1%82-%D1%82%D0%B5%D1%81%D1%82%D1%8B">Юнит тесты</a>
+    </span>
+    <p>В предыдущем посте про <a href="/2018/08/01/table-driven-unit-tests/">табличные юнит тесты</a> я рассказал про способ
+улучшения читаемости однообразных юнит тестов. Там же мне в комментариях
+аналогичных примеров из существующих фреймворков накидали. Теперь давайте
+посмотрим как этот способ сделать еще лучше.</p>
+
+<p>Основная идея была очень проста. Есть повторяющийся, очень монотонный код
+тестов. Чтобы сделать его читаемым, пишется универсальное тело теста, а все
+необходимые вариации описываются параметрами. Параметры упаковываются в таблицу,
+что очень важно для улучшения читаемости. Когда все параметры собраны в одном
+месте (в пределах одного экрана), анализировать поведение тестируемого кода
+легче, чем когда параметры разбросаны по файлу длиной в сотни строк.</p>
+
+<p>Как сделать код еще более понятным? К примеру, возьмем таблицу из предыдущего
+поста. Что с ней не так?</p>
+
+<pre><code class="language-cpp">struct {
+    int x;
+    int y;
+    std::string that_thing;
+    std::string this_key;
+    bool result;
+} const cases[] = {
+    {0, 0, &quot;thing1&quot;, &quot;key2&quot;, false},
+    {0, 1, &quot;thing1&quot;, &quot;key2&quot;, false},
+    {0, 2, &quot;thing1&quot;, &quot;key2&quot;, false},
+    {0, 3, &quot;thing1&quot;, &quot;key1&quot;, true },
+    {1, 0, &quot;thing2&quot;, &quot;key1&quot;, false},
+    {1, 1, &quot;thing2&quot;, &quot;&quot;,     false},
+    {1, 2, &quot;thing2&quot;, &quot;&quot;,     true },
+    {2, 0, &quot;&quot;,       &quot;&quot;,     false},
+    {2, 1, &quot;&quot;,       &quot;&quot;,     true },
+    {2, 2, &quot;&quot;,       &quot;&quot;,     false},
+};
+</code></pre>
+
+<p>В этой таблице слишком много знаков препинания: скобки, запятые, кавычки.
+К параметрам в этой таблице неудобно писать комментарии и еще сложнее подружить
+удобно выровненные колонки с <a href="https://clang.llvm.org/docs/ClangFormat.html"><code>clang-format</code></a> (<code>clang-format off</code> - это
+единственный выход). Более того, столкнувшись с реальностью, подобная таблица
+станет еще менее читаемой - колонки вылезут за правый край экрана, выравнивание
+будет принесено в жертву более компактной записи и т.д.</p>
+
+<p>В такой ситуации мне нравится записывать данные как простой текст. Сравните:</p>
+
+<pre><code class="language-text">    # Simple cases.
+    0 0 thing1 key2 false
+    0 1 thing1 key2 false
+    0 2 thing1 key2 false
+    0 3 thing1 key1 true
+
+    # Try something harder.
+    1 0 thing2 key1 false
+    1 1 thing2 &quot;&quot;   false
+    1 2 thing2 &quot;&quot;   true
+
+    # This shouldn't break it.
+    2 0 &quot;&quot;     &quot;&quot;   false
+    2 1 &quot;&quot;     &quot;&quot;   true
+    2 2 &quot;&quot;     &quot;&quot;   false
+</code></pre>
+
+<p>Читать такой текст заметно легче - человеку и без знаков препинания все понятно.
+Поскольку речь идет о данных для юнит тестов, программист волен выбирать и
+формат текса, и точность представления данных по своему усмотрению. Легко
+представить, что в большинстве случаев, данные могут быть представлены в очень
+простом, но легко читаемом виде.</p>
+
+<p>Чтобы скормить эти данные коду, потребуется написать парсер для текста. Так как
+формат умышленно выбран простым, его парсер может уложиться буквальнов несколько
+строк:</p>
+
+<pre><code class="language-cpp">std::stringstream data(
+    R&quot;(
+        0 0 thing1 key2 false
+        0 1 thing1 key2 false
+        0 2 thing1 key2 false
+        0 3 thing1 key1 true
+
+        1 0 thing2 key1 false
+        1 1 thing2 &quot;&quot;   false
+        1 2 thing2 &quot;&quot;   true
+
+        2 0 &quot;&quot;     &quot;&quot;   false
+        2 1 &quot;&quot;     &quot;&quot;   true
+        2 2 &quot;&quot;     &quot;&quot;   false
+    )&quot;);
+
+while (data.good())
+{
+    int x, y;
+    std::string thing, key, result;
+
+    data &gt;&gt; x &gt;&gt; y &gt;&gt; thing &gt;&gt; key &gt;&gt; result;
+    if (!data.good())
+    {
+        break;
+    }
+
+    std::cout &lt;&lt; x &lt;&lt; &quot; &quot; &lt;&lt; y &lt;&lt; &quot; &quot; &lt;&lt;  thing &lt;&lt; &quot; &quot; &lt;&lt;  key &lt;&lt; &quot; &quot;
+              &lt;&lt; result &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+
+<p>Подобный парсер запросто может быть реализован в виде библиотечной функции, с
+поддержкой комментариев и разных типов данных.</p>
+
+<p>Текстовые данные также удобны, когда нужно проверить результат, выданный кодом.
+К примеру, вы хотите убедится что получен ожидаемый заголовок IP пакета. Какой
+вариант более понятен?</p>
+
+<p>Вариант 1: сравнить заголовок побайтно с ожидаемым заголовком:</p>
+
+<pre><code class="language-cpp">const char expected[] = {
+    '\x45', '\x00', '\x00', '\x3c', '\x17', '\x47', '\x40', '\x00',
+    '\x40', '\x06', '\xe7', '\xbb', '\xc0', '\xa8', '\x01', '\x92',
+    '\xad', '\xc2', '\xcb', '\xbc',
+};
+</code></pre>
+
+<p>Вариант 2: распечатать заголовок полученного пакета и сравнить с ожидаемым как
+текст (игнорируя лишние пробелы):</p>
+
+<pre><code class="language-cpp">const std::string expected = R&quot;(
+    Internet Protocol Version 4, Src: 192.168.1.146, Dst: 173.194.203.188
+        Differentiated Services Field: 0x00
+        Total Length: 60
+        Identification: 0x1747
+        Flags: 0x02 (Don't Fragment)
+        Fragment offset: 0
+        Time to live: 64
+        Protocol: TCP
+        Header checksum: 0xe7bb
+        Source: 192.168.1.146
+        Destination: 173.194.203.188
+)&quot;;
+</code></pre>
+
+<p>Данные в текстовом виде гораздо более понятны чем абстрактный шестнадцатеричный
+дамп или чем сложная структура, описывающая структуру заголовка с точностью до
+бита. Соответственно разобраться в таком тесте будет гораздо проще.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2018/08/05/text-data/";
+        this.page.title = "Текстовые данные в юнит тестах";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

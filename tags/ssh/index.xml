@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/ssh/</link>
+    <description>Recent content in Ssh on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Mon, 25 Jul 2016 22:09:50 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Как почистить .ssh/known_hosts в Secure Shell</title>
+      <link>https://blog.not-a-kernel-guy.com/2016/07/25/ssh_known_hosts/</link>
+      <pubDate>Mon, 25 Jul 2016 22:09:50 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2016/07/25/ssh_known_hosts/</guid>
+      <description>&lt;p&gt;Если вы пользуетесь &lt;a href=&#34;https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo?hl=en&#34;&gt;Secure Shell&lt;/a&gt; в Chrome и наткнулись на сообщение об
+изменившемся ключе удаленного хоста (скажем после переустановки системы на нем):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2016/07/ssh_known_hosts_message.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2016/07/ssh_known_hosts_message_small.png&#34; alt=&#34;Secure Shell detects a different ECDSA key&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;hellip; то &lt;a href=&#34;https://groups.google.com/a/chromium.org/forum/#!topic/chromium-hterm/XZtSm6P0acw&#34;&gt;вам сюда&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;В двух словах, чтобы почистить конкретный ключ из &lt;code&gt;.ssh/known_hosts&lt;/code&gt;,
+выполните следующую команду (заменив &lt;code&gt;index&lt;/code&gt; на номер ключа, указанный в
+сообщении об ошибке) в консоли разработчика (Ctrl+Shift+J):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;term_.command.removeKnownHostByIndex(index)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Для принятия радикальных мер, т.е. для полной очистки &lt;code&gt;.ssh/known_hosts&lt;/code&gt;,
+можно воспользоваться командой:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;term_.command.removeAllKnownHosts()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;У меня все.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

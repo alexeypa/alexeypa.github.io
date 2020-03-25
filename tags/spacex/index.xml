@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spacex on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/spacex/</link>
+    <description>Recent content in Spacex on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sun, 19 Jan 2020 19:48:37 -0800</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/spacex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Очередное фиаско</title>
+      <link>https://blog.not-a-kernel-guy.com/2020/01/19/ifa/</link>
+      <pubDate>Sun, 19 Jan 2020 19:48:37 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2020/01/19/ifa/</guid>
+      <description>&lt;p&gt;Читаю обсуждение сегодняшнего &lt;a href=&#34;https://www.youtube.com/watch?v=mu5Ydz34oVc&#34;&gt;теста системы аварийного спасения Crew Dragon&lt;/a&gt;
+и чуть-ли не в голос жру. &amp;ldquo;Ракета взорвалась&amp;rdquo;, &amp;ldquo;вторую ступень не спасли&amp;rdquo;, а
+&amp;ldquo;корабль уцелел&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2020/01/ifa_breaking_news.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Картинка - это стёб, если что. :-) А вот, остальные фразы - не очень.&lt;/p&gt;
+
+&lt;p&gt;Doug Jensen выложил шикарное видео, показывающее момент разделения и взрыв.
+Смотреть обязательно:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/06svtpboEJs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>&#34;Великий поход&#34;, или туда и обратно</title>
+      <link>https://blog.not-a-kernel-guy.com/2019/12/29/cz-8/</link>
+      <pubDate>Sun, 29 Dec 2019 21:21:21 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2019/12/29/cz-8/</guid>
+      <description>&lt;p&gt;Это, конечно, прошлогодние новости, но до меня эта картинка дошла только сейчас.&lt;/p&gt;
+
+&lt;p&gt;Китай с пристальным интересом поглядывает на повторное использование ступеней
+ракет. В 2017 году свет увидела презентация &amp;ldquo;первого частного китайского
+космического стартапа&amp;rdquo; Link Space (не смотрите на меня так - я просто
+перепечатываю слова из интернета):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.spaceflightinsider.com/space-flight-news/footsteps-spacex-chinese-company-eyes-development-reusable-rocket/&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2019/12/new_line_1_rocket.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;А в 2018 году, главный конструктор ракет-носителей при &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D0%B8%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9_%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82_%D1%80%D0%B0%D0%BA%D0%B5%D1%82%D0%BD%D0%BE%D0%B9_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8&#34;&gt;Китайском
+исследовательском институте ракетной техники&lt;/a&gt; Лонг Лехао рассказывал о CZ-8 -
+будущем члене семейства ракет &amp;ldquo;Великий поход&amp;rdquo;. В том числе, был показан вот
+такой слайд:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.spaceflightinsider.com/organizations/china-national-space-administration/china-developing-a-reusable-launch-vehicle/&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2019/12/cz-8_reusable.jpg&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Из этих двух слайдов сразу становится понятно, что любую разрабатываемую ракету
+можно назвать повторно используемой. Достаточно лишь пририсовать ноги и
+решетчатые рули к первой ступени. Однако принимая во внимание китайское упорство
+можно довольно уверенно сказать, что рано или поздно китайцы таки научатся
+приземлять и повторно использовать свои ракеты.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Неделя удалась!</title>
+      <link>https://blog.not-a-kernel-guy.com/2019/04/14/good-week/</link>
+      <pubDate>Sun, 14 Apr 2019 20:44:07 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2019/04/14/good-week/</guid>
+      <description>&lt;p&gt;Не могу не отметить, что прошедшая неделя выдалась на удивленье урожайной.&lt;/p&gt;
+
+&lt;p&gt;Для начала, астрономам удалось &lt;a href=&#34;https://eventhorizontelescope.org/&#34;&gt;объединить восемь наземных телескопов в один
+интерферометр размером с планету&lt;/a&gt; и сфотографировать черную дыру в ядре
+галактики M87 (в радиодиапазоне):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://eventhorizontelescope.org/&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2019/04/20190410-78m-800x466.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Можно смело ожидать дальнейшего увеличения качества (и количества) подобных
+снимков. Во-первых, базу интерферометра можно значительно увеличить если вывести
+телескопы в космос. Успешные наблюдения слияний черных дыр на &lt;a href=&#34;https://www.ligo.caltech.edu/&#34;&gt;LIGO&lt;/a&gt;
+требовали невероятно точных (до одной десятитысячной размера протона) измерений
+длины плеч телескопа. Выход такой технологии в космос - это лишь вопрос времени.
+Во-вторых, обрабатывать большие массивы данных и синхронизировать часы на
+большом расстоянии получается с каждым годом все лучше и лучше. В-третьих,
+интересных объектов помимо черных дыр в небе очень много. Особенно интересно
+станет, когда научатся делать инфракрасные интерферометры с большой базой.&lt;/p&gt;
+
+&lt;p&gt;Далее, первый коммерческий запуск Falcon Heavy прошел как по маслу. Спутник
+выведен на нужную орбиту, все три ускорителя сели как положено, и даже створки
+обтекателя выловили из воды в хорошем состоянии:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/TXMGu2d8c8g&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;К сожалению, первый частный лунный лендер не смог мягко прилуниться. В любом
+случае этот аппарат - заметный успех частной космонавтики. До сих пор частники
+до Луны еще не добирались:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2019/04/beresheet_last_photo.jpeg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2019/04/beresheet_last_photo-small.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;И, наконец, вчера первый раз &lt;a href=&#34;https://www.stratolaunch.com/2019/04/13/stratolaunch-completes-historic-first-flight-of-aircraft/&#34;&gt;поднялся в воздух Stratolaunch&lt;/a&gt;:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/VFHAz4AG-no&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Stratolaunch планируется использовать для запуска орбитальных ракет
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Pegasus_II_(rocket)&#34;&gt;Pegasus II&lt;/a&gt; и &lt;a href=&#34;https://en.wikipedia.org/wiki/Pegasus_(rocket)&#34;&gt;Pegasus XL&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Скрытые угрозы</title>
+      <link>https://blog.not-a-kernel-guy.com/2019/03/07/hidden-menace/</link>
+      <pubDate>Thu, 07 Mar 2019 21:35:43 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2019/03/07/hidden-menace/</guid>
+      <description>&lt;p&gt;Ой, други мои! Ржу, не могу остановится. Текут слезы и болят бока. Набрел на
+шедевр махровой пропаганды, или как говорят в теперешней России, - вторник.
+Смотрите сами, а главное, - до самого конца:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/2_WHa_92z-s&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;В 1984 Уинстон Смит описывает двухминутки ненависти как действо, в котором
+невозможно было не принять участие. После 30 секунд любой человек превращался
+в беснующегося фанатика. Тем не менее, эта ярость для главного героя книги
+оставалась абстрактной, ненаправленной эмоцией.&lt;/p&gt;
+
+&lt;p&gt;Не реалистично.&lt;/p&gt;
+
+&lt;p&gt;Знаете как выглядят настоящие двухминутки ненависти? Это когда посмотрят такой
+вот продукт и говорят &amp;ldquo;пропаганда и вранье, конечно, но вот одну вещь они
+правильно заметили&amp;hellip;&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Водоплавающая ступень</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/12/05/crs16/</link>
+      <pubDate>Wed, 05 Dec 2018 20:46:18 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/12/05/crs16/</guid>
+      <description>&lt;p&gt;Такой интересной трансляции запуска давно не было. Все шло по плану, пока не
+полетел гидравлический привод аэродинамических рулей:&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Engines stabilized rocket spin just in time, enabling an intact landing in water! Ships en route to rescue Falcon. &lt;a href=&#34;https://t.co/O3h8eCgGJ7&#34;&gt;pic.twitter.com/O3h8eCgGJ7&lt;/a&gt;&lt;/p&gt;&amp;mdash; Elon Musk (@elonmusk) &lt;a href=&#34;https://twitter.com/elonmusk/status/1070399755526656000?ref_src=twsrc%5Etfw&#34;&gt;December 5, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;С первых моментов закрутки стало ясно, что дело пахнет керосином. Зрители сразу
+заметно оживились. Первая оформившаяся мысль была: &amp;ldquo;Ух ты! Смотри как она
+может&amp;rdquo;. Следующая за ней: &amp;ldquo;Интересно, когда рванет?&amp;rdquo; При посадке ступень сначала
+целится в океан - мимо посадочной площадки. Как раз на случай если, что пойдет
+не так. Так что особых переживаний, что она кому-то на голову упадет не было.
+Просто было интересно чем все закончится.&lt;/p&gt;
+
+&lt;p&gt;Закончилось все не так, как можно было бы ожидать. Ступень погасила скорость,
+выпустила ноги, и мягко приводнилась. Что самое интересное, степень не
+взорвалась когда ожидаемо завалилась на бок. Более того, изображение не пропало
+до самого конца - что означает, что передатчик и авионика продолжала работать
+как ни в чем не бывало.&lt;/p&gt;
+
+&lt;p&gt;Еще одно видео:&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;&lt;p lang=&#34;et&#34; dir=&#34;ltr&#34;&gt;Ouch!&lt;br&gt;Source Dasvaldez on twitch&lt;br&gt;&lt;br&gt;cc &lt;a href=&#34;https://twitter.com/SpaceX?ref_src=twsrc%5Etfw&#34;&gt;@SpaceX&lt;/a&gt; &lt;a href=&#34;https://twitter.com/disinformatico?ref_src=twsrc%5Etfw&#34;&gt;@disinformatico&lt;/a&gt; &lt;a href=&#34;https://twitter.com/NASASpaceflight?ref_src=twsrc%5Etfw&#34;&gt;@NASASpaceflight&lt;/a&gt; &lt;a href=&#34;https://twitter.com/NASA?ref_src=twsrc%5Etfw&#34;&gt;@NASA&lt;/a&gt; &lt;a href=&#34;https://twitter.com/Space_Station?ref_src=twsrc%5Etfw&#34;&gt;@Space_Station&lt;/a&gt; &lt;a href=&#34;https://t.co/yfdbQ47puU&#34;&gt;pic.twitter.com/yfdbQ47puU&lt;/a&gt;&lt;/p&gt;&amp;mdash; Riccardo Rossi (@RikyUnreal) &lt;a href=&#34;https://twitter.com/RikyUnreal/status/1070388054949588992?ref_src=twsrc%5Etfw&#34;&gt;December 5, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;P.S. Dragon без приключений вышел на запланированную орбиту.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Марс: Внутри SpaceX</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/11/14/inside-spacex/</link>
+      <pubDate>Wed, 14 Nov 2018 22:46:12 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/11/14/inside-spacex/</guid>
+      <description>&lt;p&gt;National Geographic начал показывать второй сезон &lt;a href=&#34;https://www.nationalgeographic.com/tv/mars/&#34;&gt;сериала Марс&lt;/a&gt; и вместе с
+первым эпизодом выложил &lt;a href=&#34;https://www.nationalgeographic.com/tv/watch/12e413e68c538ba79a298f709efc1607/&#34;&gt;серию про SpaceX&lt;/a&gt;. Такого количества знакомых лиц в
+документальном фильме я еще не видел. Я там тоже засветился в 42:56. :)&lt;/p&gt;
+
+&lt;p&gt;Красиво снято. Рекомендую посмотреть.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Palm Springs</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/10/09/palm-springs/</link>
+      <pubDate>Tue, 09 Oct 2018 16:27:10 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/10/09/palm-springs/</guid>
+      <description>&lt;p&gt;Одна из характерных черт жизни в Штатах - это то, что все значительные события
+планируются на месяцы и годы вперед. В начале учебного года детям (а на самом
+деле - их родителям) выдается календарь расписанный на год вперед: каникулы,
+выходные, разные обязательные и не очень школьные мероприятия вроде Back to
+School Day также известный как &amp;ldquo;гоните ваши денежки&amp;rdquo;. Поездка в отпуск
+запланированная на полтора года вперед - норма. Записывать ребенка на
+&lt;a href=&#34;https://www.fire.lacounty.gov/lifeguard/lifeguard-youth-programs/&#34;&gt;Junior Lifeguard Program&lt;/a&gt; на следующее лето нужно в январе. Пропустил
+момент - жди следующего года.&lt;/p&gt;
+
+&lt;p&gt;Мы с женой привыкали к такому порядку вещей с большим трудом. Это как акцент.
+Теоретически, если поднапрячься, от него можно избавиться или, по крайней мере,
+сильно уменьшить. Это просто функция вложенного труда. Но ведь лень. Тут в спорт
+зал сходить себя еле-еле заставишь, а еще и на планирование на год вперед время
+тратить&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Айда все на Луну</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/09/17/bfr/</link>
+      <pubDate>Mon, 17 Sep 2018 22:47:28 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/09/17/bfr/</guid>
+      <description>&lt;p&gt;Ну что, BFR тихой сапой приближается к реальности. Пройденные этапы:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Основательно прожгли прототип двигателя.&lt;/li&gt;
+&lt;li&gt;Застолбили палатку с запчастями в порту Long Beach.&lt;/li&gt;
+&lt;li&gt;Предварительно просчитали посадку с правильной моделью атмосферы (что как мы
+знаем по опыту &lt;a href=&#34;https://www.kerbalspaceprogram.com/en/&#34;&gt;KSP&lt;/a&gt; is a big deal. Там, помнится, после очередного
+обновления модель атмосферы поменялась - половина ракет перестала нормально
+летать. Столько криков было&amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Обозначили предварительные цели - сразу к Марсу лететь сложно, а вот
+оттестироваться как следует вокруг Земли и Луны - сам бог велел.&lt;/li&gt;
+&lt;li&gt;Ну и самое главное - увеличился счет в банке. Т.е. деньги на дальнейшее
+движение есть.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/zu7WJD8vpAQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mr Steven</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/07/16/mr-steven/</link>
+      <pubDate>Mon, 16 Jul 2018 20:53:06 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/07/16/mr-steven/</guid>
+      <description>&lt;p&gt;До чего техника дошла! Кто-то снял мистера Стивена с новой сеткой для ловли
+обтекателя на видео:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/VlCO7gBXWNA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Трофей</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/07/12/fh_demo-patch/</link>
+      <pubDate>Thu, 12 Jul 2018 20:43:21 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/07/12/fh_demo-patch/</guid>
+      <description>&lt;p&gt;Сегодня наконец получил эмблему посвященную запуску Falcon Heavy Demo. Эмблема
+раза в полтора больше, чем обычно. В неё вплетены нити, слетавшие на одном из
+боковых бустеров:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/07/fh_demo-patch.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;\m/&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Гигантский надувной шар</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/04/15/again/</link>
+      <pubDate>Sun, 15 Apr 2018 18:19:00 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/04/15/again/</guid>
+      <description>&lt;p&gt;Илон опять &lt;a href=&#34;https://twitter.com/elonmusk/status/985655249745592320&#34;&gt;взялся за свое&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;SpaceX will try to bring rocket upper stage back from orbital velocity using
+a giant party balloon &amp;hellip;&lt;br /&gt;
+&amp;hellip; and then land on a bouncy house.&lt;/p&gt;
+
+&lt;p&gt;SpaceX попробует затормозить верхнюю ступень с орбитальной скорости с помощью
+гигантского надувного шара &amp;hellip;&lt;br /&gt;
+&amp;hellip; и затем посадит на надувной домик.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Я вот прямо чувствую как зашевелились волосы и открылись геморройные язвы у
+чуваков, которые ловлей обтекателя занимаются. Мы еще их толком ловить не
+научились, а тут в очередной раз вылезла идея ловить целую ступень. Нам вот
+такая штука нужна:&lt;/p&gt;
+
+&lt;div style=&#39;position:relative; padding-bottom:62.24%&#39;&gt;&lt;iframe src=&#39;https://gfycat.com/ifr/EdiblePolishedKingsnake&#39; frameborder=&#39;0&#39; scrolling=&#39;no&#39; width=&#39;100%&#39; height=&#39;100%&#39; style=&#39;position:absolute;top:0;left:0;&#39; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Новости дня</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/04/09/misc-spacex-news/</link>
+      <pubDate>Mon, 09 Apr 2018 21:22:41 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/04/09/misc-spacex-news/</guid>
+      <description>&lt;p&gt;Пара свежих статей в копилку.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://theclimategap.com/falcon9-evolution/&#34;&gt;История модификаций Falcon 9&lt;/a&gt; описывает все известные модификации Falcon 9 -
+начиная с v1.0 до еще не летавшей Block 5. Я тоже узнал кое-что новое - никогда
+раньше не слышал про v1.0 Block 2. В статье, само-собой, не обошли мимо вопрос
+запутанной номенклатуры. В разное время официально&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ракета называлась:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Falcon 9&lt;/li&gt;
+&lt;li&gt;Falcon 9 v1.1&lt;/li&gt;
+&lt;li&gt;Falcon 9 Full Thrust&lt;/li&gt;
+&lt;li&gt;Falcon 9 Block 3&lt;/li&gt;
+&lt;li&gt;Falcon 9 Block 4&lt;/li&gt;
+&lt;li&gt;Falcon 9 Block 5&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;В ходу был еще наверное с десяток имен, часть из которых придумали в Интернете.
+По этому случаю на мониторе одного из коллег до сих пор висит длинная цепочка из
+post-it листков с надписью в духе &amp;ldquo;Falcon 9 v1.1 Full Trust Service Pack 1 Block A&amp;rdquo;.
+Любой желающий может добавить вагон в конец паровоза.&lt;/p&gt;
+
+&lt;p&gt;Другая статья со ссылкой на анонимного инсайдера утверждает, что причиной
+аварии при запуске суперсекретного Zuma в январе, все таки, совершенно случайно,
+и почти невероятно, но таки наверняка был &lt;a href=&#34;https://www.marketwatch.com/story/northrop-grumman-may-be-to-blame-for-botched-satellite-launch-in-january-2018-04-08&#34;&gt;адаптер полезной нагрузки&lt;/a&gt;, коий
+Northrop Grumman приобрела у третьей стороны. Адаптер был значительно
+модифицирован и троекратно испытан на земле. Не смотря на это, после выхода на
+орбиту адаптер не смог отделить спутник от второй ступени и тот был сведен с
+орбиты вместе с ней.&lt;/p&gt;
+
+&lt;p&gt;Юмор ситуации заключается в том, что эта &amp;ldquo;утечка&amp;rdquo; один-в-один совпадает
+начальным анализом аварии, опубликованном в первые дни после аварии. &lt;a href=&#34;https://twitter.com/TomMcCuin/status/951535291403259909&#34;&gt;Легкий
+наброс от Tom McCuin&lt;/a&gt; так и не смог превратится в мало-мальски достоверную
+версию. Похоже, что Northrop Grumman таки придется выпустить публичный отчет о
+происшедшем. 3.5 миллиарда народных денег, все-таки.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ура!</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/02/06/heavy/</link>
+      <pubDate>Tue, 06 Feb 2018 16:16:13 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/02/06/heavy/</guid>
+      <description>&lt;p&gt;Ура! Заработало!&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/aBr2kKAHN6M&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Спасибо огромное за поздравления. Очень приятно знать, что результаты нашей
+работы вызывают такой положительный отклик.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Пришла пора обновить табличку:&lt;/p&gt;
+
+&lt;p&gt;Вот когда полетит их Falcon 1, тогда и поговорим.&lt;br /&gt;
+Вот когда будут клиенты, тогда и поговорим.&lt;br /&gt;
+Вот когда будет контракт с NASA, тогда и поговорим.&lt;br /&gt;
+Вот когда полетит их Falcon 9, тогда и поговорим.&lt;br /&gt;
+Вот когда построят свой корабль, тогда и поговорим.&lt;br /&gt;
+Вот когда он долетит до МКС, тогда и поговорим.&lt;br /&gt;
+Вот когда будут запускать геостационарные спутники, тогда и поговорим.&lt;br /&gt;
+Вот когда придумают, как сажать ракеты, тогда и поговорим.&lt;br /&gt;
+Вот когда посадят хоть одну, тогда и поговорим.&lt;br /&gt;
+Вот когда посадят на баржу, тогда и поговорим.&lt;br /&gt;
+Вот когда начнут сажать после вывода на ГПО, тогда и поговорим.&lt;br /&gt;
+Вот когда полетит б/у ракета, тогда и поговорим.&lt;br /&gt;
+Вот когда запустят свой Falcon Heavy, тогда и поговорим.&lt;br /&gt;
+=== &lt;strong&gt;вы находитесь здесь&lt;/strong&gt; ===&lt;br /&gt;
+Вот когда запустят свой Dragon 2, тогда и поговорим.&lt;br /&gt;
+Вот когда начнут возить людей, тогда и поговорим.&lt;br /&gt;
+Вот когда запустят аппарат к Луне, тогда и поговорим.&lt;br /&gt;
+Вот когда научатся сажать корабль без парашютов, тогда и поговорим.&lt;br /&gt;
+Вот когда запустят Red Dragon, тогда и поговорим.&lt;br /&gt;
+Вот когда он сядет на Марс, тогда и поговорим.&lt;br /&gt;
+Вот когда сделают свой марсианский транспорт, тогда и поговорим.&lt;br /&gt;
+Вот когда высадят людей на Марсе, тогда и поговорим.&lt;br /&gt;
+Вот когда колонизируют Марс, тогда и поговорим.&lt;br /&gt;
+Вот когда терраформируют Марс, тогда и поговорим.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Два часа</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/02/06/two-hours/</link>
+      <pubDate>Tue, 06 Feb 2018 10:17:26 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/02/06/two-hours/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.reddit.com/r/spacex/comments/7vg63x/rspacex_falcon_heavy_test_flight_official_launch/&#34;&gt;Табличка с обновлениями времени запуска&lt;/a&gt;
+выглядит презабавно. Запуск fh_demo состоится через два часа&amp;hellip; и так на
+протяжении нескольких часов:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Time&lt;/th&gt;
+&lt;th&gt;Update&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;T-2:02&lt;/td&gt;
+&lt;td&gt;more &amp;lsquo;clock management&amp;rsquo;; 20:15 UTC&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T-2:02&lt;/td&gt;
+&lt;td&gt;new launchtime: 20:10 UTC due to &amp;lsquo;clock management&amp;rsquo;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T-2:10&lt;/td&gt;
+&lt;td&gt;Aaaaaaand r/SpaceX has liftoff! at 17:55 UTC r/SpaceX has reached 200,000 subscribers. Hello and welcome to all newcomers!&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T-2:14&lt;/td&gt;
+&lt;td&gt;wayward wind getting in our way &amp;hellip; new launch time 20:05 UTC&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T-2:24&lt;/td&gt;
+&lt;td&gt;Another push back to 19:50 UTC due to upper level winds&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T-2:23&lt;/td&gt;
+&lt;td&gt;Well&amp;hellip; This this is now a countUP. New reset for 19:20 UTC due to upper level wind shear&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T-2:16&lt;/td&gt;
+&lt;td&gt;Launch profile including fairing recovery&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T-RESET&lt;/td&gt;
+&lt;td&gt;It looks like the launch timer has reset to 19:00 UTC&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T-2:09&lt;/td&gt;
+&lt;td&gt;All systems remain go for today’s test flight of Falcon Heavy.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+    
+    <item>
+      <title>Чайник Рассела</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/02/05/kettle/</link>
+      <pubDate>Mon, 05 Feb 2018 23:14:31 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/02/05/kettle/</guid>
+      <description>&lt;p&gt;Завтра в 15:30 UTC запускаем Heavy. Последние баги закрыты, тесты прогнаны, софт
+выпущен в продакшн. Если вовремя трансляции будут показывать Mission Control - я
+сижу в первом ряду в правом нижнем углу. :-)&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/wbSwFU6tY1c&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;P.S. Вот интересно, положил Элон в багажник &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D0%B9%D0%BD%D0%B8%D0%BA_%D0%A0%D0%B0%D1%81%D1%81%D0%B5%D0%BB%D0%B0&#34;&gt;чайник&lt;/a&gt;
+, или нет?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2018/02/fh_demo_tesla.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/fh_demo_tesla_small.jpg&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ой</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/01/31/oops/</link>
+      <pubDate>Wed, 31 Jan 2018 19:18:56 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/01/31/oops/</guid>
+      <description>&lt;p&gt;Мужики, у нас проблема. По плану, ступень собирались уронить в море. Ступень
+старой версии, баржа нужна для посадки центрального блока Heavy, на складе
+&lt;del&gt;все гуталином завалено&lt;/del&gt; кончилось место&amp;hellip; А тут такой облом - ступень
+отказалась взрываться и тонуть:&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;This rocket was meant to test very high retrothrust landing in water so it didn’t hurt the droneship, but amazingly it has survived. We will try to tow it back to shore. &lt;a href=&#34;https://t.co/hipmgdnq16&#34;&gt;pic.twitter.com/hipmgdnq16&lt;/a&gt;&lt;/p&gt;&amp;mdash; Elon Musk (@elonmusk) &lt;a href=&#34;https://twitter.com/elonmusk/status/958847818583584768?ref_src=twsrc%5Etfw&#34;&gt;January 31, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>Жжем!</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/01/24/heavy-static-fire/</link>
+      <pubDate>Wed, 24 Jan 2018 19:15:07 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/01/24/heavy-static-fire/</guid>
+      <description>&lt;p&gt;Сегодня, наконец, прожгли Falcon Heavy:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/sNgByUWwFKU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Ух сколько же я тикетов в баг трекере закрыл за последний год - не пересчитать.
+Большая часть была про Falcon Heavy. Хотя казалось бы всех дел - слепить три
+одинаковых ракеты вместе&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Самый смешной момент с прожига - меньше чем за 10 минут до T-0, когда уже все на
+нервах, range уведомляет, что они визуально обнаружили чьё-то присутствие вблизи
+от пускового стола. Что, понятное дело, грозит переносом прожига. Меньше чем
+через минуту range снова выходит на связь и дает отбой - мол, это просто
+какая-то бетонная конструкция. Не иначе, кто-то внезапно что-то построил.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Драконы не летают по средам</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/01/20/spacexdata/</link>
+      <pubDate>Sat, 20 Jan 2018 14:17:33 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/01/20/spacexdata/</guid>
+      <description>&lt;p&gt;Я давно подозревал, что SpaceX предпочитает запускать на выходных, а не в
+будние дни. Проведя очередную субботу в &lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/4/49/SpaceX_Mission_Control_in_Hawthorne%2C_CA.jpg&#34;&gt;Mission Control&lt;/a&gt;,
+я решил проверить, так ли это (ну и за одно немного с javascript поиграться).&lt;/p&gt;
+
+&lt;p&gt;Фаны SpaceX составили и продолжают пополнять &lt;a href=&#34;https://github.com/r-spacex/SpaceX-API&#34;&gt;базу запусков SpaceX&lt;/a&gt;. В базе указывается время запуска, тип
+орбиты и масса другой полезной информации. Согласно этой базе получается вот
+такая картина:&lt;/p&gt;
+
+&lt;div id=&#34;launches_by_weekday&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Запуски к МКС обычно происходят в конце недели, а вот на ГПО летают чаще в
+начале недели. Вторник оказался самым незапускным днем.&lt;/p&gt;
+
+&lt;p&gt;А вот если разбить запуски по времени дня, то получается вот такой расклад:&lt;/p&gt;
+
+&lt;div id=&#34;launches_by_hour&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Запуски на низкую орбиту обычно идут в первой половине дня, а на ГПО летают все
+больше после обеда или в полночь. Время дня здесь - калифорнийское.&lt;/p&gt;
+
+&lt;p&gt;Данные для графиков тянутся напрямую с &lt;a href=&#34;https://api.spacexdata.com&#34;&gt;https://api.spacexdata.com&lt;/a&gt;, так что
+графики будут обновляться по мере пополнения базы.&lt;/p&gt;
+
+&lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.jquery.com/jquery-3.3.0.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://blog.not-a-kernel-guy.com/tz/date.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://blog.not-a-kernel-guy.com/2018/01/spacexdata.js&#34;&gt;&lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>Iridium-4</title>
+      <link>https://blog.not-a-kernel-guy.com/2017/12/22/iridium4/</link>
+      <pubDate>Fri, 22 Dec 2017 20:03:22 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2017/12/22/iridium4/</guid>
+      <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/tE5C3O71Xqo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Свежая презентация про полетный софт в SpaceX</title>
+      <link>https://blog.not-a-kernel-guy.com/2017/12/11/bazel-spacex/</link>
+      <pubDate>Mon, 11 Dec 2017 19:22:00 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2017/12/11/bazel-spacex/</guid>
+      <description>&lt;p&gt;Свежая презентация про полетный софт в SpaceX в целом, и про миграцию с make на
+&lt;a href=&#34;https://bazel.build/&#34;&gt;Bazel&lt;/a&gt; в частности:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/t_3bckhV_YI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Основные моменты:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Два основных репозитория: один содержит полетный код, второй - код симуляции.
+Более миллиона строк C++ в каждом. Немного Python.&lt;/li&gt;
+&lt;li&gt;Используется своя версия Linux, поддержкой которой занимается отдельная
+команда.&lt;/li&gt;
+&lt;li&gt;C++ код собирается под несколько разных процессорных архитектур.&lt;/li&gt;
+&lt;li&gt;Полетный код для Falcon и Dragon собирается из одного репозитория.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Test like you fly&amp;rdquo; - код тестируется в тех же самых условиях, что наблюдаются
+в полете. Софт и железо тестируются как единая интегрированная система.&lt;/li&gt;
+&lt;li&gt;Система непрерывной интеграции выполняет более 8 тысяч заданий в день.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Вторая половина презентации посвящена миграции с древней системы сборки на
+основе make на более современный Bazel. Эта часть будет интересна в основном
+тем, кто интересуется системами сборки кода.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CEX</title>
+      <link>https://blog.not-a-kernel-guy.com/2017/12/10/cex/</link>
+      <pubDate>Sun, 10 Dec 2017 17:42:51 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2017/12/10/cex/</guid>
+      <description>&lt;p&gt;Компания &lt;a href=&#34;https://twitter.com/RocketLab&#34;&gt;Rocket Lab&lt;/a&gt; сегодня собиралась
+запустить второй Electron, но &lt;a href=&#34;https://twitter.com/RocketLab/status/940031491521757186&#34;&gt;попытка сорвалась из-за погоды&lt;/a&gt;. Фотограция
+заправленной ракеты на пусковом столе напомнила забавную историю из ранней
+истории SpaceX:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/RocketLab/status/936710334710034432&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/12/electron_wet_dress_rehearsal.jpg&#34; alt=&#34;Electron. Wet dress rehearsal on Nov 30th, 2017.&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;У первой версии Falcon 9 в 2009 году на боку была надпись &amp;ldquo;SPACEX&amp;rdquo; во весь рост:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/12/falcon9vertical2.jpg&#34; alt=&#34;Falcon 9 is vectical.&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Однако при заправке бак с жидким кислородом покрылся инеем, превратив надпись в
+&amp;ldquo;CEX&amp;rdquo;. Этот забавный просчет был учтен и в дальнейшем надпись сдвинули вниз, на
+бак с керосином:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/12/f9_pad.jpg&#34; alt=&#34;Falcon 9 is on the pad.&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Сны</title>
+      <link>https://blog.not-a-kernel-guy.com/2017/12/02/dreams/</link>
+      <pubDate>Sat, 02 Dec 2017 19:59:07 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2017/12/02/dreams/</guid>
+      <description>&lt;p&gt;Я в начале ноября ездил с семьей в отпуск в Эквадор - посмотреть на
+галапагосских черепах и прочих игуан. Я про это как-нибудь потом подробнее
+напишу. По пути назад мы заехали на несколько дней в Кито (столица Эквадора).
+Кито находится на высоте почти три километра. На такой высоте уже становятся
+заметны проявления высотной болезни - особенно для свежеприбывших туристов типа
+нас. В частности первые пару дней не получается нормально спать. Через пару дней
+к высоте привыкаешь и все становится на свои места.&lt;/p&gt;
+
+&lt;p&gt;В первую ночь спать не получалось от слова совсем и поэтому сны были особенно
+запоминающиеся. Помню как смотрел во сне запуск &lt;a href=&#34;https://www.reddit.com/r/spacex/comments/7895bo/zuma_launch_campaign_thread/&#34;&gt;Зумы&lt;/a&gt;.
+Это было еще до всей этой истории с обтекателем и переносом запуска. В интернете
+как раз смаковали секретность спутника, многозначительно намекая на Северную
+Корею.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Разное</title>
+      <link>https://blog.not-a-kernel-guy.com/2017/10/01/misc/</link>
+      <pubDate>Sun, 01 Oct 2017 12:37:14 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2017/10/01/misc/</guid>
+      <description>&lt;p&gt;Пока мы тут на всех порах заканчиваем Falcon Heavy, Элон презентовал новый
+вариант марсианской транспортной системы, она же &amp;ldquo;очень большая ракета&amp;rdquo;:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/E4FY894HyF8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Не буду особенно комментировать - все уже и так &lt;a href=&#34;https://www.reddit.com/r/spacex/comments/73mryo/full_analysis_of_spacex_plan_20/&#34;&gt;разобрали по косточкам&lt;/a&gt;.
+Мне лично понравилась идея со стыковкой корма к корме. На мой дилетантский
+взгляд звучит логично. Ракеты на жидком топливе умеют закачивать топливо в
+двигатели в условиях невесомости. Для перекачки топлива требуется провернуть
+аналогичный трюк, но без зажигания маршевых двигателей. Логично использовать
+уже существующие возможности ракеты. Само собой в реальности все гораздо
+сложнее, но концептуально мне эта идея нравится.&lt;/p&gt;
+
+&lt;p&gt;В рунете, как водится, тут же включится хор &amp;ldquo;проповедников скорого коллапса
+америки в целом, и проходимца Маска в частности&amp;rdquo;. Благо, что сроки у Илона, &amp;hellip;
+не знаю как правильно сказать, - очень оптимистичные, всегда есть к чему
+прицепиться. Ну нам не привыкать.&lt;/p&gt;
+
+&lt;p&gt;Из других неожиданных новостей - &lt;a href=&#34;https://kitya.livejournal.com/376982.html&#34;&gt;Kitya Karlson переехал в Китай&lt;/a&gt;. Хотя, учитывая историю его переездов
+(Япония, Австралия, Канада, и США), - то этот переезд где-то даже логичен.
+Засиделся в одном месте, чего уж там.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Неудачные посадки SpaceX</title>
+      <link>https://blog.not-a-kernel-guy.com/2017/09/14/explosions/</link>
+      <pubDate>Thu, 14 Sep 2017 07:23:46 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2017/09/14/explosions/</guid>
+      <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/bvim4rsNHkQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Залп</title>
+      <link>https://blog.not-a-kernel-guy.com/2017/06/23/double-shot/</link>
+      <pubDate>Fri, 23 Jun 2017 07:09:22 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2017/06/23/double-shot/</guid>
+      <description>&lt;p&gt;Запускаем сразу с двух столов:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;BulgariaSat-1 c LC-39a на мысе Канаверал - сегодня&lt;/li&gt;
+&lt;li&gt;Iridium-2 c SLC-4e на авиабазе Ванденберг в Калифорнии - в воскресенье&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Смотреть можно &lt;a href=&#34;http://www.spacex.com/webcast&#34;&gt;здесь&lt;/a&gt;, а можно на
+&lt;a href=&#34;https://www.youtube.com/watch?v=Y8mLi-rRTh8&#34;&gt;YouTube&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;По этому случаю забавный факт. Официальное название 40-й площадки - Space
+Launch Complex 40 (SLC-40). Площадка в Калифорнии называется
+Space Launch Complex 4 (SLC-4e). Логично предположить, что 39-й площадка должна
+называться Space Launch Complex 39, правильно? А вот и нет. Площадка называется
+Launch Complex 39, без Space. Стол, соответственно, LC-39a. Угадайте сколько
+путаницы возникло с наименованием серверов, зон и прочего оборудования&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

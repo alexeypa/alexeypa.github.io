@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Что нового в Windows 7: изменения в Wow64</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Что нового в Windows 7: изменения в Wow64</h1>
+    <span class="post-date">Jun 9, 2009 &middot; <a href="https://blog.not-a-kernel-guy.com/2009/06/09/571/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/windows">Windows</a><a class="label" href="/tags/windows-7">Windows 7</a><a class="label" href="/tags/wow64">Wow64</a>
+    </span>
+    <p>Наконец-то обновилась документация в MSDN. Теперь можно спокойно рассказать, что изменилось в Wow64 с выходом Windows 7.</p>
+
+<ol>
+<li><p>Был полностью переписан <a href="http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx">механизм перенаправления реестра (Registry <em>Redirection</em>)</a>.</p></li>
+
+<li><p>Была изменена структура реестра. Многие ключи, перенаправляемые ранее в Wow6432Node, теперь совместно используются 32-х и 64-х разрядными приложениями.</p></li>
+
+<li><p><a href="http://msdn.microsoft.com/en-us/library/aa384235(VS.85).aspx">Механизм синхронизации 32-х и 64-х ключей (Registry <em>Reflection</em>)</a> был с корнем выкорчеван и с позором изгнан из кода Windows. :-)</p></li>
+
+<li><p><a href="http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx">В документацию</a> было внесено множество дополнений и исправлений.</p></li>
+</ol>
+
+<p>Начну, пожалуй, с перенаправления реестра. Как известно, 64-х битные версии Windows поддерживают два разных представления реестра. Обращения 32-х разрядных приложений к «HKEY_LOCAL_MACHINE\Software» и некоторым другим ключам перенаправляются в «HKEY_LOCAL_MACHINE\Software\Wow6432Node». 64-х разрядные приложения обращаются к «HKEY_LOCAL_MACHINE\Software» напрямую. Таким образом, 32-х битные приложения частично изолируются от 64-х разрядных компонент.</p>
+
+<p>В какой-то момент, разработчики Wow64 столкнулись с проблемой. Некоторые из перенаправляемых ключей должны на самом деле использоваться 32-х и 64-х разрядными приложениями совместно. Для решения этой проблемы был придуман механизм синхронизации (в соответствии со сложными правилами) 32-х и 64-х копий ключей. Он был назван «Registry Reflection».</p>
+
+<p>Почему при этом не было решено отключить перенаправление для этих ключей – загадка. Вероятно, это объясняется особенностями реализации. Никаких разумных «архитектурных» соображений на этот счет нам найти не удалось.</p>
+
+<p>Время показало, что идея использовать Registry Reflection была не слишком хороша. Реестр фундаментально не может обеспечить 100% надежно копирование данных из одного ключа в другой (как и 100% надежность любой другой операции). Но если для «нормальных» операций приложение может получить код ошибки и корректно обработать его, то в случае Registry Reflection приложение решительно ничего не может сделать с кодом ошибки операции копирования.</p>
+
+<p>Помимо этого механизм Registry Reflection:</p>
+
+<ul>
+<li><p>Не определяет метод разрешения конфликтов в случае, когда модифицируются обе копии ключа.</p></li>
+
+<li><p>Конфликтует с механизмом поддержки транзакций в некоторых сценариях.</p></li>
+
+<li><p>Создаёт сложности при раздельной установке 32-х и 64-х битных компонент.</p></li>
+
+<li><p>Плохо справляется с большим количеством одновременно открытых ключей.</p></li>
+
+<li><p>Создает сложности во время завершения процесса.</p></li>
+
+<li><p>И т.д. и т.п.</p></li>
+</ul>
+
+<p>Вдоволь намучавшись с сопровождением этого монстра, мы пришли к заключению, что проблему нужно решать кардинально. Результат – механизм Registry Reflection был полностью убран из Windows 7.</p>
+
+<p>Для обеспечения обратной совместимости с Vista было сделано следующее:</p>
+
+<ol>
+<li><p>Большинство ключей, которые синхронизировались с помощью Registry Reflection, были исключены из списка перенаправляемых ключей. Иными словами вместо раздельных копий ключа, 32-х и 64-х разрядные приложения теперь совместно используют один и тот же ключ. Полный перечень всех ключей можно найти тут: <a href="http://msdn.microsoft.com/en-us/library/aa384253(VS.85).aspx">http://msdn.microsoft.com/en-us/library/aa384253(VS.85).aspx</a></p></li>
+
+<li><p>Некоторые приложения обращаются к 32-х битным ключам по их «физическому»  имени, с использованием Wow6432Node в пути, не смотря на то, что это некорректно. Вместо этого следует использовать <a href="http://msdn.microsoft.com/en-us/library/aa384129(VS.85).aspx">флаг KEY_WOW64_32KEY</a>. Тем не менее, в механизм перенаправления был обучен распознавать Wow6432Node в пути и интерпретировать наличие Wow6432Node в пути как попытку открыть  32-х разрядный ключ.</p></li>
+
+<li><p>COM runtime был основным компонентом завязанным на Registry Reflection. В него были внесены изменения, позволяющие ему обходится без Registry Reflection. Внешние интерфейсы COM runtime при этом затронуты не были.</p></li>
+</ol>
+
+<p>Тестирование этих изменений показало, что существующие приложения очень хорошо чувствуют себя в новом окружении, не замечая подмены. При этом заметно уменьшилось время, затрачиваемое приложениями на операции с реестром. Так, при установке Microsoft Office 2003 суммарное время всех операций с реестром сократилось примерно на 30%.</p>
+
+<p>По итогам этой работы была пересмотрена и  обновлена вся публичная документация, относящаяся к Wow64:</p>
+
+<ul>
+<li><p><a href="http://msdn.microsoft.com/en-us/library/aa384249(VS.85).aspx">Running 32-bit Applications</a>.</p></li>
+
+<li><p><a href="http://www.microsoft.com/WHDC/SYSTEM/PLATFORM/64BIT/WOW64_BESTPRAC.MSPX">Best Practices for WOW64</a>.</p></li>
+
+<li><p><a href="http://www.microsoft.com/whdc/system/platform/64bit/RegReflect.mspx">Registry Reflection in Windows</a>.</p></li>
+</ul>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2009/06/09/571/";
+        this.page.title = "Что нового в Windows 7: изменения в Wow64";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

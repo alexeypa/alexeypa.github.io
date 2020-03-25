@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.54.0" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Алексей Пахунов</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    <ul class="pagination">
+  <li class="active">
+    <span class="fa-lg"><a href="/page/35/" aria-label="Previous">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Новое
+      </a></span>
+  </li>
+
+  <li class="active">
+    <span class="fa-lg">
+      <a href="/post/">
+        Архив
+      </a>
+    <span>
+  </li>
+
+  <li class="active">
+    <span class="fa-lg"><a href="/page/37/" aria-label="Next">
+        Старое&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </a></span>
+  </li>
+</ul>
+
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/10/15/355/">А что, собственно, происходит, когда бросается исключение?</a>
+      </h1>
+      <span class="post-date">Oct 15, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/10/15/355/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%B8%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9">Обработка исключений</a><a class="label" href="/tags/windows">Windows</a>
+      </span>
+      
+      <p>Нет, ну в общих чертах понятно - процессор генерирует исключение, операционная система находит нужный обработчик и вызывает его. А что происходит, если посмотреть подробнее? В Windows происходит примерно следующее.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2008/10/15/355/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/10/12/353/">Спам в комментариях</a>
+      </h1>
+      <span class="post-date">Oct 12, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/10/12/353/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D1%81%D0%BF%D0%B0%D0%BC">Спам</a>
+      </span>
+      
+      Количество спама в комментариях выходит за всякие разумные рамки. К счастью 99% процентов спама успешно отлавливается спам фильтрами, так что совсем отключать комментирование в блоге пока не хочется. Но частенько в спам попадают и те комментарии, которые, строго говоря, спамом не являются. Именно для авторов этих комментариев и предназначена эта страничка (ссылка удалена).
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/09/29/346/">Успешный запуск Falcon-1</a>
+      </h1>
+      <span class="post-date">Sep 29, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/09/29/346/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81">Космос</a>
+      </span>
+      
+      А тем временем в замке у шефа… в смысле компания SpaceX провела успешный запуск макета полезной нагрузки на орбиту с помощью своей ракеты Falcon-1. Можно сказать эпохальное событие – первая частная ракета, способная вывести полезную нагрузку на орбиту Земли. На очереди – отладка Falcon-9 и, дай бог, запуск пилотируемого Dragon.
+
+Эх, накопить бы немного деньжат – в космос слетать. Или маленький остров в Тихом океане купить. :-/
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/09/29/342/">Цитатка</a>
+      </h1>
+      <span class="post-date">Sep 29, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/09/29/342/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5">Странное</a>
+      </span>
+      
+      С forum.exler.ru:
+ Поясняю - прямой угол плоскости одной точки - это такой угол (в частности) , для которого выплняется условие равенства одного n-мерного объекта, получающегося ЕДИНСТВЕННО пересечением двух одноразмерных объектов одного порядка и оба объекта пересечения не относится к данному углу одновременно, которые выше порядка объекта угла ровно на 1 единицу, другому объекту одного с углом порядка размерности, получаемого ЕДИНСТВЕННО пересечением двух одноразмерных объектов одного порядка и оба объекта пересечения не относится к данному углу одновременно, которые выше порядка объекта угла ровно на 1 единицу и эти 2*N объектов должны быть НЕ РАВНЫ между собой (как частный вариант - все 4 объекта НЕ равны между собой).
+      <a href="https://blog.not-a-kernel-guy.com/2008/09/29/342/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/09/26/339/">Иммигрировать в США очень просто…</a>
+      </h1>
+      <span class="post-date">Sep 26, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/09/26/339/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%B1%D1%8E%D1%80%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%8F">Бюрократия</a><a class="label" href="/tags/%D0%B8%D0%BC%D0%BC%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F">Иммиграция</a>
+      </span>
+      
+      … только очень долго.
+
+©2008 Reason Magazine.
+Схема, конечно, не полна и не совсем точна. Но общее представление даёт. :-)
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/09/19/337/">Вернулся</a>
+      </h1>
+      <span class="post-date">Sep 19, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/09/19/337/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA">Отпуск</a>
+      </span>
+      
+      <p>Впечатления от поездки лучше всего описываются фразой: «&hellip; но через пару недель привыкаешь».</p>
+
+<p>Было пару забавных моментов. Например, на Южном ЖД вокзале в Киеве на эскалаторе заметил пиктограмму, изображающую человека, который держит свинью подмышкой – мол, нефиг домашним животным кататься на эскалаторе без сопровождения. Взрослых.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2008/09/19/337/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/08/22/336/">Отпуск</a>
+      </h1>
+      <span class="post-date">Aug 22, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/08/22/336/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA">Отпуск</a>
+      </span>
+      
+      Я, кстати, в отпуске с середины этой недели и до 16-ого сентября. С ограниченным доступом к e-mail. Так, что если чьё-то письмо осталось не отвеченным - извиняйте. Впечатления от родных мест опишу познее.
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/08/14/333/">Не дам хохлам заработать!</a>
+      </h1>
+      <span class="post-date">Aug 14, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/08/14/333/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5">Странное</a>
+      </span>
+      
+      Супруга рассказала забавное. В Редмонде есть «русский» магазин. Стандартный такой: гречка, селедка, халва, хлеб и все такое. Зашла она туда за творогом и чем-нибудь еще по мелочи. За ней в магазин заходит ещё одна покупательница и начинает что-то там себе выбирать. Доходит до гречки, внимательно рассматривает, а потом спрашивает хозяйку: «А у вас украинские товары есть?» «Да, есть украинские, есть из России, есть из Болгарии» - отвечает хозяйка. Пауза. «А сама ты откуда?
+      <a href="https://blog.not-a-kernel-guy.com/2008/08/14/333/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/08/13/332/">Унификация стиля кодирования в команде - тупичок с граблями</a>
+      </h1>
+      <span class="post-date">Aug 13, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/08/13/332/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+      </span>
+      
+      <p>Тема жёванная-пережёванная, так что я не буду подробно останавливаться на том, зачем нужен единый стиль кодирования в команде (или проекте). Основные тезисы:</p>
+
+<ul>
+<li><p>Унифицированный стиль кодирования упрощает сопровождение кода. Это, кажется, единственная причина, зачем он вообще нужен. Все остальное, включая меньшее количество мигреней в минуту на одного эталонного разработчика, - побочные эффекты, направленные опять же на упрощение (читай - повышение эффективности) сопровождения кода.</p></li>
+
+<li><p>Кажется, нет никакой разницы между разными стилями с точки зрения легкости понимания и написания кода. Любой выбранный стиль, будучи принят в команде упрощает сопровождение кода, при условии, что он один и используется.</p></li>
+
+<li><p>Единственный способ выработать единый стиль - диктатура в том или ином виде. Можно месяцами спорить о том, где правильно ставить скобки, какие отступы должны быть, можно ли использовать две пустые строки в качестве разделителя и т.д. и т.п. В один прекрасный момент терпение лопается и волевым решением назначается «правильный» стиль.</p></li>
+</ul>
+      <a href="https://blog.not-a-kernel-guy.com/2008/08/13/332/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/08/05/329/">Хозяйке на заметку</a>
+      </h1>
+      <span class="post-date">Aug 5, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/08/05/329/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B5-%D1%85%D0%B8%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%B8">Маленькие хитрости</a>
+      </span>
+      
+      Чтобы войти на машину с благозвучным названием &ldquo;6XSD29G-052-18XS_32&rdquo; под локальным пользователем, не нужно набивать полное имя пользователя как &ldquo;6XSD29G-052-18XS_32\vasya&rdquo;, проклиная при этом злого гения, запретившего Copy-Paste в поле ввода имени, и его коллегу, давшему компьютеру такое замечательное имя. Достаточно просто сказать &ldquo;.\vasya&rdquo; и все получится.
+PS. Знал бы об этом пять лет назад - день жизни сэкономил бы уже наверное. Хотя мог бы и сам догадаться… :-)
+      
+      
+    </div>
+    
+    <ul class="pagination">
+  <li class="active">
+    <span class="fa-lg"><a href="/page/35/" aria-label="Previous">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Новое
+      </a></span>
+  </li>
+
+  <li class="active">
+    <span class="fa-lg">
+      <a href="/post/">
+        Архив
+      </a>
+    <span>
+  </li>
+
+  <li class="active">
+    <span class="fa-lg"><a href="/page/37/" aria-label="Next">
+        Старое&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </a></span>
+  </li>
+</ul>
+
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

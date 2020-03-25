@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Загадка</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Загадка</h1>
+    <span class="post-date">Mar 30, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/03/30/301/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/wow64">Wow64</a>
+    </span>
+    <p>Вот эта программа печатает номер версии указанного пользователем модуля, который она берет из поля &ldquo;FileVersion&rdquo; ресурса VS_VERSION_INFO этого модуля. Имя модуля передается как первый параметр командной строки. Для работы с VS_VERSION_INFO используется стандартная библиотека version.dll.</p>
+
+<p><em>(далее идет много кода)</em></p>
+
+<pre><code class="language-cpp">#define _WIN32_WINNT 0x0501
+
+#include &lt;windows.h&gt;
+#include &lt;stdio.h&gt;
+
+void printFileVersion(
+    const char* module
+    )
+{
+    DWORD handle;
+
+    // Query size of the buffer we will need
+    DWORD size = GetFileVersionInfoSize(module, &amp;handle);
+
+    if (size)
+    {
+        char* buffer = new char[size];
+
+        // Get own version information
+        BOOL res = GetFileVersionInfo(module, handle, size, buffer);
+
+        if (res)
+        {
+            void* ptr;
+            UINT length;
+
+            // Get FileVersion from English section of version information
+            res = VerQueryValue(buffer, &quot;\\StringFileInfo\\040904B0\\FileVersion&quot;, &amp;ptr, &amp;length);
+
+            if (res)
+            {
+                // Print FileVersion
+                printf(&quot;File Version: '%s'\n&quot;, ptr);
+            }
+        }
+
+        delete[] buffer;
+    }
+}
+
+int __cdecl main(
+    int argc,
+    const char* argv[]
+    )
+{
+    if (argc &lt; 1 || argc &gt; 2)
+    {
+        printf(&quot;Usage: fileversion.exe &lt;module-name&gt;\n&quot;);
+        exit(0);
+    }
+
+    char buffer[MAX_PATH];
+    DWORD size = ExpandEnvironmentStrings(argv[1], buffer, MAX_PATH);
+
+    if (size &gt; 0 &amp;&amp; size &lt;= MAX_PATH)
+    {
+        printFileVersion(buffer);
+    }
+
+    return 0;
+}
+</code></pre>
+
+<p>Например, для &ldquo;%windir%\system32\notepad.exe&rdquo; на моей машине выводится:</p>
+
+<pre><code class="language-no-highlight">&gt; fileversion.exe %windir%\system32\notepad.exe
+File Version: '6.0.6000.16386 (vista_rtm.061101-2205)'
+</code></pre>
+
+<p>Далее, предположим, что мы пользуемся 32-х битной версией fileversion.exe и мы хотим получить версию 64-х разрядного модуля, установленного в %windir%\system32. Wow64 <a href="http://msdn2.microsoft.com/en-us/library/aa384187.aspx">перенаправляет все файловые операции</a> из %windir%\system32 в %windir%\syswow64. Соответственно, нам нужно запретить перенаправление на время чтения ресурсов из файла:</p>
+
+<pre><code class="language-cpp">#if !defined(_WIN64)
+BOOL isWow64()
+{
+    BOOL retval = FALSE;
+    if (!IsWow64Process(GetCurrentProcess(), &amp;retval))
+    {
+        retval = FALSE;
+    }
+
+    return retval;
+}
+#endif
+
+int __cdecl main(
+    int argc,
+    const char* argv[]
+    )
+{
+    if (argc &lt; 1 || argc &gt; 3)
+    {
+        printf(&quot;Usage: fileversion.exe &lt;module-name&gt; [native]\n&quot;);
+        exit(0);
+    }
+
+#if !defined(_WIN64)
+    PVOID FsRedirection;
+
+    if (argc &gt; 2 &amp;&amp; isWow64())
+    {
+        // Disable Wow64 redirection if asked by a user
+        Wow64DisableWow64FsRedirection(&amp;FsRedirection);
+    }
+#endif
+
+    char buffer[MAX_PATH];
+    DWORD size = ExpandEnvironmentStrings(argv[1], buffer, MAX_PATH);
+
+    if (size &gt; 0 &amp;&amp; size &lt;= MAX_PATH)
+    {
+        printFileVersion(buffer);
+    }
+
+#if !defined(_WIN64)
+    if (argc &gt; 2 &amp;&amp; isWow64())
+    {
+        // Restore Wow64 redirection
+        Wow64RevertWow64FsRedirection(FsRedirection);
+    }
+#endif
+
+    return 0;
+}
+</code></pre>
+
+<p>Вопрос: почему попытка получить версию модуля может вызвать вот такое исключение при условии, что перенаправление файловой системы запрещено?</p>
+
+<pre><code class="language-no-highlight">(115c.574): Unknown exception - code c06d007e (!!! second chance !!!)
+KERNEL32!RaiseException+0x58:
+00000000`7532f35f c9              leave
+0:000:x86&gt; k
+ChildEBP          RetAddr           
+0017fd60 00402080 KERNEL32!RaiseException+0x58
+0017fdc8 0040119e rabbit!__delayLoadHelper2+0x13b [f:\sp\vctools\delayimp\delayhlp.cpp @ 331]
+0017fe0c 0040115b rabbit!_tailMerge_VERSION_dll+0xd
+0017ff30 004014a6 rabbit!main+0x8b [d:\projects\notepad2a\trunk\boost\rabbit\main.cpp @ 82]
+0017ff80 004012fd rabbit!__tmainCRTStartup+0x1a6 [f:\sp\vctools\crt_bld\self_x86\crt\src\crtexe.c @ 597]
+0017ff88 7538e3f3 rabbit!mainCRTStartup+0xd [f:\sp\vctools\crt_bld\self_x86\crt\src\crtexe.c @ 414]
+0017ff94 76fccfed KERNEL32!BaseThreadInitThunk+0xe
+0017ffd4 76fcd1ff ntdll_76f50000!__RtlUserThreadStart+0x23
+0017ffec 00000000 ntdll_76f50000!_RtlUserThreadStart+0x1b
+</code></pre>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2008/03/30/301/";
+        this.page.title = "Загадка";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

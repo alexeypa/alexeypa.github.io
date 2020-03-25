@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Отладка абстрактного синтаксического дерева (AST)</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Отладка абстрактного синтаксического дерева (AST)</h1>
+    <span class="post-date">Sep 16, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/09/16/238/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/win32.utf8">Win32.Utf8</a>
+    </span>
+    <p>Во время работы над парсером постоянно возникала необходимость посмотреть как выглядит тот или иной кусок дерева или все дерево целиком. Недолго думая, я попробовал выводить его в виде XML, - получилось довольно неплохо.</p>
+
+<p>Исходный код на C:</p>
+
+<pre><code class="language-cpp">typedef void *LPVOID;
+</code></pre>
+
+<p>Дерево, полученное после синтаксического разбора:</p>
+
+<pre><code class="language-xml">&lt;translation_unit&gt;
+ &lt;external_declaration&gt;
+  &lt;declaration&gt;
+   &lt;init_list_declaration&gt;
+    &lt;declaration_specifiers&gt;
+     &lt;declaration_specifier&gt;
+      &lt;storage_class_specifier&gt;
+       typedef
+      &lt;/storage_class_specifier&gt;
+     &lt;/declaration_specifier&gt;
+     &lt;declaration_specifier&gt;
+      &lt;type_specifier&gt;
+       &lt;builtin_type&gt;
+        void
+       &lt;/builtin_type&gt;
+      &lt;/type_specifier&gt;
+     &lt;/declaration_specifier&gt;
+    &lt;/declaration_specifiers&gt;
+    &lt;init_declarator&gt;
+     &lt;declarator&gt;
+      &lt;pointer&gt;
+       *
+      &lt;/pointer&gt;
+      &lt;direct_declarator&gt;
+       LPVOID
+      &lt;/direct_declarator&gt;
+     &lt;/declarator&gt;
+    &lt;/init_declarator&gt;
+   &lt;/init_list_declaration&gt;
+   ;
+  &lt;/declaration&gt;
+ &lt;/external_declaration&gt;
+&lt;/translation_unit&gt;
+</code></pre>
+
+<p>Что особенно приятно, так это то, что на Python такие вещи делаются одной левой. Исходный класс Node, представляющий узел дерева, дополняется методом “<strong>str</strong>”:</p>
+
+<pre><code class="language-python">exclude_attrs = set(['type', 'children'])
+
+class Node:
+    def __init__(self, type, children):
+        self.type = type
+        self.children = children
+
+    def __str__(self):
+        s = '&lt;%s' % self.type
+
+        # Представляем переменные объекта как XML аттрибуты
+        for attr in self.__dict__:
+            if not attr in exclude_attrs:
+                s += ' %s=&quot;%s&quot;' % (attr, self.__dict__[attr])
+
+        # Рекурсивно генерируем все подузлы, не забывая про отступы
+        if len(self.children):
+            s += '&gt;\n'
+            for i in self.children:
+                s += ' %s\n' % str(i).replace('\n', '\n ')
+            s += '&lt;/%s&gt;' % self.type
+        else:
+            s += '/&gt;'
+
+        return s
+
+# Получаем AST
+node = parse_source()
+
+# Выводим его в stdout
+print node
+</code></pre>
+
+<p>Небольшого пояснения требует комментарий про то, что переменные объекта выводятся в виде XML атрибутов, поскольку в примере выше никаких атрибутов нет. Каждый из узлов дерева, использованного в примере, содержит только две переменные: “type” – тип узла и “children” – список всех детей. Поскольку и то и другое включаются в XML “естественным” путем, то и показывать их как атрибуты не следует. Для их исключения используется список “exclude_attrs”.
+А вот, например, такой объект будет показан по-другому:</p>
+
+<pre><code class="language-python">node = Node(“test”, [])
+node.value = “FooBar”
+print node
+</code></pre>
+
+<pre><code class="language-xml">&lt;test value=&quot;FooBar&quot;/&gt;
+</code></pre>
+
+<p>Эта возможность будет очень полезна позднее, когда в AST будут включаться не только экземпляры класса Node, но и более сложные классы.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2007/09/16/238/";
+        this.page.title = "Отладка абстрактного синтаксического дерева (AST)";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

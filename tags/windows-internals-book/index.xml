@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows Internals Book on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/windows-internals-book/</link>
+    <description>Recent content in Windows Internals Book on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 16 Aug 2012 13:01:39 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/windows-internals-book/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ошибка в книге Windows Internals</title>
+      <link>https://blog.not-a-kernel-guy.com/2012/08/16/1405/</link>
+      <pubDate>Thu, 16 Aug 2012 13:01:39 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2012/08/16/1405/</guid>
+      <description>В новой редакции Windows Internals обнаружился старый-знакомый баг. Там приводится пример стека 32-х битной нити, выполняющейся под Wow64:
+
+Иллюстрация сопровождается комментарием:
+ An example of a Wow64 thread inside Microsoft Office Word 2007 is shown in Figure 5-13. The highlighted stack frame and all stack frames below it are the 32-bit stack frames from the 32-bit stack. The stack frames above the highlighted frame are on the 64-bit stack.</description>
+    </item>
+    
+    <item>
+      <title>Windows Internals, Part 1, Sixth Edition</title>
+      <link>https://blog.not-a-kernel-guy.com/2012/05/10/1326/</link>
+      <pubDate>Thu, 10 May 2012 23:44:18 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2012/05/10/1326/</guid>
+      <description>Ух ты, оказывается, первая часть 6-ой редакции Windows Internals вышла в марте: RTM’d today: Windows Internals, Sixth Edition, Part 1! В отличие от 5-ой редакции, в список резензентов которой я, можно сказать, попал просто за компанию - главным образом потому, что работал тогда в команде Window Kernel, в этот раз я ждал возможности поучаствовать в создании книги с нетерпением. В этот раз мне было что сказать - не даром я с Wow64 нянчился столько времени.</description>
+    </item>
+    
+    <item>
+      <title>Windows Internals, Fifth Edition</title>
+      <link>https://blog.not-a-kernel-guy.com/2009/05/13/509/</link>
+      <pubDate>Wed, 13 May 2009 10:49:43 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2009/05/13/509/</guid>
+      <description>5-ая редакция книги Windows Internals отправлена в печать. Ура, товарищи! :-) Я там скромно присутствую в списке рецензентов&amp;hellip; вместе с доброй половиной kernel team. ;-)</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Технологии on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8/</link>
+    <description>Recent content in Технологии on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 06 Sep 2007 00:11:12 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Сбор и обработка логов. Пример из жизни</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/09/06/234/</link>
+      <pubDate>Thu, 06 Sep 2007 00:11:12 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/09/06/234/</guid>
+      <description>&lt;p&gt;Некоторое время назад мне нужно было проанализировать как различные приложения используют один из компонентов системы. Этот компонент (или, скажем , библиотека) предоставляет API из нескольких функций, которые почти никогда не вызываются приложениями напрямую. Вместо этого цепочка вызовов может идёт через довольно пухлого посредника, логика работы которого не до конца понятна и очевидна.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Анализ: насколько опасны вирусы, использующие аппаратную поддержку виртуализации</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/07/02/205/</link>
+      <pubDate>Mon, 02 Jul 2007 11:18:03 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/07/02/205/</guid>
+      <description>&lt;p&gt;Статья полугодовой давности: &lt;a href=&#34;http://www.microsoft.com/whdc/system/platform/virtual/CPUVirtExt.mspx&#34;&gt;CPU Virtualization Extensions: Analysis of Rootkit Issues&lt;/a&gt;. Анализируется степень опасности, которую могут представлять вирусы и прочее вредоносное программное обеспечение, использующие аппаратную поддержку виртуализации, как средство контроля над операционной системой. Интересны выводы:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Прикольные дела творятся...</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/06/29/204/</link>
+      <pubDate>Fri, 29 Jun 2007 21:38:43 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/06/29/204/</guid>
+      <description>&lt;p&gt;Джоанна Рутковска (Joanna Rutkowska), stealth malware researcher из COSEINC Advanced Malware Labs прошлом , а ныне &lt;a href=&#34;http://blogs.zdnet.com/security/?p=199&#34;&gt;одна из двух основателей Invisible Things Labs&lt;/a&gt;, разработала &lt;a href=&#34;http://www.eweek.com/article2/0,1895,1983037,00.asp&#34;&gt;синюю таблетку (Blue Pill) – технологию, позволяющую создавать, как заявляется, 100% необнаруживаемые вирусы&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Почему Wow64 использует перенаправление реестра и файловой системы?</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/06/26/203/</link>
+      <pubDate>Tue, 26 Jun 2007 23:20:18 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/06/26/203/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/05/23/189/&#34;&gt;Понимаешь, до сих пор мне никто не может внятно сказать, почему нельзя было 64х приложения пихать в новый ключ Регистра, вместо перенаправления 32х на новое “место жительства”. Будь ласка, если это твоя специализация, обоснуй!&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Итак, почему же Wow64 использует перенаправление реестра и файловой системы вместо того, чтобы просто закрепить старые ключи реестра и “%windir%\system32” за 32-х разрядными приложениями и позволить 64-х битным приложениям определить новые ключи и использовать, скажем, “%windir%\system64” для 64-х битных системных библиотек? Это было бы довольно логично, особенно если учесть, что нечто подобное уже было проделано при переходе с Windows 3.x на Windows 95/NT.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Немного индивидуальности не повредит</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/06/07/195/</link>
+      <pubDate>Thu, 07 Jun 2007 17:43:59 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/06/07/195/</guid>
+      <description>&lt;p&gt;Сегодня с утра возился с решением забавной проблемы. Началось всё с того, что вчера Katy, наш администратор, обрадовала меня, сообщив что пришли заказанные диски и &lt;a href=&#34;http://www.byteccusa.com/product/enclosure/ME-747.htm&#34;&gt;FireWire контейнеры&lt;/a&gt; для них. К концу дня радость немного поугасла, так как выяснилось, что оба диска одновременно работать отказываются. Т.е. любой из них по отдельности работал как часы, а вот при подключении второго ничего не происходило. Диск не появлялся. :-(&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Секреты базы совместимости приложений</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/05/20/187/</link>
+      <pubDate>Sun, 20 May 2007 23:23:05 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/05/20/187/</guid>
+      <description>Alex Ionescu начал серию статей, посвященную базе совместимости приложений в Windows (Application Compatibility Database, SDB). Пока что опубликована только первая часть, однако, если я правильно интерпретировал список в конце статьи, нас ждет ещё 8 частей. Однозначно рекомендуется к прочтению.</description>
+    </item>
+    
+    <item>
+      <title>Поддержка транзакций в ядре Vista</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/02/27/153/</link>
+      <pubDate>Tue, 27 Feb 2007 21:15:23 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/02/27/153/</guid>
+      <description>Как-то неожиданно для себя наткнулся на функцию RegCreateKeyTransacted. Начал копать дальше и обнаружил, что в ядро Vista встроен менеджер транзакций (Kernel Transaction Manager, KTM), поддерживающий локальные и распределенные транзакции. Реестр и NTFS теперь тоже поддерживают транзакции. Перечень файловых операций и функций для работы с реестром был расширен функциями, имена которых завершаются на «Transacted». RegCreateKeyTransacted – одна из них. Кроме того, разработчики вольны добавлять свои менеджеры ресурсов (resource manager), реализующие поддержку транзакций для произвольных хранилищ данных.</description>
+    </item>
+    
+    <item>
+      <title>О разработке безопасных программ...</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/02/09/148/</link>
+      <pubDate>Fri, 09 Feb 2007 00:34:55 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/02/09/148/</guid>
+      <description>&lt;p&gt;Когда я пришёл в Microsoft, команда, ответственная за ядро &lt;a href=&#34;http://www.microsoft.com/dynamics/ax/default.mspx&#34;&gt;Dynamics AX&lt;/a&gt; (тогда ещё Axapta), куда я собственно и попал, как раз работала над повышением безопасности ядра. Сразу после старта мне «повезло» окунуться в этот процесс с головой. Как выяснилось, этот процесс совсем непрост, как могло показаться со стороны. Оказалось, что он отнимает массу времени, сил и вообще может надолго отбить желание писать надёжные программы. Я так думаю, что если бы мне пришлось участвовать в дискуссии про то «как Microsoft выпускает дырявые программы» в тот период, я бы не удержался в рамках приличия. :-)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Windows Home Server</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/01/09/131/</link>
+      <pubDate>Tue, 09 Jan 2007 13:31:52 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/01/09/131/</guid>
+      <description>&lt;p&gt;Вчера на &lt;a href=&#34;http://www.cesweb.org/default.asp&#34;&gt;CES&lt;/a&gt; Билл Гейтс представил &lt;a href=&#34;http://microsoft.blognewschannel.com/archives/2007/01/07/exclusive-windows-home-server-in-detail/&#34;&gt;Windows Home Server&lt;/a&gt; - операционную систему для домашнего сервера. Это именно то, о чём так долго мечтали большевики (в моем лице).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Cost Analysis of Windows Vista Content Protection</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/01/03/126/</link>
+      <pubDate>Wed, 03 Jan 2007 12:24:52 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/01/03/126/</guid>
+      <description>&lt;p&gt;Из комментариев:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://emdrone.livejournal.com/176676.html&#34;&gt;http://emdrone.livejournal.com/176676.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Раз уж в микрософте работаете, напишите что думаете об этом.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Оригинал на английском здесь: &lt;a href=&#34;http://www.cs.auckland.ac.nz/~pgut001/pubs/vista_cost.txt&#34;&gt;http://www.cs.auckland.ac.nz/~pgut001/pubs/vista_cost.txt&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

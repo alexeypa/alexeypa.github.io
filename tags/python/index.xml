@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/python/</link>
+    <description>Recent content in Python on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Tue, 20 Nov 2018 22:36:35 -0800</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Волшебство Питона</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/11/20/python-magic/</link>
+      <pubDate>Tue, 20 Nov 2018 22:36:35 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/11/20/python-magic/</guid>
+      <description>&lt;p&gt;Мне все-таки не понятно как живут большие проекты, написанные на Питоне. Он же
+как песок. Пока проект небольшой - все классно. Быстро накидали горку мокрого
+песка, лопаткой обхлопали для придания формы и все дела. Знай только что брызгай
+водой своевременно. Когда проект разрастается, то красивый и уютный песчанный
+замок превращается в минное поле. Отрефакторил подвал - крыша отвалилась.
+Поправил крышу - окна слиплись в один комок.&lt;/p&gt;
+
+&lt;p&gt;Непонятно как все это счастье держать в одной куче. Неужели все живут за счет
+100% покрытия тестами? Не верю. Или все на PyCharm сидят?&lt;/p&gt;
+
+&lt;p&gt;Расскажу про очередной прикол Питона. Итак есть простой код:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def init(factories):
+    &amp;quot;&amp;quot;&amp;quot;Convert a list of factorie into a list of objects.&amp;quot;&amp;quot;&amp;quot; 
+    return [factory() for factory in factories]
+
+def cleanup(objects):
+    &amp;quot;&amp;quot;&amp;quot;Clean up objects in the reversed order of their creation.&amp;quot;&amp;quot;&amp;quot;
+    for obj in reversed(objects):
+        obj.cleanup()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;init()&lt;/code&gt; берет список фабрик и отдает список объектов, созданных фабриками.
+&lt;code&gt;cleanup()&lt;/code&gt; чистит созданные объекты в порядке, противоположном порядку
+создания. Нам требуется написать тест, который проверяет, что методы &lt;code&gt;cleanup()&lt;/code&gt;
+вызываются в правильном порядке:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from itertools import permutations
+import mock
+
+def test_cleanup():
+    &amp;quot;&amp;quot;&amp;quot;Verify cleanup() order.&amp;quot;&amp;quot;&amp;quot;
+    # Try all permitations of initialization order. 
+    for init_order in permutations(range(3)):
+        cleanup_order = []
+
+        def factory(index):
+            def cleanup():
+                &amp;quot;&amp;quot;&amp;quot;Record the clean up order.&amp;quot;&amp;quot;&amp;quot;
+                cleanup_order.append(index)
+
+            def create():
+                &amp;quot;&amp;quot;&amp;quot;Return a mock implementing cleanup().&amp;quot;&amp;quot;&amp;quot;
+                obj = mock.Mock
+                obj.cleanup = mock.Mock(side_effect=cleanup)
+                return obj
+
+            return create
+
+        # Create objects in the desired order.
+        objects = init([factory(index) for index in init_order])
+
+        cleanup(objects)
+
+        # Verify that the object were cleaned up in the reveresed
+        # order of their creation.
+        assert cleanup_order == list(reversed(init_order))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Разберу логику по кускам. Тест перебирает все возможные кобинации порядка
+создания объектов:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for init_order in permutations(range(3)):
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Декоратор &lt;code&gt;factory()&lt;/code&gt; возвращает фабрику &lt;code&gt;create()&lt;/code&gt;, которая в свою учередь
+создает объект с методом &lt;code&gt;cleanup()&lt;/code&gt;. Для создания объекта на коленке
+используется &lt;a href=&#34;https://docs.python.org/3/library/unittest.mock.html&#34;&gt;&lt;code&gt;Mock&lt;/code&gt;&lt;/a&gt;. Релизация &lt;code&gt;cleanup()&lt;/code&gt; запоминает порядок вызова в
+&lt;code&gt;cleanup_order&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;init()&lt;/code&gt; создает объекты в заданном порядке, &lt;code&gt;cleanup()&lt;/code&gt; - чистит:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;objects = init([factory(index) for index in init_order])
+
+cleanup(objects)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Наконец, в самом конце мы проверяем, что порядок очистки противоположен порядку
+создания:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;assert cleanup_order == list(reversed(init_order))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Все просто, не так ли? Запускаем тест и получаем облом:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;               assert cleanup_order == list(reversed(init_order))
+E     assert [2, 2, 2] == [2, 1, 0]
+E       At index 1 diff: 2 != 1
+E       Use -v to get the full diff
+
+
+rabbit_test.py:41: AssertionError 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Заядлые питонщики давно раскусили, в чем проблема. А вы сможете найти ошибку не
+заглядывая в ответ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ну-ка, еще разок</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/11/08/retrying/</link>
+      <pubDate>Thu, 08 Nov 2018 21:57:46 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/11/08/retrying/</guid>
+      <description>&lt;p&gt;Питоний пакет &lt;a href=&#34;https://pypi.org/project/retrying/&#34;&gt;retrying&lt;/a&gt; - универсальная заплатка для кода, который может
+поломаться из-за внешних причин. Например, &lt;a href=&#34;https://docs.python.org/3.7/library/socket.html#socket.socket.connect&#34;&gt;&lt;code&gt;socket.connect()&lt;/code&gt;&lt;/a&gt; может
+закончится ошибкой из-за непредвиденной ситуации в сети. Заворачиваем вызов в
+&lt;code&gt;@retry&lt;/code&gt; и бац! Все работает.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;@retry
+def create_connection(address):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    return socket.connect(address)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Однако бездумное применение &lt;code&gt;@retry&lt;/code&gt;, как нетрудно догадаться, приводит
+проблемам. Самый известный пример - вложенные &lt;code&gt;@retry&lt;/code&gt;.
+&lt;code&gt;@retry(stop_max_attempt_number=3)&lt;/code&gt; вложенный в другой
+&lt;code&gt;@retry(stop_max_attempt_number=3)&lt;/code&gt; дает 9 повторов. Три уровня вложенности -
+27 повторов.&lt;/p&gt;
+
+&lt;p&gt;Один раз использование &lt;code&gt;@retry&lt;/code&gt; привело к тому, что IT заблокировало мою учетную
+запись. Банальная история - был некий скрипт, который при запуске спрашивал
+логин и пароль для авторизации. В один прекрасный день некто (не будем
+показывать пальцем, хотя это был Слонёнок) усовершенствовал скрип, завернув
+сетевой вызов в &lt;code&gt;@retry&lt;/code&gt;. Отличная идея, за исключением того, что ошибка
+авторизации приводила к повторному запросу с тем же неправильным именем и
+паролем. После определенного числа попыток контроллер домена решил, что кто-то
+пытается подобрать пароль к учетной записи и заблокировал её.&lt;/p&gt;
+
+&lt;p&gt;Мораль истории - знайте свои ошибки в лицо и используйте параметр
+&lt;code&gt;retry_on_exception&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

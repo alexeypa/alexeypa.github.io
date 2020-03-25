@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>… и концы в воду</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">… и концы в воду</h1>
+    <span class="post-date">Jun 25, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/06/25/315/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a><a class="label" href="/tags/troubleshooting">Troubleshooting</a>
+    </span>
+    <p>Эта неделя началась замечательно, - а именно с безуспешных попыток выяснить, почему валиться билд. Надо сказать, что и в невоенное-то время разобраться, что именно поломалось бывает непросто. Но в этот раз все было еще веселее чем обычно. Некая утилита (не будем показывать пальцем, хотя утилита написана на .NET :-) ), выдавала примерно следующий лог:</p>
+
+<pre><code class="language-no-highlight">...
+&gt; FooBar: parsing Z:\temp\tmp1234.tmp
+&gt; FooBar: error XXXX, line 123, Z:\temp\tmp1234.tmp
+...
+</code></pre>
+
+<p>Небольшая заминка была только в том, что утилита аккуратно удаляла «Z:\temp\tmp1234.tmp» вслед за неудачной попыткой его разбора. Действительно, кому придет в голову посмотреть, что там в линии 123, если этот файл и не парсится-то толком, правда?</p>
+
+<p>Ну, файл мы, конечно, восстановили, с проблемой разобрались, но осадок остался. О чем думал писавший эту утилиту не понятно. К сожалению, это далеко не единственный случай, когда возможность понять что произошло приносится в жертву, эээ…, стремлению прибраться за собой. Хотите примеров? Их есть у меня.</p>
+
+<p>nmake.exe позволяет создавать временные файлы с помощью вот такого синтаксиса:</p>
+
+<pre><code class="language-no-highlight">&lt;&lt;
+abc
+123
+&lt;&lt;[KEEP | NOKEEP]
+</code></pre>
+
+<p>Во время выполнения, <a href="http://msdn.microsoft.com/en-us/library/seaaew50(VS.71).aspx">текст между скобками копируется в файл, имя которого подставляется в выполняемую команду</a>. Опции KEEP и NOKEEP указывают время жизни файла. <em>По-умолчанию</em> или если указана опция NOKEEP, файл будет удален по завершению выполнения всех команд. Кроме невозможности посмотреть содержимое этого файла (между скобками можно использовать макросы), это означает, что при случае, разработчик не сможет просто скопировать ошибочную команду из лога, чтобы повторить её. Вместо этого ему придется запускать нужную команду или всю последовательность команд через nmake. Это может показаться не очень большой проблемой, но только до того момента, как вам придется разбираться почему вдруг не собирается компонент написанный не понятно кем, несколько лет назад и ни разу не менявшийся с тех пор.</p>
+
+<p>Похожие проблемы возникают сплошь и рядом там, где создаются разного рода <a href="http://msdn.microsoft.com/en-us/library/3te4xt0y(VS.80).aspx">response файлы</a>, позволяющие обойти ограничение на размер командной строки. Почему-то авторы скриптов любят их удалять после завершения компиляции. Зачем? Не понятно.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2008/06/25/315/";
+        this.page.title = "… и концы в воду";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

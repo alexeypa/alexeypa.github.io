@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Опасная функция ExitProcess</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Опасная функция ExitProcess</h1>
+    <span class="post-date">Jul 15, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/07/15/210/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/windows">Windows</a>
+    </span>
+    <p>Как вы думаете, какая их двух функций опаснее: <a href="http://msdn2.microsoft.com/en-us/library/ms682658.aspx">ExitProcess</a> или <a href="http://msdn2.microsoft.com/en-us/library/ms686714.aspx">TerminateProcess</a>? Ответ, конечно, зависит от определения того, что считать более безопасным. Однако если задать этот вопрос нескольким людям, большинство автоматически укажет на TerminateProcess. Почему? Потому что TerminateProcess в отличие от ExitProcess не делает попыток освободить занятые ресурсы. К примеру, программа не сможет записать несохранённые данные на диск, тем самым нарушив их целостность.</p>
+
+<p>В реальности функция ExitProcess ни чем не безопаснее, чем TerminateProcess, а может и ещё хуже, так как внушает чувство ложной безопасности. Рассмотрим алгоритм работы ExitProcess. Помимо закрытия всех открытых описателей (handles) объектов и установки состояния объектов завершаемого процесса и принадлежащих ему потоков в состояние «signaled», ExitProcess делает две важные вещи:</p>
+
+<ul>
+<li><p>Завершает все потоки процесса, кроме потока, вызвавшего ExitProcess;</p></li>
+
+<li><p>Оповещает все загруженные DLL, вызывая DllMain c кодом DLL_PROCESS_DETACH.</p></li>
+</ul>
+
+<p>В случае если один из потоков выполнял код, защищённый критической секцией, в момент своего завершения, то критическая секция может остаться захваченной навсегда. Если один из обработчиков DLL_PROCESS_DETACH попытается захватить эту секцию, то он будет заблокирован на ней навсегда. (Это пример из <a href="http://msdn2.microsoft.com/en-us/library/ms682658.aspx">статьи в MSDN</a>, посвященной ExitProcess).</p>
+
+<p>Подобная ситуация возникает чаще, чем может показаться. Фактически, любые глобальные данные (всяческие списки, таблицы и т.п.), используемые из нескольких потоков, защищаются критическими секциями или чем-то подобным. Даже если вы уверены, что ваше приложение не использует критические секции во время завершения программы, остаются системные функции, которые также могут быть источником этой проблемы.</p>
+
+<p>И наконец в общем случае вы не можете быть уверены какие DLL загружены в ваш процесс, так как:</p>
+
+<ol>
+<li><p>Набор библиотек может отличаться на разных версиях операционной системы;</p></li>
+
+<li><p>Набор библиотек может отличаться в зависимости он версий сторонних библиотек, которые использует ваше приложение;</p></li>
+
+<li><p>Другие приложения могут внедрять свой код в ваш процесс, например с помощью <a href="http://msdn2.microsoft.com/en-us/library/ms644990.aspx">SetWindowsHookEx</a> или <a href="http://msdn2.microsoft.com/en-us/library/ms682437.aspx">CreateRemoteThread</a>. В этом случае, кстати, вероятность того, что внедряемая DLL синхронизирует доступ к глобальным данным с помощью критических секций стремится к 100%.</p></li>
+</ol>
+
+<p>Т.е. это означает, что вызывая ExitProcess, вы выполняете заранее неизвестный код, обладающий неизвестным поведением.</p>
+
+<p>Единственный способ сделать вызов ExitProcess безопасным – подготовиться к вызову этой функции должным образом: корректно завершить все потоки и вызвать ExitProcess из единственного оставшегося потока. Если в процессе подготовки что-то пошло не так, то имеет смысл вызвать TerminateProcess вместо ExitProcess, так как хуже все равно не будет – состояние программы уже не определено. Следует также помнить, что CRT функции exit, _exit и прочие, а также выход из функции main в конце концов приводят в вызову ExitProcess. Т.е. они подвержены тем же самым проблемам, что и ExitProcess.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2007/07/15/210/";
+        this.page.title = "Опасная функция ExitProcess";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

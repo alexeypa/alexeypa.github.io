@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>.NET обертка для IShellLink</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">.NET обертка для IShellLink</h1>
+    <span class="post-date">Oct 22, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/22/87/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/com">COM</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/powershell">PowerShell</a>
+    </span>
+    <p>Наконец-то дописал .NET обертку для IShellLink (см. серию постов начиная с <a href="/2006/10/04/76/">Shortcuts, shell and COM apartments.</a>). Теперь можно создавать и редактировать ярлыки прямо из PowerShell. :-)</p>
+
+<p>Вот <a href="/2006/10/ShellLink_src.zip">ссылка на исходный код проекта</a>. Немного позже, если дойдут руки, выложу ссылку на готовую инсталляцию.</p>
+
+<p>Вся полезная функциональность реализуется одним классом – ShellLink, который объединяет в себе три интерфейса: IShellLink, IShellLinkDataList и IPersistFile. Большая часть методов этих интерфейсов была переделана в .NET свойства для удобства использования.</p>
+
+<p>PowerShell и CLSID_ShellLink используют разные модели COM apartments: PowerShell использует MTA, а CLSID_ShellLink, как и большинство объектов Shell, - STA. В результате, не получается вызывать методы интерфейса IShellLinkDataList, который не поддерживает маршалинг через границу apartments. Для решения этой проблемы используется ShellPS.dll, которая представляет собой не что иное, как proxy/stub DLL для интерфейса IShellLinkDataList (см. <a href="/2006/10/11/82/">COM marshalling: создание proxy/stub на коленке.</a>).</p>
+
+<p>В собранном виде весь проект состоит из двух библиотек: ShellLib.dll, которая содержит реализацию класса ShellLink и всех вспомогательных классов, и ShellPS.dll. Обе библиотеки собираются с помощью WDK, причём для сборки ShellLib.dll требуется .NET библиотеки из поставки Visual Studio .NET 2005. Эта комбинация потребовала использования нетривиальных возможностей SOURCES в виде директивы LINKER_OPTIDATA.</p>
+
+<p>Перед использованием, скомпилированные DLL нужно зарегистрировать:</p>
+
+<pre><code>regsvr32 ShellPS.dll
+gacutil /i ShellLib.dll
+</code></pre>
+
+<p>После чего можно запустить PowerShell и исследовать новые возможности.</p>
+
+<pre><code># Загружаем ShellLib.dll
+[System.Reflection.Assembly]::Load(
+    &quot;shelllib, Version=1.0.1.1, Culture=neutral, 
+    PublicKeyToken=e0a879bef00d4c8e, 
+    processorArchitecture=x86&quot;)
+| out-null
+
+# Открываем ярлык &quot;Command Prompt.lnk&quot;
+$filename = $env:USERPROFILE + 
+    &quot;\\Start Menu\\Programs\\Accessories\\Command Prompt.lnk&quot;
+
+$link = new-object ShellLib.ShellLink
+$link.Load(
+    $filename, 
+    [ShellLib.EPersistFileModeFlags]::STGM_READWRITE)
+
+$link
+</code></pre>
+
+<p>Последняя команда выведет текущие значения основных свойств ярлыка:</p>
+
+<p><a href="/2006/10/ShellLink_values.png"><img src="/2006/10/ShellLink_values.thumbnail.png" alt="" /></a></p>
+
+<p>Покажем список всех доступных методов и свойств:</p>
+
+<pre><code>$link | get-member
+</code></pre>
+
+<p><a href="/2006/10/ShellLink_methods.png"><img src="/2006/10/ShellLink_methods.thumbnail.png" alt="" /></a></p>
+
+<p>Свойство ConsoleProps соответствует вкладкам “Options”, “Font”, “Layout” и “Colors” в стандартном окне свойств ярлыка. В данный момент свойство ConsoleProps не задано, что соответствует всем значениям по умолчанию:</p>
+
+<p><a href="/2006/10/ShellLink_DefaultLayout.png"><img src="/2006/10/ShellLink_DefaultLayout.thumbnail.png" alt="" /></a></p>
+
+<p>Попробуем задать свой размер окна и шрифт:</p>
+
+<pre><code>$props = new-object ShellLib.NtConsoleProps
+$props.wFillAttribute = 7
+$props.wPopupFillAttribute = 245
+$props.dwScreenBufferSize = new-object System.Drawing.Point(180, 3000)
+$props.dwWindowSize = new-object System.Drawing.Point(180, 79)
+$props.dwFontSize = new-object System.Drawing.Point(7, 12)
+$props.uFontFamily = 54
+$props.uFontWeight = 400
+$props.FaceName = “Lucida Console”
+$props.uCursorSize = 15
+$props.bQuickEdit = 1
+$props.bInsertMode = 1
+$props.uHistoryBufferSize = 50
+$props.uNumberOfHistoryBuffers = 4
+$link.ConsoleProps = $props
+</code></pre>
+
+<p>Может показаться, что параметров слишком много, но на самом деле все значения можно просто скопировать из свойств созданного стандартными средствами ярлыка.</p>
+
+<p>Теперь можно сохранить полученные изменения.</p>
+
+<pre><code>$link.Save($filename, 1)
+</code></pre>
+
+<p>В результате всех этих действий вот такой результат:</p>
+
+<p><a href="/2006/10/ShellLink_NewLayout.png"><img src="/2006/10/ShellLink_NewLayout.thumbnail.png" alt="" /></a></p>
+
+<p><a href="/2006/10/ShellLink_NewFont.png"><img src="/2006/10/ShellLink_NewFont.thumbnail.png" alt="" /></a></p>
+
+<p>Осталось только оформить это всё в один скрипт и готово! :-)</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2006/10/22/87/";
+        this.page.title = ".NET обертка для IShellLink";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

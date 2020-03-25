@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Process Monitor on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/process-monitor/</link>
+    <description>Recent content in Process Monitor on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sun, 23 Mar 2008 22:46:19 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/process-monitor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Process Monitor научился трассировать 32-х битный стек на x64</title>
+      <link>https://blog.not-a-kernel-guy.com/2008/03/23/299/</link>
+      <pubDate>Sun, 23 Mar 2008 22:46:19 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2008/03/23/299/</guid>
+      <description>&lt;p&gt;Я как-то привык, что Process Monitor не умеет показывать 32-х битный стек события, которое произошло в 32-х разрядном процессе, выполняющемся под Wow64. Вместо этого он показывал только 64-х битный стек, что было абсолютно бесполезно, так как там по определению всегда светится wow64.dll сотоварищи. Однако после подсказки на &lt;a href=&#34;http://forum.sysinternals.com/forum_posts.asp?TID=13227#65748&#34;&gt;Sysinternals Forums&lt;/a&gt; выяснилось, что начиная с Vista SP1 это уже работает.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Унификация стиля кодирования в команде - тупичок с граблями</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Унификация стиля кодирования в команде - тупичок с граблями</h1>
+    <span class="post-date">Aug 13, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/08/13/332/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+    </span>
+    <p>Тема жёванная-пережёванная, так что я не буду подробно останавливаться на том, зачем нужен единый стиль кодирования в команде (или проекте). Основные тезисы:</p>
+
+<ul>
+<li><p>Унифицированный стиль кодирования упрощает сопровождение кода. Это, кажется, единственная причина, зачем он вообще нужен. Все остальное, включая меньшее количество мигреней в минуту на одного эталонного разработчика, - побочные эффекты, направленные опять же на упрощение (читай - повышение эффективности) сопровождения кода.</p></li>
+
+<li><p>Кажется, нет никакой разницы между разными стилями с точки зрения легкости понимания и написания кода. Любой выбранный стиль, будучи принят в команде упрощает сопровождение кода, при условии, что он один и используется.</p></li>
+
+<li><p>Единственный способ выработать единый стиль - диктатура в том или ином виде. Можно месяцами спорить о том, где правильно ставить скобки, какие отступы должны быть, можно ли использовать две пустые строки в качестве разделителя и т.д. и т.п. В один прекрасный момент терпение лопается и волевым решением назначается «правильный» стиль.</p></li>
+</ul>
+
+<p>И вот, скажем, ваша команда достигла этой точки: стиль выбран, в репозитории сидит куча кода, который нужно переписать в соответствии с выбранным стилем. Даже если учесть, что львиная доля правок будет носить косметический характер, их общее количество, необходимое для достижения заветной цели, очень велико. Логичное решение, которое принимает любая вменяемая команда - постепенный переход; вместе с нормальными исправлениями разработчики будут править стиль исправляемого участка кода. На этом почему-то все успокаиваются.</p>
+
+<p>Далее все происходит по одному из двух сценариев:</p>
+
+<ol>
+<li><p>Разработчики возвращаются к насущным проблемам, все реже вспоминая про выбранный стиль (хотя и пытаясь, время от времени, ему следовать).</p></li>
+
+<li><p>После массовых правок кода, наиболее ретивые поклонники стиля наталкиваются на многочисленные конфликты при слиянии кода из разных веток; недолго чешут затылки, понимая, что регулярная морока с конфликтами им совсем не улыбается и решают, что ну его на фиг. Далее всё следует по сценарию №1.</p></li>
+</ol>
+
+<p>Почему так случается? Очевидно потому, что факт выбора стиля никак не влияет на его интеграцию в процесс написания кода. Типичное «стиль выбран, давайте весь новый код писать в новом стиле» не работает. Аналогичная вещь случается когда пытаются вычистить все предупреждения компилятора если их количество больше 10 на каждый исходный файл проекта. В конце концов, оказывается, что есть более приоритетные задачи, а код вроде и так работает.</p>
+
+<p>Что можно сделать в такой ситуации?</p>
+
+<ul>
+<li><p>Во-первых, нужно выделить дополнительное время на правку кода. Иными словами будьте готовы, что каждое исправление будет занимать на 10% больше времени в течение N месяцев.</p></li>
+
+<li><p>Во-вторых, нужно, чтобы соответствие вносимых правок принятому стилю контролировалось автоматически, т.е. при каждом коммите/чекине. Казалось бы это очень просто реализуется, существует множество автоматических стилизаторов кода. На практике же выясняется, что либо выбранный стиль не поддерживается ни одним из них, либо стилизатор недостаточно толерантен к вариациям стиля, исправляя то, что исправлять не следовало.</p></li>
+
+<li><p>В-третьих, скрипты, используемые для запуска стилизатора, должны иметь гибкую систему фильтров, позволяющую задать какие файлы следует проверять, а какие должны игнорироваться при проверке. Фильтры должны храниться вместе в исходными файлами и быть доступны каждому разработчику, имеющему право коммитить/чекинить код. В самом начале должны проверяться, только новые файлы, а также существующие файлы, успешно проходящие проверку стилизатором. По мере внесения исправлений, исправленные файлы будут в список.</p></li>
+
+<li><p>Аналогично, стилизатор должен позволять контролировать важность того или иного предупреждения. По мере уменьшения предупреждений определённого вида, их можно превратить в ошибки с тем, чтобы гарантированно избежать их появления в будущем.</p></li>
+
+<li><p>Кроме всего прочего, в документ, описывающий выбранный стиль следует включить рекомендации о том, как избежать массовых правок кода при стилевых правках.</p></li>
+</ul>
+
+<p>Вот такие вот мысли. Альтернатива всему этому - выработать иммунитет к любому, сколь угодно ужасному, стилю кода. :-)</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2008/08/13/332/";
+        this.page.title = "Унификация стиля кодирования в команде - тупичок с граблями";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

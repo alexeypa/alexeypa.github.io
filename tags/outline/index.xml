@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Outline on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/outline/</link>
+    <description>Recent content in Outline on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 16 May 2009 22:45:18 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/outline/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Расширение для WinDbg: «Outline»</title>
+      <link>https://blog.not-a-kernel-guy.com/2009/05/16/512/</link>
+      <pubDate>Sat, 16 May 2009 22:45:18 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2009/05/16/512/</guid>
+      <description>&lt;p&gt;Мне частенько приходится разбираться с отладкой исключений, произошедших из-за порчи стека или на фоне порчи стека. В таких случаях обычно приходится трассировать стек вручную. Дело это муторное, поэтому я решил написать расширение для WinDbg, несколько облегчающее эту задачу.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

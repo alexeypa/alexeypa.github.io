@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Usability on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/usability/</link>
+    <description>Recent content in Usability on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 11 Dec 2008 09:34:28 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/usability/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>... потому что люди не читают слова</title>
+      <link>https://blog.not-a-kernel-guy.com/2008/12/11/389/</link>
+      <pubDate>Thu, 11 Dec 2008 09:34:28 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2008/12/11/389/</guid>
+      <description>Спам фильтр, сидящий в голове каждого пользователя, неизмеримо превосходит по своей эффективности любой автоматический спам фильтр. Он умеет отфильтровывать красиво оформленный, грамматически правильный текст, даже не читая его - You can’t fix application compatibility problems with dialog boxes.</description>
+    </item>
+    
+    <item>
+      <title>Ввод регистрационного номера программы. Ну почему всё так непросто?</title>
+      <link>https://blog.not-a-kernel-guy.com/2008/02/11/288/</link>
+      <pubDate>Mon, 11 Feb 2008 13:06:15 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2008/02/11/288/</guid>
+      <description>&lt;p&gt;Некоторое время назад я занимался жутко интеллектуальной деятельностью - ручной проверкой результатов автоматического теста, проверяющего корректность работы популярных приложений на данной сборке операционной системы. Проще говоря, этот тест устанавливает OS, затем ставит приложение из списка и проверяет базовую функциональность на предмет не поломалось ли чего. Если что-то идет не так, то тест сообщает о найденных проблемах. Такой себе regression testing для самой OS.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Usability</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/12/03/267/</link>
+      <pubDate>Mon, 03 Dec 2007 21:32:57 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/12/03/267/</guid>
+      <description>У нас на офисной кухне и в кафе мусорные корзины стоят группами по три штуки: для пластика, алюминиевых банок и остального мусора. На них нарисованы большие значки, чтобы никто не промахнулся и не кинул пластиковый стаканчик в урну для обыкновенного мусора. И всё бы хорошо, но периодически уборщики меняют корзины местами. Что порождает, извините за сленг, customer pain and frustration. А именно - каждый выбрасывающий, уже занеся руку для броска, подвисает секунд на десять, силясь понять, что же произошло.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ядерная Энергия on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/%D1%8F%D0%B4%D0%B5%D1%80%D0%BD%D0%B0%D1%8F-%D1%8D%D0%BD%D0%B5%D1%80%D0%B3%D0%B8%D1%8F/</link>
+    <description>Recent content in Ядерная Энергия on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Fri, 13 Jul 2018 20:31:26 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%8F%D0%B4%D0%B5%D1%80%D0%BD%D0%B0%D1%8F-%D1%8D%D0%BD%D0%B5%D1%80%D0%B3%D0%B8%D1%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>1.8 миллионов</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/07/13/1.8-million/</link>
+      <pubDate>Fri, 13 Jul 2018 20:31:26 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/07/13/1.8-million/</guid>
+      <description>&lt;p&gt;В комментариях к предыдущей &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2018/07/09/nuclear-power/&#34;&gt;заметке про ядерную энергетику&lt;/a&gt; было высказано махровое
+недоверие цифре в 1.8 миллионов жизней, которые использование ядерной энергии
+позволило сохранить. Давайте разберемся откуда взялась эта цифра.&lt;/p&gt;
+
+&lt;p&gt;Вообще говоря, до начала поисков я предполагал, что придется перелопатить кучу
+страниц, отсеивая желтую прессу, прежде чем найдется достоверный источник
+информации. Но нет же, первый же запрос выдал &lt;a href=&#34;https://blogs.scientificamerican.com/the-curious-wavefunction/nuclear-power-may-have-saved-1-8-million-lives-otherwise-lost-to-fossil-fuels-may-save-up-to-7-million-more/&#34;&gt;статью&lt;/a&gt;, ссылающуюся на
+&lt;a href=&#34;https://pubs.acs.org/doi/abs/10.1021/es3051197?source=cen&#34;&gt;оригинальное исследование NASA Goddard Institute for Space Studies и Columbia
+University Earth Institute&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/07/prevented_deaths.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;О чем же говорит это исследование? Количество предотвращенных смертей в период
+с 1971 по 2009 год оценивается в 1.84 миллиона. За год в период с 2000 по 2009
+год предотвращается в среднем 76 тысяч смертей. Для сравнения в Германии,
+которая обязалась отказаться от ядерной энергии до 2022 года, использование
+ядерной энергии предотвратило около 117 тысяч смертей в период с 1971 по 2009
+год (диапазон оценки - от 29 до 470 тысяч).&lt;/p&gt;
+
+&lt;p&gt;Сколько жизней было потеряно в следствие использования атомной энергетики?
+В мире за период с 1971 по 2009 годы авторы исследования насчитали 4900 смертей.
+Причем авторы отмечают (и подтверждают ссылками на работы других
+исследователей), что линейная модель, которую они использовали для оценки имеет
+тенденцию значительно завышать результат в случае аварий с малой интенсивностью
+радиоактивного фона (все аварии кроме Чернобыля, включая Фукусиму и аварию на
+Трехмильном острове). Оценка в 4900 смертей может быть завышена на два порядка.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/07/mortality_rate_per_twt.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;В общем я не знаю, как с такими цифрами можно ратовать против атомной
+энергетики. Разница в 370 раз - это как бы over дофига.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Почему я поменял свое мнение о ядерной энергии</title>
+      <link>https://blog.not-a-kernel-guy.com/2018/07/09/nuclear-power/</link>
+      <pubDate>Mon, 09 Jul 2018 22:11:45 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2018/07/09/nuclear-power/</guid>
+      <description>&lt;p&gt;Интересное выступление Майкла Шелленбергера с TEDx: &amp;ldquo;Почему я поменял свое
+мнение о ядерной энергии&amp;rdquo;. Майкл, в прошлом горячий противник ядерной
+энергетики, объясняет почему ядерная энергия чище, чем энергия ветра и
+Солнца.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/ciStnd9Y2ak&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Несколько цифр:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;На каждый киловатт энергии добытой с помощью солнечных панелей в атмосферу
+выбрасывается в 4 раза больше углекислого газа, чем на киловатт добытый на
+атомной станции.&lt;/li&gt;
+&lt;li&gt;В пересчете на киловатт, солнечные панели генерируют в 300 раз больше
+отходов, чем атомная энергетика.&lt;/li&gt;
+&lt;li&gt;84% всей ионизирующей радиации, которой подвержен &amp;ldquo;средний человек&amp;rdquo; имеет
+естественное происхождение; 15% - приходится на медицину. На атомные аварии
+включая Чернобыль и Фукусиму приходится меньше 0.3%.&lt;/li&gt;
+&lt;li&gt;Использование атомной энергии сохранило жизни 1.8 миллиону человек (за счет
+снижения загрязнения окружающей среды). Сжигание угля, кстати, приводит к
+&lt;a href=&#34;https://www.scientificamerican.com/article/coal-ash-is-more-radioactive-than-nuclear-waste/&#34;&gt;большему количеству радиоактивных выбросов&lt;/a&gt;, чем атомная энергетика.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ну и знаменитое - один съеденный банан дает &lt;a href=&#34;https://xkcd.com/radiation/&#34;&gt;большую дозу излучения&lt;/a&gt;, чем
+проживание в 50 милях от атомной станции. Проживание на том же расстоянии от
+угольной электростанции дает дозу в &lt;em&gt;три&lt;/em&gt; съеденных банана.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

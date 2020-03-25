@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>И кнопочку «Повтор» не забудьте!</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">И кнопочку «Повтор» не забудьте!</h1>
+    <span class="post-date">Dec 25, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/12/25/273/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Тестирование</a><a class="label" href="/tags/%D1%8E%D0%BD%D0%B8%D1%82-%D1%82%D0%B5%D1%81%D1%82%D1%8B">Юнит тесты</a>
+    </span>
+    <p>Юнит тесты, в отличие от многих других видов тестирования, обладают одной замечательной особенностью. Они обеспечивают практически 100% (a в теории - так точно 100%) повторяемость результатов. Грубо говоря, после успешного прогона тестов можно с уверенностью говорить, что покрываемые тестами сценарии работают. Гарантированная повторяемость важна для обнаружения быстрого регрессий, рефакторинга кода и множества других вещей. Как обычно, окунание в реальность сильно портит эту радужную картину.</p>
+
+<p>Тут есть минимум две проблемы. Во-первых, как только в тест подмешиваются любые внешние, т.е. неконтролируемые параметры, так сразу начинаются сложности. Например, если тест использует сетевое соединение, то его успешность зависит от того, что творилось в сети на момент запуска теста. Или, скажем, если тест может зависеть от регистрации того или иного COM компонента. Строго говоря, в таких случаях тест перестаёт быть юнит тестом. Его нужно называть интеграционным тестом или как-нибудь ещё. На практике же терминологические тонкости мало кого интересуют, а вот снижение повторяемость тестов - очень даже.</p>
+
+<p>Во-вторых, даже если на тест не влияют никакие внешние «раздражители», остаётся другая проблема - неизбежный рост сложности кода. Каждая новая ветка кода требует отдельного теста. В теории. На практике об этом забывают сразу же после завершения работы над юнит тестом для &ldquo;Hello world&rdquo;. Писать отдельный тест каждой комбинации входных параметров выходит крайне неэффективно. Тесты, покрывающие все или большую часть комбинаций входных параметров, очень скоро стремятся стать сложнее тестируемого кода, да и времени полный перебор отнимает изрядно. По этому, в ход идут тесты, генерирующие входные параметры случайным или псевдослучайным образом.</p>
+
+<p>Для тестирования парсеров используются так называемые фаззеры (fuzzers). Фаззер генерирует поток данных для парсера, в который случайным образом вносятся ошибки. Это может быть как случайная последовательность байт, так и ошибки формата данных на более высоком уровне. К примеру, для XML парсера можно проверять реакцию на поток случайных байт, поток случайных символов в правильной кодировке, поток тегов с привнесенными ошибками. Правильно написанный парсер должен корректно обрабатывать любые данные, поданные на вход. Корректность обработки проверяется в простейшем случае по отсутствию фатальных ошибок вроде разыменования неинициализированного указателя, либо периодическими проверками целостности внутреннего состояния парсера. Этот же принцип можно использовать не только для проверки парсеров, но и для тестирования отдельных классов, интерфейсов и т.д. Только в этом случае вместо внесения ошибок в данные на входе, фаззер будет привносить ошибки в правильную последовательность вызова методов класса или интерфейса.</p>
+
+<p>Хотя использование фаззеров позволяет эффективно отлавливать ошибки, в точки зрения повторяемости результатов фаззеры выглядят не очень хорошо. Случайность генерируемых ошибок фундаментальна. Отказ от неё ведет либо к полному перебору, либо к индивидуальным тестам, воспроизводящим лишь наиболее часто возникающие условия. Однако и со случайностью можно бороться, не отказываясь от неё. Любой уважающий себя тест обязан вести журнал выполняемых действий и полученных результатов. В случае сбоя по этому журналу можно будет восстановить последовательность событий. Если пойти немного дальше можно встроить возможность повторения всех проделанных действий непосредственно в тест. Тем самым разработчик сможет воспроизвести проблему тут же на месте, непосредственно в отладчике. Код может выглядеть примерно вот так:</p>
+
+<pre><code class="language-cpp">void
+replayTest(
+    const Log&amp; log
+    )
+{
+    ...
+    while (!log.empty())
+    {
+        ...
+        int r = log.top();
+        log.pop_front();
+        ...
+    }
+    ...
+}
+
+void
+doTest()
+{
+    Log log;
+
+    try
+    {
+        ...
+        while (1)
+        {
+            ...
+            int r = rand();
+            log.push_back(r);
+            ...
+        }
+        ...
+    }
+    catch (...)
+    {
+        DebugBreak();
+
+        replayTest(log);
+
+        throw;
+    }
+}
+</code></pre>
+
+<p>Любое исключение, достигшее «catch(…)», считается ошибкой. При этом будет вызвана функция «replayTest», которая воспроизведет в точности действия, приведшие к исключению. Этот пример можно сделать ещё лучше, вынеся последнюю итерацию цикла в отдельный блок кода и добавив возможность перезапустить «replayTest» несколько раз.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2007/12/25/273/";
+        this.page.title = "И кнопочку «Повтор» не забудьте!";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

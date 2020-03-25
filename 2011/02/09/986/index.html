@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Разбор задачи про пакеты</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Разбор задачи про пакеты</h1>
+    <span class="post-date">Feb 9, 2011 &middot; <a href="https://blog.not-a-kernel-guy.com/2011/02/09/986/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E">Интервью</a>
+    </span>
+    <p>В комментариях к <a href="/2011/02/08/980/">задаче про пакеты</a> было задано много вопросов. Отвечу здесь.</p>
+
+<p>Во-первых, задача действительно простая, иначе никак не уложиться в формат собеседования. На написание кода и сопутствующее общение есть всего около получаса. Плюс писать код на доске сложнее, чем в любимом редакторе. Тем не менее, в задаче любовно набросано граблей, на которые по возможности кандидат должен суметь не наступить. Условие задачи не полное (естественно!), не смотря на кажущееся обилие деталей. Кандидат всегда может прояснить у собеседующего недостающие детали и получить +1 к карме. Либо он может её решить, предположив разумные умолчания. В этом случае собеседующий всегда может добавить недостающее условие к задаче и попросить поправить код соответственно.</p>
+
+<p>Во-вторых, по написание кода на доске. <a href="http://belnetmon.livejournal.com/1377532.html">Уважаемый ребе belnetmon</a> недоумевает, зачем мучить людей, заставляя их писать код на доске. Вообще говоря, цель интервью не в том, чтобы написать код решающий, поставленную задачу, а в том, чтобы убедится, что кандидат умеет думать, анализировать, писать рабочий код, доходчиво объяснять свою мысль и т.д. Практика показывает, что написание кода на доске очень хорошо раскрывает эти способности (либо показывает их отсутствие). В то время как красиво говорить и разумно рассуждать вслух получается почти у всех. Возможно, просто потому, что думать, писать код на доске (неудобно же!) и пускать пыль в глаза одновременно сложнее, чем просто пускать пыль в глаза.</p>
+
+<p>Так вот, наблюдая как кандидат пишет код на доске, собеседующий видит, как тот подходит к решению проблемы, как мысленно отлаживает код, как перепроверят свои предположения. Даже мелочи вроде того, как получается ushort из двух байтов характеризуют его прошлый опыт. :-) Если кандидат «в теме», то он может подыграть – вслух поясняя свои действия. «Вот здесь я делаю так-то, потому что …»</p>
+
+<p>Так же есть такой интересный момент исправления ошибок в коде на доске. Некоторые всегда перепроверяют написанный код, перед тем как сказать «готово». Некоторые делают это только если их попросить перепроверить код. Некоторые не понимают, что фраза «я вижу тут несколько ошибок» означает, что нужно найти более одной ошибки либо пройти по коду и доказать собеседующему, что он верен.</p>
+
+<p>Короче решение «прошел/не прошел» принимается не в зависимости от «решил/не решил задачу», а по совокупности впечатлений от процесса её решения. Можно решить задачу и не пройти, а можно и решить её частично и пройти. Вот, кстати пример того, как может выглядеть на доске код (это кусок решения другой задачи) успешного кандидата:
+<a href="/2011/02/2011-02-09-09.00.20.jpg"><img src="/2011/02/2011-02-09-09.00.20.jpg" alt="Код на доске." /></a></p>
+
+<p>Как видите, ни о какой каллиграфии речь не идет.</p>
+
+<p>В-третьих, почему так мало кандидатов справляется с задачей? Наверное потому, что плохих кандидатов всегда больше, чем хороших. Хорошие уже работают и на интервью ходят редко. Еще видимо дает о себе знать нервное напряжение. Интервью все-таки.</p>
+
+<p>Кстати эта задача, давалась кандидатам на позицию контрактора. Для тех, кто претендует на Senior SDE (FTE) требования выше и задачи другие.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2011/02/09/986/";
+        this.page.title = "Разбор задачи про пакеты";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

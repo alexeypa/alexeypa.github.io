@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flash on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/flash/</link>
+    <description>Recent content in Flash on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Tue, 15 Apr 2008 23:08:15 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/flash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Анализ одной уязвимости в Flash</title>
+      <link>https://blog.not-a-kernel-guy.com/2008/04/15/308/</link>
+      <pubDate>Tue, 15 Apr 2008 23:08:15 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2008/04/15/308/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.matasano.com/log/1032/this-new-vulnerability-dowds-inhuman-flash-exploit/&#34;&gt;Томас Пташек (Thomas Ptacek) анализирует нечеловеческий эксплоит Марка Доуда (Mark Dowd)&lt;/a&gt;, использующий уязвимость в Flash.&lt;/p&gt;
+
+&lt;p&gt;Эксплоит использует целочисленное переполнение, возникающее из-за того, что Flash runtime использует знаковое число, прочитанное из SWF файла, как беззнаковый размер выделяемого блока памяти. В итоге Flash пытается выделить несколько гигабайт памяти, получает в ответ NULL, но не проверяет его, а пишет 32-х разрядное число по смещению от полученного нулевого указателя. Марк вычислил, что если смещение X превышает 0x80000000 и при этом X+4 делится без остатка на 12, то результирующий адрес получается валидным. Записываемое 32-х битное значение получается из исходного 16-ти разрядного числа вычитанием значения еще одной переменной. Иными словами, ни указатель, ни записываемое значение не контролируются хакером полностью.&lt;/p&gt;
+
+&lt;p&gt;Тем не менее…&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

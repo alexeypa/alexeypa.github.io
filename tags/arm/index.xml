@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arm on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/arm/</link>
+    <description>Recent content in Arm on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Wed, 05 Jan 2011 16:04:44 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/arm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows on ARM</title>
+      <link>https://blog.not-a-kernel-guy.com/2011/01/05/959/</link>
+      <pubDate>Wed, 05 Jan 2011 16:04:44 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2011/01/05/959/</guid>
+      <description>Ну чё? Мы стоили, строили и, наконец, построили: Microsoft Announces Support of System on a Chip Architectures From Intel, AMD, and ARM for Next Version of Windows. Отличная новость, я считаю.</description>
+    </item>
+    
+  </channel>
+</rss>

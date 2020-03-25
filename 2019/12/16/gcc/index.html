@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Когда 1.0 = 0.0</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Когда 1.0 = 0.0</h1>
+    <span class="post-date">Dec 16, 2019 &middot; <a href="https://blog.not-a-kernel-guy.com/2019/12/16/gcc/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0">Отладка</a>
+    </span>
+    <p>Столкнулся недавно с новой для себя областью - ловлей багов в компиляторе.
+Ловить <a href="/2010/07/11/854/">баг в процессоре</a> мне уже доводилось, а вот с компиляторами до
+недавнего времени как-то везло.</p>
+
+<p>Началось все очень прозаично. В нашем репозитории есть своя реализация умного
+указателя. Ну, вы знаете, как это бывает. Обычная история на самом деле&hellip;
+Этот класс был написан в древние времена, тогда и <a href="https://en.wikipedia.org/wiki/C%2B%2B03">С++03</a> еще на свете не
+было. С тех пор уже и <a href="https://en.wikipedia.org/wiki/C%2B%2B17">С++17</a> появился и <a href="https://en.wikipedia.org/wiki/C%2B%2B20">С++20</a> не за горами, но класс
+по-прежнему активно используется. Мы его давно хотели заменить на что-нибудь
+более стандартное и современное, но все руки не доходили. “Работает - не трожь”.</p>
+
+<p>В один прекрасный день в этом классе нашлось <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">неопределенное поведение</a>, что
+стало последней каплей, <del>переломившей верблюду соломинку</del>. Указатель был
+переписан на корню и стал тонкой оберткой вокруг <code>std::shared_ptr&lt;&gt;</code>.
+На следующий же день сломался один неприметный юнит тест на одной из платформ.
+Причем на первый взгляд никакого отношения к переписанному указателю этот тест
+не имел. Но от фактов было трудно отвертеться. С новым указателем тест падал, а
+со старым - нет.</p>
+
+<p>Проблему получилось свести к коду, структура которого выглядела примерно так:</p>
+
+<pre><code class="language-cpp">bool func1(..., const double foo, ...)
+{
+    ...
+    printf(“func1: foo == %f\n, foo);
+    func2(..., foo, ...);
+}
+ 
+void func2(..., const double foo, ...)
+{
+    printf(“func2: foo == %f\n, foo);
+    ...
+}
+</code></pre>
+
+<p>Этот код печатал следующее:</p>
+
+<pre><code>func1: foo == 1.0
+func2: foo == 0.0
+</code></pre>
+
+<p>Т.е. буквально до вызова функции константа foo принимала одно значение, а в
+вызываемой функции - другое.</p>
+
+<p>Реальный код был сложнее, конечно. Например было важно, чтобы <code>func1()</code> была
+встроена (inlined) в вызывающий код, а <code>func2()</code> - нет. Без соблюдения этого
+условия ошибка не воспроизводилась. Более того, добавление еще одного
+<code>printf(“func1: foo == %f\n, foo);</code> <em>после</em> вызова <code>func2()</code> также убирало
+проблему. К этому моменту стало довольно очевидно, что компилятор генерирует
+что-то не то.</p>
+
+<p>Следующим шагом стал детальный разбор ассемблерного кода, сгенерированного
+компилятором. Самым сложным в этом деле оказалось найти правильный справочник
+по инструкциям процессора и документ, описывающий соглашение о вызовах на
+целевой платформе. Разбор показал, что константа <code>1.0</code> правильно загружается в
+регистр процессора, но далее значение переписывается другими операциями до
+вызова <code>func2()</code>.</p>
+
+<p>Поиски в баг-трекере и истории изменений в репозитории GCC не принесли успеха.
+Ничего похожего на эту ошибку не находилось. Пришлось отлаживать компилятор
+самостоятельно.</p>
+
+<p>В понимании как работает компилятор очень помогла страница <a href="http://stffrdhrn.github.io/software/embedded/openrisc/2018/06/03/gcc_passes.html">GCC Important
+Passes</a>. Если в двух словах, то логика компилятора сгруппирована по
+“проходам” (passes). Проходы организованы в две группы: “tree” и “rtl”. Они
+используют разные формы представления компилируемого кода: <a href="https://gcc.gnu.org/onlinedocs/gccint/GIMPLE.html">GIMPLE</a> и
+<a href="https://gcc.gnu.org/onlinedocs/gccint/RTL.html">Register Transfer Language (RTL)</a>. Каждый проход выполняет определенное
+преобразование. Например <code>pass_remove_useless_stmts</code> удаляет явно бесполезный
+код, а <code>pass_loop2</code> выполняет оптимизацию циклов.</p>
+
+<p><a href="http://stffrdhrn.github.io/software/embedded/openrisc/2018/06/03/gcc_passes.html"><img src="/2019/12/gcc_passes.png" alt="" /></a></p>
+
+<p>Результат работы каждого прохода можно сохранить в файл указав ключи
+<code>-fdump-rtl-all-all</code> и <code>-fdump-tree-all-all</code>. Для каждого прохода создается
+отдельный файл, куда пишется весь отладочный вывод вместе с полным описанием
+компилируемого модуля на языке GIMPLE или RTL.</p>
+
+<p>Чтобы найти проход, который приводит к ошибке, воспользовался таким алгоритмом
+поиска:</p>
+
+<ul>
+<li>Помечаем проблемный участок для того, чтобы его было легче найти. В данном
+случае достаточно было сделать уникальной строку, которая передается в
+<code>printf()</code>.</li>
+<li>Компилируем программу с <code>-fdump-rtl-all-all</code> и <code>-fdump-tree-all-all</code> и
+получаем несколько сотен файлов с результатами работы каждого прохода.</li>
+<li>Далее ищем проблемный проход методом половинного деления. Все выполненные
+проходы пронумерованы по порядку выполнения.<br /></li>
+</ul>
+
+<p>Через несколько часов получаем результат - ошибка в коде появляется после
+прохода <code>reload</code>. Какую роль выполняет проход <code>reload</code>? Для начала, согласно
+<a href="https://gcc.gnu.org/wiki/reload">GCC wiki</a>:</p>
+
+<blockquote>
+<p>Reload is the GCC equivalent of Satan.</p>
+
+<p>Reload - это эквивалент Сатаны в GCC.</p>
+</blockquote>
+
+<p>С чем я полностью согласен, кстати. В коде <code>reload</code> есть условие, которое
+занимает <a href="https://github.com/gcc-mirror/gcc/blob/7057506456ba18f080679b2fe55ec56ee90fd81c/gcc/reload.c#L1056-L1110">55 строк</a>. Код <code>reload</code> обильно припорошен макросами и
+полиморфными структурами. Никогда не знаешь какой член объединения (union
+member) имеет значение в данном месте. Полное ощущение, что читаешь код на
+питоне. Только написанный на чистом C.</p>
+
+<p>Разобраться в этом месиве было бы нереально, но в таких случаях на помощь
+приходит <a href="https://rr-project.org/">rr</a>. Скажем вам нужно найти место, где создается структура с
+заранее известным содержимым. Ставите условную точку останова в теле <code>free()</code>,
+которая срабатывает по известному содержимому структуры (например четыре байта
+по смещению <code>0x88</code> равны <code>0x12345678</code>). Когда точка останова срабатывает -
+проверяете что удаляется искомая структура. Теперь ставите новую условную точку
+останова, которая срабатывает по записи в память по адресу, где хранится
+<code>0x12345678</code> и запускаете обратное выполнение. Бац, и отладчик остановится в
+момент создания структуры (в момент записи в нее <code>0x12345678</code>).</p>
+
+<p><code>reload</code> принимает на вход код, инструкции в котором используют виртуальные
+регистры, каждый из которых <a href="https://en.wikipedia.org/wiki/Static_single_assignment_form">загружается только один раз</a>. Таких регистров
+может быть тысячи и десятки тысяч. Задача <code>reload</code> преобразовать его в код,
+который использует реальные регистры процессора, число которых ограничено
+несколькими десятками. Уникальные номера виртуальных регистров позволяют легко
+использовать вышеописанную технику, чтобы найти структуры, соответствующие
+инструкциям, выполняющим передачу константы <code>1.0</code> в <code>func2()</code>. А по ним, - найти
+места в коде <code>reload</code>, которые приводят в генерации некорректного кода на выходе.</p>
+
+<p>Результатом всех этих усилий стала заплатка для GCC, которая выдает
+предупреждение компилятора, каждый раз когда <code>reload</code> пытается сгенерировать
+ошибочный код. Тем самым, у нас появился способ автоматической проверки того,
+что подобный код не просочится в итоговую сборку.</p>
+
+<p>Умный указатель, кстати, к ошибке никакого отношения таки не имел. Просто
+со старой версией генерировался другой код, который приводил к другой
+последовательности использования регистров, с который проблема себя не проявляла.</p>
+
+<p>P.S. Сразу отвечу на очевидный вопрос. В силу специфических особенностей
+отрасли, нам даже завести репорт в публичном баг-трекере без юриста никак нельзя.
+Да и с юристом это еще тот геморрой.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2019/12/16/gcc/";
+        this.page.title = "Когда 1.0 = 0.0";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

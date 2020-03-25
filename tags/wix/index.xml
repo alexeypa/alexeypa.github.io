@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wix on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/wix/</link>
+    <description>Recent content in Wix on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sun, 23 Sep 2012 17:13:11 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/wix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>На тьму надейся, а сам не плошай</title>
+      <link>https://blog.not-a-kernel-guy.com/2012/09/23/1412/</link>
+      <pubDate>Sun, 23 Sep 2012 17:13:11 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2012/09/23/1412/</guid>
+      <description>Для продукта, над которым я сейчас работаю, нужно было сделать инсталляцию под Windows. Установить несколько файлов, создать пару ключей в реестре, обновиться на более свежую версию,.. - как раз работа для WiX. WiX, - он, конечно, не без греха. Все-таки, это всего лишь обертка вокруг Windows Installer, чьё нетривиальное нутро то и дело дает о себе знать. Взять хотя-бы тот факт, что Windows Installer понимает черытех компонентный номер версии (a.b.c.d), но при сравнии номеров версий принимает во внимание только старшие три числа.</description>
+    </item>
+    
+  </channel>
+</rss>

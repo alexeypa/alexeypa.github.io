@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Minwin on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/minwin/</link>
+    <description>Recent content in Minwin on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 03 Dec 2009 23:04:14 -0800</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/minwin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Что такое MinWin и зачем он нужен</title>
+      <link>https://blog.not-a-kernel-guy.com/2009/12/03/696/</link>
+      <pubDate>Thu, 03 Dec 2009 23:04:14 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2009/12/03/696/</guid>
+      <description>&lt;p&gt;Я смотрю, что каждое упоминание слова «&lt;a href=&#34;http://en.wikipedia.org/wiki/MinWin&#34;&gt;MinWin&lt;/a&gt;» (последним &lt;a href=&#34;http://www.betanews.com/article/Mark-Russinovich-on-MinWin-the-new-core-of-Windows/1259792850&#34;&gt;отличился Марк Руссинович на PDC 2009&lt;/a&gt;) вызывает много вопросов, главный из которых – «что это такое и зачем оно вообще надо?» Попытаюсь ответить с меру своего понимания. Замечу, что свечку над MinWin я не держал, так что считать мои слова истиной в последней инстанции не стоит.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Скрытые возможности утилиты build.exe</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Скрытые возможности утилиты build.exe</h1>
+    <span class="post-date">Nov 15, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/11/15/100/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a>
+    </span>
+    <p>Не секрет, что возможности утилиты build.exe тесно завязаны на стандартное окружение, предоставляемое WDK. Это окружение формируется скриптами makefile.def, makefile.new, makefile.plt и т.д. из директории bin. Анализируя их, можно обнаружить много интересного.</p>
+
+<p>Например, build.exe поддерживает макросы PASS0_PUBLISH, PASS1_PUBLISH и PASS2_PUBLISH. Пример их использования можно найти в “src\1394\dll\1394api\sources” из поставки Vista RTM WDK:</p>
+
+<pre><code class="language-no-highlight">PASS0_PUBLISH=\\
+  {..\\..\\inc\\1394api.h=$(DRIVERS_TST_INC_PATH)\\1394api.h}
+
+PASS1_PUBLISH=\\
+  {$(OBJ_PATH)\\$(O)\\1394api.lib=$(DRIVERS_TST_LIB_PATH)\\$(TARGETNAME).lib}
+</code></pre>
+
+<p>При сборке этой директории build.exe выдает вот следующее:</p>
+
+<pre><code class="language-no-highlight">C:\\WinDDK\\5600\\src\\1394\\dll\\1394api&gt;bcz
+BUILD: Compile and Link for x86
+BUILD: Start time: Wed Nov 15 21:48:36 2006
+BUILD: Examining c:\\winddk\\5600\\src\\1394\\dll\\1394api directory for files to compile.
+BUILD: Building generated files in c:\\winddk\\5600\\src\\1394\\dll\\1394api directory
+PASS0_Pub
+PASS0_Pub done
+BUILD: Compiling c:\\winddk\\5600\\src\\1394\\dll\\1394api directory
+Compiling - 1394api.rc
+Compiling - 1394api.c
+Compiling - 1394main.c
+Compiling - asyncapi.c
+Compiling - debug.c
+Compiling - isochapi.c
+Compiling - util.c
+Compiling - generating code...
+Building Library - objfre_wlh_x86\\i386\\1394api.lib
+PASS1_Pub
+PASS1_Pub done
+BUILD: Linking c:\\winddk\\5600\\src\\1394\\dll\\1394api directory
+Linking Executable - objfre_wlh_x86\\i386\\1394api.dll
+BUILD: Finish time: Wed Nov 15 21:48:42 2006
+BUILD: Done
+
+    8 files compiled
+    1 library built
+    1 executable built
+</code></pre>
+
+<p>Лог файл также содержит несколько интересных строк:</p>
+
+<pre><code class="language-no-highlight">set BUILDMSG=PASS0_Pub
+Publish not available... /O_BINARY_METADATA: -F 
+c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\nm26D.tmp
+set BUILDMSG=PASS0_Pub done
+</code></pre>
+
+<p>и</p>
+
+<pre><code class="language-no-highlight">set BUILDMSG=PASS1_Pub
+Publish not available... -F 
+c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\nm270.tmp
+set BUILDMSG=PASS1_Pub done
+</code></pre>
+
+<p>Поиск строки “Publish not available” сразу находит следующий код в setenv.bat:</p>
+
+<pre><code class="language-no-highlight">set PUBLISH_CMD=@echo Publish not available...
+</code></pre>
+
+<p>В свою очередь PUBLISH_CMD упоминается в makefile.plt:</p>
+
+<pre><code class="language-no-highlight">!ifndef PUBLISH_CMD
+PUBLISH_CMD=perl.exe $(NTMAKEENV)\\publish.pl /Pass:$(BUILD_PASS)
+!endif
+</code></pre>
+
+<p>Интересно. Если запустить сборку без объявления переменной PUBLISH_CMD получается вот такой результат:</p>
+
+<pre><code class="language-no-highlight">set BUILDMSG=PASS0_Pub
+perl.exe c:\\winddk\\5600\\bin\\publish.pl /Pass:PASS0 /O_BINARY_METADATA: -F
+c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\nm276.tmp
+Can't open perl script &quot;c:\\winddk\\5600\\bin\\publish.pl&quot;: No such file or directory
+set BUILDMSG=PASS0_Pub done
+
+...
+
+set BUILDMSG=PASS1_Pub
+perl.exe c:\\winddk\\5600\\bin\\publish.pl /Pass:PASS1 -F
+c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\nm279.tmp
+Can't open perl script &quot;c:\\winddk\\5600\\bin\\publish.pl&quot;: No such file or directory
+set BUILDMSG=PASS1_Pub done
+</code></pre>
+
+<p>Стандартная поставка WDK не включает файл publish.pl, который, судя по всему, и выполняет полезную работу. Один параметров, передаваемых publish.pl, - имя временного файла. Чтобы посмотреть его содержимое можно воспользоваться таким командным файлом:</p>
+
+<pre><code class="language-cmd">@echo off
+
+if exist &quot;%2&quot; ( type &quot;%2&quot; )
+if exist &quot;%3&quot; ( type &quot;%3&quot; )
+</code></pre>
+
+<p>В этом случае вывод выглядит вот так:</p>
+
+<pre><code class="language-no-highlight">set BUILDMSG=PASS0_Pub
+D:\\projects\\ShellLink\\ShellPS\\a.cmd /O_BINARY_METADATA: -F
+c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\nm295.tmp
+{..\\..\\inc\\1394api.h=\\1394api.h}
+
+set BUILDMSG=PASS0_Pub done
+
+...
+
+set BUILDMSG=PASS1_Pub
+D:\\projects\\ShellLink\\ShellPS\\a.cmd -F
+c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\nm298.tmp
+{c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\1394api.lib=\\1394API.lib}
+
+set BUILDMSG=PASS1_Pub done
+</code></pre>
+
+<p>Очевидно, что содержимое файла представляет собой значение соответствующего текущему проходу макроса PASSX_PUBLISH. Продолжив поиски нетрудно найти все места вызова PUBLISH_CMD в makefile.new:</p>
+
+<pre><code class="language-no-highlight">PASS0_Pub: $(PASS0_OBJECTS) $(NTTARGETFILE0)
+!if defined(PASS0_PUBLISH) &amp;&amp; &quot;$(BUILD_PASS)&quot; != &quot;PASS1&quot; &amp;&amp; &quot;$(BUILD_PASS)&quot; != &quot;PASS2&quot;
+    set BUILDMSG=$(@F)
+    $(PUBLISH_CMD) /O_BINARY_METADATA:$(_O_BINARY_METADATA) -F &lt;&lt;
+$(PASS0_PUBLISH:}=}
+)
+&lt;&lt;$(BUILD_NOKEEP)
+    set BUILDMSG=$(@F) done
+!endif
+</code></pre>
+
+<p>Какие можно сделать выводы? По всей видимости, макросы PASSX_PUBLISH используются для копирования и постобработки файлов на каждом из этапов сборки. Очевидно, что этот механизм можно использовать для выполнения каких-либо своих задач. :-) Важно только помнить, что это недокументированная возможность, которая может быть изменена или удалена в следующей версии WDK.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2006/11/15/100/";
+        this.page.title = "Скрытые возможности утилиты build.exe";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

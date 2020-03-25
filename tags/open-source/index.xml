@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Source on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/open-source/</link>
+    <description>Recent content in Open Source on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 26 Apr 2014 12:23:25 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NASA делится исходниками</title>
+      <link>https://blog.not-a-kernel-guy.com/2014/04/26/1633/</link>
+      <pubDate>Sat, 26 Apr 2014 12:23:25 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2014/04/26/1633/</guid>
+      <description>&lt;p&gt;Каталог проектов NASA, исходный код которых доступен для изучения: &lt;a href=&#34;http://code.nasa.gov/project/nasa-technology-transfer-program-2014-software-catalog/&#34;&gt;http://code.nasa.gov/project/nasa-technology-transfer-program-2014-software-catalog/&lt;/a&gt;. Список из почти тысячи проектов разбит на 15 категорий:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Open source как социальный эксперимент</title>
+      <link>https://blog.not-a-kernel-guy.com/2009/01/08/413/</link>
+      <pubDate>Thu, 08 Jan 2009 23:55:27 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2009/01/08/413/</guid>
+      <description>&lt;p&gt;Никогда не знаешь к чему приведет отправка патча в какой-нибудь open source проект. Обычно это выглядит так. Программа вас чем-то не устраивает и вы изменяете её под себя. Потом, сообразив, что это будет полезно кому-нибудь еще, вы оформляете красивый патч и отправляешь его разработчикам. Его, как правило, не принимают. По разным причинам. То ли стиль нужно подправить, то ли нужно показать, что патч действительно полезный и что он в канву продукта вписывается. Впрочем, и это тоже не новость, главная задача разработчиков продукта на этом этапе – это выяснить вменяемость автора патча (можно ли с ним работать, вести нормальный диалог и т.д.) и то, насколько предложенные им изменения вписываются в их видение продукта. Короче, если вы новичок в данном проекте, ждите придирок по пустякам. Это нормально и это пройдет, если вы (со временем) впишетесь в стиль работы, принятой разработчиками.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

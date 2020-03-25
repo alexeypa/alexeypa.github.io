@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gmail on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/gmail/</link>
+    <description>Recent content in Gmail on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sun, 09 Dec 2007 21:17:02 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/gmail/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Наблюдение</title>
+      <link>https://blog.not-a-kernel-guy.com/2007/12/09/269/</link>
+      <pubDate>Sun, 09 Dec 2007 21:17:02 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2007/12/09/269/</guid>
+      <description>Wordpress&amp;rsquo;овский спам-фильтр (Askimet Spam) периодически пропускает спам в комментариях. А GMail&amp;rsquo;овский спам-фильтр успешно съедает уведомления о таких комментариях. В результате толку от таких уведомлений никакого. Пришлось написать соответствующий фильтр в GMail.</description>
+    </item>
+    
+  </channel>
+</rss>

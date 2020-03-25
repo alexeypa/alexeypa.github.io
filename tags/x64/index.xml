@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>X64 on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/x64/</link>
+    <description>Recent content in X64 on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Wed, 09 Jan 2013 23:09:16 -0800</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/x64/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Трассировка описателей. Вторая серия</title>
+      <link>https://blog.not-a-kernel-guy.com/2013/01/09/1456/</link>
+      <pubDate>Wed, 09 Jan 2013 23:09:16 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2013/01/09/1456/</guid>
+      <description>&lt;p&gt;Краткое содержание &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2012/12/04/1437/&#34;&gt;первой части&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Не получается продолжить выполнение кода после того, как было сгенерировано исключение STATUS_INVALID_HANDLE - почему-то портится сохраненный контекст процессора. В частности, не сохраняются non-volatile регистры esi и edi.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Некто Indy засомневался в том, что происходит именно это. Следует сказать, что засомневался он не без оснований. На самом деле, способы возбудить исключение пользовательского режима из кода в ядре можно пересчитать по пальцам одной руки и все они формируют конекст процессора одинаково. Получается, что если бы регистры не сохранялись, то не работали бы все исключения, а не избирательно STATUS_INVALID_HANDLE.&lt;/p&gt;
+
+&lt;p&gt;Покопавшись в отладчике я понял в чем дело.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

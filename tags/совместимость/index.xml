@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Совместимость on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/%D1%81%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C/</link>
+    <description>Recent content in Совместимость on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sun, 15 Apr 2012 10:56:57 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%81%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>А вы знаете, что ваш браузер устарел?</title>
+      <link>https://blog.not-a-kernel-guy.com/2012/04/15/1305/</link>
+      <pubDate>Sun, 15 Apr 2012 10:56:57 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2012/04/15/1305/</guid>
+      <description>Вот пример, почему проверка версии браузера - зло (и адъ, и Содомъ с Гоморрой):
+
+Самое забавное, что это окошко нельзя закрыть. Проблема также усугубляется тем, что все это счастье показывается внутри iframe и выставить опции совместимости так просто не получается. Приходится копировать ссылку и открывать страницу в отдельном окне.
+Я вот, кстати, не понимаю. От 99% проверок на версию браузера можно было бы отказаться, если бы браузеры поддерживали проверку поддерживаемых фич.</description>
+    </item>
+    
+    <item>
+      <title>Можно ли использовать функцию RtlCaptureContext() из x86 кода?</title>
+      <link>https://blog.not-a-kernel-guy.com/2011/07/24/1132/</link>
+      <pubDate>Sun, 24 Jul 2011 20:55:56 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2011/07/24/1132/</guid>
+      <description>Вопрос из почты:
+ The question is really simple: could we use RtlCaptureContext on X86? The MSDN (http://msdn.microsoft.com/en-us/library/ms680659(v=VS.85).aspx) says it’s only for 64 but the bug is for X86 and I see some kernel code are using it on x86.
+Вопрос на самом деле очень прост: можем ли мы использовать функцию RtlCaptureContext на x86? MSDN говорит, что эта функция только для 64-х бит но баг-репорт (имеется ввиду баг-репорт, ранее упомянутый в письме) воспроизводится для x86 и я вижу, что код в ядре использует эту функцию на x86.</description>
+    </item>
+    
+    <item>
+      <title>Неогороженное минное поле – это еще не повод по нему ходить</title>
+      <link>https://blog.not-a-kernel-guy.com/2011/06/08/1088/</link>
+      <pubDate>Wed, 08 Jun 2011 23:02:02 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2011/06/08/1088/</guid>
+      <description>&lt;p&gt;Пришло письмо с вопросом:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Обнаружилась следующая проблема:&lt;/p&gt;
+
+&lt;p&gt;Наша программа сохраняет и считывает последнюю открытую ею директорию в разделе реестра, где сохраняют последние посещенные ими директории и другие программы, а именно в ветке «HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU». Это в 32-х разрядной версии. Но оказывается, что в 64-х разрядной версии данной ветки реестра в узле HKCU не существует, а она находится в «HKEY_USERS&amp;lt;некий идентификатор пользователя&amp;gt;\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU».&lt;/p&gt;
+
+&lt;p&gt;Так вот вопрос: как мне программно доступиться к этой ветке, если идентификатор пользователя неизвестен? Или, может, есть способ узнать этот идентификатор каким-то образом? А может где-то есть в реестре зеркало этой ветки, к которой можно получить доступ более простым способом?&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>AppCompat</title>
+      <link>https://blog.not-a-kernel-guy.com/2009/12/08/703/</link>
+      <pubDate>Tue, 08 Dec 2009 09:54:26 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2009/12/08/703/</guid>
+      <description>&lt;p&gt;Словечко «AppCompat», появившееся в моем лексиконе за время работы над &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2009/06/09/571/&#34;&gt;Wow64&lt;/a&gt;, обозначает множество вещей. Чаще всего - геморрой. Иногда - великий геморрой. Происходит оно от «application compatibility» - т.е. совместимость OS с приложениями, она же - «обратная совместимость».&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

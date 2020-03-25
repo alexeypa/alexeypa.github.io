@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sdk on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/sdk/</link>
+    <description>Recent content in Sdk on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Tue, 05 Jun 2012 15:52:59 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.not-a-kernel-guy.com/tags/sdk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Дело о пропавшем файле &#39;ammintrin.h&#39;</title>
+      <link>https://blog.not-a-kernel-guy.com/2012/06/05/1345/</link>
+      <pubDate>Tue, 05 Jun 2012 15:52:59 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2012/06/05/1345/</guid>
+      <description>&lt;p&gt;Начну издалека. Мой любимый редактор кода на данный момент - &lt;a href=&#34;http://www.sublimetext.com/2&#34;&gt;Sublime Text 2&lt;/a&gt;. До него я пользовался &lt;a href=&#34;http://www.flos-freeware.ch/notepad2.html&#34;&gt;Notepad2&lt;/a&gt;, &lt;a href=&#34;http://www.sourceinsight.com/&#34;&gt;Source Insight&lt;/a&gt;, &lt;a href=&#34;http://www.farmanager.com/&#34;&gt;Far&lt;/a&gt; (естественно после того, как появился &lt;a href=&#34;http://colorer.sourceforge.net/farplugin.html&#34;&gt;Colorer&lt;/a&gt;). Что было до Far-а с Colorer-ом я уже не очень помню. Точно был Borland Pascal и Turbo C. Редактор кода Visual Studio в этом списке должен быть где-то между Borland-ом и Far-ом. Не помню, чтобы я пользовался им продолжительное время.&lt;/p&gt;
+
+&lt;p&gt;Отладчику из Visual Studio повезло чуть больше, так как правильно держать WinDbg я научился уже после замены Far-а на Notepad2 пополам с Source Insight. Остальной инструментарий из набора Visual Studio я использую не очень часто, особенно учитывая, что компилятор и другие инструменты все равно есть в отдельно стоящем SDK. Так и получается, что сама по себе Visual Studio мне в общем-то и не нужна.&lt;/p&gt;
+
+&lt;p&gt;Единственная неприятность заключается в том, что такая конфигурация (SDK есть, а Visual Studio нет) явно попадает в категорию экзотики. И, как следствие, не поддерживается и не тестируется как следует. Приходится самому.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
