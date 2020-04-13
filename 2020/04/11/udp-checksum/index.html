@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Контрольная сумма UDP</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Контрольная сумма UDP</h1>
+    <span class="post-date">Apr 11, 2020 &middot; <a href="https://blog.not-a-kernel-guy.com/2020/04/11/udp-checksum/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+    </span>
+    <p>Большинство проектов, над которыми я когда-либо работал, так или иначе
+не работают без передачи данных по сети. Последним проектом не
+выходящим за рамки одного компьютера была поддержка <a href="/tags/wow64/">Wow64</a> в ядре
+Windows. Тем не менее возится с кодом, непосредственно обрабатывающим IP
+пакеты мне довелось всего пару раз. Оба раза я столкнулся с одной и той
+же ошибкой вычисления контрольных сумм в IP стеке. В одном случае,
+сетевая карта ошибочно помечала хорошие пакеты как испорченные. В другом -
+две библиотеки, написанные разными людьми, неверно вычисляли контрольную
+сумму некоторых пакетов. Одна из библиотек широко использовалась в
+&ldquo;боевых&rdquo; условиях. Немного удивительно, что ошибка оставалась незамеченной
+так долго.</p>
+
+<p>Корнями этот баг уходит в 1980-й год, когда был опубликована <a href="https://tools.ietf.org/html/rfc768">спецификация
+протокола UDP</a>. Чтобы разобраться в чем заключается ошибка, нужно
+сначала разобраться как работают контрольные суммы в IP стеке. В IPv4 пакете
+есть две контрольные суммы: контрольная сумма IPv4 заголовка и контрольная
+сумма протокола следующего уровня (UDP, TCP, ICMP, и т.п.). Контрольная
+сумма IPv4 заголовка защищает только IPv4 заголовок. Контрольная сумма
+протокола следующего уровня защищает тело пакета и некоторые поля из
+заголовка.</p>
+
+<p>Контрольная сумма IPv4 заголовка вычисляется по <a href="https://tools.ietf.org/html/rfc791">такому алгоритму</a>:</p>
+
+<blockquote>
+<p>The checksum field is the 16 bit one&rsquo;s complement of the one&rsquo;s
+complement sum of all 16 bit words in the header.  For purposes of
+computing the checksum, the value of the checksum field is zero.</p>
+
+<p>Поле контрольной суммы - 16 битное дополнение до единицы суммы всех 16
+битных слов, вычисленной в обратном коде. Для целей вычисления контрольной
+суммы, значение поля контрольной суммы считается равным нулю.</p>
+</blockquote>
+
+<p>В переводе с птичьего на человеческий это означает вот что. <a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%B4">Обратный код</a> -
+это способ представления чисел в двоичном коде. В отличие от более привычного
+<a href="https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%B4">дополнительного кода</a>, обратный код использует два разных представления
+нуля: положительный и отрицательный ноль. Инвертирование числа дает то же
+самое число с обратным знаком:</p>
+
+<pre><code>    0111    +7
+    0110    +6
+    0101    +5
+    0100    +4
+    0011    +3
+    0010    +2
+    0001    +1
+    0000    +0  # положительный ноль
+    1111    -0  # отрицательный ноль
+    1110    -1
+    1101    -2
+    1100    -3
+    1011    -4
+    1010    -5
+    1001    -6
+    1000    -7
+</code></pre>
+
+<p>Чтобы получить правильный результат при сложении двух чисел в обратном коде,
+перенос из старшего разряда просто прибавляется к сумме:</p>
+
+<pre><code>    0110    +6
+  + 1101    -2
+  ------
+    0011    +3
+  +    1        # перенос из старшего разряда
+  ------
+    0100    +4
+</code></pre>
+
+<p>&ldquo;сумма всех 16 битных слов, вычисленной в обратном коде&rdquo; - означает не что
+иное, как сумму всех 16 битных слов заголовка выполненную по вышеописанному
+правилу. &ldquo;16 битное дополнение до единицы суммы&rdquo; - указывает, что
+после вычисления суммы всех 16 битных слов заголовка, полученное значение
+инвертируется.</p>
+
+<p>Такой алгоритм позволяет проверить пакет просто вычислив сумму всех 16 битных
+слов заголовка (включая поле контрольной суммы). Если результат равен нулю -
+пакет не поврежден. Что более важно, он позволяет легко обновить контрольную
+сумму, при изменении только некоторый полей заголовка, не вычисляя её заново.
+Это свойство было полезно при создании высокопроизводительных IP
+маршрутизаторов.</p>
+
+<p>Написать и протестировать код, реализующий этот алгоритм, казалось бы можно
+за пол-часа, с перерывом на кофе. Однако эта простота обманчива. Существуют
+<em>три</em> RFC, поясняющие неочевидные детали инкрементального обновления
+контрольной суммы: <a href="https://tools.ietf.org/html/rfc1071">RFC 1071</a>, <a href="https://tools.ietf.org/html/rfc1141">RFC 1141</a>, <a href="https://tools.ietf.org/html/rfc1624">RFC 1624</a>. В <em>каждом</em> из
+этих документов <a href="https://www.rfc-editor.org/errata_search.php?rfc=1071">были</a> <a href="https://www.rfc-editor.org/errata_search.php?rfc=1141">исправлены</a> <a href="https://www.rfc-editor.org/errata_search.php?rfc=1624">ошибки</a>, найденные после их
+опубликования.</p>
+
+<p>Как я уже упоминал выше, в каждом IPv4 пакете есть две контрольные суммы.
+Пока что мы обсудили только контрольную сумму заголовка IPv4 пакета.
+Вторая контрольная сумма (UDP или TCP) вычисляется по <a href="https://tools.ietf.org/html/rfc768"><em>другому</em> алгоритму</a>.</p>
+
+<blockquote>
+<p>Checksum is the 16-bit one&rsquo;s complement of the one&rsquo;s complement sum of a
+pseudo header of information from the IP header, the UDP header, and the
+data,  padded  with zero octets  at the end (if  necessary)  to  make  a
+multiple of two octets.</p>
+
+<p>If the computed  checksum  is zero,  it is transmitted  as all ones (the
+equivalent  in one&rsquo;s complement  arithmetic).   An all zero  transmitted
+checksum  value means that the transmitter  generated  no checksum  (for
+debugging or for higher level protocols that don&rsquo;t care).</p>
+
+<p>Контрольная сумма - 16 битное дополнение до единицы суммы псевдо заголовка,
+заполненного информацией из IP заголовка, UDP заголовка и данных,
+выровненных до границы двух байт.</p>
+
+<p>Если вычисленная сумма равна нулю, она передается как все единицы (
+эквивалентное значение в дополнительном коде). Нулевая контрольная сумма
+в пакете означает что передающая сторона не указала контрольную сумму
+(в целях отладки или при использовании протоколов более высокого уровня
+которым все равно).</p>
+</blockquote>
+
+<p>На первый взгляд этот алгоритм сильно отличается от алгоритма вычисления
+контрольной суммы заголовка IPv4, но при внимательном рассмотрении оказывается,
+что оба алгоритма очень похожи. Первый абзац фактически описывает ту же
+самую инвертированную сумму 16-битных слов в обратном коде. Единственное
+отличие - это диапазон данных (псевдо заголовок, UDP заголовок и данные вместо
+IPv4 заголовка), которые покрываются контрольной суммой.</p>
+
+<p>Настоящее отличие кроется во втором абзаце. Если его перефразировать, то
+он утверждает, что контрольная сумма UDP необязательна. Передающая сторона
+может просто передать ноль вместо вычисления контрольной суммы. В случае
+если вычисленная контрольная сумма получается равной нулю, то она передается
+как <code>-0</code>, т.е. 0xffff. Фраза &ldquo;эквивалентное значение в дополнительном коде&rdquo;
+специально уточняет, что два разных значения в дополнительном коде (<code>+0</code> и
+<code>-0</code>) соответствуют нулю и такая замена разрешена.</p>
+
+<p>Именно здесь и скрывается баг. Дело в том, что при сложении чисел в обратном
+коде единственный способ способ получить значение 0x0000 (<code>+0</code>) - это сложить
+<code>+0</code> и <code>+0</code>. Любая другая комбинация чисел дает результат от 0x0001 (<code>+1</code>)
+до 0xffff (<code>-0</code>). Любой корректный IP пакет содержит ненулевые байты, что
+гарантирует, что сумма 16-битных полей корректного пакета не будет равна
+0x0000 (<code>+0</code>).</p>
+
+<p>Итак сумма не может равняться <code>+0</code> и 0x0000 используется как зарезервированное
+значение - пока что все сходится, разве нет? А вот и нет. Мы забыли, что
+вычисленная сумма инвертируется при передаче. Получается вот такой странный
+специальный случай:</p>
+
+<pre><code># Сумма полей     Контрольная     Поле контрольной
+# пакета          сумма           суммы в пакете
+
+0x0001            0xfffe          0xfffe
+0x0002            0xfffd          0xfffd
+0x0003            0xfffc          0xfffc
+...
+0xfffd            0x0002          0x0002
+0xfffe            0x0001          0x0001
+0xffff            0x0000          0xffff  &lt;-- ???
+</code></pre>
+
+<p>Получается, что спецификация подставляет подножку разработчикам и заставляет
+их на ровном месте добавлять в код обработку специального случая. Программисты
+с удовольствием наступают на эти грабли и пишут код, обрабатывающий этот
+случай неправильно. Я видел обе вариации этой ошибки. В одном случае
+контрольная сумма UDP пакета вычислялась по алгоритму для IPv4. В другом
+случае было ровно наоборот, - неправильно вычислялась контрольная сумма
+заголовка IP пакета. А ведь достаточно было бы взять другое зарезервированное
+значение для обозначения невычисленной контрольной суммы - 0xffff (<code>-0</code>) и
+желаемое поведение получилось бы естественным образом безо всяких ухищрений.</p>
+
+<p>Забавно, что одна из причин по которым это баг может оставаться незамеченным
+долгое время это то, что в большинстве случаем вычисление контрольных сумм
+переносится с центрального процессора на сетевую карту (checksum offloading).
+Соответственно ошибочный код просто не выполняется. Другая причина заключается
+в том, что эта ошибка в среднем затрагивает один пакет из 65535 (0.0015%
+пакетов).</p>
+
+<p>В заключение добавлю, что алгоритма вычисления контрольной суммы один из
+немногих примеров &ldquo;промышленного&rdquo; кода. который тривиально поддается 100%
+проверке полным перебором. Там всего-навсего 65536 возможных значений.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2020/04/11/udp-checksum/";
+        this.page.title = "Контрольная сумма UDP";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

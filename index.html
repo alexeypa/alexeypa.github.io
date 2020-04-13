@@ -132,6 +132,40 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2020/04/11/udp-checksum/">Контрольная сумма UDP</a>
+      </h1>
+      <span class="post-date">Apr 11, 2020 &middot; <a href="https://blog.not-a-kernel-guy.com/2020/04/11/udp-checksum/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+      </span>
+      
+      <p>Большинство проектов, над которыми я когда-либо работал, так или иначе
+не работают без передачи данных по сети. Последним проектом не
+выходящим за рамки одного компьютера была поддержка <a href="/tags/wow64/">Wow64</a> в ядре
+Windows. Тем не менее возится с кодом, непосредственно обрабатывающим IP
+пакеты мне довелось всего пару раз. Оба раза я столкнулся с одной и той
+же ошибкой вычисления контрольных сумм в IP стеке. В одном случае,
+сетевая карта ошибочно помечала хорошие пакеты как испорченные. В другом -
+две библиотеки, написанные разными людьми, неверно вычисляли контрольную
+сумму некоторых пакетов. Одна из библиотек широко использовалась в
+&ldquo;боевых&rdquo; условиях. Немного удивительно, что ошибка оставалась незамеченной
+так долго.</p>
+
+<p>Корнями этот баг уходит в 1980-й год, когда был опубликована <a href="https://tools.ietf.org/html/rfc768">спецификация
+протокола UDP</a>. Чтобы разобраться в чем заключается ошибка, нужно
+сначала разобраться как работают контрольные суммы в IP стеке. В IPv4 пакете
+есть две контрольные суммы: контрольная сумма IPv4 заголовка и контрольная
+сумма протокола следующего уровня (UDP, TCP, ICMP, и т.п.). Контрольная
+сумма IPv4 заголовка защищает только IPv4 заголовок. Контрольная сумма
+протокола следующего уровня защищает тело пакета и некоторые поля из
+заголовка.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2020/04/11/udp-checksum/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2020/03/07/new-strain/">Новый штамм людей</a>
       </h1>
       <span class="post-date">Mar 7, 2020 &middot; <a href="https://blog.not-a-kernel-guy.com/2020/03/07/new-strain/#disqus_thread">Comments</a>
@@ -444,30 +478,6 @@ right&hellip;)</p>
 <p>Stratolaunch планируется использовать для запуска орбитальных ракет
 <a href="https://en.wikipedia.org/wiki/Pegasus_II_(rocket)">Pegasus II</a> и <a href="https://en.wikipedia.org/wiki/Pegasus_(rocket)">Pegasus XL</a>.</p>
       <a href="https://blog.not-a-kernel-guy.com/2019/04/14/good-week/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2019/03/30/socal/">Южная Калифорния</a>
-      </h1>
-      <span class="post-date">Mar 30, 2019 &middot; <a href="https://blog.not-a-kernel-guy.com/2019/03/30/socal/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BA%D0%B0%D0%BB%D0%B8%D1%84%D0%BE%D1%80%D0%BD%D0%B8%D1%8F">Калифорния</a>
-      </span>
-      
-      <p>Южную Калифорнию заливало дождями всю зиму. Ну по местным масштабам. Теперь все
-холмы цветут, жужжат и кишат всякой живностью. В Walker Canyon в одни выходные
-понаехало столько народу посмотреть на цветение маков, что тропу срочно закрыли.
-Мы умудрились проскочить за день до закрытия:</p>
-
-<p><a href="/2019/03/walker_canyon_poppies.jpg"><img src="/2019/03/walker_canyon_poppies-small.jpg" alt="" /></a></p>
-
-<p>А сегодня мы ходили в Del Cerro Reserve. Таким зеленым мы его еще не видели:</p>
-
-<p><a href="/2019/03/rattlesnake_trail.jpg"><img src="/2019/03/rattlesnake_trail-small.jpg" alt="" /></a></p>
-      
       
     </div>
     
