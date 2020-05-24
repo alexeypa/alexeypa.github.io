@@ -6,10 +6,24 @@
     <description>Recent content in Posts on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sat, 11 Apr 2020 21:16:34 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2020 12:21:54 -0700</lastBuildDate>
     
 	<atom:link href="https://blog.not-a-kernel-guy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Нанимает ли SpaceX из-за рубежа?</title>
+      <link>https://blog.not-a-kernel-guy.com/2020/05/24/job-at-spacex/</link>
+      <pubDate>Sun, 24 May 2020 12:21:54 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2020/05/24/job-at-spacex/</guid>
+      <description>&lt;p&gt;Мне с завидной регулярностью задают один и тот же вопрос: &amp;ldquo;Нанимает ли SpaceX из-за
+рубежа?&amp;rdquo; Я решил оформить ответ в виде поста, чтобы можно было на него ссылаться в
+будущем.&lt;/p&gt;
+
+&lt;p&gt;Ниже следует мое личное мнение. Пожалуйста, не воспринимайте его как буквальное
+руководство к действию. Короче, &amp;ldquo;This is not a legal advice. Talk to your lawyer&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Контрольная сумма UDP</title>
@@ -841,29 +855,6 @@ School Day также известный как &amp;ldquo;гоните ваши
 потенциально оплачиваются выше. Учить популярные языки вроде английского все
 равно лучше и дешевле с репетитором. Это я по своему опыту сужу. Разве что если
 учить арабский и китайский одновременно?&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Полное погружение</title>
-      <link>https://blog.not-a-kernel-guy.com/2018/08/23/oculus/</link>
-      <pubDate>Thu, 23 Aug 2018 09:48:44 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2018/08/23/oculus/</guid>
-      <description>&lt;p&gt;В центре Хмельницкого каждому желающему предлагается креативный аттракцион -
-полное погружение в виртуальную реальность. Наконец-то технология виртуальной
-реальности достигла уровня, позволяющего полностью обмануть вестибулярный
-аппарат и доставить весь спектр ощущений поездки на американской горке, включая
-дрожащие коленки и бабочки в животе:&lt;/p&gt;
-
-&lt;dl&gt;
-&lt;dt&gt;
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/tJCZIqP8ca8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;/dt&gt;
-&lt;/dl&gt;
-
-&lt;p&gt;:-)&lt;/p&gt;</description>
     </item>
     
   </channel>

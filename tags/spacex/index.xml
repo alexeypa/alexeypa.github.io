@@ -6,10 +6,24 @@
     <description>Recent content in Spacex on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 19 Jan 2020 19:48:37 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2020 12:21:54 -0700</lastBuildDate>
     
 	<atom:link href="https://blog.not-a-kernel-guy.com/tags/spacex/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Нанимает ли SpaceX из-за рубежа?</title>
+      <link>https://blog.not-a-kernel-guy.com/2020/05/24/job-at-spacex/</link>
+      <pubDate>Sun, 24 May 2020 12:21:54 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2020/05/24/job-at-spacex/</guid>
+      <description>&lt;p&gt;Мне с завидной регулярностью задают один и тот же вопрос: &amp;ldquo;Нанимает ли SpaceX из-за
+рубежа?&amp;rdquo; Я решил оформить ответ в виде поста, чтобы можно было на него ссылаться в
+будущем.&lt;/p&gt;
+
+&lt;p&gt;Ниже следует мое личное мнение. Пожалуйста, не воспринимайте его как буквальное
+руководство к действию. Короче, &amp;ldquo;This is not a legal advice. Talk to your lawyer&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Очередное фиаско</title>
@@ -679,30 +693,6 @@ Northrop Grumman приобрела у третьей стороны. Адапт
       <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;//www.youtube.com/embed/bvim4rsNHkQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>Залп</title>
-      <link>https://blog.not-a-kernel-guy.com/2017/06/23/double-shot/</link>
-      <pubDate>Fri, 23 Jun 2017 07:09:22 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2017/06/23/double-shot/</guid>
-      <description>&lt;p&gt;Запускаем сразу с двух столов:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;BulgariaSat-1 c LC-39a на мысе Канаверал - сегодня&lt;/li&gt;
-&lt;li&gt;Iridium-2 c SLC-4e на авиабазе Ванденберг в Калифорнии - в воскресенье&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Смотреть можно &lt;a href=&#34;http://www.spacex.com/webcast&#34;&gt;здесь&lt;/a&gt;, а можно на
-&lt;a href=&#34;https://www.youtube.com/watch?v=Y8mLi-rRTh8&#34;&gt;YouTube&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;По этому случаю забавный факт. Официальное название 40-й площадки - Space
-Launch Complex 40 (SLC-40). Площадка в Калифорнии называется
-Space Launch Complex 4 (SLC-4e). Логично предположить, что 39-й площадка должна
-называться Space Launch Complex 39, правильно? А вот и нет. Площадка называется
-Launch Complex 39, без Space. Стол, соответственно, LC-39a. Угадайте сколько
-путаницы возникло с наименованием серверов, зон и прочего оборудования&amp;hellip;&lt;/p&gt;</description>
     </item>
     
   </channel>

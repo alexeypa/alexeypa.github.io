@@ -132,6 +132,57 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/10/13/84/">Дело о невидимых файлах</a>
+      </h1>
+      <span class="post-date">Oct 13, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/13/84/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/windows">Windows</a>
+      </span>
+      
+      <p>Как вы думаете, какой сообщение выведет нижеследующая программа, в случае если её запустить на Windows Vista 64 с правами обычного пользователя, т.е. пользователя, у которого нет прав на запись в каталог “C:\Program Files”?</p>
+
+<pre><code class="language-cpp">#include &lt;memory.h&gt;
+#include &lt;stdio.h&gt;
+
+int main(int argc, char* argv[])
+{
+    FILE* f = NULL;
+    char cookie[] = { 'b', 'a', 'r', ' ' };
+    char data[sizeof(cookie)] = { 'f', 'o', 'o', ' ' };
+
+    f = fopen(&quot;C:\\Program Files\\foo.txt&quot;, &quot;w&quot;);
+    if (f)
+    {
+        fwrite(cookie, sizeof(cookie), 1, f);
+        fclose(f);
+    }
+
+    f = fopen(&quot;C:\\Program Files\\foo.txt&quot;, &quot;r&quot;);
+    if (f)
+    {
+        fread(data, sizeof(data), 1, f);
+        fclose(f);
+    }
+
+    if (0 == memcmp(data, cookie, sizeof(cookie)))
+    {
+        printf(&quot;Success!\n&quot;);
+    }
+    else
+    {
+        printf(&quot;Something went wrong!\n&quot;);
+    }
+
+    return 0;
+}
+</code></pre>
+      <a href="https://blog.not-a-kernel-guy.com/2006/10/13/84/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2006/10/12/83/">Зеркало на blogs.gotdotnet.ru</a>
       </h1>
       <span class="post-date">Oct 12, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/12/83/#disqus_thread">Comments</a>
@@ -270,21 +321,6 @@
       Вот такая замечательная картинка была сегодня на www.bloglines.com:
 
 The Bloglines Plumber.
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2006/10/01/74/">Наталья Радулова: Большие мальчики</a>
-      </h1>
-      <span class="post-date">Oct 1, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/01/74/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%B2%D1%81%D1%8F%D0%BA%D0%B0%D1%8F-%D0%B2%D1%81%D1%8F%D1%87%D0%B8%D0%BD%D0%B0">Всякая всячина</a>
-      </span>
-      
-      Прикольная статья: http://www.vz.ru/columns/2006/9/28/50598.html. :-)
       
       
     </div>
