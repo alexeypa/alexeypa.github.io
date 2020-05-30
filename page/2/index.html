@@ -132,6 +132,29 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2019/04/17/truth/">Нас обманывают!</a>
+      </h1>
+      <span class="post-date">Apr 17, 2019 &middot; <a href="https://blog.not-a-kernel-guy.com/2019/04/17/truth/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D1%8E%D0%BC%D0%BE%D1%80">Юмор</a>
+      </span>
+      
+      <p><img src="/2019/04/truth.jpg" alt="" /></p>
+
+<p>P.S. Особенно доставляет то, что текст набран шрифтом Times New Roman (созданном
+в Великобритании) в Microsoft Word (созданном в США) на компьютере
+(разработанном в США и сделанном в Тайване), распечатан на лазерном принтере
+(неизвестной родословной, но опять же - разработан в США и сделан в Азии), а
+неопровержимые доказательства выложены на YouTube (созданном в США) с помощью
+сети Интернет (разработанной американскими учеными на деньги военных США).
+Справедливости ради замечу, что стена подъезда своя - отечественная.</p>
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2019/04/14/good-week/">Неделя удалась!</a>
       </h1>
       <span class="post-date">Apr 14, 2019 &middot; <a href="https://blog.not-a-kernel-guy.com/2019/04/14/good-week/#disqus_thread">Comments</a>
@@ -570,48 +593,6 @@ rabbit_test.py:41: AssertionError
 
 <p>Красиво снято. Рекомендую посмотреть.</p>
       <a href="https://blog.not-a-kernel-guy.com/2018/11/14/inside-spacex/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2018/11/08/retrying/">Ну-ка, еще разок</a>
-      </h1>
-      <span class="post-date">Nov 8, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/11/08/retrying/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/python">Python</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
-      </span>
-      
-      <p>Питоний пакет <a href="https://pypi.org/project/retrying/">retrying</a> - универсальная заплатка для кода, который может
-поломаться из-за внешних причин. Например, <a href="https://docs.python.org/3.7/library/socket.html#socket.socket.connect"><code>socket.connect()</code></a> может
-закончится ошибкой из-за непредвиденной ситуации в сети. Заворачиваем вызов в
-<code>@retry</code> и бац! Все работает.</p>
-
-<pre><code class="language-py">@retry
-def create_connection(address):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    return socket.connect(address)
-</code></pre>
-
-<p>Однако бездумное применение <code>@retry</code>, как нетрудно догадаться, приводит
-проблемам. Самый известный пример - вложенные <code>@retry</code>.
-<code>@retry(stop_max_attempt_number=3)</code> вложенный в другой
-<code>@retry(stop_max_attempt_number=3)</code> дает 9 повторов. Три уровня вложенности -
-27 повторов.</p>
-
-<p>Один раз использование <code>@retry</code> привело к тому, что IT заблокировало мою учетную
-запись. Банальная история - был некий скрипт, который при запуске спрашивал
-логин и пароль для авторизации. В один прекрасный день некто (не будем
-показывать пальцем, хотя это был Слонёнок) усовершенствовал скрип, завернув
-сетевой вызов в <code>@retry</code>. Отличная идея, за исключением того, что ошибка
-авторизации приводила к повторному запросу с тем же неправильным именем и
-паролем. После определенного числа попыток контроллер домена решил, что кто-то
-пытается подобрать пароль к учетной записи и заблокировал её.</p>
-
-<p>Мораль истории - знайте свои ошибки в лицо и используйте параметр
-<code>retry_on_exception</code>.</p>
-      <a href="https://blog.not-a-kernel-guy.com/2018/11/08/retrying/">Read On &rarr;</a>
       
     </div>
     
