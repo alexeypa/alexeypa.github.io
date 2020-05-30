@@ -132,6 +132,25 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2018/11/14/inside-spacex/">Марс: Внутри SpaceX</a>
+      </h1>
+      <span class="post-date">Nov 14, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/11/14/inside-spacex/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/spacex">SpaceX</a>
+      </span>
+      
+      <p>National Geographic начал показывать второй сезон <a href="https://www.nationalgeographic.com/tv/mars/">сериала Марс</a> и вместе с
+первым эпизодом выложил <a href="https://www.nationalgeographic.com/tv/watch/12e413e68c538ba79a298f709efc1607/">серию про SpaceX</a>. Такого количества знакомых лиц в
+документальном фильме я еще не видел. Я там тоже засветился в 42:56. :)</p>
+
+<p>Красиво снято. Рекомендую посмотреть.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2018/11/14/inside-spacex/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2018/11/08/retrying/">Ну-ка, еще разок</a>
       </h1>
       <span class="post-date">Nov 8, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/11/08/retrying/#disqus_thread">Comments</a>
@@ -479,74 +498,6 @@ School Day также известный как &ldquo;гоните ваши д�
 станет еще менее читаемой - колонки вылезут за правый край экрана, выравнивание
 будет принесено в жертву более компактной записи и т.д.</p>
       <a href="https://blog.not-a-kernel-guy.com/2018/08/05/text-data/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2018/08/01/table-driven-unit-tests/">Табличные юнит тесты</a>
-      </h1>
-      <span class="post-date">Aug 1, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/08/01/table-driven-unit-tests/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Тестирование</a><a class="label" href="/tags/%D1%8E%D0%BD%D0%B8%D1%82-%D1%82%D0%B5%D1%81%D1%82%D1%8B">Юнит тесты</a>
-      </span>
-      
-      <p>Расскажу об одной технике, которая, как мне кажется, позволяет писать более
-понятные и читаемые юнит тесты. Начну немного издалека. Допустим мы хотим
-убедится, что определенный кусок кода работает правильно. Если бы мы имели дело
-с игрушечным примером, то это наш тест мог бы Примерно вот так:</p>
-
-<pre><code class="language-cpp">bool foobar(int x, int y)
-{
-    return (x + y) &gt; 0 &amp;&amp; ((x + y) % 3) == 0;
-}
-</code></pre>
-
-<pre><code class="language-cpp">ASSERT_FALSE(foobar(0, 0));
-ASSERT_FALSE(foobar(0, 1));
-ASSERT_FALSE(foobar(0, 2));
-ASSERT_TRUE (foobar(0, 3));
-ASSERT_FALSE(foobar(1, 0));
-ASSERT_FALSE(foobar(1, 1));
-ASSERT_TRUE (foobar(1, 2));
-ASSERT_FALSE(foobar(2, 0));
-ASSERT_TRUE (foobar(2, 1));
-ASSERT_FALSE(foobar(2, 2));
-...
-</code></pre>
-
-<p>Такой тест достаточно легко читать. Достаточно понять конструкцию
-<code>ASSERT_XXX(foobar(...))</code> после чего глаза сами фокусируются на входных
-значениях, автоматически отсеивая ненужный синтаксический мусор.</p>
-
-<p>Однако, если взять реальный код, то подобный пример превратиться в гораздо менее
-удобочитаемого монстра:</p>
-
-<pre><code class="language-cpp">std::unique_ptr&lt;Foobar&gt; rabbit =
-    create_foobar_with_abc(parent,
-        some_context,
-        more_stuff + that + is_required + to_create_foobar,
-        a,
-        b,
-        mock_c(),
-        logger);
-
-ASSERT_TRUE(
-    rabbit-&gt;connect(
-        this_thing,
-        that_key,
-        did_you_think_we_are_done_here ? no : hell_no));
-
-ASSERT_TRUE(rabbit-&gt;wait_for_accept(timeout));
-
-ASSERT_FALSE(rabbit-&gt;foobar(0, 0));
-</code></pre>
-
-<p>&hellip; и так далее для каждого тест кейса. Подобный код легко превращается в
-длинную простыню однообразного текста с незаметными, но важными вариациями во
-входных данных или параметрах инициализации.</p>
-      <a href="https://blog.not-a-kernel-guy.com/2018/08/01/table-driven-unit-tests/">Read On &rarr;</a>
       
     </div>
     

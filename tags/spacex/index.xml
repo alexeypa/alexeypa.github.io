@@ -6,10 +6,29 @@
     <description>Recent content in Spacex on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 29 May 2020 23:01:39 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2020 12:45:32 -0700</lastBuildDate>
     
 	<atom:link href="https://blog.not-a-kernel-guy.com/tags/spacex/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Батут</title>
+      <link>https://blog.not-a-kernel-guy.com/2020/05/30/trampoline/</link>
+      <pubDate>Sat, 30 May 2020 12:45:32 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2020/05/30/trampoline/</guid>
+      <description>&lt;p&gt;Боб Бенекен и Даг Хёрли успешно вышли на орбиту!&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/bIZsnKGV8TE&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Вы не поверите скольких усилий это стоило. Это гораздо сложнее, чем может показаться.&lt;/p&gt;
+
+&lt;p&gt;Следующая остановка - Starship? :-)&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>SN4 RIP</title>
@@ -675,39 +694,6 @@ Northrop Grumman приобрела у третьей стороны. Адапт
 Это было еще до всей этой истории с обтекателем и переносом запуска. В интернете
 как раз смаковали секретность спутника, многозначительно намекая на Северную
 Корею.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Разное</title>
-      <link>https://blog.not-a-kernel-guy.com/2017/10/01/misc/</link>
-      <pubDate>Sun, 01 Oct 2017 12:37:14 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2017/10/01/misc/</guid>
-      <description>&lt;p&gt;Пока мы тут на всех порах заканчиваем Falcon Heavy, Элон презентовал новый
-вариант марсианской транспортной системы, она же &amp;ldquo;очень большая ракета&amp;rdquo;:&lt;/p&gt;
-
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/E4FY894HyF8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;Не буду особенно комментировать - все уже и так &lt;a href=&#34;https://www.reddit.com/r/spacex/comments/73mryo/full_analysis_of_spacex_plan_20/&#34;&gt;разобрали по косточкам&lt;/a&gt;.
-Мне лично понравилась идея со стыковкой корма к корме. На мой дилетантский
-взгляд звучит логично. Ракеты на жидком топливе умеют закачивать топливо в
-двигатели в условиях невесомости. Для перекачки топлива требуется провернуть
-аналогичный трюк, но без зажигания маршевых двигателей. Логично использовать
-уже существующие возможности ракеты. Само собой в реальности все гораздо
-сложнее, но концептуально мне эта идея нравится.&lt;/p&gt;
-
-&lt;p&gt;В рунете, как водится, тут же включится хор &amp;ldquo;проповедников скорого коллапса
-америки в целом, и проходимца Маска в частности&amp;rdquo;. Благо, что сроки у Илона, &amp;hellip;
-не знаю как правильно сказать, - очень оптимистичные, всегда есть к чему
-прицепиться. Ну нам не привыкать.&lt;/p&gt;
-
-&lt;p&gt;Из других неожиданных новостей - &lt;a href=&#34;https://kitya.livejournal.com/376982.html&#34;&gt;Kitya Karlson переехал в Китай&lt;/a&gt;. Хотя, учитывая историю его переездов
-(Япония, Австралия, Канада, и США), - то этот переезд где-то даже логичен.
-Засиделся в одном месте, чего уж там.&lt;/p&gt;</description>
     </item>
     
   </channel>

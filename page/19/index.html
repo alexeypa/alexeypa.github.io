@@ -132,6 +132,29 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2013/01/09/1456/">Трассировка описателей. Вторая серия</a>
+      </h1>
+      <span class="post-date">Jan 9, 2013 &middot; <a href="https://blog.not-a-kernel-guy.com/2013/01/09/1456/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%B8%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9">Обработка исключений</a><a class="label" href="/tags/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8">Ошибки</a><a class="label" href="/tags/windows">Windows</a><a class="label" href="/tags/wow64">Wow64</a><a class="label" href="/tags/x64">x64</a>
+      </span>
+      
+      <p>Краткое содержание <a href="/2012/12/04/1437/">первой части</a>:</p>
+
+<blockquote>
+<p>Не получается продолжить выполнение кода после того, как было сгенерировано исключение STATUS_INVALID_HANDLE - почему-то портится сохраненный контекст процессора. В частности, не сохраняются non-volatile регистры esi и edi.</p>
+</blockquote>
+
+<p>Некто Indy засомневался в том, что происходит именно это. Следует сказать, что засомневался он не без оснований. На самом деле, способы возбудить исключение пользовательского режима из кода в ядре можно пересчитать по пальцам одной руки и все они формируют конекст процессора одинаково. Получается, что если бы регистры не сохранялись, то не работали бы все исключения, а не избирательно STATUS_INVALID_HANDLE.</p>
+
+<p>Покопавшись в отладчике я понял в чем дело.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2013/01/09/1456/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2012/12/27/1450/">Мир становится меньше</a>
       </h1>
       <span class="post-date">Dec 27, 2012 &middot; <a href="https://blog.not-a-kernel-guy.com/2012/12/27/1450/#disqus_thread">Comments</a>
@@ -278,22 +301,6 @@ Sorcery
       
       Существует мнение, что “в русском языке слова читаются точно так же, как и пишутся”. Ага, щас! Вы пробовали своего ребенка учить читать? “Карова”. Нет, доченька. Пишеться “о”, но читается “а”. Почему? Гм. Ну, как тебе объяснить?.. А мама говорит “корова”? Просто мама говорит по-украински, а там нет правила про безударную “о”. С кем это я сейчас говорил? Не обращай внимания, просто запомни - у папы “карова”, а у мамы - “корова”.
       <a href="https://blog.not-a-kernel-guy.com/2012/07/14/1399/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2012/07/12/1393/">minidump.py</a>
-      </h1>
-      <span class="post-date">Jul 12, 2012 &middot; <a href="https://blog.not-a-kernel-guy.com/2012/07/12/1393/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0">Отладка</a>
-      </span>
-      
-      Если вам вдруг зачем-то понадобилось проанализировать структуру минидампа не загружая его в отладчик, начните вот с этой статьи: http://moyix.blogspot.com/2008/05/parsing-windows-minidumps.html. Автор написал скрипт на Python (на основе Construct) для анализа дампов, который распознает все потоки, описанные на MSDN (а также недокументированный поток, хранящий информацию об описателях окон).
-PS. Скрипт открывает дамп в текстовом режиме, что очевидно не будет работать на Windows. Чтобы этого не случилось, последняя строчка скипта должна выглядеть вот так:
-      <a href="https://blog.not-a-kernel-guy.com/2012/07/12/1393/">Read On &rarr;</a>
       
     </div>
     

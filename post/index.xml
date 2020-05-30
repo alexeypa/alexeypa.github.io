@@ -6,10 +6,29 @@
     <description>Recent content in Posts on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 29 May 2020 23:01:39 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2020 12:45:32 -0700</lastBuildDate>
     
 	<atom:link href="https://blog.not-a-kernel-guy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Батут</title>
+      <link>https://blog.not-a-kernel-guy.com/2020/05/30/trampoline/</link>
+      <pubDate>Sat, 30 May 2020 12:45:32 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2020/05/30/trampoline/</guid>
+      <description>&lt;p&gt;Боб Бенекен и Даг Хёрли успешно вышли на орбиту!&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/bIZsnKGV8TE&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Вы не поверите скольких усилий это стоило. Это гораздо сложнее, чем может показаться.&lt;/p&gt;
+
+&lt;p&gt;Следующая остановка - Starship? :-)&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>SN4 RIP</title>
@@ -814,33 +833,6 @@ School Day также известный как &amp;ldquo;гоните ваши
 сильно уменьшить. Это просто функция вложенного труда. Но ведь лень. Тут в спорт
 зал сходить себя еле-еле заставишь, а еще и на планирование на год вперед время
 тратить&amp;hellip;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Айда все на Луну</title>
-      <link>https://blog.not-a-kernel-guy.com/2018/09/17/bfr/</link>
-      <pubDate>Mon, 17 Sep 2018 22:47:28 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2018/09/17/bfr/</guid>
-      <description>&lt;p&gt;Ну что, BFR тихой сапой приближается к реальности. Пройденные этапы:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Основательно прожгли прототип двигателя.&lt;/li&gt;
-&lt;li&gt;Застолбили палатку с запчастями в порту Long Beach.&lt;/li&gt;
-&lt;li&gt;Предварительно просчитали посадку с правильной моделью атмосферы (что как мы
-знаем по опыту &lt;a href=&#34;https://www.kerbalspaceprogram.com/en/&#34;&gt;KSP&lt;/a&gt; is a big deal. Там, помнится, после очередного
-обновления модель атмосферы поменялась - половина ракет перестала нормально
-летать. Столько криков было&amp;hellip;)&lt;/li&gt;
-&lt;li&gt;Обозначили предварительные цели - сразу к Марсу лететь сложно, а вот
-оттестироваться как следует вокруг Земли и Луны - сам бог велел.&lt;/li&gt;
-&lt;li&gt;Ну и самое главное - увеличился счет в банке. Т.е. деньги на дальнейшее
-движение есть.&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/zu7WJD8vpAQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;</description>
     </item>
     
   </channel>
