@@ -132,6 +132,25 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2007/04/13/172/">Регистрация COM объектов. Часть I</a>
+      </h1>
+      <span class="post-date">Apr 13, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/04/13/172/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/com">COM</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/windows">Windows</a><a class="label" href="/tags/wow64">Wow64</a>
+      </span>
+      
+      <p>Изначально, данный пост должен был называться «Регистрация COM объектов на 64-х разрядных версиях Windows» и речь должна было пойти про особенности 64-х разрядных версий Windows с точки зрения регистрации COM компонент. Однако пост получился слишком большим и его пришлось разбить на две части. Про особенности 64-х разрядных систем я расскажу во второй части.</p>
+
+<p>Для начала немного теории. Взаимодействие клиента (приложения вызвавшего CoCreateInstance) и сервера (COM объекта) в общем случае можно изобразить с помощью вот такой схемы:</p>
+
+<p><img src="/2007/04/com_marshalling.png" alt="COM маршалинг." /></p>
+      <a href="https://blog.not-a-kernel-guy.com/2007/04/13/172/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2007/04/12/171/">Наши соотечественники в Microsoft</a>
       </h1>
       <span class="post-date">Apr 12, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/04/12/171/#disqus_thread">Comments</a>
@@ -272,21 +291,6 @@ PS: Хотя, по здравому рассуждению, лучше всё-т
 
 <p>Если вы читали «<a href="http://blogs.msdn.com/larryosterman/archive/2004/05/18/134471.aspx">Should I check the parameters to my function?</a>» в блоге Larry Osterman, и являетесь сторонником второго подхода – можете дальше не читать. :-)</p>
       <a href="https://blog.not-a-kernel-guy.com/2007/03/26/163/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2007/03/20/162/">Bug fixing как часть прикладной психологии</a>
-      </h1>
-      <span class="post-date">Mar 20, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/03/20/162/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
-      </span>
-      
-      <p>Порой исправление даже самых очевидных ошибок может буксовать из-за особенностей человеческой психологии. Свежий пример: компонент A передаёт компоненту B набор параметров, в том числе текстовые строки. Строки передаются в виде UNICODE_STRING, т.е. как текстовые строки, не требующие завершающего нулевого символа. Не смотря на это, компонент A передавал строки с завершающим NULL (упакованные в UNICODE_STRING), а компонент B проверял приходящие строки на наличие нуля. Так они и работали, пока между ними не вклинился третий компонент X.</p>
-      <a href="https://blog.not-a-kernel-guy.com/2007/03/20/162/">Read On &rarr;</a>
       
     </div>
     

@@ -132,6 +132,38 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2019/12/16/gcc/">Когда 1.0 = 0.0</a>
+      </h1>
+      <span class="post-date">Dec 16, 2019 &middot; <a href="https://blog.not-a-kernel-guy.com/2019/12/16/gcc/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0">Отладка</a>
+      </span>
+      
+      <p>Столкнулся недавно с новой для себя областью - ловлей багов в компиляторе.
+Ловить <a href="/2010/07/11/854/">баг в процессоре</a> мне уже доводилось, а вот с компиляторами до
+недавнего времени как-то везло.</p>
+
+<p>Началось все очень прозаично. В нашем репозитории есть своя реализация умного
+указателя. Ну, вы знаете, как это бывает. Обычная история на самом деле&hellip;
+Этот класс был написан в древние времена, тогда и <a href="https://en.wikipedia.org/wiki/C%2B%2B03">С++03</a> еще на свете не
+было. С тех пор уже и <a href="https://en.wikipedia.org/wiki/C%2B%2B17">С++17</a> появился и <a href="https://en.wikipedia.org/wiki/C%2B%2B20">С++20</a> не за горами, но класс
+по-прежнему активно используется. Мы его давно хотели заменить на что-нибудь
+более стандартное и современное, но все руки не доходили. “Работает - не трожь”.</p>
+
+<p>В один прекрасный день в этом классе нашлось <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">неопределенное поведение</a>, что
+стало последней каплей, <del>переломившей верблюду соломинку</del>. Указатель был
+переписан на корню и стал тонкой оберткой вокруг <code>std::shared_ptr&lt;&gt;</code>.
+На следующий же день сломался один неприметный юнит тест на одной из платформ.
+Причем на первый взгляд никакого отношения к переписанному указателю этот тест
+не имел. Но от фактов было трудно отвертеться. С новым указателем тест падал, а
+со старым - нет.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2019/12/16/gcc/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2019/11/29/akins_laws/">Законы космической инженерии (Законы Акина)</a>
       </h1>
       <span class="post-date">Nov 29, 2019 &middot; <a href="https://blog.not-a-kernel-guy.com/2019/11/29/akins_laws/#disqus_thread">Comments</a>
@@ -516,116 +548,6 @@ right&hellip;)</p>
   <iframe src="//www.youtube.com/embed/aJy1u-N3NY0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
       
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2018/11/20/python-magic/">Волшебство Питона</a>
-      </h1>
-      <span class="post-date">Nov 20, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/11/20/python-magic/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/python">Python</a>
-      </span>
-      
-      <p>Мне все-таки не понятно как живут большие проекты, написанные на Питоне. Он же
-как песок. Пока проект небольшой - все классно. Быстро накидали горку мокрого
-песка, лопаткой обхлопали для придания формы и все дела. Знай только что брызгай
-водой своевременно. Когда проект разрастается, то красивый и уютный песчанный
-замок превращается в минное поле. Отрефакторил подвал - крыша отвалилась.
-Поправил крышу - окна слиплись в один комок.</p>
-
-<p>Непонятно как все это счастье держать в одной куче. Неужели все живут за счет
-100% покрытия тестами? Не верю. Или все на PyCharm сидят?</p>
-
-<p>Расскажу про очередной прикол Питона. Итак есть простой код:</p>
-
-<pre><code class="language-python">def init(factories):
-    &quot;&quot;&quot;Convert a list of factorie into a list of objects.&quot;&quot;&quot; 
-    return [factory() for factory in factories]
-
-def cleanup(objects):
-    &quot;&quot;&quot;Clean up objects in the reversed order of their creation.&quot;&quot;&quot;
-    for obj in reversed(objects):
-        obj.cleanup()
-</code></pre>
-
-<p><code>init()</code> берет список фабрик и отдает список объектов, созданных фабриками.
-<code>cleanup()</code> чистит созданные объекты в порядке, противоположном порядку
-создания. Нам требуется написать тест, который проверяет, что методы <code>cleanup()</code>
-вызываются в правильном порядке:</p>
-
-<pre><code class="language-python">from itertools import permutations
-import mock
-
-def test_cleanup():
-    &quot;&quot;&quot;Verify cleanup() order.&quot;&quot;&quot;
-    # Try all permitations of initialization order. 
-    for init_order in permutations(range(3)):
-        cleanup_order = []
-
-        def factory(index):
-            def cleanup():
-                &quot;&quot;&quot;Record the clean up order.&quot;&quot;&quot;
-                cleanup_order.append(index)
-
-            def create():
-                &quot;&quot;&quot;Return a mock implementing cleanup().&quot;&quot;&quot;
-                obj = mock.Mock
-                obj.cleanup = mock.Mock(side_effect=cleanup)
-                return obj
-
-            return create
-
-        # Create objects in the desired order.
-        objects = init([factory(index) for index in init_order])
-
-        cleanup(objects)
-
-        # Verify that the object were cleaned up in the reveresed
-        # order of their creation.
-        assert cleanup_order == list(reversed(init_order))
-</code></pre>
-
-<p>Разберу логику по кускам. Тест перебирает все возможные кобинации порядка
-создания объектов:</p>
-
-<pre><code class="language-python">for init_order in permutations(range(3)):
-</code></pre>
-
-<p>Декоратор <code>factory()</code> возвращает фабрику <code>create()</code>, которая в свою учередь
-создает объект с методом <code>cleanup()</code>. Для создания объекта на коленке
-используется <a href="https://docs.python.org/3/library/unittest.mock.html"><code>Mock</code></a>. Релизация <code>cleanup()</code> запоминает порядок вызова в
-<code>cleanup_order</code>.</p>
-
-<p><code>init()</code> создает объекты в заданном порядке, <code>cleanup()</code> - чистит:</p>
-
-<pre><code class="language-python">objects = init([factory(index) for index in init_order])
-
-cleanup(objects)
-</code></pre>
-
-<p>Наконец, в самом конце мы проверяем, что порядок очистки противоположен порядку
-создания:</p>
-
-<pre><code class="language-python">assert cleanup_order == list(reversed(init_order))
-</code></pre>
-
-<p>Все просто, не так ли? Запускаем тест и получаем облом:</p>
-
-<pre><code>&gt;               assert cleanup_order == list(reversed(init_order))
-E     assert [2, 2, 2] == [2, 1, 0]
-E       At index 1 diff: 2 != 1
-E       Use -v to get the full diff
-
-
-rabbit_test.py:41: AssertionError 
-</code></pre>
-
-<p>Заядлые питонщики давно раскусили, в чем проблема. А вы сможете найти ошибку не
-заглядывая в ответ?</p>
-      <a href="https://blog.not-a-kernel-guy.com/2018/11/20/python-magic/">Read On &rarr;</a>
       
     </div>
     
