@@ -6,10 +6,21 @@
     <description>Recent content in Spacex on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sat, 30 May 2020 12:45:32 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jun 2020 20:47:13 -0700</lastBuildDate>
     
 	<atom:link href="https://blog.not-a-kernel-guy.com/tags/spacex/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Flight Software AMA</title>
+      <link>https://blog.not-a-kernel-guy.com/2020/06/05/flight-software-ama/</link>
+      <pubDate>Fri, 05 Jun 2020 20:47:13 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2020/06/05/flight-software-ama/</guid>
+      <description>&lt;p&gt;Команда Flight Software будет &lt;a href=&#34;https://www.reddit.com/r/spacex/comments/gxb7j1/we_are_the_spacex_software_team_ask_us_anything/&#34;&gt;отвечать на вопросы про то, как SpaceX разрабатывает
+программное обеспечение для Crew Dragon на reddit.com&lt;/a&gt; в субботу 6 июня 2020 с 12:00
+до 13:30 по тихоокеанскому времени (в субботу с 22:00 до 23:30 по киевскому времени).&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Батут</title>
@@ -673,27 +684,6 @@ Northrop Grumman приобрела у третьей стороны. Адапт
 бак с керосином:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/12/f9_pad.jpg&#34; alt=&#34;Falcon 9 is on the pad.&#34; /&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Сны</title>
-      <link>https://blog.not-a-kernel-guy.com/2017/12/02/dreams/</link>
-      <pubDate>Sat, 02 Dec 2017 19:59:07 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2017/12/02/dreams/</guid>
-      <description>&lt;p&gt;Я в начале ноября ездил с семьей в отпуск в Эквадор - посмотреть на
-галапагосских черепах и прочих игуан. Я про это как-нибудь потом подробнее
-напишу. По пути назад мы заехали на несколько дней в Кито (столица Эквадора).
-Кито находится на высоте почти три километра. На такой высоте уже становятся
-заметны проявления высотной болезни - особенно для свежеприбывших туристов типа
-нас. В частности первые пару дней не получается нормально спать. Через пару дней
-к высоте привыкаешь и все становится на свои места.&lt;/p&gt;
-
-&lt;p&gt;В первую ночь спать не получалось от слова совсем и поэтому сны были особенно
-запоминающиеся. Помню как смотрел во сне запуск &lt;a href=&#34;https://www.reddit.com/r/spacex/comments/7895bo/zuma_launch_campaign_thread/&#34;&gt;Зумы&lt;/a&gt;.
-Это было еще до всей этой истории с обтекателем и переносом запуска. В интернете
-как раз смаковали секретность спутника, многозначительно намекая на Северную
-Корею.&lt;/p&gt;</description>
     </item>
     
   </channel>

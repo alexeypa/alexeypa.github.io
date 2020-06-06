@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 01 Jun 2020 18:46:46 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jun 2020 20:47:13 -0700</lastBuildDate>
     
 	<atom:link href="https://blog.not-a-kernel-guy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Flight Software AMA</title>
+      <link>https://blog.not-a-kernel-guy.com/2020/06/05/flight-software-ama/</link>
+      <pubDate>Fri, 05 Jun 2020 20:47:13 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2020/06/05/flight-software-ama/</guid>
+      <description>&lt;p&gt;Команда Flight Software будет &lt;a href=&#34;https://www.reddit.com/r/spacex/comments/gxb7j1/we_are_the_spacex_software_team_ask_us_anything/&#34;&gt;отвечать на вопросы про то, как SpaceX разрабатывает
+программное обеспечение для Crew Dragon на reddit.com&lt;/a&gt; в субботу 6 июня 2020 с 12:00
+до 13:30 по тихоокеанскому времени (в субботу с 22:00 до 23:30 по киевскому времени).&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Армянское радио</title>
@@ -893,25 +904,6 @@ other akua such as Kūkahau, Līlīnoe, and Waiau.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Во как!&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Восход Земли</title>
-      <link>https://blog.not-a-kernel-guy.com/2018/10/20/lro/</link>
-      <pubDate>Sat, 20 Oct 2018 22:56:51 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2018/10/20/lro/</guid>
-      <description>&lt;p&gt;Композитное изображение Земли, восходящей над горизонтом Луны:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/earth_and_limb_m1199291564l_color_2stretch_mask_0.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/10/lro_earth_rise.jpg&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Изображение полученно из серии снимков, сделанных 12 октября 2015 года, с борта
-&lt;a href=&#34;https://ru.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter&#34;&gt;лунного орбитального зонда&lt;/a&gt;. В момент съемки аппарат находился на высоте 134
-километров над кратером Комптон, расположенном на обратной стороне Луны
-(51.8°N, 124.1°E).&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://lroc.sese.asu.edu/posts/895&#34;&gt;Статья, посвященная этому снимку&lt;/a&gt;, объясняет процесс съемки и ссылается на
-полноразмерное изображение.&lt;/p&gt;</description>
     </item>
     
   </channel>

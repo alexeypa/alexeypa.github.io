@@ -132,6 +132,23 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/03/30/301/">Загадка</a>
+      </h1>
+      <span class="post-date">Mar 30, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/03/30/301/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/wow64">Wow64</a>
+      </span>
+      
+      <p>Вот эта программа печатает номер версии указанного пользователем модуля, который она берет из поля &ldquo;FileVersion&rdquo; ресурса VS_VERSION_INFO этого модуля. Имя модуля передается как первый параметр командной строки. Для работы с VS_VERSION_INFO используется стандартная библиотека version.dll.</p>
+
+<p><em>(далее идет много кода)</em></p>
+      <a href="https://blog.not-a-kernel-guy.com/2008/03/30/301/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2008/03/27/300/">За последние две-три недели узнал много нового...</a>
       </h1>
       <span class="post-date">Mar 27, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/03/27/300/#disqus_thread">Comments</a>
@@ -277,21 +294,6 @@
       Наткнулся на вопрос на форуме iXBT. В Windows SDK помимо флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY определена маска KEY_WOW64_RES. Зачем она нужна?
 #ifndef KEY_WOW64_RES #define KEY_WOW64_RES (KEY_WOW64_64KEY | KEY_WOW64_32KEY) #endif  Ответ: по большому счету она не нужна. В коде Wow64 она используется для выделения флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY из маски доступа для дальнейшей обработки. Указывать оба флага (и KEY_WOW64_64KEY и KEY_WOW64_32KEY) при вызове RegCreateKeyEx, RegOpenKeyEx или RegDeleteKeyEx нельзя, так что приложениям эта маска ни к чему.
       <a href="https://blog.not-a-kernel-guy.com/2008/02/26/292/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2008/02/19/291/">Бесконечная война</a>
-      </h1>
-      <span class="post-date">Feb 19, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/02/19/291/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%B1%D0%BB%D0%BE%D0%B3">Блог</a><a class="label" href="/tags/%D1%81%D0%BF%D0%B0%D0%BC">Спам</a><a class="label" href="/tags/openid">OpenID</a>
-      </span>
-      
-      Спаммеры и любители лёгких денег в Интернете повадились оставлять комментарии-пустышки с единственной ссылкой на какой-нибудь левый сайт. Цель этого мероприятия, как я понимаю, поднять PR рейтинг этого сайта. Причем, судя по осмысленности текста, оставляют их явно живые люди, а не боты. Или боты нынче тест Тюринга научились проходить. Так или иначе, испортить день спаммеру - наша священная обязанность. Теперь в форме комментария непустое поле «Website» будет авторизироваться как OpenID URL.
-      
       
     </div>
     
