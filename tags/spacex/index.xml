@@ -6,10 +6,57 @@
     <description>Recent content in Spacex on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 05 Jun 2020 20:47:13 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2020 22:06:55 -0700</lastBuildDate>
     
 	<atom:link href="https://blog.not-a-kernel-guy.com/tags/spacex/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Пепелац</title>
+      <link>https://blog.not-a-kernel-guy.com/2020/08/04/butterfly/</link>
+      <pubDate>Tue, 04 Aug 2020 22:06:55 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2020/08/04/butterfly/</guid>
+      <description>&lt;div style=&#34;font-style: italic; text-align: right&#34;&gt;Корабли висели в небе точно так же, как не могут кирпичи.&lt;br/&gt;
+Дуглас Адамс, «Автостопом по галактике»&lt;/div&gt;
+
+&lt;p&gt;В Бока Чике сегодня летало. Громко, основательно, и очень сюрреалистично. Моих
+литературных талантов хватает, чтобы описать это событие по достоинству. Стальная бочка
+высотой в десятиэтажный дом, с карикатурными мультяшными ножками, вальяжно отрывается от
+стартового стола, походу разнося его в щепки, и возносится в небо с грацией
+троллейбуса&amp;hellip; Нет, не могу. Смотрите сами:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/s1HA9LlFNM0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Вместе с тем этот полет - это очень серьезная веха в разработке корабля. Причем важен
+даже не сам полет (хотя и он тоже), но все что происходило при подготовке к нему. Все
+переносы, многочисленные попытки и остановки обратного отсчета в последнюю секунду. Это
+можно сравнить с периодом времени, когда программа уже компилируется, но еще не
+работает.&lt;/p&gt;
+
+&lt;p&gt;Другой ракурс:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/EXm76nZG-so&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Вообще интересно, насколько круто снимают &amp;ldquo;через забор&amp;rdquo; любители космоса. Прикиньте, что
+эти люди потратили свой отпуск на то, чтобы просидеть у болота непонятно сколько дней
+на жаре в ожидании успешного теста; приволокли кучу дальнобойных камер; раздобыли
+шустрый интернет в 40 минутах езды от ближайшего приличного города; и выложили отснятый
+материал в интернет.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/ugVZ41USN_0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>Flight Software AMA</title>
@@ -660,30 +707,6 @@ Northrop Grumman приобрела у третьей стороны. Адапт
 &lt;p&gt;Вторая половина презентации посвящена миграции с древней системы сборки на
 основе make на более современный Bazel. Эта часть будет интересна в основном
 тем, кто интересуется системами сборки кода.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>CEX</title>
-      <link>https://blog.not-a-kernel-guy.com/2017/12/10/cex/</link>
-      <pubDate>Sun, 10 Dec 2017 17:42:51 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2017/12/10/cex/</guid>
-      <description>&lt;p&gt;Компания &lt;a href=&#34;https://twitter.com/RocketLab&#34;&gt;Rocket Lab&lt;/a&gt; сегодня собиралась
-запустить второй Electron, но &lt;a href=&#34;https://twitter.com/RocketLab/status/940031491521757186&#34;&gt;попытка сорвалась из-за погоды&lt;/a&gt;. Фотограция
-заправленной ракеты на пусковом столе напомнила забавную историю из ранней
-истории SpaceX:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/RocketLab/status/936710334710034432&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/12/electron_wet_dress_rehearsal.jpg&#34; alt=&#34;Electron. Wet dress rehearsal on Nov 30th, 2017.&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;У первой версии Falcon 9 в 2009 году на боку была надпись &amp;ldquo;SPACEX&amp;rdquo; во весь рост:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/12/falcon9vertical2.jpg&#34; alt=&#34;Falcon 9 is vectical.&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Однако при заправке бак с жидким кислородом покрылся инеем, превратив надпись в
-&amp;ldquo;CEX&amp;rdquo;. Этот забавный просчет был учтен и в дальнейшем надпись сдвинули вниз, на
-бак с керосином:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/12/f9_pad.jpg&#34; alt=&#34;Falcon 9 is on the pad.&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

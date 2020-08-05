@@ -132,6 +132,74 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2017/05/07/rr/">rr</a>
+      </h1>
+      <span class="post-date">May 7, 2017 &middot; <a href="https://blog.not-a-kernel-guy.com/2017/05/07/rr/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0">Отладка</a>
+      </span>
+      
+      <p>Недавно наткнулся на <a href="http://rr-project.org/">rr (Record and Replay Framework)</a>
+от Mozilla и я вам скажу, что это просто незаменимый инструмент для ловли
+неуловимых багов в отладчике. Это не первый и не единственный инструмент
+подобного плана. <a href="https://github.com/mozilla/rr/wiki/Related-work">Соответствующая страница проекта</a>
+описывает десятка три альтернатив. Из этого списка мне раньше доводилось
+работать только с iDNA, который впоследствии стал <a href="http://www.thewindowsclub.com/microsoft-time-travel-tracing-diagnostic">Time Travel Tracing
+</a> (TTT).
+TTT мог записать процесс выполнения программы с точностью до инструкции и
+воспроизвести его в точности в прямом и обратном направлении. TTT был просто
+незаменим для ловли сложных багов и его главным недостатком было то, что TTT был
+внутренним инструментом, который Microsoft так и не выпустила как отдельный
+продукт.</p>
+
+<p>rr тоже может записать выполнение процесса с точностью до инструкции и проиграть
+его назад и вперед. rr требует современного процессора, причем обязательно
+Intel, так как использует performance counters которые не реализованы в других
+процессорах. ARM и другие архитектуры тоже не поддерживаются. В обмен на это,
+rr практически не замедляет записываемый процесс. Скорость выполнения падает в
+1.2 раза - сущие пустяки. Размер генерируемой записи тоже крайне скромен - в
+районе гигабайта за 10-15 минут выполнения “вычислительного” кода. Практически
+бесплатно. В пересчете на количество выполненных инструкций получается что-то
+вроде 0.1 бита на выполненную инструкцию.</p>
+
+<p>Что интересно, rr базируется на очень простой идее: большая часть кода
+выполняется всегда одинаково. Если записать все случайные события (ввод/вывод,
+RDTSC, системный вызовы) и начальные условия (содержимое памяти), то процесс
+выполнения становится полностью детерминированным. Более детально можно почитать
+здесь: <a href="http://rr-project.org/rr.html">http://rr-project.org/rr.html</a>.</p>
+
+<p>Процесс отладки с помощью rr выглядит так:</p>
+
+<ol>
+<li>Записываем процесс: <code>rr record &lt;program&gt;</code></li>
+<li>Запускаем запись в отладчике: <code>rr replay</code></li>
+<li>Проматываем до конца и смотрим чем вызван segfault.</li>
+<li>Ставим watchpoint на память из которой читается плохой указатель.</li>
+<li>Выполняем программу назад пока не сработает watchpoint.</li>
+<li>Смотрим почему в память пишется плохой указатель и повторяем шаги 4-6 до
+победного конца.</li>
+</ol>
+
+<p>Дополнительный бонус заключается в том, что все адреса при повторном
+воспроизведении сохраняются. Если нужная переменная находится по адресу
+<code>0x123fooba</code>, то она там будет всегда. Отпадает необходимость выяснять где в
+памяти находится интересный кусок каждый раз при запуске отладчика. rr также
+может помечать вывод в stdout метками для быстрой перемотки в нужное место.
+Это помогает сопоставить код с интересными местами в лог файлах.</p>
+
+<p>Само собой, у rr есть куча других ограничений. К примеру, он не работает под
+Windows, не поддерживаются все системные вызовы, не поддерживается циклическая
+запись (последние несколько минут выполнения процесса), поддерживается только
+одно процессорное ядро, и т.д. Тем не менее, если вы столкнулись с “невозможным”
+багом в Linux, rr - один из наиболее вероятных способов докопаться до источника
+проблемы.</p>
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2017/04/29/the-world-of-might-and-magic/">Мир магов, фей и драконов</a>
       </h1>
       <span class="post-date">Apr 29, 2017 &middot; <a href="https://blog.not-a-kernel-guy.com/2017/04/29/the-world-of-might-and-magic/#disqus_thread">Comments</a>
@@ -429,35 +497,6 @@ Space Center on the Florida Space Coast.</p>
 
 <p><img src="/2017/01/TheCurseOfTheWereRabbit-RehabilitationSuccess.gif" alt="" /></p>
       <a href="https://blog.not-a-kernel-guy.com/2017/01/16/rabbits/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2017/01/14/iridium1/">Iridium-1</a>
-      </h1>
-      <span class="post-date">Jan 14, 2017 &middot; <a href="https://blog.not-a-kernel-guy.com/2017/01/14/iridium1/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/spacex">SpaceX</a>
-      </span>
-      
-      <p>Ровно через пять месяцев после JCSAT-16 (14 августа 2016) первая ступень
-Iridium-1 гордо сидит на палубе Just Read the Instructions:</p>
-
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/7WimRhydggo?t=36m28s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-
-<p>Ура! Ура! :-)</p>
-
-<p>На расследование <a href="http://www.spacex.com/news/2016/09/01/anomaly-updates">аварии первого сентября</a>
-ушло четыре месяца и масса усилий: тесты, анализ данных и т.д.</p>
-
-<p>На очереди запуск EchoStar 23 с мыса Канаверал.</p>
-      
       
     </div>
     

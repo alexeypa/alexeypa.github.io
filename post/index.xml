@@ -6,10 +6,57 @@
     <description>Recent content in Posts on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 05 Jun 2020 20:47:13 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2020 22:06:55 -0700</lastBuildDate>
     
 	<atom:link href="https://blog.not-a-kernel-guy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Пепелац</title>
+      <link>https://blog.not-a-kernel-guy.com/2020/08/04/butterfly/</link>
+      <pubDate>Tue, 04 Aug 2020 22:06:55 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2020/08/04/butterfly/</guid>
+      <description>&lt;div style=&#34;font-style: italic; text-align: right&#34;&gt;Корабли висели в небе точно так же, как не могут кирпичи.&lt;br/&gt;
+Дуглас Адамс, «Автостопом по галактике»&lt;/div&gt;
+
+&lt;p&gt;В Бока Чике сегодня летало. Громко, основательно, и очень сюрреалистично. Моих
+литературных талантов хватает, чтобы описать это событие по достоинству. Стальная бочка
+высотой в десятиэтажный дом, с карикатурными мультяшными ножками, вальяжно отрывается от
+стартового стола, походу разнося его в щепки, и возносится в небо с грацией
+троллейбуса&amp;hellip; Нет, не могу. Смотрите сами:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/s1HA9LlFNM0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Вместе с тем этот полет - это очень серьезная веха в разработке корабля. Причем важен
+даже не сам полет (хотя и он тоже), но все что происходило при подготовке к нему. Все
+переносы, многочисленные попытки и остановки обратного отсчета в последнюю секунду. Это
+можно сравнить с периодом времени, когда программа уже компилируется, но еще не
+работает.&lt;/p&gt;
+
+&lt;p&gt;Другой ракурс:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/EXm76nZG-so&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Вообще интересно, насколько круто снимают &amp;ldquo;через забор&amp;rdquo; любители космоса. Прикиньте, что
+эти люди потратили свой отпуск на то, чтобы просидеть у болота непонятно сколько дней
+на жаре в ожидании успешного теста; приволокли кучу дальнобойных камер; раздобыли
+шустрый интернет в 40 минутах езды от ближайшего приличного города; и выложили отснятый
+материал в интернет.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/ugVZ41USN_0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>Flight Software AMA</title>
@@ -844,66 +891,6 @@ def create_connection(address):
 
 &lt;p&gt;Мораль истории - знайте свои ошибки в лицо и используйте параметр
 &lt;code&gt;retry_on_exception&lt;/code&gt;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Тридцатиметровый телескоп</title>
-      <link>https://blog.not-a-kernel-guy.com/2018/11/01/tmt/</link>
-      <pubDate>Thu, 01 Nov 2018 21:59:56 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2018/11/01/tmt/</guid>
-      <description>&lt;p&gt;Верховный суд Гавайев разрешил постройку Тридцатиметрового телескопа на вершине
-горы Мауна-Кеа. Решение о постройке телескопа вызвало протесты среди защитников
-природы и сторонников традиционного гавайского образа жизни, которые считают
-гору Мауна-Кеа священной. В 2015 году Верховный суд Гавайев отменил уже готовое
-разрешение на постройку телескопа, из-за нарушений прав коренных гавайцев, а
-именно - спор не был рассмотрен в суде перед выдачей разрешения на постройку.
-Орган, ответственный за выдачу разрешения (The Board of Land and Natural
-Resources), подсуетился и организовал слушание. И вот теперь Верховный суд дал
-добро на постройку.&lt;/p&gt;
-
-&lt;p&gt;Отдельные части &lt;a href=&#34;http://www.courts.state.hi.us/wp-content/uploads/2018/10/SCOT-17-0000777.pdf&#34;&gt;решения Верховного суда&lt;/a&gt; читаются как сказка (извиняйте за
-корявый перевод):&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Некоторые коренные гавайцы, включая некоторых аппелянтов, считают гору
-Мауна-Кеа, возвышающуюся на 13796 футов над уровнем моря, предком, нине
-живущим членом семьи и прародителем гавайцев, рожденным от Wākea (небесного
-отца) и Papa (матери Земли). Они полагают, что вершина Мауна-Кеа, также
-известная как Kūkahauʻula (скопление puʻu или шлаковых конусов), является wahi
-pana (легендарным местом) и wao akua (местом, где живут боги), сферой исконных
-akua (богов, богинь, божеств), принимающих земную форму в виде puʻu, воды
-озера Waiau, и других значительных элементов ландшафта. Считается, что вершина
-Мауна-Кеа касается неба уникальным и важным способом, - как piko (пупок) через
-который устанавливается связь с предками или как piko hoʻokahi (единый пупок),
-который устанавливает духовную и генеалогическую связь, и обеспечивает права
-на живительную энергию всего того, чем являются Гавайи. Большое количество
-святилищ на Мауна-Кеа указывает на традицию паломничества: &amp;ldquo;прогулка вверх и
-назад во времени к космологическим началам&amp;rdquo; чтобы поклонится виду богини
-Poliʻahu и другим akua, таким как Kūkahau, Līlīnoe и Waiau.&lt;/p&gt;
-
-&lt;p&gt;Some Native Hawaiians, including some of the appellants,
-consider Mauna Kea, which rises to an elevation of 13,796 feet
-above sea level, to be an ancestor, a living family member and
-progenitor of Hawaiians, born of Wākea (Sky Father) and Papa
-(Earth Mother). They consider the Mauna Kea summit area, also
-known as Kūkahauʻula (cluster of puʻu or cinder cones), to be a
-wahi pana (storied place) and wao akua (the place where gods
-reside), the realm of ancestral akua (gods, goddesses, deities)
-believed to take earthly form as the puʻu, the waters of Lake
-Waiau, and other significant landscape features. The summit of
-Mauna Kea is thought to touch the sky in an unique and important
-way, as a piko (navel) by which connections to the ancestors are
-made known to them, or as the piko hoʻokahi (the single navel),
-which ensures spiritual and genealogical connections, and the
-rights to the regenerative powers of all that is Hawaiʻi. The
-large number of shrines on Mauna Kea indicate that there was a
-pattern of pilgrimage, “a walk upward and backward in time to
-cosmological origins,” to worship the snow goddess Poliʻahu and
-other akua such as Kūkahau, Līlīnoe, and Waiau.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Во как!&lt;/p&gt;</description>
     </item>
     
   </channel>
