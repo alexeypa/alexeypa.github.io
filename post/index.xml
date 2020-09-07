@@ -6,10 +6,38 @@
     <description>Recent content in Posts on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 04 Aug 2020 22:06:55 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2020 15:23:17 -0700</lastBuildDate>
     
 	<atom:link href="https://blog.not-a-kernel-guy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Фонтанный код</title>
+      <link>https://blog.not-a-kernel-guy.com/2020/09/06/fountain-codes/</link>
+      <pubDate>Sun, 06 Sep 2020 15:23:17 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2020/09/06/fountain-codes/</guid>
+      <description>&lt;p&gt;Недавно совершенно случайно узнал про &lt;a href=&#34;https://en.wikipedia.org/wiki/Fountain_code&#34;&gt;фонтанный код&lt;/a&gt; и поразился насколько
+элегантно работает этот алгоритм. Этот код позволяет надежно передавать данные
+по каналу с потерями без обратной связи и с минимальными накладными расходами.
+Более того передатчик и приемник не обязаны синхронизировать начало и конец
+передачи данных. Фонтанный код позволяет передатчику генерировать бесконечный
+поток пакетов, кодирующих исходное сообщение, а приемник может начать слушать в
+любой момент. Все что требуется - это принять минимально необходимое для
+декодирования количество пакетов. &lt;a href=&#34;https://en.wikipedia.org/wiki/Raptor_code&#34;&gt;Raptor code&lt;/a&gt;, - одна из наиболее
+практичных реализаций, требует всего лишь передать всего 0.2% дополнительных
+пакетов для успешного декодирования с вероятностью 0.999999. При этом
+вероятность успешного декодирования стремительно приближается к единице с каждым
+дополнительным пакетом.&lt;/p&gt;
+
+&lt;p&gt;Зачем это нужно когда уже есть протоколы надежной передачи по двухстороннему
+каналу, скажем тот же TCP/IP? Оказывается существует ситуации, когда организация
+обратного канала связи требует изобретения машины времени. Когда нам нужно
+восстановить данные со сбойного сектора на жестком диске, мы не можем послать
+“запрос на повторную передачу” в прошлое - в то время, когда сектор нормально
+читался. Все что мы можем сделать - это записать избыточные данные в другой
+сектор или на другой диск заранее.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Пепелац</title>
@@ -855,42 +883,6 @@ rabbit_test.py:41: AssertionError
 документальном фильме я еще не видел. Я там тоже засветился в 42:56. :)&lt;/p&gt;
 
 &lt;p&gt;Красиво снято. Рекомендую посмотреть.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Ну-ка, еще разок</title>
-      <link>https://blog.not-a-kernel-guy.com/2018/11/08/retrying/</link>
-      <pubDate>Thu, 08 Nov 2018 21:57:46 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2018/11/08/retrying/</guid>
-      <description>&lt;p&gt;Питоний пакет &lt;a href=&#34;https://pypi.org/project/retrying/&#34;&gt;retrying&lt;/a&gt; - универсальная заплатка для кода, который может
-поломаться из-за внешних причин. Например, &lt;a href=&#34;https://docs.python.org/3.7/library/socket.html#socket.socket.connect&#34;&gt;&lt;code&gt;socket.connect()&lt;/code&gt;&lt;/a&gt; может
-закончится ошибкой из-за непредвиденной ситуации в сети. Заворачиваем вызов в
-&lt;code&gt;@retry&lt;/code&gt; и бац! Все работает.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;@retry
-def create_connection(address):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    return socket.connect(address)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Однако бездумное применение &lt;code&gt;@retry&lt;/code&gt;, как нетрудно догадаться, приводит
-проблемам. Самый известный пример - вложенные &lt;code&gt;@retry&lt;/code&gt;.
-&lt;code&gt;@retry(stop_max_attempt_number=3)&lt;/code&gt; вложенный в другой
-&lt;code&gt;@retry(stop_max_attempt_number=3)&lt;/code&gt; дает 9 повторов. Три уровня вложенности -
-27 повторов.&lt;/p&gt;
-
-&lt;p&gt;Один раз использование &lt;code&gt;@retry&lt;/code&gt; привело к тому, что IT заблокировало мою учетную
-запись. Банальная история - был некий скрипт, который при запуске спрашивал
-логин и пароль для авторизации. В один прекрасный день некто (не будем
-показывать пальцем, хотя это был Слонёнок) усовершенствовал скрип, завернув
-сетевой вызов в &lt;code&gt;@retry&lt;/code&gt;. Отличная идея, за исключением того, что ошибка
-авторизации приводила к повторному запросу с тем же неправильным именем и
-паролем. После определенного числа попыток контроллер домена решил, что кто-то
-пытается подобрать пароль к учетной записи и заблокировал её.&lt;/p&gt;
-
-&lt;p&gt;Мораль истории - знайте свои ошибки в лицо и используйте параметр
-&lt;code&gt;retry_on_exception&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>

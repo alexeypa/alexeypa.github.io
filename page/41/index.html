@@ -132,6 +132,29 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/02/28/293/">Недокументированные функции; Загрузка 32-х битных DLL в 64-х битный процесс</a>
+      </h1>
+      <span class="post-date">Feb 28, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/02/28/293/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BD%D0%B5%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8">Недокументированные функции</a><a class="label" href="/tags/win32">Win32</a><a class="label" href="/tags/windows">Windows</a><a class="label" href="/tags/wow64">Wow64</a>
+      </span>
+      
+      <p><a href="/2007/10/18/256/">Вопрос</a>:</p>
+
+<blockquote>
+<p>Скажите, а невозможность загрузки в 64bit-процесс 32bit DLL - фатальна, или же возможны какие-то хаки, недокументированные обходные пути?</p>
+</blockquote>
+
+<p>Отвечаю здесь, так как ответ получился слушком длинным.</p>
+
+<p>Во-первых, про любые недокументированные возможности меня спрашивать бесполезно. Даже если такая возможность существует, я всё равно о ней не расскажу. Этому есть несколько причин, включая очевидные вещи вроде NDA, законе об авторском праве и т.д. Еще одна причина, почему я не горю желанием это делать, - это то, что раскрывая детали реализации того или иного компонента, я тем самым лишаю этот компонент возможности развиваться и улучшатся в следующих версиях.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2008/02/28/293/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2008/02/26/292/">Зачем нужна маска KEY_WOW64_RES?</a>
       </h1>
       <span class="post-date">Feb 26, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/02/26/292/#disqus_thread">Comments</a>
@@ -270,26 +293,6 @@
       
       <p>Точка входа в DLL, так же как и точка входа в программу, - это очень специальное место. Зона. В Зоне действуют свои правила касательно того, что можно делать, а что делать нельзя. В Зоне можно инициализировать локальные данные DLL, можно создавать критические секции. В Зоне нельзя динамически загружать другие Модули или создавать потоки. Любой Сталкер знает и следует <a href="http://msdn2.microsoft.com/en-us/library/ms682583.aspx">правилам Зоны</a>. Все остальные рано или поздно нарушают правила и расплачиваются за это.</p>
       <a href="https://blog.not-a-kernel-guy.com/2008/01/30/284/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2008/01/25/283/">Отличный совет</a>
-      </h1>
-      <span class="post-date">Jan 25, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/01/25/283/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5">Странное</a>
-      </span>
-      
-      Только что получил чудесный комментарий в ответ на вопрос по хороший курс лекций по C# для непрограммиста. Орфография оригинала сохранена. Выделение моё:
- Как насчёт того, чтобы почитать MSDN Library? :)Настоятельно рекомендую иметь у себя Offline версию. Ибо, ИМХО, удобнее. Очень актуальной будет &lsquo;MSDN Library for Visual Studio 2008&rsquo;:
-http://www.microsoft.com/downloads/details.aspx?familyid=6FF3BC60-32C8-4C22-8591-A20BF8DFF1A2&amp;displaylang=en
-Если нет 2.0 Гб внешнего трафика - добро пожаловать в MSDN Online:
-http://msdn2.microsoft.com/en-us/library/default.aspx
-Тебя интересуют разделы &ldquo;Getting Started with Visual C#&rdquo;, &ldquo;C# Programming Guide&rdquo;, &ldquo;Writing Applications with Visual C#&rdquo; и &ldquo;C# Reference&rdquo;.
-      <a href="https://blog.not-a-kernel-guy.com/2008/01/25/283/">Read On &rarr;</a>
       
     </div>
     

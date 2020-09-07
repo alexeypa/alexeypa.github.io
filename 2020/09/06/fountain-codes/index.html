@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Фонтанный код</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2020 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Фонтанный код</h1>
+    <span class="post-date">Sep 6, 2020 &middot; <a href="https://blog.not-a-kernel-guy.com/2020/09/06/fountain-codes/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+    </span>
+    <p>Недавно совершенно случайно узнал про <a href="https://en.wikipedia.org/wiki/Fountain_code">фонтанный код</a> и поразился насколько
+элегантно работает этот алгоритм. Этот код позволяет надежно передавать данные
+по каналу с потерями без обратной связи и с минимальными накладными расходами.
+Более того передатчик и приемник не обязаны синхронизировать начало и конец
+передачи данных. Фонтанный код позволяет передатчику генерировать бесконечный
+поток пакетов, кодирующих исходное сообщение, а приемник может начать слушать в
+любой момент. Все что требуется - это принять минимально необходимое для
+декодирования количество пакетов. <a href="https://en.wikipedia.org/wiki/Raptor_code">Raptor code</a>, - одна из наиболее
+практичных реализаций, требует всего лишь передать всего 0.2% дополнительных
+пакетов для успешного декодирования с вероятностью 0.999999. При этом
+вероятность успешного декодирования стремительно приближается к единице с каждым
+дополнительным пакетом.</p>
+
+<p>Зачем это нужно когда уже есть протоколы надежной передачи по двухстороннему
+каналу, скажем тот же TCP/IP? Оказывается существует ситуации, когда организация
+обратного канала связи требует изобретения машины времени. Когда нам нужно
+восстановить данные со сбойного сектора на жестком диске, мы не можем послать
+“запрос на повторную передачу” в прошлое - в то время, когда сектор нормально
+читался. Все что мы можем сделать - это записать избыточные данные в другой
+сектор или на другой диск заранее.</p>
+
+<p>Бывает и так, что организация обратной связи осложнена практическими
+ограничениями. Обратный канал связи может быть слишком дорог и/или слишком
+медленен. Задержка передачи сигнала с Земли на космический аппарат и обратно
+может составлять от секунд (орбита Луны) до часов (Вояждеры, Пионеры, Кассини,
+Новые горизонты, и т.д.) и требует многометровых параболических антенн. Если
+посчитать <a href="http://bradhedlund.com/2008/12/19/how-to-calculate-tcp-throughput-for-long-distance-links/">пропускную способность TCP/IP</a> для связи с Луной, то получится,
+что с настройками по-умолчанию (и вне зависимости от реальной ширины канала)
+скорость передачи данных будет не более 175 Kbps.</p>
+
+<p>Вообще сценариев, когда помехоустойчивое кодирование выгоднее запросов на
+повторную передачу - масса. Передача данных по радиоканалу, высокоскоростная
+передача данных, высокочастотная торговля на бирже, синхронизация часов по сети,
+системы глобального позиционирования и т.д. Во многих из них фонтанный код может
+быть хорошим выбором.</p>
+
+<p>Алгоритм работы фонтанного кода на удивление прост. Исходное сообщение
+разбивается на блоки одинакового размера пронумерованные от 1 до k. Каждый
+исходящий пакет генерируется так:</p>
+
+<ol>
+<li>Передатчик выбирает степень связности пакета d в диапазоне от 1 до k.</li>
+<li>Передатчик выбирает d случайных блоков из исходного сообщения и складывает их
+по модулю 2 (xor).</li>
+<li>Результат сложения вместе информацией об исходных блоках посылается
+приемнику.</li>
+</ol>
+
+<p>Процедура декодирования не намного сложнее. Для каждого входящего пакета
+выполняются следующие шаги:</p>
+
+<ol>
+<li>Пакет помещается в очередь еще не декодированных пакетов вместе со списком
+исходных блоков.</li>
+<li>Каждый уже декодированный исходный блок складывается по модулю 2 с пакетом и
+удаляется из списка.</li>
+<li>Если в списке исходных блоков остался только один блок, то содержимое пакета
+и есть исходный блок. Блок помечается как декодированный. Пакет удаляется из
+очереди.</li>
+<li>Блок, декодированный на предыдущем шаге, складывается со всеми пакетами из
+очереди, ссылающимися на него. Это, в свою очередь, может привести к
+декодированию других пакетов и т.д.</li>
+</ol>
+
+<p>Процесс декодирования легче проследить на конкретном примере. Предположим
+приемник получил пять однобайтовых пакетов. На рисунке снизу полученные пакеты
+показаны слева; исходные блоки, которые нужно восстановить, - справа. Четвертый
+пакет содержит только второй исходный блок, что позволяет сразу его
+декодировать:</p>
+
+<p><img src="/2020/09/fountain-step1.png" alt="" /></p>
+
+<p>Декодированный исходный блок складывается с первом пакетом по модулю 2 (2^3=1),
+так как они связаны:</p>
+
+<p><img src="/2020/09/fountain-step2.png" alt="" /></p>
+
+<p>Теперь первый исходный блок может быть также декодирован:</p>
+
+<p><img src="/2020/09/fountain-step3.png" alt="" /></p>
+
+<p>Это, в свою очередь позволяет декодировать исходные блоки 3 и 4 (1^5=4, 1^2=3):</p>
+
+<p><img src="/2020/09/fountain-step4.png" alt="" /></p>
+
+<p>И, наконец, последний исходный блок тоже может быть декодирован:</p>
+
+<p><img src="/2020/09/fountain-step5.png" alt="" /></p>
+
+<p>Заметьте, что передатчик и приемник могут передавать и получать пакеты в любом
+порядке и приемнику совершенно не требуется собрать непрерывную
+последовательность пакетов. Также, и это не очевидно на первый взгляд, передача
+информации о связях между пакетами и исходными блоками не требует заметных
+накладных расходов. Передатчик и приемник могут просто использовать заранее
+известную псевдослучайную последовательность чисел и передавать номер пакета в
+этой последовательности.</p>
+
+<p>Я рекомендую прочитать
+<a href="https://docs.switzernet.com/people/emin-gabrielyan/060112-capillary-references/ref/MacKay05.pdf">подробный анализ нескольких разновидностей фонтанного кода</a> за авторством
+Дэвида Макая. Легко заметить, что способность фонтанного кода восстанавливать
+потерянные пакеты зависит от того, как выбирается степень связности d для
+каждого пакета. С одной стороны, для того чтобы начать декодирование приемник
+должен получить хотя бы один пакет со степенью связности 1. С другой стороны,
+пакеты с большими степенями связности позволяют приемнику восстанавливать данные
+из потерянных пакетов.</p>
+
+<p>В своей работе Дэвид начинает разбор с простой модели, которая просто генерирует
+K случайных бит для каждого пакета и добавляет исходный блок i к пакету в
+случае, если бит с номером i установлен в единицу. Такая модель обладает
+довольно неплохими способностями к восстановлению потерянных данных, однако она
+требует значительных вычислительных затрат при больших K (вычислительная
+сложность алгоритма - O(K^3)).</p>
+
+<p>Далее автор переходит к разбору <a href="https://en.wikipedia.org/wiki/Luby_transform_code">LT code</a>, который уменьшает количество
+связей между пакетами и исходными блоками, тем самым снижая вычислительную
+сложность алгоритма до O(K log K). Эта схема базируется на наблюдении, что в
+идеальном случае, на каждой итерации у приемника будет только один пакет со
+степенью связности 1 и декодирование очередного исходного блока будет приводить
+к появлению очередного пакета со степенью связности 1.</p>
+
+<p>Следующая разновидность фонтанного кода, - <a href="https://en.wikipedia.org/wiki/Raptor_code">Raptor code</a>, улучшает
+вычислительную сложность до O(K). Иными словами, вычислительная сложность это
+алгоритма растет от размена исходного сообщения точно также, как растет
+вычислительная сложность <code>memcpy()</code>! Raptor code использует LT code со средней
+степенью связности около 3 (вместо log K). Это означает, что приемник увидит
+много пакетов с малой степенью связности, но некоторые исходные блоки не будут
+связаны ни с одним пакетом и, соответственно, не смогут быть восстановлены.
+Raptor code красиво обходит это ограничение с помощью двухступенчатого
+кодирования: сначала исходные данные кодируются
+<a href="https://en.wikipedia.org/wiki/Low-density_parity-check_code">кодом с малой плотностью проверок на чётность (LDPC)</a>, а затем слабым LT
+кодом. Параметры LDPC подбираются так, чтобы он мог восстановить данные, не
+восстановленные LT кодом. Получается, что Raptor code объединяет способность
+LDPC гарантированно восстанавливать данные (с определенным уровнем потерь) со
+способностью LT кода восстанавливать данные при любом уровне потерь.</p>
+
+<p><a href="https://tools.ietf.org/html/rfc5053">Raptor code</a> и <a href="https://tools.ietf.org/html/rfc6330">RaptorQ code</a> стандартизированы <a href="https://www.ietf.org/">Инженерным советом
+Интернета</a> и способны крайне эффективно восстанавливать данные. Например
+RaptorQ гарантирует следующую вероятность доставки исходного сообщения:</p>
+
+<ul>
+<li>Более 0.99 после получения K пакетов</li>
+<li>Более 0.9999 после получения K+1 пакетов</li>
+<li>Более 0.999999 после получения K+2 пакетов</li>
+</ul>
+
+<p>Правами на Raptor code и RaptorQ code обладает Qualcomm, Inc., однако согласно
+<a href="https://datatracker.ietf.org/ipr/1957/">IPR 1957</a> и <a href="https://datatracker.ietf.org/ipr/2554/">IPR 2554</a> Qualcomm, Inc. обязуется либо выдавать лицензию
+либо не предъявлять претензий (в зависимости от того, где используется
+лицензируемый протокол).</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2020/09/06/fountain-codes/";
+        this.page.title = "Фонтанный код";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
