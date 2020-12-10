@@ -6,10 +6,48 @@
     <description>Recent content on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 06 Sep 2020 15:23:17 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 09 Dec 2020 19:51:49 -0800</lastBuildDate>
     
         <atom:link href="https://blog.not-a-kernel-guy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Испытательный полет SN8 на 12.5 км</title>
+      <link>https://blog.not-a-kernel-guy.com/2020/12/09/sn8/</link>
+      <pubDate>Wed, 09 Dec 2020 19:51:49 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2020/12/09/sn8/</guid>
+      <description>&lt;p&gt;Сегодня был отличный день. Испытательный полет SN8 на 12.5 км прошел гораздо лучше, чем
+я ожидал. Да и шоу получилось просто отменное. В этом полете испытывалось много нового:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Полет на трех движках. Раптор еще не летал в такой конфигурации. После F9 это кажется
+тривиальной вещью, но одни только акустические нагрузки чего стоят.&lt;/li&gt;
+&lt;li&gt;Выключение движков в полете, суммарный вектор тяги которых не соосен с продольной
+осью ракеты.&lt;/li&gt;
+&lt;li&gt;Переворот на пике траектории.&lt;/li&gt;
+&lt;li&gt;Планирование &amp;ldquo;на пузе&amp;rdquo;. Насколько я понимаю, этого в мире еще никто не пробовал, тем
+более с ракетой такой размерности. Я ожидал, что неприятности начнутся именно на этом
+этапе. Тем более удивительно, что планирование прошло как по маслу.&lt;/li&gt;
+&lt;li&gt;Включение двигателей для посадки &amp;ldquo;лежа на боку&amp;rdquo;. Топливо в баках при этом
+скапливается на боку ракеты - его туда толкает ускорение от торможения в атмосфере.
+При посадке первой ступени F9 топливо естественным образом стекает в топливоприемник
+(не уверен на счет терминологии).&lt;/li&gt;
+&lt;li&gt;Переворот в последнюю секунду перед посадкой. Неудача на этом этапе была второй
+наиболее вероятной причиной неудачи по моим предположениям до теста.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Мелкие неприятности с низкой тягой при посадке и, как следствие, красивым взрывом
+на посадочной площадке - это совершенно не проблема. Мы это уже порешали с при посадке
+F9, порешаем и здесь.&lt;/p&gt;
+
+&lt;p&gt;А пока - наслаждайтесь красивым зрелищем (T-0 в 1:48:12):&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/ap-BkkrRg-o&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>Фонтанный код</title>
@@ -1389,19 +1427,6 @@ rabbit_test.py:41: AssertionError
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Как в таких невыносимых условиях программировать?&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Марс: Внутри SpaceX</title>
-      <link>https://blog.not-a-kernel-guy.com/2018/11/14/inside-spacex/</link>
-      <pubDate>Wed, 14 Nov 2018 22:46:12 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2018/11/14/inside-spacex/</guid>
-      <description>&lt;p&gt;National Geographic начал показывать второй сезон &lt;a href=&#34;https://www.nationalgeographic.com/tv/mars/&#34;&gt;сериала Марс&lt;/a&gt; и вместе с
-первым эпизодом выложил &lt;a href=&#34;https://www.nationalgeographic.com/tv/watch/12e413e68c538ba79a298f709efc1607/&#34;&gt;серию про SpaceX&lt;/a&gt;. Такого количества знакомых лиц в
-документальном фильме я еще не видел. Я там тоже засветился в 42:56. :)&lt;/p&gt;
-
-&lt;p&gt;Красиво снято. Рекомендую посмотреть.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -6,10 +6,48 @@
     <description>Recent content in Spacex on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 04 Aug 2020 22:06:55 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 09 Dec 2020 19:51:49 -0800</lastBuildDate>
     
 	<atom:link href="https://blog.not-a-kernel-guy.com/tags/spacex/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Испытательный полет SN8 на 12.5 км</title>
+      <link>https://blog.not-a-kernel-guy.com/2020/12/09/sn8/</link>
+      <pubDate>Wed, 09 Dec 2020 19:51:49 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2020/12/09/sn8/</guid>
+      <description>&lt;p&gt;Сегодня был отличный день. Испытательный полет SN8 на 12.5 км прошел гораздо лучше, чем
+я ожидал. Да и шоу получилось просто отменное. В этом полете испытывалось много нового:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Полет на трех движках. Раптор еще не летал в такой конфигурации. После F9 это кажется
+тривиальной вещью, но одни только акустические нагрузки чего стоят.&lt;/li&gt;
+&lt;li&gt;Выключение движков в полете, суммарный вектор тяги которых не соосен с продольной
+осью ракеты.&lt;/li&gt;
+&lt;li&gt;Переворот на пике траектории.&lt;/li&gt;
+&lt;li&gt;Планирование &amp;ldquo;на пузе&amp;rdquo;. Насколько я понимаю, этого в мире еще никто не пробовал, тем
+более с ракетой такой размерности. Я ожидал, что неприятности начнутся именно на этом
+этапе. Тем более удивительно, что планирование прошло как по маслу.&lt;/li&gt;
+&lt;li&gt;Включение двигателей для посадки &amp;ldquo;лежа на боку&amp;rdquo;. Топливо в баках при этом
+скапливается на боку ракеты - его туда толкает ускорение от торможения в атмосфере.
+При посадке первой ступени F9 топливо естественным образом стекает в топливоприемник
+(не уверен на счет терминологии).&lt;/li&gt;
+&lt;li&gt;Переворот в последнюю секунду перед посадкой. Неудача на этом этапе была второй
+наиболее вероятной причиной неудачи по моим предположениям до теста.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Мелкие неприятности с низкой тягой при посадке и, как следствие, красивым взрывом
+на посадочной площадке - это совершенно не проблема. Мы это уже порешали с при посадке
+F9, порешаем и здесь.&lt;/p&gt;
+
+&lt;p&gt;А пока - наслаждайтесь красивым зрелищем (T-0 в 1:48:12):&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/ap-BkkrRg-o&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>Пепелац</title>
@@ -673,40 +711,6 @@ Northrop Grumman приобрела у третьей стороны. Адапт
       <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;//www.youtube.com/embed/tE5C3O71Xqo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>Свежая презентация про полетный софт в SpaceX</title>
-      <link>https://blog.not-a-kernel-guy.com/2017/12/11/bazel-spacex/</link>
-      <pubDate>Mon, 11 Dec 2017 19:22:00 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2017/12/11/bazel-spacex/</guid>
-      <description>&lt;p&gt;Свежая презентация про полетный софт в SpaceX в целом, и про миграцию с make на
-&lt;a href=&#34;https://bazel.build/&#34;&gt;Bazel&lt;/a&gt; в частности:&lt;/p&gt;
-
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/t_3bckhV_YI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;Основные моменты:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Два основных репозитория: один содержит полетный код, второй - код симуляции.
-Более миллиона строк C++ в каждом. Немного Python.&lt;/li&gt;
-&lt;li&gt;Используется своя версия Linux, поддержкой которой занимается отдельная
-команда.&lt;/li&gt;
-&lt;li&gt;C++ код собирается под несколько разных процессорных архитектур.&lt;/li&gt;
-&lt;li&gt;Полетный код для Falcon и Dragon собирается из одного репозитория.&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;Test like you fly&amp;rdquo; - код тестируется в тех же самых условиях, что наблюдаются
-в полете. Софт и железо тестируются как единая интегрированная система.&lt;/li&gt;
-&lt;li&gt;Система непрерывной интеграции выполняет более 8 тысяч заданий в день.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Вторая половина презентации посвящена миграции с древней системы сборки на
-основе make на более современный Bazel. Эта часть будет интересна в основном
-тем, кто интересуется системами сборки кода.&lt;/p&gt;</description>
     </item>
     
   </channel>
