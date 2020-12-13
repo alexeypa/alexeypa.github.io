@@ -132,6 +132,21 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/03/05/295/">Dinosource</a>
+      </h1>
+      <span class="post-date">Mar 5, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/03/05/295/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5">Странное</a>
+      </span>
+      
+      Просто наблюдение: если код .DLL, вылетающей с ошибкой доступа (Access Violation), находится в каталоге с именем «Dinosource», то его проще исправить самому, чем найти владельца этого кода.
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2008/03/01/294/">5 инструментов</a>
       </h1>
       <span class="post-date">Mar 1, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/03/01/294/#disqus_thread">Comments</a>
@@ -280,21 +295,6 @@
       &hellip;это возможность распараллелить код инициализации подсистем по разным процессорам. Учитывая скорость распространения многоядерных процессоров это становиться актуальной задачей. Вынести большую часть кода из DllMain и конструкторов статических объектов не сложно. Достаточно оформить доступ ко всем подсистемам через singleton-подобный интерфейс, защищённый критической секцией. Сложнее - выстроить зависимости между подсистемами так, чтобы инициализация выполнялась как можно позже, когда все рабочие потоки созданы и готовы к работе.
 Не менее важно и не перестараться с отложенной инициализацией.
       <a href="https://blog.not-a-kernel-guy.com/2008/02/03/286/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2008/01/31/285/">Возвращаясь к теме про фаззеры</a>
-      </h1>
-      <span class="post-date">Jan 31, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/01/31/285/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/c/c&#43;&#43;">C/C&#43;&#43;</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Тестирование</a>
-      </span>
-      
-      <p>Вот код, которым я пользуюсь для написания стресс тестов и фаззеров в своих проектах. Класс EntropyGenerator - обертка вокруг генератора случайных чисел.</p>
-      <a href="https://blog.not-a-kernel-guy.com/2008/01/31/285/">Read On &rarr;</a>
       
     </div>
     

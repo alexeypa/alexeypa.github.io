@@ -132,6 +132,21 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/12/15/391/">Ещё одна причина, почему не следует разбазаривать свободное место в стеке</a>
+      </h1>
+      <span class="post-date">Dec 15, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/12/15/391/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+      </span>
+      
+      <p>В Microsoft, по крайней мере, в той его части, что разрабатывает Windows, весьма неплохо поставлен процесс отладки падений, сбоев и прочих <a href="http://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B3">багов</a>. Автоматические тесты при падении вываливаются в отладчик. Если какая либо проблема воспроизводится локально, то обычно не нужно просить прислать crash dump или адрес сессии отладчика – так называемый remote. Словечко происходит от утилиты «remote.exe», которая идет в комплекте с «WinDbg.exe» и делает, в общем-то, тоже самое, что и Telnet, но через именованные трубы (named pipes). Не спрашивайте меня, почему нельзя было использовать тот же Telnet. Для меня это тоже загадка. Но я отклоняюсь от темы.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2008/12/15/391/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2008/12/11/389/">... потому что люди не читают слова</a>
       </h1>
       <span class="post-date">Dec 11, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/12/11/389/#disqus_thread">Comments</a>
@@ -289,21 +304,6 @@ The user-defined class type of this key. This parameter may be ignored. This par
       
       <p>Набор команд x86-совместимых процессоров за годы эволюции набрал немалое количество всякой экзотики. Один из примеров такой экзотики – инструкция UD2. Задача этой инструкции состоит в том, чтобы… быть несуществующей инструкцией. Выполнение UD2 всегда приводит к генерации исключения «Invalid opcode». Отличие UD2 от любой другой несуществующей инструкции в том, что эта инструкция гарантированно не станет корректной инструкцией в будущем.</p>
       <a href="https://blog.not-a-kernel-guy.com/2008/10/20/361/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2008/10/15/355/">А что, собственно, происходит, когда бросается исключение?</a>
-      </h1>
-      <span class="post-date">Oct 15, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/10/15/355/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%B8%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9">Обработка исключений</a><a class="label" href="/tags/windows">Windows</a>
-      </span>
-      
-      <p>Нет, ну в общих чертах понятно - процессор генерирует исключение, операционная система находит нужный обработчик и вызывает его. А что происходит, если посмотреть подробнее? В Windows происходит примерно следующее.</p>
-      <a href="https://blog.not-a-kernel-guy.com/2008/10/15/355/">Read On &rarr;</a>
       
     </div>
     
