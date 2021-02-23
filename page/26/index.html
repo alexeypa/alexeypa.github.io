@@ -132,6 +132,27 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2011/03/21/999/">Про то, как отцепиться и ничего не порушить</a>
+      </h1>
+      <span class="post-date">Mar 21, 2011 &middot; <a href="https://blog.not-a-kernel-guy.com/2011/03/21/999/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+      </span>
+      
+      <p>Главная проблема с хуками состоит не в том, как зацепиться, а в том, как отцепиться и ничего не порушить. К примеру, приходит недавно письмо:</p>
+
+<blockquote>
+<p>We recently saw an AV in stress where our vectored exception handler was called after our dll was unloaded.  After investigating the issue, it seems like removing the vectored exception handler does not wait for all users of that exception handler to finish (and does not even remove the exception handler from list for future users if there is one current user).  So, there seems to be no way to synchronize removing the exception handler and the dll unloading – any synchronization within the exception handler is useless since the exception thread may be about to call the exception handler.</p>
+
+<p>Недавно мы наблюдали падение приложения во время стрессового тестирования, вызванное тем, что векторный обработчик исключения был вызван после того, как наша DLL была выгружена из памяти. В процессе расследования выяснилось, что, похоже, снятие векторного обработчика исключения не ожидает, пока все пользователи этого обработчика закончат работу (и даже не удаляет обработчик для будущих пользователей, если обработчик в данный момент используется). Так, похоже, что не существует способа синхронизировать снятие векторного обработчика и выгрузку DLL – любая синхронизация в пределах обработчика исключения бесполезна, поскольку поток, в котором произошло исключение, может только готовится вызвать обработчик исключения.</p>
+</blockquote>
+      <a href="https://blog.not-a-kernel-guy.com/2011/03/21/999/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2011/03/10/994/">Правильный прототип функции DebugBreak()</a>
       </h1>
       <span class="post-date">Mar 10, 2011 &middot; <a href="https://blog.not-a-kernel-guy.com/2011/03/10/994/#disqus_thread">Comments</a>
@@ -276,21 +297,6 @@ char get_byte();  Функция читает байт из некоего со�
       </span>
       
       «Шрёдингер ходил по комнате в поисках нагадившего котёнка, а тот сидел в коробке ни жив ни мертв.» (с) :-)
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2010/12/09/952/">Dragon полетел</a>
-      </h1>
-      <span class="post-date">Dec 9, 2010 &middot; <a href="https://blog.not-a-kernel-guy.com/2010/12/09/952/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81">Космос</a><a class="label" href="/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0">Техника</a>
-      </span>
-      
-      А тем временем в замке у шефа SpaceX успешно запустила и вернула с орбиты Dragon:
       
       
     </div>

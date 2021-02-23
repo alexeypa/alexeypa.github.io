@@ -6,10 +6,40 @@
     <description>Recent content on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 31 Jan 2021 16:14:44 -0800</lastBuildDate>
+    <lastBuildDate>Mon, 22 Feb 2021 20:30:51 -0800</lastBuildDate>
     
         <atom:link href="https://blog.not-a-kernel-guy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Видео посадки марсохода &#34;Персеверанс&#34;</title>
+      <link>https://blog.not-a-kernel-guy.com/2021/02/22/perseverance/</link>
+      <pubDate>Mon, 22 Feb 2021 20:30:51 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2021/02/22/perseverance/</guid>
+      <description>&lt;p&gt;Видео посадки марсохода &amp;ldquo;Персеверанс&amp;rdquo; (настойчивость) - это что-то неземное:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/4czjS9h4Fpg&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Необычнее всего выглядит &amp;ldquo;Небесный кран&amp;rdquo; (он же реактивный ранец) на фоне марсианского
+неба - что-то в нем есть из классической фантастики. NASA, конечно, молодцы. Это же надо
+так наловчится марсоходы засылать.&lt;/p&gt;
+
+&lt;p&gt;Ну и небольшой бонус. Линдсей Стирлинг (Lindsey Stirling) исполняет &amp;ldquo;Атремиду&amp;rdquo; в
+Космическом центре Кеннеди:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/h0oclM1Yw2A&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Атремида - текущее название лунной программы NASA.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Грустное про обратную совместимость</title>
@@ -1368,39 +1398,6 @@ right&amp;hellip;)&lt;/p&gt;
 
 &lt;p&gt;Я так понимаю, что списать все на пропаганду не получится. Надо консерваторию
 под снос отправлять.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Водоплавающая ступень</title>
-      <link>https://blog.not-a-kernel-guy.com/2018/12/05/crs16/</link>
-      <pubDate>Wed, 05 Dec 2018 20:46:18 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2018/12/05/crs16/</guid>
-      <description>&lt;p&gt;Такой интересной трансляции запуска давно не было. Все шло по плану, пока не
-полетел гидравлический привод аэродинамических рулей:&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Engines stabilized rocket spin just in time, enabling an intact landing in water! Ships en route to rescue Falcon. &lt;a href=&#34;https://t.co/O3h8eCgGJ7&#34;&gt;pic.twitter.com/O3h8eCgGJ7&lt;/a&gt;&lt;/p&gt;&amp;mdash; Elon Musk (@elonmusk) &lt;a href=&#34;https://twitter.com/elonmusk/status/1070399755526656000?ref_src=twsrc%5Etfw&#34;&gt;December 5, 2018&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;С первых моментов закрутки стало ясно, что дело пахнет керосином. Зрители сразу
-заметно оживились. Первая оформившаяся мысль была: &amp;ldquo;Ух ты! Смотри как она
-может&amp;rdquo;. Следующая за ней: &amp;ldquo;Интересно, когда рванет?&amp;rdquo; При посадке ступень сначала
-целится в океан - мимо посадочной площадки. Как раз на случай если, что пойдет
-не так. Так что особых переживаний, что она кому-то на голову упадет не было.
-Просто было интересно чем все закончится.&lt;/p&gt;
-
-&lt;p&gt;Закончилось все не так, как можно было бы ожидать. Ступень погасила скорость,
-выпустила ноги, и мягко приводнилась. Что самое интересное, степень не
-взорвалась когда ожидаемо завалилась на бок. Более того, изображение не пропало
-до самого конца - что означает, что передатчик и авионика продолжала работать
-как ни в чем не бывало.&lt;/p&gt;
-
-&lt;p&gt;Еще одно видео:&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;&lt;p lang=&#34;et&#34; dir=&#34;ltr&#34;&gt;Ouch!&lt;br&gt;Source Dasvaldez on twitch&lt;br&gt;&lt;br&gt;cc &lt;a href=&#34;https://twitter.com/SpaceX?ref_src=twsrc%5Etfw&#34;&gt;@SpaceX&lt;/a&gt; &lt;a href=&#34;https://twitter.com/disinformatico?ref_src=twsrc%5Etfw&#34;&gt;@disinformatico&lt;/a&gt; &lt;a href=&#34;https://twitter.com/NASASpaceflight?ref_src=twsrc%5Etfw&#34;&gt;@NASASpaceflight&lt;/a&gt; &lt;a href=&#34;https://twitter.com/NASA?ref_src=twsrc%5Etfw&#34;&gt;@NASA&lt;/a&gt; &lt;a href=&#34;https://twitter.com/Space_Station?ref_src=twsrc%5Etfw&#34;&gt;@Space_Station&lt;/a&gt; &lt;a href=&#34;https://t.co/yfdbQ47puU&#34;&gt;pic.twitter.com/yfdbQ47puU&lt;/a&gt;&lt;/p&gt;&amp;mdash; Riccardo Rossi (@RikyUnreal) &lt;a href=&#34;https://twitter.com/RikyUnreal/status/1070388054949588992?ref_src=twsrc%5Etfw&#34;&gt;December 5, 2018&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;P.S. Dragon без приключений вышел на запланированную орбиту.&lt;/p&gt;</description>
     </item>
     
   </channel>

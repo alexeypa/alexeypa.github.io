@@ -132,6 +132,21 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/11/06/94/">Использование Indexing Service для поиска по исходникам</a>
+      </h1>
+      <span class="post-date">Nov 6, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/11/06/94/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a>
+      </span>
+      
+      <p>Я давно заметил одну странную вещь - разработчики не очень часто пользуются средствами быстрого поиска по исходникам. Это тем более странно, если учесть тот факт, что существует море доступных инструментов, в том числе множество Open Source проектов, посвященных индексированию и поиску. Я подозреваю, что это связано с отсутствием удобного пользовательского интерфейса. Просматривать исходники в браузере - что может быть хуже? Думаю, что если бы в Visual Studio была бы галочка &ldquo;Индексировать исходные файлы&rdquo;, которая автоматически включала индексацию, то 9 из 10 разработчиков использовали бы эту функциональность.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2006/11/06/94/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2006/10/31/93/">C&#43;&#43; обёртка для HANDLE</a>
       </h1>
       <span class="post-date">Oct 31, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/31/93/#disqus_thread">Comments</a>
@@ -269,57 +284,6 @@ $MaximumHistoryCount = 32767
       &hellip; причем, судя по всему, несбыточная. Хочу чтобы Visual C++, Platform SDK и WDK (бывший DDK) можно было использовать как отдельные кирпичики, из которых можно составить нужное окружение для сборки программ. Ведь по сути каждый их них это набор из компилятора, библиотек и подсистемы сборки (nmake, build или Visual Studio IDE). Выбрать бы из этой россыпи нужную версию компилятора и требуемый набор библиотек&hellip;
 Казалось бы все должно быть довольно просто, однако кругом рассыпано столько граблей, что просто руки опускаются.
       <a href="https://blog.not-a-kernel-guy.com/2006/10/17/85/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2006/10/13/84/">Дело о невидимых файлах</a>
-      </h1>
-      <span class="post-date">Oct 13, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/10/13/84/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/windows">Windows</a>
-      </span>
-      
-      <p>Как вы думаете, какой сообщение выведет нижеследующая программа, в случае если её запустить на Windows Vista 64 с правами обычного пользователя, т.е. пользователя, у которого нет прав на запись в каталог “C:\Program Files”?</p>
-
-<pre><code class="language-cpp">#include &lt;memory.h&gt;
-#include &lt;stdio.h&gt;
-
-int main(int argc, char* argv[])
-{
-    FILE* f = NULL;
-    char cookie[] = { 'b', 'a', 'r', ' ' };
-    char data[sizeof(cookie)] = { 'f', 'o', 'o', ' ' };
-
-    f = fopen(&quot;C:\\Program Files\\foo.txt&quot;, &quot;w&quot;);
-    if (f)
-    {
-        fwrite(cookie, sizeof(cookie), 1, f);
-        fclose(f);
-    }
-
-    f = fopen(&quot;C:\\Program Files\\foo.txt&quot;, &quot;r&quot;);
-    if (f)
-    {
-        fread(data, sizeof(data), 1, f);
-        fclose(f);
-    }
-
-    if (0 == memcmp(data, cookie, sizeof(cookie)))
-    {
-        printf(&quot;Success!\n&quot;);
-    }
-    else
-    {
-        printf(&quot;Something went wrong!\n&quot;);
-    }
-
-    return 0;
-}
-</code></pre>
-      <a href="https://blog.not-a-kernel-guy.com/2006/10/13/84/">Read On &rarr;</a>
       
     </div>
     
