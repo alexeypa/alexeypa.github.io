@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.not-a-kernel-guy.com/2021/07/18/lx_preload/</loc>
+    <lastmod>2021-07-18T19:56:02-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.not-a-kernel-guy.com/2021/02/22/perseverance/</loc>
     <lastmod>2021-02-22T20:30:51-08:00</lastmod>
   </url>
@@ -3499,7 +3504,7 @@
   
   <url>
     <loc>https://blog.not-a-kernel-guy.com/tags/linux/</loc>
-    <lastmod>2011-10-22T20:10:46-07:00</lastmod>
+    <lastmod>2021-07-18T19:56:02-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -3613,7 +3618,7 @@
   
   <url>
     <loc>https://blog.not-a-kernel-guy.com/post/</loc>
-    <lastmod>2021-02-22T20:30:51-08:00</lastmod>
+    <lastmod>2021-07-18T19:56:02-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -3913,7 +3918,7 @@
   
   <url>
     <loc>https://blog.not-a-kernel-guy.com/</loc>
-    <lastmod>2021-02-22T20:30:51-08:00</lastmod>
+    <lastmod>2021-07-18T19:56:02-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4267,7 +4272,7 @@
   
   <url>
     <loc>https://blog.not-a-kernel-guy.com/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/</loc>
-    <lastmod>2021-01-31T16:14:44-08:00</lastmod>
+    <lastmod>2021-07-18T19:56:02-07:00</lastmod>
     <priority>0</priority>
   </url>
   

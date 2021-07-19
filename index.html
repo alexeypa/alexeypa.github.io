@@ -59,9 +59,9 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
       
-      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
     </ul>
 
@@ -129,6 +129,29 @@
   </li>
 </ul>
 
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2021/07/18/lx_preload/">Загрузка кода в чужой процесс на Linux</a>
+      </h1>
+      <span class="post-date">Jul 18, 2021 &middot; <a href="https://blog.not-a-kernel-guy.com/2021/07/18/lx_preload/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/linux">Linux</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+      </span>
+      
+      <p>Оказывается грузить свой код в чужой процесс на Linux ничуть не менее
+увлекательно, чем на Windows. Я раньше не наведывался в этой темный угол, а вот
+на днях заглянул. Содержимое угла привычно обнадежило: залатанный древний
+загрузчик, дохлые мухи, пара растяжек, и грабли кругом. Все как мы любим. Задача
+была такая. Есть несколько загружаемых с помощью <a href="https://stackoverflow.com/questions/426230/what-is-the-ld-preload-trick"><code>LD_PRELOAD</code></a> модулей.
+Модули переопределяют поведение небольшого числа POSIX функций. Требовалось
+перенести сборку модулей на более свежую версию GCC. Казалось что может быть
+проще?.. Да, давно уже не ощущал себя насколько наивным, аж ностальгия
+пробивает. Ниже следует список обнаруженных граблей.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2021/07/18/lx_preload/">Read On &rarr;</a>
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -563,38 +586,6 @@ Engineer&rdquo; (&ldquo;ответственный инженер&rdquo;, &ldquo
 <p>Вы не поверите скольких усилий это стоило. Это гораздо сложнее, чем может показаться.</p>
 
 <p>Следующая остановка - Starship? :-)</p>
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2020/05/29/sn4/">SN4 RIP</a>
-      </h1>
-      <span class="post-date">May 29, 2020 &middot; <a href="https://blog.not-a-kernel-guy.com/2020/05/29/sn4/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/spacex">SpaceX</a>
-      </span>
-      
-      <p>Не могу не поделится. Живой комментарий происходящего на видео совершенно бесподобен.
-Как раз в нужный момент и не в бровь, а в глаз. К сожалению, при переводе теряется вся
-прелесть, так что если у кого с английским не очень - извиняйте:</p>
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">RIP Starship SN4 😭<a href="https://t.co/klPMtZHxjW">https://t.co/klPMtZHxjW</a> <a href="https://t.co/hrrElBXmSC">pic.twitter.com/hrrElBXmSC</a></p>&mdash; Chris B - NSF (@NASASpaceflight) <a href="https://twitter.com/NASASpaceflight/status/1266442087848960000?ref_src=twsrc%5Etfw">May 29, 2020</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<p>Немного контекста к происходящему на видео. Где-то через две минуты после очередного
-(кажется третьего) огневого испытания прототипа Starship с серийным номером 4, &ldquo;что-то
-пошло не так&rdquo; самым захватывающим образом.</p>
-
-<p>На полном видео ниже включение двигателя в 1:22:33, огненный шар - в 1:24:48.</p>
-
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/7YaFsUWgN3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
       
       
     </div>

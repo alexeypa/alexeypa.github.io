@@ -6,10 +6,27 @@
     <description>Recent content in Linux on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sat, 22 Oct 2011 20:10:46 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jul 2021 19:56:02 -0700</lastBuildDate>
     
 	<atom:link href="https://blog.not-a-kernel-guy.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Загрузка кода в чужой процесс на Linux</title>
+      <link>https://blog.not-a-kernel-guy.com/2021/07/18/lx_preload/</link>
+      <pubDate>Sun, 18 Jul 2021 19:56:02 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2021/07/18/lx_preload/</guid>
+      <description>&lt;p&gt;Оказывается грузить свой код в чужой процесс на Linux ничуть не менее
+увлекательно, чем на Windows. Я раньше не наведывался в этой темный угол, а вот
+на днях заглянул. Содержимое угла привычно обнадежило: залатанный древний
+загрузчик, дохлые мухи, пара растяжек, и грабли кругом. Все как мы любим. Задача
+была такая. Есть несколько загружаемых с помощью &lt;a href=&#34;https://stackoverflow.com/questions/426230/what-is-the-ld-preload-trick&#34;&gt;&lt;code&gt;LD_PRELOAD&lt;/code&gt;&lt;/a&gt; модулей.
+Модули переопределяют поведение небольшого числа POSIX функций. Требовалось
+перенести сборку модулей на более свежую версию GCC. Казалось что может быть
+проще?.. Да, давно уже не ощущал себя насколько наивным, аж ностальгия
+пробивает. Ниже следует список обнаруженных граблей.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Linux, или туда и обратно</title>

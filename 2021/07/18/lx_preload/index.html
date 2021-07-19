@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Загрузка кода в чужой процесс на Linux</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+
+  <meta name="description" content="Блог про космос, программирование и всякое разное.">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1329392-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Алексей Пахунов</h1>
+      <p class="lead">&hellip; также известный как &ldquo;Not a kernel guy&rdquo;</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Блог</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/post/">Архив</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <script>
+        (function() {
+          var cx = '009966018894572705542:ewu98_itf-q';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      <a href="https://www.linkedin.com/in/alexpakhunov"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      
+      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Загрузка кода в чужой процесс на Linux</h1>
+    <span class="post-date">Jul 18, 2021 &middot; <a href="https://blog.not-a-kernel-guy.com/2021/07/18/lx_preload/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/tags/linux">Linux</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+    </span>
+    <p>Оказывается грузить свой код в чужой процесс на Linux ничуть не менее
+увлекательно, чем на Windows. Я раньше не наведывался в этой темный угол, а вот
+на днях заглянул. Содержимое угла привычно обнадежило: залатанный древний
+загрузчик, дохлые мухи, пара растяжек, и грабли кругом. Все как мы любим. Задача
+была такая. Есть несколько загружаемых с помощью <a href="https://stackoverflow.com/questions/426230/what-is-the-ld-preload-trick"><code>LD_PRELOAD</code></a> модулей.
+Модули переопределяют поведение небольшого числа POSIX функций. Требовалось
+перенести сборку модулей на более свежую версию GCC. Казалось что может быть
+проще?.. Да, давно уже не ощущал себя насколько наивным, аж ностальгия
+пробивает. Ниже следует список обнаруженных граблей.</p>
+
+<p>Переменная окружения <code>LD_PRELOAD</code> указывает загрузчику список модулей, которые
+дополнительно загружаются в процесс и используются для разрешения символов в
+первую очередь. Например, если определить в <code>foobar.so</code> функцию <code>read()</code> и
+запустить <code>LD_PRELOAD=foobar.so /bin/sh</code>, то вместо системной функции read(),
+/bin/sh будет звать read() из <code>foobar.so</code>. Дополнительно, <code>read()</code> из
+<code>foobar.so</code> может позвать <a href="https://man7.org/linux/man-pages/man3/dlsym.3.html"><code>dlsym(RTLD_NEXT, “read”)</code></a>, чтобы найти адрес
+“настоящей” <code>read()</code>. Очень часто этот механизм используется, чтобы изменить
+поведение функции в некоторых только в определенных случаях.</p>
+
+<p>Грабли №1. Не получается смешивать в одном процессе модули собранные для разных
+реализаций <code>libc</code>, например не получается загрузить <code>foobar.so</code> собранный
+под <a href="https://musl.libc.org/">MUSL</a> в процесс <code>/bin/sh</code>, собранный под <a href="https://www.gnu.org/software/libc/">glibc</a>. Разные версии
+glibc работают, но только потому, что glibc серьезно относится к обратной
+совместимости. Я не разбираюсь в вопросе в достаточной степени, чтобы судить о
+причинах такого ограничения. Возможно даже, что есть способ создать загружаемый
+модуль, который зависит только от системных вызовов ядра. У меня пока не
+получилось.</p>
+
+<p>Грабли №2. <code>LD_PRELOAD</code> - переменная окружения. Как правило, хотя и не
+обязательно, окружение наследуется дочерними процессами. Как результат следует
+ожидать, что загружаемый модуль обязательно будет загружен в процессы, до
+которых нам дела нет. Верно и обратное - модуль не будет загружен в нужный
+процесс, так как один из родителей решил запустить ребенка с другим окружением.</p>
+
+<p>Модули в формате ELF позволяют определять <a href="https://stackoverflow.com/questions/2053029/how-exactly-does-attribute-constructor-work">конструкторы и деструкторы</a> -
+функции которые будут вызваны при загрузке и выгрузке модуля. Через них,
+например, реализуется вызов конструкторов и деструкторов глобальных объектов в
+С++. Очень удобный и расширяемый механизм.</p>
+
+<p>Грабли №3. <code>LD_PRELOAD</code> разрешает указывать несколько модулей, но порядок вызова
+их конструкторов и деструкторов зависит от реализации <code>libc</code>. glibc вызывает
+их в обратном порядке. MUSL, начиная с некоторой версии, - в прямом.</p>
+
+<p>Грабли №4. Функции, переопределенные в загружаемом модуле могут быть вызваны до
+того как будут вызваны конструкторы из этого модуля. Это может произойти, если
+конструкторы других модулей, загруженных в процесс, вызывают одну из
+переопределенных функций. Как результат следует избегать глобальных объектов,
+требующих вызова конструктора для инициализации.</p>
+
+<p>Так как загружаемый модуль должен уметь жить в адресном пространстве
+произвольного процесса (см. грабли №2), все используемые библиотеки следует
+линковать статически. К сожалению, ящик Пандоры открывается от легкого
+сквозняка. Компилятор умеет генерировать две версии ассемблерного кода под
+x86_64: код который быть загружен по произвольному адресу и код, который должен
+быть загружен по заранее определенному адресу. Первая версия генерируется
+компилятором если указан ключ <a href="https://gcc.gnu.org/onlinedocs/gcc-11.1.0/gcc/Code-Gen-Options.html#Code-Gen-Options"><code>-fPIC</code></a> (<a href="https://en.wikipedia.org/wiki/Position-independent_code">position-independent code</a>).
+Вторая позволяет получать более компактный код.</p>
+
+<p>Грабли №5. Загружаемые модули код библиотек в поставке компилятора собраны с
+<code>-fPIC</code>, как и следовало бы ожидать. А вот статические версии тех же библиотек
+собраны без <code>-fPIC</code>. Это тоже можно понять, ведь при статической сборке
+получается один бинарный файл, который всегда можно загрузить по выбранному
+адресу - он-то загружается первым. Это не работает при статической сборке
+загружаемого модуля (<code>.so</code>). Мы хотим линковать все зависимости статически, но
+мы хотим получить позиционно-независимый код, так как модуль будет загружаться
+по заранее неизвестному адресу.</p>
+
+<p>Грабли №6. Не все библиотеки из поставки компилятора можно линковать
+статически. В моем конкретном случае не получилось это сделать с libpthread, но
+как я понимаю это все зависит от конкретной сборки компилятора.</p>
+
+<p>Грабли №7. По умолчанию компилятор экспортирует все символы из загружаемого
+модуля. Здесь вам не Windows, так сказать. Если статически линковать <code>foobar.so</code>
+с <code>libstdc++</code>, то все <code>std::</code> символы будут экспортированы из <code>foobar.so</code>. При
+загрузке через <code>LD_PRELOAD</code> это приводит к переопределению всех <code>std::</code> символов в
+процессе. Это работает до тех пор, пока все собрано одним компилятором, но
+совершенно феерически ломается, стоит только поменять версию компилятора в одном
+месте. Одним из симптомов было бросание <code>std::bad_cast</code> при компиляции
+безобидного (и корректного) регулярного выражения.</p>
+
+<p>Грабли №8. Попытки спрятать лишние символы с помощью <code>-fvisibility=hidden</code> и
+<code>--exclude-libs,ALL</code> не работают, так как <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=36022"><code>libstdc++</code> принудительно меняет
+видимость символов на <code>default</code> через <code>#pragma</code></a>, что имеет приоритет
+выше, чем параметры командной строки.</p>
+
+<p>В конце концов, загнать Гидру обратно в банку все же получилось, но пришлось ей
+в процессе отрубить несколько голов.</p>
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "alexeypa";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "https://blog.not-a-kernel-guy.com/2021/07/18/lx_preload/";
+        this.page.title = "Загрузка кода в чужой процесс на Linux";
+    };
+    var disqus_shortname = "alexeypa";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

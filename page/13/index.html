@@ -59,9 +59,9 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
       
-      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
     </ul>
 
@@ -129,6 +129,41 @@
   </li>
 </ul>
 
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2016/07/25/ssh_known_hosts/">Как почистить .ssh/known_hosts в Secure Shell</a>
+      </h1>
+      <span class="post-date">Jul 25, 2016 &middot; <a href="https://blog.not-a-kernel-guy.com/2016/07/25/ssh_known_hosts/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/chrome">Chrome</a><a class="label" href="/tags/ssh">SSH</a>
+      </span>
+      
+      <p>Если вы пользуетесь <a href="https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo?hl=en">Secure Shell</a> в Chrome и наткнулись на сообщение об
+изменившемся ключе удаленного хоста (скажем после переустановки системы на нем):</p>
+
+<p><a href="/2016/07/ssh_known_hosts_message.png"><img src="/2016/07/ssh_known_hosts_message_small.png" alt="Secure Shell detects a different ECDSA key" /></a></p>
+
+<p>&hellip; то <a href="https://groups.google.com/a/chromium.org/forum/#!topic/chromium-hterm/XZtSm6P0acw">вам сюда</a>.</p>
+
+<p>В двух словах, чтобы почистить конкретный ключ из <code>.ssh/known_hosts</code>,
+выполните следующую команду (заменив <code>index</code> на номер ключа, указанный в
+сообщении об ошибке) в консоли разработчика (Ctrl+Shift+J):</p>
+
+<pre><code class="language-js">term_.command.removeKnownHostByIndex(index)
+</code></pre>
+
+<p>Для принятия радикальных мер, т.е. для полной очистки <code>.ssh/known_hosts</code>,
+можно воспользоваться командой:</p>
+
+<pre><code class="language-js">term_.command.removeAllKnownHosts()
+</code></pre>
+
+<p>У меня все.</p>
+      
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -348,23 +383,6 @@
 
 <p>Update: Все, готово.</p>
       <a href="https://blog.not-a-kernel-guy.com/2016/06/20/redesign/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2016/05/30/1837/">Поиграем в Эратосфена?</a>
-      </h1>
-      <span class="post-date">May 30, 2016 &middot; <a href="https://blog.not-a-kernel-guy.com/2016/05/30/1837/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BF%D0%BB%D0%BE%D1%81%D0%BA%D0%B0%D1%8F-%D0%B7%D0%B5%D0%BC%D0%BB%D1%8F">Плоская Земля</a>
-      </span>
-      
-      <p>Чудак из <a href="/2016/05/29/1834/">вчерашнего видео</a> много говорил о том, как &ldquo;правительство от нас все скрывает&rdquo;. С медицинской точки зрения - его убежденность, наверное, тянет на диагноз. Но вот я тут подумал, что типичному карикатурному обывателю (диван, пиво, телек) будет совсем непросто опровергнуть такую картину мира.</p>
-
-<p>Скажем, проверить что Земля круглая самому, не опираясь на слова других людей, не очень просто. Опыты из школьных учебников как-то не очень работают в городских условиях. &ldquo;Корпус удаляющегося корабля исчезает за горизонтом в первую очередь&rdquo;. Чтобы это проверить нужно море, бинокль и немного терпения. Проблема сразу возникает на первом пункте. С крыши видно конечно дальше, но это потому что деревья и другие дома горизонт не загораживают. С горами возникает такая я же проблема, как и с морем. С самолета, конечно, видно дальше, но чтобы оценить насколько нужно заранее подготовиться. Кроме того, на плоской Земле тоже видно &ldquo;дальше&rdquo;, так как меняется угол, под которым видны предметы у горизонта.</p>
-      <a href="https://blog.not-a-kernel-guy.com/2016/05/30/1837/">Read On &rarr;</a>
       
     </div>
     

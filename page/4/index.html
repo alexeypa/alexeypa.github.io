@@ -59,9 +59,9 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться</a></li>
+      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
       
-      <li class="sidebar-nav-item"><a href="https://feedburner.google.com/fb/a/mailverify?uri=not-a-kernel-guy&amp;loc=ru_RU">Рассылка</a></li>
+      <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
     </ul>
 
@@ -129,6 +129,48 @@
   </li>
 </ul>
 
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2018/11/08/retrying/">Ну-ка, еще разок</a>
+      </h1>
+      <span class="post-date">Nov 8, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/11/08/retrying/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/python">Python</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+      </span>
+      
+      <p>Питоний пакет <a href="https://pypi.org/project/retrying/">retrying</a> - универсальная заплатка для кода, который может
+поломаться из-за внешних причин. Например, <a href="https://docs.python.org/3.7/library/socket.html#socket.socket.connect"><code>socket.connect()</code></a> может
+закончится ошибкой из-за непредвиденной ситуации в сети. Заворачиваем вызов в
+<code>@retry</code> и бац! Все работает.</p>
+
+<pre><code class="language-py">@retry
+def create_connection(address):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    return socket.connect(address)
+</code></pre>
+
+<p>Однако бездумное применение <code>@retry</code>, как нетрудно догадаться, приводит
+проблемам. Самый известный пример - вложенные <code>@retry</code>.
+<code>@retry(stop_max_attempt_number=3)</code> вложенный в другой
+<code>@retry(stop_max_attempt_number=3)</code> дает 9 повторов. Три уровня вложенности -
+27 повторов.</p>
+
+<p>Один раз использование <code>@retry</code> привело к тому, что IT заблокировало мою учетную
+запись. Банальная история - был некий скрипт, который при запуске спрашивал
+логин и пароль для авторизации. В один прекрасный день некто (не будем
+показывать пальцем, хотя это был Слонёнок) усовершенствовал скрип, завернув
+сетевой вызов в <code>@retry</code>. Отличная идея, за исключением того, что ошибка
+авторизации приводила к повторному запросу с тем же неправильным именем и
+паролем. После определенного числа попыток контроллер домена решил, что кто-то
+пытается подобрать пароль к учетной записи и заблокировал её.</p>
+
+<p>Мораль истории - знайте свои ошибки в лицо и используйте параметр
+<code>retry_on_exception</code>.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2018/11/08/retrying/">Read On &rarr;</a>
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -505,31 +547,6 @@ ASSERT_FALSE(rabbit-&gt;foobar(0, 0));
 длинную простыню однообразного текста с незаметными, но важными вариациями во
 входных данных или параметрах инициализации.</p>
       <a href="https://blog.not-a-kernel-guy.com/2018/08/01/table-driven-unit-tests/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2018/07/30/sky-triage/">Что это за хрень в небе была?</a>
-      </h1>
-      <span class="post-date">Jul 30, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/07/30/sky-triage/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81">Космос</a>
-      </span>
-      
-      <p>О! Отличная, годная блок-схема, дающая ответ на вопрос &ldquo;Что это за хрень в небе
-была?&rdquo; в девяноста случаях из ста (по клику открывается более крупный вариант):</p>
-
-<p><a href="/2018/07/what_was_that_thing_in_the_sky.png"><img src="/2018/07/what_was_that_thing_in_the_sky_small.png" alt="" /></a></p>
-
-<p>Картинка - перевод <a href="https://www.reddit.com/r/Astronomy/comments/92zks3/what_was_that_thing_in_the_sky_official_thread/">оригинала</a>.</p>
-
-<p>От себя могу добавить, что ветку с планетой можно уточнить. В трех четвертях
-случаев там будет Венера, а еще в 24% случаев - Юпитер.</p>
-
-<p>Пассаж про сверхновую тоже хорош. Бетельгейзе, мы ждем. :-)</p>
-      <a href="https://blog.not-a-kernel-guy.com/2018/07/30/sky-triage/">Read On &rarr;</a>
       
     </div>
     
