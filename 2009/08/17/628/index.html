@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,29 +113,21 @@
     <a class="label" href="/tags/directx">DirectX</a><a class="label" href="/tags/wow64">Wow64</a>
     </span>
     <p>Вопрос из почты:</p>
-
 <blockquote>
 <p>Ты не подскажешь, есть ли hardware acceleration through DirectX for Wow64 processes? В Windows Internals написано, что его нет, но другие источники говорят, что есть (и большинство игр продолжают собирать as 32-bit, и они работают в 64-bit Windows).</p>
 </blockquote>
-
 <p>Вот несколько ссылок, которые выдает поиск на msdn.microsoft.com:</p>
-
 <ol>
 <li>«<a href="http://support.microsoft.com/kb/896456">Overview of the compatibility considerations for 32-bit programs on 64-bit versions of Windows Server 2003 and Windows XP</a>». В разделе «Intel Architecture 32-bit Execution Layer (IA-32 EL)» есть секция «Graphics support»:</li>
 </ol>
-
-<p><a href="/2009/08/wow64_d3d.png"><img src="/2009/08/wow64_d3d.png" alt="DirectX support in Wow64 on Itanium" /></a></p>
-
-<ol>
+<p><a href="/2009/08/wow64_d3d.png"><img src="/2009/08/wow64_d3d.png" alt="DirectX support in Wow64 on Itanium"></a></p>
+<ol start="2">
 <li>Power Point презентация о внутренней архитектуре Wow64: «<a href="http://download.microsoft.com/download/3/a/9/3a9ad58f-5634-4cdd-8528-c78754d712e8/28-DW04040_WINHEC2004.ppt">WoW64 Internal Architecture</a>» содержит вот такой слайд:</li>
 </ol>
-
-<p><a href="/2009/08/wow64_feature_support.png"><img src="/2009/08/wow64_feature_support.png" alt="Wow64 Feature Support on Win64" /></a></p>
-
-<ol>
+<p><a href="/2009/08/wow64_feature_support.png"><img src="/2009/08/wow64_feature_support.png" alt="Wow64 Feature Support on Win64"></a></p>
+<ol start="3">
 <li>Документ «<a href="http://download.microsoft.com/download/a/f/7/af7777e5-7dcd-4800-8a0a-b18336565f5b/wow64_bestprac.docx">Best Practices for WOW64</a>» утверждает, что «Microsoft DirectX® hardware acceleration APIs are not supported on IPF.» IPF раcшифровывается как «Itanium Processor Family».</li>
 </ol>
-
 <p>Итого: на x64 аппаратное ускорение есть; на Itanium – нет. На практике это означет, что ускорение есть. Поди еще найди тот Itanium&hellip;</p>
   </div>
   <div id="disqus_thread"></div>

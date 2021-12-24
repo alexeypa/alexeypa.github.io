@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,39 +113,23 @@
     <a class="label" href="/tags/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD">Дизайн</a><a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a><a class="label" href="/tags/wow64">Wow64</a>
     </span>
     <p>Пару недель назад столкнулся с проблемой, пытаясь собрать 64-х битную версию Boost.Jam из поставки <a href="http://www.boost.org/tools/build/v2/index.html">Boost.Build</a>. Скрипт build.bat, запускающий процесс сборки, выдавал не очень понятное сообщение “\Microsoft was unexpected at this time.”:</p>
-
-<p><img src="/2006/11/build_error_1.png" alt="" /></p>
-
+<p><img src="/2006/11/build_error_1.png" alt=""></p>
 <p>Включение эха, чтобы были видны выполняемые команды, полностью ситуацию не прояснило:</p>
-
-<p><img src="/2006/11/build_error_2.png" alt="" /></p>
-
+<p><img src="/2006/11/build_error_2.png" alt=""></p>
 <p>Впрочем, последняя команда, присваивающая значение переменной BOOST_JAM_TOOLSET_ROOT, выглядит более чем подозрительно. Во-первых, в выводе присутствует часть сообщения об ошибке - “\Microsoft”. Во-вторых, там же упоминается “Program Files (x86)”, а это практически наверняка указывает на проблемы совместимости с Wow64 окружением.</p>
-
 <p>Чтобы проверить эту догадку, я скопировал эту команду в отдельный .bat файл. Интересно, что в этом случае всё работало как часы:</p>
-
-<p><img src="/2006/11/build_error_3.png" alt="" /></p>
-
+<p><img src="/2006/11/build_error_3.png" alt=""></p>
 <p>Покопавшись еще немного, я вспомнил, что команда “IF” всегда выполняется как одна команда, даже если она содержит несколько других команд. Проблемный “SET” как раз был заключен в “IF”.</p>
-
-<pre><code class="language-bash">if NOT &quot;_%VS80COMNTOOLS%_&quot; == &quot;__&quot; (
-    set BOOST_JAM_TOOLSET=vc8
-    set BOOST_JAM_TOOLSET_ROOT=%VS80COMNTOOLS%..\\..\\VC\\
-    goto :eof)
-</code></pre>
-
-<p>Скопировав “IF” целиком, я получил то же самое сообщение об ошибке:</p>
-
-<p><img src="/2006/11/build_error_4.png" alt="" /></p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> NOT <span style="color:#e6db74">&#34;_%VS80COMNTOOLS%_&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__&#34;</span> <span style="color:#f92672">(</span>
+    set BOOST_JAM_TOOLSET<span style="color:#f92672">=</span>vc8
+    set BOOST_JAM_TOOLSET_ROOT<span style="color:#f92672">=</span>%VS80COMNTOOLS%..<span style="color:#ae81ff">\\</span>..<span style="color:#ae81ff">\\</span>VC<span style="color:#ae81ff">\\</span>
+    goto :eof<span style="color:#f92672">)</span>
+</code></pre></div><p>Скопировав “IF” целиком, я получил то же самое сообщение об ошибке:</p>
+<p><img src="/2006/11/build_error_4.png" alt=""></p>
 <p>Скорее всего, причина ошибки была в круглых скобках в “Program Files (x86)”. Изменив значение VS80COMNTOOLS на “C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\” я убедился, что это так:</p>
-
-<p><img src="/2006/11/build_error_5.png" alt="" /></p>
-
+<p><img src="/2006/11/build_error_5.png" alt=""></p>
 <p>В конце концов, выяснилось, что парсер команд неверно обрабатывает закрывающую скобку как закрывающую список команд после “IF” или “ELSE”. При всем при этом вложенные “IF” отрабатывались нормально. Видимо, в качестве открывающей скобки выступает весь “IF”, включая условие и открывающую скобку.</p>
-
 <p>Пока что я не нашел удобного решения данной проблемы. Возможно, здесь поможет отложенное раскрытие переменных: “SETLOCAL ENABLEDELAYEDEXPANSION” или опция /V:ON при запуске cmd.exe. В моём же случае, я просто определил необходимые переменные вручную.</p>
-
 <p>И кстати о названии данного поста. Подобная проблема – типичный пример ошибки в дизайне. При выборе имени “Program Files (x86)” явно не был учтён тот факт, что скобки входят в список специальных символов командного интерпретатора. В результате эта ошибка даёт о себе знать в самых неожиданных местах, вроде описанного выше.</p>
   </div>
   <div id="disqus_thread"></div>

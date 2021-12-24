@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Технологии on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Технологии on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 06 Sep 2007 00:11:12 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 06 Sep 2007 00:11:12 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Сбор и обработка логов. Пример из жизни</title>
       <link>https://blog.not-a-kernel-guy.com/2007/09/06/234/</link>
@@ -47,7 +43,6 @@
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/05/23/189/&#34;&gt;Понимаешь, до сих пор мне никто не может внятно сказать, почему нельзя было 64х приложения пихать в новый ключ Регистра, вместо перенаправления 32х на новое “место жительства”. Будь ласка, если это твоя специализация, обоснуй!&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;Итак, почему же Wow64 использует перенаправление реестра и файловой системы вместо того, чтобы просто закрепить старые ключи реестра и “%windir%\system32” за 32-х разрядными приложениями и позволить 64-х битным приложениям определить новые ключи и использовать, скажем, “%windir%\system64” для 64-х битных системных библиотек? Это было бы довольно логично, особенно если учесть, что нечто подобное уже было проделано при переходе с Windows 3.x на Windows 95/NT.&lt;/p&gt;</description>
     </item>
     
@@ -103,13 +98,12 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2007/01/03/126/</guid>
       <description>&lt;p&gt;Из комментариев:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;http://emdrone.livejournal.com/176676.html&#34;&gt;http://emdrone.livejournal.com/176676.html&lt;/a&gt;&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Раз уж в микрософте работаете, напишите что думаете об этом.&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;Оригинал на английском здесь: &lt;a href=&#34;http://www.cs.auckland.ac.nz/~pgut001/pubs/vista_cost.txt&#34;&gt;http://www.cs.auckland.ac.nz/~pgut001/pubs/vista_cost.txt&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     

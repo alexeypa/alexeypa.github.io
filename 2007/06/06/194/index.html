@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,71 +113,52 @@
     <a class="label" href="/tags/boost.build">Boost.Build</a><a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a>
     </span>
     <p>Библиотеки <a href="http://www.boost.org">Boost</a> не использует make файлы или какую-либо другую более менее стандартную систему компиляции. Вместо этого Boost использует собственную систему сборки - <a href="http://www.boost.org/tools/build/v2/index.html">Boost.Build V2</a>. Система построена вокруг Boost.Jam, который, в свою очередь, является наследником Perforce Jam, - интерпретатора скриптов Jam. Вокруг возможностей Boost.Jam, который, между прочем, состоит из единственного исполняемого файла, навёрнута система скриптов изолирующая разработчика от особенностей конкретного компилятора и платформы.</p>
-
 <p>Прелесть Boost.Build заключается в том, что с его помощью можно легко и свободно конструировать проекты, состоящие из множества библиотек, исполняемых модулей и кучи других файлов. Проблема, однако, заключается в том, что вся эта прелесть спрятана за довольно необычным и от того не слишком понятным скриптовым языком. Недостаток документации (хотя разработчики вкладывают немало сил в неё) и совершенно непонятные сообщения об ошибках не добавляют системе очков.</p>
-
 <p>Отдельного рассказа стоит процесс разработки расширений для Boost.Build. Щедрое рассыпание отладочной печати по базовым скриптам системы, камлание бубном и гадание на кофейной гуще – зачастую просто необходимы в этом нелегком деле. Не смотря на всё это, Boost.Build V2 – моя любимая система сборки проектов. Заложенные в ней идеи процентов на 80-90% соответствуют идеалу. Реализация правда несколько хромает.</p>
-
 <p>В качестве примера чего стоит написание расширения для Boost.Build расскажу как я писал обертку для запуска препроцессора Visual C++. Для начала небольшой экскурс в архитектуру. Boost.Build использует так называемый генераторы для выполнения любых преобразований над файлами. Например чтобы скомпилировать исходник на C в объектный файл, используется генератор, преобразующий C файлы в OBJ, с помощью выбранного компилятора. В моём случае я хотел их исходника на С или C++ получить I файл, содержащий вывод препроцессора.</p>
-
 <p>Итак начинаем со стандартного шаблона генератора (который нужно сохранить как pp.jam - это важно):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Импортируем нужные модули</span>
+<span style="color:#f92672">import</span> generators ;
+<span style="color:#f92672">import</span> toolset ;
+<span style="color:#f92672">import</span> type ;
 
-<pre><code class="language-python"># Импортируем нужные модули
-import generators ;
-import toolset ;
-import type ;
+<span style="color:#75715e"># Регистрируем новый тип файла. &#34;I&#34; - имя типа, &#34;i&#34; - расширение файла</span>
+type<span style="color:#f92672">.</span>register I : i ;
 
-# Регистрируем новый тип файла. &quot;I&quot; - имя типа, &quot;i&quot; - расширение файла
-type.register I : i ;
+<span style="color:#75715e"># Регистрируем генератор для преобразования C в I. &#34;pp.generate.c&#34; - </span>
+<span style="color:#75715e"># полное имя правила, которое быдет вызвано для выполнения преобразования.</span>
+generators<span style="color:#f92672">.</span>register<span style="color:#f92672">-</span>standard pp<span style="color:#f92672">.</span>generate<span style="color:#f92672">.</span>c : C : I ;
 
-# Регистрируем генератор для преобразования C в I. &quot;pp.generate.c&quot; - 
-# полное имя правила, которое быдет вызвано для выполнения преобразования.
-generators.register-standard pp.generate.c : C : I ;
-
-# Правило, которое будет вызвано во время генерации
-rule generate.c ( targets + : sources * : properties * )
+<span style="color:#75715e"># Правило, которое будет вызвано во время генерации</span>
+rule generate<span style="color:#f92672">.</span>c ( targets <span style="color:#f92672">+</span> : sources <span style="color:#f92672">*</span> : properties <span style="color:#f92672">*</span> )
 {
 }
 
-# Команды, непосредственно работающие с файлами
-actions generate.c
+<span style="color:#75715e"># Команды, непосредственно работающие с файлами</span>
+actions generate<span style="color:#f92672">.</span>c
 {
 }
-</code></pre>
-
-<p>Пока что ничего не понятно, главное что это стандартный шаблон, который работает. :-) Следует упомянуть о разнице между правилами (rule foobar) и действиями (actions foobar). Интерпретатор Boost.Jam делает свою работу в два этапа: сначала он выполняет все правила, а затем все выбранные действия. Соответствие между правилами и действиями устанавливается очень просто – по имени. Если было вызвано правило foobar, то выполнятся и действия foobar, но потом. Если для правила или действий нет пары, то подразумевается что они есть, но пустые. В нашем случае есть правило generate.c и действия generate.c.</p>
-
+</code></pre></div><p>Пока что ничего не понятно, главное что это стандартный шаблон, который работает. :-) Следует упомянуть о разнице между правилами (rule foobar) и действиями (actions foobar). Интерпретатор Boost.Jam делает свою работу в два этапа: сначала он выполняет все правила, а затем все выбранные действия. Соответствие между правилами и действиями устанавливается очень просто – по имени. Если было вызвано правило foobar, то выполнятся и действия foobar, но потом. Если для правила или действий нет пары, то подразумевается что они есть, но пустые. В нашем случае есть правило generate.c и действия generate.c.</p>
 <p>Далее добавляем команды для вызова препроцессора:</p>
-
-<pre><code class="language-python"># Команды, непосредственно работающие с файлами
-actions generate.c
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Команды, непосредственно работающие с файлами</span>
+actions generate<span style="color:#f92672">.</span>c
 {
-    cl.exe /EP $(&gt;) &gt; $(&lt;)
+    cl<span style="color:#f92672">.</span>exe <span style="color:#f92672">/</span>EP <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&gt;</span>) <span style="color:#f92672">&gt;</span> <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&lt;</span>)
 }
-</code></pre>
-
-<p>$(&lt;) и $(&gt;) соответствуют первому и второму параметру правила, т.е. это targers и sources соотвественно. Иными словами $(&gt;) заменяется списком имен C файлов, а $(&lt;) - списком имен I файлов. Все заботы о том, как преобразование C -&gt; I, заданное генератором, доходит до вызова действий берет на себя система классов Boost.Build.</p>
-
+</code></pre></div><p>$(&lt;) и $(&gt;) соответствуют первому и второму параметру правила, т.е. это targers и sources соотвественно. Иными словами $(&gt;) заменяется списком имен C файлов, а $(&lt;) - списком имен I файлов. Все заботы о том, как преобразование C -&gt; I, заданное генератором, доходит до вызова действий берет на себя система классов Boost.Build.</p>
 <p>Чтобы задать какие именно файлы следует обработать нам понадобиться добавить вот такой код в Jamfile.v2:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Импортируем наш модуль</span>
+<span style="color:#f92672">import</span> pp ;
 
-<pre><code class="language-python"># Импортируем наш модуль
-import pp ;
-
-# Собираем файл типа &quot;i&quot; с именем win32api из исходного файла win32api.c
-i win32api : win32api.c ;
-</code></pre>
-
-<p>Теперь если посмотреть на то, какие команды генерирует этот код (bjam -ocommands.cmd) мы увидим следующее:</p>
-
-<pre><code class="language-no-highlight">mkdir &quot;bin&quot;
-mkdir &quot;bin\\msvc-8.0&quot;
-mkdir &quot;bin\\msvc-8.0\\debug&quot;
-mkdir &quot;bin\\msvc-8.0\\debug\\threading-multi&quot;
+<span style="color:#75715e"># Собираем файл типа &#34;i&#34; с именем win32api из исходного файла win32api.c</span>
+i win32api : win32api<span style="color:#f92672">.</span>c ;
+</code></pre></div><p>Теперь если посмотреть на то, какие команды генерирует этот код (bjam -ocommands.cmd) мы увидим следующее:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">mkdir &#34;bin&#34;
+mkdir &#34;bin\\msvc-8.0&#34;
+mkdir &#34;bin\\msvc-8.0\\debug&#34;
+mkdir &#34;bin\\msvc-8.0\\debug\\threading-multi&#34;
 cl.exe /EP win32api.c &gt; bin\\msvc-8.0\\debug\\threading-multi\\win32api.i
-</code></pre>
-
-<p>Уже хорошо, но в таком виде этот код совсем не годиться для использования. Во-первых, не указан путь к cl.exe. Во-вторых, нужен способ задать параметры компиляции – списки директорий для поиска включаемых файлов, директивы препроцессора, ключи компилятора.</p>
-
+</code></pre></div><p>Уже хорошо, но в таком виде этот код совсем не годиться для использования. Во-первых, не указан путь к cl.exe. Во-вторых, нужен способ задать параметры компиляции – списки директорий для поиска включаемых файлов, директивы препроцессора, ключи компилятора.</p>
 <p>А о том как это сделать читайте <a href="/2007/06/11/197/">в следующей части</a>. :-)</p>
   </div>
   <div id="disqus_thread"></div>

@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,28 +113,23 @@
     <a class="label" href="/tags/wow64">Wow64</a>
     </span>
     <p>64-битные версии Windows поддерживают два различных представления реестра для 32 и 64-битных приложений. По-умолчанию приложения работают со своим представлением. Также они могут выбирать желаемое представление с помощью флагов <code>KEY_WOW64_32KEY</code> и <code>KEY_WOW64_64KEY</code>. Применение этих флагов кажется очевидным и прямолинейным, однако это не совсем так.</p>
-
 <p>Первая сложность – это возможность переключения выбранного представления на лету. Проблема заключается в том, что при переключении путь к ключу меняется по нетривиальному алгоритму. Например, можете ли вы сказать, на какой ключ будет указывать <code>hChild</code> после выполнения следующего кода?</p>
-
-<pre><code class="language-cpp">HKEY hParent = NULL;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">HKEY hParent <span style="color:#f92672">=</span> NULL;
 RegOpenKeyEx(
     HKEY_LOCAL_MACHINE,
-    &quot;SOFTWARE&quot;,
-    0,
-    KEY_READ | KEY_WOW64_32KEY,
-    &amp;hParent);
+    <span style="color:#e6db74">&#34;SOFTWARE&#34;</span>,
+    <span style="color:#ae81ff">0</span>,
+    KEY_READ <span style="color:#f92672">|</span> KEY_WOW64_32KEY,
+    <span style="color:#f92672">&amp;</span>hParent);
 
-HKEY hChild = NULL;
+HKEY hChild <span style="color:#f92672">=</span> NULL;
 RegOpenKeyEx(
     hParent,
-    &quot;Microsoft&quot;,
-    0,
-    KEY_READ | KEY_WOW64_64KEY,
-    &amp;hChild);
-</code></pre>
-
-<p>Будет это «HKLM\SOFTWARE\Microsoft» или «HKLM\SOFTWARE\Wow6432Node\Microsoft»? Для предотвращения этой проблемы рекомендуется избегать переключения выбранного представления на лету. Комбинация флагов <code>KEY_WOW64_XXKEY</code> использованная для открытия или создания родительского ключа должна использоваться и для всех подчиненных ключей.</p>
-
+    <span style="color:#e6db74">&#34;Microsoft&#34;</span>,
+    <span style="color:#ae81ff">0</span>,
+    KEY_READ <span style="color:#f92672">|</span> KEY_WOW64_64KEY,
+    <span style="color:#f92672">&amp;</span>hChild);
+</code></pre></div><p>Будет это «HKLM\SOFTWARE\Microsoft» или «HKLM\SOFTWARE\Wow6432Node\Microsoft»? Для предотвращения этой проблемы рекомендуется избегать переключения выбранного представления на лету. Комбинация флагов <code>KEY_WOW64_XXKEY</code> использованная для открытия или создания родительского ключа должна использоваться и для всех подчиненных ключей.</p>
 <p>Вторая сложность – за выбор желаемого представления реестра отвечают разные компоненты в случае 32 и 64-битных приложений. В случае 32-битных приложений wow64.dll перехватывает вызовы функций <code>NtCreateKey</code> и <code>NtOpenKey</code>, добавляя необходимую функциональность. 64-битные приложения используют вспомогательные функции из advapi32.dll, которые вызываются 64-битными реализациями функций <code>RegCreateKeyEx</code>, <code>RegOpenKeyEx</code> и <code>RegDeleteKeyEx</code>. Иными словами если 64-битное приложение использует функции Native API напрямую оно должно быть готово к тому, что <code>NtCreateKey</code> и <code>NtOpenKey</code> ничего не знают о разных представлениях реестра.</p>
   </div>
   <div id="disqus_thread"></div>

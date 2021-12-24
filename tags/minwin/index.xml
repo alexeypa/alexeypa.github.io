@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Minwin on Алексей Пахунов</title>
+    <title>MinWin on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/minwin/</link>
-    <description>Recent content in Minwin on Алексей Пахунов</description>
+    <description>Recent content in MinWin on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 03 Dec 2009 23:04:14 -0800</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/minwin/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 03 Dec 2009 23:04:14 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/minwin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Что такое MinWin и зачем он нужен</title>
       <link>https://blog.not-a-kernel-guy.com/2009/12/03/696/</link>

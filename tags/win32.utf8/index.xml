@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Win32.utf8 on Алексей Пахунов</title>
+    <title>Win32.Utf8 on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/win32.utf8/</link>
-    <description>Recent content in Win32.utf8 on Алексей Пахунов</description>
+    <description>Recent content in Win32.Utf8 on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 31 Oct 2007 15:58:11 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/win32.utf8/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 31 Oct 2007 15:58:11 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/win32.utf8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SAL аннотации</title>
       <link>https://blog.not-a-kernel-guy.com/2007/10/31/260/</link>
@@ -18,9 +14,7 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2007/10/31/260/</guid>
       <description>&lt;p&gt;В последнее время я немного забросил Win32.Utf8 - на работе завал, так что, приходя домой, делать ничего особенного не хочется. Тем не менее, проект потихоньку движется и, на сегодняшний день, я добрался до разбора SAL аннотаций.&lt;/p&gt;
-
 &lt;p&gt;Основной источник информации, которым я пользуюсь - это заголовок sal.h из поставки Visual C++. В нем содержится достаточно подробное описание того, как составляются конструкции вроде &lt;code&gt;__deref_inout_ecount_part_opt&lt;/code&gt;. Кроме того, там же определены макросы, преобразующие SAL аннотации в набор директив для статического анализатора PREfast. По ним достаточно просто понять как SAL аннотации «работают на самом деле».&lt;/p&gt;
-
 &lt;p&gt;&lt;em&gt;Аналогичный заголовок есть в Platform SDK для Windows 2003 - specstrings.h. В Windows SDK для Vista все еще более запутано.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     
@@ -31,7 +25,6 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2007/09/23/241/</guid>
       <description>&lt;p&gt;Продолжаю возиться с &lt;a href=&#34;https://blog.not-a-kernel-guy.com/tags/win32.utf8/&#34;&gt;синтаксическим анализом&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;Основное преимущество, которое даёт использование &lt;a href=&#34;http://en.wikipedia.org/wiki/Abstract_syntax_tree&#34;&gt;AST&lt;/a&gt; по сравнению с техникой разбора снизу вверх (bottom-up parsing) – это возможность отложить анализ разобранного текста «на потом». Это может быть удобно по разным причинам. В случае Win32.Utf8 это удобно тем, что требования к анализатору формируются прямо в процессе работы над проектом. По большому счёту я понятия не имею, что получиться в конечном итоге. :-)&lt;/p&gt;</description>
     </item>
     
@@ -42,48 +35,43 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2007/09/16/238/</guid>
       <description>&lt;p&gt;Во время работы над парсером постоянно возникала необходимость посмотреть как выглядит тот или иной кусок дерева или все дерево целиком. Недолго думая, я попробовал выводить его в виде XML, - получилось довольно неплохо.&lt;/p&gt;
-
 &lt;p&gt;Исходный код на C:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;typedef void *LPVOID;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Дерево, полученное после синтаксического разбора:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;translation_unit&amp;gt;
- &amp;lt;external_declaration&amp;gt;
-  &amp;lt;declaration&amp;gt;
-   &amp;lt;init_list_declaration&amp;gt;
-    &amp;lt;declaration_specifiers&amp;gt;
-     &amp;lt;declaration_specifier&amp;gt;
-      &amp;lt;storage_class_specifier&amp;gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;typedef&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;LPVOID;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Дерево, полученное после синтаксического разбора:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;translation_unit&amp;gt;&lt;/span&gt;
+ &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;external_declaration&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;declaration&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;init_list_declaration&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;declaration_specifiers&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;declaration_specifier&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;storage_class_specifier&amp;gt;&lt;/span&gt;
        typedef
-      &amp;lt;/storage_class_specifier&amp;gt;
-     &amp;lt;/declaration_specifier&amp;gt;
-     &amp;lt;declaration_specifier&amp;gt;
-      &amp;lt;type_specifier&amp;gt;
-       &amp;lt;builtin_type&amp;gt;
+      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/storage_class_specifier&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/declaration_specifier&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;declaration_specifier&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;type_specifier&amp;gt;&lt;/span&gt;
+       &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;builtin_type&amp;gt;&lt;/span&gt;
         void
-       &amp;lt;/builtin_type&amp;gt;
-      &amp;lt;/type_specifier&amp;gt;
-     &amp;lt;/declaration_specifier&amp;gt;
-    &amp;lt;/declaration_specifiers&amp;gt;
-    &amp;lt;init_declarator&amp;gt;
-     &amp;lt;declarator&amp;gt;
-      &amp;lt;pointer&amp;gt;
+       &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/builtin_type&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/type_specifier&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/declaration_specifier&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/declaration_specifiers&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;init_declarator&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;declarator&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;pointer&amp;gt;&lt;/span&gt;
        *
-      &amp;lt;/pointer&amp;gt;
-      &amp;lt;direct_declarator&amp;gt;
+      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/pointer&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;direct_declarator&amp;gt;&lt;/span&gt;
        LPVOID
-      &amp;lt;/direct_declarator&amp;gt;
-     &amp;lt;/declarator&amp;gt;
-    &amp;lt;/init_declarator&amp;gt;
-   &amp;lt;/init_list_declaration&amp;gt;
+      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/direct_declarator&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/declarator&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/init_declarator&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/init_list_declaration&amp;gt;&lt;/span&gt;
    ;
-  &amp;lt;/declaration&amp;gt;
- &amp;lt;/external_declaration&amp;gt;
-&amp;lt;/translation_unit&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;</description>
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/declaration&amp;gt;&lt;/span&gt;
+ &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/external_declaration&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/translation_unit&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -93,15 +81,17 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2007/09/02/233/</guid>
       <description>&lt;p&gt;Алгоритм работы Win32.Utf8 состоит из трех основных шагов:&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Исходные заголовки пропускаются через стандартный препроцессор;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Полученный код парсится и трансформируется в дерево объектов, описывающее функции, типы и связи между ними;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Полученное дерево используется для генерации кода по заданным шаблонам.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Исходные заголовки пропускаются через стандартный препроцессор;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Полученный код парсится и трансформируется в дерево объектов, описывающее функции, типы и связи между ними;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Полученное дерево используется для генерации кода по заданным шаблонам.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;На данный момент я работаю над вторым этапом. Цель – построенное дерево должно быть компактным, его структура должна облегчать последующий анализ во время генерации кода. В тоже время дерево должно включать всю информацию необходимую для генерации корректного кода.&lt;/p&gt;</description>
     </item>
     
@@ -112,15 +102,15 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2007/08/28/231/</guid>
       <description>&lt;p&gt;Существует два способа собрать DParser for Python под Windows:&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Легкий – воспользоваться GCC из MinGW и немного пошаманить;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Интересный – попытаться сделать тоже самое с помощью Visual C++ 2005.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Легкий – воспользоваться GCC из MinGW и немного пошаманить;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Интересный – попытаться сделать тоже самое с помощью Visual C++ 2005.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;Естественно, что я выбрал второй вариант. :-)&lt;/p&gt;
-
 &lt;p&gt;&lt;em&gt;(На самом деле причина довольно прозаична – не хотелось собирать один проект двумя разными компиляторами).&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     
@@ -131,7 +121,7 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2007/08/22/225/</guid>
       <description>Стандартный обработчик пробелов в DParser распознаёт пробелы, табуляцию, переводы строк, C-подобные комментарии и директивы “#line”. Мне нужно было отсеивать ещё и “#pragma” директивы, которые препроцессор от Visual C++ любезно оставляет в коде. Для этого понадобилось определить свой обработчик пробельных символов:
-re_whitespace = re.compile(r&#39;(\\s+|/\\*(.|\\n)*?\\*/|//.*\\n|(^\\s*\\#.*$((?&amp;lt;=\\\\)\\n.*$)*))+&#39;, re.M) def whitespace(loc): m = re_whitespace.match(loc.buf, loc.s) if m: loc.s = m.end() loc.line += m.group().count(&#39;\\n&#39;)  Из интересного тут только само регулярное выражение. Мне понадобилось н-дцать попыток, чтобы довести его до ума.</description>
+re_whitespace = re.compile(r&amp;#39;(\\s+|/\\*(.|\\n)*?\\*/|//.*\\n|(^\\s*\\#.*$((?&amp;lt;=\\\\)\\n.*$)*))+&amp;#39;, re.M) def whitespace(loc): m = re_whitespace.match(loc.buf, loc.s) if m: loc.s = m.end() loc.line += m.group().count(&amp;#39;\\n&amp;#39;) Из интересного тут только само регулярное выражение. Мне понадобилось н-дцать попыток, чтобы довести его до ума.</description>
     </item>
     
     <item>

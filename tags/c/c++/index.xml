@@ -1,16 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C/C&#43;&#43; on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/c/c&#43;&#43;/</link>
     <description>Recent content in C/C&#43;&#43; on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ru-ru</language>
-    <lastBuildDate>Sun, 15 May 2011 22:10:44 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/c/c++/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>ru-ru</language><atom:link href="https://blog.not-a-kernel-guy.com/tags/c/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Список состояний конечного автомата</title>
       <link>https://blog.not-a-kernel-guy.com/2011/05/15/1069/</link>
@@ -27,9 +22,9 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2011/05/04/1047/</guid>
       <description>&amp;hellip; но я понятия не имел, что вложенные структуры в C/C++ можно инициализировать плоским списком значений. Есть, например, вот такая структура:
-struct foo { int value; }; struct bar { int value; }; struct foobar { foo value1; bar value2; int value3; };  Её можно инициализировать вот так:
-foobar data = { { 1 }, { 2 }, 3 };  А можно и так:
-foobar data = { 1, 2, 3 };  Компилятор съест оба варианта кода и не поморщится.</description>
+struct foo { int value; }; struct bar { int value; }; struct foobar { foo value1; bar value2; int value3; }; Её можно инициализировать вот так:
+foobar data = { { 1 }, { 2 }, 3 }; А можно и так:
+foobar data = { 1, 2, 3 }; Компилятор съест оба варианта кода и не поморщится.</description>
     </item>
     
     <item>
@@ -39,8 +34,8 @@ foobar data = { 1, 2, 3 };  Компилятор съест оба вариан�
       
       <guid>https://blog.not-a-kernel-guy.com/2009/11/11/672/</guid>
       <description>На днях пытался понять, отчего и почему крошечное приложение пухнет как на дрожжах при добавлении некоторых библиотек из Boost. Рассматривая сгенерированный map файл, выяснил, что утилита undname.exe поставляется вместе с Visual Studio и в состав Windows SDK не входит. Пришлось написать свою – там всего-то нужно вызвать одну функцию (UnDecorateSymbolName). По ходу дела нашел несколько интересных ссылок по теме:
- Схема, по которой кодируются имена:
- Microsoft C++ Name Mangling Scheme.</description>
+  Схема, по которой кодируются имена:
+  Microsoft C++ Name Mangling Scheme.</description>
     </item>
     
     <item>
@@ -59,9 +54,7 @@ foobar data = { 1, 2, 3 };  Компилятор съест оба вариан�
       
       <guid>https://blog.not-a-kernel-guy.com/2007/10/31/260/</guid>
       <description>&lt;p&gt;В последнее время я немного забросил Win32.Utf8 - на работе завал, так что, приходя домой, делать ничего особенного не хочется. Тем не менее, проект потихоньку движется и, на сегодняшний день, я добрался до разбора SAL аннотаций.&lt;/p&gt;
-
 &lt;p&gt;Основной источник информации, которым я пользуюсь - это заголовок sal.h из поставки Visual C++. В нем содержится достаточно подробное описание того, как составляются конструкции вроде &lt;code&gt;__deref_inout_ecount_part_opt&lt;/code&gt;. Кроме того, там же определены макросы, преобразующие SAL аннотации в набор директив для статического анализатора PREfast. По ним достаточно просто понять как SAL аннотации «работают на самом деле».&lt;/p&gt;
-
 &lt;p&gt;&lt;em&gt;Аналогичный заголовок есть в Platform SDK для Windows 2003 - specstrings.h. В Windows SDK для Vista все еще более запутано.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     
@@ -81,23 +74,22 @@ foobar data = { 1, 2, 3 };  Компилятор съест оба вариан�
       
       <guid>https://blog.not-a-kernel-guy.com/2007/08/20/223/</guid>
       <description>&lt;p&gt;Наткнулся на забавную вещь. Вот такой код спокойно компилируется GCC (версия 3.4.2 (mingw-special)):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;stdio.h&amp;gt;
-
-int main()
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;()
 {
-    void* ptr;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; ptr;
 
-    printf(&amp;quot;sizeof(void): %d\\n&amp;quot;, sizeof(void));
+    printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;sizeof(void): %d&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt;));
 
-    ptr = 0;
-    printf(&amp;quot;before increment: %p\\n&amp;quot;, ptr);
-    ptr += 1;
-    printf(&amp;quot;after increment: %p\\n&amp;quot;, ptr);
+    ptr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+    printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;before increment: %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;n&amp;#34;&lt;/span&gt;, ptr);
+    ptr &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+    printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;after increment: %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;n&amp;#34;&lt;/span&gt;, ptr);
 
-    return 0;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
 }
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>

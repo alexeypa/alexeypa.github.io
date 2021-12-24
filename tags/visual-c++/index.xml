@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Visual C&#43;&#43; on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Visual C&#43;&#43; on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 11 Nov 2009 23:13:44 -0800</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/visual-c++/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 11 Nov 2009 23:13:44 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/visual-c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Деманглинг имен в Visual C&#43;&#43;</title>
       <link>https://blog.not-a-kernel-guy.com/2009/11/11/672/</link>
@@ -18,8 +14,8 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2009/11/11/672/</guid>
       <description>На днях пытался понять, отчего и почему крошечное приложение пухнет как на дрожжах при добавлении некоторых библиотек из Boost. Рассматривая сгенерированный map файл, выяснил, что утилита undname.exe поставляется вместе с Visual Studio и в состав Windows SDK не входит. Пришлось написать свою – там всего-то нужно вызвать одну функцию (UnDecorateSymbolName). По ходу дела нашел несколько интересных ссылок по теме:
- Схема, по которой кодируются имена:
- Microsoft C++ Name Mangling Scheme.</description>
+  Схема, по которой кодируются имена:
+  Microsoft C++ Name Mangling Scheme.</description>
     </item>
     
   </channel>

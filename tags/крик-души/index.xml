@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Крик Души on Алексей Пахунов</title>
+    <title>крик души on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D1%80%D0%B8%D0%BA-%D0%B4%D1%83%D1%88%D0%B8/</link>
-    <description>Recent content in Крик Души on Алексей Пахунов</description>
+    <description>Recent content in крик души on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 20 May 2016 21:54:51 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BA%D1%80%D0%B8%D0%BA-%D0%B4%D1%83%D1%88%D0%B8/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 20 May 2016 21:54:51 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BA%D1%80%D0%B8%D0%BA-%D0%B4%D1%83%D1%88%D0%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Про откаты</title>
       <link>https://blog.not-a-kernel-guy.com/2016/05/20/1826/</link>

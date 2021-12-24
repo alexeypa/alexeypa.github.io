@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,20 +113,14 @@
     <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/wow64">Wow64</a>
     </span>
     <p>Только что потратил кучу времени на разборки с <a href="http://msdn2.microsoft.com/en-us/library/wz223b1z.aspx">/LARGEADDRESSAWARE</a>. Этот ключ используется для указания сборщику, что данный модуль (.exe или .dll) способен корректно обрабатывать адреса больше 2GB. Модули, помеченные подобным образом, могут быть загружены выше 2GB при условии, что система поддерживает увеличенное пользовательское адресное пространство. На данный момент это либо серверные версии Windows, сконфигурированные <a href="http://www.microsoft.com/whdc/system/platform/server/PAE/PAEmem.mspx">ключом /3GB в boot.ini</a>, либо 64-х битные версии системы.</p>
-
 <p>Про причины того, почему расширенное адресное пространство не включается для всех программ, хорошо написал Raymond Chen: <a href="http://blogs.msdn.com/oldnewthing/archive/2004/08/12/213468.aspx">Myth: The /3GB switch expands the user-mode address space of all programs</a>. Дело как всегда в том, что слишком много приложений не будут работать в такой конфигурации -  начинает буксовать арифметика указателей. Сегодняшний баг занёс ещё одну операцию в “черный” список.</p>
-
 <p>Итак, какое значение будет присвоено переменной wide_ptr после инициализации (код компилируется для x86)?</p>
-
-<pre><code class="language-cpp">PVOID ptr = (PVOID)0x87654321;
-ULONGLONG wide_ptr = (ULONGLONG)ptr;
-</code></pre>
-
-<p>Ответ - 0xffffffff87654321! Очевидно, что проблема в расширении знака, однако это совсем не очевидно из данного отрывка кода. Чтобы результат получился верным, код нужно переписать вот так:</p>
-
-<pre><code class="language-cpp">PVOID ptr = (PVOID)0x87654321;
-ULONGLONG wide_ptr = (ULONGLONG)(ULONG_PTR)ptr;
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">PVOID ptr <span style="color:#f92672">=</span> (PVOID)<span style="color:#ae81ff">0x87654321</span>;
+ULONGLONG wide_ptr <span style="color:#f92672">=</span> (ULONGLONG)ptr;
+</code></pre></div><p>Ответ - 0xffffffff87654321! Очевидно, что проблема в расширении знака, однако это совсем не очевидно из данного отрывка кода. Чтобы результат получился верным, код нужно переписать вот так:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">PVOID ptr <span style="color:#f92672">=</span> (PVOID)<span style="color:#ae81ff">0x87654321</span>;
+ULONGLONG wide_ptr <span style="color:#f92672">=</span> (ULONGLONG)(ULONG_PTR)ptr;
+</code></pre></div>
   </div>
   <div id="disqus_thread"></div>
 </div>

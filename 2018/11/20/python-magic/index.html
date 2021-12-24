@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -117,112 +118,84 @@
 водой своевременно. Когда проект разрастается, то красивый и уютный песчанный
 замок превращается в минное поле. Отрефакторил подвал - крыша отвалилась.
 Поправил крышу - окна слиплись в один комок.</p>
-
 <p>Непонятно как все это счастье держать в одной куче. Неужели все живут за счет
 100% покрытия тестами? Не верю. Или все на PyCharm сидят?</p>
-
 <p>Расскажу про очередной прикол Питона. Итак есть простой код:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">init</span>(factories):
+    <span style="color:#e6db74">&#34;&#34;&#34;Convert a list of factorie into a list of objects.&#34;&#34;&#34;</span> 
+    <span style="color:#66d9ef">return</span> [factory() <span style="color:#66d9ef">for</span> factory <span style="color:#f92672">in</span> factories]
 
-<pre><code class="language-python">def init(factories):
-    &quot;&quot;&quot;Convert a list of factorie into a list of objects.&quot;&quot;&quot; 
-    return [factory() for factory in factories]
-
-def cleanup(objects):
-    &quot;&quot;&quot;Clean up objects in the reversed order of their creation.&quot;&quot;&quot;
-    for obj in reversed(objects):
-        obj.cleanup()
-</code></pre>
-
-<p><code>init()</code> берет список фабрик и отдает список объектов, созданных фабриками.
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cleanup</span>(objects):
+    <span style="color:#e6db74">&#34;&#34;&#34;Clean up objects in the reversed order of their creation.&#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">for</span> obj <span style="color:#f92672">in</span> reversed(objects):
+        obj<span style="color:#f92672">.</span>cleanup()
+</code></pre></div><p><code>init()</code> берет список фабрик и отдает список объектов, созданных фабриками.
 <code>cleanup()</code> чистит созданные объекты в порядке, противоположном порядку
 создания. Нам требуется написать тест, который проверяет, что методы <code>cleanup()</code>
 вызываются в правильном порядке:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> itertools <span style="color:#f92672">import</span> permutations
+<span style="color:#f92672">import</span> mock
 
-<pre><code class="language-python">from itertools import permutations
-import mock
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_cleanup</span>():
+    <span style="color:#e6db74">&#34;&#34;&#34;Verify cleanup() order.&#34;&#34;&#34;</span>
+    <span style="color:#75715e"># Try all permitations of initialization order. </span>
+    <span style="color:#66d9ef">for</span> init_order <span style="color:#f92672">in</span> permutations(range(<span style="color:#ae81ff">3</span>)):
+        cleanup_order <span style="color:#f92672">=</span> []
 
-def test_cleanup():
-    &quot;&quot;&quot;Verify cleanup() order.&quot;&quot;&quot;
-    # Try all permitations of initialization order. 
-    for init_order in permutations(range(3)):
-        cleanup_order = []
+        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">factory</span>(index):
+            <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cleanup</span>():
+                <span style="color:#e6db74">&#34;&#34;&#34;Record the clean up order.&#34;&#34;&#34;</span>
+                cleanup_order<span style="color:#f92672">.</span>append(index)
 
-        def factory(index):
-            def cleanup():
-                &quot;&quot;&quot;Record the clean up order.&quot;&quot;&quot;
-                cleanup_order.append(index)
+            <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create</span>():
+                <span style="color:#e6db74">&#34;&#34;&#34;Return a mock implementing cleanup().&#34;&#34;&#34;</span>
+                obj <span style="color:#f92672">=</span> mock<span style="color:#f92672">.</span>Mock
+                obj<span style="color:#f92672">.</span>cleanup <span style="color:#f92672">=</span> mock<span style="color:#f92672">.</span>Mock(side_effect<span style="color:#f92672">=</span>cleanup)
+                <span style="color:#66d9ef">return</span> obj
 
-            def create():
-                &quot;&quot;&quot;Return a mock implementing cleanup().&quot;&quot;&quot;
-                obj = mock.Mock
-                obj.cleanup = mock.Mock(side_effect=cleanup)
-                return obj
+            <span style="color:#66d9ef">return</span> create
 
-            return create
-
-        # Create objects in the desired order.
-        objects = init([factory(index) for index in init_order])
+        <span style="color:#75715e"># Create objects in the desired order.</span>
+        objects <span style="color:#f92672">=</span> init([factory(index) <span style="color:#66d9ef">for</span> index <span style="color:#f92672">in</span> init_order])
 
         cleanup(objects)
 
-        # Verify that the object were cleaned up in the reveresed
-        # order of their creation.
-        assert cleanup_order == list(reversed(init_order))
-</code></pre>
-
-<p>Разберу логику по кускам. Тест перебирает все возможные кобинации порядка
+        <span style="color:#75715e"># Verify that the object were cleaned up in the reveresed</span>
+        <span style="color:#75715e"># order of their creation.</span>
+        <span style="color:#66d9ef">assert</span> cleanup_order <span style="color:#f92672">==</span> list(reversed(init_order))
+</code></pre></div><p>Разберу логику по кускам. Тест перебирает все возможные кобинации порядка
 создания объектов:</p>
-
-<pre><code class="language-python">for init_order in permutations(range(3)):
-</code></pre>
-
-<p>Декоратор <code>factory()</code> возвращает фабрику <code>create()</code>, которая в свою учередь
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> init_order <span style="color:#f92672">in</span> permutations(range(<span style="color:#ae81ff">3</span>)):
+</code></pre></div><p>Декоратор <code>factory()</code> возвращает фабрику <code>create()</code>, которая в свою учередь
 создает объект с методом <code>cleanup()</code>. Для создания объекта на коленке
 используется <a href="https://docs.python.org/3/library/unittest.mock.html"><code>Mock</code></a>. Релизация <code>cleanup()</code> запоминает порядок вызова в
 <code>cleanup_order</code>.</p>
-
 <p><code>init()</code> создает объекты в заданном порядке, <code>cleanup()</code> - чистит:</p>
-
-<pre><code class="language-python">objects = init([factory(index) for index in init_order])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">objects <span style="color:#f92672">=</span> init([factory(index) <span style="color:#66d9ef">for</span> index <span style="color:#f92672">in</span> init_order])
 
 cleanup(objects)
-</code></pre>
-
-<p>Наконец, в самом конце мы проверяем, что порядок очистки противоположен порядку
+</code></pre></div><p>Наконец, в самом конце мы проверяем, что порядок очистки противоположен порядку
 создания:</p>
-
-<pre><code class="language-python">assert cleanup_order == list(reversed(init_order))
-</code></pre>
-
-<p>Все просто, не так ли? Запускаем тест и получаем облом:</p>
-
-<pre><code>&gt;               assert cleanup_order == list(reversed(init_order))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">assert</span> cleanup_order <span style="color:#f92672">==</span> list(reversed(init_order))
+</code></pre></div><p>Все просто, не так ли? Запускаем тест и получаем облом:</p>
+<pre tabindex="0"><code>&gt;               assert cleanup_order == list(reversed(init_order))
 E     assert [2, 2, 2] == [2, 1, 0]
 E       At index 1 diff: 2 != 1
 E       Use -v to get the full diff
 
 
 rabbit_test.py:41: AssertionError 
-</code></pre>
-
-<p>Заядлые питонщики давно раскусили, в чем проблема. А вы сможете найти ошибку не
+</code></pre><p>Заядлые питонщики давно раскусили, в чем проблема. А вы сможете найти ошибку не
 заглядывая в ответ?</p>
-
 <p>Проблема вот в этой строке:</p>
-
-<pre><code class="language-python">obj = mock.Mock
-</code></pre>
-
-<p>Здесь <code>obj</code> - это не объект класса <code>mock.Mock</code>, сам класс <code>mock.Mock</code>.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">obj <span style="color:#f92672">=</span> mock<span style="color:#f92672">.</span>Mock
+</code></pre></div><p>Здесь <code>obj</code> - это не объект класса <code>mock.Mock</code>, сам класс <code>mock.Mock</code>.
 Соответсвенно следующая строка не добавляет метод <code>cleanup()</code> к объекту, а
 изменяет метод <code>cleanup()</code> для всех объектов класса <code>mock.Mock</code>. В результате
 с моменту вызова <code>cleanup()</code>, последняя версия с индексом 2 вызывается для всех
 объектов. Если добавить скобки, то все работает как часы:</p>
-
-<pre><code class="language-python">obj = mock.Mock()
-</code></pre>
-
-<p>Как в таких невыносимых условиях программировать?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">obj <span style="color:#f92672">=</span> mock<span style="color:#f92672">.</span>Mock()
+</code></pre></div><p>Как в таких невыносимых условиях программировать?</p>
   </div>
   <div id="disqus_thread"></div>
 </div>

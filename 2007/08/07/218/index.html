@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,26 +113,16 @@
     <a class="label" href="/tags/windows">Windows</a><a class="label" href="/tags/wow64">Wow64</a>
     </span>
     <p>На моей машине в папке «%windir%» можно найти 6 (шесть!) копий «regedit.exe».</p>
-
-<p><img src="/2007/08/regedit_0.png" alt="regedit.exe" /></p>
-
+<p><img src="/2007/08/regedit_0.png" alt="regedit.exe"></p>
 <p>Что это? Опять коварный Microsoft? Не совсем так. Просто Regedit несколько раз менял свое положение в дереве каталогов.</p>
-
 <p>В Windows 95 Regedit устанавливался в корневом каталоге Windows. Это соглашение сохранилось и по сей день.</p>
-
-<p><img src="/2007/08/regedit_1.png" alt="regedit.exe" /></p>
-
+<p><img src="/2007/08/regedit_1.png" alt="regedit.exe"></p>
 <p>Ещё одна тонкость связанная с местонахождением Regedit – существующие 32-х битные приложения по-прежнему запускают 32-х разрядную версию Regedit, даже если они указывают полный путь к 64-х версии, т.е. «%windir%\regedit.exe». Об этом заботится Wow64, перенаправляя все обращения к «%windir%\regedit.exe» в «%windir%\SysWow64\regedit.exe». Точно также, как «%windir%\system32» перенаправляется в «%windir%\SysWow64».</p>
-
-<p><img src="/2007/08/regedit_2.png" alt="regedit.exe" /></p>
-
+<p><img src="/2007/08/regedit_2.png" alt="regedit.exe"></p>
 <p>Появление технологии <a href="http://msdn2.microsoft.com/en-us/library/aa375193.aspx">Isolated Applications and Side-by-side Assemblies</a> многие системные библиотеки перекочевали в WinSxS хранилище. Regedit так же не избежал этой участи. В WinSxS находятся остальные четыре копии – по две на каждый тип процессора.</p>
-
-<p><img src="/2007/08/regedit_3.png" alt="regedit.exe" /></p>
-
+<p><img src="/2007/08/regedit_3.png" alt="regedit.exe"></p>
 <p>И наконец на моей машине установлена бета версия Vista SP1. Это объясняет почему в WinSxS хранятся две версии Regedit для каждого типа процессора. Вторая копия – это обновлённая версия из сервис пака.</p>
-
-<p><img src="/2007/08/regedit_4.png" alt="regedit.exe" /></p>
+<p><img src="/2007/08/regedit_4.png" alt="regedit.exe"></p>
   </div>
   <div id="disqus_thread"></div>
 </div>

@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,85 +113,76 @@
     <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/windows">Windows</a>
     </span>
     <p>Как вы думаете, какой сообщение выведет нижеследующая программа, в случае если её запустить на Windows Vista 64 с правами обычного пользователя, т.е. пользователя, у которого нет прав на запись в каталог “C:\Program Files”?</p>
-
-<pre><code class="language-cpp">#include &lt;memory.h&gt;
-#include &lt;stdio.h&gt;
-
-int main(int argc, char* argv[])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;memory.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[])
 {
-    FILE* f = NULL;
-    char cookie[] = { 'b', 'a', 'r', ' ' };
-    char data[sizeof(cookie)] = { 'f', 'o', 'o', ' ' };
+    FILE<span style="color:#f92672">*</span> f <span style="color:#f92672">=</span> NULL;
+    <span style="color:#66d9ef">char</span> cookie[] <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>, <span style="color:#e6db74">&#39; &#39;</span> };
+    <span style="color:#66d9ef">char</span> data[<span style="color:#66d9ef">sizeof</span>(cookie)] <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#39;f&#39;</span>, <span style="color:#e6db74">&#39;o&#39;</span>, <span style="color:#e6db74">&#39;o&#39;</span>, <span style="color:#e6db74">&#39; &#39;</span> };
 
-    f = fopen(&quot;C:\\Program Files\\foo.txt&quot;, &quot;w&quot;);
-    if (f)
+    f <span style="color:#f92672">=</span> fopen(<span style="color:#e6db74">&#34;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Program Files</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">foo.txt&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>);
+    <span style="color:#66d9ef">if</span> (f)
     {
-        fwrite(cookie, sizeof(cookie), 1, f);
+        fwrite(cookie, <span style="color:#66d9ef">sizeof</span>(cookie), <span style="color:#ae81ff">1</span>, f);
         fclose(f);
     }
 
-    f = fopen(&quot;C:\\Program Files\\foo.txt&quot;, &quot;r&quot;);
-    if (f)
+    f <span style="color:#f92672">=</span> fopen(<span style="color:#e6db74">&#34;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Program Files</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">foo.txt&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>);
+    <span style="color:#66d9ef">if</span> (f)
     {
-        fread(data, sizeof(data), 1, f);
+        fread(data, <span style="color:#66d9ef">sizeof</span>(data), <span style="color:#ae81ff">1</span>, f);
         fclose(f);
     }
 
-    if (0 == memcmp(data, cookie, sizeof(cookie)))
+    <span style="color:#66d9ef">if</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">==</span> memcmp(data, cookie, <span style="color:#66d9ef">sizeof</span>(cookie)))
     {
-        printf(&quot;Success!\n&quot;);
+        printf(<span style="color:#e6db74">&#34;Success!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
     }
-    else
+    <span style="color:#66d9ef">else</span>
     {
-        printf(&quot;Something went wrong!\n&quot;);
+        printf(<span style="color:#e6db74">&#34;Something went wrong!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
     }
 
-    return 0;
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre>
-
-<p>Как это не странно ответ зависит от типа процессора, для которого скомпилирована программа. Если это 64-х битный процессор, то создание файла “C:\Program Files\foo.txt” завершиться неудачей из-за недостатка прав и программа выведет, как и положено, “Something went wrong!”. Однако если ту же программу скомпилировать как 32-х разрядное приложение, она напечатает “Success!”. Т.е. файл создастся, не смотря на то, что пользователь не имеет права создавать файлы в каталоге “C:\Program Files”! Как это возможно?</p>
-
+</code></pre></div><p>Как это не странно ответ зависит от типа процессора, для которого скомпилирована программа. Если это 64-х битный процессор, то создание файла “C:\Program Files\foo.txt” завершиться неудачей из-за недостатка прав и программа выведет, как и положено, “Something went wrong!”. Однако если ту же программу скомпилировать как 32-х разрядное приложение, она напечатает “Success!”. Т.е. файл создастся, не смотря на то, что пользователь не имеет права создавать файлы в каталоге “C:\Program Files”! Как это возможно?</p>
 <p>Ответ – <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnlong/html/AccProtVista.asp">Least-privilege User Account (LUA)</a> Virtualization. Microsoft уже довольно долго пытается убедить пользователей не использовать учетную запись администратора для повседневной работы. Появление LUA в Vista тоже имеет к этому отношение. В частности LUA Virtualization решает проблему старых приложений, которые непременно хотят создавать файлы в системных каталогах.</p>
-
 <p>С помощью отладчика можно посмотреть, что происходит при запуске программы на самом деле.</p>
-
-<p><a href="/2006/10/invisible_files_1.png"><img src="/2006/10/invisible_files_1.thumbnail.png" alt="" /></a></p>
-
+<p><a href="/2006/10/invisible_files_1.png"><img src="/2006/10/invisible_files_1.thumbnail.png" alt=""></a></p>
 <p>Если поставить точку останова сразу после создания файла, то в списке описателей в Process Explorer видно, что в реальности файл создается не в “C:\Program Files”, а в каталоге “C:\Users&lt;user name&gt;\AppData\Local\VirtualStore\Program Files\foo.txt”.</p>
-
-<p><a href="/2006/10/invisible_files_2.png"><img src="/2006/10/invisible_files_2.thumbnail.png" alt="" /></a></p>
-
+<p><a href="/2006/10/invisible_files_2.png"><img src="/2006/10/invisible_files_2.thumbnail.png" alt=""></a></p>
 <p>Механизм LUA Virtualization просто перенаправляет файловые операции в пользовательский каталог, если обнаруживает, что программа пытается создать файл, либо открыть существующий файл на запись. Само собой каждый пользователь получит свой набор перенаправленных файлов.</p>
-
 <p>Однако почему же 64-х битная версия не ведет себя подобным образом? Дело в том, что механизм LUA Virtualization нужен только для обеспечения совместимости со старыми приложениями. Все 64-х разрядные приложения по умолчанию считаются достаточно новыми, чтобы корректно работать с системными каталогами.</p>
-
 <p>Полный список условий необходимых для включения LUA Virtualization достаточно обширен:</p>
-
 <ol>
-<li><p>Процесс должен быть запущен от имени интерактивного пользователя;</p></li>
-
-<li><p>Процесс должен быть 32-х битным;</p></li>
-
-<li><p>Манифест приложения не должен использовать директиву “requestedExecutionLevel”;</p></li>
-
-<li><p>Системный вызов, например NtWriteFile, должен исходить от потока, находящегося выполняющегося в пользовательском режиме. Кроме того, поток не должен имперсонировать другого пользователя;</p></li>
-
-<li><p>Виртуализируемый файл должен находиться в одном из системных каталогов. По-умолчанию этот список включает в себя: “%SystemRoot%”, “%ProgramFiles%” и “%ProgramData%”, исключая некоторые поддиректории;</p></li>
-
-<li><p>Многие расширения файлов, такие как “.exe”, “.dll”, “.sys” и т.д. входят в довольно обширный список невиртуализируемых расширений. Если файл имен расширение из этого списка, он не будет виртуализирован;</p></li>
-
-<li><p>Администратор должен иметь права на запись в файл, иначе файл также не будет виртуализирован.</p></li>
+<li>
+<p>Процесс должен быть запущен от имени интерактивного пользователя;</p>
+</li>
+<li>
+<p>Процесс должен быть 32-х битным;</p>
+</li>
+<li>
+<p>Манифест приложения не должен использовать директиву “requestedExecutionLevel”;</p>
+</li>
+<li>
+<p>Системный вызов, например NtWriteFile, должен исходить от потока, находящегося выполняющегося в пользовательском режиме. Кроме того, поток не должен имперсонировать другого пользователя;</p>
+</li>
+<li>
+<p>Виртуализируемый файл должен находиться в одном из системных каталогов. По-умолчанию этот список включает в себя: “%SystemRoot%”, “%ProgramFiles%” и “%ProgramData%”, исключая некоторые поддиректории;</p>
+</li>
+<li>
+<p>Многие расширения файлов, такие как “.exe”, “.dll”, “.sys” и т.д. входят в довольно обширный список невиртуализируемых расширений. Если файл имен расширение из этого списка, он не будет виртуализирован;</p>
+</li>
+<li>
+<p>Администратор должен иметь права на запись в файл, иначе файл также не будет виртуализирован.</p>
+</li>
 </ol>
-
 <p>Столь длинный список условий ещё раз говорит о том, что механизм LUA Virtualization предназначен только для обеспечения совместимости со старыми приложениями.</p>
-
 <p>По аналогии с файловой системой виртуализируется системный реестр, вернее ветвь “HKEY_LOCAL_MACHINE\SOFTWARE”. Для каждого ключа можно установить флаг, контролирующий виртуализацию. Сам я этого не пробовал, однако утверждается, что это можно сделать с помощью команды “reg flags”.</p>
-
 <p>Кроме того, появление LUA Virtualization затронуло Windows Explorer и Task Manager. Windows Explorer показывает линк “Compatibility Files”, если хотя бы один из файлов текущего каталога был виртуализирован для активного пользователя. Нажатие на этот линк открывает каталог, куда были помещены виртуализированные файлы из текущего каталога. Task Manager показывает статус процесса: “виртуализирован”/”не виртуализирован” (колонка “Virtualization” во вкладке “Processes”).</p>
-
 <p>Ссылки по теме: <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnlong/html/AccProtVista.asp">Developer Best Practices and Guidelines for Applications in a Least Privileged Environment</a>, <a href="http://blogs.msdn.com/uac/archive/2006/02/22/537129.aspx#549246">LUA Virtualization</a>.</p>
-
 <p><em>Upd</em>: поправил символы &lsquo;&lt;&rsquo; и &lsquo;&gt;&rsquo;.</p>
   </div>
   <div id="disqus_thread"></div>

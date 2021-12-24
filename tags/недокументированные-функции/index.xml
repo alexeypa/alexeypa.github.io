@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Недокументированные Функции on Алексей Пахунов</title>
+    <title>Недокументированные функции on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/%D0%BD%D0%B5%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8/</link>
-    <description>Recent content in Недокументированные Функции on Алексей Пахунов</description>
+    <description>Recent content in Недокументированные функции on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 04 Dec 2012 23:23:13 -0800</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BD%D0%B5%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 04 Dec 2012 23:23:13 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BD%D0%B5%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Трассировка описателей (AKA handle tracing)</title>
       <link>https://blog.not-a-kernel-guy.com/2012/12/04/1437/</link>
@@ -27,13 +23,10 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2008/02/28/293/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/10/18/256/&#34;&gt;Вопрос&lt;/a&gt;:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Скажите, а невозможность загрузки в 64bit-процесс 32bit DLL - фатальна, или же возможны какие-то хаки, недокументированные обходные пути?&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;Отвечаю здесь, так как ответ получился слушком длинным.&lt;/p&gt;
-
 &lt;p&gt;Во-первых, про любые недокументированные возможности меня спрашивать бесполезно. Даже если такая возможность существует, я всё равно о ней не расскажу. Этому есть несколько причин, включая очевидные вещи вроде NDA, законе об авторском праве и т.д. Еще одна причина, почему я не горю желанием это делать, - это то, что раскрывая детали реализации того или иного компонента, я тем самым лишаю этот компонент возможности развиваться и улучшатся в следующих версиях.&lt;/p&gt;</description>
     </item>
     

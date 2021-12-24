@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -115,116 +116,101 @@
 понятные и читаемые юнит тесты. Начну немного издалека. Допустим мы хотим
 убедится, что определенный кусок кода работает правильно. Если бы мы имели дело
 с игрушечным примером, то это наш тест мог бы Примерно вот так:</p>
-
-<pre><code class="language-cpp">bool foobar(int x, int y)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">foobar</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)
 {
-    return (x + y) &gt; 0 &amp;&amp; ((x + y) % 3) == 0;
+    <span style="color:#66d9ef">return</span> (x <span style="color:#f92672">+</span> y) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> ((x <span style="color:#f92672">+</span> y) <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre>
-
-<pre><code class="language-cpp">ASSERT_FALSE(foobar(0, 0));
-ASSERT_FALSE(foobar(0, 1));
-ASSERT_FALSE(foobar(0, 2));
-ASSERT_TRUE (foobar(0, 3));
-ASSERT_FALSE(foobar(1, 0));
-ASSERT_FALSE(foobar(1, 1));
-ASSERT_TRUE (foobar(1, 2));
-ASSERT_FALSE(foobar(2, 0));
-ASSERT_TRUE (foobar(2, 1));
-ASSERT_FALSE(foobar(2, 2));
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">ASSERT_FALSE(foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>));
+ASSERT_FALSE(foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>));
+ASSERT_FALSE(foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>));
+ASSERT_TRUE (foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>));
+ASSERT_FALSE(foobar(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>));
+ASSERT_FALSE(foobar(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>));
+ASSERT_TRUE (foobar(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>));
+ASSERT_FALSE(foobar(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>));
+ASSERT_TRUE (foobar(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>));
+ASSERT_FALSE(foobar(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>));
 ...
-</code></pre>
-
-<p>Такой тест достаточно легко читать. Достаточно понять конструкцию
+</code></pre></div><p>Такой тест достаточно легко читать. Достаточно понять конструкцию
 <code>ASSERT_XXX(foobar(...))</code> после чего глаза сами фокусируются на входных
 значениях, автоматически отсеивая ненужный синтаксический мусор.</p>
-
 <p>Однако, если взять реальный код, то подобный пример превратиться в гораздо менее
 удобочитаемого монстра:</p>
-
-<pre><code class="language-cpp">std::unique_ptr&lt;Foobar&gt; rabbit =
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#f92672">::</span>unique_ptr<span style="color:#f92672">&lt;</span>Foobar<span style="color:#f92672">&gt;</span> rabbit <span style="color:#f92672">=</span>
     create_foobar_with_abc(parent,
         some_context,
-        more_stuff + that + is_required + to_create_foobar,
+        more_stuff <span style="color:#f92672">+</span> that <span style="color:#f92672">+</span> is_required <span style="color:#f92672">+</span> to_create_foobar,
         a,
         b,
         mock_c(),
         logger);
 
 ASSERT_TRUE(
-    rabbit-&gt;connect(
+    rabbit<span style="color:#f92672">-&gt;</span>connect(
         this_thing,
         that_key,
-        did_you_think_we_are_done_here ? no : hell_no));
+        did_you_think_we_are_done_here <span style="color:#f92672">?</span> no : hell_no));
 
-ASSERT_TRUE(rabbit-&gt;wait_for_accept(timeout));
+ASSERT_TRUE(rabbit<span style="color:#f92672">-&gt;</span>wait_for_accept(timeout));
 
-ASSERT_FALSE(rabbit-&gt;foobar(0, 0));
-</code></pre>
-
-<p>&hellip; и так далее для каждого тест кейса. Подобный код легко превращается в
+ASSERT_FALSE(rabbit<span style="color:#f92672">-&gt;</span>foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>));
+</code></pre></div><p>&hellip; и так далее для каждого тест кейса. Подобный код легко превращается в
 длинную простыню однообразного текста с незаметными, но важными вариациями во
 входных данных или параметрах инициализации.</p>
-
 <p>Чтобы сделать этот код более читаемым нужно его разделить на разные по
 назначению части: собрать однообразный код инициализации в одном месте, а набор
 входных значений для теста - в другом. Например вот так:</p>
-
-<pre><code class="language-cpp">struct {
-    int x;
-    int y;
-    std::string that_thing;
-    std::string this_key;
-    bool result;
-} const cases[] = {
-    {0, 0, &quot;thing1&quot;, &quot;key2&quot;, false},
-    {0, 1, &quot;thing1&quot;, &quot;key2&quot;, false},
-    {0, 2, &quot;thing1&quot;, &quot;key2&quot;, false},
-    {0, 3, &quot;thing1&quot;, &quot;key1&quot;, true },
-    {1, 0, &quot;thing2&quot;, &quot;key1&quot;, false},
-    {1, 1, &quot;thing2&quot;, &quot;&quot;,     false},
-    {1, 2, &quot;thing2&quot;, &quot;&quot;,     true },
-    {2, 0, &quot;&quot;,       &quot;&quot;,     false},
-    {2, 1, &quot;&quot;,       &quot;&quot;,     true },
-    {2, 2, &quot;&quot;,       &quot;&quot;,     false},
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> {
+    <span style="color:#66d9ef">int</span> x;
+    <span style="color:#66d9ef">int</span> y;
+    std<span style="color:#f92672">::</span>string that_thing;
+    std<span style="color:#f92672">::</span>string this_key;
+    <span style="color:#66d9ef">bool</span> result;
+} <span style="color:#66d9ef">const</span> cases[] <span style="color:#f92672">=</span> {
+    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key2&#34;</span>, false},
+    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key2&#34;</span>, false},
+    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key2&#34;</span>, false},
+    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key1&#34;</span>, true },
+    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;thing2&#34;</span>, <span style="color:#e6db74">&#34;key1&#34;</span>, false},
+    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;thing2&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>,     false},
+    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;thing2&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>,     true },
+    {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;&#34;</span>,       <span style="color:#e6db74">&#34;&#34;</span>,     false},
+    {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;&#34;</span>,       <span style="color:#e6db74">&#34;&#34;</span>,     true },
+    {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;&#34;</span>,       <span style="color:#e6db74">&#34;&#34;</span>,     false},
 };
 
-for (const auto&amp; c : cases)
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span><span style="color:#f92672">&amp;</span> c : cases)
 {
-    std::unique_ptr&lt;Foobar&gt; rabbit =
+    std<span style="color:#f92672">::</span>unique_ptr<span style="color:#f92672">&lt;</span>Foobar<span style="color:#f92672">&gt;</span> rabbit <span style="color:#f92672">=</span>
         create_foobar_with_abc(parent,
             some_context,
-            more_stuff + that + is_required + to_create_foobar,
+            more_stuff <span style="color:#f92672">+</span> that <span style="color:#f92672">+</span> is_required <span style="color:#f92672">+</span> to_create_foobar,
             a,
             b,
             mock_c(),
             logger);
 
-    if (!c.that_thing.empty())
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>c.that_thing.empty())
     {
         ASSERT_TRUE(
-            rabbit-&gt;connect(
+            rabbit<span style="color:#f92672">-&gt;</span>connect(
                 c.this_thing,
                 c.that_key,
-                did_you_think_we_are_done_here ? no : hell_no));
+                did_you_think_we_are_done_here <span style="color:#f92672">?</span> no : hell_no));
 
-        ASSERT_TRUE(rabbit-&gt;wait_for_accept(timeout));
+        ASSERT_TRUE(rabbit<span style="color:#f92672">-&gt;</span>wait_for_accept(timeout));
     }
 
-    ASSERT_EQ(rabbit-&gt;foobar(c.x, c.y), c.result);
+    ASSERT_EQ(rabbit<span style="color:#f92672">-&gt;</span>foobar(c.x, c.y), c.result);
 }
-</code></pre>
-
-<p>Смотрите что получилось. Код инициализации стал сложнее, так так теперь он
+</code></pre></div><p>Смотрите что получилось. Код инициализации стал сложнее, так так теперь он
 поддерживает все варианты инициализации, используемые в тесте. Но его нужно
 прочитать только один раз, чтобы понять что происходит. Далее внимание
 программиста переключается на таблицу с входными данными, которая полностью
 описывает поведение тестируемого кода.</p>
-
 <p>Таблица получается заметно компактнее длинной простыни выше. В идеале она должна
 помещаться на один экран. И поскольку таким способом группируются похожие тесты,
 читать её очень легко.</p>
-
 <p>Что думаете?</p>
   </div>
   <div id="disqus_thread"></div>

@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,33 +113,34 @@
     <a class="label" href="/tags/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8">Ошибки</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
     </span>
     <p>Не так давно попалась в руки одна ошибка. Проявлялась она в том, что некое приложение, общающееся с коллегой через TCP/IP соединение, жаловалось на то, что пересылка пакетов по сети занимает около получаса, и что, вообще, заставлять девушку ждать более 300 миллисекунд – неприлично. Впрочем, судя по тому, что приложение работало как ни в чем не бывало, - замечание про полчаса ожидания было легким преувеличением. Для полноты картины добавлю, что то приложение было в процессе переноса на другую платформу с целью «чиста позапускать» (и посмотреть, как оно там работает).</p>
-
 <p>Кусок кода, выводящий сообщение нашелся быстро. Однако на код, вычисляющий задержку, пришлось  немного помедитировать. Как следует помедитировав отладчиком, удалось выделить алгоритм вычисления задержки, который выглядел примерно вот так:</p>
-
 <ol>
-<li><p>Клиент посылает текущее время вместе с пакетом:</p>
-
-<pre><code class="language-cpp">message-&gt;timestamp = (DWORD)QueryPerformanceCounter();
+<li>Клиент посылает текущее время вместе с пакетом:</li>
+</ol>
+<pre><code>```cpp
+message-&gt;timestamp = (DWORD)QueryPerformanceCounter();
 send(message);
-</code></pre></li>
-
-<li><p>Сервер прибавляет свое время при приеме пакета и отнимает  - при посылке:</p>
-
-<pre><code class="language-cpp">message-&gt;timestamp += (DWORD)QueryPerformanceCounter();
+```
+</code></pre>
+<ol start="2">
+<li>Сервер прибавляет свое время при приеме пакета и отнимает  - при посылке:</li>
+</ol>
+<pre><code>```cpp
+message-&gt;timestamp += (DWORD)QueryPerformanceCounter();
 ...
 message-&gt;timestamp -= (DWORD)QueryPerformanceCounter();
 send(message);
-</code></pre></li>
-
-<li><p>Клиент сравнивает текущее время с полученным в пакете:</p>
-
-<pre><code class="language-cpp">DWORD delta = (DWORD)QueryPerformanceCounter() - message-&gt;timestamp;
-double latency = (double)delta / QueryPerformanceFrequency();
-</code></pre></li>
+```
+</code></pre>
+<ol start="3">
+<li>Клиент сравнивает текущее время с полученным в пакете:</li>
 </ol>
-
+<pre><code>```cpp
+DWORD delta = (DWORD)QueryPerformanceCounter() - message-&gt;timestamp;
+double latency = (double)delta / QueryPerformanceFrequency();
+```
+</code></pre>
 <p>Фактически клиент меряет время, прошедшее между отправкой и приемом пакета, за вычетом времени на обработку пакета сервером. Трюк с использованием младших 4-х байт счетчика хотя и не очень красив, но работает при условии что, один DWORD покрывает интервал заведомо больший, чем максимальная задержка пакета.</p>
-
 <p>Причина ошибки оказалась в том, что частота таймера высокого разрешения оказалась различной на порядки на клиенте и сервере. Допущение, что все машины используют одинаковую частоту таймера высокого разрешения было верным до тех пор, пока приложение не попало в сильно отличное от стандартного окружение.</p>
   </div>
   <div id="disqus_thread"></div>

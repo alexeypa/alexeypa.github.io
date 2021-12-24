@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Windows on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 02 Apr 2014 21:48:25 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 02 Apr 2014 21:48:25 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Возврат меню Пуск</title>
       <link>https://blog.not-a-kernel-guy.com/2014/04/02/1592/</link>
@@ -18,12 +14,10 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2014/04/02/1592/</guid>
       <description>&lt;p&gt;Что за день сегодня! Сначала &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/02/1584/&#34;&gt;NASA учудило&lt;/a&gt;, теперь вот &lt;a href=&#34;http://www.theverge.com/2014/4/2/5574830/windows-9-start-menu-new-desktop-experience&#34;&gt;Microsoft показала сборку Windows 8, в которой есть меню Пуск&lt;/a&gt;:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;At its Build conference today, Microsoft announced a new Start Menu that looks like a hybrid of the best of Windows 7 and Windows 8. It&amp;rsquo;s around the same size as the Windows 7 menu, but also features miniature Live Tiles along one side.&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0-300x199.jpg&#34; alt=&#34;Windows 8 and Start Menu&#34; /&gt;&lt;/a&gt; Windows 8 and Start Menu&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0-300x199.jpg&#34; alt=&#34;Windows 8 and Start Menu&#34;&gt;&lt;/a&gt; Windows 8 and Start Menu&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -33,13 +27,10 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2013/01/09/1456/</guid>
       <description>&lt;p&gt;Краткое содержание &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2012/12/04/1437/&#34;&gt;первой части&lt;/a&gt;:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Не получается продолжить выполнение кода после того, как было сгенерировано исключение STATUS_INVALID_HANDLE - почему-то портится сохраненный контекст процессора. В частности, не сохраняются non-volatile регистры esi и edi.&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;Некто Indy засомневался в том, что происходит именно это. Следует сказать, что засомневался он не без оснований. На самом деле, способы возбудить исключение пользовательского режима из кода в ядре можно пересчитать по пальцам одной руки и все они формируют конекст процессора одинаково. Получается, что если бы регистры не сохранялись, то не работали бы все исключения, а не избирательно STATUS_INVALID_HANDLE.&lt;/p&gt;
-
 &lt;p&gt;Покопавшись в отладчике я понял в чем дело.&lt;/p&gt;</description>
     </item>
     
@@ -50,10 +41,10 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2012/06/24/1362/</guid>
       <description>Интересно, что существует около десятка способов сделать копию экрана в Windows. Программно, без привлечения нестандартного оборудования или сторонних библиотек. Статья “Screen recording with WDDM 1.2” описывает наиболее часто используемые:
- GDI: GetDC(NULL), а затем BitBlt(), чтобы скопировать данные из видеопамяти в системную.
- Direct3D: метод IDirect3DDevice9::GetFrontBufferData() позволяет скопировать содержимое видеопамяти в системный буфер.
- Mirror Display Driver: позволяет напрямую перехватывать команды отрисовки.
- OpenGL: дает прямой доступ к отображаемому буферу в видеопамяти.</description>
+  GDI: GetDC(NULL), а затем BitBlt(), чтобы скопировать данные из видеопамяти в системную.
+  Direct3D: метод IDirect3DDevice9::GetFrontBufferData() позволяет скопировать содержимое видеопамяти в системный буфер.
+  Mirror Display Driver: позволяет напрямую перехватывать команды отрисовки.
+  OpenGL: дает прямой доступ к отображаемому буферу в видеопамяти.</description>
     </item>
     
     <item>
@@ -76,7 +67,7 @@
       <guid>https://blog.not-a-kernel-guy.com/2011/07/24/1132/</guid>
       <description>Вопрос из почты:
  The question is really simple: could we use RtlCaptureContext on X86? The MSDN (http://msdn.microsoft.com/en-us/library/ms680659(v=VS.85).aspx) says it’s only for 64 but the bug is for X86 and I see some kernel code are using it on x86.
-Вопрос на самом деле очень прост: можем ли мы использовать функцию RtlCaptureContext на x86? MSDN говорит, что эта функция только для 64-х бит но баг-репорт (имеется ввиду баг-репорт, ранее упомянутый в письме) воспроизводится для x86 и я вижу, что код в ядре использует эту функцию на x86.</description>
+  Вопрос на самом деле очень прост: можем ли мы использовать функцию RtlCaptureContext на x86? MSDN говорит, что эта функция только для 64-х бит но баг-репорт (имеется ввиду баг-репорт, ранее упомянутый в письме) воспроизводится для x86 и я вижу, что код в ядре использует эту функцию на x86.</description>
     </item>
     
     <item>
@@ -106,12 +97,13 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2011/06/08/1088/</guid>
       <description>&lt;p&gt;Пришло письмо с вопросом:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Обнаружилась следующая проблема:&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Наша программа сохраняет и считывает последнюю открытую ею директорию в разделе реестра, где сохраняют последние посещенные ими директории и другие программы, а именно в ветке «HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU». Это в 32-х разрядной версии. Но оказывается, что в 64-х разрядной версии данной ветки реестра в узле HKCU не существует, а она находится в «HKEY_USERS&amp;lt;некий идентификатор пользователя&amp;gt;\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU».&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Так вот вопрос: как мне программно доступиться к этой ветке, если идентификатор пользователя неизвестен? Или, может, есть способ узнать этот идентификатор каким-то образом? А может где-то есть в реестре зеркало этой ветки, к которой можно получить доступ более простым способом?&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
@@ -132,7 +124,6 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2011/02/06/972/</guid>
       <description>&lt;p&gt;На работе понадобилось написать драйвер для сетевой карты. Я этого раньше никогда не делал и вообще с &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms817945.aspx&#34;&gt;NDIS&lt;/a&gt; дела не имел. А тут такая возможность! Делюсь впечатлениями.&lt;/p&gt;
-
 &lt;p&gt;В общем и целом NDIS мне понравился. Интерфейсы довольно логичны, хотя и многочисленны. Взаимосвязь между разными компонентами в большинстве случаев после недолгой медитации становится довольно очевидной. Все структуры снабжены заголовком с сигнатурой, версией и размером, что, помимо заботы об обратной совместимости, означает меньше проблем с отладкой. При необходимости нужную структуру можно просто найти в памяти.&lt;/p&gt;</description>
     </item>
     
@@ -161,8 +152,8 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2010/04/05/804/</guid>
       <description>Ну что сказать. Сложные и совершенные Itanium&amp;rsquo;ы проиграли битву маленьким и примитивным x86:
- Microsoft прекращает поддержку процессоров Intel Itanium в своих продуктах.
- Microsoft ending support for Itanium
+  Microsoft прекращает поддержку процессоров Intel Itanium в своих продуктах.
+  Microsoft ending support for Itanium
   </description>
     </item>
     
@@ -173,8 +164,7 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2010/01/10/753/</guid>
       <description>&lt;p&gt;Довольно интересно сравнить, как устроена консоль в Windows и Unix. Вот упрощенная схема как это работает в Unix:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2010/01/unix_console.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2010/01/unix_console.png&#34; alt=&#34;Консоль в Unix&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2010/01/unix_console.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2010/01/unix_console.png&#34; alt=&#34;Консоль в Unix&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -184,17 +174,14 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2009/12/29/726/</guid>
       <description>&lt;p&gt;Представьте, что где-то в коде есть такой кусок:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;BOOL Res =
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;BOOL Res &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
     ReadConsole(
         GetStdHandle(STD_INPUT_HANDLE),
         Buffer,
-        sizeof(Buffer),
-        &amp;amp;ReadChars,
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(Buffer),
+        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;ReadChars,
         NULL);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Теперь, скажем, нам в какой-то момент нужно корректно прервать вызов &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms684958%28VS.85%29.aspx&#34;&gt;ReadConsole()&lt;/a&gt; (из другого потока). Как это сделать?&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Теперь, скажем, нам в какой-то момент нужно корректно прервать вызов &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms684958%28VS.85%29.aspx&#34;&gt;ReadConsole()&lt;/a&gt; (из другого потока). Как это сделать?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -222,15 +209,19 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2009/06/09/571/</guid>
       <description>&lt;p&gt;Наконец-то обновилась документация в MSDN. Теперь можно спокойно рассказать, что изменилось в Wow64 с выходом Windows 7.&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Был полностью переписан &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;механизм перенаправления реестра (Registry &lt;em&gt;Redirection&lt;/em&gt;)&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Была изменена структура реестра. Многие ключи, перенаправляемые ранее в Wow6432Node, теперь совместно используются 32-х и 64-х разрядными приложениями.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384235(VS.85).aspx&#34;&gt;Механизм синхронизации 32-х и 64-х ключей (Registry &lt;em&gt;Reflection&lt;/em&gt;)&lt;/a&gt; был с корнем выкорчеван и с позором изгнан из кода Windows. :-)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;В документацию&lt;/a&gt; было внесено множество дополнений и исправлений.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Был полностью переписан &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;механизм перенаправления реестра (Registry &lt;em&gt;Redirection&lt;/em&gt;)&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Была изменена структура реестра. Многие ключи, перенаправляемые ранее в Wow6432Node, теперь совместно используются 32-х и 64-х разрядными приложениями.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384235(VS.85).aspx&#34;&gt;Механизм синхронизации 32-х и 64-х ключей (Registry &lt;em&gt;Reflection&lt;/em&gt;)&lt;/a&gt; был с корнем выкорчеван и с позором изгнан из кода Windows. :-)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;В документацию&lt;/a&gt; было внесено множество дополнений и исправлений.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;</description>
     </item>
     
@@ -240,7 +231,7 @@
       <pubDate>Fri, 22 May 2009 23:51:35 -0700</pubDate>
       
       <guid>https://blog.not-a-kernel-guy.com/2009/05/22/532/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2009/05/mall_fortunecrystalball.gif&#34; alt=&#34;mall_fortunecrystalball&#34; /&gt;При определённой сноровке, можно отлаживать код прямо из любимого почтового клиента. На днях пришло письмо с вопросом. Некоторое приложение, будучи установленным в каталог отличный от “Program Files”, при запуске вызывало появление окна &lt;a href=&#34;http://en.wikipedia.org/wiki/User_Account_Control&#34;&gt;UAC&lt;/a&gt; с требованием повысить привилегии. Приложение работало нормально, в случае, если оно было установлено в “Program Files”. Как такое может быть?&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2009/05/mall_fortunecrystalball.gif&#34; alt=&#34;mall_fortunecrystalball&#34;&gt;При определённой сноровке, можно отлаживать код прямо из любимого почтового клиента. На днях пришло письмо с вопросом. Некоторое приложение, будучи установленным в каталог отличный от “Program Files”, при запуске вызывало появление окна &lt;a href=&#34;http://en.wikipedia.org/wiki/User_Account_Control&#34;&gt;UAC&lt;/a&gt; с требованием повысить привилегии. Приложение работало нормально, в случае, если оно было установлено в “Program Files”. Как такое может быть?&lt;/p&gt;</description>
     </item>
     
     <item>

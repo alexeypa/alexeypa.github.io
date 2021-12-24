@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Boost.build on Алексей Пахунов</title>
+    <title>Boost.Build on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/boost.build/</link>
-    <description>Recent content in Boost.build on Алексей Пахунов</description>
+    <description>Recent content in Boost.Build on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 09 Mar 2009 13:22:01 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/boost.build/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 09 Mar 2009 13:22:01 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/boost.build/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>.NET toolset для Boost Build V2</title>
       <link>https://blog.not-a-kernel-guy.com/2009/03/09/469/</link>
@@ -18,9 +14,8 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2009/03/09/469/</guid>
       <description>&lt;p&gt;Специально для любителей &lt;a href=&#34;http://www.boost.org/doc/tools/build/index.html&#34;&gt;Boost.Build V2&lt;/a&gt; – написал &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2009/03/dotnet.jam&#34;&gt;toolset&lt;/a&gt;, добавляющий поддержку C# и VB.NET компиляторов из .NET Framework. Toolset автоматически распознает все установленные версии .NET Framework:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-no-highlight&#34;&gt;using dotnet : all ;
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-no-highlight&#34; data-lang=&#34;no-highlight&#34;&gt;using dotnet : all ;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -32,7 +27,6 @@
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/06/11/197/&#34;&gt;В таком виде генератор уже пригоден к использованию, однако его можно сделать ещё лучше. Как - читайте в следующей части.&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;Если сравнить исходный код нашего генератора с реализацией генератора объектных файлов в “boost/tools/build/v2/tools/msvc.jam” можно обнаружить несколько отличий:&lt;/p&gt;</description>
     </item>
     

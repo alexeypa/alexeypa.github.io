@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,13 +113,9 @@
     <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/win32">Win32</a><a class="label" href="/tags/wow64">Wow64</a>
     </span>
     <p>Вопрос:</p>
-
 <p>32-х битный процесс запущен на 64-х битной системе. Почему для некоторых библиотек GetModuleFileName возвращает путь вида &ldquo;%SystemRoot%\syswow64&rdquo;, а для других - &ldquo;%SystemRoot%\system32&rdquo;, не смотря на то, что и первые, и вторые находятся в &ldquo;%SystemRoot%\syswow64&rdquo;?</p>
-
 <p>Ответ:</p>
-
 <p>Потому что загрузчик понятия не имеет о Wow64 и перенаправлении файловой системы в частности. Загрузчик просто сохраняет полное имя модуля во время загрузки и возвращает его копию в GetModuleFileName. Соответственно если библиотека была загружена как &ldquo;%SystemRoot%\system32\foobar.dll&rdquo;, то и GetModuleFileName вернёт эту строку.</p>
-
 <p>Это же верно и для других Win32 функций.</p>
 
   </div>

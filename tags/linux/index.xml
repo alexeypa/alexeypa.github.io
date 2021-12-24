@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Linux on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 18 Jul 2021 19:56:02 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 18 Jul 2021 19:56:02 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Загрузка кода в чужой процесс на Linux</title>
       <link>https://blog.not-a-kernel-guy.com/2021/07/18/lx_preload/</link>
@@ -35,8 +31,8 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2011/10/22/1204/</guid>
       <description>Две истории про переход Windows программистов на Linux и обратно:
- I sincerely tried, but I still hate Linux
- Why I’ve finally had it with my Linux server and I’m moving back to Windows
+  I sincerely tried, but I still hate Linux
+  Why I’ve finally had it with my Linux server and I’m moving back to Windows
   Вторая особенно хороша - David Gewirtz там выпускает пар. Хотя пара разумных соображений в статье тоже есть.
  I talked with my ISP today. They told me that when they came in this morning, the server monitor was spewing an incredible number of error messages, and — in their words — it was erroring worse than they’ve ever seen.</description>
     </item>

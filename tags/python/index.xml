@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Python on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 20 Nov 2018 22:36:35 -0800</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 20 Nov 2018 22:36:35 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Волшебство Питона</title>
       <link>https://blog.not-a-kernel-guy.com/2018/11/20/python-magic/</link>
@@ -23,95 +19,74 @@
 водой своевременно. Когда проект разрастается, то красивый и уютный песчанный
 замок превращается в минное поле. Отрефакторил подвал - крыша отвалилась.
 Поправил крышу - окна слиплись в один комок.&lt;/p&gt;
-
 &lt;p&gt;Непонятно как все это счастье держать в одной куче. Неужели все живут за счет
 100% покрытия тестами? Не верю. Или все на PyCharm сидят?&lt;/p&gt;
-
 &lt;p&gt;Расскажу про очередной прикол Питона. Итак есть простой код:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;init&lt;/span&gt;(factories):
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;Convert a list of factorie into a list of objects.&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt; 
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; [factory() &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; factory &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; factories]
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def init(factories):
-    &amp;quot;&amp;quot;&amp;quot;Convert a list of factorie into a list of objects.&amp;quot;&amp;quot;&amp;quot; 
-    return [factory() for factory in factories]
-
-def cleanup(objects):
-    &amp;quot;&amp;quot;&amp;quot;Clean up objects in the reversed order of their creation.&amp;quot;&amp;quot;&amp;quot;
-    for obj in reversed(objects):
-        obj.cleanup()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;init()&lt;/code&gt; берет список фабрик и отдает список объектов, созданных фабриками.
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cleanup&lt;/span&gt;(objects):
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;Clean up objects in the reversed order of their creation.&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; obj &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; reversed(objects):
+        obj&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;cleanup()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;init()&lt;/code&gt; берет список фабрик и отдает список объектов, созданных фабриками.
 &lt;code&gt;cleanup()&lt;/code&gt; чистит созданные объекты в порядке, противоположном порядку
 создания. Нам требуется написать тест, который проверяет, что методы &lt;code&gt;cleanup()&lt;/code&gt;
 вызываются в правильном порядке:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; itertools &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; permutations
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; mock
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from itertools import permutations
-import mock
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_cleanup&lt;/span&gt;():
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;Verify cleanup() order.&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# Try all permitations of initialization order. &lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; init_order &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; permutations(range(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;)):
+        cleanup_order &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
 
-def test_cleanup():
-    &amp;quot;&amp;quot;&amp;quot;Verify cleanup() order.&amp;quot;&amp;quot;&amp;quot;
-    # Try all permitations of initialization order. 
-    for init_order in permutations(range(3)):
-        cleanup_order = []
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;factory&lt;/span&gt;(index):
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cleanup&lt;/span&gt;():
+                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;Record the clean up order.&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+                cleanup_order&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(index)
 
-        def factory(index):
-            def cleanup():
-                &amp;quot;&amp;quot;&amp;quot;Record the clean up order.&amp;quot;&amp;quot;&amp;quot;
-                cleanup_order.append(index)
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;create&lt;/span&gt;():
+                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;Return a mock implementing cleanup().&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+                obj &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mock&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Mock
+                obj&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;cleanup &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mock&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Mock(side_effect&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cleanup)
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; obj
 
-            def create():
-                &amp;quot;&amp;quot;&amp;quot;Return a mock implementing cleanup().&amp;quot;&amp;quot;&amp;quot;
-                obj = mock.Mock
-                obj.cleanup = mock.Mock(side_effect=cleanup)
-                return obj
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; create
 
-            return create
-
-        # Create objects in the desired order.
-        objects = init([factory(index) for index in init_order])
+        &lt;span style=&#34;color:#75715e&#34;&gt;# Create objects in the desired order.&lt;/span&gt;
+        objects &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; init([factory(index) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; index &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; init_order])
 
         cleanup(objects)
 
-        # Verify that the object were cleaned up in the reveresed
-        # order of their creation.
-        assert cleanup_order == list(reversed(init_order))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Разберу логику по кускам. Тест перебирает все возможные кобинации порядка
+        &lt;span style=&#34;color:#75715e&#34;&gt;# Verify that the object were cleaned up in the reveresed&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;# order of their creation.&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; cleanup_order &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; list(reversed(init_order))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Разберу логику по кускам. Тест перебирает все возможные кобинации порядка
 создания объектов:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for init_order in permutations(range(3)):
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Декоратор &lt;code&gt;factory()&lt;/code&gt; возвращает фабрику &lt;code&gt;create()&lt;/code&gt;, которая в свою учередь
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; init_order &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; permutations(range(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;)):
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Декоратор &lt;code&gt;factory()&lt;/code&gt; возвращает фабрику &lt;code&gt;create()&lt;/code&gt;, которая в свою учередь
 создает объект с методом &lt;code&gt;cleanup()&lt;/code&gt;. Для создания объекта на коленке
 используется &lt;a href=&#34;https://docs.python.org/3/library/unittest.mock.html&#34;&gt;&lt;code&gt;Mock&lt;/code&gt;&lt;/a&gt;. Релизация &lt;code&gt;cleanup()&lt;/code&gt; запоминает порядок вызова в
 &lt;code&gt;cleanup_order&lt;/code&gt;.&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;init()&lt;/code&gt; создает объекты в заданном порядке, &lt;code&gt;cleanup()&lt;/code&gt; - чистит:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;objects = init([factory(index) for index in init_order])
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;objects &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; init([factory(index) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; index &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; init_order])
 
 cleanup(objects)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Наконец, в самом конце мы проверяем, что порядок очистки противоположен порядку
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Наконец, в самом конце мы проверяем, что порядок очистки противоположен порядку
 создания:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;assert cleanup_order == list(reversed(init_order))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Все просто, не так ли? Запускаем тест и получаем облом:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;               assert cleanup_order == list(reversed(init_order))
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; cleanup_order &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; list(reversed(init_order))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Все просто, не так ли? Запускаем тест и получаем облом:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;gt;               assert cleanup_order == list(reversed(init_order))
 E     assert [2, 2, 2] == [2, 1, 0]
 E       At index 1 diff: 2 != 1
 E       Use -v to get the full diff
 
 
 rabbit_test.py:41: AssertionError 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Заядлые питонщики давно раскусили, в чем проблема. А вы сможете найти ошибку не
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Заядлые питонщики давно раскусили, в чем проблема. А вы сможете найти ошибку не
 заглядывая в ответ?&lt;/p&gt;</description>
     </item>
     
@@ -125,19 +100,15 @@ rabbit_test.py:41: AssertionError
 поломаться из-за внешних причин. Например, &lt;a href=&#34;https://docs.python.org/3.7/library/socket.html#socket.socket.connect&#34;&gt;&lt;code&gt;socket.connect()&lt;/code&gt;&lt;/a&gt; может
 закончится ошибкой из-за непредвиденной ситуации в сети. Заворачиваем вызов в
 &lt;code&gt;@retry&lt;/code&gt; и бац! Все работает.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;@retry
-def create_connection(address):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    return socket.connect(address)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Однако бездумное применение &lt;code&gt;@retry&lt;/code&gt;, как нетрудно догадаться, приводит
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@retry&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;create_connection&lt;/span&gt;(address):
+    s &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; socket&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;socket(socket&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;AF_INET, socket&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;SOCK_STREAM)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; socket&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;connect(address)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Однако бездумное применение &lt;code&gt;@retry&lt;/code&gt;, как нетрудно догадаться, приводит
 проблемам. Самый известный пример - вложенные &lt;code&gt;@retry&lt;/code&gt;.
 &lt;code&gt;@retry(stop_max_attempt_number=3)&lt;/code&gt; вложенный в другой
 &lt;code&gt;@retry(stop_max_attempt_number=3)&lt;/code&gt; дает 9 повторов. Три уровня вложенности -
 27 повторов.&lt;/p&gt;
-
 &lt;p&gt;Один раз использование &lt;code&gt;@retry&lt;/code&gt; привело к тому, что IT заблокировало мою учетную
 запись. Банальная история - был некий скрипт, который при запуске спрашивал
 логин и пароль для авторизации. В один прекрасный день некто (не будем
@@ -146,7 +117,6 @@ def create_connection(address):
 авторизации приводила к повторному запросу с тем же неправильным именем и
 паролем. После определенного числа попыток контроллер домена решил, что кто-то
 пытается подобрать пароль к учетной записи и заблокировал её.&lt;/p&gt;
-
 &lt;p&gt;Мораль истории - знайте свои ошибки в лицо и используйте параметр
 &lt;code&gt;retry_on_exception&lt;/code&gt;.&lt;/p&gt;</description>
     </item>

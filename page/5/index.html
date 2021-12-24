@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.54.0" />
+	<meta name="generator" content="Hugo 0.90.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -100,6 +100,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -116,9 +117,7 @@
 
   <li class="active">
     <span class="fa-lg">
-      <a href="/post/">
-        Архив
-      </a>
+      <a href="/post/">Архив</a>
     <span>
   </li>
 
@@ -132,6 +131,65 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2018/08/01/table-driven-unit-tests/">Табличные юнит тесты</a>
+      </h1>
+      <span class="post-date">Aug 1, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/08/01/table-driven-unit-tests/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Тестирование</a><a class="label" href="/tags/%D1%8E%D0%BD%D0%B8%D1%82-%D1%82%D0%B5%D1%81%D1%82%D1%8B">Юнит тесты</a>
+      </span>
+      
+      <p>Расскажу об одной технике, которая, как мне кажется, позволяет писать более
+понятные и читаемые юнит тесты. Начну немного издалека. Допустим мы хотим
+убедится, что определенный кусок кода работает правильно. Если бы мы имели дело
+с игрушечным примером, то это наш тест мог бы Примерно вот так:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">foobar</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)
+{
+    <span style="color:#66d9ef">return</span> (x <span style="color:#f92672">+</span> y) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> ((x <span style="color:#f92672">+</span> y) <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">ASSERT_FALSE(foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>));
+ASSERT_FALSE(foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>));
+ASSERT_FALSE(foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>));
+ASSERT_TRUE (foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>));
+ASSERT_FALSE(foobar(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>));
+ASSERT_FALSE(foobar(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>));
+ASSERT_TRUE (foobar(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>));
+ASSERT_FALSE(foobar(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>));
+ASSERT_TRUE (foobar(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>));
+ASSERT_FALSE(foobar(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>));
+...
+</code></pre></div><p>Такой тест достаточно легко читать. Достаточно понять конструкцию
+<code>ASSERT_XXX(foobar(...))</code> после чего глаза сами фокусируются на входных
+значениях, автоматически отсеивая ненужный синтаксический мусор.</p>
+<p>Однако, если взять реальный код, то подобный пример превратиться в гораздо менее
+удобочитаемого монстра:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#f92672">::</span>unique_ptr<span style="color:#f92672">&lt;</span>Foobar<span style="color:#f92672">&gt;</span> rabbit <span style="color:#f92672">=</span>
+    create_foobar_with_abc(parent,
+        some_context,
+        more_stuff <span style="color:#f92672">+</span> that <span style="color:#f92672">+</span> is_required <span style="color:#f92672">+</span> to_create_foobar,
+        a,
+        b,
+        mock_c(),
+        logger);
+
+ASSERT_TRUE(
+    rabbit<span style="color:#f92672">-&gt;</span>connect(
+        this_thing,
+        that_key,
+        did_you_think_we_are_done_here <span style="color:#f92672">?</span> no : hell_no));
+
+ASSERT_TRUE(rabbit<span style="color:#f92672">-&gt;</span>wait_for_accept(timeout));
+
+ASSERT_FALSE(rabbit<span style="color:#f92672">-&gt;</span>foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>));
+</code></pre></div><p>&hellip; и так далее для каждого тест кейса. Подобный код легко превращается в
+длинную простыню однообразного текста с незаметными, но важными вариациями во
+входных данных или параметрах инициализации.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2018/08/01/table-driven-unit-tests/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2018/07/30/sky-triage/">Что это за хрень в небе была?</a>
       </h1>
       <span class="post-date">Jul 30, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/07/30/sky-triage/#disqus_thread">Comments</a>
@@ -142,14 +200,10 @@
       
       <p>О! Отличная, годная блок-схема, дающая ответ на вопрос &ldquo;Что это за хрень в небе
 была?&rdquo; в девяноста случаях из ста (по клику открывается более крупный вариант):</p>
-
-<p><a href="/2018/07/what_was_that_thing_in_the_sky.png"><img src="/2018/07/what_was_that_thing_in_the_sky_small.png" alt="" /></a></p>
-
+<p><a href="/2018/07/what_was_that_thing_in_the_sky.png"><img src="/2018/07/what_was_that_thing_in_the_sky_small.png" alt=""></a></p>
 <p>Картинка - перевод <a href="https://www.reddit.com/r/Astronomy/comments/92zks3/what_was_that_thing_in_the_sky_official_thread/">оригинала</a>.</p>
-
 <p>От себя могу добавить, что ветку с планетой можно уточнить. В трех четвертях
 случаев там будет Венера, а еще в 24% случаев - Юпитер.</p>
-
 <p>Пассаж про сверхновую тоже хорош. Бетельгейзе, мы ждем. :-)</p>
       <a href="https://blog.not-a-kernel-guy.com/2018/07/30/sky-triage/">Read On &rarr;</a>
       
@@ -167,16 +221,13 @@
       
       <p><a href="https://en.wikipedia.org/wiki/Danish_National_Symphony_Orchestra">Датский национальный симфонический оркестр</a> отжигает:</p>
 
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/enuOArEfqGo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/enuOArEfqGo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
-
 
 <p>Хочу особенно обратить внимание на то, как красиво это выступление снято - прямо
 целая история рассказана. Столько интересных мелочей. У &ldquo;wah, wah, wah&rdquo;
 солистки - сережки-револьверы. :-)</p>
-
 <p>Если понравилось, то там целый <a href="https://www.youtube.com/playlist?index=1&amp;playnext=1&amp;list=PLysPxrQwj2YdDTZusQ77kLaprOpWQh-Bg">плейлист</a> есть.</p>
       <a href="https://blog.not-a-kernel-guy.com/2018/07/29/good-bad-ugly/">Read On &rarr;</a>
       
@@ -193,8 +244,7 @@
       </span>
       
       <p>Юпитер вместе со своим кольцом в инфракрасном свете:</p>
-
-<p><a href="https://apod.nasa.gov/apod/ap970205.html"><img src="/2018/07/jupiter-in-infrared.gif" alt="" /></a></p>
+<p><a href="https://apod.nasa.gov/apod/ap970205.html"><img src="/2018/07/jupiter-in-infrared.gif" alt=""></a></p>
       <a href="https://blog.not-a-kernel-guy.com/2018/07/23/jupiter-in-infrared/">Read On &rarr;</a>
       
     </div>
@@ -211,14 +261,12 @@
       
       <p>А вот вы знали, что обыкновенное ирландское имя Siobhán произносится &ldquo;шивон&rdquo;
 /ʃɪˈvɔːn/? А Tadgh произносится как &ldquo;тайг&rdquo; /taɪɡ/? Вот и я недавно узнал.</p>
-
 <p>Я покопался немного в сети и у меня получился следующий список. Русская
 транскрипция составлена по принципу &ldquo;Рабинович по телефону напел&rdquo; - все нюансы
 (ударение, звуки, которые невозможно изобразить кириллицей, длина и
 тональность) - полностью потеряны. Фонетическая транскрипция (если указана)
 скопирована из Википедии. В квадратных скобках указана <a href="https://en.wikipedia.org/wiki/Help:IPA/Irish">ирландская
 транскрипция</a>, в косых - <a href="https://en.wikipedia.org/wiki/Help:IPA/English">английская</a>.</p>
-
 <ul>
 <li>Ailbhe - &ldquo;элвиа&rdquo; [ˈalʲvʲə]</li>
 <li>Aisling - &ldquo;ашлин&rdquo; [ˈaʃlʲɪŋ]</li>
@@ -243,22 +291,19 @@
 <li>Sinéad - &ldquo;шинэйд&rdquo; /ʃɪˈneɪd/</li>
 <li>Áine - &ldquo;ааню&rdquo; [ˈaːnʲə]</li>
 </ul>
-
 <p>В качестве бонуса - небольшая шутка, объясняющая особенности произношения:</p>
-
 <blockquote>
 <p>After centuries of English occupation, we had to become inventive in how we
 pissed them off. Coming up with unpronounceable names was a great way to see
 the English make twits out of themselves and us to have a laugh at them</p>
-
+</blockquote>
+<blockquote>
 <p>После веков английской оккупации, мы просто должны были стать мастерами
 выведения их [англичан] из себя. Использование непроизносимых имен было
 отличным способом выставить англичан дураками и дать нам возможность
 посмеяться над ними.</p>
 </blockquote>
-
 <p>:-)</p>
-
 <p>P.S. На самом деле - ирландский язык происходит из другой языковой группы.</p>
       <a href="https://blog.not-a-kernel-guy.com/2018/07/22/irish-names/">Read On &rarr;</a>
       
@@ -277,9 +322,8 @@ the English make twits out of themselves and us to have a laugh at them</p>
       <p>До чего техника дошла! Кто-то снял мистера Стивена с новой сеткой для ловли
 обтекателя на видео:</p>
 
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/VlCO7gBXWNA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/VlCO7gBXWNA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
       
       
@@ -298,22 +342,18 @@ the English make twits out of themselves and us to have a laugh at them</p>
       <p>В комментариях к предыдущей <a href="/2018/07/09/nuclear-power/">заметке про ядерную энергетику</a> было высказано махровое
 недоверие цифре в 1.8 миллионов жизней, которые использование ядерной энергии
 позволило сохранить. Давайте разберемся откуда взялась эта цифра.</p>
-
 <p>Вообще говоря, до начала поисков я предполагал, что придется перелопатить кучу
 страниц, отсеивая желтую прессу, прежде чем найдется достоверный источник
 информации. Но нет же, первый же запрос выдал <a href="https://blogs.scientificamerican.com/the-curious-wavefunction/nuclear-power-may-have-saved-1-8-million-lives-otherwise-lost-to-fossil-fuels-may-save-up-to-7-million-more/">статью</a>, ссылающуюся на
 <a href="https://pubs.acs.org/doi/abs/10.1021/es3051197?source=cen">оригинальное исследование NASA Goddard Institute for Space Studies и Columbia
 University Earth Institute</a>.</p>
-
-<p><img src="/2018/07/prevented_deaths.jpg" alt="" /></p>
-
+<p><img src="/2018/07/prevented_deaths.jpg" alt=""></p>
 <p>О чем же говорит это исследование? Количество предотвращенных смертей в период
 с 1971 по 2009 год оценивается в 1.84 миллиона. За год в период с 2000 по 2009
 год предотвращается в среднем 76 тысяч смертей. Для сравнения в Германии,
 которая обязалась отказаться от ядерной энергии до 2022 года, использование
 ядерной энергии предотвратило около 117 тысяч смертей в период с 1971 по 2009
 год (диапазон оценки - от 29 до 470 тысяч).</p>
-
 <p>Сколько жизней было потеряно в следствие использования атомной энергетики?
 В мире за период с 1971 по 2009 годы авторы исследования насчитали 4900 смертей.
 Причем авторы отмечают (и подтверждают ссылками на работы других
@@ -321,9 +361,7 @@ University Earth Institute</a>.</p>
 тенденцию значительно завышать результат в случае аварий с малой интенсивностью
 радиоактивного фона (все аварии кроме Чернобыля, включая Фукусиму и аварию на
 Трехмильном острове). Оценка в 4900 смертей может быть завышена на два порядка.</p>
-
-<p><img src="/2018/07/mortality_rate_per_twt.jpg" alt="" /></p>
-
+<p><img src="/2018/07/mortality_rate_per_twt.jpg" alt=""></p>
 <p>В общем я не знаю, как с такими цифрами можно ратовать против атомной
 энергетики. Разница в 370 раз - это как бы over дофига.</p>
       <a href="https://blog.not-a-kernel-guy.com/2018/07/13/1.8-million/">Read On &rarr;</a>
@@ -343,9 +381,7 @@ University Earth Institute</a>.</p>
       <p>Сегодня наконец получил эмблему посвященную запуску Falcon Heavy Demo. Эмблема
 раза в полтора больше, чем обычно. В неё вплетены нити, слетавшие на одном из
 боковых бустеров:</p>
-
-<p><img src="/2018/07/fh_demo-patch.jpg" alt="" /></p>
-
+<p><img src="/2018/07/fh_demo-patch.jpg" alt=""></p>
 <p>\m/</p>
       
       
@@ -366,14 +402,11 @@ University Earth Institute</a>.</p>
 энергетики, объясняет почему ядерная энергия чище, чем энергия ветра и
 Солнца.</p>
 
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/ciStnd9Y2ak" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/ciStnd9Y2ak" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <p>Несколько цифр:</p>
-
 <ul>
 <li>На каждый киловатт энергии добытой с помощью солнечных панелей в атмосферу
 выбрасывается в 4 раза больше углекислого газа, чем на киловатт добытый на
@@ -387,7 +420,6 @@ University Earth Institute</a>.</p>
 снижения загрязнения окружающей среды). Сжигание угля, кстати, приводит к
 <a href="https://www.scientificamerican.com/article/coal-ash-is-more-radioactive-than-nuclear-waste/">большему количеству радиоактивных выбросов</a>, чем атомная энергетика.</li>
 </ul>
-
 <p>Ну и знаменитое - один съеденный банан дает <a href="https://xkcd.com/radiation/">большую дозу излучения</a>, чем
 проживание в 50 милях от атомной станции. Проживание на том же расстоянии от
 угольной электростанции дает дозу в <em>три</em> съеденных банана.</p>
@@ -407,53 +439,24 @@ University Earth Institute</a>.</p>
       
       <p>Расскажу как я провел прошлую пятницу. Провел я её пытаясь понять, почему
 простой как доска тест-кейс не работает.</p>
-
 <p>Тест-кейс запускает код в среде, которая симулирует полетное окружение: среду
 выполнения, показания датчиков и т.д. Далее выполняется простой сценарий -
 тест-кейс получает телеметрию и выполняет действия/проверки по наступлению
 определенных событий. Например, тест-кейс может запустить ракету, выключить
 четвертый двигатель, когда высота превысит сотню метров, а затем проверить, что
 код корректно обработал нештатную ситуацию.</p>
-
 <p>Такие тест-кейсы, естественно, не пишутся с нуля. Кейс набирается из уже
 готовых, давно написанных блоков. Что может быть очень простым делом (если есть
 готовый шаблон), или не очень простым (когда такой шаблон нужно создать самому).
 В этот раз случился как раз второй вариант. Когда все компоненты теста правильно
 соединены остается только написать код, который ждет наступления интересных
 событий и реагирует на них нужным образом.</p>
-
 <p>К пятнице я добрался до момента, когда сценарий тест-кейса уже написан, но еще
 не работает. Сценарий вылетал по таймауту ожидая наступления одного из событий.
 При этом телеметрия четко показывала, что событие наступило и у теста был вагон
 времени, чтобы это заметить. Интересно, что точно такой же код, отслеживающий
 другую телеметрию работал как часы. Хм.</p>
       <a href="https://blog.not-a-kernel-guy.com/2018/07/07/sneaky-comma/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2018/05/22/skyrora/">Skyrora</a>
-      </h1>
-      <span class="post-date">May 22, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/05/22/skyrora/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81">Космос</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
-      </span>
-      
-      <p>Ха. Прислал письмо рекрутер из британско-украинского ракетного стартапа
-<a href="https://www.skyrora.com/">Skyrora</a>. Насколько я понимаю - деньги британские, а спецы южмашевские. Судя
-по сайту - вполне себе приличный ракетный стартап. Первая суборбитальная версия
-ракеты в разработке; вторая, орбитальная, в планах. Больше про компанию ничего
-не знаю, но все равно приятно, что в Украине есть такие стартапы. Было бы
-здорово, если бы у них получилось завоевать свое место под солнцем.</p>
-
-<p><img src="/2018/05/skyrora-1.jpg" alt="" /></p>
-
-<p>Рекрутер попросил пропиарить позицию <a href="https://www.signalhire.com/jobs/skyrora/software-architect-c-developer/djo5MTk4O2M6MjI3NDA1O3I6MzQ2O3JmOjE=">Software Architect/C++ Developer</a>,
-который будет заниматься системой управления ракеты-носителя. Позиция открыта в
-Днепре. Есть желающие дерзнуть? :-)</p>
-      <a href="https://blog.not-a-kernel-guy.com/2018/05/22/skyrora/">Read On &rarr;</a>
       
     </div>
     
@@ -466,9 +469,7 @@ University Earth Institute</a>.</p>
 
   <li class="active">
     <span class="fa-lg">
-      <a href="/post/">
-        Архив
-      </a>
+      <a href="/post/">Архив</a>
     <span>
   </li>
 

@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,25 +113,17 @@
     <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/sdk">SDK</a><a class="label" href="/tags/visual-studio">Visual Studio</a>
     </span>
     <p>Начну издалека. Мой любимый редактор кода на данный момент - <a href="http://www.sublimetext.com/2">Sublime Text 2</a>. До него я пользовался <a href="http://www.flos-freeware.ch/notepad2.html">Notepad2</a>, <a href="http://www.sourceinsight.com/">Source Insight</a>, <a href="http://www.farmanager.com/">Far</a> (естественно после того, как появился <a href="http://colorer.sourceforge.net/farplugin.html">Colorer</a>). Что было до Far-а с Colorer-ом я уже не очень помню. Точно был Borland Pascal и Turbo C. Редактор кода Visual Studio в этом списке должен быть где-то между Borland-ом и Far-ом. Не помню, чтобы я пользовался им продолжительное время.</p>
-
 <p>Отладчику из Visual Studio повезло чуть больше, так как правильно держать WinDbg я научился уже после замены Far-а на Notepad2 пополам с Source Insight. Остальной инструментарий из набора Visual Studio я использую не очень часто, особенно учитывая, что компилятор и другие инструменты все равно есть в отдельно стоящем SDK. Так и получается, что сама по себе Visual Studio мне в общем-то и не нужна.</p>
-
 <p>Единственная неприятность заключается в том, что такая конфигурация (SDK есть, а Visual Studio нет) явно попадает в категорию экзотики. И, как следствие, не поддерживается и не тестируется как следует. Приходится самому.</p>
-
 <p>Последняя проблема вылезла в самый неожиданный момент. Мне понадобилось обновить компилятор из SDK до версии из Visual Studio 2010 SP1. Зачем понадобилось - это отдельная история. На сайте Microsoft соответствующее обновление имеется: <a href="http://www.microsoft.com/en-us/download/details.aspx?id=4422">KB2519277</a> (и ставиться, надо сказать, не в пример быстрее Visual Studio 2010 SP1). Однако после установки обновления сборка Chrome начала ругаться на отсутсвующий заголовок ‘ammintrin.h’.</p>
-
 <p>Здесь нужно добавить, что в 2010-ой версии Visual Studio с инсталляциями <a href="http://www.johndcook.com/blog/2010/04/22/visual-studio-2010-is-a-pig/">не заладилось с самого начала</a>. Достаточно посмотреть на readme файл к вышеупомянутому обновлению. А если учесть, что само обновление вышло не для того, чтобы обновить версию компилятора и SDK, а как исправление для Visual Studio 2010 SP1, который портил установленный SDK&hellip;</p>
-
 <p>Вернемся к нашим баранам. Заголовок ‘ammintrin.h’ включался из ‘intrin.h’, который, в свою очередь, находился в “%ProgramFiles(x86)%\Microsoft Visual Studio 10.0\VC\include”. Что было похоже на проблемы с инсталляцией. Беглый поиск в интернете показал, что проблема решается переустановкой SP1. SP1 мне поставить не удалось в виду отсутствия Visual Studio на машине, так что я переставил SDK и обновление к нему с нуля. Естественно не помогло.</p>
-
 <p>В процессе установки однако, я сохранил копию ‘intrin.h’. Выяснилось, что KB2519277 обновляет ‘intrin.h’, добавляя ссылку на ‘ammintrin.h’, но сам ‘ammintrin.h’ не ставит.
 Покопавшись в интернете еще немного выяснилось (по аналогии с ‘immintrin.h’, ‘pmmintrin.h’), что <a href="http://opensource.apple.com/source/gcc/gcc-5646/gcc/config/i386/ammintrin.h">‘ammintrin.h’</a> должен содержать intrinsics для SSE4A, которые специфичны AMD и в проекте не используются.</p>
-
 <blockquote>
 <p><a href="http://docs.oracle.com/cd/E24457_01/html/E21991/gliwk.html">http://docs.oracle.com/cd/E24457_01/html/E21991/gliwk.html</a>:
 Note that ammintrin.h is published by AMD and is not included in any of the Intel intrinsic headers. ammintrin.h includes pmmintrin.h, so by including ammintrin.h, all AMD SSE4A as well as Intel SSE3, SSE2, SSE and MMX functions are declared.</p>
 </blockquote>
-
 <p>Родилось простое решение - был создан пустой заголовок ‘ammintrin.h’ и положен рядышком с ‘intrin.h’. Тем, кому функции все-таки нужны, могу посоветовать восстановить их <a href="http://opensource.apple.com/source/gcc/gcc-5646/gcc/config/i386/ammintrin.h">по образцу</a> либо таки скопировать этот файл с машины, где стоит SP1 (но это не спортивно). :-)</p>
   </div>
   <div id="disqus_thread"></div>

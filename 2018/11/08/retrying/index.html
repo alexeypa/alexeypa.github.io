@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -115,19 +116,15 @@
 поломаться из-за внешних причин. Например, <a href="https://docs.python.org/3.7/library/socket.html#socket.socket.connect"><code>socket.connect()</code></a> может
 закончится ошибкой из-за непредвиденной ситуации в сети. Заворачиваем вызов в
 <code>@retry</code> и бац! Все работает.</p>
-
-<pre><code class="language-py">@retry
-def create_connection(address):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    return socket.connect(address)
-</code></pre>
-
-<p>Однако бездумное применение <code>@retry</code>, как нетрудно догадаться, приводит
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#a6e22e">@retry</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_connection</span>(address):
+    s <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_STREAM)
+    <span style="color:#66d9ef">return</span> socket<span style="color:#f92672">.</span>connect(address)
+</code></pre></div><p>Однако бездумное применение <code>@retry</code>, как нетрудно догадаться, приводит
 проблемам. Самый известный пример - вложенные <code>@retry</code>.
 <code>@retry(stop_max_attempt_number=3)</code> вложенный в другой
 <code>@retry(stop_max_attempt_number=3)</code> дает 9 повторов. Три уровня вложенности -
 27 повторов.</p>
-
 <p>Один раз использование <code>@retry</code> привело к тому, что IT заблокировало мою учетную
 запись. Банальная история - был некий скрипт, который при запуске спрашивал
 логин и пароль для авторизации. В один прекрасный день некто (не будем
@@ -136,7 +133,6 @@ def create_connection(address):
 авторизации приводила к повторному запросу с тем же неправильным именем и
 паролем. После определенного числа попыток контроллер домена решил, что кто-то
 пытается подобрать пароль к учетной записи и заблокировал её.</p>
-
 <p>Мораль истории - знайте свои ошибки в лицо и используйте параметр
 <code>retry_on_exception</code>.</p>
   </div>

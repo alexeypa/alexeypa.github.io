@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,19 +113,14 @@
     <a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a>
     </span>
     <p>Не секрет, что возможности утилиты build.exe тесно завязаны на стандартное окружение, предоставляемое WDK. Это окружение формируется скриптами makefile.def, makefile.new, makefile.plt и т.д. из директории bin. Анализируя их, можно обнаружить много интересного.</p>
-
 <p>Например, build.exe поддерживает макросы PASS0_PUBLISH, PASS1_PUBLISH и PASS2_PUBLISH. Пример их использования можно найти в “src\1394\dll\1394api\sources” из поставки Vista RTM WDK:</p>
-
-<pre><code class="language-no-highlight">PASS0_PUBLISH=\\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">PASS0_PUBLISH=\\
   {..\\..\\inc\\1394api.h=$(DRIVERS_TST_INC_PATH)\\1394api.h}
 
 PASS1_PUBLISH=\\
   {$(OBJ_PATH)\\$(O)\\1394api.lib=$(DRIVERS_TST_LIB_PATH)\\$(TARGETNAME).lib}
-</code></pre>
-
-<p>При сборке этой директории build.exe выдает вот следующее:</p>
-
-<pre><code class="language-no-highlight">C:\\WinDDK\\5600\\src\\1394\\dll\\1394api&gt;bcz
+</code></pre></div><p>При сборке этой директории build.exe выдает вот следующее:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">C:\\WinDDK\\5600\\src\\1394\\dll\\1394api&gt;bcz
 BUILD: Compile and Link for x86
 BUILD: Start time: Wed Nov 15 21:48:36 2006
 BUILD: Examining c:\\winddk\\5600\\src\\1394\\dll\\1394api directory for files to compile.
@@ -151,42 +147,27 @@ BUILD: Done
     8 files compiled
     1 library built
     1 executable built
-</code></pre>
-
-<p>Лог файл также содержит несколько интересных строк:</p>
-
-<pre><code class="language-no-highlight">set BUILDMSG=PASS0_Pub
+</code></pre></div><p>Лог файл также содержит несколько интересных строк:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">set BUILDMSG=PASS0_Pub
 Publish not available... /O_BINARY_METADATA: -F 
 c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\nm26D.tmp
 set BUILDMSG=PASS0_Pub done
-</code></pre>
-
-<p>и</p>
-
-<pre><code class="language-no-highlight">set BUILDMSG=PASS1_Pub
+</code></pre></div><p>и</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">set BUILDMSG=PASS1_Pub
 Publish not available... -F 
 c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\nm270.tmp
 set BUILDMSG=PASS1_Pub done
-</code></pre>
-
-<p>Поиск строки “Publish not available” сразу находит следующий код в setenv.bat:</p>
-
-<pre><code class="language-no-highlight">set PUBLISH_CMD=@echo Publish not available...
-</code></pre>
-
-<p>В свою очередь PUBLISH_CMD упоминается в makefile.plt:</p>
-
-<pre><code class="language-no-highlight">!ifndef PUBLISH_CMD
+</code></pre></div><p>Поиск строки “Publish not available” сразу находит следующий код в setenv.bat:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">set PUBLISH_CMD=@echo Publish not available...
+</code></pre></div><p>В свою очередь PUBLISH_CMD упоминается в makefile.plt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">!ifndef PUBLISH_CMD
 PUBLISH_CMD=perl.exe $(NTMAKEENV)\\publish.pl /Pass:$(BUILD_PASS)
 !endif
-</code></pre>
-
-<p>Интересно. Если запустить сборку без объявления переменной PUBLISH_CMD получается вот такой результат:</p>
-
-<pre><code class="language-no-highlight">set BUILDMSG=PASS0_Pub
+</code></pre></div><p>Интересно. Если запустить сборку без объявления переменной PUBLISH_CMD получается вот такой результат:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">set BUILDMSG=PASS0_Pub
 perl.exe c:\\winddk\\5600\\bin\\publish.pl /Pass:PASS0 /O_BINARY_METADATA: -F
 c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\nm276.tmp
-Can't open perl script &quot;c:\\winddk\\5600\\bin\\publish.pl&quot;: No such file or directory
+Can&#39;t open perl script &#34;c:\\winddk\\5600\\bin\\publish.pl&#34;: No such file or directory
 set BUILDMSG=PASS0_Pub done
 
 ...
@@ -194,21 +175,15 @@ set BUILDMSG=PASS0_Pub done
 set BUILDMSG=PASS1_Pub
 perl.exe c:\\winddk\\5600\\bin\\publish.pl /Pass:PASS1 -F
 c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\nm279.tmp
-Can't open perl script &quot;c:\\winddk\\5600\\bin\\publish.pl&quot;: No such file or directory
+Can&#39;t open perl script &#34;c:\\winddk\\5600\\bin\\publish.pl&#34;: No such file or directory
 set BUILDMSG=PASS1_Pub done
-</code></pre>
+</code></pre></div><p>Стандартная поставка WDK не включает файл publish.pl, который, судя по всему, и выполняет полезную работу. Один параметров, передаваемых publish.pl, - имя временного файла. Чтобы посмотреть его содержимое можно воспользоваться таким командным файлом:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">@<span style="color:#66d9ef">echo</span> off
 
-<p>Стандартная поставка WDK не включает файл publish.pl, который, судя по всему, и выполняет полезную работу. Один параметров, передаваемых publish.pl, - имя временного файла. Чтобы посмотреть его содержимое можно воспользоваться таким командным файлом:</p>
-
-<pre><code class="language-cmd">@echo off
-
-if exist &quot;%2&quot; ( type &quot;%2&quot; )
-if exist &quot;%3&quot; ( type &quot;%3&quot; )
-</code></pre>
-
-<p>В этом случае вывод выглядит вот так:</p>
-
-<pre><code class="language-no-highlight">set BUILDMSG=PASS0_Pub
+<span style="color:#66d9ef">if</span> <span style="color:#66d9ef">exist</span> <span style="color:#e6db74">&#34;</span>%2<span style="color:#e6db74">&#34;</span> ( <span style="color:#66d9ef">type</span> <span style="color:#e6db74">&#34;</span>%2<span style="color:#e6db74">&#34;</span> )
+<span style="color:#66d9ef">if</span> <span style="color:#66d9ef">exist</span> <span style="color:#e6db74">&#34;</span>%3<span style="color:#e6db74">&#34;</span> ( <span style="color:#66d9ef">type</span> <span style="color:#e6db74">&#34;</span>%3<span style="color:#e6db74">&#34;</span> )
+</code></pre></div><p>В этом случае вывод выглядит вот так:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">set BUILDMSG=PASS0_Pub
 D:\\projects\\ShellLink\\ShellPS\\a.cmd /O_BINARY_METADATA: -F
 c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\nm295.tmp
 {..\\..\\inc\\1394api.h=\\1394api.h}
@@ -223,12 +198,9 @@ c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\nm298.tmp
 {c:\\winddk\\5600\\src\\1394\\dll\\1394api\\objfre_wlh_x86\\i386\\1394api.lib=\\1394API.lib}
 
 set BUILDMSG=PASS1_Pub done
-</code></pre>
-
-<p>Очевидно, что содержимое файла представляет собой значение соответствующего текущему проходу макроса PASSX_PUBLISH. Продолжив поиски нетрудно найти все места вызова PUBLISH_CMD в makefile.new:</p>
-
-<pre><code class="language-no-highlight">PASS0_Pub: $(PASS0_OBJECTS) $(NTTARGETFILE0)
-!if defined(PASS0_PUBLISH) &amp;&amp; &quot;$(BUILD_PASS)&quot; != &quot;PASS1&quot; &amp;&amp; &quot;$(BUILD_PASS)&quot; != &quot;PASS2&quot;
+</code></pre></div><p>Очевидно, что содержимое файла представляет собой значение соответствующего текущему проходу макроса PASSX_PUBLISH. Продолжив поиски нетрудно найти все места вызова PUBLISH_CMD в makefile.new:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">PASS0_Pub: $(PASS0_OBJECTS) $(NTTARGETFILE0)
+!if defined(PASS0_PUBLISH) &amp;&amp; &#34;$(BUILD_PASS)&#34; != &#34;PASS1&#34; &amp;&amp; &#34;$(BUILD_PASS)&#34; != &#34;PASS2&#34;
     set BUILDMSG=$(@F)
     $(PUBLISH_CMD) /O_BINARY_METADATA:$(_O_BINARY_METADATA) -F &lt;&lt;
 $(PASS0_PUBLISH:}=}
@@ -236,9 +208,7 @@ $(PASS0_PUBLISH:}=}
 &lt;&lt;$(BUILD_NOKEEP)
     set BUILDMSG=$(@F) done
 !endif
-</code></pre>
-
-<p>Какие можно сделать выводы? По всей видимости, макросы PASSX_PUBLISH используются для копирования и постобработки файлов на каждом из этапов сборки. Очевидно, что этот механизм можно использовать для выполнения каких-либо своих задач. :-) Важно только помнить, что это недокументированная возможность, которая может быть изменена или удалена в следующей версии WDK.</p>
+</code></pre></div><p>Какие можно сделать выводы? По всей видимости, макросы PASSX_PUBLISH используются для копирования и постобработки файлов на каждом из этапов сборки. Очевидно, что этот механизм можно использовать для выполнения каких-либо своих задач. :-) Важно только помнить, что это недокументированная возможность, которая может быть изменена или удалена в следующей версии WDK.</p>
   </div>
   <div id="disqus_thread"></div>
 </div>

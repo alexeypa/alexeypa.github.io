@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Win32 on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Win32 on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 14 Jun 2011 23:38:43 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/win32/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 14 Jun 2011 23:38:43 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/win32/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Функция DeviceIoControlEx</title>
       <link>https://blog.not-a-kernel-guy.com/2011/06/14/1094/</link>
@@ -27,7 +23,6 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2008/12/04/377/</guid>
       <description>&lt;p&gt;Любой разработчик, кто хоть раз создавал ключ в реестре с помощью функции &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms724844(VS.85).aspx&#34;&gt;RegCreateKeyEx&lt;/a&gt; задавался вопросом: «а зачем нужен параметр lpClass и что он означает?»&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;lpClass&lt;/em&gt; [in, optional]
 The user-defined class type of this key. This parameter may be ignored. This parameter can be NULL.&lt;/p&gt;
@@ -53,13 +48,10 @@ The user-defined class type of this key. This parameter may be ignored. This par
       
       <guid>https://blog.not-a-kernel-guy.com/2008/02/28/293/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/10/18/256/&#34;&gt;Вопрос&lt;/a&gt;:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Скажите, а невозможность загрузки в 64bit-процесс 32bit DLL - фатальна, или же возможны какие-то хаки, недокументированные обходные пути?&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;Отвечаю здесь, так как ответ получился слушком длинным.&lt;/p&gt;
-
 &lt;p&gt;Во-первых, про любые недокументированные возможности меня спрашивать бесполезно. Даже если такая возможность существует, я всё равно о ней не расскажу. Этому есть несколько причин, включая очевидные вещи вроде NDA, законе об авторском праве и т.д. Еще одна причина, почему я не горю желанием это делать, - это то, что раскрывая детали реализации того или иного компонента, я тем самым лишаю этот компонент возможности развиваться и улучшатся в следующих версиях.&lt;/p&gt;</description>
     </item>
     
@@ -88,13 +80,12 @@ The user-defined class type of this key. This parameter may be ignored. This par
       
       <guid>https://blog.not-a-kernel-guy.com/2007/12/05/268/</guid>
       <description>&lt;p&gt;Функцию &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/ms645598.aspx&#34;&gt;GetRawInputDeviceList&lt;/a&gt; можно смело приводить в качестве антипримера правильно спроектированного API. Эта функция используется для получения списка описателей устройств ввода (raw input devices). Ничего сложного. Прототип функции тоже выглядит довольно невинно - всего три параметра, и, как кажется по началу, назначение каждого довольно очевидно.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;UINT GetRawInputDeviceList(
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;UINT &lt;span style=&#34;color:#a6e22e&#34;&gt;GetRawInputDeviceList&lt;/span&gt;(
     __out_opt PRAWINPUTDEVICELIST pRawInputDeviceList,
     __inout PUINT puiNumDevices,
     __in UINT cbSize
     );
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -104,11 +95,13 @@ The user-defined class type of this key. This parameter may be ignored. This par
       
       <guid>https://blog.not-a-kernel-guy.com/2006/12/25/120/</guid>
       <description>&lt;p&gt;В комментариях к посту &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/10/31/93/&#34;&gt;про обертку для HANDLE&lt;/a&gt; зашла речь о разнице между HKEY и HANDLE. С одной стороны, они имеют много общего:&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Ключ реестра это такой же объект ядра, как и файл. К примеру, CreateFile и RegCreateKeyEx используют одинаковые параметры для указания требуемого уровня доступа и прав доступа к ключу/файлу;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;HKEY, также как и HANDLE, можно скопировать с помощью функции DuplicateHandle.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ключ реестра это такой же объект ядра, как и файл. К примеру, CreateFile и RegCreateKeyEx используют одинаковые параметры для указания требуемого уровня доступа и прав доступа к ключу/файлу;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HKEY, также как и HANDLE, можно скопировать с помощью функции DuplicateHandle.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     

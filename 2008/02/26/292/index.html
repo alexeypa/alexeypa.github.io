@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,13 +113,10 @@
     <a class="label" href="/tags/wow64">Wow64</a>
     </span>
     <p>Наткнулся на <a href="http://forum.ixbt.com/topic.cgi?id=26:37920:21#19">вопрос на форуме iXBT</a>. В Windows SDK помимо флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY определена маска KEY_WOW64_RES. Зачем она нужна?</p>
-
-<pre><code class="language-cpp">#ifndef KEY_WOW64_RES
-    #define KEY_WOW64_RES (KEY_WOW64_64KEY | KEY_WOW64_32KEY)
-#endif
-</code></pre>
-
-<p>Ответ: по большому счету она не нужна. В коде Wow64 она используется для выделения флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY из маски доступа для дальнейшей обработки. Указывать оба флага (и KEY_WOW64_64KEY и KEY_WOW64_32KEY) при вызове RegCreateKeyEx, RegOpenKeyEx или RegDeleteKeyEx нельзя, так что приложениям эта маска ни к чему.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#ifndef KEY_WOW64_RES
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">#define KEY_WOW64_RES (KEY_WOW64_64KEY | KEY_WOW64_32KEY)
+</span><span style="color:#75715e">#endif
+</span></code></pre></div><p>Ответ: по большому счету она не нужна. В коде Wow64 она используется для выделения флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY из маски доступа для дальнейшей обработки. Указывать оба флага (и KEY_WOW64_64KEY и KEY_WOW64_32KEY) при вызове RegCreateKeyEx, RegOpenKeyEx или RegDeleteKeyEx нельзя, так что приложениям эта маска ни к чему.</p>
 
   </div>
   <div id="disqus_thread"></div>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Disassembler on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Disassembler on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 31 Jul 2008 22:51:40 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/disassembler/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 31 Jul 2008 22:51:40 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/disassembler/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>diStorm64 disassembler</title>
       <link>https://blog.not-a-kernel-guy.com/2008/07/31/323/</link>

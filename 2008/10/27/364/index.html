@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,28 +113,30 @@
     <a class="label" href="/tags/amd64">amd64</a><a class="label" href="/tags/%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%B8%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9">Обработка исключений</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
     </span>
     <p>В комментариях к предыдущем посте про исключения верно заметили, что exception chain в TEB используется только в x86 коде. И x64, и ia64 exception chain не используют вообще. Как же, в таком случае, выполняется «раскрутка» стека при обработке исключения?</p>
-
 <p>Когда создавалась архитектура x64, её создатели не хотели повторять ошибки прошлого и наступать на те же грабли, на которые наступили их предшественники. В частности для x64 существует <a href="http://msdn.microsoft.com/en-us/library/ms794533.aspx">стандарт соглашения о вызовах</a>, который регламентирует:</p>
-
 <ul>
-<li><p><a href="http://msdn.microsoft.com/en-us/library/ms794534.aspx">Выравнивание типов и структур</a>;</p></li>
-
-<li><p><a href="http://msdn.microsoft.com/en-us/library/ms794547.aspx">Правила использования регистров процессора</a>;</p></li>
-
-<li><p><a href="http://msdn.microsoft.com/en-us/library/ms794656.aspx">Порядок передачи параметров</a>;</p></li>
-
-<li><p><a href="http://msdn.microsoft.com/en-us/library/ms794332.aspx">Точный формат кадра стека</a> (stack frame);</p></li>
-
-<li><p><a href="http://msdn.microsoft.com/en-us/library/ms794319.aspx">Виды функций</a>, <a href="http://msdn.microsoft.com/en-us/library/ms794615.aspx">пролог и эпилог функций</a>;</p></li>
-
-<li><p><a href="http://msdn.microsoft.com/en-us/library/ms794615.aspx">Порядок обработки исключений</a> и <a href="http://msdn.microsoft.com/en-us/library/ms794681.aspx">алгоритм «раскрутки» стека</a>.</p></li>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms794534.aspx">Выравнивание типов и структур</a>;</p>
+</li>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms794547.aspx">Правила использования регистров процессора</a>;</p>
+</li>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms794656.aspx">Порядок передачи параметров</a>;</p>
+</li>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms794332.aspx">Точный формат кадра стека</a> (stack frame);</p>
+</li>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms794319.aspx">Виды функций</a>, <a href="http://msdn.microsoft.com/en-us/library/ms794615.aspx">пролог и эпилог функций</a>;</p>
+</li>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms794615.aspx">Порядок обработки исключений</a> и <a href="http://msdn.microsoft.com/en-us/library/ms794681.aspx">алгоритм «раскрутки» стека</a>.</p>
+</li>
 </ul>
-
 <p>Чем это лучше того, что твориться в мире x86 кода? Стандартный формат кадра стека позволяет получать достоверную трассировку стека в любой момент времени, при условии, конечно, что компилятор генерирует код соответствующий соглашению о вызовах и если информация о состоянии процессора корректна. При этом абсолютно не используются символы (.pdb). Сравните это с x86, где совершенно корректный код может запросто свести с ума любой отладчик.</p>
-
-<p>Далее, все функции делятся на два типа: «frame» и «leaf». К первым относится любая функция вызывающая другие функции, сохраняющая nonvolatile регистры или использующая исключения. Функции, динамически выделяющие память в стеке с помощью _alloca, также относятся к этой категории. Все остальные – это «leaf» функции. Для каждой «frame» функции компилятор генерирует её описание (function entry), где подробно описываются все действия, выполняемые в прологе функции: от выделения места в стеке до списка сохраняемых регистров вместе с их смещениями в стеке. Пример можно посмотреть, выполнив в отладчике команду “.fnent <symbol>”:</p>
-
-<pre><code class="language-no-highlight">0:000&gt; .fnent notepad!WinMain
+<p>Далее, все функции делятся на два типа: «frame» и «leaf». К первым относится любая функция вызывающая другие функции, сохраняющая nonvolatile регистры или использующая исключения. Функции, динамически выделяющие память в стеке с помощью _alloca, также относятся к этой категории. Все остальные – это «leaf» функции. Для каждой «frame» функции компилятор генерирует её описание (function entry), где подробно описываются все действия, выполняемые в прологе функции: от выделения места в стеке до списка сохраняемых регистров вместе с их смещениями в стеке. Пример можно посмотреть, выполнив в отладчике команду “.fnent <!-- raw HTML omitted -->”:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; .fnent notepad!WinMain
 Debugger function entry 00000000`01f48250 for:
 (00000000`ff296dd4)   notepad!WinMain   |  (00000000`ff296fd0)   notepad!UpdateStatusBar
 Exact matches:
@@ -154,9 +157,7 @@ Unwind info at 00000000`ff29dcc0, 14 bytes
   05: offs 10, unwind op 0, op info 0
   06: offs 14, unwind op 2, op info d
   07: offs 10, unwind op 0, op info 7
-</code></pre>
-
-<p>Более подробно об этом можно почитать <a href="http://msdn.microsoft.com/en-us/library/ms794374.aspx">здесь</a>. Имея подобное описание «раскрутчик» стека может достоверно определить границы кадров функций в стеке и восстановить значение non-volatile регистров в каждом кадре в любой момент времени.</p>
+</code></pre></div><p>Более подробно об этом можно почитать <a href="http://msdn.microsoft.com/en-us/library/ms794374.aspx">здесь</a>. Имея подобное описание «раскрутчик» стека может достоверно определить границы кадров функций в стеке и восстановить значение non-volatile регистров в каждом кадре в любой момент времени.</p>
   </div>
   <div id="disqus_thread"></div>
 </div>

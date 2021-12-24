@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Java on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 27 Jun 2010 23:41:48 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 27 Jun 2010 23:41:48 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java 4-ever</title>
       <link>https://blog.not-a-kernel-guy.com/2010/06/27/847/</link>
@@ -18,8 +14,7 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2010/06/27/847/</guid>
       <description>Во! Произведение норвежских мастеров:
-    Hey, what are you guys up to?
- We are just enjoying some porn.   ;-)</description>
+    Hey, what are you guys up to? We are just enjoying some porn.   ;-)</description>
     </item>
     
   </channel>

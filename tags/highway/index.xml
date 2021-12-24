@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Highway on Алексей Пахунов</title>
+    <title>highway on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/highway/</link>
-    <description>Recent content in Highway on Алексей Пахунов</description>
+    <description>Recent content in highway on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 13 Oct 2010 21:27:12 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/highway/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 13 Oct 2010 21:27:12 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/highway/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>«Меняю highway на autobahn с доплатой»</title>
       <link>https://blog.not-a-kernel-guy.com/2010/10/13/899/</link>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ассемблер on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Ассемблер on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 07 Apr 2010 22:50:23 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B0%D1%81%D1%81%D0%B5%D0%BC%D0%B1%D0%BB%D0%B5%D1%80/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 07 Apr 2010 22:50:23 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B0%D1%81%D1%81%D0%B5%D0%BC%D0%B1%D0%BB%D0%B5%D1%80/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Первая инструкция</title>
       <link>https://blog.not-a-kernel-guy.com/2010/04/07/808/</link>

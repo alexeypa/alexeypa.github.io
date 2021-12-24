@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sysinternals on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Sysinternals on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 23 Mar 2008 22:46:19 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/sysinternals/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 23 Mar 2008 22:46:19 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/sysinternals/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Process Monitor научился трассировать 32-х битный стек на x64</title>
       <link>https://blog.not-a-kernel-guy.com/2008/03/23/299/</link>
@@ -27,8 +23,7 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2008/03/13/297/</guid>
       <description>&lt;p&gt;А знаете, как &lt;a href=&#34;http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx&#34;&gt;Process Explorer&lt;/a&gt; подменяет собой стандартный Task Manager?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2008/03/procexp_1.png&#34; alt=&#34;Process Explorer: Replace Task Manager.&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2008/03/procexp_1.png&#34; alt=&#34;Process Explorer: Replace Task Manager.&#34;&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Алексей Пахунов</title>
@@ -6,76 +6,207 @@
     <description>Recent content in Tags on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 18 Dec 2007 23:33:41 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 23 Dec 2021 19:27:05 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>.Net</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/.net/</link>
-      <pubDate>Tue, 18 Dec 2007 23:33:41 -0700</pubDate>
+      <title>Астрономия</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D1%8F/</link>
+      <pubDate>Thu, 23 Dec 2021 19:27:05 -0800</pubDate>
       
-      <guid>https://blog.not-a-kernel-guy.com/tags/.net/</guid>
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D1%8F/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>64bit</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/64bit/</link>
-      <pubDate>Mon, 05 Apr 2010 22:26:10 -0700</pubDate>
+      <title>Linux</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/linux/</link>
+      <pubDate>Sun, 18 Jul 2021 19:56:02 -0700</pubDate>
       
-      <guid>https://blog.not-a-kernel-guy.com/tags/64bit/</guid>
+      <guid>https://blog.not-a-kernel-guy.com/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Amd64</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/amd64/</link>
-      <pubDate>Thu, 25 Mar 2010 22:50:47 -0700</pubDate>
+      <title>Программирование</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/</link>
+      <pubDate>Sun, 18 Jul 2021 19:56:02 -0700</pubDate>
       
-      <guid>https://blog.not-a-kernel-guy.com/tags/amd64/</guid>
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Apple</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/apple/</link>
-      <pubDate>Mon, 28 Jun 2010 22:56:01 -0700</pubDate>
+      <title>NASA</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/nasa/</link>
+      <pubDate>Mon, 22 Feb 2021 20:30:51 -0800</pubDate>
       
-      <guid>https://blog.not-a-kernel-guy.com/tags/apple/</guid>
+      <guid>https://blog.not-a-kernel-guy.com/tags/nasa/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Arm</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/arm/</link>
-      <pubDate>Wed, 05 Jan 2011 16:04:44 -0700</pubDate>
+      <title>Космос</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81/</link>
+      <pubDate>Mon, 22 Feb 2021 20:30:51 -0800</pubDate>
       
-      <guid>https://blog.not-a-kernel-guy.com/tags/arm/</guid>
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Autobahn</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/autobahn/</link>
-      <pubDate>Wed, 13 Oct 2010 21:27:12 -0700</pubDate>
+      <title>SpaceX</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/spacex/</link>
+      <pubDate>Sat, 12 Dec 2020 15:46:35 -0800</pubDate>
       
-      <guid>https://blog.not-a-kernel-guy.com/tags/autobahn/</guid>
+      <guid>https://blog.not-a-kernel-guy.com/tags/spacex/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Bcdedit</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/bcdedit/</link>
-      <pubDate>Tue, 20 May 2008 22:43:16 -0700</pubDate>
+      <title>Работа</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/</link>
+      <pubDate>Sat, 12 Dec 2020 15:46:35 -0800</pubDate>
       
-      <guid>https://blog.not-a-kernel-guy.com/tags/bcdedit/</guid>
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Bfr</title>
+      <title>Всякая всячина</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%B2%D1%81%D1%8F%D0%BA%D0%B0%D1%8F-%D0%B2%D1%81%D1%8F%D1%87%D0%B8%D0%BD%D0%B0/</link>
+      <pubDate>Mon, 01 Jun 2020 18:46:46 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%B2%D1%81%D1%8F%D0%BA%D0%B0%D1%8F-%D0%B2%D1%81%D1%8F%D1%87%D0%B8%D0%BD%D0%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Иммиграция</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%B8%D0%BC%D0%BC%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F/</link>
+      <pubDate>Sun, 24 May 2020 12:21:54 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%B8%D0%BC%D0%BC%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Юмор</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D1%8E%D0%BC%D0%BE%D1%80/</link>
+      <pubDate>Sat, 07 Mar 2020 12:28:58 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D1%8E%D0%BC%D0%BE%D1%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Подгорело</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%80%D0%B5%D0%BB%D0%BE/</link>
+      <pubDate>Sun, 19 Jan 2020 19:48:37 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%80%D0%B5%D0%BB%D0%BE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Китай</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D0%B8%D1%82%D0%B0%D0%B9/</link>
+      <pubDate>Sun, 29 Dec 2019 21:21:21 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D0%B8%D1%82%D0%B0%D0%B9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Отладка</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0/</link>
+      <pubDate>Mon, 16 Dec 2019 22:49:36 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Космонавтика</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D0%BD%D0%B0%D0%B2%D1%82%D0%B8%D0%BA%D0%B0/</link>
+      <pubDate>Fri, 29 Nov 2019 11:56:25 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D0%BD%D0%B0%D0%B2%D1%82%D0%B8%D0%BA%D0%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Калифорния</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D0%B0%D0%BB%D0%B8%D1%84%D0%BE%D1%80%D0%BD%D0%B8%D1%8F/</link>
+      <pubDate>Sat, 30 Mar 2019 15:05:35 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D0%B0%D0%BB%D0%B8%D1%84%D0%BE%D1%80%D0%BD%D0%B8%D1%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Авиация</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%B0%D0%B2%D0%B8%D0%B0%D1%86%D0%B8%D1%8F/</link>
+      <pubDate>Mon, 18 Mar 2019 21:45:12 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%B0%D0%B2%D0%B8%D0%B0%D1%86%D0%B8%D1%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ебаный стыд</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%B5%D0%B1%D0%B0%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D1%8B%D0%B4/</link>
+      <pubDate>Thu, 07 Mar 2019 21:35:43 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%B5%D0%B1%D0%B0%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D1%8B%D0%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Махровая пропаганда</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%BC%D0%B0%D1%85%D1%80%D0%BE%D0%B2%D0%B0%D1%8F-%D0%BF%D1%80%D0%BE%D0%BF%D0%B0%D0%B3%D0%B0%D0%BD%D0%B4%D0%B0/</link>
+      <pubDate>Thu, 07 Mar 2019 21:35:43 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%BC%D0%B0%D1%85%D1%80%D0%BE%D0%B2%D0%B0%D1%8F-%D0%BF%D1%80%D0%BE%D0%BF%D0%B0%D0%B3%D0%B0%D0%BD%D0%B4%D0%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Пиздец</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%BF%D0%B8%D0%B7%D0%B4%D0%B5%D1%86/</link>
+      <pubDate>Thu, 07 Mar 2019 21:35:43 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%BF%D0%B8%D0%B7%D0%B4%D0%B5%D1%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/python/</link>
+      <pubDate>Tue, 20 Nov 2018 22:36:35 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LRO</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/lro/</link>
+      <pubDate>Sat, 20 Oct 2018 22:56:51 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/lro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Отдых</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%BE%D1%82%D0%B4%D1%8B%D1%85/</link>
+      <pubDate>Tue, 09 Oct 2018 16:27:10 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%BE%D1%82%D0%B4%D1%8B%D1%85/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BFR</title>
       <link>https://blog.not-a-kernel-guy.com/tags/bfr/</link>
       <pubDate>Mon, 17 Sep 2018 22:47:28 -0700</pubDate>
       
@@ -84,155 +215,20 @@
     </item>
     
     <item>
-      <title>Blue Origin Космос</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/blue-origin-%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81/</link>
-      <pubDate>Sat, 06 Aug 2016 10:14:07 -0700</pubDate>
+      <title>Бытовуха</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D1%83%D1%85%D0%B0/</link>
+      <pubDate>Mon, 10 Sep 2018 11:02:25 -0700</pubDate>
       
-      <guid>https://blog.not-a-kernel-guy.com/tags/blue-origin-%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81/</guid>
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D1%83%D1%85%D0%B0/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Boost</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/boost/</link>
-      <pubDate>Tue, 28 Aug 2007 08:59:56 -0700</pubDate>
+      <title>Украина</title>
+      <link>https://blog.not-a-kernel-guy.com/tags/%D1%83%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0/</link>
+      <pubDate>Mon, 10 Sep 2018 11:02:25 -0700</pubDate>
       
-      <guid>https://blog.not-a-kernel-guy.com/tags/boost/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Boost.build</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/boost.build/</link>
-      <pubDate>Mon, 09 Mar 2009 13:22:01 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/boost.build/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Build</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/build/</link>
-      <pubDate>Wed, 02 Apr 2014 21:48:25 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/build/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/c&#43;&#43;/</link>
-      <pubDate>Sun, 30 Jul 2017 13:03:30 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/c&#43;&#43;/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C/C&#43;&#43;</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/c/c&#43;&#43;/</link>
-      <pubDate>Sun, 15 May 2011 22:10:44 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/c/c&#43;&#43;/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>California</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/california/</link>
-      <pubDate>Sun, 24 Jul 2016 12:04:50 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/california/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Channel 9</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/channel-9/</link>
-      <pubDate>Wed, 09 Jul 2008 08:26:20 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/channel-9/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chrome</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/chrome/</link>
-      <pubDate>Mon, 25 Jul 2016 22:09:50 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/chrome/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chromium</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/chromium/</link>
-      <pubDate>Tue, 05 Feb 2013 01:12:53 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/chromium/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cmd.exe</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/cmd.exe/</link>
-      <pubDate>Sun, 15 Jun 2008 17:26:36 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/cmd.exe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Code Patching</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/code-patching/</link>
-      <pubDate>Mon, 04 Aug 2008 23:11:46 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/code-patching/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Com</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/com/</link>
-      <pubDate>Wed, 18 Apr 2007 10:57:42 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/com/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Crater Lake</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/crater-lake/</link>
-      <pubDate>Fri, 22 Apr 2011 08:54:29 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/crater-lake/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Directx</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/directx/</link>
-      <pubDate>Mon, 17 Aug 2009 09:17:37 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/directx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Disassembler</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/disassembler/</link>
-      <pubDate>Thu, 31 Jul 2008 22:51:40 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/disassembler/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ecv</title>
-      <link>https://blog.not-a-kernel-guy.com/tags/ecv/</link>
-      <pubDate>Sat, 10 Oct 2009 20:37:24 -0700</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/tags/ecv/</guid>
+      <guid>https://blog.not-a-kernel-guy.com/tags/%D1%83%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0/</guid>
       <description></description>
     </item>
     

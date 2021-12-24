@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,9 +113,7 @@
     <a class="label" href="/tags/windows">Windows</a><a class="label" href="/tags/wow64">Wow64</a>
     </span>
     <p>Бытует мнение, что хотя 64-х битные версии Windows поддерживают до 64-х процессоров, Wow64 ограничивает максимальное число процессоров для 32-х битных приложений 32 процессорами. Вероятнее всего причина появления подобного мнения заключается в том, что функции <a href="http://msdn2.microsoft.com/en-us/library/ms683213.aspx">GetProccessAffinityMask</a>, <a href="http://msdn2.microsoft.com/en-us/library/ms686223.aspx">SetProcessAffinityMask</a> и <a href="http://msdn2.microsoft.com/en-us/library/ms686247.aspx">SetThreadAffinityMask</a>  используют 32 битные маски. Статья про <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/win64/win64/processor_affinity.asp">особенности Wow64 в этой области</a> тоже недостаточно подробна.</p>
-
 <p>На самом деле Wow64 не делает никаких попыток вмешаться в диспетчеризацию потоков в 32-х разрядном процессе. За это полностью отвечает ядро системы и оно не делает никаких различий между потоками 32-х и 64-х разрядных процессов. Это означает, что если 32-х разрядное приложение не делает попыток вмешаться в диспетчеризацию потоков (не вызывает функции  SetProcessAffinityMask или  SetThreadAffinityMask), то его потоки могут одновременно исполняться на более чем 32-х процессорах.</p>
-
 <p>Если же приложение пытается «оптимизировать» алгоритм размещения потоков по процессорам (что делают некоторые высокопроизводительные приложения), то после первого же вызова  SetProcessAffinityMask или SetThreadAffinityMask оно ограничит себя первыми 32-мя процессорами. Соответственно, если вы пишите что-то подобное, то имейте ввиду. :-)</p>
   </div>
   <div id="disqus_thread"></div>

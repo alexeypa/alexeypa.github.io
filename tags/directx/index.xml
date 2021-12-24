@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Directx on Алексей Пахунов</title>
+    <title>DirectX on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/directx/</link>
-    <description>Recent content in Directx on Алексей Пахунов</description>
+    <description>Recent content in DirectX on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 17 Aug 2009 09:17:37 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/directx/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 17 Aug 2009 09:17:37 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/directx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wow64 поддерживает аппаратное ускорение в DirectX</title>
       <link>https://blog.not-a-kernel-guy.com/2009/08/17/628/</link>
@@ -18,11 +14,9 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2009/08/17/628/</guid>
       <description>&lt;p&gt;Вопрос из почты:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Ты не подскажешь, есть ли hardware acceleration through DirectX for Wow64 processes? В Windows Internals написано, что его нет, но другие источники говорят, что есть (и большинство игр продолжают собирать as 32-bit, и они работают в 64-bit Windows).&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;Вот несколько ссылок, которые выдает поиск на msdn.microsoft.com:&lt;/p&gt;</description>
     </item>
     

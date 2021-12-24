@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,37 +113,25 @@
     <a class="label" href="/tags/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD">Дизайн</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/win32">Win32</a>
     </span>
     <p>Функцию <a href="http://msdn2.microsoft.com/en-us/library/ms645598.aspx">GetRawInputDeviceList</a> можно смело приводить в качестве антипримера правильно спроектированного API. Эта функция используется для получения списка описателей устройств ввода (raw input devices). Ничего сложного. Прототип функции тоже выглядит довольно невинно - всего три параметра, и, как кажется по началу, назначение каждого довольно очевидно.</p>
-
-<pre><code class="language-cpp">UINT GetRawInputDeviceList(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">UINT <span style="color:#a6e22e">GetRawInputDeviceList</span>(
     __out_opt PRAWINPUTDEVICELIST pRawInputDeviceList,
     __inout PUINT puiNumDevices,
     __in UINT cbSize
     );
-</code></pre>
-
-<p>Это заблуждение быстро рассеивается, стоит только почитать MSDN. Первый параметр - это просто указатель на буфер, в который пишется массив структур RAWINPUTDEVICELIST. Пока всё нормально. А вот второй параметр - это нечто. Итак:</p>
-
+</code></pre></div><p>Это заблуждение быстро рассеивается, стоит только почитать MSDN. Первый параметр - это просто указатель на буфер, в который пишется массив структур RAWINPUTDEVICELIST. Пока всё нормально. А вот второй параметр - это нечто. Итак:</p>
 <blockquote>
 <p>Pointer to a variable. If <em>pRawInputDeviceList</em> is NULL, it specifies the number of devices attached to the system. Otherwise, it contains the size, in bytes, of the preallocated buffer pointed to by <em>pRawInputDeviceList</em>. However, if *<em>puiNumDevices</em> is smaller than needed to contain <strong>RAWINPUTDEVICELIST</strong> structures, the required buffer size is returned here.</p>
 </blockquote>
-
 <p>Это указатель на переменную. Если переданный указатель pRawInputDeviceList равен NULL, то в этой переменной возвращается количество устройств, т.е. количество <em>элементов</em> массива. Если pRawInputDeviceList не равен NULL, то эта переменная задаёт размер буфера на который указывает pRawInputDeviceList <em>в байтах</em>. Если при этом буфер оказался слишком мал, то функция возвратит в этой переменной необходимый размер буфера <em>в байтах</em>.</p>
-
 <p>Т.е. что получается. При первом вызове функции необходимый размер буфера возвращается в виде количества элементов массива. Во время второго вызова этот же размер уже указывается в байтах, полностью дискредитируя имя параметра «puiNumDevices».</p>
-
 <p>Третий параметр задаёт размер структуры RAWINPUTDEVICELIST. То есть этот параметр всегдя должен быть равен sizeof(RAWINPUTDEVICELIST)! Теоретически этот параметр может использоваться для поддержки разных версий RAWINPUTDEVICELIST, но в свете выкрутасов с puiNumDevices, меня гложут смутные сомнения.</p>
-
 <p>Но и это еще не всё. Интерпретация возвращаемого значения тоже не очевидна. При успешном завершении функции, возвращаемое значение равно нулю, если pRawInputDeviceList равен NULL. Если pRawInputDeviceList не равен NULL, то функция возвращает количество элементов записанных в буфер. Что мешает всегда возвращать количество устройств - не понятно. Если функция завершается ошибкой, то всегда возвращается -1. Если причина ошибки - недостаточный размер буфера, то *puiNumDevices указывается необходимый размер.</p>
-
 <p>Что интересно, привести эту функцию в божеский вид совсем не сложно. Достаточно прекратить игры с указанием размера буфера в разных единицах, упростить интерпретацию возвращаемого значения и убрать ненужный параметр:</p>
-
-<pre><code class="language-cpp">BOOL GetRawInputDeviceList(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">BOOL <span style="color:#a6e22e">GetRawInputDeviceList</span>(
     __out_opt PRAWINPUTDEVICELIST pBuffer,
     __inout PUINT puiNumDevices
     );
-</code></pre>
-
-<p>PS: Только не спрашивайте, почему так не сделали с самого начала. Самому интересно.</p>
+</code></pre></div><p>PS: Только не спрашивайте, почему так не сделали с самого начала. Самому интересно.</p>
   </div>
   <div id="disqus_thread"></div>
 </div>

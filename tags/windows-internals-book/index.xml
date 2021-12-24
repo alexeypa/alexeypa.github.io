@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Windows Internals Book on Алексей Пахунов</title>
+    <title>Windows Internals book on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/windows-internals-book/</link>
-    <description>Recent content in Windows Internals Book on Алексей Пахунов</description>
+    <description>Recent content in Windows Internals book on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 16 Aug 2012 13:01:39 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/windows-internals-book/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 16 Aug 2012 13:01:39 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/windows-internals-book/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ошибка в книге Windows Internals</title>
       <link>https://blog.not-a-kernel-guy.com/2012/08/16/1405/</link>

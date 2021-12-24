@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>64bit on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in 64bit on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 05 Apr 2010 22:26:10 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/64bit/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 05 Apr 2010 22:26:10 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/64bit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>«Непобедимый»</title>
       <link>https://blog.not-a-kernel-guy.com/2010/04/05/804/</link>
@@ -18,8 +14,8 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2010/04/05/804/</guid>
       <description>Ну что сказать. Сложные и совершенные Itanium&amp;rsquo;ы проиграли битву маленьким и примитивным x86:
- Microsoft прекращает поддержку процессоров Intel Itanium в своих продуктах.
- Microsoft ending support for Itanium
+  Microsoft прекращает поддержку процессоров Intel Itanium в своих продуктах.
+  Microsoft ending support for Itanium
   </description>
     </item>
     

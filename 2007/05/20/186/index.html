@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,37 +113,24 @@
     <a class="label" href="/tags/troubleshooting">Troubleshooting</a><a class="label" href="/tags/windows">Windows</a>
     </span>
     <p>Пару месяцев назад, я, за какой-то надобностью, попытался установить компонент Peer-to-Peer из сетевых компонент Windows XP, но у меня ничего не вышло. Сначала инсталлятор запросил дополнительные файлы из “C:\Windows\ServicePackFiles\i386”, которые я к тому времени успешно удалил за ненадобностью, затем он отказался от одноимённых файлов с инсталляционного диска Windows XP и, наконец, инсталляция прервалась, выдав напоследок очень понятное сообщение: «An extended error has occurred».</p>
-
 <p>«Ну, нет - так нет», подумал я тогда и забыл о проблеме. Однако на днях захотелось выяснить, в чём же было дело. Повторная инсталляция закончилась всё тем же невразумительным сообщением об ошибке. При этом в каталоге Windows обнаружилось несколько свежих логов, в том числе «setupapi.log»:</p>
-
-<pre><code class="language-no-highlight">[2007/05/17 19:36:17 2760.37]
-#-198 Command line processed: &quot;C:\\WINDOWS\\system32\\sysocmgr.exe&quot; /y /i:C:\\WINDOWS\\system32\\sysoc.inf
-#-006 Setting security on key HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\PeerNet\\PNRP to &quot;D:(A;OICI;KA;;;SY)(A;OICI;KA;;;BA)(A;OICI;KA;;;LS)(A;OICI;KA;;;CO)(A;OICI;KR;;;AU)&quot;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">[2007/05/17 19:36:17 2760.37]
+#-198 Command line processed: &#34;C:\\WINDOWS\\system32\\sysocmgr.exe&#34; /y /i:C:\\WINDOWS\\system32\\sysoc.inf
+#-006 Setting security on key HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\PeerNet\\PNRP to &#34;D:(A;OICI;KA;;;SY)(A;OICI;KA;;;BA)(A;OICI;KA;;;LS)(A;OICI;KA;;;CO)(A;OICI;KR;;;AU)&#34;
 #E033 Error 1208: An extended error has occurred.
 #-035 Processing service Add/Delete section [p2p.Services].
-#E277 Add Service: Failed to secure service &quot;p2psvc&quot;. Error 1208: An extended error has occurred.
+#E277 Add Service: Failed to secure service &#34;p2psvc&#34;. Error 1208: An extended error has occurred.
 #E033 Error 1208: An extended error has occurred.
 #E275 Error while installing services. Error 1208: An extended error has occurred.
-</code></pre>
-
-<p>Очевидно, что что-то не так было с установкой службы «p2psvc». В реестре не обнаружилось никаких следов службы «p2psvc». Копание в .inf файлах, ответственных за установку этой службы, ясности тоже не прибавило. Однако Sysnternal’овский Process Monitor показал, что происходит во время инсталляции – сервис под именем «p2psvc» регистрируется, как и положено, однако из-за возникающей ошибки все изменения в реестре откатываются назад. Гм.</p>
-
+</code></pre></div><p>Очевидно, что что-то не так было с установкой службы «p2psvc». В реестре не обнаружилось никаких следов службы «p2psvc». Копание в .inf файлах, ответственных за установку этой службы, ясности тоже не прибавило. Однако Sysnternal’овский Process Monitor показал, что происходит во время инсталляции – сервис под именем «p2psvc» регистрируется, как и положено, однако из-за возникающей ошибки все изменения в реестре откатываются назад. Гм.</p>
 <p>Попробовал зайти с другого конца – выяснить какую роль играет «sysocmgr.exe». Оказалось что это тот самый инсталлятор, который запускается при нажатии на «Add/Remove Windows Components».</p>
-
-<p><img src="/2007/05/windows_components_wizard.png" alt="Windows Components Wizard" /></p>
-
+<p><img src="/2007/05/windows_components_wizard.png" alt="Windows Components Wizard"></p>
 <p>Если запустить его без параметров, показывается подсказка по допустимым параметрам командной строки, один из которых, «/f» - вызывает принудительную переустановку компонент «с чистого листа»:</p>
-
-<p><img src="/2007/05/windows_xp_setup.png" alt="Windows XP Setup" /></p>
-
+<p><img src="/2007/05/windows_xp_setup.png" alt="Windows XP Setup"></p>
 <p>Казалось бы, вот оно решение, но на появление непонятной ошибки этот ключ никак не повлиял.</p>
-
 <p>В конце концов поиск в Google вывел меня на страницу <a href="http://www.jsifaq.com/SF/Tips/Tip.aspx?id=7558">JSI FAQ</a>. Не могу сказать, что описание проблемы было сильно похоже на мою, но сочетание слов security, setup и сообщения «Setup cannot copy the file» имели к ней прямое отношение. Как ни странно, восстановление secedit.sdb  с помощью вот этой команды помогло:</p>
-
-<pre><code class="language-no-highlight">esentutl /p %SystemRoot%\\security\\database\\secedit.sdb
-</code></pre>
-
-<p>И после перезагрузки установка прошла как по маслу…</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">esentutl /p %SystemRoot%\\security\\database\\secedit.sdb
+</code></pre></div><p>И после перезагрузки установка прошла как по маслу…</p>
   </div>
   <div id="disqus_thread"></div>
 </div>

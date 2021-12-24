@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,74 +113,53 @@
     <a class="label" href="/tags/boost.build">Boost.Build</a><a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a>
     </span>
     <p>Продолжаем <a href="/2007/06/06/194/">начатое ранее</a>. Мы остановились на том, что сумели вызвать компилятор и передать ему нужную команду. Теперь нам нужно научиться передавать все настройки компилятора, уже известные Boost.Build, в созданную командную строку. Для сначала нужно выяснить как же, собственно, Boost.Build узнает где находится компилятор и как задаются параметры компиляции.</p>
-
-<p>Boost.Build использует так называемые features (на самом деле – именованные значения) для задания опций компиляции. В Jam коде они выглядят как “&lt;имя&gt;значение” (например “<optimization>speed”), в параметрах командной строки – как пары ”имя=значение” (например “optimization=speed”). Именованные значения позволяют задавать параметры компиляции одинаково вне зависимости от особенностей используемого компилятора. К примеру, в случае Visual C++ 2005 значение “<optimization>speed” будет преобразовано в “/O2”. В случае GCC то же значение трансформируется в “-O3”.</p>
-
+<p>Boost.Build использует так называемые features (на самом деле – именованные значения) для задания опций компиляции. В Jam коде они выглядят как “&lt;имя&gt;значение” (например “<!-- raw HTML omitted -->speed”), в параметрах командной строки – как пары ”имя=значение” (например “optimization=speed”). Именованные значения позволяют задавать параметры компиляции одинаково вне зависимости от особенностей используемого компилятора. К примеру, в случае Visual C++ 2005 значение “<!-- raw HTML omitted -->speed” будет преобразовано в “/O2”. В случае GCC то же значение трансформируется в “-O3”.</p>
 <p>Соответствие между именованными значениями (features) и параметрами конкретного компилятора устанавливается с помощью механизма флагов. Не вдаваясь в детали, выглядит это вот так:</p>
-
-<pre><code class="language-python">flags msvc.compile CFLAGS &lt;optimization&gt;speed : /O2 ;
-</code></pre>
-
-<p>Такая строка указывает, что в контексте правила (rule) и действий (actions) “msvc.compile” в значение переменной CFLAGS будет добавлен параметр “/O2” при условии, что в параметрах компиляции указано именованное значение “<optimization>speed”. Далее, во время компиляции очередного файла, значение переменной CFLAGS будет подставлено в командную строку компилятора внутри блока действий “msvc.compile”. Кстати префикс “msvc” означает, что правило или действия заданы в модуле msvc.jam.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">flags msvc<span style="color:#f92672">.</span>compile CFLAGS <span style="color:#f92672">&lt;</span>optimization<span style="color:#f92672">&gt;</span>speed : <span style="color:#f92672">/</span>O2 ;
+</code></pre></div><p>Такая строка указывает, что в контексте правила (rule) и действий (actions) “msvc.compile” в значение переменной CFLAGS будет добавлен параметр “/O2” при условии, что в параметрах компиляции указано именованное значение “<!-- raw HTML omitted -->speed”. Далее, во время компиляции очередного файла, значение переменной CFLAGS будет подставлено в командную строку компилятора внутри блока действий “msvc.compile”. Кстати префикс “msvc” означает, что правило или действия заданы в модуле msvc.jam.</p>
 <p>Далее Boost.Build использует файлы site-config.jam и user-config.jam для хранения глобальных и, соответственно, пользовательских настроек. site-config.jam находится в каталоге “$(BOOST_ROOT)/tools/build/v2”. user-config.jam обычно помещается в каталог $(HOME) (в Windows – “%HOMEDRIVE%%HOMEPATH%”). Мой файл user-config.jam выглядит просто до безобразия:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> toolset : using ;
 
-<pre><code class="language-python">import toolset : using ;
-
-# Использовать настройки Visual C++ по-умолчанию
+<span style="color:#75715e"># Использовать настройки Visual C++ по-умолчанию</span>
 using msvc ;
-</code></pre>
-
-<p>Первая строчка делает возможным вызов правила using из модуля toolset.jam. Строка “using msvc ;” указывает, что я хочу использовать MS Visual C++ с установками по умолчанию. Эта строка может быть и сложнее, например:</p>
-
-<pre><code class="language-python">using msvc 7.1toolkit : “X:/Microsoft Visual C++ Toolkit 2003/bin/cl.exe” ;
-</code></pre>
-
-<p>Такая строка указывает использовать версию “7.1toolkit” и задаёт путь к компилятору, по которому будут заданы остальные настройки.</p>
-
+</code></pre></div><p>Первая строчка делает возможным вызов правила using из модуля toolset.jam. Строка “using msvc ;” указывает, что я хочу использовать MS Visual C++ с установками по умолчанию. Эта строка может быть и сложнее, например:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">using msvc <span style="color:#ae81ff">7.1</span>toolkit : <span style="color:#960050;background-color:#1e0010">“</span>X:<span style="color:#f92672">/</span>Microsoft Visual C<span style="color:#f92672">++</span> Toolkit <span style="color:#ae81ff">2003</span><span style="color:#f92672">/</span>bin<span style="color:#f92672">/</span>cl<span style="color:#f92672">.</span>exe<span style="color:#960050;background-color:#1e0010">”</span> ;
+</code></pre></div><p>Такая строка указывает использовать версию “7.1toolkit” и задаёт путь к компилятору, по которому будут заданы остальные настройки.</p>
 <p>Интересно, что все настройки компиляторов, как заданные в файлах site- и user-config.jam, так и вычисленные автоматически, в конечном итоге (пройдя огонь, воду и кучу Jam кода) оседают в переменных с помощью того же самого механизма флагов, о котором я рассказывал выше. Например, для Visual C++ команда вызова компилятора задается в переменной “.CC”. Иными словами обе задачи, которые мы себе поставили в начале данного поста, решаются автоматически, как только мы получим доступ к этим переменным. Только вот как это сделать, если все переменные, определённые в модуле msvc.jam, видны только в контексте этого модуля или даже конкретного правила, если оно указано, как в случае с “msvc.compile”.</p>
-
 <p>Оказывается стандартная библиотека Boost.Build предоставляет все средства для решения этой проблемы. Достаточно вызвать toolset.inherit-flags и все флаги, заданные в исходном модуле будут импортированы в целевой.  Теперь наш генератор можно переписать вот таким образом:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Импортируем нужные модули</span>
+<span style="color:#f92672">import</span> generators ;
+<span style="color:#f92672">import</span> toolset ;
+<span style="color:#f92672">import</span> type ;
 
-<pre><code class="language-python"># Импортируем нужные модули
-import generators ;
-import toolset ;
-import type ;
+<span style="color:#75715e"># Регистрируем новый тип файла. &#34;I&#34; - имя типа, &#34;i&#34; - расширение файла</span>
+type<span style="color:#f92672">.</span>register I : i ;
 
-# Регистрируем новый тип файла. &quot;I&quot; - имя типа, &quot;i&quot; - расширение файла
-type.register I : i ;
+<span style="color:#75715e"># Регистрируем генератор для преобразования C в I. &#34;pp.generate.c&#34; -</span>
+<span style="color:#75715e"># полное имя правила, которое быдет вызвано для выполнения преобразования.</span>
+generators<span style="color:#f92672">.</span>register<span style="color:#f92672">-</span>standard pp<span style="color:#f92672">.</span>compile<span style="color:#f92672">.</span>c : C : I ;
 
-# Регистрируем генератор для преобразования C в I. &quot;pp.generate.c&quot; -
-# полное имя правила, которое быдет вызвано для выполнения преобразования.
-generators.register-standard pp.compile.c : C : I ;
+<span style="color:#75715e"># Импортируем флаги из msvc</span>
+toolset<span style="color:#f92672">.</span>inherit<span style="color:#f92672">-</span>flags pp : msvc ;
 
-# Импортируем флаги из msvc
-toolset.inherit-flags pp : msvc ;
-
-# Правило, которое будет вызвано во время генерации
-rule compile.c ( targets + : sources * : properties * )
+<span style="color:#75715e"># Правило, которое будет вызвано во время генерации</span>
+rule compile<span style="color:#f92672">.</span>c ( targets <span style="color:#f92672">+</span> : sources <span style="color:#f92672">*</span> : properties <span style="color:#f92672">*</span> )
 {
 }
 
-# Команды, непосредственно работающие с файлами
-actions compile.c
+<span style="color:#75715e"># Команды, непосредственно работающие с файлами</span>
+actions compile<span style="color:#f92672">.</span>c
 {
-    $(.CC) /EP -U$(UNDEFS) -D$(DEFINES) $(CFLAGS) $(&gt;) &gt; $(&lt;)
+    <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">.</span>CC) <span style="color:#f92672">/</span>EP <span style="color:#f92672">-</span>U<span style="color:#960050;background-color:#1e0010">$</span>(UNDEFS) <span style="color:#f92672">-</span>D<span style="color:#960050;background-color:#1e0010">$</span>(DEFINES) <span style="color:#960050;background-color:#1e0010">$</span>(CFLAGS) <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&gt;</span>) <span style="color:#f92672">&gt;</span> <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&lt;</span>)
 }
-</code></pre>
-
-<p>Генерируемые команды теперь тоже выглядят по-другому:</p>
-
-<pre><code class="language-no-highlight">mkdir &quot;bin&quot;
-mkdir &quot;bin\\msvc-8.0&quot;
-mkdir &quot;bin\\msvc-8.0\\debug&quot;
-mkdir &quot;bin\\msvc-8.0\\debug\\threading-multi&quot;
-call &quot;C:\\Program Files\\Microsoft Visual Studio 8\\VC\\vcvarsall.bat&quot; x86 &gt;nul
+</code></pre></div><p>Генерируемые команды теперь тоже выглядят по-другому:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">mkdir &#34;bin&#34;
+mkdir &#34;bin\\msvc-8.0&#34;
+mkdir &#34;bin\\msvc-8.0\\debug&#34;
+mkdir &#34;bin\\msvc-8.0\\debug\\threading-multi&#34;
+call &#34;C:\\Program Files\\Microsoft Visual Studio 8\\VC\\vcvarsall.bat&#34; x86 &gt;nul
 cl /Zm800 -nologo /EP   /Z7 /Od /Ob0 /W3 /GR /MDd /Zc:forScope /Zc:wchar_t win32api.c &gt; bin\\msvc-8.0\\debug\\threading-multi\\win32api.i
-</code></pre>
-
-<p>Обратите внимание, что правило “generate.c” было переименовано в “compile.c” чтобы соответствовать соглашениям, принятым в модуле msvc.jam. Без этого ничего работать не будет, так как имя правила – это часть контекста.</p>
-
+</code></pre></div><p>Обратите внимание, что правило “generate.c” было переименовано в “compile.c” чтобы соответствовать соглашениям, принятым в модуле msvc.jam. Без этого ничего работать не будет, так как имя правила – это часть контекста.</p>
 <p>В таком виде генератор уже пригоден к использованию, однако его можно сделать ещё лучше. Как - читайте в следующей части.</p>
   </div>
   <div id="disqus_thread"></div>

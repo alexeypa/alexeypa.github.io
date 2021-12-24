@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,21 +113,17 @@
     <a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a>
     </span>
     <p>Сегодня, вытягивая исходники WordPress, обратил внимание на такое сообщение:</p>
-
-<pre><code class="language-no-highlight">...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">...
 A    2.0.5\\wp-admin\\edit-form.php
 A    2.0.5\\wp-feed.php
 
-Fetching external item into '2.0.5\\wp-content\\plugins\\akismet'
+Fetching external item into &#39;2.0.5\\wp-content\\plugins\\akismet&#39;
 A    2.0.5\\wp-content\\plugins\\akismet\\akismet.gif
 A    2.0.5\\wp-content\\plugins\\akismet\\akismet.php
 Checked out external at revision 7355.
 
 Checked out revision 4731.
-</code></pre>
-
-<p>Подобного я раньше не видел. Меня, собственно, заинтересовали слова “external item”.  Оказалось, что Subversion позволяет включать в один репозиторий каталоги из других репозиториев. Фактически, Subversion поддерживает символические ссылки между репозиториями. Использование этого механизма может быть удобнее тех маленьких хитростей, про которые я  писал в <a href="/2006/12/29/123/">предыдущем посте</a> на эту тему. Особенно в случае, если код внешних библиотек не модифицируется.</p>
-
+</code></pre></div><p>Подобного я раньше не видел. Меня, собственно, заинтересовали слова “external item”.  Оказалось, что Subversion позволяет включать в один репозиторий каталоги из других репозиториев. Фактически, Subversion поддерживает символические ссылки между репозиториями. Использование этого механизма может быть удобнее тех маленьких хитростей, про которые я  писал в <a href="/2006/12/29/123/">предыдущем посте</a> на эту тему. Особенно в случае, если код внешних библиотек не модифицируется.</p>
 <p>Сам процесс создания ссылок хорошо описывается в svnbook: <a href="http://spin.atomicobject.com/2005/10/12/svnexternals/">Externals Definitions</a>. Там же описываются ограничения и сопутствующие сложности.</p>
 
   </div>

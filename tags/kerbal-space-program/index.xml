@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kerbal Space Program on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Kerbal Space Program on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 03 Dec 2013 23:28:39 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/kerbal-space-program/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 03 Dec 2013 23:28:39 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/kerbal-space-program/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Кербитальная механика</title>
       <link>https://blog.not-a-kernel-guy.com/2013/12/03/1515/</link>
@@ -19,11 +15,9 @@
       <guid>https://blog.not-a-kernel-guy.com/2013/12/03/1515/</guid>
       <description>&lt;p&gt;После обеда всем офисом следили, затаив дыхание, как &lt;a href=&#34;https://www.youtube.com/watch?v=aAj5xapImEs&#34;&gt;Falcon 9 тащит на своем горбу SES-8&lt;/a&gt; на &lt;a href=&#34;http://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D1%81%D1%82%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D1%80%D0%BD%D0%B0%D1%8F_%D0%BE%D1%80%D0%B1%D0%B8%D1%82%D0%B0&#34;&gt;ГПО&lt;/a&gt;:&lt;/p&gt;
 
-
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/aAj5xapImEs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/aAj5xapImEs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
-
 
 &lt;p&gt;По случаю удачного запуска вместо работы было решено слегка опорожнить офисные погреба, так что давайте лучше поговорим о несерьезном.&lt;/p&gt;</description>
     </item>

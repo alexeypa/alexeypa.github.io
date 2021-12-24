@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Орегон on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Орегон on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 25 Aug 2017 21:34:54 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BE%D1%80%D0%B5%D0%B3%D0%BE%D0%BD/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 25 Aug 2017 21:34:54 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BE%D1%80%D0%B5%D0%B3%D0%BE%D0%BD/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Поездка в Орегон</title>
       <link>https://blog.not-a-kernel-guy.com/2017/08/25/oregon/</link>
@@ -19,14 +15,11 @@
       <guid>https://blog.not-a-kernel-guy.com/2017/08/25/oregon/</guid>
       <description>&lt;p&gt;Вернулся из поездки в Орегон - ездили смотреть на полное затмение Солнца.
 Положительных впечатлений масса. На работу вставать не хочется. :-)&lt;/p&gt;
-
 &lt;p&gt;Портланд очень понравился. Похож на Сиэтл, только более зеленый и домашний.
 В центре города - крупная резервация хипстеров, причем опять же - портландские
 хипстеры они такие теплые, ламповые, не чета сиэтловским и, не боже мой, -
 калифорнийским. Чувствуется, что они просто так живут, а не следуют моде.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/08/washington-park-face.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/08/washington-park-face.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;На дороге расслабленность тоже чувствуется. В Калифорнии если застрял не в той
 полосе на шоссе как принято действовать? Во-первых, нужно сделать вид что
 перестраиваться ты и не собираешься - голова повернута ровно, взгляд немного
@@ -37,7 +30,6 @@
 как машина начала смещаться в сторону. Это минимизирует время, когда обитатель
 соседней полосы может распознать маневр и поджаться к впереди идущей машине
 чтобы, не дай бог, кто-нибудь не вклинился.&lt;/p&gt;
-
 &lt;p&gt;Знаете что делают в Портланде, чтобы перестроится в плотном потоке? Они включают
 поворотник и ждут пока в соседней полосе образуется место. А тем временем машина
 в соседней полосе притормаживает, чтобы открыть удобный карман. Дикари-с.&lt;/p&gt;</description>

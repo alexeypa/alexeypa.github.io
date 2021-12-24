@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Wordpress on Алексей Пахунов</title>
+    <title>WordPress on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/wordpress/</link>
-    <description>Recent content in Wordpress on Алексей Пахунов</description>
+    <description>Recent content in WordPress on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 09 Dec 2007 21:17:02 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 09 Dec 2007 21:17:02 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Наблюдение</title>
       <link>https://blog.not-a-kernel-guy.com/2007/12/09/269/</link>
@@ -37,8 +33,8 @@
       <guid>https://blog.not-a-kernel-guy.com/2007/01/26/139/</guid>
       <description>Из комментариев:
  Простите за каверзный вопрос&amp;hellip;
-blog.not-a-kernel-guy.com:80 GET / HTTP/1.0 Ответ: Server: Apache/1.3.33 (Unix)  Используете никсовый хостинг или подделываете имя сервера? Если это дело хостинг провайдера - то почему выбрали никсовый хостинг?
-Просто интересно, как выбор специалиста из Windows kernel team
+blog.not-a-kernel-guy.com:80 GET / HTTP/1.0 Ответ: Server: Apache/1.3.33 (Unix)   Используете никсовый хостинг или подделываете имя сервера? Если это дело хостинг провайдера - то почему выбрали никсовый хостинг?
+  Просто интересно, как выбор специалиста из Windows kernel team
  WordPress написан на PHP и в качестве базы данных использует MySQL. Cвязка *nix/Apache/PHP/MySQL напрашивается сама собой. Был бы движок написан на ASP, тогда был бы Windows хостинг.</description>
     </item>
     

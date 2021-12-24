@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Com on Алексей Пахунов</title>
+    <title>COM on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/com/</link>
-    <description>Recent content in Com on Алексей Пахунов</description>
+    <description>Recent content in COM on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 18 Apr 2007 10:57:42 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 18 Apr 2007 10:57:42 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Регистрация COM объектов. Часть II. 64-х разрядная специфика</title>
       <link>https://blog.not-a-kernel-guy.com/2007/04/18/173/</link>
@@ -27,10 +23,8 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2007/04/13/172/</guid>
       <description>&lt;p&gt;Изначально, данный пост должен был называться «Регистрация COM объектов на 64-х разрядных версиях Windows» и речь должна было пойти про особенности 64-х разрядных версий Windows с точки зрения регистрации COM компонент. Однако пост получился слишком большим и его пришлось разбить на две части. Про особенности 64-х разрядных систем я расскажу во второй части.&lt;/p&gt;
-
 &lt;p&gt;Для начала немного теории. Взаимодействие клиента (приложения вызвавшего CoCreateInstance) и сервера (COM объекта) в общем случае можно изобразить с помощью вот такой схемы:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2007/04/com_marshalling.png&#34; alt=&#34;COM маршалинг.&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2007/04/com_marshalling.png&#34; alt=&#34;COM маршалинг.&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -40,8 +34,8 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2006/10/25/90/</guid>
       <description>Как и обещал, выкладываю ссылку на инсталляцию:
- ShellLib (x86) - версия для 32-битного Windows XP/2003;
- ShellLib (x64) - версия для 64-битного Windows XP/2003.
+  ShellLib (x86) - версия для 32-битного Windows XP/2003;
+  ShellLib (x64) - версия для 64-битного Windows XP/2003.
   Инсталляция не содержит практически никакого пользовательского интерфейса - зачем он там нужен? Деинсталляция – через Add or Remove Programs. Инсталляция создавалась, как не трудно догадаться, с помощью WiX. :-) Исходный код инсталляционного скрипта можно скачать вместе с обновленными исходниками.</description>
     </item>
     
@@ -52,7 +46,6 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2006/10/22/87/</guid>
       <description>&lt;p&gt;Наконец-то дописал .NET обертку для IShellLink (см. серию постов начиная с &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/10/04/76/&#34;&gt;Shortcuts, shell and COM apartments.&lt;/a&gt;). Теперь можно создавать и редактировать ярлыки прямо из PowerShell. :-)&lt;/p&gt;
-
 &lt;p&gt;Вот &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/10/ShellLink_src.zip&#34;&gt;ссылка на исходный код проекта&lt;/a&gt;. Немного позже, если дойдут руки, выложу ссылку на готовую инсталляцию.&lt;/p&gt;</description>
     </item>
     
@@ -63,7 +56,6 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2006/10/11/82/</guid>
       <description>&lt;p&gt;Хочу поделиться рецептом победы над коварным IShellLinkDataList (см. предыдущие посты &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/10/07/78/&#34;&gt;COM marshalling.&lt;/a&gt; и &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/10/04/76/&#34;&gt;Shortcuts, shell and COM apartments.&lt;/a&gt;)&lt;/p&gt;
-
 &lt;p&gt;Итак, исходная задача: вызвать метод локального интерфейса (интерфейса, помеченного атрибутом [local]) удалённо.&lt;/p&gt;</description>
     </item>
     
@@ -83,8 +75,7 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2006/10/07/78/</guid>
       <description>&lt;p&gt;Продолжение истории про &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/10/04/76/&#34;&gt;Shortcuts, shell and COM apartments&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Разбираясь с написанием proxy для интерфейса IShellLinkDataList, нашел несколько дельных статей в MSDN. Например, &lt;a href=&#34;http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnesscom/html/chapter5apartments.asp&#34;&gt;Standard Marshaling Architecture&lt;/a&gt; толково описывает как собственно происходит marshalling во время вызова и какие объекты задействованы при этом. В двух словах всё происходит так:&lt;/p&gt;</description>
+&lt;p&gt;Разбираясь с написанием proxy для интерфейса IShellLinkDataList, нашел несколько дельных статей в MSDN. Например, &lt;a href=&#34;http://msdn.microsoft.com/library/default.asp?url=https://blog.not-a-kernel-guy.com/library/en-us/dnesscom/html/chapter5apartments.asp&#34;&gt;Standard Marshaling Architecture&lt;/a&gt; толково описывает как собственно происходит marshalling во время вызова и какие объекты задействованы при этом. В двух словах всё происходит так:&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -94,7 +85,6 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2006/10/04/76/</guid>
       <description>&lt;p&gt;&lt;em&gt;Дурная голова ногам покоя не даёт.&lt;/em&gt;&lt;/p&gt;
-
 &lt;p&gt;Поставил свежий WDK и понял, что мне жутко надоело каждый раз исправлять все ярлыки, меняя шрифт на Lucida Console и размеры окна со стандартных 80x25 на более удобоваримые 170x75. Зачесались руки автоматизировать это дело.&lt;/p&gt;</description>
     </item>
     

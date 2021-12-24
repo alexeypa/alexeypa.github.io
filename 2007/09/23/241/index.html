@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,48 +113,38 @@
     <a class="label" href="/tags/win32.utf8">Win32.Utf8</a>
     </span>
     <p>Продолжаю возиться с <a href="/tags/win32.utf8/">синтаксическим анализом</a>.</p>
-
 <p>Основное преимущество, которое даёт использование <a href="http://en.wikipedia.org/wiki/Abstract_syntax_tree">AST</a> по сравнению с техникой разбора снизу вверх (bottom-up parsing) – это возможность отложить анализ разобранного текста «на потом». Это может быть удобно по разным причинам. В случае Win32.Utf8 это удобно тем, что требования к анализатору формируются прямо в процессе работы над проектом. По большому счёту я понятия не имею, что получиться в конечном итоге. :-)</p>
-
 <p>Удобство использования AST в значительной степени зависит от того, насколько хорошо реализована навигация по дереву. После давешнего эксперимента с <a href="/2007/09/16/238/">отображением дерева в виде XML</a>, использование XPath для навигации по дереву просто напрашивалось. Однако, после первых экспериментов с XPath выяснилось, что «канонический» XPath не очень хорошо подходит для этой задачи. Проблема заключается в рекурсивной природе AST. Например:</p>
-
-<pre><code class="language-cpp">struct _FOO_BAR  {
-    int member;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">_FOO_BAR</span>  {
+    <span style="color:#66d9ef">int</span> member;
 } foobar;
-</code></pre>
-
-<p>Этот код породит AST примерно такой структуры:</p>
-
-<pre><code class="language-xml">&lt;translation_unit&gt;
+</code></pre></div><p>Этот код породит AST примерно такой структуры:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;translation_unit&gt;</span>
  ...
- &lt;declaration&gt;
+ <span style="color:#f92672">&lt;declaration&gt;</span>
   ...
-  &lt;declaration&gt;
+  <span style="color:#f92672">&lt;declaration&gt;</span>
    ...
-  &lt;/declaration&gt;
+  <span style="color:#f92672">&lt;/declaration&gt;</span>
   ...
- &lt;/declaration&gt;
+ <span style="color:#f92672">&lt;/declaration&gt;</span>
  ...
-&lt;/translation_unit&gt;
-</code></pre>
-
-<p>При этом внешний узел «declaration» соответствует определению переменной «foobar», а внутренний – определению члена структуры «member». Все узлы в этом примере разделены заранее неизвестным числом промежуточных узлов.</p>
-
+<span style="color:#f92672">&lt;/translation_unit&gt;</span>
+</code></pre></div><p>При этом внешний узел «declaration» соответствует определению переменной «foobar», а внутренний – определению члена структуры «member». Все узлы в этом примере разделены заранее неизвестным числом промежуточных узлов.</p>
 <p>Написать XPath, который выберет только внешний «declaration», но не выберет внутренний возможно, но не просто. Задача еще более усложняется, если учесть, что количество вложенных узлов «declaration» может быть произвольным, а начальный узел может находится в середине дерева. Иными словами, задача состоит в том, чтобы выбрать все узлы с определённым именем, которые встретились первыми на пути от начального узла до каждого из его листьев.</p>
-
 <p>Эту закавыку можно обойти двумя способами.</p>
-
 <ol>
-<li><p>Расширить стандартный XPath осью «grandchild», которая и будет реализовывать нужный алгоритм поиска;</p></li>
-
-<li><p>Модифицировать парсер таким образом, чтобы в процессе разбора повторяющиеся узлы заменялись на узлы с уникальными именами.</p></li>
+<li>
+<p>Расширить стандартный XPath осью «grandchild», которая и будет реализовывать нужный алгоритм поиска;</p>
+</li>
+<li>
+<p>Модифицировать парсер таким образом, чтобы в процессе разбора повторяющиеся узлы заменялись на узлы с уникальными именами.</p>
+</li>
 </ol>
-
 <p>Очевидно, что второй способ накладывает дополнительные ограничения на структуру AST, что никак не способствует облегчению жизни программиста. Соответственно, пришлось убедиться на практике, что написать прямолинейную (и неоптимизированную) реализацию XPath совсем не сложно. :-) Это, конечно, не полноценная реализация XPath, но чтобы правильно обработать выражение вроде примера ниже её вполне хватает.</p>
-
-<pre><code class="language-no-highlight"># Найти все функции с именами, заканчивающимися на 'W'.
-grandchild-or-self::declaration/init_list_declaration/Declarator[Function][substring(@name, string-length(@value), 1) = 'W']
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight"># Найти все функции с именами, заканчивающимися на &#39;W&#39;.
+grandchild-or-self::declaration/init_list_declaration/Declarator[Function][substring(@name, string-length(@value), 1) = &#39;W&#39;]
+</code></pre></div>
   </div>
   <div id="disqus_thread"></div>
 </div>

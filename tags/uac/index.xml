@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Uac on Алексей Пахунов</title>
+    <title>UAC on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/uac/</link>
-    <description>Recent content in Uac on Алексей Пахунов</description>
+    <description>Recent content in UAC on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 22 May 2009 23:51:35 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/uac/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 22 May 2009 23:51:35 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/uac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Отладка на кофейной гуще</title>
       <link>https://blog.not-a-kernel-guy.com/2009/05/22/532/</link>
       <pubDate>Fri, 22 May 2009 23:51:35 -0700</pubDate>
       
       <guid>https://blog.not-a-kernel-guy.com/2009/05/22/532/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2009/05/mall_fortunecrystalball.gif&#34; alt=&#34;mall_fortunecrystalball&#34; /&gt;При определённой сноровке, можно отлаживать код прямо из любимого почтового клиента. На днях пришло письмо с вопросом. Некоторое приложение, будучи установленным в каталог отличный от “Program Files”, при запуске вызывало появление окна &lt;a href=&#34;http://en.wikipedia.org/wiki/User_Account_Control&#34;&gt;UAC&lt;/a&gt; с требованием повысить привилегии. Приложение работало нормально, в случае, если оно было установлено в “Program Files”. Как такое может быть?&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2009/05/mall_fortunecrystalball.gif&#34; alt=&#34;mall_fortunecrystalball&#34;&gt;При определённой сноровке, можно отлаживать код прямо из любимого почтового клиента. На днях пришло письмо с вопросом. Некоторое приложение, будучи установленным в каталог отличный от “Program Files”, при запуске вызывало появление окна &lt;a href=&#34;http://en.wikipedia.org/wiki/User_Account_Control&#34;&gt;UAC&lt;/a&gt; с требованием повысить привилегии. Приложение работало нормально, в случае, если оно было установлено в “Program Files”. Как такое может быть?&lt;/p&gt;</description>
     </item>
     
     <item>

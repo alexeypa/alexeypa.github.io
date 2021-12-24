@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Boost on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Boost on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 28 Aug 2007 08:59:56 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/boost/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 28 Aug 2007 08:59:56 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/boost/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Boost переехал в Subversion репозиторий</title>
       <link>https://blog.not-a-kernel-guy.com/2007/08/28/230/</link>

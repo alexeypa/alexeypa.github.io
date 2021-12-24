@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,25 +113,20 @@
     <a class="label" href="/tags/%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B5-%D1%85%D0%B8%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%B8">Маленькие хитрости</a><a class="label" href="/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0">Отладка</a>
     </span>
     <p>_Сижу дома простуженный. Ни о чём писать не хочется, поэтому буду краток. _</p>
-
 <p>Команда !dreg в WinDbg позволяет просматривать содержимое реестра прямо в процессе отладки. Это особенно удобно в двух случаях:</p>
-
 <ol>
-<li><p>При удалённой отладке, когда сессия отладчика - это единственный вид доступа к удалённой машине. Такое встречается сплошь и рядом, например, если удалённая машина находится в другой сети или домене;</p></li>
-
-<li><p>В случае, когда отладчик пользовательского режима контролируется ядерным отладчиком. Это тоже, в общем-то, <a href="http://www.nynaeve.net/?p=30">вариант удалённой отладки</a>, только в этом случае до отлаживаемой машины достучаться кроме как через отладчик вообще никак нельзя.</p></li>
+<li>
+<p>При удалённой отладке, когда сессия отладчика - это единственный вид доступа к удалённой машине. Такое встречается сплошь и рядом, например, если удалённая машина находится в другой сети или домене;</p>
+</li>
+<li>
+<p>В случае, когда отладчик пользовательского режима контролируется ядерным отладчиком. Это тоже, в общем-то, <a href="http://www.nynaeve.net/?p=30">вариант удалённой отладки</a>, только в этом случае до отлаживаемой машины достучаться кроме как через отладчик вообще никак нельзя.</p>
+</li>
 </ol>
-
 <p>К сожалению !dreg не работает в ядерном отладчике, вернее работает, но показывает реестр той машины где запущен kd.exe, а не целевой, так бы этого не хотелось. Иначе бы счастье было бы полным.</p>
-
 <p>Итак, начнем:</p>
-
-<pre><code class="language-no-highlight">0:000&gt; .load ntsdexts
-</code></pre>
-
-<p>!dreg может показывать все подключи данного ключа:</p>
-
-<pre><code class="language-no-highlight">0:000&gt; !dreg hklm\software\microsoft\windows search
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; .load ntsdexts
+</code></pre></div><p>!dreg может показывать все подключи данного ключа:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; !dreg hklm\software\microsoft\windows search
 Subkey: Applications
 Subkey: CatalogNames
 Subkey: ContentIndexCommon
@@ -145,26 +141,20 @@ Subkey: PerformanceCounters
 Subkey: ProtocolHandlers
 Subkey: SearchService
 Subkey: UsnNotifier
-</code></pre>
-
-<p>Также можно показать все значения данного ключа:</p>
-
-<pre><code class="language-no-highlight">0:000&gt; !dreg hklm\software\microsoft\windows search\protocolhandlers!*
-Value: &quot;Mapi&quot; - REG_SZ: &quot;Search.Mapi2Handler.1&quot;
+</code></pre></div><p>Также можно показать все значения данного ключа:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; !dreg hklm\software\microsoft\windows search\protocolhandlers!*
+Value: &#34;Mapi&#34; - REG_SZ: &#34;Search.Mapi2Handler.1&#34;
 ------------------------------------------------------------------------
-Value: &quot;File&quot; - REG_SZ: &quot;Search.FileHandler.1&quot;
+Value: &#34;File&#34; - REG_SZ: &#34;Search.FileHandler.1&#34;
 ------------------------------------------------------------------------
-Value: &quot;Csc&quot; - REG_SZ: &quot;Search.CscHandler.1&quot;
+Value: &#34;Csc&#34; - REG_SZ: &#34;Search.CscHandler.1&#34;
 ------------------------------------------------------------------------
-Value: &quot;OneIndex&quot; - REG_SZ: &quot;Search.OneIndexHandler.1&quot;
+Value: &#34;OneIndex&#34; - REG_SZ: &#34;Search.OneIndexHandler.1&#34;
 ------------------------------------------------------------------------
-</code></pre>
-
-<p>А можно посмотреть конкретное значение конкретного ключа:</p>
-
-<pre><code class="language-no-highlight">0:000&gt; !dreg hklm\software\microsoft\windows search\protocolhandlers!Mapi
-REG_SZ: &quot;Search.Mapi2Handler.1&quot;
-</code></pre>
+</code></pre></div><p>А можно посмотреть конкретное значение конкретного ключа:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; !dreg hklm\software\microsoft\windows search\protocolhandlers!Mapi
+REG_SZ: &#34;Search.Mapi2Handler.1&#34;
+</code></pre></div>
   </div>
   <div id="disqus_thread"></div>
 </div>

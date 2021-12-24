@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.54.0" />
+	<meta name="generator" content="Hugo 0.90.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -100,6 +100,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -116,9 +117,7 @@
 
   <li class="active">
     <span class="fa-lg">
-      <a href="/post/">
-        Архив
-      </a>
+      <a href="/post/">Архив</a>
     <span>
   </li>
 
@@ -129,6 +128,21 @@
   </li>
 </ul>
 
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/03/23/299/">Process Monitor научился трассировать 32-х битный стек на x64</a>
+      </h1>
+      <span class="post-date">Mar 23, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/03/23/299/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a><a class="label" href="/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0">Отладка</a><a class="label" href="/tags/process-monitor">Process Monitor</a><a class="label" href="/tags/sysinternals">Sysinternals</a>
+      </span>
+      
+      <p>Я как-то привык, что Process Monitor не умеет показывать 32-х битный стек события, которое произошло в 32-х разрядном процессе, выполняющемся под Wow64. Вместо этого он показывал только 64-х битный стек, что было абсолютно бесполезно, так как там по определению всегда светится wow64.dll сотоварищи. Однако после подсказки на <a href="http://forum.sysinternals.com/forum_posts.asp?TID=13227#65748">Sysinternals Forums</a> выяснилось, что начиная с Vista SP1 это уже работает.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2008/03/23/299/">Read On &rarr;</a>
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -158,8 +172,7 @@
       </span>
       
       <p>А знаете, как <a href="http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx">Process Explorer</a> подменяет собой стандартный Task Manager?</p>
-
-<p><img src="/2008/03/procexp_1.png" alt="Process Explorer: Replace Task Manager." /></p>
+<p><img src="/2008/03/procexp_1.png" alt="Process Explorer: Replace Task Manager."></p>
       <a href="https://blog.not-a-kernel-guy.com/2008/03/13/297/">Read On &rarr;</a>
       
     </div>
@@ -205,7 +218,6 @@
       </span>
       
       <p>Моя очередь рассказывать про 5 инструментов, без которых я не могу работать продуктивно. Эстафетную палочку мне передали сразу двое участников: сначала <a href="http://alenacpp.blogspot.com/2008/02/5.html">Елена Сагалаева</a>, затем <a href="http://stump-workshop.blogspot.com/2008/02/5.html">Сергей Розовик</a>. Получается, что у меня теперь ДВЕ эстафетные палочки. :-) Придется отработать вдвойне.</p>
-
 <p><a href="http://www.microsoft.com/whdc/devtools/debugging/default.mspx">Debugging Tools for Windows</a>: windbg.exe, cdb.exe, kd.exe, remote.exe, gflags.exe и так далее. Несмотря на то, что интерфейс WinDbg ужасен, а все остальные утилиты работают только в командной строке, нет лучшего отладчика <em>для</em> Windows.</p>
       <a href="https://blog.not-a-kernel-guy.com/2008/03/01/294/">Read On &rarr;</a>
       
@@ -222,13 +234,10 @@
       </span>
       
       <p><a href="/2007/10/18/256/">Вопрос</a>:</p>
-
 <blockquote>
 <p>Скажите, а невозможность загрузки в 64bit-процесс 32bit DLL - фатальна, или же возможны какие-то хаки, недокументированные обходные пути?</p>
 </blockquote>
-
 <p>Отвечаю здесь, так как ответ получился слушком длинным.</p>
-
 <p>Во-первых, про любые недокументированные возможности меня спрашивать бесполезно. Даже если такая возможность существует, я всё равно о ней не расскажу. Этому есть несколько причин, включая очевидные вещи вроде NDA, законе об авторском праве и т.д. Еще одна причина, почему я не горю желанием это делать, - это то, что раскрывая детали реализации того или иного компонента, я тем самым лишаю этот компонент возможности развиваться и улучшатся в следующих версиях.</p>
       <a href="https://blog.not-a-kernel-guy.com/2008/02/28/293/">Read On &rarr;</a>
       
@@ -245,7 +254,7 @@
       </span>
       
       Наткнулся на вопрос на форуме iXBT. В Windows SDK помимо флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY определена маска KEY_WOW64_RES. Зачем она нужна?
-#ifndef KEY_WOW64_RES #define KEY_WOW64_RES (KEY_WOW64_64KEY | KEY_WOW64_32KEY) #endif  Ответ: по большому счету она не нужна. В коде Wow64 она используется для выделения флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY из маски доступа для дальнейшей обработки. Указывать оба флага (и KEY_WOW64_64KEY и KEY_WOW64_32KEY) при вызове RegCreateKeyEx, RegOpenKeyEx или RegDeleteKeyEx нельзя, так что приложениям эта маска ни к чему.
+#ifndef KEY_WOW64_RES  #define KEY_WOW64_RES (KEY_WOW64_64KEY | KEY_WOW64_32KEY) #endif Ответ: по большому счету она не нужна. В коде Wow64 она используется для выделения флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY из маски доступа для дальнейшей обработки. Указывать оба флага (и KEY_WOW64_64KEY и KEY_WOW64_32KEY) при вызове RegCreateKeyEx, RegOpenKeyEx или RegDeleteKeyEx нельзя, так что приложениям эта маска ни к чему.
       <a href="https://blog.not-a-kernel-guy.com/2008/02/26/292/">Read On &rarr;</a>
       
     </div>
@@ -277,27 +286,8 @@
       
       Вслед за публикацией спецификаций, описывающих формат файлов Microsoft Office, Joel Spolsky написал неплохую статью, объясняющую почему формат этих файлов настолько сложен и, на первый взгляд, специально запутан до невозможности.
  A normal programmer would conclude that Office&rsquo;s binary file formats:
- are deliberately obfuscated
- are the product of a demented Borg mind
- were created by insanely bad programmers
- and are impossible to read or create correctly.
-   Если коротко, то проблема в том, что эти форматы имеют длинную историю и при их разработке преследовались совсем другие цели нежели преследовались бы при разработке формата «офисных» файлов сейчас.
+   are deliberately obfuscated     are the product of a demented Borg mind     were created by insanely bad programmers     and are impossible to read or create correctly.
       <a href="https://blog.not-a-kernel-guy.com/2008/02/19/290/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2008/02/15/289/">Помните, как я ругался на функцию GetRawInputDeviceList?</a>
-      </h1>
-      <span class="post-date">Feb 15, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/02/15/289/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD">Дизайн</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/win32">Win32</a>
-      </span>
-      
-      <p>Оказалось, что <a href="/2007/12/05/268/">это</a> была ошибка в документации. Её поправили и посмотрите, <a href="http://msdn2.microsoft.com/en-us/library/ms645598.aspx">что получилось</a>.</p>
-      <a href="https://blog.not-a-kernel-guy.com/2008/02/15/289/">Read On &rarr;</a>
       
     </div>
     
@@ -310,9 +300,7 @@
 
   <li class="active">
     <span class="fa-lg">
-      <a href="/post/">
-        Архив
-      </a>
+      <a href="/post/">Архив</a>
     <span>
   </li>
 

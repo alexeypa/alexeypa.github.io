@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ndis on Алексей Пахунов</title>
+    <title>NDIS on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/ndis/</link>
-    <description>Recent content in Ndis on Алексей Пахунов</description>
+    <description>Recent content in NDIS on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 13 Feb 2011 23:01:35 -0800</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/ndis/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 13 Feb 2011 23:01:35 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/ndis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>История одной оптимизации</title>
       <link>https://blog.not-a-kernel-guy.com/2011/02/13/990/</link>
@@ -18,7 +14,6 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2011/02/13/990/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2011/02/06/972/&#34;&gt;Писал я тут свой первый драйвер для сетевой карты&lt;/a&gt;. Взял, как полагается, за основу готовый образец драйвера. Выкинул всю аппаратно-зависимую часть. Добавил свою. По ходу дела выяснил, что tear-down код в примере отсутствует напрочь, чтение стандартной конфигурации не сделано, кругом hardcoded константы. В общем, обычная история, что вы хотите от образца?&lt;/p&gt;
-
 &lt;p&gt;Дописал до работающего состояния, протестировал скорость TCP/IP соединения. Получается примерно 3 MByte/sec на одно соединение, около 12 MByte/sec – пиковая пропускная способность нескольких параллельных соединений. Маловато для 1 Gbit/sec соединения.&lt;/p&gt;</description>
     </item>
     
@@ -29,7 +24,6 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2011/02/06/972/</guid>
       <description>&lt;p&gt;На работе понадобилось написать драйвер для сетевой карты. Я этого раньше никогда не делал и вообще с &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms817945.aspx&#34;&gt;NDIS&lt;/a&gt; дела не имел. А тут такая возможность! Делюсь впечатлениями.&lt;/p&gt;
-
 &lt;p&gt;В общем и целом NDIS мне понравился. Интерфейсы довольно логичны, хотя и многочисленны. Взаимосвязь между разными компонентами в большинстве случаев после недолгой медитации становится довольно очевидной. Все структуры снабжены заголовком с сигнатурой, версией и размером, что, помимо заботы об обратной совместимости, означает меньше проблем с отладкой. При необходимости нужную структуру можно просто найти в памяти.&lt;/p&gt;</description>
     </item>
     

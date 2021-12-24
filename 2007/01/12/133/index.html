@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,26 +113,18 @@
     <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/wow64">Wow64</a>
     </span>
     <p>Функция CreateProcess может по праву считаться одной из самых больших и сложных функций Win32 API. Помимо собственно создания адресного пространства, загрузки кода и запуска первого потока она делает ещё много неочевидных, но необходимых вещей. Например, она умеет запускать 16-ти битные приложения на 64-х битной системе. Позвольте, скажете вы, но разве поддержка 16-ти битных DOS, Windows и OS/2 приложений не была полностью убрана из 64-х битных версий системы?</p>
-
-<p><img src="/2007/01/gvim16.png" alt="" /></p>
-
+<p><img src="/2007/01/gvim16.png" alt=""></p>
 <p>Это действительно так, однако здесь есть одна тонкость. Старые версии <a href="http://www.macrovision.com/products/flexnet_installshield/installshield/index.shtml">InstallShield</a>, да и других инсталляторов, создавали инсталляции, включающие в себя 16-ти битный загрузчик (setup.exe). Из-за этого заметное количество 32-х битных приложений отказывалось устанавливаться на 64-х битной системе. Для решения этой проблемы в CreateProcess была добавлена возможность распознавать такие исполняемые файлы и на лету подменять их на аналогичные по функциональности 32-х битные.</p>
-
 <p>Работает это так: если NtCreateUserProcess возвращает ошибку STATUS_INVALID_IMAGE_WIN_16, то CreateProcess пытается сопоставить загружаемый модуль со списком из “HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\NtVdm64”. Если файл совпадает с описанием из списка, то вместо него будет загружен 32-х битный модуль с идентичной функциональностью. При поиске используется информация о версии модуля, а именно: ProductName , ProductVersion и InternalName. При этом, как видно из примера ниже, работают маски ‘*’:</p>
-
-<pre><code class="language-no-highlight">[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows
  NT\\CurrentVersion\\NtVdm64\\INSTALLSHIELD5]
-&quot;ProductVersion&quot;=&quot;5*&quot;
-&quot;ProductName&quot;=&quot;InstallShield*&quot;
-&quot;InternalName&quot;=&quot;*&quot;
-&quot;CommandLine&quot;=&quot;-isw64\\&quot;%m\\&quot; %c&quot;
-&quot;MappedExeName&quot;=&quot;C:\\\\Windows\\\\SysWOW64\\\\InstallShield\\\\setup.exe&quot;
-</code></pre>
-
-<p>Значение “CommandLine” задает параметры командной строки, которые будут переданы в 32-х битный модуль. “%m” заменяется именем оригинального 16-ти битного файла. “%c” заменяется командной строкой, переданной 16-ти битному исполняемому файлу.</p>
-
+&#34;ProductVersion&#34;=&#34;5*&#34;
+&#34;ProductName&#34;=&#34;InstallShield*&#34;
+&#34;InternalName&#34;=&#34;*&#34;
+&#34;CommandLine&#34;=&#34;-isw64\\&#34;%m\\&#34; %c&#34;
+&#34;MappedExeName&#34;=&#34;C:\\\\Windows\\\\SysWOW64\\\\InstallShield\\\\setup.exe&#34;
+</code></pre></div><p>Значение “CommandLine” задает параметры командной строки, которые будут переданы в 32-х битный модуль. “%m” заменяется именем оригинального 16-ти битного файла. “%c” заменяется командной строкой, переданной 16-ти битному исполняемому файлу.</p>
 <p>Список поддерживаемых 16-ти битных программ можно расширять (раз уж он храниться в реестре). Хотя вряд ли это кому понадобиться.</p>
-
 <p>Статья на MSDN: <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/win64/win64/wow64_implementation_details.asp">Application Installation</a></p>
   </div>
   <div id="disqus_thread"></div>

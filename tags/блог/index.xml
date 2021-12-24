@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Блог on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Блог on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 20 Jun 2016 08:11:24 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B1%D0%BB%D0%BE%D0%B3/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 20 Jun 2016 08:11:24 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B1%D0%BB%D0%BE%D0%B3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Давно не брал я в руки HTML и CSS</title>
       <link>https://blog.not-a-kernel-guy.com/2016/06/20/redesign/</link>
@@ -18,7 +14,6 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2016/06/20/redesign/</guid>
       <description>&lt;p&gt;Надоел мне что-то &lt;a href=&#34;https://wordpress.org/&#34;&gt;WordPress&lt;/a&gt;. Попробую &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, что-ли. Переезд еще в процессе. Все посты вроде на месте, а вот комментарии еще в процессе. RSS вроде как тоже на месте. Если что-где отвалилось - скажите.&lt;/p&gt;
-
 &lt;p&gt;Update: Все, готово.&lt;/p&gt;</description>
     </item>
     
@@ -37,7 +32,7 @@
       <pubDate>Sun, 15 Nov 2009 23:33:13 -0800</pubDate>
       
       <guid>https://blog.not-a-kernel-guy.com/2009/11/15/678/</guid>
-      <description>За окном шел дождь и рота красноармейцев, а я решил работу поменять. С понедельника перехожу в Extreme Computing Group, что при Microsoft Research, где буду ставить эксперименты нечеловеческие работать над тем, чтобы дата-центры меньше кушали и больше думали. Примерно так. Надо бы название блога поменять…</description>
+      <description>За окном шел дождь и рота красноармейцев, а я решил работу поменять. С понедельника перехожу в Extreme Computing Group, что при Microsoft Research, где буду ставить эксперименты нечеловеческиеработать над тем, чтобы дата-центры меньше кушали и больше думали. Примерно так. Надо бы название блога поменять…</description>
     </item>
     
     <item>

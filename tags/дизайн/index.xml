@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Дизайн on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Дизайн on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 16 Jan 2018 21:35:03 -0800</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 16 Jan 2018 21:35:03 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Гавайская система экстренного оповещения</title>
       <link>https://blog.not-a-kernel-guy.com/2018/01/16/hawaii/</link>
@@ -20,21 +16,17 @@
       <description>&lt;p&gt;Вы наверное уже слышали про сбой системы экстренного оповещения, которая
 выдала предупреждение о приближении баллистической ракеты к Гавайским островам
 в субботу 13-о числа:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/01/ballilstic_missile_threat_inbound.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/01/ballilstic_missile_threat_inbound.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;38 минут царила паника пока ошибочное сообщение не было отменено - &lt;a href=&#34;https://www.reddit.com/r/nonononoyes/comments/7q963r/a_lot_of_people_are_saying_the_error_in_hawaii/&#34;&gt;люди
 прощались с семьями на материке&lt;/a&gt;, кто-то пытался &lt;a href=&#34;https://www.reddit.com/r/gifs/comments/7q6rkf/video_from_hawaii_children_being_placed_into/&#34;&gt;спрятать детей в ливневой
 канализации&lt;/a&gt;, на дорогах &lt;a href=&#34;https://www.reddit.com/r/news/comments/7q67a1/emergency_alert_about_ballistic_missile_sent_to/dsmp325/&#34;&gt;творилось настоящее безумие&lt;/a&gt;, а кто-то &lt;a href=&#34;https://www.reddit.com/r/AskReddit/comments/7qf7ov/people_who_made_an_impulse_decision_when_they/&#34;&gt;послал
 любимого босса в пешее эротическое&lt;/a&gt; (о чем только люди не думают в
 критическую минуту).&lt;/p&gt;
-
 &lt;p&gt;Сегодня я наткнулся на &lt;a href=&#34;https://www.extremetech.com/extreme/262166-hawaiis-missile-scare-driven-terrible-ui-fcc-launches-investigation&#34;&gt;статью&lt;/a&gt;, которая вполне объясняет как могло
 получится, что такое важное сообщение было послано по ошибке. Это как раз тот
 случай, когда одна картинка лучше тысячи слов. Вот интерфейс системы экстренного
 оповещения:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/01/hawaii_alert_system_ui.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/01/hawaii_alert_system_ui.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -72,13 +64,12 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2007/12/05/268/</guid>
       <description>&lt;p&gt;Функцию &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/ms645598.aspx&#34;&gt;GetRawInputDeviceList&lt;/a&gt; можно смело приводить в качестве антипримера правильно спроектированного API. Эта функция используется для получения списка описателей устройств ввода (raw input devices). Ничего сложного. Прототип функции тоже выглядит довольно невинно - всего три параметра, и, как кажется по началу, назначение каждого довольно очевидно.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;UINT GetRawInputDeviceList(
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;UINT &lt;span style=&#34;color:#a6e22e&#34;&gt;GetRawInputDeviceList&lt;/span&gt;(
     __out_opt PRAWINPUTDEVICELIST pRawInputDeviceList,
     __inout PUINT puiNumDevices,
     __in UINT cbSize
     );
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -90,7 +81,6 @@
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/05/23/189/&#34;&gt;Понимаешь, до сих пор мне никто не может внятно сказать, почему нельзя было 64х приложения пихать в новый ключ Регистра, вместо перенаправления 32х на новое “место жительства”. Будь ласка, если это твоя специализация, обоснуй!&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;Итак, почему же Wow64 использует перенаправление реестра и файловой системы вместо того, чтобы просто закрепить старые ключи реестра и “%windir%\system32” за 32-х разрядными приложениями и позволить 64-х битным приложениям определить новые ключи и использовать, скажем, “%windir%\system64” для 64-х битных системных библиотек? Это было бы довольно логично, особенно если учесть, что нечто подобное уже было проделано при переходе с Windows 3.x на Windows 95/NT.&lt;/p&gt;</description>
     </item>
     
@@ -101,13 +91,16 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2007/05/07/181/</guid>
       <description>&lt;p&gt;Я уже упоминал несколько раз, что 64-х разрядные версии Windows используют два раздельных представления реестра – одно для 32-х разрядных приложений, а другое для 64-х разрядных. Как-то, я даже писал о том, &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/08/22/27/&#34;&gt;как это делается&lt;/a&gt;. Ключевых моментов там всего ничего:&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Разделён не весь реестр, а лишь некоторые из ключей;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Физически 32-х разрядные ключи помещаются в ветки с именем «Wow6432Node»;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Приложения могут выбирать представление реестра с которым они хотят работать с помощью флагов KEY_WOW64_32KEY и KEY_WOW64_64KEY (см. &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/aa384129.aspx&#34;&gt;Accessing an Alternate Registry View&lt;/a&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Разделён не весь реестр, а лишь некоторые из ключей;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Физически 32-х разрядные ключи помещаются в ветки с именем «Wow6432Node»;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Приложения могут выбирать представление реестра с которым они хотят работать с помощью флагов KEY_WOW64_32KEY и KEY_WOW64_64KEY (см. &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/aa384129.aspx&#34;&gt;Accessing an Alternate Registry View&lt;/a&gt;).&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;</description>
     </item>
     
@@ -127,8 +120,7 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2006/11/29/106/</guid>
       <description>&lt;p&gt;Пару недель назад столкнулся с проблемой, пытаясь собрать 64-х битную версию Boost.Jam из поставки &lt;a href=&#34;http://www.boost.org/tools/build/v2/index.html&#34;&gt;Boost.Build&lt;/a&gt;. Скрипт build.bat, запускающий процесс сборки, выдавал не очень понятное сообщение “\Microsoft was unexpected at this time.”:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2006/11/build_error_1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2006/11/build_error_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

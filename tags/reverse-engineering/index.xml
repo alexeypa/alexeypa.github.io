@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Reverse Engineering on Алексей Пахунов</title>
+    <title>Reverse engineering on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/reverse-engineering/</link>
-    <description>Recent content in Reverse Engineering on Алексей Пахунов</description>
+    <description>Recent content in Reverse engineering on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 04 Aug 2008 23:11:46 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/reverse-engineering/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 04 Aug 2008 23:11:46 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/reverse-engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Detours</title>
       <link>https://blog.not-a-kernel-guy.com/2008/08/04/327/</link>
@@ -19,7 +15,7 @@
       <guid>https://blog.not-a-kernel-guy.com/2008/08/04/327/</guid>
       <description>Сижу, разбираюсь как Detours перехватывает функции Win32 API. Сама идея известна. В начало функции пишется безусловный JMP на функцию перехватчик. Для того, чтобы вызвать оригинальную функции, её код, на место которого помещается JMP, копируется в буфер и дополняется безусловным JMP на первую нетронутую инструкцию.
 Интересно, однако, не это, а сколько дополнительных проверок делается, чтобы повысить надежность этого метода:
- Поверяется, не указывает ли указатель на перехватываемую функцию, не на саму функцию, а на элемент таблицы импорта.</description>
+  Поверяется, не указывает ли указатель на перехватываемую функцию, не на саму функцию, а на элемент таблицы импорта.</description>
     </item>
     
   </channel>

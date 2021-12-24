@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Microsoft on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Microsoft on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 02 Apr 2014 21:48:25 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/microsoft/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 02 Apr 2014 21:48:25 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/microsoft/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Возврат меню Пуск</title>
       <link>https://blog.not-a-kernel-guy.com/2014/04/02/1592/</link>
@@ -18,12 +14,10 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2014/04/02/1592/</guid>
       <description>&lt;p&gt;Что за день сегодня! Сначала &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/02/1584/&#34;&gt;NASA учудило&lt;/a&gt;, теперь вот &lt;a href=&#34;http://www.theverge.com/2014/4/2/5574830/windows-9-start-menu-new-desktop-experience&#34;&gt;Microsoft показала сборку Windows 8, в которой есть меню Пуск&lt;/a&gt;:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;At its Build conference today, Microsoft announced a new Start Menu that looks like a hybrid of the best of Windows 7 and Windows 8. It&amp;rsquo;s around the same size as the Windows 7 menu, but also features miniature Live Tiles along one side.&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0-300x199.jpg&#34; alt=&#34;Windows 8 and Start Menu&#34; /&gt;&lt;/a&gt; Windows 8 and Start Menu&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0-300x199.jpg&#34; alt=&#34;Windows 8 and Start Menu&#34;&gt;&lt;/a&gt; Windows 8 and Start Menu&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -43,15 +37,10 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2011/09/28/1189/</guid>
       <description>&lt;p&gt;Microsoft проведет очередной набор разработчиков в Киеве. На этот раз рассматриваются выпускники 2011 года и будущие выпускники 2012 года.&lt;/p&gt;
-
 &lt;p&gt;Пожалуйста, ссылайтесь на этот блог (blog.not-a-kernel-guy.com) при отправке резюме. Шансов на положительное решение это не прибавляет, но настроение автору блога поднимает. :-)&lt;/p&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;p&gt;Microsoft Corporation is coming to Ukraine and Russia to interview for our Software Development Engineer positions — FULL-TIME CANDIDATES!!!&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;Redmond, Washington, USA&lt;/strong&gt; (CV submissions due by &lt;strong&gt;October 10th&lt;/strong&gt; to be considered for the interviews!)&lt;/p&gt;
-
 &lt;p&gt;To Apply: please visit &lt;a href=&#34;http://www.microsoft.com/university&#34;&gt;www.microsoft.com/university&lt;/a&gt;. Applications are reviewed as they are received.&lt;/p&gt;</description>
     </item>
     
@@ -70,24 +59,24 @@
       <pubDate>Mon, 25 Jul 2011 08:00:43 -0700</pubDate>
       
       <guid>https://blog.not-a-kernel-guy.com/2011/07/25/1118/</guid>
-      <description>&lt;p&gt;Команда Microsoft Advertising собирается приехать в Москву в октябре собеседовать разработчиков из России и соседних стран, желающих &lt;del&gt;вступить в ряды империи зла&lt;/del&gt; перебраться в США. Просьба, при посылке резюме ссылаться на меня (Alexey Pakhunov) - очень интересно посмотреть статистику. :-)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://advertising.microsoft.com/&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2011/07/Microsoft-Advertising.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;Команда Microsoft Advertising собирается приехать в Москву в октябре собеседовать разработчиков из России и соседних стран, желающих &lt;!-- raw HTML omitted --&gt;вступить в ряды империи зла&lt;!-- raw HTML omitted --&gt; перебраться в США. Просьба, при посылке резюме ссылаться на меня (Alexey Pakhunov) - очень интересно посмотреть статистику. :-)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;http://advertising.microsoft.com/&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2011/07/Microsoft-Advertising.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://advertising.microsoft.com/&#34;&gt;Microsoft Advertising&lt;/a&gt; will be hosting a recruiting event in mid-October this year to recruit top talent from all over Russia and neighboring countries specifically focusing on Software Developers of all experience levels who are interested in relocating to the U.S. At this time, we are looking to hire engineers for the roles below. ALL roles require strong coding and development experience.&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Software Development Engineer (SDE)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Software Development Engineer II (SDE II)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Principal SDE&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Engineering Leads&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Software Development Engineer (SDE)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Software Development Engineer II (SDE II)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Principal SDE&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Engineering Leads&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;If interested – please send your information and Resume/CV to the Recruiter organizing this event: &lt;a href=&#34;mailto:eugenial@microsoft.com&#34;&gt;eugenial@microsoft.com&lt;/a&gt; by Wednesday, August 31st.&lt;/strong&gt; We are focused on broad-based software development skills when considering potential candidates (across the board – no specific technology/product niche requirements). If you are strong in C++, C# or JAVA, we would love to hear from you!&lt;/p&gt;</description>
     </item>
     
@@ -98,21 +87,22 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2011/06/22/1109/</guid>
       <description>&lt;p&gt;Пробежало по внутренней рассылке. Рекрутер (Anubha Mahajan) просила ссылаться на меня (Alexey Pakhunov), чтобы отследить кандидатов, пришедших с этого блога.&lt;/p&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;p&gt;Bing will be hosting a recruiting event in late July/Early August this year  to recruit top talent from all over Russia for software developers of all seniorities and experience levels who are interested in relocating to the U.S. At this time, we are looking to fill the below opportunities and all roles require strong coding and development experience.&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;SDE&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;SDE II&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Principal SDE&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Leads&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SDE&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SDE II&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Principal SDE&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Leads&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;If interested - please send your information and CV to the sourcing recruiter for this event at &lt;a href=&#34;mailto:anubham@microsoft.com&#34;&gt;anubham@microsoft.com&lt;/a&gt; by July 8th.&lt;/strong&gt; We are focused on broad-based software development skills when considering potential candidates (across the board – no specific technology/product niche requirements).  If you are good in C++, C# or JAVA, we’d like to hear about you!&lt;/p&gt;</description>
     </item>
     
@@ -133,9 +123,9 @@
       <guid>https://blog.not-a-kernel-guy.com/2011/01/19/964/</guid>
       <description>Вот, по внутренней рассылке пробежало:
 Корпорация Microsoft проводит интервью для поступления на работу в Microsoft USA для студентов и выпускников из России, Беларуси и Украины в феврале 2011 года на должности:
- Инженер по разработке программного обеспечения (SDE)
- Инженер–тестировщик по разработке программного обеспечения (SDET)
-  Мы приглашаем студентов которые окончили ВУЗ в 2010 году или или собираются окончить ВУЗ в 2011 году на постоянную работу в Рэдмонд. Пожалуйста, присылайте ваши резюме до 1-го февраля 2011 года.</description>
+  Инженер по разработке программного обеспечения (SDE)
+  Инженер–тестировщик по разработке программного обеспечения (SDET)
+  Мы приглашаем студентов которые окончили ВУЗ в 2010 году или или собираются окончить ВУЗ в 2011 году на постоянную работу в Рэдмонд.</description>
     </item>
     
     <item>
@@ -145,13 +135,14 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2010/12/08/945/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://research.microsoft.com/en-us/labs/xcg/default.aspx&#34;&gt;Extreme Computing Group (XCG)&lt;/a&gt;, в которой я работаю, нанимает разработчиков. В том числе рассматриваются кандидаты из-за рубежа. Само собой, локальные кандидаты предпочтительней, но их как-то не очень заметно, так что у вас есть хороший шанс. Делаются как новые H1B, так и H1B transfer, насколько я могу судить. Позиции ищуться по ключевым словам «eXtreme Computing Group (XCG)». Вот пара ссылок:&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://careers.microsoft.com/JobDetails.aspx?ss=&amp;amp;pg=0&amp;amp;so=&amp;amp;rw=1&amp;amp;jid=29602&amp;amp;jlang=EN&#34;&gt;Software Development Engineer, Senior - Extreme Computing Group&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://careers.microsoft.com/JobDetails.aspx?ss=&amp;amp;pg=0&amp;amp;so=&amp;amp;rw=4&amp;amp;jid=28954&amp;amp;jlang=EN&#34;&gt;Software Development Engineer, Senior - Extreme Computing Group&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://careers.microsoft.com/JobDetails.aspx?ss=&amp;amp;pg=0&amp;amp;so=&amp;amp;rw=1&amp;amp;jid=29602&amp;amp;jlang=EN&#34;&gt;Software Development Engineer, Senior - Extreme Computing Group&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://careers.microsoft.com/JobDetails.aspx?ss=&amp;amp;pg=0&amp;amp;so=&amp;amp;rw=4&amp;amp;jid=28954&amp;amp;jlang=EN&#34;&gt;Software Development Engineer, Senior - Extreme Computing Group&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;От себя добавлю, что проекты у нас сложные и интересные, а люди хорошие. :-) Подаваться нужно через &lt;a href=&#34;http://careers.microsoft.com&#34;&gt;http://careers.microsoft.com&lt;/a&gt;, в крайнем случае – пришлите резюме мне (&lt;a href=&#34;mailto:alexeypa@gmail.com&#34;&gt;alexeypa@gmail.com&lt;/a&gt;). На разбор писем я собираюсь потратить не так уж много времени. Никаких гарантий, что письмо посланное мне будет передано рекрутеру нет (я даже и не знаю, кто он), так что careers - надежнее.&lt;/p&gt;</description>
     </item>
     
@@ -162,7 +153,6 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2010/12/05/942/</guid>
       <description>&lt;p&gt;Microsoft распространяет среди сотрудников карточки Quick Assistance, каждая из которых обеспечивает одно бесплатное обращение в службу поддержки. Делается это на тот случай, когда сотрудник нежданно-негаданно оказывается в роли эксперта. Ну, знаете, как бывает: «Так вы работаете в Microsoft? А вот у меня компьютер не работает…» В такой ситуации, зачастую, проще перенаправить товарища в службу поддержки. Но учитывая, что звонок туда не бесплатный, в большинстве случаев никто в службу поддержки звонить не станет. Но осадок останется…&lt;/p&gt;
-
 &lt;p&gt;У меня эти карточки постоянно протухают. Главным образом потому, что они привязаны к стране, а большинство проблем, с которыми ко мне обращаются, происходят на другой половине земного шара. И вот я подумал, что пора проявить немного активности и найти нуждающихся до того, как они найдут меня. :-)&lt;/p&gt;</description>
     </item>
     
@@ -172,7 +162,7 @@
       <pubDate>Mon, 28 Jun 2010 22:56:01 -0700</pubDate>
       
       <guid>https://blog.not-a-kernel-guy.com/2010/06/28/852/</guid>
-      <description>Пошел сегодня на работу в футболке с логотипом незалежної України Apple. Черная футболка с белым логотипом на груди. Знакомый с WWDC10 привез. Я не успел до своего офиса добраться – уже в лифте спросили, нужно ли проявлять осторожность, прогуливаясь по Microsoft-овскому кампусу в такой футболке. Коллега, бывший мой менеджер, поздоровался, пробегая по коридору, а затем вернулся и поздравил с переходом на работу в Apple. Ближе к обеду заглянул шеф поинтересоваться где я раздобыл эту футболку.</description>
+      <description>Пошел сегодня на работу в футболке с логотипом незалежної УкраїниApple. Черная футболка с белым логотипом на груди. Знакомый с WWDC10 привез. Я не успел до своего офиса добраться – уже в лифте спросили, нужно ли проявлять осторожность, прогуливаясь по Microsoft-овскому кампусу в такой футболке. Коллега, бывший мой менеджер, поздоровался, пробегая по коридору, а затем вернулся и поздравил с переходом на работу в Apple. Ближе к обеду заглянул шеф поинтересоваться где я раздобыл эту футболку.</description>
     </item>
     
     <item>
@@ -213,27 +203,35 @@ Update: Добавилась еще пара стикеров: «Sorry, crashdum
       
       <guid>https://blog.not-a-kernel-guy.com/2008/05/09/310/</guid>
       <description>&lt;p&gt;Вопрос из комментариев:&lt;/p&gt;
-
 &lt;p&gt;Не могли бы прокомментировать ответ &amp;ldquo;Lepsik&amp;rdquo; по порядкам в Microsoft (&lt;a href=&#34;http://www.sql.ru/forum/actualthread.aspx?tid=544088&amp;amp;pg=3#5632700&#34;&gt;тред&lt;/a&gt;):&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;автор - Диез&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;1, 2. Естественно, полтора - это величина условная. Просто большая длина обычно требует более одного движения для полного обзора :)&lt;/p&gt;
-
-&lt;ol&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Никто не мешает сделать методы того же класса, но часто удобнее и логичнее разнести код на уровни, т.е. в отдельные классы (а то и в отдельные библиотеки).&lt;/li&gt;
 &lt;/ol&gt;
-
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Вообще, все это есть у Фаулера :)&lt;/p&gt;
 &lt;/blockquote&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;это просто у вас программы маленькие. :)&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;в больших компаниях Microsoft/IBM/SONY, …. таких правил нет. У нас есть методы с телом в сотню экранов. А файл с методом тела процесса больше мегобайта.&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;За весь Microsoft не скажу. Расскажу, что видел сам.&lt;/p&gt;</description>
     </item>
     
@@ -245,11 +243,7 @@ Update: Добавилась еще пара стикеров: «Sorry, crashdum
       <guid>https://blog.not-a-kernel-guy.com/2008/02/19/290/</guid>
       <description>Вслед за публикацией спецификаций, описывающих формат файлов Microsoft Office, Joel Spolsky написал неплохую статью, объясняющую почему формат этих файлов настолько сложен и, на первый взгляд, специально запутан до невозможности.
  A normal programmer would conclude that Office&amp;rsquo;s binary file formats:
- are deliberately obfuscated
- are the product of a demented Borg mind
- were created by insanely bad programmers
- and are impossible to read or create correctly.
-   Если коротко, то проблема в том, что эти форматы имеют длинную историю и при их разработке преследовались совсем другие цели нежели преследовались бы при разработке формата «офисных» файлов сейчас.</description>
+   are deliberately obfuscated     are the product of a demented Borg mind     were created by insanely bad programmers     and are impossible to read or create correctly.</description>
     </item>
     
     <item>
@@ -271,7 +265,7 @@ Upd: В феврале будут набирать в Windows Core (Deployment, 
       <guid>https://blog.not-a-kernel-guy.com/2007/11/16/264/</guid>
       <description>Взято из блога Ларисы Сазоновой:
  На стажировку мы приглашаем разработчиков (Software Development Engineer) и тестеров (Software Development Engineer in Test) - студентов ведущих российских вузов.
-_Будем рады получать резюме на адрес: _ruintern@microsoft.com.
+  _Будем рады получать резюме на адрес: _ruintern@microsoft.com.
  </description>
     </item>
     
@@ -282,7 +276,6 @@ _Будем рады получать резюме на адрес: _ruintern@mi
       
       <guid>https://blog.not-a-kernel-guy.com/2007/10/12/254/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://habrahabr.ru/blog/i_am_clever/27363.html&#34;&gt;Прочитал&lt;/a&gt; про &lt;a href=&#34;http://rsdn.ru/forum/message/2683747.flat.1.aspx&#34;&gt;собеседование в Яндексе&lt;/a&gt; и &lt;a href=&#34;http://rsdn.ru/forum/message/2685569.flat.aspx#2685569&#34;&gt;ответ сотрудника Яндекса&lt;/a&gt; и подумал что культура проведения собеседования (и персональная и корпоративная) такая штука, которую лучше иметь чем не иметь. :-)&lt;/p&gt;
-
 &lt;p&gt;Конечно же я сравниваю с тем, как интервью проводит Microsoft. Просто потому, что я два раза проходил очные интервью в Microsoft и оба раза впечатления были на голову выше чем впечатления от всех остальных интервью, которые мне довелось проходить. Кстати кроме этих двух было еще два заваленных телефонных интервью, но там все было честно - тогда мне не хватало опыта.&lt;/p&gt;</description>
     </item>
     
@@ -305,9 +298,7 @@ PS: Кстати, а знаете почему этот центр называ�
       <guid>https://blog.not-a-kernel-guy.com/2007/08/29/232/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Options are Good.&lt;/strong&gt;
 &lt;strong&gt;In life. And in your career.&lt;/strong&gt;&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;What fuels your passion?&lt;/strong&gt;&lt;/p&gt;
-
 &lt;p&gt;Whether you are just about to receive your diploma from University or have been in the industry for years, we know deciding where to start your career or how to move to the next opportunity can be as nerve-wracking as it is exciting. Maybe you don’t know exactly what you want to do. The good thing is, at Microsoft, you have lots of options. Nowhere else will you have such a variety of products and technologies to get behind—or so many career paths to choose from. You’ll learn from people who have been in the industry for over 30 years. And most of all, you’ll have the resources to reach people all over the world with your work. It’s about taking your career as far as you want it to go—in any direction you choose.&lt;/p&gt;</description>
     </item>
     
@@ -318,20 +309,22 @@ PS: Кстати, а знаете почему этот центр называ�
       
       <guid>https://blog.not-a-kernel-guy.com/2007/08/23/226/</guid>
       <description>&lt;p&gt;Получил сегодня вот такое письмо (с некоторыми купюрами).&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Алексей, добрый день.&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;&amp;hellip;  В последнее время меня грызет мега-идея, - поехать поработать в Штаты, особенно балдею от Сиэтла. &amp;hellip;&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Алексей, посоветуй, плиз, есть ли возможности внедриться в Майкрософт или сопредельные компании в качестве UI/web-дизайнера. В этом направлении работаю уже лет семь. Есть портфолио. Хорошо управляюсь с Адобами-Фотошопами-Иллюстраторами. Рисую кое-что ручками. Но пока с языком туго. Сам я сейчас в &amp;hellip; &lt;em&gt;(прим. не в Москве)&lt;/em&gt;&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Может посоветуешь конкретного человека кто может &amp;ldquo;спродюсировать&amp;rdquo; на первое время такого вот русскоговорящего сотрудника?&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Спасибо.
 Удачи&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;Ответ вероятно будет интересен многим, так что выкладываю его здесь:&lt;/p&gt;</description>
     </item>
     
@@ -342,10 +335,10 @@ PS: Кстати, а знаете почему этот центр называ�
       
       <guid>https://blog.not-a-kernel-guy.com/2007/07/07/207/</guid>
       <description>&lt;p&gt;Microsoft собирается этой осенью &lt;a href=&#34;http://news.com.com/Microsoft+sings+O+Canada+amid+immigration+challenges/2100-1014_3-6195049.html?tag=nefd.top&#34;&gt;открыть новый центр разработки в Ванкувере, Канада&lt;/a&gt;.&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;The Vancouver area … is close to Microsoft&amp;rsquo;s corporate offices in Redmond, and allows the company to recruit and retain highly skilled people affected by immigration issues in the U.S.,&amp;rdquo; Microsoft said.&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;«Ванкувер расположен вблизи от штаб-квартиры Microsoft в Редмонде, и позволяет компании нанимать и удерживать профессионалов, столкнувшихся с иммиграционными проблемами в США», заявляет Microsoft.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
@@ -357,7 +350,6 @@ PS: Кстати, а знаете почему этот центр называ�
       
       <guid>https://blog.not-a-kernel-guy.com/2007/06/01/192/</guid>
       <description>&lt;p&gt;Вопрос из почты (немного подредактированный):&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Я студент 2-го (скоро уже 3-го) курса. Скажите, пожалуйста, возможно ли мне, студенту, получить какую-либо работу в Microsoft удаленно? Данная работа нужна мне только для получение какого-либо опыта, деньги особо не интересуют. Скажите возможно ли это? И если возможно, то как?&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -370,9 +362,7 @@ PS: Кстати, а знаете почему этот центр называ�
       
       <guid>https://blog.not-a-kernel-guy.com/2007/04/27/177/</guid>
       <description>&lt;p&gt;&lt;em&gt;Литературное «отчет о программной ошибке» конечно правильнее, но «баг-репорт» в три раза короче и в сто раз привычнее.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/04/25/176/&#34;&gt;Предыдущий пост про отправку баг-репортов в Microsoft&lt;/a&gt; хотя и написан дурака валяючи, однако содержит в себе рациональное зерно. На данный момент нет никакого другого официального способа сообщить о найденной ошибке в Windows, кроме как сделать это через службу поддержки. Нельзя, например, просто послать письмо на какой-нибудь bugs@microsoft.com. Более того, обращение в службу поддержки – это платная услуга в общем случае. И не смотря на то, что Microsoft не возьмет деньги в случае, если наличие ошибки или недокументированного поведения будет подтверждено, сам факт отпугивает многих. «Я оказываю им услугу и я ещё должен за это платить? Ни за что!»&lt;/p&gt;
-
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/04/25/176/&#34;&gt;Предыдущий пост про отправку баг-репортов в Microsoft&lt;/a&gt; хотя и написан дурака валяючи, однако содержит в себе рациональное зерно. На данный момент нет никакого другого официального способа сообщить о найденной ошибке в Windows, кроме как сделать это через службу поддержки. Нельзя, например, просто послать письмо на какой-нибудь &lt;a href=&#34;mailto:bugs@microsoft.com&#34;&gt;bugs@microsoft.com&lt;/a&gt;. Более того, обращение в службу поддержки – это платная услуга в общем случае. И не смотря на то, что Microsoft не возьмет деньги в случае, если наличие ошибки или недокументированного поведения будет подтверждено, сам факт отпугивает многих. «Я оказываю им услугу и я ещё должен за это платить? Ни за что!»&lt;/p&gt;
 &lt;p&gt;Имеет ли смысл подобная практика? Как это ни странно такая практика может иметь рациональное объяснение.&lt;/p&gt;</description>
     </item>
     

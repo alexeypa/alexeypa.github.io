@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,24 +113,17 @@
     <a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a><a class="label" href="/tags/powershell">PowerShell</a>
     </span>
     <p>Последнее время я только тем и занимался, что копался в недрах системных служб в отладчике. Половина из них использует &ldquo;svchost.exe&rdquo; в качестве исполняемого файла, что довольно неудобно, когда пытаешься подсоединиться к нужному процессу. Никогда не знаешь какой именно из многочисленных &ldquo;svchost.exe&rdquo; нужно выбрать.</p>
-
 <p>В Vista эта проблема решается наличием дополнительной страницы &ldquo;Services&rdquo; в Task Manager. Там в контекстном меню службы есть пункт &ldquo;Go to the process&rdquo;, который подсвечивает искомый процесс.</p>
-
 <p>В XP этой страницы нет, но оказалось что нужный идентификатор можно получить через WMI. Например вот так:</p>
-
-<pre><code class="language-no-highlight">get-wmiobject Win32_Service | where-object { $_.Name -eq &quot;rpcss&quot; }
-</code></pre>
-
-<p>Строка &ldquo;ProcessId&rdquo; как раз и есть то, что нам нужно:</p>
-
-<pre><code class="language-no-highlight">ExitCode  : 0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">get-wmiobject Win32_Service | where-object { $_.Name -eq &#34;rpcss&#34; }
+</code></pre></div><p>Строка &ldquo;ProcessId&rdquo; как раз и есть то, что нам нужно:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">ExitCode  : 0
 Name      : RpcSs
 ProcessId : 1292
 StartMode : Auto
 State     : Running
 Status    : OK
-</code></pre>
-
+</code></pre></div>
   </div>
   <div id="disqus_thread"></div>
 </div>

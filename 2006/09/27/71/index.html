@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,9 +113,7 @@
     <a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a>
     </span>
     <p>Последние несколько дней я занималься масштабным перекраиванием реестра на одной их подопытных машин. Копировал, переименовывал и перемещал здоровые куски. В процессе выяснилось, regedit не очень-то подходит для подобных манипуляций. По началу я пытался обходиться правкой экспортированных .reg файлов, но потом понял, что нужно искать более удобный способ. Оказалось что способы есть, хотя их и не так много.</p>
-
 <p>Во-первых начиная с Windows XP с системой поставляется утилита reg.exe. Эта утилита может читать, писать, удалять, копировать, экпортировать, импортировать и сравнивать как отдельные значения, так и целые деревья ключей. С её помощью можно писать довольно нетривиальные командные скрипты.</p>
-
 <pre><code>C:\&gt;reg /?
 
 REG Operation [Parameter List]
@@ -146,9 +145,7 @@ Examples:
   REG EXPORT /?
   REG IMPORT /?
 </code></pre>
-
 <p>Вторая утилита, которая, впрочем, годиться не только для работы с реестром - это <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=E8BA3E56-D8FE-4A91-93CF-ED6985E3927B&amp;displaylang=en">SubInACL</a>. SubInACL позволяет редактировать права доступа (permissions) как никто другой.</p>
-
 <pre><code>C:\&gt;subinacl /?
 SubInAcl version 5.2.3790.1180
 
@@ -217,11 +214,8 @@ Usage  : SubInAcl   /help [keyword]
          - or -
     any [/option] [/action] [/object_type]
 </code></pre>
-
 <p>Например, следующая команда даёт полный доступ пользователю rabbit ко всем дочерним ключам HKEY_LOCAL_MACHINE\Software\Microsoft:</p>
-
 <p><code>subinacl /subkeyreg HKEY_LOCAL_MACHINE\Software\Microsoft /grant=rabbit=f</code></p>
-
 <p>Кроме того, SubInACL ещё и работает быстрее, хотя, возможно, это и субъективное впечатление. Не обошлось и без ложки дегтя. Мне так и не удалось найти 64-х битную версию SubInACL в открытом доступе.</p>
   </div>
   <div id="disqus_thread"></div>

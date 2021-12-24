@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Иммиграция on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Иммиграция on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 24 May 2020 12:21:54 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B8%D0%BC%D0%BC%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 24 May 2020 12:21:54 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B8%D0%BC%D0%BC%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Нанимает ли SpaceX из-за рубежа?</title>
       <link>https://blog.not-a-kernel-guy.com/2020/05/24/job-at-spacex/</link>
@@ -20,7 +16,6 @@
       <description>&lt;p&gt;Мне с завидной регулярностью задают один и тот же вопрос: &amp;ldquo;Нанимает ли SpaceX из-за
 рубежа?&amp;rdquo; Я решил оформить ответ в виде поста, чтобы можно было на него ссылаться в
 будущем.&lt;/p&gt;
-
 &lt;p&gt;Ниже следует мое личное мнение. Пожалуйста, не воспринимайте его как буквальное
 руководство к действию. Короче, &amp;ldquo;This is not a legal advice. Talk to your lawyer&amp;rdquo;.&lt;/p&gt;</description>
     </item>
@@ -32,19 +27,18 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2012/01/11/1255/</guid>
       <description>&lt;p&gt;Вопрос из почты (персональная информация удалена):&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Я так же как и вы родился и пока что живу в Украине, являюсь студентом &amp;hellip; на специальности &amp;hellip; я пока что на &amp;hellip; курсе, но заниматься программированием очень нравиться, и уже сейчас задумываюсь о том есть ли спрос на рынке труда. Я пробил вакансии и везде требуются с опытом работы. Я хочу вас спросить как проффисионала, человека который прошел уже этот этап, имеющего большой опыт, с охотой ли компании берут молодых специалистов, с чего начать, как можно перейти на работу зарубеж. Что можете посоветовать.&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;p&gt;У меня выдался относительно свободный вечер &lt;del&gt;(да и вообще давать непрошенные советы - это мое хобби)&lt;/del&gt;, а поэтому вот:&lt;/p&gt;
-
+&lt;p&gt;У меня выдался относительно свободный вечер &lt;!-- raw HTML omitted --&gt;(да и вообще давать непрошенные советы - это мое хобби)&lt;!-- raw HTML omitted --&gt;, а поэтому вот:&lt;/p&gt;
 &lt;p&gt;Ситуация с поиском работы за рубежом для специалистов &lt;em&gt;востребованных IT специальностей&lt;/em&gt;, по сути, мало чем отличается от локального поиска работы. Вам нужно доказать что:&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Вы подходите лучше других кандидатов на ту или иную позицию;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Затраты на ваш найм будут оправданы.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Вы подходите лучше других кандидатов на ту или иную позицию;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Затраты на ваш найм будут оправданы.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;</description>
     </item>
     
@@ -63,24 +57,24 @@
       <pubDate>Mon, 25 Jul 2011 08:00:43 -0700</pubDate>
       
       <guid>https://blog.not-a-kernel-guy.com/2011/07/25/1118/</guid>
-      <description>&lt;p&gt;Команда Microsoft Advertising собирается приехать в Москву в октябре собеседовать разработчиков из России и соседних стран, желающих &lt;del&gt;вступить в ряды империи зла&lt;/del&gt; перебраться в США. Просьба, при посылке резюме ссылаться на меня (Alexey Pakhunov) - очень интересно посмотреть статистику. :-)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://advertising.microsoft.com/&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2011/07/Microsoft-Advertising.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;Команда Microsoft Advertising собирается приехать в Москву в октябре собеседовать разработчиков из России и соседних стран, желающих &lt;!-- raw HTML omitted --&gt;вступить в ряды империи зла&lt;!-- raw HTML omitted --&gt; перебраться в США. Просьба, при посылке резюме ссылаться на меня (Alexey Pakhunov) - очень интересно посмотреть статистику. :-)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;http://advertising.microsoft.com/&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2011/07/Microsoft-Advertising.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://advertising.microsoft.com/&#34;&gt;Microsoft Advertising&lt;/a&gt; will be hosting a recruiting event in mid-October this year to recruit top talent from all over Russia and neighboring countries specifically focusing on Software Developers of all experience levels who are interested in relocating to the U.S. At this time, we are looking to hire engineers for the roles below. ALL roles require strong coding and development experience.&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Software Development Engineer (SDE)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Software Development Engineer II (SDE II)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Principal SDE&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Engineering Leads&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Software Development Engineer (SDE)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Software Development Engineer II (SDE II)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Principal SDE&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Engineering Leads&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;If interested – please send your information and Resume/CV to the Recruiter organizing this event: &lt;a href=&#34;mailto:eugenial@microsoft.com&#34;&gt;eugenial@microsoft.com&lt;/a&gt; by Wednesday, August 31st.&lt;/strong&gt; We are focused on broad-based software development skills when considering potential candidates (across the board – no specific technology/product niche requirements). If you are strong in C++, C# or JAVA, we would love to hear from you!&lt;/p&gt;</description>
     </item>
     
@@ -91,21 +85,22 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2011/06/22/1109/</guid>
       <description>&lt;p&gt;Пробежало по внутренней рассылке. Рекрутер (Anubha Mahajan) просила ссылаться на меня (Alexey Pakhunov), чтобы отследить кандидатов, пришедших с этого блога.&lt;/p&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;p&gt;Bing will be hosting a recruiting event in late July/Early August this year  to recruit top talent from all over Russia for software developers of all seniorities and experience levels who are interested in relocating to the U.S. At this time, we are looking to fill the below opportunities and all roles require strong coding and development experience.&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;SDE&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;SDE II&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Principal SDE&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Leads&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SDE&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SDE II&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Principal SDE&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Leads&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;If interested - please send your information and CV to the sourcing recruiter for this event at &lt;a href=&#34;mailto:anubham@microsoft.com&#34;&gt;anubham@microsoft.com&lt;/a&gt; by July 8th.&lt;/strong&gt; We are focused on broad-based software development skills when considering potential candidates (across the board – no specific technology/product niche requirements).  If you are good in C++, C# or JAVA, we’d like to hear about you!&lt;/p&gt;</description>
     </item>
     

@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,13 +113,9 @@
     <a class="label" href="/tags/boost.build">Boost.Build</a>
     </span>
     <p>Специально для любителей <a href="http://www.boost.org/doc/tools/build/index.html">Boost.Build V2</a> – написал <a href="/2009/03/dotnet.jam">toolset</a>, добавляющий поддержку C# и VB.NET компиляторов из .NET Framework. Toolset автоматически распознает все установленные версии .NET Framework:</p>
-
-<pre><code class="language-no-highlight">using dotnet : all ;
-</code></pre>
-
-<p>Исполняемые файлы и библиотеки собирается как обычно с помощью правил “exe” и “lib”. Ссылки на системные библиотеки указываются через <find-shared-library>; путь к ним – с помощью <library-path>:</p>
-
-<pre><code class="language-no-highlight">lib carrots
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">using dotnet : all ;
+</code></pre></div><p>Исполняемые файлы и библиотеки собирается как обычно с помощью правил “exe” и “lib”. Ссылки на системные библиотеки указываются через <!-- raw HTML omitted -->; путь к ним – с помощью <!-- raw HTML omitted -->:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">lib carrots
     :
         carrots.cs
     ;
@@ -130,13 +127,11 @@ exe rabbit
         rabbit.cs
         carrots
     :
-        &lt;library-path&gt;&quot;$(windir)/Microsoft.NET/Framework/v2.0.50727&quot;
+        &lt;library-path&gt;&#34;$(windir)/Microsoft.NET/Framework/v2.0.50727&#34;
         &lt;find-shared-library&gt;System.dll
         &lt;find-shared-library&gt;System.Data.dll
     ;
-</code></pre>
-
-<p>Можно указать целевую платформу с помощью <architecture> и <address-model>. По умолчанию – anycpu.</p>
+</code></pre></div><p>Можно указать целевую платформу с помощью <!-- raw HTML omitted --> и <!-- raw HTML omitted -->. По умолчанию – anycpu.</p>
   </div>
   <div id="disqus_thread"></div>
 </div>

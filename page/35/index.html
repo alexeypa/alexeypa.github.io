@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.54.0" />
+	<meta name="generator" content="Hugo 0.90.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -100,6 +100,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -116,9 +117,7 @@
 
   <li class="active">
     <span class="fa-lg">
-      <a href="/post/">
-        Архив
-      </a>
+      <a href="/post/">Архив</a>
     <span>
   </li>
 
@@ -129,6 +128,21 @@
   </li>
 </ul>
 
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2009/03/30/480/">Интересное…</a>
+      </h1>
+      <span class="post-date">Mar 30, 2009 &middot; <a href="https://blog.not-a-kernel-guy.com/2009/03/30/480/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81">Космос</a><a class="label" href="/tags/%D0%B2%D1%81%D1%8F%D0%BA%D0%B0%D1%8F-%D0%B2%D1%81%D1%8F%D1%87%D0%B8%D0%BD%D0%B0">Всякая всячина</a>
+      </span>
+      
+      В одном из коридоров в нашем здании обнаружился плакат с копией циклограммы полета орбитальной станции Салют-6, нарисованной первым экипажем станции (Ю. Романенко и Г. Гречко). Рядом с ним – схема наступления Наполеона на Москву&hellip;
+      
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -157,9 +171,8 @@
       </span>
       
       <p>Специально для любителей <a href="http://www.boost.org/doc/tools/build/index.html">Boost.Build V2</a> – написал <a href="/2009/03/dotnet.jam">toolset</a>, добавляющий поддержку C# и VB.NET компиляторов из .NET Framework. Toolset автоматически распознает все установленные версии .NET Framework:</p>
-
-<pre><code class="language-no-highlight">using dotnet : all ;
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">using dotnet : all ;
+</code></pre></div>
       <a href="https://blog.not-a-kernel-guy.com/2009/03/09/469/">Read On &rarr;</a>
       
     </div>
@@ -206,9 +219,7 @@
       </span>
       
       <p>Как то заметил, что в списке запущенных процессов постоянно болтается три штуки cdb.exe:</p>
-
-<p><img src="/2009/02/aedebug_cdb.png" alt="aedebug_cdb" /></p>
-
+<p><img src="/2009/02/aedebug_cdb.png" alt="aedebug_cdb"></p>
 <p>CDB – это консольная версия WinDbg, которая у меня установлена в качестве <a href="http://msdn.microsoft.com/en-us/library/cc266343.aspx">«посмертного» отладчика (postmortem debugger)</a>.Обычно при этом падение приложения не проходит незамеченным - запускается консоль отладчика на весь экран. Трудно не заметить. В данном же случае, по всей видимости, фатальное исключение случалось в привилегированном процессе в отдельной сессии, соответственно и консоль создавалась в другой сессии.</p>
       <a href="https://blog.not-a-kernel-guy.com/2009/02/08/434/">Read On &rarr;</a>
       
@@ -277,21 +288,6 @@ Update: Добавилась еще пара стикеров: «Sorry, crashdum
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2009/01/08/413/">Open source как социальный эксперимент</a>
-      </h1>
-      <span class="post-date">Jan 8, 2009 &middot; <a href="https://blog.not-a-kernel-guy.com/2009/01/08/413/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/far">Far</a><a class="label" href="/tags/open-source">Open source</a>
-      </span>
-      
-      <p>Никогда не знаешь к чему приведет отправка патча в какой-нибудь open source проект. Обычно это выглядит так. Программа вас чем-то не устраивает и вы изменяете её под себя. Потом, сообразив, что это будет полезно кому-нибудь еще, вы оформляете красивый патч и отправляешь его разработчикам. Его, как правило, не принимают. По разным причинам. То ли стиль нужно подправить, то ли нужно показать, что патч действительно полезный и что он в канву продукта вписывается. Впрочем, и это тоже не новость, главная задача разработчиков продукта на этом этапе – это выяснить вменяемость автора патча (можно ли с ним работать, вести нормальный диалог и т.д.) и то, насколько предложенные им изменения вписываются в их видение продукта. Короче, если вы новичок в данном проекте, ждите придирок по пустякам. Это нормально и это пройдет, если вы (со временем) впишетесь в стиль работы, принятой разработчиками.</p>
-      <a href="https://blog.not-a-kernel-guy.com/2009/01/08/413/">Read On &rarr;</a>
-      
-    </div>
-    
     <ul class="pagination">
   <li class="active">
     <span class="fa-lg"><a href="/page/34/" aria-label="Previous">
@@ -301,9 +297,7 @@ Update: Добавилась еще пара стикеров: «Sorry, crashdum
 
   <li class="active">
     <span class="fa-lg">
-      <a href="/post/">
-        Архив
-      </a>
+      <a href="/post/">Архив</a>
     <span>
   </li>
 

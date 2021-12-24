@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Зверьё on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Зверьё on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 14 Oct 2007 22:07:47 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B7%D0%B2%D0%B5%D1%80%D1%8C%D1%91/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 14 Oct 2007 22:07:47 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B7%D0%B2%D0%B5%D1%80%D1%8C%D1%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Зверьё</title>
       <link>https://blog.not-a-kernel-guy.com/2007/10/14/255/</link>
@@ -38,7 +34,7 @@
       <pubDate>Mon, 07 May 2007 22:46:30 -0700</pubDate>
       
       <guid>https://blog.not-a-kernel-guy.com/2007/05/07/182/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/05/duck.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2007/05/duck.thumbnail.jpg&#34; alt=&#34;Селезень&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/05/duck.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2007/05/duck.thumbnail.jpg&#34; alt=&#34;Селезень&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -79,7 +75,6 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2006/09/18/67/</guid>
       <description>&lt;p&gt;В продолжение темы о пернатых небольшая подборка из &amp;ldquo;датских&amp;rdquo; фотографий. Любой мало-мальски крупный водоём в Копенгагене просто наводнен утками. Даже в центре города они чувствуют себя как дома. Вот этот селезень улыбался во весь клюв, пока я его фотографировал:&lt;/p&gt;
-
 
 &lt;figure&gt;
   &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/09/IMG_0480.jpg&#34;&gt;

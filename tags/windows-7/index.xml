@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows 7 on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Windows 7 on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 11 Oct 2010 22:53:44 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/windows-7/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 11 Oct 2010 22:53:44 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/windows-7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Почему Windows 7 просыпается то в текстовом, то в графическом режиме?</title>
       <link>https://blog.not-a-kernel-guy.com/2010/10/11/895/</link>
@@ -30,15 +26,19 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2009/06/09/571/</guid>
       <description>&lt;p&gt;Наконец-то обновилась документация в MSDN. Теперь можно спокойно рассказать, что изменилось в Wow64 с выходом Windows 7.&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Был полностью переписан &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;механизм перенаправления реестра (Registry &lt;em&gt;Redirection&lt;/em&gt;)&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Была изменена структура реестра. Многие ключи, перенаправляемые ранее в Wow6432Node, теперь совместно используются 32-х и 64-х разрядными приложениями.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384235(VS.85).aspx&#34;&gt;Механизм синхронизации 32-х и 64-х ключей (Registry &lt;em&gt;Reflection&lt;/em&gt;)&lt;/a&gt; был с корнем выкорчеван и с позором изгнан из кода Windows. :-)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;В документацию&lt;/a&gt; было внесено множество дополнений и исправлений.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Был полностью переписан &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;механизм перенаправления реестра (Registry &lt;em&gt;Redirection&lt;/em&gt;)&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Была изменена структура реестра. Многие ключи, перенаправляемые ранее в Wow6432Node, теперь совместно используются 32-х и 64-х разрядными приложениями.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384235(VS.85).aspx&#34;&gt;Механизм синхронизации 32-х и 64-х ключей (Registry &lt;em&gt;Reflection&lt;/em&gt;)&lt;/a&gt; был с корнем выкорчеван и с позором изгнан из кода Windows. :-)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;В документацию&lt;/a&gt; было внесено множество дополнений и исправлений.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;</description>
     </item>
     

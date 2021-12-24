@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,21 +113,18 @@
     <a class="label" href="/tags/win32.utf8">Win32.Utf8</a>
     </span>
     <p>Нахваливал я тут PLY, а зря. Разбор двух с половиной мегабайтного заголовка с построением синтаксического дерева занимает верных полторы минуты. И это на AMD Opteron 250 2.4GHz. Эталонный Althon XP, по всей видимости, будет делать то же самое минут десять. Это никуда не годиться.</p>
-
 <p>В профайлере наблюдается вот такая картина:</p>
-
-<p><img src="/2007/08/ply_profile_output.png" alt="Profiler output" /></p>
-
+<p><img src="/2007/08/ply_profile_output.png" alt="Profiler output"></p>
 <p>Время съедает непосредственно разбор, а не анализ результатов разбора и создание синтаксического дерева. Python-ая природа PLY сделала свое черное дело. :-)</p>
-
 <p>Вариантов видится пока два:</p>
-
 <ol>
-<li><p>Портировать парсер на С++ и GNU Bison;</p></li>
-
-<li><p>Разобраться таки с DParser.</p></li>
+<li>
+<p>Портировать парсер на С++ и GNU Bison;</p>
+</li>
+<li>
+<p>Разобраться таки с DParser.</p>
+</li>
 </ol>
-
 <p>Второй вариант намного предпочтительнее, так как всю логику можно будет по-прежнему писать на Python.</p>
   </div>
   <div id="disqus_thread"></div>

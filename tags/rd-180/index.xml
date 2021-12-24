@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rd 180 on Алексей Пахунов</title>
+    <title>RD-180 on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/rd-180/</link>
-    <description>Recent content in Rd 180 on Алексей Пахунов</description>
+    <description>Recent content in RD-180 on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 13 May 2014 08:57:43 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/rd-180/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 13 May 2014 08:57:43 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/rd-180/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>... и не писай в мой горшок!</title>
       <link>https://blog.not-a-kernel-guy.com/2014/05/13/1654/</link>
@@ -18,10 +14,8 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2014/05/13/1654/</guid>
       <description>&lt;p&gt;Дмитрий Рогозин &lt;a href=&#34;http://rt.com/news/158680-russia-usa-rocket-gps/&#34;&gt;погрозил запретом использования российских двигателей для военных запусков в США&lt;/a&gt;. Мужики из United Launch Alliance, наверное, проклинают тот день, когда связялись с RD-180. Вдвойне жалко, что движок хороший. Может Роскосмос ему применение найдет таки?&lt;/p&gt;
-
 &lt;p&gt;Тем временем в замке у шефа:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/wvjmVVq.jpg&#34; alt=&#34;Elon Musk is an evil genius&#34; /&gt;Elon Musk is an evil genius&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/wvjmVVq.jpg&#34; alt=&#34;Elon Musk is an evil genius&#34;&gt;Elon Musk is an evil genius&lt;/p&gt;</description>
     </item>
     
   </channel>

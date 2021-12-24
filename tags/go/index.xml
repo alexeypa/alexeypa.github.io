@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Go on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Go on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 04 Dec 2017 22:50:05 -0800</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 04 Dec 2017 22:50:05 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Отладка злого бага в Go runtime</title>
       <link>https://blog.not-a-kernel-guy.com/2017/12/04/evil-go-runtime-bug/</link>

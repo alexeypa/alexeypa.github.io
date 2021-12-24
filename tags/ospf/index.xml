@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ospf on Алексей Пахунов</title>
+    <title>OSPF on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/ospf/</link>
-    <description>Recent content in Ospf on Алексей Пахунов</description>
+    <description>Recent content in OSPF on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 16 May 2011 17:54:15 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/ospf/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 16 May 2011 17:54:15 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/ospf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OSPF: оптимизм</title>
       <link>https://blog.not-a-kernel-guy.com/2011/05/16/1074/</link>

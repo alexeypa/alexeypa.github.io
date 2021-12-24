@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Thread Hijacking on Алексей Пахунов</title>
+    <title>Thread hijacking on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/thread-hijacking/</link>
-    <description>Recent content in Thread Hijacking on Алексей Пахунов</description>
+    <description>Recent content in Thread hijacking on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 04 May 2010 23:21:24 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/thread-hijacking/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 04 May 2010 23:21:24 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/thread-hijacking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>«Угон» потоков</title>
       <link>https://blog.not-a-kernel-guy.com/2010/05/04/812/</link>

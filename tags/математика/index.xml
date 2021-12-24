@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Математика on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Математика on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 08 Apr 2018 20:24:03 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 08 Apr 2018 20:24:03 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Графический калькулятор</title>
       <link>https://blog.not-a-kernel-guy.com/2018/04/08/desmos/</link>
@@ -19,31 +15,22 @@
       <guid>https://blog.not-a-kernel-guy.com/2018/04/08/desmos/</guid>
       <description>&lt;p&gt;Совершенно случайно наткнулся на &lt;a href=&#34;https://www.desmos.com/calculator&#34;&gt;графический калькулятор&lt;/a&gt; от
 &lt;a href=&#34;https://www.desmos.com/about&#34;&gt;desmos.com&lt;/a&gt;:&lt;/p&gt;
-
-&lt;iframe src=&#34;https://www.desmos.com/calculator/fmr9jhsgug?embed&#34; width=&#34;700px&#34; height=&#34;400px&#34; style=&#34;border: 1px solid #ccc&#34; frameborder=0&gt;&lt;/iframe&gt;
-
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;Этот калькулятор позволяет рисовать красивые графики, но главная фишка состоит
 совсем не в этом. Он позволяет создавать интерактивные графики, наглядно
 показывающие как меняется функция при изменения параметров.&lt;/p&gt;
-
 &lt;p&gt;Например, на &lt;a href=&#34;https://www.desmos.com/calculator/jwquvmikhr&#34;&gt;графике&lt;/a&gt; ниже можно перетаскивать точки из исходной выборки и
 посмотреть как в результате меняется линейная регрессия:&lt;/p&gt;
-
-&lt;iframe src=&#34;https://www.desmos.com/calculator/grrvh5sklu?embed&#34; width=&#34;700px&#34; height=&#34;400px&#34; style=&#34;border: 1px solid #ccc&#34; frameborder=0&gt;&lt;/iframe&gt;
-
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;А на следующем графике можно посмотреть как увеличивается точность аппроксимации
 функции в зависимости от количества членов ряда Тейлора:&lt;/p&gt;
-
-&lt;iframe src=&#34;https://www.desmos.com/calculator/anilrqixjg?embed&#34; width=&#34;700px&#34; height=&#34;400px&#34; style=&#34;border: 1px solid #ccc&#34; frameborder=0&gt;&lt;/iframe&gt;
-
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;У 3Blue1Brown, кстати, было очень наглядное видео, объясняющее принцип
 построения ряда Тейлора:&lt;/p&gt;
 
-
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/3d6DsjIBzJ4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/3d6DsjIBzJ4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
-
 
 &lt;p&gt;Рекомендую.&lt;/p&gt;</description>
     </item>
@@ -60,14 +47,11 @@
 собственно, работает дифференциальное исчисление и линейная алгебра. Или вот
 еще видео, которое объясняет суть блокчейн технологии:&lt;/p&gt;
 
-
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/bBC-nXj3Ng4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/bBC-nXj3Ng4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
-
 &lt;p&gt;Всячески рекомендую.&lt;/p&gt;
-
 &lt;p&gt;P.S. Помимо математики, этот канал можно смотреть с целью изучения английского.
 У автора идеальная дикция и отлично поставленная речь, лучше чем в телевизоре.&lt;/p&gt;</description>
     </item>

@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -119,32 +120,24 @@
 Files появилась горячая комбинация клавиш. Раньше приходилось мышью щелкать.
 В общем пока что впечатления самые приятные. Старого не испортили; приятного -
 добавили.</p>
-
 <p>По случаю ковыряния в настройках довел до ума <a href="https://github.com/nvbn/thefuck">thefuck</a> под zsh. Эта утилита, название которой на
 русский вполне точно можно перевести как &ldquo;бля&rdquo;, исправляет неправильную
 набранную команду в консоли. Забытый <code>sudo</code> подставляет или <code>git statis</code>
 исправляет на <code>git status</code> - стоит только ввести <code>fuck</code> в ответ на ошибочную
 команду. У меня она почему-то выдавала сообщения вида &ldquo;fc: event not found: -c&rdquo;.</p>
-
 <p>Поковырявшись в исходниках и настройках, обнаружил правильную последовательность
 команд. Во-первых, нужно использовать Python 3, так как поддержке Python 2
 похоже <a href="https://github.com/nvbn/thefuck/issues/685">не долго осталось</a>.
 Во-вторых, thefuck пытался выполнить <code>history -c</code>, которая в zsh при
 установленном <a href="https://github.com/robbyrussell/oh-my-zsh">Oh My Zsh</a> <a href="https://github.com/robbyrussell/oh-my-zsh/issues/739">приводит к
 сообщению</a>:</p>
-
-<pre><code class="language-zsh">fc: event not found: -c
-</code></pre>
-
-<p>Оказалось, что thefuck неправильно определяет шелл. Он смотрит на переменную
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">fc: event not found: -c
+</code></pre></div><p>Оказалось, что thefuck неправильно определяет шелл. Он смотрит на переменную
 окружения <code>SHELL</code>. В моем случае zsh не установлена как login shell, а
 запускается из bash (не спрашивайте). Соответственно <code>SHELL</code> по прежнему
 указывает на bash. Пришлось добавить следующее в <code>~/.zshrc</code>:</p>
-
-<pre><code class="language-zsh">export SHELL=/usr/bin/zsh
-</code></pre>
-
-<p>После этого все заработало как по маслу. На десерт осталось только включить
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">export SHELL<span style="color:#f92672">=</span>/usr/bin/zsh
+</code></pre></div><p>После этого все заработало как по маслу. На десерт осталось только включить
 <a href="https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/thefuck">плагин thefuck</a> в Oh My
 Zsh. Этот плагин позволяет исправить команду по Esc-Esc. И все заработало.</p>
   </div>

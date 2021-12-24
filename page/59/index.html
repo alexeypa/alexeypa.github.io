@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.54.0" />
+	<meta name="generator" content="Hugo 0.90.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -100,6 +100,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -116,9 +117,7 @@
 
   <li class="active">
     <span class="fa-lg">
-      <a href="/post/">
-        Архив
-      </a>
+      <a href="/post/">Архив</a>
     <span>
   </li>
 
@@ -132,6 +131,22 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/11/29/106/">Коварные скобки или цена ошибок в дизайне</a>
+      </h1>
+      <span class="post-date">Nov 29, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/11/29/106/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD">Дизайн</a><a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a><a class="label" href="/tags/wow64">Wow64</a>
+      </span>
+      
+      <p>Пару недель назад столкнулся с проблемой, пытаясь собрать 64-х битную версию Boost.Jam из поставки <a href="http://www.boost.org/tools/build/v2/index.html">Boost.Build</a>. Скрипт build.bat, запускающий процесс сборки, выдавал не очень понятное сообщение “\Microsoft was unexpected at this time.”:</p>
+<p><img src="/2006/11/build_error_1.png" alt=""></p>
+      <a href="https://blog.not-a-kernel-guy.com/2006/11/29/106/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2006/11/26/105/">Вселенная в цвете</a>
       </h1>
       <span class="post-date">Nov 26, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/11/26/105/#disqus_thread">Comments</a>
@@ -141,10 +156,8 @@
       </span>
       
       <p>Обожаю рассматривать астрономические фотографии и особенно фотографии галактик, туманностей и прочих deep sky объектов. И похоже, что развитие цифровой фототехники и цифровой обработки фотографий явно способствует этому увлечению. Сайт Роберта Гендлера (Robert Gendler) &ldquo;<a href="http://www.robgendlerastropics.com">Вселенная в цвете</a>&rdquo; - один из лучших примеров этому. Вот, например, его снимок знаменитой туманности Ориона:</p>
-
-<p><a href="http://www.robgendlerastropics.com/M42HeartNM.html"><img src="/2006/11/M42HeartNMSS.jpg" alt="" /></a></p>
-
-<p>M42 &copy; Robert Gendler 2006</p>
+<p><a href="http://www.robgendlerastropics.com/M42HeartNM.html"><img src="/2006/11/M42HeartNMSS.jpg" alt=""></a></p>
+<p>M42 (C) Robert Gendler 2006</p>
       <a href="https://blog.not-a-kernel-guy.com/2006/11/26/105/">Read On &rarr;</a>
       
     </div>
@@ -161,8 +174,8 @@
       
       Наткнулся сегодня на забавный пост в блоге Michael Kaplan: Every character has a story #4: U+feff (alternate title: UTF-8 is the BOM, dude!). Майкл умудряется интересно писать про скушные вещи вроде Unicode BOM, распознавание кодировок и т.п. Избранные места:
  Enter Microsoft.
-(Yes, I know &ndash; boo, hiss, etc.)_
-But every 4-6 months another huge thread on the Unicode List gets started about how bad the BOM is for UTF-8 and how it breaks UNIX tools that have been around and able to support UTF-8 without change for decades and about how Microsoft is evil for shipping Notepad that causes all of these problems and how neither the W3C nor Unicode would have ever supported a UTF-8 BOM if Microsoft did not have Notepad doing it, and so on, and so on.
+  (Yes, I know &ndash; boo, hiss, etc.)_
+  But every 4-6 months another huge thread on the Unicode List gets started about how bad the BOM is for UTF-8 and how it breaks UNIX tools that have been around and able to support UTF-8 without change for decades and about how Microsoft is evil for shipping Notepad that causes all of these problems and how neither the W3C nor Unicode would have ever supported a UTF-8 BOM if Microsoft did not have Notepad doing it, and so on, and so on.
       <a href="https://blog.not-a-kernel-guy.com/2006/11/23/104/">Read On &rarr;</a>
       
     </div>
@@ -179,9 +192,9 @@ But every 4-6 months another huge thread on the Unicode List gets started about 
       
       Кстати, никто не знает как перевести на русский слово assertion?
 Интересно сравнить частоту использования статических и динамических assertions. Поиск в Google Code Search выдаёт вот такие результаты:
- Поиск по &ldquo;C_ASSERT&rdquo; даёт 15 ссылок;
- “BOOST_STATIC_ASSERT” – около 200;
- “STATIC_ASSERT” – ещё 100.
+  Поиск по &ldquo;C_ASSERT&rdquo; даёт 15 ссылок;
+  “BOOST_STATIC_ASSERT” – около 200;
+  “STATIC_ASSERT” – ещё 100.
   В то же время общее число упоминаний “ASSERT” даёт около 386000 ссылок. Разница больше 3-х порядков! Из этого можно сделать вывод, что статические assertions, не смотря на всю пользу от них, практически не используются.
       <a href="https://blog.not-a-kernel-guy.com/2006/11/21/103/">Read On &rarr;</a>
       
@@ -199,10 +212,10 @@ But every 4-6 months another huge thread on the Unicode List gets started about 
       
       Избранные цитаты с forum.privet.com:
  Как люди, которые живут жарком климате в Америке, борются с тараканами? Я была удивлена когда увидела в Техасе очень большого таракана, в России я таких не видала.
-Покупаем наган и мочим казлов.
-Только через Animal Control. Самостоятельно калечить таракана - незаконно!
-брызгали, брызгали. Никуда они не уходят, лошади проклятые.
-Во-первых, надо понять, что тропический таракан - ваш друг. Ето свидетельство чистоты жилища, ибо в грязных и замусоренных домах крупные тарканы не водятся, им нужно как минимум 10 см в ширину для свободного пробега.
+  Покупаем наган и мочим казлов.
+  Только через Animal Control. Самостоятельно калечить таракана - незаконно!
+  брызгали, брызгали. Никуда они не уходят, лошади проклятые.
+  Во-первых, надо понять, что тропический таракан - ваш друг.
       <a href="https://blog.not-a-kernel-guy.com/2006/11/17/102/">Read On &rarr;</a>
       
     </div>
@@ -218,8 +231,7 @@ But every 4-6 months another huge thread on the Unicode List gets started about 
       </span>
       
       <p>После окончательного перехода на Vista на моей основной машине отказался запускаться ядерный отладчик. Вместо того, чтобы терпеливо дожидаться соединения, он стал выдавать вот такое сообщение:</p>
-
-<p><img src="/2006/11/kderror.png" alt="" /></p>
+<p><img src="/2006/11/kderror.png" alt=""></p>
       <a href="https://blog.not-a-kernel-guy.com/2006/11/17/101/">Read On &rarr;</a>
       
     </div>
@@ -286,21 +298,6 @@ PS: Наверное, я всё-таки что-то фундаментальн�
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2006/11/08/96/">C# Programming Courses</a>
-      </h1>
-      <span class="post-date">Nov 8, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/11/08/96/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%B2%D1%81%D1%8F%D0%BA%D0%B0%D1%8F-%D0%B2%D1%81%D1%8F%D1%87%D0%B8%D0%BD%D0%B0">Всякая всячина</a>
-      </span>
-      
-      Сегодня, делая себе утренний кофе, наткнулся на объявление, рекламирующее &ldquo;C# Programming Courses: Basic, Intermediate, Advanced&rdquo;. Всё бы ничего, но это объявление висит на кухне в здании, где сидит большая часть разработчиков ядра Windows. Я бы не сказал, что это лучшее место, где можно найти желающих подтянуть свои знания по C#. :-) Хуже этого могла бы быть только идея повесить аналогичное объявление в офисе команды, написавшей CLR и компилятор C#.
-      
-      
-    </div>
-    
     <ul class="pagination">
   <li class="active">
     <span class="fa-lg"><a href="/page/58/" aria-label="Previous">
@@ -310,9 +307,7 @@ PS: Наверное, я всё-таки что-то фундаментальн�
 
   <li class="active">
     <span class="fa-lg">
-      <a href="/post/">
-        Архив
-      </a>
+      <a href="/post/">Архив</a>
     <span>
   </li>
 

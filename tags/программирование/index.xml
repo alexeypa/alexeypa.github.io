@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Программирование on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Программирование on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 18 Jul 2021 19:56:02 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 18 Jul 2021 19:56:02 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Загрузка кода в чужой процесс на Linux</title>
       <link>https://blog.not-a-kernel-guy.com/2021/07/18/lx_preload/</link>
@@ -41,16 +37,13 @@
 &lt;a href=&#34;https://snarky.ca/why-python-3-exists/&#34;&gt;Почему Питон 3 существует&lt;/a&gt;. Обе статьи признают, что переход создал множество
 проблем, но при этом многословно объясняют почему третий Питон был необходим. Обе статьи
 были бы гораздо честнее, если бы авторы просто сказали &amp;ldquo;Простите. Мы ошиблись&amp;rdquo;.&lt;/p&gt;
-
 &lt;p&gt;Мое мнение по этому поводу можно свести к двум тезисам:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Питон 3 не предложил &lt;em&gt;ничего&lt;/em&gt;, что оправдало бы обратную несовместимость со вторым
 Питоном.&lt;/li&gt;
 &lt;li&gt;100% покрытие кода тестами - необходимое условие для того, чтобы безболезненно
 переписывать код на Питоне.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Чтобы проиллюстрировать это мнение, я собрал немного статистики по миграции небольшого
 проекта на 38 тысяч строк. Проект состоит из коллекции тестов, проверяющих поведение
 операционной системы на целевой платформе, и обвязки, которая позволяет эти тесты
@@ -58,20 +51,16 @@
 около двух с половиной тысяч строк. Это имеет рациональное объяснение - покрывать код
 тестов тестами вроде как особого смысла нет. Но на легкость переписывания кода это, само
 собой, влияет.&lt;/p&gt;
-
 &lt;p&gt;Основной перевод кода с py2 на py2+py3 начался в июле прошлого года и занял ровно две
 недели, 14 пул-реквестов и примерно чуть более 5% измененного кода. Если включить
 автоматическое переформатирование кода, то дельта увеличивается до 30% кода. Для
 сравнения, в два раза более крупное, похожее по характеру изменение в проекте на С++
 (150 тысяч строк кода) заняло 4 дня от начала до конца.&lt;/p&gt;
-
 &lt;p&gt;Здесь кстати есть еще один характерный момент. Переход на третий Питон - это почти
 всегда переход на код, совместимый с обоими версиями сразу. Просто потому, что
 невозможно перевести сколь-нибудь крупный проект за раз. Но, как мы помним, эти версии
 умышленно несовместимы друг с другом. Так что костыли вроде &lt;a href=&#34;https://pypi.org/project/six/&#34;&gt;six&lt;/a&gt; просто необходимы.&lt;/p&gt;
-
 &lt;p&gt;Какие же изменения были сделаны за эти две недели? Да все же тот стандартный список:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Байты и строки.&lt;/li&gt;
 &lt;li&gt;Целочисленное деление.&lt;/li&gt;
@@ -81,26 +70,22 @@
 &lt;li&gt;Отсутствующий &lt;code&gt;sys.maxint&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Отсутствующий &lt;code&gt;xrange&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;В случае типизированного языка, все эти несовместимости ловятся на этапе компиляции. В
 конце концов, компилятор компилирует 100% кода программы (слава богу &lt;a href=&#34;https://en.cppreference.com/w/cpp/language/sfinae&#34;&gt;SFINAE&lt;/a&gt; в
 нормальных программах используется более-менее локально). Единственный способ надежно
 отловить все ошибки компиляции в Питоне можно только выполнив &lt;em&gt;каждую&lt;/em&gt; строку кода в
 программе. Я еще ни разу в жизни не видел ни одного реального программного проекта со
 100% покрытием тестами.&lt;/p&gt;
-
 &lt;p&gt;Обидно, что даже самое полезное новшество - раздельные строки и байты не требует ломать
 обратную совместимость. Ну совсем. Что нужно было сделать? - дать возможность явно
 указать, ожидает ли код байты или строки в новом коде, а старый код обложить
 диагностикой, которая ловит ошибки. Добавить специальный режим проверок во время
 исполнения, если требуется. Что сделали разработчики Питона? Переименовали &lt;code&gt;str&lt;/code&gt; в
 &lt;code&gt;bytes&lt;/code&gt;, а &lt;code&gt;unicode&lt;/code&gt; в &lt;code&gt;str&lt;/code&gt;. Чем сломали ожидания огромного массива существующего кода.&lt;/p&gt;
-
 &lt;p&gt;Однако авторам этого показалось мало и они добавили еще кучу тривиальных, и совсем
 ненужных несовместимостей. К примеру убрали &lt;code&gt;iteritems()&lt;/code&gt; или убрали оператор &lt;code&gt;print&lt;/code&gt;.
 Что мешало оставить первый и позволить второму быть и оператором и функцией - это выше
 моего понимания.&lt;/p&gt;
-
 &lt;p&gt;Но если вы думаете, что за две недели эпопея закончилась, вы сильно ошибаетесь. Это был
 только первый тикет в баг-трекере. Спустя полгода их заведено уже 15. Заслано 33
 пул-реквеста. Крайний и видимо не последний баг, вызванный переходом, был найден неделю
@@ -125,7 +110,6 @@
 пакетов для успешного декодирования с вероятностью 0.999999. При этом
 вероятность успешного декодирования стремительно приближается к единице с каждым
 дополнительным пакетом.&lt;/p&gt;
-
 &lt;p&gt;Зачем это нужно когда уже есть протоколы надежной передачи по двухстороннему
 каналу, скажем тот же TCP/IP? Оказывается существует ситуации, когда организация
 обратного канала связи требует изобретения машины времени. Когда нам нужно
@@ -152,7 +136,6 @@ Windows. Тем не менее возится с кодом, непосредс
 сумму некоторых пакетов. Одна из библиотек широко использовалась в
 &amp;ldquo;боевых&amp;rdquo; условиях. Немного удивительно, что ошибка оставалась незамеченной
 так долго.&lt;/p&gt;
-
 &lt;p&gt;Корнями этот баг уходит в 1980-й год, когда был опубликована &lt;a href=&#34;https://tools.ietf.org/html/rfc768&#34;&gt;спецификация
 протокола UDP&lt;/a&gt;. Чтобы разобраться в чем заключается ошибка, нужно
 сначала разобраться как работают контрольные суммы в IP стеке. В IPv4 пакете
@@ -172,14 +155,12 @@ Windows. Тем не менее возится с кодом, непосредс
       <description>&lt;p&gt;Столкнулся недавно с новой для себя областью - ловлей багов в компиляторе.
 Ловить &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2010/07/11/854/&#34;&gt;баг в процессоре&lt;/a&gt; мне уже доводилось, а вот с компиляторами до
 недавнего времени как-то везло.&lt;/p&gt;
-
 &lt;p&gt;Началось все очень прозаично. В нашем репозитории есть своя реализация умного
 указателя. Ну, вы знаете, как это бывает. Обычная история на самом деле&amp;hellip;
 Этот класс был написан в древние времена, тогда и &lt;a href=&#34;https://en.wikipedia.org/wiki/C%2B%2B03&#34;&gt;С++03&lt;/a&gt; еще на свете не
 было. С тех пор уже и &lt;a href=&#34;https://en.wikipedia.org/wiki/C%2B%2B17&#34;&gt;С++17&lt;/a&gt; появился и &lt;a href=&#34;https://en.wikipedia.org/wiki/C%2B%2B20&#34;&gt;С++20&lt;/a&gt; не за горами, но класс
 по-прежнему активно используется. Мы его давно хотели заменить на что-нибудь
 более стандартное и современное, но все руки не доходили. “Работает - не трожь”.&lt;/p&gt;
-
 &lt;p&gt;В один прекрасный день в этом классе нашлось &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&#34;&gt;неопределенное поведение&lt;/a&gt;, что
 стало последней каплей, &lt;del&gt;переломившей верблюду соломинку&lt;/del&gt;. Указатель был
 переписан на корню и стал тонкой оберткой вокруг &lt;code&gt;std::shared_ptr&amp;lt;&amp;gt;&lt;/code&gt;.
@@ -201,14 +182,12 @@ Windows. Тем не менее возится с кодом, непосредс
 не кстати загорается красный свет. Вы плавно нажимаете на тормоз и привычно
 останавливаете машину. Знакомая картина? На самом деле все происходит совсем не
 так.&lt;/p&gt;
-
 &lt;p&gt;Для начала светофором уже давно управляет автоматическая системы управления,
 задача которой - равномерно рассредоточить нагрузку на дорожную сеть. И хотя
 разгоняясь от предыдущего светофора вы, откровенно говоря, немного газанули
 (чтобы успеть до следующего красного), систему не дураки проектировали. Время
 переключения адаптируется в зависимости от времени суток и показаний датчиков,
 встроенный в полотно дороги. Шансов проскочить у вас не много.&lt;/p&gt;
-
 &lt;p&gt;Когда вы нажимаете на акселератор, перемещение педали никак не влияет на
 состав горючей смеси в двигателе. Вместо этого компьютер отслеживает положение
 педали и просит другой компьютер приготовить горючую смесь определенного
@@ -216,10 +195,8 @@ Windows. Тем не менее возится с кодом, непосредс
 параметров, включая приложенное усилие, дорожные условия, настройки машины,
 качество топлива и т.д. Как вы думаете, что произойдет, если &lt;a href=&#34;https://en.wikipedia.org/wiki/2009%E2%80%9311_Toyota_vehicle_recalls&#34;&gt;программисты не
 оттестировали как следует этот алгоритм&lt;/a&gt;?&lt;/p&gt;
-
 &lt;p&gt;Нажатие на тормоз все еще передается на колеса почти напрямую, но и этот бастион
 скоро падет.&lt;/p&gt;
-
 &lt;p&gt;Чем сложнее система, тем больше вероятность того, что человек не приминает
 никаких решений напрямую. В самолетах концепция &lt;a href=&#34;https://en.wikipedia.org/wiki/Fly-by-wire&#34;&gt;fly-by-wire&lt;/a&gt; давно победила
 ручное управление. Ракеты изначально &lt;a href=&#34;https://www.youtube.com/watch?v=PK_yguLapgA&#34;&gt;летают в полностью автоматическом
@@ -230,23 +207,17 @@ Windows. Тем не менее возится с кодом, непосредс
 определяет &lt;a href=&#34;https://en.wikipedia.org/wiki/Therac-25&#34;&gt;дозу рентгена, которую получит пациент&lt;/a&gt;. Атомные станции? Ядерный
 арсенал? Управляется опытными операторами? Не смешите мои тапочки. Опытные
 операторы только кнопки нажимают. Компьютеры принимают все решения.&lt;/p&gt;
-
 &lt;p&gt;Как компьютер принимает решение? А вот так:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;if (speed &amp;lt; desired_speed)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (speed &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; desired_speed)
 {
     accelerate();
 }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Для процессора, который выполняет этот код, принятие решение выглядит как
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Для процессора, который выполняет этот код, принятие решение выглядит как
 одна-единственная инструкция условного перехода. Если условие истинно, то
 перейти по этому адресу, я если нет - то по другому. Один бит.&lt;/p&gt;
-
 &lt;p&gt;Достаточно ошибится в одном бите, чтобы выполнить действие, прямо
 противоположное действие задуманному. Разница между &amp;ldquo;отдать штурвал от себя&amp;rdquo; и
 &amp;ldquo;потянуть штурвал на себя&amp;rdquo; - один бит.&lt;/p&gt;
-
 &lt;p&gt;Страшно?&lt;/p&gt;</description>
     </item>
     
@@ -262,95 +233,74 @@ Windows. Тем не менее возится с кодом, непосредс
 водой своевременно. Когда проект разрастается, то красивый и уютный песчанный
 замок превращается в минное поле. Отрефакторил подвал - крыша отвалилась.
 Поправил крышу - окна слиплись в один комок.&lt;/p&gt;
-
 &lt;p&gt;Непонятно как все это счастье держать в одной куче. Неужели все живут за счет
 100% покрытия тестами? Не верю. Или все на PyCharm сидят?&lt;/p&gt;
-
 &lt;p&gt;Расскажу про очередной прикол Питона. Итак есть простой код:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;init&lt;/span&gt;(factories):
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;Convert a list of factorie into a list of objects.&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt; 
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; [factory() &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; factory &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; factories]
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def init(factories):
-    &amp;quot;&amp;quot;&amp;quot;Convert a list of factorie into a list of objects.&amp;quot;&amp;quot;&amp;quot; 
-    return [factory() for factory in factories]
-
-def cleanup(objects):
-    &amp;quot;&amp;quot;&amp;quot;Clean up objects in the reversed order of their creation.&amp;quot;&amp;quot;&amp;quot;
-    for obj in reversed(objects):
-        obj.cleanup()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;init()&lt;/code&gt; берет список фабрик и отдает список объектов, созданных фабриками.
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cleanup&lt;/span&gt;(objects):
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;Clean up objects in the reversed order of their creation.&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; obj &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; reversed(objects):
+        obj&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;cleanup()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;init()&lt;/code&gt; берет список фабрик и отдает список объектов, созданных фабриками.
 &lt;code&gt;cleanup()&lt;/code&gt; чистит созданные объекты в порядке, противоположном порядку
 создания. Нам требуется написать тест, который проверяет, что методы &lt;code&gt;cleanup()&lt;/code&gt;
 вызываются в правильном порядке:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; itertools &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; permutations
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; mock
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from itertools import permutations
-import mock
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_cleanup&lt;/span&gt;():
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;Verify cleanup() order.&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# Try all permitations of initialization order. &lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; init_order &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; permutations(range(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;)):
+        cleanup_order &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
 
-def test_cleanup():
-    &amp;quot;&amp;quot;&amp;quot;Verify cleanup() order.&amp;quot;&amp;quot;&amp;quot;
-    # Try all permitations of initialization order. 
-    for init_order in permutations(range(3)):
-        cleanup_order = []
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;factory&lt;/span&gt;(index):
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cleanup&lt;/span&gt;():
+                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;Record the clean up order.&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+                cleanup_order&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(index)
 
-        def factory(index):
-            def cleanup():
-                &amp;quot;&amp;quot;&amp;quot;Record the clean up order.&amp;quot;&amp;quot;&amp;quot;
-                cleanup_order.append(index)
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;create&lt;/span&gt;():
+                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;Return a mock implementing cleanup().&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+                obj &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mock&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Mock
+                obj&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;cleanup &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mock&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Mock(side_effect&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cleanup)
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; obj
 
-            def create():
-                &amp;quot;&amp;quot;&amp;quot;Return a mock implementing cleanup().&amp;quot;&amp;quot;&amp;quot;
-                obj = mock.Mock
-                obj.cleanup = mock.Mock(side_effect=cleanup)
-                return obj
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; create
 
-            return create
-
-        # Create objects in the desired order.
-        objects = init([factory(index) for index in init_order])
+        &lt;span style=&#34;color:#75715e&#34;&gt;# Create objects in the desired order.&lt;/span&gt;
+        objects &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; init([factory(index) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; index &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; init_order])
 
         cleanup(objects)
 
-        # Verify that the object were cleaned up in the reveresed
-        # order of their creation.
-        assert cleanup_order == list(reversed(init_order))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Разберу логику по кускам. Тест перебирает все возможные кобинации порядка
+        &lt;span style=&#34;color:#75715e&#34;&gt;# Verify that the object were cleaned up in the reveresed&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;# order of their creation.&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; cleanup_order &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; list(reversed(init_order))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Разберу логику по кускам. Тест перебирает все возможные кобинации порядка
 создания объектов:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for init_order in permutations(range(3)):
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Декоратор &lt;code&gt;factory()&lt;/code&gt; возвращает фабрику &lt;code&gt;create()&lt;/code&gt;, которая в свою учередь
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; init_order &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; permutations(range(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;)):
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Декоратор &lt;code&gt;factory()&lt;/code&gt; возвращает фабрику &lt;code&gt;create()&lt;/code&gt;, которая в свою учередь
 создает объект с методом &lt;code&gt;cleanup()&lt;/code&gt;. Для создания объекта на коленке
 используется &lt;a href=&#34;https://docs.python.org/3/library/unittest.mock.html&#34;&gt;&lt;code&gt;Mock&lt;/code&gt;&lt;/a&gt;. Релизация &lt;code&gt;cleanup()&lt;/code&gt; запоминает порядок вызова в
 &lt;code&gt;cleanup_order&lt;/code&gt;.&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;init()&lt;/code&gt; создает объекты в заданном порядке, &lt;code&gt;cleanup()&lt;/code&gt; - чистит:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;objects = init([factory(index) for index in init_order])
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;objects &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; init([factory(index) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; index &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; init_order])
 
 cleanup(objects)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Наконец, в самом конце мы проверяем, что порядок очистки противоположен порядку
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Наконец, в самом конце мы проверяем, что порядок очистки противоположен порядку
 создания:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;assert cleanup_order == list(reversed(init_order))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Все просто, не так ли? Запускаем тест и получаем облом:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;               assert cleanup_order == list(reversed(init_order))
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; cleanup_order &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; list(reversed(init_order))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Все просто, не так ли? Запускаем тест и получаем облом:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;gt;               assert cleanup_order == list(reversed(init_order))
 E     assert [2, 2, 2] == [2, 1, 0]
 E       At index 1 diff: 2 != 1
 E       Use -v to get the full diff
 
 
 rabbit_test.py:41: AssertionError 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Заядлые питонщики давно раскусили, в чем проблема. А вы сможете найти ошибку не
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Заядлые питонщики давно раскусили, в чем проблема. А вы сможете найти ошибку не
 заглядывая в ответ?&lt;/p&gt;</description>
     </item>
     
@@ -364,19 +314,15 @@ rabbit_test.py:41: AssertionError
 поломаться из-за внешних причин. Например, &lt;a href=&#34;https://docs.python.org/3.7/library/socket.html#socket.socket.connect&#34;&gt;&lt;code&gt;socket.connect()&lt;/code&gt;&lt;/a&gt; может
 закончится ошибкой из-за непредвиденной ситуации в сети. Заворачиваем вызов в
 &lt;code&gt;@retry&lt;/code&gt; и бац! Все работает.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;@retry
-def create_connection(address):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    return socket.connect(address)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Однако бездумное применение &lt;code&gt;@retry&lt;/code&gt;, как нетрудно догадаться, приводит
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@retry&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;create_connection&lt;/span&gt;(address):
+    s &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; socket&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;socket(socket&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;AF_INET, socket&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;SOCK_STREAM)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; socket&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;connect(address)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Однако бездумное применение &lt;code&gt;@retry&lt;/code&gt;, как нетрудно догадаться, приводит
 проблемам. Самый известный пример - вложенные &lt;code&gt;@retry&lt;/code&gt;.
 &lt;code&gt;@retry(stop_max_attempt_number=3)&lt;/code&gt; вложенный в другой
 &lt;code&gt;@retry(stop_max_attempt_number=3)&lt;/code&gt; дает 9 повторов. Три уровня вложенности -
 27 повторов.&lt;/p&gt;
-
 &lt;p&gt;Один раз использование &lt;code&gt;@retry&lt;/code&gt; привело к тому, что IT заблокировало мою учетную
 запись. Банальная история - был некий скрипт, который при запуске спрашивал
 логин и пароль для авторизации. В один прекрасный день некто (не будем
@@ -385,7 +331,6 @@ def create_connection(address):
 авторизации приводила к повторному запросу с тем же неправильным именем и
 паролем. После определенного числа попыток контроллер домена решил, что кто-то
 пытается подобрать пароль к учетной записи и заблокировал её.&lt;/p&gt;
-
 &lt;p&gt;Мораль истории - знайте свои ошибки в лицо и используйте параметр
 &lt;code&gt;retry_on_exception&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
@@ -400,38 +345,33 @@ def create_connection(address):
 улучшения читаемости однообразных юнит тестов. Там же мне в комментариях
 аналогичных примеров из существующих фреймворков накидали. Теперь давайте
 посмотрим как этот способ сделать еще лучше.&lt;/p&gt;
-
 &lt;p&gt;Основная идея была очень проста. Есть повторяющийся, очень монотонный код
 тестов. Чтобы сделать его читаемым, пишется универсальное тело теста, а все
 необходимые вариации описываются параметрами. Параметры упаковываются в таблицу,
 что очень важно для улучшения читаемости. Когда все параметры собраны в одном
 месте (в пределах одного экрана), анализировать поведение тестируемого кода
 легче, чем когда параметры разбросаны по файлу длиной в сотни строк.&lt;/p&gt;
-
 &lt;p&gt;Как сделать код еще более понятным? К примеру, возьмем таблицу из предыдущего
 поста. Что с ней не так?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;struct {
-    int x;
-    int y;
-    std::string that_thing;
-    std::string this_key;
-    bool result;
-} const cases[] = {
-    {0, 0, &amp;quot;thing1&amp;quot;, &amp;quot;key2&amp;quot;, false},
-    {0, 1, &amp;quot;thing1&amp;quot;, &amp;quot;key2&amp;quot;, false},
-    {0, 2, &amp;quot;thing1&amp;quot;, &amp;quot;key2&amp;quot;, false},
-    {0, 3, &amp;quot;thing1&amp;quot;, &amp;quot;key1&amp;quot;, true },
-    {1, 0, &amp;quot;thing2&amp;quot;, &amp;quot;key1&amp;quot;, false},
-    {1, 1, &amp;quot;thing2&amp;quot;, &amp;quot;&amp;quot;,     false},
-    {1, 2, &amp;quot;thing2&amp;quot;, &amp;quot;&amp;quot;,     true },
-    {2, 0, &amp;quot;&amp;quot;,       &amp;quot;&amp;quot;,     false},
-    {2, 1, &amp;quot;&amp;quot;,       &amp;quot;&amp;quot;,     true },
-    {2, 2, &amp;quot;&amp;quot;,       &amp;quot;&amp;quot;,     false},
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; x;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; y;
+    std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;string that_thing;
+    std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;string this_key;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; result;
+} &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; cases[] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing1&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;key2&amp;#34;&lt;/span&gt;, false},
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing1&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;key2&amp;#34;&lt;/span&gt;, false},
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing1&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;key2&amp;#34;&lt;/span&gt;, false},
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing1&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;key1&amp;#34;&lt;/span&gt;, true },
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing2&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;key1&amp;#34;&lt;/span&gt;, false},
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing2&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,     false},
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing2&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,     true },
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,       &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,     false},
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,       &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,     true },
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,       &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,     false},
 };
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;В этой таблице слишком много знаков препинания: скобки, запятые, кавычки.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;В этой таблице слишком много знаков препинания: скобки, запятые, кавычки.
 К параметрам в этой таблице неудобно писать комментарии и еще сложнее подружить
 удобно выровненные колонки с &lt;a href=&#34;https://clang.llvm.org/docs/ClangFormat.html&#34;&gt;&lt;code&gt;clang-format&lt;/code&gt;&lt;/a&gt; (&lt;code&gt;clang-format off&lt;/code&gt; - это
 единственный выход). Более того, столкнувшись с реальностью, подобная таблица
@@ -449,54 +389,45 @@ def create_connection(address):
 понятные и читаемые юнит тесты. Начну немного издалека. Допустим мы хотим
 убедится, что определенный кусок кода работает правильно. Если бы мы имели дело
 с игрушечным примером, то это наш тест мог бы Примерно вот так:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;bool foobar(int x, int y)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;foobar&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; x, &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; y)
 {
-    return (x + y) &amp;gt; 0 &amp;amp;&amp;amp; ((x + y) % 3) == 0;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (x &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; y) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ((x &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; y) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
 }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;ASSERT_FALSE(foobar(0, 0));
-ASSERT_FALSE(foobar(0, 1));
-ASSERT_FALSE(foobar(0, 2));
-ASSERT_TRUE (foobar(0, 3));
-ASSERT_FALSE(foobar(1, 0));
-ASSERT_FALSE(foobar(1, 1));
-ASSERT_TRUE (foobar(1, 2));
-ASSERT_FALSE(foobar(2, 0));
-ASSERT_TRUE (foobar(2, 1));
-ASSERT_FALSE(foobar(2, 2));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;));
+ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;));
+ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;));
+ASSERT_TRUE (foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;));
+ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;));
+ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;));
+ASSERT_TRUE (foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;));
+ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;));
+ASSERT_TRUE (foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;));
+ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;));
 ...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Такой тест достаточно легко читать. Достаточно понять конструкцию
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Такой тест достаточно легко читать. Достаточно понять конструкцию
 &lt;code&gt;ASSERT_XXX(foobar(...))&lt;/code&gt; после чего глаза сами фокусируются на входных
 значениях, автоматически отсеивая ненужный синтаксический мусор.&lt;/p&gt;
-
 &lt;p&gt;Однако, если взять реальный код, то подобный пример превратиться в гораздо менее
 удобочитаемого монстра:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;std::unique_ptr&amp;lt;Foobar&amp;gt; rabbit =
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;unique_ptr&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Foobar&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; rabbit &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
     create_foobar_with_abc(parent,
         some_context,
-        more_stuff + that + is_required + to_create_foobar,
+        more_stuff &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; that &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; is_required &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; to_create_foobar,
         a,
         b,
         mock_c(),
         logger);
 
 ASSERT_TRUE(
-    rabbit-&amp;gt;connect(
+    rabbit&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;connect(
         this_thing,
         that_key,
-        did_you_think_we_are_done_here ? no : hell_no));
+        did_you_think_we_are_done_here &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; no : hell_no));
 
-ASSERT_TRUE(rabbit-&amp;gt;wait_for_accept(timeout));
+ASSERT_TRUE(rabbit&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;wait_for_accept(timeout));
 
-ASSERT_FALSE(rabbit-&amp;gt;foobar(0, 0));
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&amp;hellip; и так далее для каждого тест кейса. Подобный код легко превращается в
+ASSERT_FALSE(rabbit&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&amp;hellip; и так далее для каждого тест кейса. Подобный код легко превращается в
 длинную простыню однообразного текста с незаметными, но важными вариациями во
 входных данных или параметрах инициализации.&lt;/p&gt;</description>
     </item>
@@ -509,21 +440,18 @@ ASSERT_FALSE(rabbit-&amp;gt;foobar(0, 0));
       <guid>https://blog.not-a-kernel-guy.com/2018/07/07/sneaky-comma/</guid>
       <description>&lt;p&gt;Расскажу как я провел прошлую пятницу. Провел я её пытаясь понять, почему
 простой как доска тест-кейс не работает.&lt;/p&gt;
-
 &lt;p&gt;Тест-кейс запускает код в среде, которая симулирует полетное окружение: среду
 выполнения, показания датчиков и т.д. Далее выполняется простой сценарий -
 тест-кейс получает телеметрию и выполняет действия/проверки по наступлению
 определенных событий. Например, тест-кейс может запустить ракету, выключить
 четвертый двигатель, когда высота превысит сотню метров, а затем проверить, что
 код корректно обработал нештатную ситуацию.&lt;/p&gt;
-
 &lt;p&gt;Такие тест-кейсы, естественно, не пишутся с нуля. Кейс набирается из уже
 готовых, давно написанных блоков. Что может быть очень простым делом (если есть
 готовый шаблон), или не очень простым (когда такой шаблон нужно создать самому).
 В этот раз случился как раз второй вариант. Когда все компоненты теста правильно
 соединены остается только написать код, который ждет наступления интересных
 событий и реагирует на них нужным образом.&lt;/p&gt;
-
 &lt;p&gt;К пятнице я добрался до момента, когда сценарий тест-кейса уже написан, но еще
 не работает. Сценарий вылетал по таймауту ожидая наступления одного из событий.
 При этом телеметрия четко показывала, что событие наступило и у теста был вагон
@@ -543,9 +471,7 @@ ASSERT_FALSE(rabbit-&amp;gt;foobar(0, 0));
 ракеты в разработке; вторая, орбитальная, в планах. Больше про компанию ничего
 не знаю, но все равно приятно, что в Украине есть такие стартапы. Было бы
 здорово, если бы у них получилось завоевать свое место под солнцем.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/05/skyrora-1.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/05/skyrora-1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Рекрутер попросил пропиарить позицию &lt;a href=&#34;https://www.signalhire.com/jobs/skyrora/software-architect-c-developer/djo5MTk4O2M6MjI3NDA1O3I6MzQ2O3JmOjE=&#34;&gt;Software Architect/C++ Developer&lt;/a&gt;,
 который будет заниматься системой управления ракеты-носителя. Позиция открыта в
 Днепре. Есть желающие дерзнуть? :-)&lt;/p&gt;</description>
@@ -564,23 +490,20 @@ Git с помощью &lt;a href=&#34;https://subgit.com/&#34;&gt;SubGit&lt;/a&g
 одного на другой плавным и безболезненным. Он даже со всякими
 противоестественными манипуляциями со структурой веток в SVN репозитории
 справляется.&lt;/p&gt;
-
 &lt;p&gt;Но и на старуху найдется свой Раскольников. При создании одного из зеркал был
-указан не корневой адрес SVN, а &lt;a href=&#34;https://foobar/svn/xyz&#34;&gt;https://foobar/svn/xyz&lt;/a&gt;. Зеркало прекрасно
+указан не корневой адрес SVN, а https://foobar/svn/xyz. Зеркало прекрасно
 жило своей зеркальной жизню, пока не было обнаружено, что часть истории
 отсутствует. Для её восстановления родился план - заново импортировать все из
-корня (&lt;a href=&#34;https://foobar/svn&#34;&gt;https://foobar/svn&lt;/a&gt;), а затем, уже на стороне Git, - сшить старую и новую
+корня (https://foobar/svn), а затем, уже на стороне Git, - сшить старую и новую
 историю вместе.&lt;/p&gt;
-
 &lt;p&gt;Отличный был план. И, что самое главное, и SubGit и Git все эти фокусы позволяют
 и поддерживают. За одним маленьким исключением&amp;hellip; Как выяснилось, менять адрес
-с &lt;a href=&#34;https://foobar/svn/xyz&#34;&gt;https://foobar/svn/xyz&lt;/a&gt; на &lt;a href=&#34;https://foobar/svn&#34;&gt;https://foobar/svn&lt;/a&gt; категорически не получается.
+с https://foobar/svn/xyz на https://foobar/svn категорически не получается.
 Вернее получается, но результат выходит как-то не очень. SubGit пытается
 импортировать историю (и находит все правильные коммиты, что характерно), но
 затем пытается заново засунуть их обратно в SVN. SVN кричит &amp;ldquo;что вы в меня это
 пихаете?&amp;rdquo; SubGit ужасно смущается, бормочет многоэтажные стек-трейсы в лог и
 заодно сносит &lt;code&gt;master&lt;/code&gt; к праотцам.&lt;/p&gt;
-
 &lt;p&gt;Эх&amp;hellip; Буду теперь с &lt;code&gt;git replace&lt;/code&gt; возится&amp;hellip;&lt;/p&gt;</description>
     </item>
     
@@ -593,31 +516,26 @@ Git с помощью &lt;a href=&#34;https://subgit.com/&#34;&gt;SubGit&lt;/a&g
       <description>&lt;p&gt;А давайте про ошибки в дизайне поговорим. Тем более, что задним умом мы тут
 самые умные&amp;hellip; Я в последнее время много играюсь с миграцией &lt;a href=&#34;https://subversion.apache.org/&#34;&gt;Subversion&lt;/a&gt; на
 &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt; и многие их косяки так в глаза и лезут.&lt;/p&gt;
-
 &lt;p&gt;Начнем с Subversion. Во времена массового перехода с &lt;a href=&#34;https://en.wikipedia.org/wiki/Concurrent_Versions_System&#34;&gt;CVS&lt;/a&gt; на Subversion,
 одним из главных аргументов &amp;ldquo;за&amp;rdquo; была поддержка директорий и операций
 копирования/перемещения в Subversion. Было видно, что разработчикам поддержка
 копирования очень пришлась по душе. Насколько пришлась, что и ветки в Subversion
 создаются через копирование, а структура репозитория по-умолчанию - это
 знаменитые три директории &lt;code&gt;trunk&lt;/code&gt;, &lt;code&gt;branches&lt;/code&gt; и &lt;code&gt;tags&lt;/code&gt;.&lt;/p&gt;
-
 &lt;p&gt;Я догадываюсь как принималось это решение. Что-нибудь в духе &amp;ldquo;прикиньте,
 одна операция поддерживает и копирование, и ветки, и метки. Не нужно писать
 новый код для отдельного пространства имен веток. У нас уже есть этот код&amp;rdquo;. Но
 если пересчитать набитые шишки, то становится понятно, что решение было так
 себе&amp;hellip; не очень&amp;hellip; совсем хреновое решение это было, как оказалось.&lt;/p&gt;
-
 &lt;p&gt;Почему? А вот почему. Корректная работа с путями файлов, не смотря на кажущуюся
 простоту, - это постоянный источник багов. Казалось бы, что тут может быть
 сложного, но в результате получается как с указателями - нет, нет, а обязательно
 один потеряется. А Subversion заставляет с путями работать.&lt;/p&gt;
-
 &lt;p&gt;Скажем количество шагов в пути для &lt;code&gt;trunk&lt;/code&gt; и &lt;code&gt;branches/foobar&lt;/code&gt; разная. Это
 значит, что любой скрипт должен это корректно обработать. Не существует способа
 найти все ветки в произвольном репозитории. Операция копирования не обязательно
 означает создание ветки - а значит без какого-нибудь соглашения не обойтись.
 Ну а мы знаем насколько хорошо &lt;a href=&#34;https://xkcd.com/927/&#34;&gt;люди выдумывают совместимые стандарты&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;Использование копирования для создания веток автоматически означает, что
 Subversion создать рабочую копию из людой директории в репозитории. Отличная
 оптимизация, когда нужно выкачать один файл, но, опять же, это означает, что
@@ -625,12 +543,10 @@ Subversion создать рабочую копию из людой директ
 Практически сразу же вся эта гибкость запрещается и создается wiki страничка
 &amp;ldquo;чекаут делается так, а ветки называются только так, а всех кто делает не так -
 прибью нафиг&amp;rdquo;.&lt;/p&gt;
-
 &lt;p&gt;Теперь давайте про Git. Линус выбрал другую крайность. Вместо того, чтобы
 оставить поддержку копирования для файлов, но сделать нормальные ветки, он
 сделал нормальные ветки, но выкорчевал поддержку операций копирования. За одно
 под раздачу попали пустые директории.&lt;/p&gt;
-
 &lt;p&gt;Объяснение, как я его понимаю, тут такое - ни копирование, ни пустые директории
 с точки зрения самой системы контроля версий не несут полезной информации. Они
 совершенно не нужны чтобы корректно отслеживать версии исходного кода. Более
@@ -642,25 +558,23 @@ Subversion создать рабочую копию из людой директ
 веток требует анализа каждого коммита между этими ветками (медленно). Git же
 обходится только анализом начального и конечного состояния дерева файлов,
 пропуская промежуточные состояния.&lt;/p&gt;
-
 &lt;p&gt;Что же тут плохого, спросите вы? В данном случае проблема упирается в психологию
 людей. Да, соглашается подавляющее большинство разработчиков, - поддержка
 копирования и пустые директории в принципе не нужны. Но! Мы к ним так привыкли.
 Мы хотим линейную историю, явную поддержку копирования и пустые директории.
 Нам без них не уютно.&lt;/p&gt;
-
 &lt;p&gt;Вы будете смеяться, но это реальная проблема. Особенно, когда мигрируешь с
 Subversion на Git.&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Но ведь оно раньше работало. Я мог сделать так и так.&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Полностью согласен, но, на кой, простите, вам это нужно делать именно таким
-  способом?&lt;/p&gt;
-
+способом?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Но ведь это единственный правильный способ. Мы так всегда делали&amp;hellip;&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;У нас на работе есть коробка с плюшевыми медведями - специально для таких
 случаев. Когда ситуация заходит в тупик и разумные аргументы уже не помогают в
 дело вступают плюшевые медведи. Коллеге, чью любимую &lt;a href=&#34;https://xkcd.com/1172/&#34;&gt;фичу пришлось отдать в
@@ -677,11 +591,10 @@ Subversion на Git.&lt;/p&gt;
       <description>&lt;p&gt;Часто, когда речь заходит про космический софт, можно слышать &amp;ldquo;ну уж там-то код
 компилируется со всеми предупреждениями&amp;rdquo;, или &amp;ldquo;ну уж там-то наверняка запускается
 статический анализатор кода и все ошибки исправляются&amp;rdquo;, или &amp;ldquo;ну уж там то тесты
-покрывают код на 100%&amp;ldquo;. Как вы скорее всего уже догадались рая нет. Вернее, рай
+покрывают код на 100%&amp;rdquo;. Как вы скорее всего уже догадались рая нет. Вернее, рай
 в планах был, но из-за превышения сметы успели достроить только ад. К счастью,
 костры успели развести только под половиной котлов, поскольку часть дров
 заменили бетонными шпалами, а расположение котлов забыли задокументировать.&lt;/p&gt;
-
 &lt;p&gt;Сайт &lt;a href=&#34;https://llis.nasa.gov&#34;&gt;NASA Lessons Learned&lt;/a&gt; полон таких историй. Сегодня мы пройдемся по
 результатам исследования &lt;a href=&#34;http://aisel.aisnet.org/cgi/viewcontent.cgi?article=1671&amp;amp;context=amcis2009&#34;&gt;Flight Software Engineering Lessons&lt;/a&gt; за авторством
 Ronald Kirk Kandt опубликованное на конференции AMCIS 2009 (Americas Conference
@@ -701,32 +614,27 @@ on Information Systems). Автор исследования просуммир�
 года, после чего разделился на импактор и пролетную часть. 4 июля 2005 года
 370 килограммовый импактор успешно столкнулся с ядром кометы на скорости около
 10.3 км/с, выбросив в космос здоровенное облако пыли:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/3/3e/Deep_Impact_HRI.jpeg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/Deep_Impact_HRI.jpeg&#34; alt=&#34;&#34; title=&#34;Столкновение импактора с ядром кометы 9P/Темпеля&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/3/3e/Deep_Impact_HRI.jpeg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/Deep_Impact_HRI.jpeg&#34; alt=&#34;&#34; title=&#34;Столкновение импактора с ядром кометы 9P/Темпеля&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Согласно измерениям, проведенным космическим аппаратом &lt;a href=&#34;https://en.wikipedia.org/wiki/Stardust_(spacecraft)&#34;&gt;Stardust&lt;/a&gt; в 2011
 году, диаметр кратера, образовавшегося в результате столкновения, составил около
 150 метров.&lt;/p&gt;
-
 &lt;p&gt;По завершению основной миссии, NASA направило зонд Deep Impact к комете
 103P/Хартли в рамках расширенной миссии &amp;ldquo;EPOXI&amp;rdquo;. Пролет этой кометы
 состоялся 4 ноября 2010 года:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/NASAHartley2Comet.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/NASAHartley2Comet.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;В конце 2011 года, аппарат был отправлен на перехват астероида
 &lt;a href=&#34;https://en.wikipedia.org/wiki/(163249)_2002_GT&#34;&gt;(163249) 2002 GT&lt;/a&gt; пролет которого должен был состоятся в 2020 году. Однако
 в августе 2013 года контакт с аппаратом был потерян:&lt;/p&gt;
-
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;3 сентября 2013&lt;/a&gt;:&lt;br /&gt;
+&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;3 сентября 2013&lt;/a&gt;:&lt;br&gt;
 &amp;hellip; Связь с аппаратом утеряна между 11 и 14 августа (связь с аппаратом
 поддерживается раз в неделю). Последний сеанс связи был проведен 8 августа.
 Проведенное расследование позволило установить причину неполадки. Дальнейшие
 усилия направлены на определение лучшего способа восстановить связь с
 аппаратом.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;23 сентября 2013&lt;/a&gt;:&lt;br /&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;23 сентября 2013&lt;/a&gt;:&lt;br&gt;
 &amp;hellip; все попытки передачи низкоуровневых аппаратных команд не увенчались
 успехом. На этом все возможные сценарии восстановления связи с аппаратом были
 исчерпаны. Мы рекомендовали NASA объявить аппарат утерянным. NASA официально
@@ -743,14 +651,11 @@ on Information Systems). Автор исследования просуммир�
       <description>&lt;p&gt;Свежая презентация про полетный софт в SpaceX в целом, и про миграцию с make на
 &lt;a href=&#34;https://bazel.build/&#34;&gt;Bazel&lt;/a&gt; в частности:&lt;/p&gt;
 
-
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/t_3bckhV_YI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/t_3bckhV_YI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
-
 &lt;p&gt;Основные моменты:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Два основных репозитория: один содержит полетный код, второй - код симуляции.
 Более миллиона строк C++ в каждом. Немного Python.&lt;/li&gt;
@@ -762,7 +667,6 @@ on Information Systems). Автор исследования просуммир�
 в полете. Софт и железо тестируются как единая интегрированная система.&lt;/li&gt;
 &lt;li&gt;Система непрерывной интеграции выполняет более 8 тысяч заданий в день.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Вторая половина презентации посвящена миграции с древней системы сборки на
 основе make на более современный Bazel. Эта часть будет интересна в основном
 тем, кто интересуется системами сборки кода.&lt;/p&gt;</description>
@@ -780,7 +684,6 @@ on Information Systems). Автор исследования просуммир�
 величин с точностью до бита маловероятен. Но это только самая вершина айсберга.
 На точность влияет порядок вычислений, используемая платформа, математическая
 библиотека, процессор и т.д.&lt;/p&gt;
-
 &lt;p&gt;Сегодня я хотел бы поговорить о такой особенности чисел с плавающей запятой, как
 &amp;ldquo;не число&amp;rdquo;. Он же &lt;code&gt;NaN&lt;/code&gt; (not a number). &lt;code&gt;NaN&lt;/code&gt; - это специальное значение, которое
 возвращается как результат некоторых операций - например результат деления ноля
@@ -816,7 +719,6 @@ TTT мог записать процесс выполнения программ
 незаменим для ловли сложных багов и его главным недостатком было то, что TTT был
 внутренним инструментом, который Microsoft так и не выпустила как отдельный
 продукт.&lt;/p&gt;
-
 &lt;p&gt;rr тоже может записать выполнение процесса с точностью до инструкции и проиграть
 его назад и вперед. rr требует современного процессора, причем обязательно
 Intel, так как использует performance counters которые не реализованы в других
@@ -826,15 +728,12 @@ rr практически не замедляет записываемый пр�
 районе гигабайта за 10-15 минут выполнения “вычислительного” кода. Практически
 бесплатно. В пересчете на количество выполненных инструкций получается что-то
 вроде 0.1 бита на выполненную инструкцию.&lt;/p&gt;
-
 &lt;p&gt;Что интересно, rr базируется на очень простой идее: большая часть кода
 выполняется всегда одинаково. Если записать все случайные события (ввод/вывод,
 RDTSC, системный вызовы) и начальные условия (содержимое памяти), то процесс
 выполнения становится полностью детерминированным. Более детально можно почитать
 здесь: &lt;a href=&#34;http://rr-project.org/rr.html&#34;&gt;http://rr-project.org/rr.html&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;Процесс отладки с помощью rr выглядит так:&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Записываем процесс: &lt;code&gt;rr record &amp;lt;program&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Запускаем запись в отладчике: &lt;code&gt;rr replay&lt;/code&gt;&lt;/li&gt;
@@ -844,14 +743,12 @@ RDTSC, системный вызовы) и начальные условия (с
 &lt;li&gt;Смотрим почему в память пишется плохой указатель и повторяем шаги 4-6 до
 победного конца.&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;Дополнительный бонус заключается в том, что все адреса при повторном
 воспроизведении сохраняются. Если нужная переменная находится по адресу
 &lt;code&gt;0x123fooba&lt;/code&gt;, то она там будет всегда. Отпадает необходимость выяснять где в
 памяти находится интересный кусок каждый раз при запуске отладчика. rr также
 может помечать вывод в stdout метками для быстрой перемотки в нужное место.
 Это помогает сопоставить код с интересными местами в лог файлах.&lt;/p&gt;
-
 &lt;p&gt;Само собой, у rr есть куча других ограничений. К примеру, он не работает под
 Windows, не поддерживаются все системные вызовы, не поддерживается циклическая
 запись (последние несколько минут выполнения процесса), поддерживается только
@@ -866,9 +763,8 @@ Windows, не поддерживаются все системные вызов�
       <pubDate>Sun, 27 Nov 2016 17:54:01 -0800</pubDate>
       
       <guid>https://blog.not-a-kernel-guy.com/2016/11/27/an-ideal-code-review-tool/</guid>
-      <description>&lt;p&gt;&lt;em&gt;&lt;p align=&#34;right&#34;&gt;Здравствуйте. Меня зовут Алексей и я каждое утро просматриваю
-чужой код&amp;hellip;&lt;/p&gt;&lt;/em&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;em&gt;&lt;!-- raw HTML omitted --&gt;Здравствуйте. Меня зовут Алексей и я каждое утро просматриваю
+чужой код&amp;hellip;&lt;!-- raw HTML omitted --&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;За последнее время пришел к выводу, что ни один из известных мне инструментов
 для просмотра кода (в смысле &amp;ldquo;code review&amp;rdquo;) решительно не годится для выполнения
 своей главной функции.&lt;/p&gt;</description>
@@ -890,7 +786,6 @@ Windows, не поддерживаются все системные вызов�
       
       <guid>https://blog.not-a-kernel-guy.com/2014/01/29/1562/</guid>
       <description>&lt;p&gt;Господа, какой-же все-таки махровый &lt;em&gt;&amp;amp;^%&lt;/em&gt;! Вот посмотрите &lt;a href=&#34;https://github.com/JuliaLang/openlibm/blob/master/src/k_rem_pio2.c#L294&#34;&gt;сюда&lt;/a&gt;. Это код библиотеки OpenLIBM, которая, цитирую:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;OpenLIBM is an effort to have a &lt;strong&gt;high quality&lt;/strong&gt; standalone LIBM library.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -903,7 +798,6 @@ Windows, не поддерживаются все системные вызов�
       
       <guid>https://blog.not-a-kernel-guy.com/2013/02/05/1467/</guid>
       <description>&lt;p&gt;Хотите знать как выглядит процесс коммита в &lt;a href=&#34;http://www.chromium.org/Home&#34;&gt;Chromium&lt;/a&gt;? Есть у меня такие истории. Для затравки уточню терминологию. Chromium - это, фактически, open source версия &lt;a href=&#34;https://www.google.com/intl/en/chrome/browser/&#34;&gt;Chrome&lt;/a&gt;. Если взять Chromium и добавить немного закрытого кода и логотип Google, то получится Chrome. А вот если добавить немного закрытого кода и логотип Яндекс, то получится &lt;a href=&#34;http://browser.yandex.ru/&#34;&gt;Яндекс.Браузер&lt;/a&gt;. Исходники &lt;a href=&#34;https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp?hl=en&#34;&gt;Chrome Remote Desktop&lt;/a&gt;, над которым работаю я с коллегами, тоже собираются из репозитория Chromium.&lt;/p&gt;
-
 &lt;p&gt;Так вот, про процесс коммита.&lt;/p&gt;</description>
     </item>
     

@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -114,89 +115,78 @@
     <blockquote>
 <p><a href="/2007/06/11/197/">В таком виде генератор уже пригоден к использованию, однако его можно сделать ещё лучше. Как - читайте в следующей части.</a></p>
 </blockquote>
-
 <p>Если сравнить исходный код нашего генератора с реализацией генератора объектных файлов в “boost/tools/build/v2/tools/msvc.jam” можно обнаружить несколько отличий:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Каждое преобразование (C -&gt; OBJ и C++ -&gt; OBJ) требует регистрации собственного</span>
+<span style="color:#75715e"># генератора.</span>
+generators<span style="color:#f92672">.</span>register<span style="color:#f92672">-</span>c<span style="color:#f92672">-</span>compiler msvc<span style="color:#f92672">.</span>compile<span style="color:#f92672">.</span>c<span style="color:#f92672">++</span> : CPP : OBJ : <span style="color:#f92672">&lt;</span>toolset<span style="color:#f92672">&gt;</span>msvc ;
+generators<span style="color:#f92672">.</span>register<span style="color:#f92672">-</span>c<span style="color:#f92672">-</span>compiler msvc<span style="color:#f92672">.</span>compile<span style="color:#f92672">.</span>c : C : OBJ : <span style="color:#f92672">&lt;</span>toolset<span style="color:#f92672">&gt;</span>msvc ;
 
-<pre><code class="language-python"># Каждое преобразование (C -&gt; OBJ и C++ -&gt; OBJ) требует регистрации собственного
-# генератора.
-generators.register-c-compiler msvc.compile.c++ : CPP : OBJ : &lt;toolset&gt;msvc ;
-generators.register-c-compiler msvc.compile.c : C : OBJ : &lt;toolset&gt;msvc ;
+<span style="color:#f92672">...</span>
 
-...
-
-# Макроподстановка вида &quot;@(&lt;filename&gt;:E=xxx)&quot; раскрывается в имя файла, в который 
-# записывается строка &quot;xxx&quot;.
-actions compile-c-c++
+<span style="color:#75715e"># Макроподстановка вида &#34;@(&lt;filename&gt;:E=xxx)&#34; раскрывается в имя файла, в который </span>
+<span style="color:#75715e"># записывается строка &#34;xxx&#34;.</span>
+actions compile<span style="color:#f92672">-</span>c<span style="color:#f92672">-</span>c<span style="color:#f92672">++</span>
 {
-    $(.CC) @&quot;@($(&lt;[1]:W).rsp:E=&quot;$(&gt;[1]:W)&quot; -Fo&quot;$(&lt;[1]:W)&quot; -Yu&quot;$(&gt;[3]:D=)&quot; -Fp&quot;$(&gt;[2]:W)&quot; $(CC_RSPLINE))&quot; $(.CC.FILTER)
+    <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">.</span>CC) <span style="color:#f92672">@</span><span style="color:#e6db74">&#34;@($(&lt;[1]:W).rsp:E=&#34;</span><span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&gt;</span>[<span style="color:#ae81ff">1</span>]:W)<span style="color:#e6db74">&#34; -Fo&#34;</span><span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&lt;</span>[<span style="color:#ae81ff">1</span>]:W)<span style="color:#e6db74">&#34; -Yu&#34;</span><span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&gt;</span>[<span style="color:#ae81ff">3</span>]:D<span style="color:#f92672">=</span>)<span style="color:#e6db74">&#34; -Fp&#34;</span><span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&gt;</span>[<span style="color:#ae81ff">2</span>]:W)<span style="color:#e6db74">&#34; $(CC_RSPLINE))&#34;</span> <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">.</span>CC<span style="color:#f92672">.</span>FILTER)
 }
 
-# В CC_RSPLINE формируется командную строка для вызова компилятора.
-rule get-rspline ( target : lang-opt )
+<span style="color:#75715e"># В CC_RSPLINE формируется командную строка для вызова компилятора.</span>
+rule get<span style="color:#f92672">-</span>rspline ( target : lang<span style="color:#f92672">-</span>opt )
 {
-    CC_RSPLINE on $(target) = [ on $(target) return $(lang-opt) -U$(UNDEFS) $(CFLAGS) $(C++FLAGS) $(OPTIONS) -c $(nl)-D$(DEFINES) $(nl)\&quot;-I$(INCLUDES)\&quot; ] ;
+    CC_RSPLINE on <span style="color:#960050;background-color:#1e0010">$</span>(target) <span style="color:#f92672">=</span> [ on <span style="color:#960050;background-color:#1e0010">$</span>(target) <span style="color:#66d9ef">return</span> <span style="color:#960050;background-color:#1e0010">$</span>(lang<span style="color:#f92672">-</span>opt) <span style="color:#f92672">-</span>U<span style="color:#960050;background-color:#1e0010">$</span>(UNDEFS) <span style="color:#960050;background-color:#1e0010">$</span>(CFLAGS) <span style="color:#960050;background-color:#1e0010">$</span>(C<span style="color:#f92672">++</span>FLAGS) <span style="color:#960050;background-color:#1e0010">$</span>(OPTIONS) <span style="color:#f92672">-</span>c <span style="color:#960050;background-color:#1e0010">$</span>(nl)<span style="color:#f92672">-</span>D<span style="color:#960050;background-color:#1e0010">$</span>(DEFINES) <span style="color:#960050;background-color:#1e0010">$</span>(nl)\<span style="color:#e6db74">&#34;-I$(INCLUDES)</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> ] ;</span>
 }
 
-rule compile.c ( targets + : sources * : properties * )
+rule compile<span style="color:#f92672">.</span>c ( targets <span style="color:#f92672">+</span> : sources <span style="color:#f92672">*</span> : properties <span style="color:#f92672">*</span> )
 {
-    C++FLAGS on $(targets[1]) = ;
-    get-rspline $(targets) : -TC ;
-    compile-c-c++ $(&lt;) : $(&gt;) [ on $(&lt;) return $(PCH_FILE) ] [ on $(&lt;) return $(PCH_HEADER) ] ;
+    C<span style="color:#f92672">++</span>FLAGS on <span style="color:#960050;background-color:#1e0010">$</span>(targets[<span style="color:#ae81ff">1</span>]) <span style="color:#f92672">=</span> ;
+    get<span style="color:#f92672">-</span>rspline <span style="color:#960050;background-color:#1e0010">$</span>(targets) : <span style="color:#f92672">-</span>TC ;
+    compile<span style="color:#f92672">-</span>c<span style="color:#f92672">-</span>c<span style="color:#f92672">++</span> <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&lt;</span>) : <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&gt;</span>) [ on <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&lt;</span>) <span style="color:#66d9ef">return</span> <span style="color:#960050;background-color:#1e0010">$</span>(PCH_FILE) ] [ on <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&lt;</span>) <span style="color:#66d9ef">return</span> <span style="color:#960050;background-color:#1e0010">$</span>(PCH_HEADER) ] ;
 }
 
-rule compile.c++ ( targets + : sources * : properties * )
+rule compile<span style="color:#f92672">.</span>c<span style="color:#f92672">++</span> ( targets <span style="color:#f92672">+</span> : sources <span style="color:#f92672">*</span> : properties <span style="color:#f92672">*</span> )
 {
-    get-rspline $(targets) : -TP ;
-    compile-c-c++ $(&lt;) : $(&gt;) [ on $(&lt;) return $(PCH_FILE) ] [ on $(&lt;) return $(PCH_HEADER) ] ;
+    get<span style="color:#f92672">-</span>rspline <span style="color:#960050;background-color:#1e0010">$</span>(targets) : <span style="color:#f92672">-</span>TP ;
+    compile<span style="color:#f92672">-</span>c<span style="color:#f92672">-</span>c<span style="color:#f92672">++</span> <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&lt;</span>) : <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&gt;</span>) [ on <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&lt;</span>) <span style="color:#66d9ef">return</span> <span style="color:#960050;background-color:#1e0010">$</span>(PCH_FILE) ] [ on <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&lt;</span>) <span style="color:#66d9ef">return</span> <span style="color:#960050;background-color:#1e0010">$</span>(PCH_HEADER) ] ;
 }
-</code></pre>
-
-<p>Во-первых, генератор из “msvc.jam” различает С и C++ файлы. Сделать это легко – достаточно зарегистрировать два генератора. Вызывающие два разных правила, которые и сформируют нужную командную строку. Впрочем, в случае Visual C++ вся разница заключается в одном флаге -TC или -TP, поэтому правила “compile.c” и “compile.c++” делегируют всю работу общему для C и C++ правилу “compile-c-c++”.</p>
-
+</code></pre></div><p>Во-первых, генератор из “msvc.jam” различает С и C++ файлы. Сделать это легко – достаточно зарегистрировать два генератора. Вызывающие два разных правила, которые и сформируют нужную командную строку. Впрочем, в случае Visual C++ вся разница заключается в одном флаге -TC или -TP, поэтому правила “compile.c” и “compile.c++” делегируют всю работу общему для C и C++ правилу “compile-c-c++”.</p>
 <p>Во-вторых, командная строка, которую формирует стандартный генератор, немного сложнее. Для её формирования используется вспомогательное правило “get-rspline”. Очевидно, что для вызова препроцессору должны передаваться те же самые параметры, которые передаются компилятору. Иными словами, наш генератор должен также использовать правило “get-rspline”.</p>
-
-<p>В-третьих, для формирования командной строки используется встроенная поддержка response файлов (макроподстаповка вида &ldquo;@(<filename>:E=xxx)&ldquo;). Большинство опций компилятора перенаправляется в response файл, снижая тем самым вероятность переполнения буфера командной строки.</p>
-
+<p>В-третьих, для формирования командной строки используется встроенная поддержка response файлов (макроподстаповка вида &ldquo;@(<!-- raw HTML omitted -->:E=xxx)&quot;). Большинство опций компилятора перенаправляется в response файл, снижая тем самым вероятность переполнения буфера командной строки.</p>
 <p>С учётом этих изменений финальная версия генератора будет выглядеть вот так:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Импортируем нужные модули</span>
+<span style="color:#f92672">import</span> generators ;
+<span style="color:#f92672">import</span> msvc ;
+<span style="color:#f92672">import</span> toolset ;
+<span style="color:#f92672">import</span> type ;
 
-<pre><code class="language-python"># Импортируем нужные модули
-import generators ;
-import msvc ;
-import toolset ;
-import type ;
+<span style="color:#75715e"># Регистрируем новый тип файла. &#34;I&#34; - имя типа, &#34;i&#34; - расширение файла</span>
+type<span style="color:#f92672">.</span>register I : i ;
 
-# Регистрируем новый тип файла. &quot;I&quot; - имя типа, &quot;i&quot; - расширение файла
-type.register I : i ;
+<span style="color:#75715e"># Регистрируем генераторы для преобразования C -&gt; OBJ и C++ -&gt; OBJ</span>
+generators<span style="color:#f92672">.</span>register<span style="color:#f92672">-</span>standard pp<span style="color:#f92672">.</span>compile<span style="color:#f92672">.</span>c : C : I ;
+generators<span style="color:#f92672">.</span>register<span style="color:#f92672">-</span>standard pp<span style="color:#f92672">.</span>compile<span style="color:#f92672">.</span>c<span style="color:#f92672">++</span> : CPP : I ;
 
-# Регистрируем генераторы для преобразования C -&gt; OBJ и C++ -&gt; OBJ
-generators.register-standard pp.compile.c : C : I ;
-generators.register-standard pp.compile.c++ : CPP : I ;
+<span style="color:#75715e"># Импортируем флаги из msvc</span>
+toolset<span style="color:#f92672">.</span>inherit<span style="color:#f92672">-</span>flags pp : msvc ;
 
-# Импортируем флаги из msvc
-toolset.inherit-flags pp : msvc ;
-
-rule compile.c ( targets + : sources * : properties * )
+rule compile<span style="color:#f92672">.</span>c ( targets <span style="color:#f92672">+</span> : sources <span style="color:#f92672">*</span> : properties <span style="color:#f92672">*</span> )
 {
-    C++FLAGS on $(targets[1]) = ;
-    msvc.get-rspline $(targets) : -TC ;
-    compile-c-c++ $(&lt;) : $(&gt;) ;
+    C<span style="color:#f92672">++</span>FLAGS on <span style="color:#960050;background-color:#1e0010">$</span>(targets[<span style="color:#ae81ff">1</span>]) <span style="color:#f92672">=</span> ;
+    msvc<span style="color:#f92672">.</span>get<span style="color:#f92672">-</span>rspline <span style="color:#960050;background-color:#1e0010">$</span>(targets) : <span style="color:#f92672">-</span>TC ;
+    compile<span style="color:#f92672">-</span>c<span style="color:#f92672">-</span>c<span style="color:#f92672">++</span> <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&lt;</span>) : <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&gt;</span>) ;
 }
 
-rule compile.c++ ( targets + : sources * : properties * )
+rule compile<span style="color:#f92672">.</span>c<span style="color:#f92672">++</span> ( targets <span style="color:#f92672">+</span> : sources <span style="color:#f92672">*</span> : properties <span style="color:#f92672">*</span> )
 {
-    msvc.get-rspline $(targets) : -TP ;
-    compile-c-c++ $(&lt;) : $(&gt;) ;
+    msvc<span style="color:#f92672">.</span>get<span style="color:#f92672">-</span>rspline <span style="color:#960050;background-color:#1e0010">$</span>(targets) : <span style="color:#f92672">-</span>TP ;
+    compile<span style="color:#f92672">-</span>c<span style="color:#f92672">-</span>c<span style="color:#f92672">++</span> <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&lt;</span>) : <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&gt;</span>) ;
 }
 
-# Команды, непосредственно работающие с файлами
-actions compile-c-c++
+<span style="color:#75715e"># Команды, непосредственно работающие с файлами</span>
+actions compile<span style="color:#f92672">-</span>c<span style="color:#f92672">-</span>c<span style="color:#f92672">++</span>
 {
-    $(.CC) /EP @&quot;@($(&lt;[1]:W).rsp:E=&quot;$(&gt;[1]:W)&quot; $(CC_RSPLINE))&quot; &gt; &quot;$(&lt;[1]:W)&quot;
+    <span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">.</span>CC) <span style="color:#f92672">/</span>EP <span style="color:#f92672">@</span><span style="color:#e6db74">&#34;@($(&lt;[1]:W).rsp:E=&#34;</span><span style="color:#960050;background-color:#1e0010">$</span>(<span style="color:#f92672">&gt;</span>[<span style="color:#ae81ff">1</span>]:W)<span style="color:#e6db74">&#34; $(CC_RSPLINE))&#34;</span> <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;$(&lt;[1]:W)&#34;</span>
 }
-</code></pre>
-
-<p>Замечу, что этот код не полностью повторяет код из “msvc.jam”. Например, убрано всё имеющее отношение к поддержке предкомпилированных заголовков (precompiled headers, PCH).</p>
-
+</code></pre></div><p>Замечу, что этот код не полностью повторяет код из “msvc.jam”. Например, убрано всё имеющее отношение к поддержке предкомпилированных заголовков (precompiled headers, PCH).</p>
 <p>Также добавлю, что, не смотря на все достоинства, такого генератора он обладает одним существенным недостатком, - он работает только с Visual C++. Поддержка других компиляторов потребует написания для них своих версий генератора.</p>
   </div>
   <div id="disqus_thread"></div>

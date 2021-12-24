@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ui on Алексей Пахунов</title>
+    <title>UI on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/ui/</link>
-    <description>Recent content in Ui on Алексей Пахунов</description>
+    <description>Recent content in UI on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 16 Jan 2018 21:35:03 -0800</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/ui/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 16 Jan 2018 21:35:03 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/ui/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Гавайская система экстренного оповещения</title>
       <link>https://blog.not-a-kernel-guy.com/2018/01/16/hawaii/</link>
@@ -20,21 +16,17 @@
       <description>&lt;p&gt;Вы наверное уже слышали про сбой системы экстренного оповещения, которая
 выдала предупреждение о приближении баллистической ракеты к Гавайским островам
 в субботу 13-о числа:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/01/ballilstic_missile_threat_inbound.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/01/ballilstic_missile_threat_inbound.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;38 минут царила паника пока ошибочное сообщение не было отменено - &lt;a href=&#34;https://www.reddit.com/r/nonononoyes/comments/7q963r/a_lot_of_people_are_saying_the_error_in_hawaii/&#34;&gt;люди
 прощались с семьями на материке&lt;/a&gt;, кто-то пытался &lt;a href=&#34;https://www.reddit.com/r/gifs/comments/7q6rkf/video_from_hawaii_children_being_placed_into/&#34;&gt;спрятать детей в ливневой
 канализации&lt;/a&gt;, на дорогах &lt;a href=&#34;https://www.reddit.com/r/news/comments/7q67a1/emergency_alert_about_ballistic_missile_sent_to/dsmp325/&#34;&gt;творилось настоящее безумие&lt;/a&gt;, а кто-то &lt;a href=&#34;https://www.reddit.com/r/AskReddit/comments/7qf7ov/people_who_made_an_impulse_decision_when_they/&#34;&gt;послал
 любимого босса в пешее эротическое&lt;/a&gt; (о чем только люди не думают в
 критическую минуту).&lt;/p&gt;
-
 &lt;p&gt;Сегодня я наткнулся на &lt;a href=&#34;https://www.extremetech.com/extreme/262166-hawaiis-missile-scare-driven-terrible-ui-fcc-launches-investigation&#34;&gt;статью&lt;/a&gt;, которая вполне объясняет как могло
 получится, что такое важное сообщение было послано по ошибке. Это как раз тот
 случай, когда одна картинка лучше тысячи слов. Вот интерфейс системы экстренного
 оповещения:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/01/hawaii_alert_system_ui.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/01/hawaii_alert_system_ui.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

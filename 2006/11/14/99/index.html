@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,19 +113,17 @@
     <a class="label" href="/tags/wow64">Wow64</a>
     </span>
     <p>Одна из не очень удобных особенностей Windows x64 - отсутствие программы для просмотра справочных файлов в формате .hlp. WinHlp32.exe поставляющийся с 32-х битными версиями системы был написан еще во времена Windows 3.1 и по сей день остаётся 16-ти битным приложением. Вместо того, чтобы переписать его под 32 бита было принято волевое решение - в поддержке формата .hlp на 64-х битных системах отказать! Видимо с целью дальнейшей популяризации .chm.</p>
-
 <p>В принципе, меня это не особенно тревожило, до тех пор пока не пришлось поставить консольные утилиты от WinZip 9-ой версии. Единственная справка по параметрам командной строки там как раз в формате .hlp. В том числе сами утилиты при запуске вместо того, чтобы выдать краткую справку в консоли, пытаются показать .hlp файл. Добавлю, что ситуация была - дарёному коню в зубы не смотрят. Либо уже купленный WinZip либо нужно было искать бесплатную (не trial) альтернативу. Пришлось заняться переконвертированием .hlp в .chm.</p>
-
 <p>Хотя в этом процессе нет ничего военного, тем не менее бесплатной утилиты для конвертирования не нашлось. Пришлось разделить процесс на декомпиляцию .hlp и собственно сборку .chm:</p>
-
 <ol>
-<li><p>В качестве декомпилятора .hlp подошёл <a href="http://www.helpscribble.com/decompiler.html">WinHelp Decompiler</a> (ссылка на саму программу: <a href="http://download.jgsoft.com/helpscribble/helpdc21.zip">helpdc21.zip</a>).</p></li>
-
-<li><p>Компилятор .chm - стандартный <a href="http://www.microsoft.com/downloads/details.aspx?familyid=00535334-c8a6-452f-9aa0-d597d16580cc&amp;displaylang=en">HTML Help Workshop</a>.</p></li>
+<li>
+<p>В качестве декомпилятора .hlp подошёл <a href="http://www.helpscribble.com/decompiler.html">WinHelp Decompiler</a> (ссылка на саму программу: <a href="http://download.jgsoft.com/helpscribble/helpdc21.zip">helpdc21.zip</a>).</p>
+</li>
+<li>
+<p>Компилятор .chm - стандартный <a href="http://www.microsoft.com/downloads/details.aspx?familyid=00535334-c8a6-452f-9aa0-d597d16580cc&amp;displaylang=en">HTML Help Workshop</a>.</p>
+</li>
 </ol>
-
 <p>Единственная проблема, возникшая в процессе, - непонятно как перенести &ldquo;Содержимое&rdquo; (AKA Table of Contents) в .chm.</p>
-
 <p><em>Upd:</em> статья в knowledge base: <a href="http://support.microsoft.com/kb/917607">Windows Help program (WinHlp32.exe) is no longer included with Windows</a>.</p>
 
   </div>

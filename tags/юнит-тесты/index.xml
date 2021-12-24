@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Юнит Тесты on Алексей Пахунов</title>
+    <title>Юнит тесты on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/%D1%8E%D0%BD%D0%B8%D1%82-%D1%82%D0%B5%D1%81%D1%82%D1%8B/</link>
-    <description>Recent content in Юнит Тесты on Алексей Пахунов</description>
+    <description>Recent content in Юнит тесты on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 05 Aug 2018 18:44:25 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%8E%D0%BD%D0%B8%D1%82-%D1%82%D0%B5%D1%81%D1%82%D1%8B/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 05 Aug 2018 18:44:25 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%8E%D0%BD%D0%B8%D1%82-%D1%82%D0%B5%D1%81%D1%82%D1%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Текстовые данные в юнит тестах</title>
       <link>https://blog.not-a-kernel-guy.com/2018/08/05/text-data/</link>
@@ -21,38 +17,33 @@
 улучшения читаемости однообразных юнит тестов. Там же мне в комментариях
 аналогичных примеров из существующих фреймворков накидали. Теперь давайте
 посмотрим как этот способ сделать еще лучше.&lt;/p&gt;
-
 &lt;p&gt;Основная идея была очень проста. Есть повторяющийся, очень монотонный код
 тестов. Чтобы сделать его читаемым, пишется универсальное тело теста, а все
 необходимые вариации описываются параметрами. Параметры упаковываются в таблицу,
 что очень важно для улучшения читаемости. Когда все параметры собраны в одном
 месте (в пределах одного экрана), анализировать поведение тестируемого кода
 легче, чем когда параметры разбросаны по файлу длиной в сотни строк.&lt;/p&gt;
-
 &lt;p&gt;Как сделать код еще более понятным? К примеру, возьмем таблицу из предыдущего
 поста. Что с ней не так?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;struct {
-    int x;
-    int y;
-    std::string that_thing;
-    std::string this_key;
-    bool result;
-} const cases[] = {
-    {0, 0, &amp;quot;thing1&amp;quot;, &amp;quot;key2&amp;quot;, false},
-    {0, 1, &amp;quot;thing1&amp;quot;, &amp;quot;key2&amp;quot;, false},
-    {0, 2, &amp;quot;thing1&amp;quot;, &amp;quot;key2&amp;quot;, false},
-    {0, 3, &amp;quot;thing1&amp;quot;, &amp;quot;key1&amp;quot;, true },
-    {1, 0, &amp;quot;thing2&amp;quot;, &amp;quot;key1&amp;quot;, false},
-    {1, 1, &amp;quot;thing2&amp;quot;, &amp;quot;&amp;quot;,     false},
-    {1, 2, &amp;quot;thing2&amp;quot;, &amp;quot;&amp;quot;,     true },
-    {2, 0, &amp;quot;&amp;quot;,       &amp;quot;&amp;quot;,     false},
-    {2, 1, &amp;quot;&amp;quot;,       &amp;quot;&amp;quot;,     true },
-    {2, 2, &amp;quot;&amp;quot;,       &amp;quot;&amp;quot;,     false},
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; x;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; y;
+    std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;string that_thing;
+    std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;string this_key;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; result;
+} &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; cases[] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing1&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;key2&amp;#34;&lt;/span&gt;, false},
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing1&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;key2&amp;#34;&lt;/span&gt;, false},
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing1&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;key2&amp;#34;&lt;/span&gt;, false},
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing1&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;key1&amp;#34;&lt;/span&gt;, true },
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing2&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;key1&amp;#34;&lt;/span&gt;, false},
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing2&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,     false},
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing2&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,     true },
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,       &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,     false},
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,       &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,     true },
+    {&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,       &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,     false},
 };
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;В этой таблице слишком много знаков препинания: скобки, запятые, кавычки.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;В этой таблице слишком много знаков препинания: скобки, запятые, кавычки.
 К параметрам в этой таблице неудобно писать комментарии и еще сложнее подружить
 удобно выровненные колонки с &lt;a href=&#34;https://clang.llvm.org/docs/ClangFormat.html&#34;&gt;&lt;code&gt;clang-format&lt;/code&gt;&lt;/a&gt; (&lt;code&gt;clang-format off&lt;/code&gt; - это
 единственный выход). Более того, столкнувшись с реальностью, подобная таблица
@@ -70,54 +61,45 @@
 понятные и читаемые юнит тесты. Начну немного издалека. Допустим мы хотим
 убедится, что определенный кусок кода работает правильно. Если бы мы имели дело
 с игрушечным примером, то это наш тест мог бы Примерно вот так:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;bool foobar(int x, int y)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;foobar&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; x, &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; y)
 {
-    return (x + y) &amp;gt; 0 &amp;amp;&amp;amp; ((x + y) % 3) == 0;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (x &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; y) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ((x &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; y) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
 }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;ASSERT_FALSE(foobar(0, 0));
-ASSERT_FALSE(foobar(0, 1));
-ASSERT_FALSE(foobar(0, 2));
-ASSERT_TRUE (foobar(0, 3));
-ASSERT_FALSE(foobar(1, 0));
-ASSERT_FALSE(foobar(1, 1));
-ASSERT_TRUE (foobar(1, 2));
-ASSERT_FALSE(foobar(2, 0));
-ASSERT_TRUE (foobar(2, 1));
-ASSERT_FALSE(foobar(2, 2));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;));
+ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;));
+ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;));
+ASSERT_TRUE (foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;));
+ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;));
+ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;));
+ASSERT_TRUE (foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;));
+ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;));
+ASSERT_TRUE (foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;));
+ASSERT_FALSE(foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;));
 ...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Такой тест достаточно легко читать. Достаточно понять конструкцию
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Такой тест достаточно легко читать. Достаточно понять конструкцию
 &lt;code&gt;ASSERT_XXX(foobar(...))&lt;/code&gt; после чего глаза сами фокусируются на входных
 значениях, автоматически отсеивая ненужный синтаксический мусор.&lt;/p&gt;
-
 &lt;p&gt;Однако, если взять реальный код, то подобный пример превратиться в гораздо менее
 удобочитаемого монстра:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;std::unique_ptr&amp;lt;Foobar&amp;gt; rabbit =
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;unique_ptr&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Foobar&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; rabbit &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
     create_foobar_with_abc(parent,
         some_context,
-        more_stuff + that + is_required + to_create_foobar,
+        more_stuff &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; that &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; is_required &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; to_create_foobar,
         a,
         b,
         mock_c(),
         logger);
 
 ASSERT_TRUE(
-    rabbit-&amp;gt;connect(
+    rabbit&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;connect(
         this_thing,
         that_key,
-        did_you_think_we_are_done_here ? no : hell_no));
+        did_you_think_we_are_done_here &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; no : hell_no));
 
-ASSERT_TRUE(rabbit-&amp;gt;wait_for_accept(timeout));
+ASSERT_TRUE(rabbit&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;wait_for_accept(timeout));
 
-ASSERT_FALSE(rabbit-&amp;gt;foobar(0, 0));
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&amp;hellip; и так далее для каждого тест кейса. Подобный код легко превращается в
+ASSERT_FALSE(rabbit&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;foobar(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&amp;hellip; и так далее для каждого тест кейса. Подобный код легко превращается в
 длинную простыню однообразного текста с незаметными, но важными вариациями во
 входных данных или параметрах инициализации.&lt;/p&gt;</description>
     </item>

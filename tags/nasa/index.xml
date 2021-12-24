@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nasa on Алексей Пахунов</title>
+    <title>NASA on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/nasa/</link>
-    <description>Recent content in Nasa on Алексей Пахунов</description>
+    <description>Recent content in NASA on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 22 Feb 2021 20:30:51 -0800</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/nasa/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 22 Feb 2021 20:30:51 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/nasa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Видео посадки марсохода &#34;Персеверанс&#34;</title>
       <link>https://blog.not-a-kernel-guy.com/2021/02/22/perseverance/</link>
@@ -19,24 +15,19 @@
       <guid>https://blog.not-a-kernel-guy.com/2021/02/22/perseverance/</guid>
       <description>&lt;p&gt;Видео посадки марсохода &amp;ldquo;Персеверанс&amp;rdquo; (настойчивость) - это что-то неземное:&lt;/p&gt;
 
-
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/4czjS9h4Fpg&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/4czjS9h4Fpg&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
-
 
 &lt;p&gt;Необычнее всего выглядит &amp;ldquo;Небесный кран&amp;rdquo; (он же реактивный ранец) на фоне марсианского
 неба - что-то в нем есть из классической фантастики. NASA, конечно, молодцы. Это же надо
 так наловчится марсоходы засылать.&lt;/p&gt;
-
 &lt;p&gt;Ну и небольшой бонус. Линдсей Стирлинг (Lindsey Stirling) исполняет &amp;ldquo;Артемиду&amp;rdquo; в
 Космическом центре Кеннеди:&lt;/p&gt;
 
-
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/h0oclM1Yw2A&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/h0oclM1Yw2A&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
-
 
 &lt;p&gt;Артемида - текущее название лунной программы NASA.&lt;/p&gt;</description>
     </item>
@@ -50,11 +41,10 @@
       <description>&lt;p&gt;Часто, когда речь заходит про космический софт, можно слышать &amp;ldquo;ну уж там-то код
 компилируется со всеми предупреждениями&amp;rdquo;, или &amp;ldquo;ну уж там-то наверняка запускается
 статический анализатор кода и все ошибки исправляются&amp;rdquo;, или &amp;ldquo;ну уж там то тесты
-покрывают код на 100%&amp;ldquo;. Как вы скорее всего уже догадались рая нет. Вернее, рай
+покрывают код на 100%&amp;rdquo;. Как вы скорее всего уже догадались рая нет. Вернее, рай
 в планах был, но из-за превышения сметы успели достроить только ад. К счастью,
 костры успели развести только под половиной котлов, поскольку часть дров
 заменили бетонными шпалами, а расположение котлов забыли задокументировать.&lt;/p&gt;
-
 &lt;p&gt;Сайт &lt;a href=&#34;https://llis.nasa.gov&#34;&gt;NASA Lessons Learned&lt;/a&gt; полон таких историй. Сегодня мы пройдемся по
 результатам исследования &lt;a href=&#34;http://aisel.aisnet.org/cgi/viewcontent.cgi?article=1671&amp;amp;context=amcis2009&#34;&gt;Flight Software Engineering Lessons&lt;/a&gt; за авторством
 Ronald Kirk Kandt опубликованное на конференции AMCIS 2009 (Americas Conference
@@ -74,32 +64,27 @@ on Information Systems). Автор исследования просуммир�
 года, после чего разделился на импактор и пролетную часть. 4 июля 2005 года
 370 килограммовый импактор успешно столкнулся с ядром кометы на скорости около
 10.3 км/с, выбросив в космос здоровенное облако пыли:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/3/3e/Deep_Impact_HRI.jpeg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/Deep_Impact_HRI.jpeg&#34; alt=&#34;&#34; title=&#34;Столкновение импактора с ядром кометы 9P/Темпеля&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/3/3e/Deep_Impact_HRI.jpeg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/Deep_Impact_HRI.jpeg&#34; alt=&#34;&#34; title=&#34;Столкновение импактора с ядром кометы 9P/Темпеля&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Согласно измерениям, проведенным космическим аппаратом &lt;a href=&#34;https://en.wikipedia.org/wiki/Stardust_(spacecraft)&#34;&gt;Stardust&lt;/a&gt; в 2011
 году, диаметр кратера, образовавшегося в результате столкновения, составил около
 150 метров.&lt;/p&gt;
-
 &lt;p&gt;По завершению основной миссии, NASA направило зонд Deep Impact к комете
 103P/Хартли в рамках расширенной миссии &amp;ldquo;EPOXI&amp;rdquo;. Пролет этой кометы
 состоялся 4 ноября 2010 года:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/NASAHartley2Comet.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/NASAHartley2Comet.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;В конце 2011 года, аппарат был отправлен на перехват астероида
 &lt;a href=&#34;https://en.wikipedia.org/wiki/(163249)_2002_GT&#34;&gt;(163249) 2002 GT&lt;/a&gt; пролет которого должен был состоятся в 2020 году. Однако
 в августе 2013 года контакт с аппаратом был потерян:&lt;/p&gt;
-
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;3 сентября 2013&lt;/a&gt;:&lt;br /&gt;
+&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;3 сентября 2013&lt;/a&gt;:&lt;br&gt;
 &amp;hellip; Связь с аппаратом утеряна между 11 и 14 августа (связь с аппаратом
 поддерживается раз в неделю). Последний сеанс связи был проведен 8 августа.
 Проведенное расследование позволило установить причину неполадки. Дальнейшие
 усилия направлены на определение лучшего способа восстановить связь с
 аппаратом.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;23 сентября 2013&lt;/a&gt;:&lt;br /&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;23 сентября 2013&lt;/a&gt;:&lt;br&gt;
 &amp;hellip; все попытки передачи низкоуровневых аппаратных команд не увенчались
 успехом. На этом все возможные сценарии восстановления связи с аппаратом были
 исчерпаны. Мы рекомендовали NASA объявить аппарат утерянным. NASA официально
@@ -114,18 +99,15 @@ on Information Systems). Автор исследования просуммир�
       
       <guid>https://blog.not-a-kernel-guy.com/2017/09/09/manned-space-program-accidents/</guid>
       <description>&lt;p&gt;На NASA Technical Reports попались на глаза два документа:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19730010169.pdf&#34;&gt;Manned space programs accident/incident summaries (1963 - 1969)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19730010170_1973010170.pdf&#34;&gt;Manned space programs accident/incident summaries (1970 - 1971)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Эти два отчета содержат краткое описание 732-х инцидентов и аварий,
 произошедших при работе над пилотируемой программой НАСА в 1963 - 1971 годах,
 их причины и рекомендации к их предотвращению. Иными словами - эти отчеты
 находка для преподавателей &amp;ldquo;Безопасности жизнедеятельности&amp;rdquo;. Любители теорий
 заговора тоже будут рады.&lt;/p&gt;
-
 &lt;p&gt;Отчет классифицирует причины аварий в две группы: материальные (hardware) и
 программные (software). В первую группу вошли ошибки дизайна, сбои оборудования,
 несовместимость материалов и разрушение материалов. Во вторую - процедурные
@@ -141,15 +123,9 @@ on Information Systems). Автор исследования просуммир�
       
       <guid>https://blog.not-a-kernel-guy.com/2017/07/26/nasa/</guid>
       <description>&lt;p&gt;Чтобы вы не думали, что NASA только шаттлы умеет в космос запускать:&lt;/p&gt;
-
-&lt;dl&gt;
-&lt;dt&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2017/07/nasa.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/07/nasa_small.jpg&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;/dl&gt;
-
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2017/07/nasa.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/07/nasa_small.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;:-)&lt;/p&gt;
-
 &lt;p&gt;Беглое гугление навело на их &lt;a href=&#34;http://nasaservices.com/&#34;&gt;логово&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;P.S. Чуваки за ящиком - это музыкальные фанаты (наверное), терпеливо ждущие
 своей очереди, чтобы попасть в &lt;a href=&#34;https://www.amoeba.com/&#34;&gt;Amoeba Music&lt;/a&gt;
 в Голливуде.&lt;/p&gt;</description>
@@ -163,14 +139,12 @@ on Information Systems). Автор исследования просуммир�
       <guid>https://blog.not-a-kernel-guy.com/2016/07/30/shuttle_manual/</guid>
       <description>&lt;p&gt;Чего только не найдешь у NASA в публичном доступе. Вот, например, - &lt;a href=&#34;https://www.nasa.gov/centers/johnson/pdf/390651main_shuttle_crew_operations_manual.pdf&#34;&gt;Руководство
 пользователя Space Shuttle&lt;/a&gt;.&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;The Shuttle Crew Operations Manual (SCOM)
 is a unique document containing information
 about each shuttle system and every phase of a
 generic space shuttle mission.&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;Небольшой документ, всего 1161 страница. В руководстве описывается:&lt;/p&gt;</description>
     </item>
     
@@ -190,13 +164,12 @@ generic space shuttle mission.&lt;/p&gt;
       
       <guid>https://blog.not-a-kernel-guy.com/2014/04/02/1584/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.theverge.com/2014/4/2/5574896/nasa-suspends-contracts-with-russia&#34;&gt;Офигеть&lt;/a&gt;:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;&amp;hellip; NASA told its officials today that the agency is suspending all contact with Russian government representatives. &amp;hellip;&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Ongoing International Space Station activities are exempt from this suspension, however, as are meetings with other countries held outside of Russia that include the participation of Russian officials.&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;Неожиданно. Если бы меня спросили вчера, я бы сказал, что NASA откажется от Союзов, как только будет готов пилотируемый Dragon. Или Orion. Или любой другой американский пилотируемый корабль. То есть через пару лет. А оно вон как вышло&amp;hellip;&lt;/p&gt;</description>
     </item>
     

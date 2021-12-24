@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,146 +113,120 @@
     <a class="label" href="/tags/win32.utf8">Win32.Utf8</a>
     </span>
     <p>Алгоритм работы Win32.Utf8 состоит из трех основных шагов:</p>
-
 <ol>
-<li><p>Исходные заголовки пропускаются через стандартный препроцессор;</p></li>
-
-<li><p>Полученный код парсится и трансформируется в дерево объектов, описывающее функции, типы и связи между ними;</p></li>
-
-<li><p>Полученное дерево используется для генерации кода по заданным шаблонам.</p></li>
+<li>
+<p>Исходные заголовки пропускаются через стандартный препроцессор;</p>
+</li>
+<li>
+<p>Полученный код парсится и трансформируется в дерево объектов, описывающее функции, типы и связи между ними;</p>
+</li>
+<li>
+<p>Полученное дерево используется для генерации кода по заданным шаблонам.</p>
+</li>
 </ol>
-
 <p>На данный момент я работаю над вторым этапом. Цель – построенное дерево должно быть компактным, его структура должна облегчать последующий анализ во время генерации кода. В тоже время дерево должно включать всю информацию необходимую для генерации корректного кода.</p>
-
 <p>DParser позволяет задавать правила следующим образом:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">d_rule</span>(t):
+    <span style="color:#e6db74">&#39;&#39;&#39; production : foo &#39;+&#39; bar &#39;&#39;&#39;</span>
+    <span style="color:#66d9ef">return</span> t[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> t[<span style="color:#ae81ff">2</span>]
 
-<pre><code class="language-python">def d_rule(t):
-    ''' production : foo '+' bar '''
-    return t[0] + t[2]
-
-def d_terminals(t):
-    '''
-        foo : 'foo' ;
-        bar : 'bar'
-    '''
-    pass
-</code></pre>
-
-<p>Правило &ldquo;d_rule&rdquo; будет вызвано каждый раз , когда парсер обнаружит в анализируемом тексте последовательность &ldquo;foo + bar&rdquo;. В качестве параметр правила &ldquo;t&rdquo; будет передан список значений, соответствующих обнаруженным символам. Поскольку правило для “foo” и “bar” не выполняет никаких действий, то в &ldquo;d_rule&rdquo; всегда будет передаваться список из трех строк: [ &lsquo;foo&rsquo;, &lsquo;+&rsquo;, &lsquo;bar&rsquo; ]. Значение, возвращаемое из &ldquo;d_rule&rdquo;, будет присвоено нетерминалу &ldquo;production&rdquo; и будет передано в любое правило, включающее этот символ.</p>
-
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">d_terminals</span>(t):
+    <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">        foo : &#39;foo&#39; ;
+</span><span style="color:#e6db74">        bar : &#39;bar&#39;
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    <span style="color:#66d9ef">pass</span>
+</code></pre></div><p>Правило &ldquo;d_rule&rdquo; будет вызвано каждый раз , когда парсер обнаружит в анализируемом тексте последовательность &ldquo;foo + bar&rdquo;. В качестве параметр правила &ldquo;t&rdquo; будет передан список значений, соответствующих обнаруженным символам. Поскольку правило для “foo” и “bar” не выполняет никаких действий, то в &ldquo;d_rule&rdquo; всегда будет передаваться список из трех строк: [ &lsquo;foo&rsquo;, &lsquo;+&rsquo;, &lsquo;bar&rsquo; ]. Значение, возвращаемое из &ldquo;d_rule&rdquo;, будет присвоено нетерминалу &ldquo;production&rdquo; и будет передано в любое правило, включающее этот символ.</p>
 <p>Как видно из примера выше, один и тот же обработчик может вызываться для нескольких (или всех) правил. Используя эту возможность можно полное генерировать дерево разбора с помощью всего нескольких строк кода.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span>:
+    <span style="color:#66d9ef">def</span> __init__(self, type, children):
+        self<span style="color:#f92672">.</span>type <span style="color:#f92672">=</span> type
+        self<span style="color:#f92672">.</span>children <span style="color:#f92672">=</span> children
 
-<pre><code class="language-python">class Node:
-    def __init__(self, type, children):
-        self.type = type
-        self.children = children
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_node</span>(type, children):
+    <span style="color:#66d9ef">return</span> Node(type, children)
 
-def create_node(type, children):
-    return Node(type, children)
-
-def d_grammar(t, this):
-    '''
-        production : foo '+' bar ;
-        foo : 'foo' ;
-        bar : 'bar'
-    '''
-    return create_node(this.symbol, t)
-</code></pre>
-
-<p>Дополнительный параметр &ldquo;this&rdquo; позволяет получить доступ к имени нетерминала, т.е. имени слева от &ldquo;:&rdquo; - &ldquo;this.symbol&rdquo;.</p>
-
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">d_grammar</span>(t, this):
+    <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">        production : foo &#39;+&#39; bar ;
+</span><span style="color:#e6db74">        foo : &#39;foo&#39; ;
+</span><span style="color:#e6db74">        bar : &#39;bar&#39;
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    <span style="color:#66d9ef">return</span> create_node(this<span style="color:#f92672">.</span>symbol, t)
+</code></pre></div><p>Дополнительный параметр &ldquo;this&rdquo; позволяет получить доступ к имени нетерминала, т.е. имени слева от &ldquo;:&rdquo; - &ldquo;this.symbol&rdquo;.</p>
 <p>Это работает доя простых грамматик, однако грамматика C к таковым не относится. Немного уменьшить глубину дерева можно если отказаться от создания узлов дерева с единственным ребенком:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_node</span>(type, children):
+        <span style="color:#66d9ef">if</span> len(children) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>:
+            <span style="color:#66d9ef">return</span> Node(type, children)
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">return</span> children[<span style="color:#ae81ff">0</span>]
+</code></pre></div><p>Некоторые узлы, возможно, будут важны при последующем анализе дерева. Для них можно завести список исключений:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">key_nodes <span style="color:#f92672">=</span> set([ <span style="color:#e6db74">&#39;foo&#39;</span> ])
 
-<pre><code class="language-python">def create_node(type, children):
-        if len(children) &gt; 1:
-            return Node(type, children)
-        else:
-            return children[0]
-</code></pre>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_node</span>(type, children):
+    <span style="color:#66d9ef">if</span> len(children) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">or</span> type <span style="color:#f92672">in</span> key_nodes:
+        <span style="color:#66d9ef">return</span> Node(type, children)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> children[<span style="color:#ae81ff">0</span>]
+</code></pre></div><p>DParser позволяет использовать в правилах операторы повторения ‘*’, ‘+’ и ‘?’, а также группировать символы, заключая их в скобки:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">d_grammar</span>(t, this):
+    <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">        start : production+ ;
+</span><span style="color:#e6db74">        production : foo* ( &#39;+&#39; bar )+ ;
+</span><span style="color:#e6db74">        foo : &#39;foo&#39; ;
+</span><span style="color:#e6db74">        bar : &#39;bar&#39;
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    <span style="color:#66d9ef">pass</span>
+</code></pre></div><p>В этом случае в соответствующей позиции списка &ldquo;t&rdquo; вместо единичного значения, будет передан список значений. Например в случае правила “start : production+ ” “t” будет состоять из одного элемента, однако значен7ие этого элемента будет списком значений для символа “production”. Функция создания узла дерева должна это учитывать, разворачивая вложенные списки на лету:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">key_nodes <span style="color:#f92672">=</span> set([ <span style="color:#e6db74">&#39;foo&#39;</span> ])
 
-<p>Некоторые узлы, возможно, будут важны при последующем анализе дерева. Для них можно завести список исключений:</p>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">unwrap</span>(children):
+    nodes <span style="color:#f92672">=</span> []
 
-<pre><code class="language-python">key_nodes = set([ 'foo' ])
+    <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> children:
+        <span style="color:#66d9ef">if</span> isinstance(c, list):
+            nodes<span style="color:#f92672">.</span>extend(unwrap(c))
+        <span style="color:#66d9ef">else</span>:
+            nodes<span style="color:#f92672">.</span>append(c)
 
-def create_node(type, children):
-    if len(children) &gt; 1 or type in key_nodes:
-        return Node(type, children)
-    else:
-        return children[0]
-</code></pre>
+    <span style="color:#66d9ef">return</span> nodes
 
-<p>DParser позволяет использовать в правилах операторы повторения ‘*’, ‘+’ и ‘?’, а также группировать символы, заключая их в скобки:</p>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_node</span>(type, children):
+    nodes <span style="color:#f92672">=</span> unwrap(children)
 
-<pre><code class="language-python">def d_grammar(t, this):
-    '''
-        start : production+ ;
-        production : foo* ( '+' bar )+ ;
-        foo : 'foo' ;
-        bar : 'bar'
-    '''
-    pass
-</code></pre>
+    <span style="color:#66d9ef">if</span> len(nodes) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">or</span> type <span style="color:#f92672">in</span> key_nodes:
+        <span style="color:#66d9ef">return</span> Node(type, nodes)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> nodes[<span style="color:#ae81ff">0</span>]
+</code></pre></div><p>Стоит также учесть, что грамматика может использовать правую/левую рекурсию, вместо операторов повторения:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">d_grammar</span>(t, this):
+    <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">        production_list 
+</span><span style="color:#e6db74">            : production
+</span><span style="color:#e6db74">            | production_list production
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    <span style="color:#66d9ef">pass</span>
+</code></pre></div><p>Об этом также стоит позаботиться:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_node</span>(type, children):
+    nodes <span style="color:#f92672">=</span> unwrap(children)
 
-<p>В этом случае в соответствующей позиции списка &ldquo;t&rdquo; вместо единичного значения, будет передан список значений. Например в случае правила “start : production+ ” “t” будет состоять из одного элемента, однако значен7ие этого элемента будет списком значений для символа “production”. Функция создания узла дерева должна это учитывать, разворачивая вложенные списки на лету:</p>
+    left <span style="color:#f92672">=</span> nodes[<span style="color:#ae81ff">0</span>]
+    <span style="color:#66d9ef">if</span> isinstance(left, Node) <span style="color:#f92672">and</span> type <span style="color:#f92672">==</span> left<span style="color:#f92672">.</span>type:
+        left<span style="color:#f92672">.</span>children<span style="color:#f92672">.</span>extend(nodes[<span style="color:#ae81ff">1</span>:])
+        <span style="color:#66d9ef">return</span> left
 
-<pre><code class="language-python">key_nodes = set([ 'foo' ])
+    right <span style="color:#f92672">=</span> nodes[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+    <span style="color:#66d9ef">if</span> isinstance(right, Node) <span style="color:#f92672">and</span> type <span style="color:#f92672">==</span> right<span style="color:#f92672">.</span>type:
+        nodes<span style="color:#f92672">.</span>pop(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+        nodes<span style="color:#f92672">.</span>extend(right<span style="color:#f92672">.</span>children)
+        right<span style="color:#f92672">.</span>children <span style="color:#f92672">=</span> nodes
+        <span style="color:#66d9ef">return</span> right
 
-def unwrap(children):
-    nodes = []
-
-    for c in children:
-        if isinstance(c, list):
-            nodes.extend(unwrap(c))
-        else:
-            nodes.append(c)
-
-    return nodes
-
-def create_node(type, children):
-    nodes = unwrap(children)
-
-    if len(nodes) &gt; 1 or type in key_nodes:
-        return Node(type, nodes)
-    else:
-        return nodes[0]
-</code></pre>
-
-<p>Стоит также учесть, что грамматика может использовать правую/левую рекурсию, вместо операторов повторения:</p>
-
-<pre><code class="language-python">def d_grammar(t, this):
-    '''
-        production_list 
-            : production
-            | production_list production
-    '''
-    pass
-</code></pre>
-
-<p>Об этом также стоит позаботиться:</p>
-
-<pre><code class="language-python">def create_node(type, children):
-    nodes = unwrap(children)
-
-    left = nodes[0]
-    if isinstance(left, Node) and type == left.type:
-        left.children.extend(nodes[1:])
-        return left
-
-    right = nodes[-1]
-    if isinstance(right, Node) and type == right.type:
-        nodes.pop(-1)
-        nodes.extend(right.children)
-        right.children = nodes
-        return right
-
-    if len(nodes) &gt; 1 or type in key_nodes:
-        return Node(type, nodes)
-    else:
-        return nodes[0]
-</code></pre>
-
-<p>В результате получаем дерево почти пригодное для анализа. Я говорю &ldquo;почти&rdquo;, потому как его можно упростить еще больше. Об этом - в следующем посте.</p>
-
+    <span style="color:#66d9ef">if</span> len(nodes) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">or</span> type <span style="color:#f92672">in</span> key_nodes:
+        <span style="color:#66d9ef">return</span> Node(type, nodes)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> nodes[<span style="color:#ae81ff">0</span>]
+</code></pre></div><p>В результате получаем дерево почти пригодное для анализа. Я говорю &ldquo;почти&rdquo;, потому как его можно упростить еще больше. Об этом - в следующем посте.</p>
 <p><em>Примечание: код набирался прямо в браузере и приведён только в качестве иллюстрации. Он даже может не компилироваться, не говоря уже о том, чтобы работать.</em></p>
   </div>
   <div id="disqus_thread"></div>

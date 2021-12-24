@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,22 +113,21 @@
     <a class="label" href="/tags/.net">.NET</a><a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/windows">Windows</a>
     </span>
     <p>Вскоре после написания <a href="/2007/10/24/258/">поста про определение разрядности исполняемых файлов</a> выяснилось, что в мире .NET «всё совсем по-другому».</p>
-
 <p>Для начала небольшое лирическое отступление. Компилятор Visual C++ использует ключ <a href="http://msdn2.microsoft.com/en-us/library/k8d11d4s(VS.80).aspx">/clr</a> для указания разрешенных типов кода в .NET сборке:</p>
-
 <ul>
-<li><p>/clr - позволяет смешивать управляемый и неуправляемый код;</p></li>
-
-<li><p>/clr:pure - указывает, что сборка будет содержать только управляемый код;</p></li>
-
-<li><p>/clr:safe - идет ещё дальше, чем /clr:pure, разрешая только проверяемый код.</p></li>
+<li>
+<p>/clr - позволяет смешивать управляемый и неуправляемый код;</p>
+</li>
+<li>
+<p>/clr:pure - указывает, что сборка будет содержать только управляемый код;</p>
+</li>
+<li>
+<p>/clr:safe - идет ещё дальше, чем /clr:pure, разрешая только проверяемый код.</p>
+</li>
 </ul>
-
 <p>С точки зрения разрядности получаемых модулей тут важно то, что управляемый код по определению может выполняться на любой платформе (x86, amd64 и ia64), в то время как неуправляемый код предназначен для конкретного процессора. Т.е. можно бы было ожидать, что модули, собранные с /clr:pure или /clr:safe, можно использовать на любой платформе. На самом деле это не совсем так, о чём я и расскажу ниже.</p>
-
 <p>Далее. Модули, содержащие управляемый код, можно отличить от «нормальных» модулей по непустой «COM Descriptor Directory». Команда &ldquo;link /dump /headers&rdquo; показывает её в конце списка директорий в «PE Optional Header»:</p>
-
-<pre><code class="language-no-highlight">OPTIONAL HEADER VALUES
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">OPTIONAL HEADER VALUES
              10B magic # (PE32)
             8.00 linker version
 
@@ -151,11 +151,8 @@
                0 [       0] RVA [size] of Delay Import Directory
             311C [      48] RVA [size] of COM Descriptor Directory
                0 [       0] RVA [size] of Reserved Directory
-</code></pre>
-
-<p>Несмотря на название, эта директория не имеет отношения к COM. Насколько я понимаю, название осталось с тех времен, когда CLR еще только начинал разрабатываться. Содержимое этой директории, или, по крайней мере, часть её содержимого, можно посмотреть с помощью утилиты CorFlags.exe из .NET SDK.</p>
-
-<pre><code class="language-no-highlight">&gt; CorFlags.exe clr_rabbit.exe
+</code></pre></div><p>Несмотря на название, эта директория не имеет отношения к COM. Насколько я понимаю, название осталось с тех времен, когда CLR еще только начинал разрабатываться. Содержимое этой директории, или, по крайней мере, часть её содержимого, можно посмотреть с помощью утилиты CorFlags.exe из .NET SDK.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">&gt; CorFlags.exe clr_rabbit.exe
     Microsoft (R) .NET Framework CorFlags Conversion Tool.  Version  2.0.50727.42
     Copyright (c) Microsoft Corporation.  All rights reserved.
 
@@ -167,79 +164,20 @@
     32BIT     : 0
     Signed    : 0
 
-</code></pre>
-
-<p>Нас будут интересовать флаги ILONLY (только управляемый код) и 32BIT (32-х битный код), поскольку они непосредственно связаны с разрядностью сборки.</p>
-
+</code></pre></div><p>Нас будут интересовать флаги ILONLY (только управляемый код) и 32BIT (32-х битный код), поскольку они непосредственно связаны с разрядностью сборки.</p>
 <p>Я попробовал скомпилировать x86 и amd64 варианты стандартного &ldquo;Hello World&rdquo; для всех трёх значений флага /clr и посмотреть что получится. Получилась вот такая табличка:</p>
-
-<table cellpadding="5" border="1" align="center" cellspacing="0">
-  <tr>
-    <td align="left" >Конфигурация</td>
-    <td align="center" >PE заголовок</td>
-    <td align="center" >Флаг ILONLY</td>
-    <td align="center" >Флаг 32BIT</td>
-    <td align="center" >Разрядность процесса в 32-х битной системе</td>
-    <td align="center" >Разрядность процесса в 64-х битной системе</td>
-  </tr>
-  <tr>
-    <td align="left" >x86, /clr</td>
-    <td align="center" >x86</td>
-    <td align="center" >0</td>
-    <td align="center" >0</td>
-    <td align="center" >32</td>
-    <td align="center" >32</td>
-  </tr>
-  <tr>
-    <td align="left" >x86, /clr:pure</td>
-    <td align="center" >x86</td>
-    <td align="center" >1</td>
-    <td align="center" >1</td>
-    <td align="center" >32</td>
-    <td align="center" >32</td>
-  </tr>
-  <tr>
-    <td align="left" >x86, /clr:safe</td>
-    <td align="center" >x86</td>
-    <td align="center" >1</td>
-    <td align="center" >0</td>
-    <td align="center" >32</td>
-    <td align="center" >64</td>
-  </tr>
-  <tr>
-    <td align="left" >amd64, /clr</td>
-    <td align="center" >x64</td>
-    <td align="center" >0</td>
-    <td align="center" >0</td>
-    <td align="center" >-</td>
-    <td align="center" >64</td>
-  </tr>
-  <tr>
-    <td align="left" >amd64, /clr:pure</td>
-    <td align="center" >x64</td>
-    <td align="center" >1</td>
-    <td align="center" >0</td>
-    <td align="center" >-</td>
-    <td align="center" >64</td>
-  </tr>
-  <tr>
-    <td align="left" >amd64, /clr:safe</td>
-    <td align="center" >x86</td>
-    <td align="center" >1</td>
-    <td align="center" >0</td>
-    <td align="center" >32</td>
-    <td align="center" >64</td>
-  </tr>
-</table>
-
+<!-- raw HTML omitted -->
 <p>Отсюда можно сделать вот такие выводы:</p>
-
 <ul>
-<li><p>Флаг /clr жёстко привязывает полученный модуль к определённой платформе, так как такой модуль содержит неуправляемый код.</p></li>
-
-<li><p>Не смотря на то, что модуль собранный с /clr:pure содержит только управляемый код, такой модуль привязан к определённой платформе не менее жестко чем предыдущий. 32-х битная система не сможет загрузить сборку &ldquo;amd64, /clr:pure&rdquo;, а 64-х битная будет выполнять сборку &ldquo;x86, /clr:pure&rdquo; в Wow64. Насколько я понимаю, причина тут в том, что такой модуль может обращаться к неуправляемому коду из других модулей.</p></li>
-
-<li><p>Только сборки, скомпилированные с /clr:safe по-настоящему переносимы. Интересно, что для них в PE заголовке всегда будет указываться x86 в качестве целевой платформы.</p></li>
+<li>
+<p>Флаг /clr жёстко привязывает полученный модуль к определённой платформе, так как такой модуль содержит неуправляемый код.</p>
+</li>
+<li>
+<p>Не смотря на то, что модуль собранный с /clr:pure содержит только управляемый код, такой модуль привязан к определённой платформе не менее жестко чем предыдущий. 32-х битная система не сможет загрузить сборку &ldquo;amd64, /clr:pure&rdquo;, а 64-х битная будет выполнять сборку &ldquo;x86, /clr:pure&rdquo; в Wow64. Насколько я понимаю, причина тут в том, что такой модуль может обращаться к неуправляемому коду из других модулей.</p>
+</li>
+<li>
+<p>Только сборки, скомпилированные с /clr:safe по-настоящему переносимы. Интересно, что для них в PE заголовке всегда будет указываться x86 в качестве целевой платформы.</p>
+</li>
 </ul>
   </div>
   <div id="disqus_thread"></div>

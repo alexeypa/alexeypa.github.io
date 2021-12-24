@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,34 +113,24 @@
     <a class="label" href="/tags/c/c&#43;&#43;">C/C&#43;&#43;</a>
     </span>
     <p>&hellip; но я понятия не имел, что вложенные структуры в C/C++ можно инициализировать плоским списком значений. Есть, например, вот такая структура:</p>
-
-<pre><code class="language-cpp">struct foo {
-    int value;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">foo</span> {
+    <span style="color:#66d9ef">int</span> value;
 };
 
-struct bar {
-    int value;
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">bar</span> {
+    <span style="color:#66d9ef">int</span> value;
 };
 
-struct foobar {
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">foobar</span> {
     foo value1;
     bar value2;
-    int value3;
+    <span style="color:#66d9ef">int</span> value3;
 };
-</code></pre>
-
-<p>Её можно инициализировать вот так:</p>
-
-<pre><code class="language-cpp">foobar data = { { 1 }, { 2 }, 3 };
-</code></pre>
-
-<p>А можно и так:</p>
-
-<pre><code class="language-cpp">foobar data = { 1, 2, 3 };
-</code></pre>
-
-<p>Компилятор съест оба варианта кода и не поморщится.</p>
-
+</code></pre></div><p>Её можно инициализировать вот так:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">foobar data <span style="color:#f92672">=</span> { { <span style="color:#ae81ff">1</span> }, { <span style="color:#ae81ff">2</span> }, <span style="color:#ae81ff">3</span> };
+</code></pre></div><p>А можно и так:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">foobar data <span style="color:#f92672">=</span> { <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span> };
+</code></pre></div><p>Компилятор съест оба варианта кода и не поморщится.</p>
 <p>PS. Ну а чё, - эксперт в C, больше десятка лет в индустрии, то-сё. :-)</p>
 
   </div>

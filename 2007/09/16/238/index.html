@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,96 +113,81 @@
     <a class="label" href="/tags/win32.utf8">Win32.Utf8</a>
     </span>
     <p>Во время работы над парсером постоянно возникала необходимость посмотреть как выглядит тот или иной кусок дерева или все дерево целиком. Недолго думая, я попробовал выводить его в виде XML, - получилось довольно неплохо.</p>
-
 <p>Исходный код на C:</p>
-
-<pre><code class="language-cpp">typedef void *LPVOID;
-</code></pre>
-
-<p>Дерево, полученное после синтаксического разбора:</p>
-
-<pre><code class="language-xml">&lt;translation_unit&gt;
- &lt;external_declaration&gt;
-  &lt;declaration&gt;
-   &lt;init_list_declaration&gt;
-    &lt;declaration_specifiers&gt;
-     &lt;declaration_specifier&gt;
-      &lt;storage_class_specifier&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>LPVOID;
+</code></pre></div><p>Дерево, полученное после синтаксического разбора:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;translation_unit&gt;</span>
+ <span style="color:#f92672">&lt;external_declaration&gt;</span>
+  <span style="color:#f92672">&lt;declaration&gt;</span>
+   <span style="color:#f92672">&lt;init_list_declaration&gt;</span>
+    <span style="color:#f92672">&lt;declaration_specifiers&gt;</span>
+     <span style="color:#f92672">&lt;declaration_specifier&gt;</span>
+      <span style="color:#f92672">&lt;storage_class_specifier&gt;</span>
        typedef
-      &lt;/storage_class_specifier&gt;
-     &lt;/declaration_specifier&gt;
-     &lt;declaration_specifier&gt;
-      &lt;type_specifier&gt;
-       &lt;builtin_type&gt;
+      <span style="color:#f92672">&lt;/storage_class_specifier&gt;</span>
+     <span style="color:#f92672">&lt;/declaration_specifier&gt;</span>
+     <span style="color:#f92672">&lt;declaration_specifier&gt;</span>
+      <span style="color:#f92672">&lt;type_specifier&gt;</span>
+       <span style="color:#f92672">&lt;builtin_type&gt;</span>
         void
-       &lt;/builtin_type&gt;
-      &lt;/type_specifier&gt;
-     &lt;/declaration_specifier&gt;
-    &lt;/declaration_specifiers&gt;
-    &lt;init_declarator&gt;
-     &lt;declarator&gt;
-      &lt;pointer&gt;
+       <span style="color:#f92672">&lt;/builtin_type&gt;</span>
+      <span style="color:#f92672">&lt;/type_specifier&gt;</span>
+     <span style="color:#f92672">&lt;/declaration_specifier&gt;</span>
+    <span style="color:#f92672">&lt;/declaration_specifiers&gt;</span>
+    <span style="color:#f92672">&lt;init_declarator&gt;</span>
+     <span style="color:#f92672">&lt;declarator&gt;</span>
+      <span style="color:#f92672">&lt;pointer&gt;</span>
        *
-      &lt;/pointer&gt;
-      &lt;direct_declarator&gt;
+      <span style="color:#f92672">&lt;/pointer&gt;</span>
+      <span style="color:#f92672">&lt;direct_declarator&gt;</span>
        LPVOID
-      &lt;/direct_declarator&gt;
-     &lt;/declarator&gt;
-    &lt;/init_declarator&gt;
-   &lt;/init_list_declaration&gt;
+      <span style="color:#f92672">&lt;/direct_declarator&gt;</span>
+     <span style="color:#f92672">&lt;/declarator&gt;</span>
+    <span style="color:#f92672">&lt;/init_declarator&gt;</span>
+   <span style="color:#f92672">&lt;/init_list_declaration&gt;</span>
    ;
-  &lt;/declaration&gt;
- &lt;/external_declaration&gt;
-&lt;/translation_unit&gt;
-</code></pre>
+  <span style="color:#f92672">&lt;/declaration&gt;</span>
+ <span style="color:#f92672">&lt;/external_declaration&gt;</span>
+<span style="color:#f92672">&lt;/translation_unit&gt;</span>
+</code></pre></div><p>Что особенно приятно, так это то, что на Python такие вещи делаются одной левой. Исходный класс Node, представляющий узел дерева, дополняется методом “<strong>str</strong>”:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">exclude_attrs <span style="color:#f92672">=</span> set([<span style="color:#e6db74">&#39;type&#39;</span>, <span style="color:#e6db74">&#39;children&#39;</span>])
 
-<p>Что особенно приятно, так это то, что на Python такие вещи делаются одной левой. Исходный класс Node, представляющий узел дерева, дополняется методом “<strong>str</strong>”:</p>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span>:
+    <span style="color:#66d9ef">def</span> __init__(self, type, children):
+        self<span style="color:#f92672">.</span>type <span style="color:#f92672">=</span> type
+        self<span style="color:#f92672">.</span>children <span style="color:#f92672">=</span> children
 
-<pre><code class="language-python">exclude_attrs = set(['type', 'children'])
+    <span style="color:#66d9ef">def</span> __str__(self):
+        s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>type
 
-class Node:
-    def __init__(self, type, children):
-        self.type = type
-        self.children = children
+        <span style="color:#75715e"># Представляем переменные объекта как XML аттрибуты</span>
+        <span style="color:#66d9ef">for</span> attr <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>__dict__:
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> attr <span style="color:#f92672">in</span> exclude_attrs:
+                s <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39; </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">=&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;&#39;</span> <span style="color:#f92672">%</span> (attr, self<span style="color:#f92672">.</span>__dict__[attr])
 
-    def __str__(self):
-        s = '&lt;%s' % self.type
+        <span style="color:#75715e"># Рекурсивно генерируем все подузлы, не забывая про отступы</span>
+        <span style="color:#66d9ef">if</span> len(self<span style="color:#f92672">.</span>children):
+            s <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&gt;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>
+            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>children:
+                s <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39; </span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> str(i)<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> &#39;</span>)
+            s <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;/</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&gt;&#39;</span> <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>type
+        <span style="color:#66d9ef">else</span>:
+            s <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;/&gt;&#39;</span>
 
-        # Представляем переменные объекта как XML аттрибуты
-        for attr in self.__dict__:
-            if not attr in exclude_attrs:
-                s += ' %s=&quot;%s&quot;' % (attr, self.__dict__[attr])
+        <span style="color:#66d9ef">return</span> s
 
-        # Рекурсивно генерируем все подузлы, не забывая про отступы
-        if len(self.children):
-            s += '&gt;\n'
-            for i in self.children:
-                s += ' %s\n' % str(i).replace('\n', '\n ')
-            s += '&lt;/%s&gt;' % self.type
-        else:
-            s += '/&gt;'
+<span style="color:#75715e"># Получаем AST</span>
+node <span style="color:#f92672">=</span> parse_source()
 
-        return s
-
-# Получаем AST
-node = parse_source()
-
-# Выводим его в stdout
+<span style="color:#75715e"># Выводим его в stdout</span>
 print node
-</code></pre>
-
-<p>Небольшого пояснения требует комментарий про то, что переменные объекта выводятся в виде XML атрибутов, поскольку в примере выше никаких атрибутов нет. Каждый из узлов дерева, использованного в примере, содержит только две переменные: “type” – тип узла и “children” – список всех детей. Поскольку и то и другое включаются в XML “естественным” путем, то и показывать их как атрибуты не следует. Для их исключения используется список “exclude_attrs”.
+</code></pre></div><p>Небольшого пояснения требует комментарий про то, что переменные объекта выводятся в виде XML атрибутов, поскольку в примере выше никаких атрибутов нет. Каждый из узлов дерева, использованного в примере, содержит только две переменные: “type” – тип узла и “children” – список всех детей. Поскольку и то и другое включаются в XML “естественным” путем, то и показывать их как атрибуты не следует. Для их исключения используется список “exclude_attrs”.
 А вот, например, такой объект будет показан по-другому:</p>
-
-<pre><code class="language-python">node = Node(“test”, [])
-node.value = “FooBar”
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node <span style="color:#f92672">=</span> Node(<span style="color:#960050;background-color:#1e0010">“</span>test<span style="color:#960050;background-color:#1e0010">”</span>, [])
+node<span style="color:#f92672">.</span>value <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">“</span>FooBar<span style="color:#960050;background-color:#1e0010">”</span>
 print node
-</code></pre>
-
-<pre><code class="language-xml">&lt;test value=&quot;FooBar&quot;/&gt;
-</code></pre>
-
-<p>Эта возможность будет очень полезна позднее, когда в AST будут включаться не только экземпляры класса Node, но и более сложные классы.</p>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;test</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;FooBar&#34;</span><span style="color:#f92672">/&gt;</span>
+</code></pre></div><p>Эта возможность будет очень полезна позднее, когда в AST будут включаться не только экземпляры класса Node, но и более сложные классы.</p>
   </div>
   <div id="disqus_thread"></div>
 </div>

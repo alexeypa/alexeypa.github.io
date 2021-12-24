@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Troubleshooting on Алексей Пахунов</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Troubleshooting on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 25 Jun 2008 23:45:54 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.not-a-kernel-guy.com/tags/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 25 Jun 2008 23:45:54 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>… и концы в воду</title>
       <link>https://blog.not-a-kernel-guy.com/2008/06/25/315/</link>
@@ -18,12 +14,11 @@
       
       <guid>https://blog.not-a-kernel-guy.com/2008/06/25/315/</guid>
       <description>&lt;p&gt;Эта неделя началась замечательно, - а именно с безуспешных попыток выяснить, почему валиться билд. Надо сказать, что и в невоенное-то время разобраться, что именно поломалось бывает непросто. Но в этот раз все было еще веселее чем обычно. Некая утилита (не будем показывать пальцем, хотя утилита написана на .NET :-) ), выдавала примерно следующий лог:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-no-highlight&#34;&gt;...
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-no-highlight&#34; data-lang=&#34;no-highlight&#34;&gt;...
 &amp;gt; FooBar: parsing Z:\temp\tmp1234.tmp
 &amp;gt; FooBar: error XXXX, line 123, Z:\temp\tmp1234.tmp
 ...
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>

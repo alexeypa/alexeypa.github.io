@@ -99,6 +99,7 @@
 
     <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
   </div>
 </div>
 
@@ -112,104 +113,85 @@
     <a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a><a class="label" href="/tags/win32.utf8">Win32.Utf8</a>
     </span>
     <p>Существует два способа собрать DParser for Python под Windows:</p>
-
 <ol>
-<li><p>Легкий – воспользоваться GCC из MinGW и немного пошаманить;</p></li>
-
-<li><p>Интересный – попытаться сделать тоже самое с помощью Visual C++ 2005.</p></li>
+<li>
+<p>Легкий – воспользоваться GCC из MinGW и немного пошаманить;</p>
+</li>
+<li>
+<p>Интересный – попытаться сделать тоже самое с помощью Visual C++ 2005.</p>
+</li>
 </ol>
-
 <p>Естественно, что я выбрал второй вариант. :-)</p>
-
 <p><em>(На самом деле причина довольно прозаична – не хотелось собирать один проект двумя разными компиляторами).</em></p>
-
 <p>Исходные данные:</p>
-
 <ul>
-<li><p><a href="http://www.python.org">Python v2.5.1</a>. Я пробовал x86 и x64 варианты. Версия для Itanium должна работать точно так же;</p></li>
-
-<li><p><a href="http://dparser.sourceforge.net">DParser v1.15</a>;</p></li>
-
-<li><p><a href="http://www.boost.org/tools/build/v2/index.html">Boost.Build v2</a>. Любая другая система сборки проектов тоже подойдёт;</p></li>
-
-<li><p>Visual C++ 2005.</p></li>
+<li>
+<p><a href="http://www.python.org">Python v2.5.1</a>. Я пробовал x86 и x64 варианты. Версия для Itanium должна работать точно так же;</p>
+</li>
+<li>
+<p><a href="http://dparser.sourceforge.net">DParser v1.15</a>;</p>
+</li>
+<li>
+<p><a href="http://www.boost.org/tools/build/v2/index.html">Boost.Build v2</a>. Любая другая система сборки проектов тоже подойдёт;</p>
+</li>
+<li>
+<p>Visual C++ 2005.</p>
+</li>
 </ul>
-
 <p>Последовательность действий:</p>
-
 <ol>
-<li><p>Распаковываем DParser куда-нибудь, скажем &ldquo;C:\temp\D&rdquo;.</p></li>
-
-<li><p>Применяем <a href="https://gist.github.com/alexeypa/578d7263145d46018db8e9a290b92499">патч</a>, который в добавляет недостающие (из-за отсутствующих заголовков) объявления и правит кое-где код.</p></li>
+<li>
+<p>Распаковываем DParser куда-нибудь, скажем &ldquo;C:\temp\D&rdquo;.</p>
+</li>
+<li>
+<p>Применяем <a href="https://gist.github.com/alexeypa/578d7263145d46018db8e9a290b92499">патч</a>, который в добавляет недостающие (из-за отсутствующих заголовков) объявления и правит кое-где код.</p>
+</li>
 </ol>
-
-<pre><code class="language-no-highlight">pushd C:\\temp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">pushd C:\\temp
 patch -Np1 -d D &lt; dparser-1.15.diff
-</code></pre>
-
-<p>Кроме правки кода, патч добавляет в несколько новых файлов:</p>
-
+</code></pre></div><p>Кроме правки кода, патч добавляет в несколько новых файлов:</p>
 <pre><code>* &quot;Jamfile.v2&quot; и &quot;Jamroot&quot; – скрипты для сборки DParser с помошью Boost.Build v2;
 
 * &quot;python\setup_win32.py&quot; – Windows версия скрипта для сборки DParser for Python;
 
 * &quot;python\setup_win32.cmd&quot; – обёртка для setup_win32.py, нужная главным образом для внедрения манифеста в собранную .DLL.
 </code></pre>
-
-<ol>
+<ol start="3">
 <li>Компилируем DParser:</li>
 </ol>
-
-<pre><code class="language-no-highlight">cd D
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">cd D
 bjam free
-</code></pre>
-
-<p>Для amd64:</p>
-
-<pre><code class="language-no-highlight">cd D
+</code></pre></div><p>Для amd64:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">cd D
 bjam free architecture=x86 address-model=64
-</code></pre>
-
-<p>Для Itanium:</p>
-
-<pre><code class="language-no-highlight">cd D
+</code></pre></div><p>Для Itanium:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">cd D
 bjam free architecture=ia64
-</code></pre>
-
-<p>При этом собранные библиотеки будут скопированы в “C:\temp\D\dist”.</p>
-
-<ol>
-<li><p>Запускаем “Visual Studio 2005 Command Prompt” (либо “Visual Studio 2005 x64 Cross Tools Command Prompt”, либо “Visual Studio 2005 Itanium Cross Tools Command Prompt”) под учётной записью администратора (под любым пользователем, имеющим доступ на запись в каталог, где установлен Python).</p></li>
-
-<li><p>Если вы компилируете 32-х битную версию, то дополнительно следует поправить проверку на совместимость версий компилятора в “C:\Python25\Lib\distutils\msvccompiler.py”. Для этого нужно применить ещё один <a href="https://gist.github.com/alexeypa/058d81c20b4dbb84b98f263d04c17c2e">патч</a>:</p></li>
+</code></pre></div><p>При этом собранные библиотеки будут скопированы в “C:\temp\D\dist”.</p>
+<ol start="4">
+<li>
+<p>Запускаем “Visual Studio 2005 Command Prompt” (либо “Visual Studio 2005 x64 Cross Tools Command Prompt”, либо “Visual Studio 2005 Itanium Cross Tools Command Prompt”) под учётной записью администратора (под любым пользователем, имеющим доступ на запись в каталог, где установлен Python).</p>
+</li>
+<li>
+<p>Если вы компилируете 32-х битную версию, то дополнительно следует поправить проверку на совместимость версий компилятора в “C:\Python25\Lib\distutils\msvccompiler.py”. Для этого нужно применить ещё один <a href="https://gist.github.com/alexeypa/058d81c20b4dbb84b98f263d04c17c2e">патч</a>:</p>
+</li>
 </ol>
-
-<pre><code class="language-no-highlight">pushd C:\\Python25\\Lib\\distutils
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">pushd C:\\Python25\\Lib\\distutils
 patch msvccompiler.py msvccompiler.py.diff
 popd
-</code></pre>
-
-<p>Этот шаг не обязателен, если вы собираете версию для amd64 или ia64.</p>
-
-<ol>
+</code></pre></div><p>Этот шаг не обязателен, если вы собираете версию для amd64 или ia64.</p>
+<ol start="6">
 <li>Cобираем и устанавливаем DParser for Python:</li>
 </ol>
-
-<pre><code class="language-no-highlight">cd python
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">cd python
 setup_win32.cmd
-</code></pre>
-
-<ol>
+</code></pre></div><ol start="7">
 <li>И наконец, проверяем что у нас получилось:</li>
 </ol>
-
-<pre><code class="language-no-highlight">python
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">python
 import dparser
 print dparser
-</code></pre>
-
-<p><img src="/2007/08/dparser_test.png" alt="DParser has been installed successfully." /></p>
-
+</code></pre></div><p><img src="/2007/08/dparser_test.png" alt="DParser has been installed successfully."></p>
 <p>Готово.</p>
   </div>
   <div id="disqus_thread"></div>
