@@ -98,7 +98,7 @@
 
     
 
-    <p>Copyright &copy; 2006 - 2021 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2022 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -128,6 +128,56 @@
   </li>
 </ul>
 
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2018/08/05/text-data/">Текстовые данные в юнит тестах</a>
+      </h1>
+      <span class="post-date">Aug 5, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/08/05/text-data/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Тестирование</a><a class="label" href="/tags/%D1%8E%D0%BD%D0%B8%D1%82-%D1%82%D0%B5%D1%81%D1%82%D1%8B">Юнит тесты</a>
+      </span>
+      
+      <p>В предыдущем посте про <a href="/2018/08/01/table-driven-unit-tests/">табличные юнит тесты</a> я рассказал про способ
+улучшения читаемости однообразных юнит тестов. Там же мне в комментариях
+аналогичных примеров из существующих фреймворков накидали. Теперь давайте
+посмотрим как этот способ сделать еще лучше.</p>
+<p>Основная идея была очень проста. Есть повторяющийся, очень монотонный код
+тестов. Чтобы сделать его читаемым, пишется универсальное тело теста, а все
+необходимые вариации описываются параметрами. Параметры упаковываются в таблицу,
+что очень важно для улучшения читаемости. Когда все параметры собраны в одном
+месте (в пределах одного экрана), анализировать поведение тестируемого кода
+легче, чем когда параметры разбросаны по файлу длиной в сотни строк.</p>
+<p>Как сделать код еще более понятным? К примеру, возьмем таблицу из предыдущего
+поста. Что с ней не так?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> {
+    <span style="color:#66d9ef">int</span> x;
+    <span style="color:#66d9ef">int</span> y;
+    std<span style="color:#f92672">::</span>string that_thing;
+    std<span style="color:#f92672">::</span>string this_key;
+    <span style="color:#66d9ef">bool</span> result;
+} <span style="color:#66d9ef">const</span> cases[] <span style="color:#f92672">=</span> {
+    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key2&#34;</span>, false},
+    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key2&#34;</span>, false},
+    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key2&#34;</span>, false},
+    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key1&#34;</span>, true },
+    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;thing2&#34;</span>, <span style="color:#e6db74">&#34;key1&#34;</span>, false},
+    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;thing2&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>,     false},
+    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;thing2&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>,     true },
+    {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;&#34;</span>,       <span style="color:#e6db74">&#34;&#34;</span>,     false},
+    {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;&#34;</span>,       <span style="color:#e6db74">&#34;&#34;</span>,     true },
+    {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;&#34;</span>,       <span style="color:#e6db74">&#34;&#34;</span>,     false},
+};
+</code></pre></div><p>В этой таблице слишком много знаков препинания: скобки, запятые, кавычки.
+К параметрам в этой таблице неудобно писать комментарии и еще сложнее подружить
+удобно выровненные колонки с <a href="https://clang.llvm.org/docs/ClangFormat.html"><code>clang-format</code></a> (<code>clang-format off</code> - это
+единственный выход). Более того, столкнувшись с реальностью, подобная таблица
+станет еще менее читаемой - колонки вылезут за правый край экрана, выравнивание
+будет принесено в жертву более компактной записи и т.д.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2018/08/05/text-data/">Read On &rarr;</a>
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -424,39 +474,6 @@ University Earth Institute</a>.</p>
 проживание в 50 милях от атомной станции. Проживание на том же расстоянии от
 угольной электростанции дает дозу в <em>три</em> съеденных банана.</p>
       <a href="https://blog.not-a-kernel-guy.com/2018/07/09/nuclear-power/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2018/07/07/sneaky-comma/">Как я провел прошлую пятницу</a>
-      </h1>
-      <span class="post-date">Jul 7, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/07/07/sneaky-comma/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%B3%D1%80%D0%B0%D0%B1%D0%BB%D0%B8">Грабли</a><a class="label" href="/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0">Отладка</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
-      </span>
-      
-      <p>Расскажу как я провел прошлую пятницу. Провел я её пытаясь понять, почему
-простой как доска тест-кейс не работает.</p>
-<p>Тест-кейс запускает код в среде, которая симулирует полетное окружение: среду
-выполнения, показания датчиков и т.д. Далее выполняется простой сценарий -
-тест-кейс получает телеметрию и выполняет действия/проверки по наступлению
-определенных событий. Например, тест-кейс может запустить ракету, выключить
-четвертый двигатель, когда высота превысит сотню метров, а затем проверить, что
-код корректно обработал нештатную ситуацию.</p>
-<p>Такие тест-кейсы, естественно, не пишутся с нуля. Кейс набирается из уже
-готовых, давно написанных блоков. Что может быть очень простым делом (если есть
-готовый шаблон), или не очень простым (когда такой шаблон нужно создать самому).
-В этот раз случился как раз второй вариант. Когда все компоненты теста правильно
-соединены остается только написать код, который ждет наступления интересных
-событий и реагирует на них нужным образом.</p>
-<p>К пятнице я добрался до момента, когда сценарий тест-кейса уже написан, но еще
-не работает. Сценарий вылетал по таймауту ожидая наступления одного из событий.
-При этом телеметрия четко показывала, что событие наступило и у теста был вагон
-времени, чтобы это заметить. Интересно, что точно такой же код, отслеживающий
-другую телеметрию работал как часы. Хм.</p>
-      <a href="https://blog.not-a-kernel-guy.com/2018/07/07/sneaky-comma/">Read On &rarr;</a>
       
     </div>
     
