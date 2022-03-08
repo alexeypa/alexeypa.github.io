@@ -131,6 +131,21 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2011/04/20/1027/">Тезисы моего доклада на РИТ&#43;&#43; 2011</a>
+      </h1>
+      <span class="post-date">Apr 20, 2011 &middot; <a href="https://blog.not-a-kernel-guy.com/2011/04/20/1027/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D1%80%D0%B8%D1%82&#43;&#43;">РИТ&#43;&#43;</a>
+      </span>
+      
+      Цель доклада – познакомить разработчиков с принципами работы стека TCP/IP в Windows, его основными компонентами и связями между ними; объяснить, что именно происходит с данными на пути к приложению и от него, и как работа сетевого стека сказывается на приложениях. В докладе описываются NDIS, существующие возможности аппаратного ускорения, работа с прерываниями и асинхронным вводом-выводом, возможности настройки сетевых адаптеров и протокола TCP/IP, перечисляются программные интерфейсы, описывается Windows Filtering Platform и её связь с IPsec, антивирусными сканнерами и фаерволами.
+      <a href="https://blog.not-a-kernel-guy.com/2011/04/20/1027/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2011/04/07/1020/">Inception</a>
       </h1>
       <span class="post-date">Apr 7, 2011 &middot; <a href="https://blog.not-a-kernel-guy.com/2011/04/07/1020/#disqus_thread">Comments</a>
@@ -282,22 +297,6 @@ char get_byte(); Функция читает байт из некоего сое
 Нужно написать функцию recv, получающую очередной пакет:
 size_t recv(char* buf, size_t size); В buf передается указатель на буфер, куда должен быть записан пакет (полностью, включая заголовок).
       <a href="https://blog.not-a-kernel-guy.com/2011/02/08/980/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2011/02/06/972/">NDIS, !ndiskd и DML</a>
-      </h1>
-      <span class="post-date">Feb 6, 2011 &middot; <a href="https://blog.not-a-kernel-guy.com/2011/02/06/972/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0">Отладка</a><a class="label" href="/tags/ndis">NDIS</a><a class="label" href="/tags/windows">Windows</a><a class="label" href="/tags/windows-kernel">Windows Kernel</a>
-      </span>
-      
-      <p>На работе понадобилось написать драйвер для сетевой карты. Я этого раньше никогда не делал и вообще с <a href="http://msdn.microsoft.com/en-us/library/ms817945.aspx">NDIS</a> дела не имел. А тут такая возможность! Делюсь впечатлениями.</p>
-<p>В общем и целом NDIS мне понравился. Интерфейсы довольно логичны, хотя и многочисленны. Взаимосвязь между разными компонентами в большинстве случаев после недолгой медитации становится довольно очевидной. Все структуры снабжены заголовком с сигнатурой, версией и размером, что, помимо заботы об обратной совместимости, означает меньше проблем с отладкой. При необходимости нужную структуру можно просто найти в памяти.</p>
-      <a href="https://blog.not-a-kernel-guy.com/2011/02/06/972/">Read On &rarr;</a>
       
     </div>
     
