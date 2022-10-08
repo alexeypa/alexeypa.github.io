@@ -3,18 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.not-a-kernel-guy.com/post/</loc>
-    <lastmod>2022-03-07T22:07:31-08:00</lastmod>
+    <lastmod>2022-10-07T23:14:12-07:00</lastmod>
   </url><url>
     <loc>https://blog.not-a-kernel-guy.com/tags/</loc>
-    <lastmod>2022-03-07T22:07:31-08:00</lastmod>
+    <lastmod>2022-10-07T23:14:12-07:00</lastmod>
   </url><url>
     <loc>https://blog.not-a-kernel-guy.com/</loc>
-    <lastmod>2022-03-07T22:07:31-08:00</lastmod>
+    <lastmod>2022-10-07T23:14:12-07:00</lastmod>
+  </url><url>
+    <loc>https://blog.not-a-kernel-guy.com/tags/%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0/</loc>
+    <lastmod>2022-10-07T23:14:12-07:00</lastmod>
+  </url><url>
+    <loc>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D1%80%D1%8B%D0%BC%D1%81%D0%BA%D0%B8%D0%B9-%D0%BC%D0%BE%D1%81%D1%82/</loc>
+    <lastmod>2022-10-07T23:14:12-07:00</lastmod>
+  </url><url>
+    <loc>https://blog.not-a-kernel-guy.com/2022/10/07/the-bridge-is-out/</loc>
+    <lastmod>2022-10-07T23:14:12-07:00</lastmod>
   </url><url>
     <loc>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D0%B0%D1%84%D0%BA%D0%B0-%D0%B8-%D0%BE%D1%80%D1%83%D1%8D%D0%BB%D0%BB-%D0%B0%D0%BF%D0%BB%D0%BE%D0%B4%D0%B8%D1%80%D1%83%D1%8E%D1%82-%D1%81%D1%82%D0%BE%D1%8F/</loc>
-    <lastmod>2022-03-07T22:07:31-08:00</lastmod>
-  </url><url>
-    <loc>https://blog.not-a-kernel-guy.com/tags/%D0%BD%D0%B0%D0%BF%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BD%D0%B0-%D1%83%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D1%83/</loc>
     <lastmod>2022-03-07T22:07:31-08:00</lastmod>
   </url><url>
     <loc>https://blog.not-a-kernel-guy.com/2022/03/07/kafka/</loc>

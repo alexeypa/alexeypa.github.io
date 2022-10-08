@@ -131,6 +131,35 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2009/06/09/571/">Что нового в Windows 7: изменения в Wow64</a>
+      </h1>
+      <span class="post-date">Jun 9, 2009 &middot; <a href="https://blog.not-a-kernel-guy.com/2009/06/09/571/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/windows">Windows</a><a class="label" href="/tags/windows-7">Windows 7</a><a class="label" href="/tags/wow64">Wow64</a>
+      </span>
+      
+      <p>Наконец-то обновилась документация в MSDN. Теперь можно спокойно рассказать, что изменилось в Wow64 с выходом Windows 7.</p>
+<ol>
+<li>
+<p>Был полностью переписан <a href="http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx">механизм перенаправления реестра (Registry <em>Redirection</em>)</a>.</p>
+</li>
+<li>
+<p>Была изменена структура реестра. Многие ключи, перенаправляемые ранее в Wow6432Node, теперь совместно используются 32-х и 64-х разрядными приложениями.</p>
+</li>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/aa384235(VS.85).aspx">Механизм синхронизации 32-х и 64-х ключей (Registry <em>Reflection</em>)</a> был с корнем выкорчеван и с позором изгнан из кода Windows. :-)</p>
+</li>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx">В документацию</a> было внесено множество дополнений и исправлений.</p>
+</li>
+</ol>
+      <a href="https://blog.not-a-kernel-guy.com/2009/06/09/571/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2009/06/05/568/">Microsoft и РФ обсудили фиксированные цены на ПО для госзакупок</a>
       </h1>
       <span class="post-date">Jun 5, 2009 &middot; <a href="https://blog.not-a-kernel-guy.com/2009/06/05/568/#disqus_thread">Comments</a>
@@ -276,21 +305,6 @@
       
       <p>Мне частенько приходится разбираться с отладкой исключений, произошедших из-за порчи стека или на фоне порчи стека. В таких случаях обычно приходится трассировать стек вручную. Дело это муторное, поэтому я решил написать расширение для WinDbg, несколько облегчающее эту задачу.</p>
       <a href="https://blog.not-a-kernel-guy.com/2009/05/16/512/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2009/05/13/509/">Windows Internals, Fifth Edition</a>
-      </h1>
-      <span class="post-date">May 13, 2009 &middot; <a href="https://blog.not-a-kernel-guy.com/2009/05/13/509/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/windows-internals-book">Windows Internals book</a>
-      </span>
-      
-      5-ая редакция книги Windows Internals отправлена в печать. Ура, товарищи! :-) Я там скромно присутствую в списке рецензентов&hellip; вместе с доброй половиной kernel team. ;-)
-      
       
     </div>
     

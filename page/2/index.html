@@ -131,6 +131,39 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2020/09/06/fountain-codes/">Фонтанный код</a>
+      </h1>
+      <span class="post-date">Sep 6, 2020 &middot; <a href="https://blog.not-a-kernel-guy.com/2020/09/06/fountain-codes/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+      </span>
+      
+      <p>Недавно совершенно случайно узнал про <a href="https://en.wikipedia.org/wiki/Fountain_code">фонтанный код</a> и поразился насколько
+элегантно работает этот алгоритм. Этот код позволяет надежно передавать данные
+по каналу с потерями без обратной связи и с минимальными накладными расходами.
+Более того передатчик и приемник не обязаны синхронизировать начало и конец
+передачи данных. Фонтанный код позволяет передатчику генерировать бесконечный
+поток пакетов, кодирующих исходное сообщение, а приемник может начать слушать в
+любой момент. Все что требуется - это принять минимально необходимое для
+декодирования количество пакетов. <a href="https://en.wikipedia.org/wiki/Raptor_code">Raptor code</a>, - одна из наиболее
+практичных реализаций, требует всего лишь передать всего 0.2% дополнительных
+пакетов для успешного декодирования с вероятностью 0.999999. При этом
+вероятность успешного декодирования стремительно приближается к единице с каждым
+дополнительным пакетом.</p>
+<p>Зачем это нужно когда уже есть протоколы надежной передачи по двухстороннему
+каналу, скажем тот же TCP/IP? Оказывается существует ситуации, когда организация
+обратного канала связи требует изобретения машины времени. Когда нам нужно
+восстановить данные со сбойного сектора на жестком диске, мы не можем послать
+“запрос на повторную передачу” в прошлое - в то время, когда сектор нормально
+читался. Все что мы можем сделать - это записать избыточные данные в другой
+сектор или на другой диск заранее.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2020/09/06/fountain-codes/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2020/08/04/butterfly/">Пепелац</a>
       </h1>
       <span class="post-date">Aug 4, 2020 &middot; <a href="https://blog.not-a-kernel-guy.com/2020/08/04/butterfly/#disqus_thread">Comments</a>
@@ -452,28 +485,6 @@ Windows. Тем не менее возится с кодом, непосредс
 покрытия Марса Луной) за авторством <a href="https://www.instagram.com/cosmic_background/">Эндрю Маккарти</a>:</p>
 <p><a href="/2020/02/3tn9874prqh41.jpg"><img src="/2020/02/3tn9874prqh41_small.jpg" alt=""></a></p>
       <a href="https://blog.not-a-kernel-guy.com/2020/02/18/moon-mars-clouds/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2020/01/27/final-offer/">Последнее предложение</a>
-      </h1>
-      <span class="post-date">Jan 27, 2020 &middot; <a href="https://blog.not-a-kernel-guy.com/2020/01/27/final-offer/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%B2%D1%81%D1%8F%D0%BA%D0%B0%D1%8F-%D0%B2%D1%81%D1%8F%D1%87%D0%B8%D0%BD%D0%B0">Всякая всячина</a>
-      </span>
-      
-      <p>Наткнулся на канал короткометражных фантастических фильмов <a href="https://www.youtube.com/channel/UC7sDT8jZ76VLV1u__krUutA">DUST</a>. Понравилось.
-Рекомендую.</p>
-<p>Например, хороший фильм про бюрократию и про то, почему важно всегда читать
-контракты перед тем, как их подписывать:</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/rv8kOzRZK8g" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-      
       
     </div>
     
