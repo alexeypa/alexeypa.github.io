@@ -131,6 +131,24 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/06/21/314/">Почему GetModuleFileName возвращает “system32” для 32-х битных библиотек под Wow64?</a>
+      </h1>
+      <span class="post-date">Jun 21, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/06/21/314/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/win32">Win32</a><a class="label" href="/tags/wow64">Wow64</a>
+      </span>
+      
+      Вопрос:
+32-х битный процесс запущен на 64-х битной системе. Почему для некоторых библиотек GetModuleFileName возвращает путь вида &ldquo;%SystemRoot%\syswow64&rdquo;, а для других - &ldquo;%SystemRoot%\system32&rdquo;, не смотря на то, что и первые, и вторые находятся в &ldquo;%SystemRoot%\syswow64&rdquo;?
+Ответ:
+Потому что загрузчик понятия не имеет о Wow64 и перенаправлении файловой системы в частности. Загрузчик просто сохраняет полное имя модуля во время загрузки и возвращает его копию в GetModuleFileName. Соответственно если библиотека была загружена как &ldquo;%SystemRoot%\system32\foobar.
+      <a href="https://blog.not-a-kernel-guy.com/2008/06/21/314/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2008/06/15/313/">Ценителям логичности и простоты cmd.exe посвящается…</a>
       </h1>
       <span class="post-date">Jun 15, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/06/15/313/#disqus_thread">Comments</a>
@@ -301,22 +319,6 @@
 Автор - Юрий Белецкий, он же Garmisch, завсегдатай Астрофорума. Причем на APOD его работы попадают уже не в первый раз. А именно этот снимок он выкладывал в форуме пару месяцев назад.
 PS. Вот такое вот можно снимать, если руки из правильного места ростут. :-)
       
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2008/04/08/304/">В Москве коты зарабатывают больше 300 долларов</a>
-      </h1>
-      <span class="post-date">Apr 8, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/04/08/304/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5">Странное</a>
-      </span>
-      
-      Не могу не поделиться. Это просто праздник какой-то:
- &hellip;У меня есть один знакомый из Вашингтона, который тоже пишет про роскошную жизнь в Америке типа - буду голосовать за Буша, он мне 300 баксов прислал и еще 600 обещал, про пособие&hellip; У нас это история про Жирика. В Москве даже кот зарабатывает больше. На стоимость своей квартиры, я в NYC могу две купить и содержать их лет десять. Поездку за лучшей жизнью я переболел еще лет 20 назад.
-      <a href="https://blog.not-a-kernel-guy.com/2008/04/08/304/">Read On &rarr;</a>
       
     </div>
     

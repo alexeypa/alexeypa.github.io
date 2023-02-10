@@ -6,7 +6,28 @@
     <description>Recent content in Posts on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 07 Oct 2022 23:14:12 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Feb 2023 20:44:39 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>33 раптора</title>
+      <link>https://blog.not-a-kernel-guy.com/2023/02/09/static-fire/</link>
+      <pubDate>Thu, 09 Feb 2023 20:44:39 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2023/02/09/static-fire/</guid>
+      <description>&lt;p&gt;Ура! Ура! Сегодня в Техасе успешно прожгли 31 раптор:&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/CR0f1WjMV-Q&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Всего на бустере 33 двигателя. Один отключили операторы во время подготовки к тесту.
+Еще один отлючила автоматика.&lt;/p&gt;
+&lt;p&gt;Как мне кажеться, два отключенных двигателя сделали этот тест намого полезнее, чем если
+бы все 33 двигателя отработали штатно. Во-первых, это означает, что система управления
+обладает достаточной гибкостью, чтобы в последний момент отключить один двигатель.
+А во-вторых, мы еще раз проверили, что бортовая диагностика работает и реагирует на
+аномалии.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>С днем рожденья!</title>
       <link>https://blog.not-a-kernel-guy.com/2022/10/07/the-bridge-is-out/</link>
@@ -747,48 +768,6 @@ Windows. Тем не менее возится с кодом, непосредс
 Причем на первый взгляд никакого отношения к переписанному указателю этот тест
 не имел. Но от фактов было трудно отвертеться. С новым указателем тест падал, а
 со старым - нет.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Законы космической инженерии (Законы Акина)</title>
-      <link>https://blog.not-a-kernel-guy.com/2019/11/29/akins_laws/</link>
-      <pubDate>Fri, 29 Nov 2019 11:56:25 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2019/11/29/akins_laws/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://aero.umd.edu/clark/faculty/3/David-Akin&#34;&gt;Давид Акин&lt;/a&gt;, директор лаборатории космических систем на факультете
-аэрокосмической инженерии Мерилендского университета собрал список &lt;a href=&#34;https://spacecraft.ssl.umd.edu/akins_laws.html&#34;&gt;законов
-космической инженерии&lt;/a&gt;, которые удивительно точно описывают реальность
-разработки космических систем. Меня больше всего зацепил вот этот:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Your best design efforts will inevitably wind up being useless in the final
-design. Learn to live with the disappointment.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Ваши лучшие наработки в конечном итоге окажутся не нужны. Привыкайте жить с
-разочарованием.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Я как-то потратил несколько недель на оптимизацию кода, формирующего пакеты с
-телеметрией, с тем чтобы укорить его в несколько раз и сэкономить 10-15% общего
-времени выполнения. Что было очень важно, так как мы в очередной раз вылезли за
-допустимое время выполнения. Обложил юнит тестами со всех сторон&amp;hellip; На code
-review основной претензией к коду было &amp;ldquo;ну я верю, что это работает, но нельзя
-ли как-нибудь попроще?&amp;rdquo; Через несколько недель я в отпуск пошел, а в том коде
-нашли баг&amp;hellip; Было интересно и увлекательно.&lt;/p&gt;
-&lt;p&gt;А вот недавно, я просто удалил одну проверку в двух функциях, и сэкономил те же
-10-15%. Результат одинаковый, но затраченные усилия отличаются на два порядка.&lt;/p&gt;
-&lt;p&gt;Ну и, само-собой, классика:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Space is a completely unforgiving environment. If you screw up the engineering,
-somebody dies (and there&amp;rsquo;s no partial credit because most of the analysis was
-right&amp;hellip;)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Космос совершенно не прощает ошибок. Если вы ошиблись при разработке - кто-то
-умрет (и вы не получите частичный зачет за то, что большая часть анализа была
-верной)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Список широко цитируется в узких кругах, в том числе на Хабре публиковался
-&lt;a href=&#34;https://habr.com/ru/post/354936/&#34;&gt;перевод&lt;/a&gt; (правда не на 100% точный, как мне кажется).&lt;/p&gt;</description>
     </item>
     
   </channel>
