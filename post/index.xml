@@ -6,7 +6,58 @@
     <description>Recent content in Posts on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 09 Feb 2023 20:44:39 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Feb 2023 20:30:04 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Братья по оружию</title>
+      <link>https://blog.not-a-kernel-guy.com/2023/02/19/brothers-in-arms/</link>
+      <pubDate>Sun, 19 Feb 2023 20:30:04 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2023/02/19/brothers-in-arms/</guid>
+      <description>&lt;p&gt;Эмма Стейнбаккен (Emma Steinbakken) под аккомпанемент оркестра Норвежского национального
+радио исполняет песню &amp;ldquo;Братья по оружию&amp;rdquo; в эфире &lt;a href=&#34;https://www.nrk.no&#34;&gt;Норвежского национального радио&lt;/a&gt;
+(осуществляет теле- и радиовещание в Норвегии). Исполнение посвящено борьбе Украины
+против российской агрессии и сопровождается известными кадрами войны:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.nrk.no/video/ett-aar-med-krig-i-europa-emma-steinbakken-og-kork-fremforer-brothers-in-arms_53ea2657-c239-4118-b200-590251ca5f36&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2023/02/emma_steinbakken.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Сингл &amp;ldquo;Братья по оружию&amp;rdquo; вошел в &lt;a href=&#34;https://en.wikipedia.org/wiki/Brothers_in_Arms_(Dire_Straits_album)&#34;&gt;одноименный альбом Dire Straits&lt;/a&gt;, выпущенный в 1985
+году.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;These mist covered mountains&lt;br&gt;
+Are a home now for me&lt;br&gt;
+But my home is the lowlands&lt;br&gt;
+And always will be&lt;br&gt;
+Some day you&amp;rsquo;ll return to&lt;br&gt;
+Your valleys and your farms&lt;br&gt;
+And you&amp;rsquo;ll no longer burn&lt;br&gt;
+To be brothers in arms&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Through these fields of destruction&lt;br&gt;
+Baptisms of fire&lt;br&gt;
+I&amp;rsquo;ve witnessed your suffering&lt;br&gt;
+As the battle raged higher&lt;br&gt;
+And though they did hurt me so bad&lt;br&gt;
+In the fear and alarm&lt;br&gt;
+You did not desert me&lt;br&gt;
+My brothers in arms&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There&amp;rsquo;s so many different worlds&lt;br&gt;
+So many different suns&lt;br&gt;
+And we have just one world&lt;br&gt;
+But we live in different ones&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now the sun&amp;rsquo;s gone to hell&lt;br&gt;
+And the moon riding high&lt;br&gt;
+Let me bid you farewell&lt;br&gt;
+Every man has to die&lt;br&gt;
+But it&amp;rsquo;s written in the starlight&lt;br&gt;
+And every line in your palm&lt;br&gt;
+We&amp;rsquo;re fools to make war&lt;br&gt;
+On our brothers in arms&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
     <item>
       <title>33 раптора</title>
       <link>https://blog.not-a-kernel-guy.com/2023/02/09/static-fire/</link>
@@ -744,30 +795,6 @@ Windows. Тем не менее возится с кодом, непосредс
 решетчатые рули к первой ступени. Однако принимая во внимание китайское упорство
 можно довольно уверенно сказать, что рано или поздно китайцы таки научатся
 приземлять и повторно использовать свои ракеты.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Когда 1.0 = 0.0</title>
-      <link>https://blog.not-a-kernel-guy.com/2019/12/16/gcc/</link>
-      <pubDate>Mon, 16 Dec 2019 22:49:36 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2019/12/16/gcc/</guid>
-      <description>&lt;p&gt;Столкнулся недавно с новой для себя областью - ловлей багов в компиляторе.
-Ловить &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2010/07/11/854/&#34;&gt;баг в процессоре&lt;/a&gt; мне уже доводилось, а вот с компиляторами до
-недавнего времени как-то везло.&lt;/p&gt;
-&lt;p&gt;Началось все очень прозаично. В нашем репозитории есть своя реализация умного
-указателя. Ну, вы знаете, как это бывает. Обычная история на самом деле&amp;hellip;
-Этот класс был написан в древние времена, тогда и &lt;a href=&#34;https://en.wikipedia.org/wiki/C%2B%2B03&#34;&gt;С++03&lt;/a&gt; еще на свете не
-было. С тех пор уже и &lt;a href=&#34;https://en.wikipedia.org/wiki/C%2B%2B17&#34;&gt;С++17&lt;/a&gt; появился и &lt;a href=&#34;https://en.wikipedia.org/wiki/C%2B%2B20&#34;&gt;С++20&lt;/a&gt; не за горами, но класс
-по-прежнему активно используется. Мы его давно хотели заменить на что-нибудь
-более стандартное и современное, но все руки не доходили. “Работает - не трожь”.&lt;/p&gt;
-&lt;p&gt;В один прекрасный день в этом классе нашлось &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&#34;&gt;неопределенное поведение&lt;/a&gt;, что
-стало последней каплей, &lt;del&gt;переломившей верблюду соломинку&lt;/del&gt;. Указатель был
-переписан на корню и стал тонкой оберткой вокруг &lt;code&gt;std::shared_ptr&amp;lt;&amp;gt;&lt;/code&gt;.
-На следующий же день сломался один неприметный юнит тест на одной из платформ.
-Причем на первый взгляд никакого отношения к переписанному указателю этот тест
-не имел. Но от фактов было трудно отвертеться. С новым указателем тест падал, а
-со старым - нет.&lt;/p&gt;</description>
     </item>
     
   </channel>

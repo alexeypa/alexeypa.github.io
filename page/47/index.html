@@ -131,6 +131,58 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2007/09/16/238/">Отладка абстрактного синтаксического дерева (AST)</a>
+      </h1>
+      <span class="post-date">Sep 16, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/09/16/238/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/win32.utf8">Win32.Utf8</a>
+      </span>
+      
+      <p>Во время работы над парсером постоянно возникала необходимость посмотреть как выглядит тот или иной кусок дерева или все дерево целиком. Недолго думая, я попробовал выводить его в виде XML, - получилось довольно неплохо.</p>
+<p>Исходный код на C:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>LPVOID;
+</code></pre></div><p>Дерево, полученное после синтаксического разбора:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;translation_unit&gt;</span>
+ <span style="color:#f92672">&lt;external_declaration&gt;</span>
+  <span style="color:#f92672">&lt;declaration&gt;</span>
+   <span style="color:#f92672">&lt;init_list_declaration&gt;</span>
+    <span style="color:#f92672">&lt;declaration_specifiers&gt;</span>
+     <span style="color:#f92672">&lt;declaration_specifier&gt;</span>
+      <span style="color:#f92672">&lt;storage_class_specifier&gt;</span>
+       typedef
+      <span style="color:#f92672">&lt;/storage_class_specifier&gt;</span>
+     <span style="color:#f92672">&lt;/declaration_specifier&gt;</span>
+     <span style="color:#f92672">&lt;declaration_specifier&gt;</span>
+      <span style="color:#f92672">&lt;type_specifier&gt;</span>
+       <span style="color:#f92672">&lt;builtin_type&gt;</span>
+        void
+       <span style="color:#f92672">&lt;/builtin_type&gt;</span>
+      <span style="color:#f92672">&lt;/type_specifier&gt;</span>
+     <span style="color:#f92672">&lt;/declaration_specifier&gt;</span>
+    <span style="color:#f92672">&lt;/declaration_specifiers&gt;</span>
+    <span style="color:#f92672">&lt;init_declarator&gt;</span>
+     <span style="color:#f92672">&lt;declarator&gt;</span>
+      <span style="color:#f92672">&lt;pointer&gt;</span>
+       *
+      <span style="color:#f92672">&lt;/pointer&gt;</span>
+      <span style="color:#f92672">&lt;direct_declarator&gt;</span>
+       LPVOID
+      <span style="color:#f92672">&lt;/direct_declarator&gt;</span>
+     <span style="color:#f92672">&lt;/declarator&gt;</span>
+    <span style="color:#f92672">&lt;/init_declarator&gt;</span>
+   <span style="color:#f92672">&lt;/init_list_declaration&gt;</span>
+   ;
+  <span style="color:#f92672">&lt;/declaration&gt;</span>
+ <span style="color:#f92672">&lt;/external_declaration&gt;</span>
+<span style="color:#f92672">&lt;/translation_unit&gt;</span>
+</code></pre></div>
+      <a href="https://blog.not-a-kernel-guy.com/2007/09/16/238/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2007/09/12/237/">Резюме на критику</a>
       </h1>
       <span class="post-date">Sep 12, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/09/12/237/#disqus_thread">Comments</a>
@@ -291,21 +343,6 @@ PS: Кстати, а знаете почему этот центр называ�
       Вопрос на засыпку - что это?
 
 Upd: ответ.
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2007/08/24/228/">Система Урана. Вид сбоку</a>
-      </h1>
-      <span class="post-date">Aug 24, 2007 &middot; <a href="https://blog.not-a-kernel-guy.com/2007/08/24/228/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81">Космос</a>
-      </span>
-      
-      Взято с сайта ESO (European Organisation for Astronomical Research in the Southern Hemisphere / Европейской Организации Астрономических Исследований в Южном Полушарии) .
       
       
     </div>

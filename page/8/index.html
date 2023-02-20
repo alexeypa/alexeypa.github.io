@@ -131,6 +131,31 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2018/02/05/kettle/">Чайник Рассела</a>
+      </h1>
+      <span class="post-date">Feb 5, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/02/05/kettle/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/spacex">SpaceX</a>
+      </span>
+      
+      <p>Завтра в 15:30 UTC запускаем Heavy. Последние баги закрыты, тесты прогнаны, софт
+выпущен в продакшн. Если вовремя трансляции будут показывать Mission Control - я
+сижу в первом ряду в правом нижнем углу. :-)</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/wbSwFU6tY1c" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>P.S. Вот интересно, положил Элон в багажник <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D0%B9%D0%BD%D0%B8%D0%BA_%D0%A0%D0%B0%D1%81%D1%81%D0%B5%D0%BB%D0%B0">чайник</a>
+, или нет?</p>
+<p><a href="/2018/02/fh_demo_tesla.jpg"><img src="/2018/02/fh_demo_tesla_small.jpg" alt=""></a></p>
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2018/01/31/oops/">Ой</a>
       </h1>
       <span class="post-date">Jan 31, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/01/31/oops/#disqus_thread">Comments</a>
@@ -369,42 +394,6 @@
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/tE5C3O71Xqo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2017/12/11/bazel-spacex/">Свежая презентация про полетный софт в SpaceX</a>
-      </h1>
-      <span class="post-date">Dec 11, 2017 &middot; <a href="https://blog.not-a-kernel-guy.com/2017/12/11/bazel-spacex/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/spacex">SpaceX</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
-      </span>
-      
-      <p>Свежая презентация про полетный софт в SpaceX в целом, и про миграцию с make на
-<a href="https://bazel.build/">Bazel</a> в частности:</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/t_3bckhV_YI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-<p>Основные моменты:</p>
-<ul>
-<li>Два основных репозитория: один содержит полетный код, второй - код симуляции.
-Более миллиона строк C++ в каждом. Немного Python.</li>
-<li>Используется своя версия Linux, поддержкой которой занимается отдельная
-команда.</li>
-<li>C++ код собирается под несколько разных процессорных архитектур.</li>
-<li>Полетный код для Falcon и Dragon собирается из одного репозитория.</li>
-<li>&ldquo;Test like you fly&rdquo; - код тестируется в тех же самых условиях, что наблюдаются
-в полете. Софт и железо тестируются как единая интегрированная система.</li>
-<li>Система непрерывной интеграции выполняет более 8 тысяч заданий в день.</li>
-</ul>
-<p>Вторая половина презентации посвящена миграции с древней системы сборки на
-основе make на более современный Bazel. Эта часть будет интересна в основном
-тем, кто интересуется системами сборки кода.</p>
       
       
     </div>

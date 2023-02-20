@@ -5,10 +5,61 @@
     <description>Recent content on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 09 Feb 2023 20:44:39 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Feb 2023 20:30:04 -0800</lastBuildDate>
     
         <atom:link href="https://blog.not-a-kernel-guy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Братья по оружию</title>
+      <link>https://blog.not-a-kernel-guy.com/2023/02/19/brothers-in-arms/</link>
+      <pubDate>Sun, 19 Feb 2023 20:30:04 -0800</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2023/02/19/brothers-in-arms/</guid>
+      <description>&lt;p&gt;Эмма Стейнбаккен (Emma Steinbakken) под аккомпанемент оркестра Норвежского национального
+радио исполняет песню &amp;ldquo;Братья по оружию&amp;rdquo; в эфире &lt;a href=&#34;https://www.nrk.no&#34;&gt;Норвежского национального радио&lt;/a&gt;
+(осуществляет теле- и радиовещание в Норвегии). Исполнение посвящено борьбе Украины
+против российской агрессии и сопровождается известными кадрами войны:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.nrk.no/video/ett-aar-med-krig-i-europa-emma-steinbakken-og-kork-fremforer-brothers-in-arms_53ea2657-c239-4118-b200-590251ca5f36&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2023/02/emma_steinbakken.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Сингл &amp;ldquo;Братья по оружию&amp;rdquo; вошел в &lt;a href=&#34;https://en.wikipedia.org/wiki/Brothers_in_Arms_(Dire_Straits_album)&#34;&gt;одноименный альбом Dire Straits&lt;/a&gt;, выпущенный в 1985
+году.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;These mist covered mountains&lt;br&gt;
+Are a home now for me&lt;br&gt;
+But my home is the lowlands&lt;br&gt;
+And always will be&lt;br&gt;
+Some day you&amp;rsquo;ll return to&lt;br&gt;
+Your valleys and your farms&lt;br&gt;
+And you&amp;rsquo;ll no longer burn&lt;br&gt;
+To be brothers in arms&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Through these fields of destruction&lt;br&gt;
+Baptisms of fire&lt;br&gt;
+I&amp;rsquo;ve witnessed your suffering&lt;br&gt;
+As the battle raged higher&lt;br&gt;
+And though they did hurt me so bad&lt;br&gt;
+In the fear and alarm&lt;br&gt;
+You did not desert me&lt;br&gt;
+My brothers in arms&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There&amp;rsquo;s so many different worlds&lt;br&gt;
+So many different suns&lt;br&gt;
+And we have just one world&lt;br&gt;
+But we live in different ones&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now the sun&amp;rsquo;s gone to hell&lt;br&gt;
+And the moon riding high&lt;br&gt;
+Let me bid you farewell&lt;br&gt;
+Every man has to die&lt;br&gt;
+But it&amp;rsquo;s written in the starlight&lt;br&gt;
+And every line in your palm&lt;br&gt;
+We&amp;rsquo;re fools to make war&lt;br&gt;
+On our brothers in arms&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
     
     <item>
       <title>33 раптора</title>
@@ -1105,127 +1156,6 @@ IPv4 заголовка), которые покрываются контроль
 решетчатые рули к первой ступени. Однако принимая во внимание китайское упорство
 можно довольно уверенно сказать, что рано или поздно китайцы таки научатся
 приземлять и повторно использовать свои ракеты.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Когда 1.0 = 0.0</title>
-      <link>https://blog.not-a-kernel-guy.com/2019/12/16/gcc/</link>
-      <pubDate>Mon, 16 Dec 2019 22:49:36 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2019/12/16/gcc/</guid>
-      <description>&lt;p&gt;Столкнулся недавно с новой для себя областью - ловлей багов в компиляторе.
-Ловить &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2010/07/11/854/&#34;&gt;баг в процессоре&lt;/a&gt; мне уже доводилось, а вот с компиляторами до
-недавнего времени как-то везло.&lt;/p&gt;
-&lt;p&gt;Началось все очень прозаично. В нашем репозитории есть своя реализация умного
-указателя. Ну, вы знаете, как это бывает. Обычная история на самом деле&amp;hellip;
-Этот класс был написан в древние времена, тогда и &lt;a href=&#34;https://en.wikipedia.org/wiki/C%2B%2B03&#34;&gt;С++03&lt;/a&gt; еще на свете не
-было. С тех пор уже и &lt;a href=&#34;https://en.wikipedia.org/wiki/C%2B%2B17&#34;&gt;С++17&lt;/a&gt; появился и &lt;a href=&#34;https://en.wikipedia.org/wiki/C%2B%2B20&#34;&gt;С++20&lt;/a&gt; не за горами, но класс
-по-прежнему активно используется. Мы его давно хотели заменить на что-нибудь
-более стандартное и современное, но все руки не доходили. “Работает - не трожь”.&lt;/p&gt;
-&lt;p&gt;В один прекрасный день в этом классе нашлось &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&#34;&gt;неопределенное поведение&lt;/a&gt;, что
-стало последней каплей, &lt;del&gt;переломившей верблюду соломинку&lt;/del&gt;. Указатель был
-переписан на корню и стал тонкой оберткой вокруг &lt;code&gt;std::shared_ptr&amp;lt;&amp;gt;&lt;/code&gt;.
-На следующий же день сломался один неприметный юнит тест на одной из платформ.
-Причем на первый взгляд никакого отношения к переписанному указателю этот тест
-не имел. Но от фактов было трудно отвертеться. С новым указателем тест падал, а
-со старым - нет.&lt;/p&gt;
-&lt;p&gt;Проблему получилось свести к коду, структура которого выглядела примерно так:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;func1&lt;/span&gt;(..., &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; foo, ...)
-{
-    ...
-    printf(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;“&lt;/span&gt;func1: foo &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;f&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;n, foo);
-    func2(..., foo, ...);
-}
- 
-&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;func2&lt;/span&gt;(..., &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; foo, ...)
-{
-    printf(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;“&lt;/span&gt;func2: foo &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;f&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;n, foo);
-    ...
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Этот код печатал следующее:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;func1: foo == 1.0
-func2: foo == 0.0
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Т.е. буквально до вызова функции константа foo принимала одно значение, а в
-вызываемой функции - другое.&lt;/p&gt;
-&lt;p&gt;Реальный код был сложнее, конечно. Например было важно, чтобы &lt;code&gt;func1()&lt;/code&gt; была
-встроена (inlined) в вызывающий код, а &lt;code&gt;func2()&lt;/code&gt; - нет. Без соблюдения этого
-условия ошибка не воспроизводилась. Более того, добавление еще одного
-&lt;code&gt;printf(“func1: foo == %f\n, foo);&lt;/code&gt; &lt;em&gt;после&lt;/em&gt; вызова &lt;code&gt;func2()&lt;/code&gt; также убирало
-проблему. К этому моменту стало довольно очевидно, что компилятор генерирует
-что-то не то.&lt;/p&gt;
-&lt;p&gt;Следующим шагом стал детальный разбор ассемблерного кода, сгенерированного
-компилятором. Самым сложным в этом деле оказалось найти правильный справочник
-по инструкциям процессора и документ, описывающий соглашение о вызовах на
-целевой платформе. Разбор показал, что константа &lt;code&gt;1.0&lt;/code&gt; правильно загружается в
-регистр процессора, но далее значение переписывается другими операциями до
-вызова &lt;code&gt;func2()&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Поиски в баг-трекере и истории изменений в репозитории GCC не принесли успеха.
-Ничего похожего на эту ошибку не находилось. Пришлось отлаживать компилятор
-самостоятельно.&lt;/p&gt;
-&lt;p&gt;В понимании как работает компилятор очень помогла страница &lt;a href=&#34;http://stffrdhrn.github.io/software/embedded/openrisc/2018/06/03/gcc_passes.html&#34;&gt;GCC Important
-Passes&lt;/a&gt;. Если в двух словах, то логика компилятора сгруппирована по
-“проходам” (passes). Проходы организованы в две группы: “tree” и “rtl”. Они
-используют разные формы представления компилируемого кода: &lt;a href=&#34;https://gcc.gnu.org/onlinedocs/gccint/GIMPLE.html&#34;&gt;GIMPLE&lt;/a&gt; и
-&lt;a href=&#34;https://gcc.gnu.org/onlinedocs/gccint/RTL.html&#34;&gt;Register Transfer Language (RTL)&lt;/a&gt;. Каждый проход выполняет определенное
-преобразование. Например &lt;code&gt;pass_remove_useless_stmts&lt;/code&gt; удаляет явно бесполезный
-код, а &lt;code&gt;pass_loop2&lt;/code&gt; выполняет оптимизацию циклов.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://stffrdhrn.github.io/software/embedded/openrisc/2018/06/03/gcc_passes.html&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2019/12/gcc_passes.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Результат работы каждого прохода можно сохранить в файл указав ключи
-&lt;code&gt;-fdump-rtl-all-all&lt;/code&gt; и &lt;code&gt;-fdump-tree-all-all&lt;/code&gt;. Для каждого прохода создается
-отдельный файл, куда пишется весь отладочный вывод вместе с полным описанием
-компилируемого модуля на языке GIMPLE или RTL.&lt;/p&gt;
-&lt;p&gt;Чтобы найти проход, который приводит к ошибке, воспользовался таким алгоритмом
-поиска:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Помечаем проблемный участок для того, чтобы его было легче найти. В данном
-случае достаточно было сделать уникальной строку, которая передается в
-&lt;code&gt;printf()&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Компилируем программу с &lt;code&gt;-fdump-rtl-all-all&lt;/code&gt; и &lt;code&gt;-fdump-tree-all-all&lt;/code&gt; и
-получаем несколько сотен файлов с результатами работы каждого прохода.&lt;/li&gt;
-&lt;li&gt;Далее ищем проблемный проход методом половинного деления. Все выполненные
-проходы пронумерованы по порядку выполнения.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Через несколько часов получаем результат - ошибка в коде появляется после
-прохода &lt;code&gt;reload&lt;/code&gt;. Какую роль выполняет проход &lt;code&gt;reload&lt;/code&gt;? Для начала, согласно
-&lt;a href=&#34;https://gcc.gnu.org/wiki/reload&#34;&gt;GCC wiki&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Reload is the GCC equivalent of Satan.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Reload - это эквивалент Сатаны в GCC.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;С чем я полностью согласен, кстати. В коде &lt;code&gt;reload&lt;/code&gt; есть условие, которое
-занимает &lt;a href=&#34;https://github.com/gcc-mirror/gcc/blob/7057506456ba18f080679b2fe55ec56ee90fd81c/gcc/reload.c#L1056-L1110&#34;&gt;55 строк&lt;/a&gt;. Код &lt;code&gt;reload&lt;/code&gt; обильно припорошен макросами и
-полиморфными структурами. Никогда не знаешь какой член объединения (union
-member) имеет значение в данном месте. Полное ощущение, что читаешь код на
-питоне. Только написанный на чистом C.&lt;/p&gt;
-&lt;p&gt;Разобраться в этом месиве было бы нереально, но в таких случаях на помощь
-приходит &lt;a href=&#34;https://rr-project.org/&#34;&gt;rr&lt;/a&gt;. Скажем вам нужно найти место, где создается структура с
-заранее известным содержимым. Ставите условную точку останова в теле &lt;code&gt;free()&lt;/code&gt;,
-которая срабатывает по известному содержимому структуры (например четыре байта
-по смещению &lt;code&gt;0x88&lt;/code&gt; равны &lt;code&gt;0x12345678&lt;/code&gt;). Когда точка останова срабатывает -
-проверяете что удаляется искомая структура. Теперь ставите новую условную точку
-останова, которая срабатывает по записи в память по адресу, где хранится
-&lt;code&gt;0x12345678&lt;/code&gt; и запускаете обратное выполнение. Бац, и отладчик остановится в
-момент создания структуры (в момент записи в нее &lt;code&gt;0x12345678&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;reload&lt;/code&gt; принимает на вход код, инструкции в котором используют виртуальные
-регистры, каждый из которых &lt;a href=&#34;https://en.wikipedia.org/wiki/Static_single_assignment_form&#34;&gt;загружается только один раз&lt;/a&gt;. Таких регистров
-может быть тысячи и десятки тысяч. Задача &lt;code&gt;reload&lt;/code&gt; преобразовать его в код,
-который использует реальные регистры процессора, число которых ограничено
-несколькими десятками. Уникальные номера виртуальных регистров позволяют легко
-использовать вышеописанную технику, чтобы найти структуры, соответствующие
-инструкциям, выполняющим передачу константы &lt;code&gt;1.0&lt;/code&gt; в &lt;code&gt;func2()&lt;/code&gt;. А по ним, - найти
-места в коде &lt;code&gt;reload&lt;/code&gt;, которые приводят в генерации некорректного кода на выходе.&lt;/p&gt;
-&lt;p&gt;Результатом всех этих усилий стала заплатка для GCC, которая выдает
-предупреждение компилятора, каждый раз когда &lt;code&gt;reload&lt;/code&gt; пытается сгенерировать
-ошибочный код. Тем самым, у нас появился способ автоматической проверки того,
-что подобный код не просочится в итоговую сборку.&lt;/p&gt;
-&lt;p&gt;Умный указатель, кстати, к ошибке никакого отношения таки не имел. Просто
-со старой версией генерировался другой код, который приводил к другой
-последовательности использования регистров, с который проблема себя не проявляла.&lt;/p&gt;
-&lt;p&gt;P.S. Сразу отвечу на очевидный вопрос. В силу специфических особенностей
-отрасли, нам даже завести репорт в публичном баг-трекере без юриста никак нельзя.
-Да и с юристом это еще тот геморрой.&lt;/p&gt;</description>
     </item>
     
   </channel>
