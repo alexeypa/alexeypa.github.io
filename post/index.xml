@@ -6,7 +6,38 @@
     <description>Recent content in Posts on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 19 Feb 2023 20:30:04 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Apr 2023 17:39:02 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Первый орбитальный полет Starship</title>
+      <link>https://blog.not-a-kernel-guy.com/2023/04/16/starship-flight-test/</link>
+      <pubDate>Sun, 16 Apr 2023 17:39:02 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2023/04/16/starship-flight-test/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.spacex.com/launches/mission/?missionId=starship-flight-test&#34;&gt;Starship готов к первому испытательному полету на орбиту&lt;/a&gt;. Пусковое окно
+продолжительностью в два с половиной часа открывается 17 апреля в 7:00 утра
+центрального времени (12:00 по Гринвичу, 2023-04-17T12:00:00Z).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2023/04/starship_stacked_1.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2023/04/starship_stacked_1.thumbnail.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Связка Starship (S24) и Super Heavy (B7) стартует с &lt;a href=&#34;https://goo.gl/maps/e5PBp3Lfdh5y7WQcA&#34;&gt;космодрома, расположенного
+в южной оконечности Техаса на берегу Мексиканского залива&lt;/a&gt;. Через 55 секунд
+после старта, ракета пройдет MaxQ - участок траектории, на котором ракета испытывает
+максимальные аэродинамаческие нагрузки. После разделения Starship и Super Heavy,
+бустер выполнит маневр возвращения к точке старта и попытается приводнится в
+Мексиканском заливе. Похожим образом отрабатывалась посадка первой ступени Falcon 9
+в море до попыток посадить её на баржу. После выхода на орбиту, Starship пролетит
+над Африкой и Индийским океаном и войдет в атмосферу над Тихим океаном недалеко от
+Гавайских островов. Неформальное название этого полета &amp;ldquo;Pineapple Express&amp;rdquo; - это
+как раз намек на Гавайи. Скорее всего Starship разрушится в верхних слоях
+атмосферы. Посадка на двигателях не планируется.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2023/04/SPACEX_STARSHIP_INFOGRAPHIC_041223_web_096b650bff.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2023/04/SPACEX_STARSHIP_INFOGRAPHIC_041223_web_096b650bff.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;В этом полете отрабатывается столько новых технологий и решений, что предсказывать
+в каком месте запуск пойдет не по плану - гиблое дело. Наверняка можно сказать
+только то, что по результатам теста мы обязательно узнаем что-то новое. Я лично
+считаю, что запуск можно будет считать удачным в случае, если ракета уйдет со
+стартового стола. Все остальное будет очень и очень приятным бонусом.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2023/04/starship_stacked_2.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2023/04/starship_stacked_2.thumbnail.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Пожелайте нам удачи. Godspeed, Starship!&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Братья по оружию</title>
       <link>https://blog.not-a-kernel-guy.com/2023/02/19/brothers-in-arms/</link>
@@ -771,30 +802,6 @@ Windows. Тем не менее возится с кодом, непосредс
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;https://www.youtube.com/embed/06svtpboEJs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>&#34;Великий поход&#34;, или туда и обратно</title>
-      <link>https://blog.not-a-kernel-guy.com/2019/12/29/cz-8/</link>
-      <pubDate>Sun, 29 Dec 2019 21:21:21 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2019/12/29/cz-8/</guid>
-      <description>&lt;p&gt;Это, конечно, прошлогодние новости, но до меня эта картинка дошла только сейчас.&lt;/p&gt;
-&lt;p&gt;Китай с пристальным интересом поглядывает на повторное использование ступеней
-ракет. В 2017 году свет увидела презентация &amp;ldquo;первого частного китайского
-космического стартапа&amp;rdquo; Link Space (не смотрите на меня так - я просто
-перепечатываю слова из интернета):&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.spaceflightinsider.com/space-flight-news/footsteps-spacex-chinese-company-eyes-development-reusable-rocket/&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2019/12/new_line_1_rocket.jpeg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;А в 2018 году, главный конструктор ракет-носителей при &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D0%B8%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9_%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82_%D1%80%D0%B0%D0%BA%D0%B5%D1%82%D0%BD%D0%BE%D0%B9_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8&#34;&gt;Китайском
-исследовательском институте ракетной техники&lt;/a&gt; Лонг Лехао рассказывал о CZ-8 -
-будущем члене семейства ракет &amp;ldquo;Великий поход&amp;rdquo;. В том числе, был показан вот
-такой слайд:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.spaceflightinsider.com/organizations/china-national-space-administration/china-developing-a-reusable-launch-vehicle/&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2019/12/cz-8_reusable.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Из этих двух слайдов сразу становится понятно, что любую разрабатываемую ракету
-можно назвать повторно используемой. Достаточно лишь пририсовать ноги и
-решетчатые рули к первой ступени. Однако принимая во внимание китайское упорство
-можно довольно уверенно сказать, что рано или поздно китайцы таки научатся
-приземлять и повторно использовать свои ракеты.&lt;/p&gt;</description>
     </item>
     
   </channel>

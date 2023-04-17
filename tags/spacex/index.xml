@@ -6,7 +6,38 @@
     <description>Recent content in SpaceX on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 09 Feb 2023 20:44:39 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/spacex/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Apr 2023 17:39:02 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/spacex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Первый орбитальный полет Starship</title>
+      <link>https://blog.not-a-kernel-guy.com/2023/04/16/starship-flight-test/</link>
+      <pubDate>Sun, 16 Apr 2023 17:39:02 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2023/04/16/starship-flight-test/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.spacex.com/launches/mission/?missionId=starship-flight-test&#34;&gt;Starship готов к первому испытательному полету на орбиту&lt;/a&gt;. Пусковое окно
+продолжительностью в два с половиной часа открывается 17 апреля в 7:00 утра
+центрального времени (12:00 по Гринвичу, 2023-04-17T12:00:00Z).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2023/04/starship_stacked_1.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2023/04/starship_stacked_1.thumbnail.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Связка Starship (S24) и Super Heavy (B7) стартует с &lt;a href=&#34;https://goo.gl/maps/e5PBp3Lfdh5y7WQcA&#34;&gt;космодрома, расположенного
+в южной оконечности Техаса на берегу Мексиканского залива&lt;/a&gt;. Через 55 секунд
+после старта, ракета пройдет MaxQ - участок траектории, на котором ракета испытывает
+максимальные аэродинамаческие нагрузки. После разделения Starship и Super Heavy,
+бустер выполнит маневр возвращения к точке старта и попытается приводнится в
+Мексиканском заливе. Похожим образом отрабатывалась посадка первой ступени Falcon 9
+в море до попыток посадить её на баржу. После выхода на орбиту, Starship пролетит
+над Африкой и Индийским океаном и войдет в атмосферу над Тихим океаном недалеко от
+Гавайских островов. Неформальное название этого полета &amp;ldquo;Pineapple Express&amp;rdquo; - это
+как раз намек на Гавайи. Скорее всего Starship разрушится в верхних слоях
+атмосферы. Посадка на двигателях не планируется.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2023/04/SPACEX_STARSHIP_INFOGRAPHIC_041223_web_096b650bff.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2023/04/SPACEX_STARSHIP_INFOGRAPHIC_041223_web_096b650bff.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;В этом полете отрабатывается столько новых технологий и решений, что предсказывать
+в каком месте запуск пойдет не по плану - гиблое дело. Наверняка можно сказать
+только то, что по результатам теста мы обязательно узнаем что-то новое. Я лично
+считаю, что запуск можно будет считать удачным в случае, если ракета уйдет со
+стартового стола. Все остальное будет очень и очень приятным бонусом.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2023/04/starship_stacked_2.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2023/04/starship_stacked_2.thumbnail.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Пожелайте нам удачи. Godspeed, Starship!&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>33 раптора</title>
       <link>https://blog.not-a-kernel-guy.com/2023/02/09/static-fire/</link>
@@ -597,28 +628,6 @@ Northrop Grumman приобрела у третьей стороны. Адапт
 отказалась взрываться и тонуть:&lt;/p&gt;
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;This rocket was meant to test very high retrothrust landing in water so it didn’t hurt the droneship, but amazingly it has survived. We will try to tow it back to shore. &lt;a href=&#34;https://t.co/hipmgdnq16&#34;&gt;pic.twitter.com/hipmgdnq16&lt;/a&gt;&lt;/p&gt;&amp;mdash; Elon Musk (@elonmusk) &lt;a href=&#34;https://twitter.com/elonmusk/status/958847818583584768?ref_src=twsrc%5Etfw&#34;&gt;January 31, 2018&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;</description>
-    </item>
-    
-    <item>
-      <title>Жжем!</title>
-      <link>https://blog.not-a-kernel-guy.com/2018/01/24/heavy-static-fire/</link>
-      <pubDate>Wed, 24 Jan 2018 19:15:07 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2018/01/24/heavy-static-fire/</guid>
-      <description>&lt;p&gt;Сегодня, наконец, прожгли Falcon Heavy:&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/sNgByUWwFKU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Ух сколько же я тикетов в баг трекере закрыл за последний год - не пересчитать.
-Большая часть была про Falcon Heavy. Хотя казалось бы всех дел - слепить три
-одинаковых ракеты вместе&amp;hellip;&lt;/p&gt;
-&lt;p&gt;Самый смешной момент с прожига - меньше чем за 10 минут до T-0, когда уже все на
-нервах, range уведомляет, что они визуально обнаружили чьё-то присутствие вблизи
-от пускового стола. Что, понятное дело, грозит переносом прожига. Меньше чем
-через минуту range снова выходит на связь и дает отбой - мол, это просто
-какая-то бетонная конструкция. Не иначе, кто-то внезапно что-то построил.&lt;/p&gt;</description>
     </item>
     
   </channel>
