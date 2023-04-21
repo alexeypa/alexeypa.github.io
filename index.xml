@@ -5,10 +5,59 @@
     <description>Recent content on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 16 Apr 2023 17:39:02 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 21 Apr 2023 07:57:59 -0700</lastBuildDate>
     
         <atom:link href="https://blog.not-a-kernel-guy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Впечатления от запуска</title>
+      <link>https://blog.not-a-kernel-guy.com/2023/04/21/rud/</link>
+      <pubDate>Fri, 21 Apr 2023 07:57:59 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2023/04/21/rud/</guid>
+      <description>&lt;p&gt;Очень необычный получился &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2023/04/21/rud/&#34;&gt;запуск&lt;/a&gt;. Первую попытку я наблюдал из нового офиса
+Starship Software, куда мы недавно переехали. Это удобно, так как можно
+подключиься к произвольной камере, вывести на экран телеметрию и слушать
+переговоры операторов. Но при этом не хватает энергии толпы. Вторую попытку я
+смотрел уже через стеклянную стену MCCX (тот который Mission Control).
+Энергии толпы было хоть отбавляй, но без телеметрии как-то не уютно.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/-1wcilQ58hI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Обратный отсчет прошел на удивление гладко - это явно результат многочисленных
+заправочных тестов. Каждая попытка выявляет недочеты и по мере их исправления
+процесс, в который вовлечены сотни людей, начинает работать как часы.&lt;/p&gt;
+&lt;p&gt;В момент запуска казалось, что ракета не отрывается от стола очень долго. Это не
+было сюрпризом - запуск 33 двигателей растянут во времени для снижения нагрузок.
+Но все равно волнительно, особенно если учесть, что неуход с пускового стола -
+это один из худших сценариев при запуске.&lt;/p&gt;
+&lt;p&gt;Отказ двигателей и &amp;ldquo;обогащенный двигателем выхлоп&amp;rdquo; был заметен сразу. Особенно
+меня впечатлил вид с камеры четко показывающий погашенные двигатели. Метановый
+выхлоп очень чист:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2023/04/starship_engines.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2023/04/starship_engines.thumbnail.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Понравилась диаграмма слева показывающая состояние каждого двигателя. Небольшие
+расхождения между диаграммой и картинкой - хорошая иллюстрация того, что
+определить работает ли двигатель не так-то просто. Это вам не лампочка.&lt;/p&gt;
+&lt;p&gt;Позабавила реакция людей на аварию. Сначала зрители пытались впомнить минимальное
+достаточное количество двигателей для выхода на орбиту. Потом пошли кадры с самой
+ракеты, показывающие вращение, явно выходящее за допустимые рамки. Ну а потом
+пошли кульбиты и, наконец, самоликвидация. В этот момент толпа взорвалась
+восторженными криками. Сказалось нервное напряжение и неопределенность перед
+запуском. В момент разрушения ракеты это все ушло - тест закончился, со старта
+ракета ушла успешно, Max Q пройден. Неопределенность сменилась знанием, что мы
+достигли очередной вехи (на очень долгом пути) и получили новые данные, которые
+помогут нам двигаться дальше.&lt;/p&gt;
+&lt;p&gt;Обсуждения запуска в интернете, особенно версии причин аварии, читать забавно.
+Комментировать не буду, скажу только, что единственные люди которые что-то
+действительно знают - это люди, которые непосредственно занимаются расследованием.
+Все остальное - это слухи и выдуманные из пальца теории. Некоторые из них
+окажутся в конечном итоге верными просто в силу закона больших чисел, а не потому,
+что их авторы что-то знали.&lt;/p&gt;
+&lt;p&gt;Как-то так вот.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Первый орбитальный полет Starship</title>
@@ -1143,25 +1192,6 @@ IPv4 заголовка), которые покрываются контроль
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;https://www.youtube.com/embed/rv8kOzRZK8g&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>Очередное фиаско</title>
-      <link>https://blog.not-a-kernel-guy.com/2020/01/19/ifa/</link>
-      <pubDate>Sun, 19 Jan 2020 19:48:37 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2020/01/19/ifa/</guid>
-      <description>&lt;p&gt;Читаю обсуждение сегодняшнего &lt;a href=&#34;https://www.youtube.com/watch?v=mu5Ydz34oVc&#34;&gt;теста системы аварийного спасения Crew Dragon&lt;/a&gt;
-и чуть-ли не в голос ржу. &amp;ldquo;Ракета взорвалась&amp;rdquo;, &amp;ldquo;вторую ступень не спасли&amp;rdquo;, а
-&amp;ldquo;корабль уцелел&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2020/01/ifa_breaking_news.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Картинка - это стёб, если что. :-) А вот, остальные фразы - не очень.&lt;/p&gt;
-&lt;p&gt;Doug Jensen выложил шикарное видео, показывающее момент разделения и взрыв.
-Смотреть обязательно:&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/06svtpboEJs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;</description>
     </item>
     

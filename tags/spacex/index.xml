@@ -6,7 +6,56 @@
     <description>Recent content in SpaceX on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 16 Apr 2023 17:39:02 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/spacex/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Apr 2023 07:57:59 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/spacex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Впечатления от запуска</title>
+      <link>https://blog.not-a-kernel-guy.com/2023/04/21/rud/</link>
+      <pubDate>Fri, 21 Apr 2023 07:57:59 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2023/04/21/rud/</guid>
+      <description>&lt;p&gt;Очень необычный получился &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2023/04/21/rud/&#34;&gt;запуск&lt;/a&gt;. Первую попытку я наблюдал из нового офиса
+Starship Software, куда мы недавно переехали. Это удобно, так как можно
+подключиься к произвольной камере, вывести на экран телеметрию и слушать
+переговоры операторов. Но при этом не хватает энергии толпы. Вторую попытку я
+смотрел уже через стеклянную стену MCCX (тот который Mission Control).
+Энергии толпы было хоть отбавляй, но без телеметрии как-то не уютно.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/-1wcilQ58hI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Обратный отсчет прошел на удивление гладко - это явно результат многочисленных
+заправочных тестов. Каждая попытка выявляет недочеты и по мере их исправления
+процесс, в который вовлечены сотни людей, начинает работать как часы.&lt;/p&gt;
+&lt;p&gt;В момент запуска казалось, что ракета не отрывается от стола очень долго. Это не
+было сюрпризом - запуск 33 двигателей растянут во времени для снижения нагрузок.
+Но все равно волнительно, особенно если учесть, что неуход с пускового стола -
+это один из худших сценариев при запуске.&lt;/p&gt;
+&lt;p&gt;Отказ двигателей и &amp;ldquo;обогащенный двигателем выхлоп&amp;rdquo; был заметен сразу. Особенно
+меня впечатлил вид с камеры четко показывающий погашенные двигатели. Метановый
+выхлоп очень чист:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2023/04/starship_engines.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2023/04/starship_engines.thumbnail.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Понравилась диаграмма слева показывающая состояние каждого двигателя. Небольшие
+расхождения между диаграммой и картинкой - хорошая иллюстрация того, что
+определить работает ли двигатель не так-то просто. Это вам не лампочка.&lt;/p&gt;
+&lt;p&gt;Позабавила реакция людей на аварию. Сначала зрители пытались впомнить минимальное
+достаточное количество двигателей для выхода на орбиту. Потом пошли кадры с самой
+ракеты, показывающие вращение, явно выходящее за допустимые рамки. Ну а потом
+пошли кульбиты и, наконец, самоликвидация. В этот момент толпа взорвалась
+восторженными криками. Сказалось нервное напряжение и неопределенность перед
+запуском. В момент разрушения ракеты это все ушло - тест закончился, со старта
+ракета ушла успешно, Max Q пройден. Неопределенность сменилась знанием, что мы
+достигли очередной вехи (на очень долгом пути) и получили новые данные, которые
+помогут нам двигаться дальше.&lt;/p&gt;
+&lt;p&gt;Обсуждения запуска в интернете, особенно версии причин аварии, читать забавно.
+Комментировать не буду, скажу только, что единственные люди которые что-то
+действительно знают - это люди, которые непосредственно занимаются расследованием.
+Все остальное - это слухи и выдуманные из пальца теории. Некоторые из них
+окажутся в конечном итоге верными просто в силу закона больших чисел, а не потому,
+что их авторы что-то знали.&lt;/p&gt;
+&lt;p&gt;Как-то так вот.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Первый орбитальный полет Starship</title>
       <link>https://blog.not-a-kernel-guy.com/2023/04/16/starship-flight-test/</link>
@@ -614,20 +663,6 @@ Northrop Grumman приобрела у третьей стороны. Адапт
 &lt;p&gt;P.S. Вот интересно, положил Элон в багажник &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D0%B9%D0%BD%D0%B8%D0%BA_%D0%A0%D0%B0%D1%81%D1%81%D0%B5%D0%BB%D0%B0&#34;&gt;чайник&lt;/a&gt;
 , или нет?&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2018/02/fh_demo_tesla.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/fh_demo_tesla_small.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Ой</title>
-      <link>https://blog.not-a-kernel-guy.com/2018/01/31/oops/</link>
-      <pubDate>Wed, 31 Jan 2018 19:18:56 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2018/01/31/oops/</guid>
-      <description>&lt;p&gt;Мужики, у нас проблема. По плану, ступень собирались уронить в море. Ступень
-старой версии, баржа нужна для посадки центрального блока Heavy, на складе
-&lt;del&gt;все гуталином завалено&lt;/del&gt; кончилось место&amp;hellip; А тут такой облом - ступень
-отказалась взрываться и тонуть:&lt;/p&gt;
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;This rocket was meant to test very high retrothrust landing in water so it didn’t hurt the droneship, but amazingly it has survived. We will try to tow it back to shore. &lt;a href=&#34;https://t.co/hipmgdnq16&#34;&gt;pic.twitter.com/hipmgdnq16&lt;/a&gt;&lt;/p&gt;&amp;mdash; Elon Musk (@elonmusk) &lt;a href=&#34;https://twitter.com/elonmusk/status/958847818583584768?ref_src=twsrc%5Etfw&#34;&gt;January 31, 2018&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;</description>
     </item>
     
   </channel>

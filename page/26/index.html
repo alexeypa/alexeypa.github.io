@@ -131,6 +131,22 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2011/05/13/1052/">DV 2012: Epic fail</a>
+      </h1>
+      <span class="post-date">May 13, 2011 &middot; <a href="https://blog.not-a-kernel-guy.com/2011/05/13/1052/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/immigration">Immigration</a>
+      </span>
+      
+      А ведь еще сто лет назад говорили умные люди, что написать хороший генератор случайных чисел не такая простая задача, как кажется. :-) Хуже всего конечно тем, кто на радостях успел наделать непоправимых глупостей: напиться в драбадан, показать палец шефу, забить на зависший EBGC процесс в самый критический момент, продать квартиру… Ну а всем остальным приятно, что удастся сыграть два раза за один год.
+ IMPORTANT NOTICE REGARDING THE 2012 DIVERSITY LOTTERY PROGRAM We regret to inform you that, due to a computer programming problem, the results of the 2012 Diversity Lottery that were previously posted on this website have been voided.
+      <a href="https://blog.not-a-kernel-guy.com/2011/05/13/1052/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2011/05/04/1047/">Вы, конечно, будете смеяться, …</a>
       </h1>
       <span class="post-date">May 4, 2011 &middot; <a href="https://blog.not-a-kernel-guy.com/2011/05/04/1047/#disqus_thread">Comments</a>
@@ -277,27 +293,6 @@ MD5: 74676d09b0fdf5fc87182eb814b9d997 SHA1: 8bd1aa1f3db39ac5fab1ede4bbb4b43a9a91
   — Нет, — говорит Петров.
   — Давайте не будем торопиться с ответом, Петров, — говорит Сидоряхин. — Задача поставлена, и ее нужно решить. Вы же профессионал, Петров. Не давайте нам повода считать, что вы не профессионал.
       <a href="https://blog.not-a-kernel-guy.com/2011/03/29/1004/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2011/03/21/999/">Про то, как отцепиться и ничего не порушить</a>
-      </h1>
-      <span class="post-date">Mar 21, 2011 &middot; <a href="https://blog.not-a-kernel-guy.com/2011/03/21/999/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
-      </span>
-      
-      <p>Главная проблема с хуками состоит не в том, как зацепиться, а в том, как отцепиться и ничего не порушить. К примеру, приходит недавно письмо:</p>
-<blockquote>
-<p>We recently saw an AV in stress where our vectored exception handler was called after our dll was unloaded.  After investigating the issue, it seems like removing the vectored exception handler does not wait for all users of that exception handler to finish (and does not even remove the exception handler from list for future users if there is one current user).  So, there seems to be no way to synchronize removing the exception handler and the dll unloading – any synchronization within the exception handler is useless since the exception thread may be about to call the exception handler.</p>
-</blockquote>
-<blockquote>
-<p>Недавно мы наблюдали падение приложения во время стрессового тестирования, вызванное тем, что векторный обработчик исключения был вызван после того, как наша DLL была выгружена из памяти. В процессе расследования выяснилось, что, похоже, снятие векторного обработчика исключения не ожидает, пока все пользователи этого обработчика закончат работу (и даже не удаляет обработчик для будущих пользователей, если обработчик в данный момент используется). Так, похоже, что не существует способа синхронизировать снятие векторного обработчика и выгрузку DLL – любая синхронизация в пределах обработчика исключения бесполезна, поскольку поток, в котором произошло исключение, может только готовится вызвать обработчик исключения.</p>
-</blockquote>
-      <a href="https://blog.not-a-kernel-guy.com/2011/03/21/999/">Read On &rarr;</a>
       
     </div>
     
