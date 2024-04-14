@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -147,9 +137,9 @@
 <p>Применяем <a href="https://gist.github.com/alexeypa/578d7263145d46018db8e9a290b92499">патч</a>, который в добавляет недостающие (из-за отсутствующих заголовков) объявления и правит кое-где код.</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">pushd C:\\temp
-patch -Np1 -d D &lt; dparser-1.15.diff
-</code></pre></div><p>Кроме правки кода, патч добавляет в несколько новых файлов:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>pushd C:\\temp
+</span></span><span style="display:flex;"><span>patch -Np1 -d D &lt; dparser-1.15.diff
+</span></span></code></pre></div><p>Кроме правки кода, патч добавляет в несколько новых файлов:</p>
 <pre><code>* &quot;Jamfile.v2&quot; и &quot;Jamroot&quot; – скрипты для сборки DParser с помошью Boost.Build v2;
 
 * &quot;python\setup_win32.py&quot; – Windows версия скрипта для сборки DParser for Python;
@@ -159,15 +149,15 @@ patch -Np1 -d D &lt; dparser-1.15.diff
 <ol start="3">
 <li>Компилируем DParser:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">cd D
-bjam free
-</code></pre></div><p>Для amd64:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">cd D
-bjam free architecture=x86 address-model=64
-</code></pre></div><p>Для Itanium:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">cd D
-bjam free architecture=ia64
-</code></pre></div><p>При этом собранные библиотеки будут скопированы в “C:\temp\D\dist”.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>cd D
+</span></span><span style="display:flex;"><span>bjam free
+</span></span></code></pre></div><p>Для amd64:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>cd D
+</span></span><span style="display:flex;"><span>bjam free architecture=x86 address-model=64
+</span></span></code></pre></div><p>Для Itanium:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>cd D
+</span></span><span style="display:flex;"><span>bjam free architecture=ia64
+</span></span></code></pre></div><p>При этом собранные библиотеки будут скопированы в “C:\temp\D\dist”.</p>
 <ol start="4">
 <li>
 <p>Запускаем “Visual Studio 2005 Command Prompt” (либо “Visual Studio 2005 x64 Cross Tools Command Prompt”, либо “Visual Studio 2005 Itanium Cross Tools Command Prompt”) под учётной записью администратора (под любым пользователем, имеющим доступ на запись в каталог, где установлен Python).</p>
@@ -176,22 +166,22 @@ bjam free architecture=ia64
 <p>Если вы компилируете 32-х битную версию, то дополнительно следует поправить проверку на совместимость версий компилятора в “C:\Python25\Lib\distutils\msvccompiler.py”. Для этого нужно применить ещё один <a href="https://gist.github.com/alexeypa/058d81c20b4dbb84b98f263d04c17c2e">патч</a>:</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">pushd C:\\Python25\\Lib\\distutils
-patch msvccompiler.py msvccompiler.py.diff
-popd
-</code></pre></div><p>Этот шаг не обязателен, если вы собираете версию для amd64 или ia64.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>pushd C:\\Python25\\Lib\\distutils
+</span></span><span style="display:flex;"><span>patch msvccompiler.py msvccompiler.py.diff
+</span></span><span style="display:flex;"><span>popd
+</span></span></code></pre></div><p>Этот шаг не обязателен, если вы собираете версию для amd64 или ia64.</p>
 <ol start="6">
 <li>Cобираем и устанавливаем DParser for Python:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">cd python
-setup_win32.cmd
-</code></pre></div><ol start="7">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>cd python
+</span></span><span style="display:flex;"><span>setup_win32.cmd
+</span></span></code></pre></div><ol start="7">
 <li>И наконец, проверяем что у нас получилось:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">python
-import dparser
-print dparser
-</code></pre></div><p><img src="/2007/08/dparser_test.png" alt="DParser has been installed successfully."></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>python
+</span></span><span style="display:flex;"><span>import dparser
+</span></span><span style="display:flex;"><span>print dparser
+</span></span></code></pre></div><p><img src="/2007/08/dparser_test.png" alt="DParser has been installed successfully."></p>
 <p>Готово.</p>
   </div>
   <div id="disqus_thread"></div>

@@ -6,16 +6,14 @@
     <description>Recent content in WTF on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 04 May 2012 10:50:56 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/wtf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 May 2012 10:50:56 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/wtf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Битва титанов: Visual Studio 2010 против Sophos Antivirus</title>
       <link>https://blog.not-a-kernel-guy.com/2012/05/04/1317/</link>
       <pubDate>Fri, 04 May 2012 10:50:56 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2012/05/04/1317/</guid>
-      <description>&lt;p&gt;По рассылке пришло описание бага ну просто феерической кавайности: &lt;a href=&#34;http://connect.microsoft.com/VisualStudio/feedback/details/649139/vs2010-does-complete-rebuild-based-on-completely-unrelated-file&#34;&gt;http://connect.microsoft.com/VisualStudio/feedback/details/649139/vs2010-does-complete-rebuild-based-on-completely-unrelated-file&lt;/a&gt;. Если вкраце, то присутсвие Sophos Antivirus на машине, заставляет Visual Studio делать полный билд вместо инкрементального. Почему? Потому что MSBuild полагает, что файл “%ProgramData%\Sophos\Sophos Anti-Virus\config\Config.bops” (который, понятно, ни к MSBuild, ни к собираемому проекту никак не относится) является вводом каждого target’а в проекте. По какой-то причине, этот файл обновляется очень часто, что и вызывает полную пересборку всего проекта. WTF?&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2012/05/house_wtf.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2012/05/house_wtf.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;По рассылке пришло описание бага ну просто феерической кавайности: &lt;a href=&#34;http://connect.microsoft.com/VisualStudio/feedback/details/649139/vs2010-does-complete-rebuild-based-on-completely-unrelated-file&#34;&gt;http://connect.microsoft.com/VisualStudio/feedback/details/649139/vs2010-does-complete-rebuild-based-on-completely-unrelated-file&lt;/a&gt;. Если вкраце, то присутсвие Sophos Antivirus на машине, заставляет Visual Studio делать полный билд вместо инкрементального. Почему? Потому что MSBuild полагает, что файл “%ProgramData%\Sophos\Sophos Anti-Virus\config\Config.bops” (который, понятно, ни к MSBuild, ни к собираемому проекту никак не относится) является вводом каждого target’а в проекте. По какой-то причине, этот файл обновляется очень часто, что и вызывает полную пересборку всего проекта. WTF?&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2012/05/house_wtf.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2012/05/house_wtf.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

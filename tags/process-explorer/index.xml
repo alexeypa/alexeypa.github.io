@@ -6,28 +6,21 @@
     <description>Recent content in Process Explorer on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 16 Aug 2012 13:01:39 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/process-explorer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Aug 2012 13:01:39 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/process-explorer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ошибка в книге Windows Internals</title>
       <link>https://blog.not-a-kernel-guy.com/2012/08/16/1405/</link>
       <pubDate>Thu, 16 Aug 2012 13:01:39 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2012/08/16/1405/</guid>
-      <description>В новой редакции Windows Internals обнаружился старый-знакомый баг. Там приводится пример стека 32-х битной нити, выполняющейся под Wow64:
-
-Иллюстрация сопровождается комментарием:
- An example of a Wow64 thread inside Microsoft Office Word 2007 is shown in Figure 5-13. The highlighted stack frame and all stack frames below it are the 32-bit stack frames from the 32-bit stack. The stack frames above the highlighted frame are on the 64-bit stack.</description>
+      <description>В новой редакции Windows Internals обнаружился старый-знакомый баг. Там приводится пример стека 32-х битной нити, выполняющейся под Wow64:&#xA;Иллюстрация сопровождается комментарием:&#xA;An example of a Wow64 thread inside Microsoft Office Word 2007 is shown in Figure 5-13. The highlighted stack frame and all stack frames below it are the 32-bit stack frames from the 32-bit stack. The stack frames above the highlighted frame are on the 64-bit stack.&#xA;Что не совсем верно.</description>
     </item>
-    
     <item>
       <title>Как Process Explorer подменяет Task Manager</title>
       <link>https://blog.not-a-kernel-guy.com/2008/03/13/297/</link>
       <pubDate>Thu, 13 Mar 2008 21:41:33 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/03/13/297/</guid>
-      <description>&lt;p&gt;А знаете, как &lt;a href=&#34;http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx&#34;&gt;Process Explorer&lt;/a&gt; подменяет собой стандартный Task Manager?&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2008/03/procexp_1.png&#34; alt=&#34;Process Explorer: Replace Task Manager.&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;А знаете, как &lt;a href=&#34;http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx&#34;&gt;Process Explorer&lt;/a&gt; подменяет собой стандартный Task Manager?&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2008/03/procexp_1.png&#34; alt=&#34;Process Explorer: Replace Task Manager.&#34;&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>крик души on Алексей Пахунов</title>
+    <title>Крик Души on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D1%80%D0%B8%D0%BA-%D0%B4%D1%83%D1%88%D0%B8/</link>
-    <description>Recent content in крик души on Алексей Пахунов</description>
+    <description>Recent content in Крик Души on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 20 May 2016 21:54:51 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BA%D1%80%D0%B8%D0%BA-%D0%B4%D1%83%D1%88%D0%B8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 May 2016 21:54:51 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BA%D1%80%D0%B8%D0%BA-%D0%B4%D1%83%D1%88%D0%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Про откаты</title>
       <link>https://blog.not-a-kernel-guy.com/2016/05/20/1826/</link>
       <pubDate>Fri, 20 May 2016 21:54:51 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2016/05/20/1826/</guid>
       <description>&lt;p&gt;Я вот заметил интересную особенность поведения людей. Прямо психологические уши торчат.  Сложно заставить человека откатить коммит с ошибкой. Он правдами и неправдами будет держаться, но код свой в обиду не даст. Ну и что, что там ошибка? Ну и что, что теперь билд не собирается, тесты все в красном и десятки человек матеряться вполголоса. “Я вот сейчас бысто поправлю”. “I don’t want to do negative work”. “Сейчас тесты прогоню и закоммичу”.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

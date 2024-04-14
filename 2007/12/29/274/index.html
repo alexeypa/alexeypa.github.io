@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -124,37 +114,37 @@
 </ol>
 <p>К сожалению !dreg не работает в ядерном отладчике, вернее работает, но показывает реестр той машины где запущен kd.exe, а не целевой, так бы этого не хотелось. Иначе бы счастье было бы полным.</p>
 <p>Итак, начнем:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; .load ntsdexts
-</code></pre></div><p>!dreg может показывать все подключи данного ключа:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; !dreg hklm\software\microsoft\windows search
-Subkey: Applications
-Subkey: CatalogNames
-Subkey: ContentIndexCommon
-Subkey: CrawlScopeManager
-Subkey: Databases
-Subkey: DataDirectory
-Subkey: Gather
-Subkey: Gathering Manager
-Subkey: Indexer
-Subkey: InstallDirectory
-Subkey: PerformanceCounters
-Subkey: ProtocolHandlers
-Subkey: SearchService
-Subkey: UsnNotifier
-</code></pre></div><p>Также можно показать все значения данного ключа:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; !dreg hklm\software\microsoft\windows search\protocolhandlers!*
-Value: &#34;Mapi&#34; - REG_SZ: &#34;Search.Mapi2Handler.1&#34;
-------------------------------------------------------------------------
-Value: &#34;File&#34; - REG_SZ: &#34;Search.FileHandler.1&#34;
-------------------------------------------------------------------------
-Value: &#34;Csc&#34; - REG_SZ: &#34;Search.CscHandler.1&#34;
-------------------------------------------------------------------------
-Value: &#34;OneIndex&#34; - REG_SZ: &#34;Search.OneIndexHandler.1&#34;
-------------------------------------------------------------------------
-</code></pre></div><p>А можно посмотреть конкретное значение конкретного ключа:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; !dreg hklm\software\microsoft\windows search\protocolhandlers!Mapi
-REG_SZ: &#34;Search.Mapi2Handler.1&#34;
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000&gt; .load ntsdexts
+</span></span></code></pre></div><p>!dreg может показывать все подключи данного ключа:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000&gt; !dreg hklm\software\microsoft\windows search
+</span></span><span style="display:flex;"><span>Subkey: Applications
+</span></span><span style="display:flex;"><span>Subkey: CatalogNames
+</span></span><span style="display:flex;"><span>Subkey: ContentIndexCommon
+</span></span><span style="display:flex;"><span>Subkey: CrawlScopeManager
+</span></span><span style="display:flex;"><span>Subkey: Databases
+</span></span><span style="display:flex;"><span>Subkey: DataDirectory
+</span></span><span style="display:flex;"><span>Subkey: Gather
+</span></span><span style="display:flex;"><span>Subkey: Gathering Manager
+</span></span><span style="display:flex;"><span>Subkey: Indexer
+</span></span><span style="display:flex;"><span>Subkey: InstallDirectory
+</span></span><span style="display:flex;"><span>Subkey: PerformanceCounters
+</span></span><span style="display:flex;"><span>Subkey: ProtocolHandlers
+</span></span><span style="display:flex;"><span>Subkey: SearchService
+</span></span><span style="display:flex;"><span>Subkey: UsnNotifier
+</span></span></code></pre></div><p>Также можно показать все значения данного ключа:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000&gt; !dreg hklm\software\microsoft\windows search\protocolhandlers!*
+</span></span><span style="display:flex;"><span>Value: &#34;Mapi&#34; - REG_SZ: &#34;Search.Mapi2Handler.1&#34;
+</span></span><span style="display:flex;"><span>------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span>Value: &#34;File&#34; - REG_SZ: &#34;Search.FileHandler.1&#34;
+</span></span><span style="display:flex;"><span>------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span>Value: &#34;Csc&#34; - REG_SZ: &#34;Search.CscHandler.1&#34;
+</span></span><span style="display:flex;"><span>------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span>Value: &#34;OneIndex&#34; - REG_SZ: &#34;Search.OneIndexHandler.1&#34;
+</span></span><span style="display:flex;"><span>------------------------------------------------------------------------
+</span></span></code></pre></div><p>А можно посмотреть конкретное значение конкретного ключа:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000&gt; !dreg hklm\software\microsoft\windows search\protocolhandlers!Mapi
+</span></span><span style="display:flex;"><span>REG_SZ: &#34;Search.Mapi2Handler.1&#34;
+</span></span></code></pre></div>
   </div>
   <div id="disqus_thread"></div>
 </div>

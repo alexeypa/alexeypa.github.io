@@ -6,33 +6,28 @@
     <description>Recent content in Спам on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 12 Oct 2008 16:07:34 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%81%D0%BF%D0%B0%D0%BC/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Oct 2008 16:07:34 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%81%D0%BF%D0%B0%D0%BC/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Спам в комментариях</title>
       <link>https://blog.not-a-kernel-guy.com/2008/10/12/353/</link>
       <pubDate>Sun, 12 Oct 2008 16:07:34 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/10/12/353/</guid>
       <description>Количество спама в комментариях выходит за всякие разумные рамки. К счастью 99% процентов спама успешно отлавливается спам фильтрами, так что совсем отключать комментирование в блоге пока не хочется. Но частенько в спам попадают и те комментарии, которые, строго говоря, спамом не являются. Именно для авторов этих комментариев и предназначена эта страничка (ссылка удалена).</description>
     </item>
-    
     <item>
       <title>Бесконечная война</title>
       <link>https://blog.not-a-kernel-guy.com/2008/02/19/291/</link>
       <pubDate>Tue, 19 Feb 2008 23:07:02 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/02/19/291/</guid>
       <description>Спаммеры и любители лёгких денег в Интернете повадились оставлять комментарии-пустышки с единственной ссылкой на какой-нибудь левый сайт. Цель этого мероприятия, как я понимаю, поднять PR рейтинг этого сайта. Причем, судя по осмысленности текста, оставляют их явно живые люди, а не боты. Или боты нынче тест Тюринга научились проходить. Так или иначе, испортить день спаммеру - наша священная обязанность. Теперь в форме комментария непустое поле «Website» будет авторизироваться как OpenID URL.</description>
     </item>
-    
     <item>
       <title>Наблюдение</title>
       <link>https://blog.not-a-kernel-guy.com/2007/12/09/269/</link>
       <pubDate>Sun, 09 Dec 2007 21:17:02 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/12/09/269/</guid>
       <description>Wordpress&amp;rsquo;овский спам-фильтр (Askimet Spam) периодически пропускает спам в комментариях. А GMail&amp;rsquo;овский спам-фильтр успешно съедает уведомления о таких комментариях. В результате толку от таких уведомлений никакого. Пришлось написать соответствующий фильтр в GMail.</description>
     </item>
-    
   </channel>
 </rss>

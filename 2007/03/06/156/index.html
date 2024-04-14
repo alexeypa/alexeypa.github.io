@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -115,12 +105,12 @@
     <p>Только что потратил кучу времени на разборки с <a href="http://msdn2.microsoft.com/en-us/library/wz223b1z.aspx">/LARGEADDRESSAWARE</a>. Этот ключ используется для указания сборщику, что данный модуль (.exe или .dll) способен корректно обрабатывать адреса больше 2GB. Модули, помеченные подобным образом, могут быть загружены выше 2GB при условии, что система поддерживает увеличенное пользовательское адресное пространство. На данный момент это либо серверные версии Windows, сконфигурированные <a href="http://www.microsoft.com/whdc/system/platform/server/PAE/PAEmem.mspx">ключом /3GB в boot.ini</a>, либо 64-х битные версии системы.</p>
 <p>Про причины того, почему расширенное адресное пространство не включается для всех программ, хорошо написал Raymond Chen: <a href="http://blogs.msdn.com/oldnewthing/archive/2004/08/12/213468.aspx">Myth: The /3GB switch expands the user-mode address space of all programs</a>. Дело как всегда в том, что слишком много приложений не будут работать в такой конфигурации -  начинает буксовать арифметика указателей. Сегодняшний баг занёс ещё одну операцию в “черный” список.</p>
 <p>Итак, какое значение будет присвоено переменной wide_ptr после инициализации (код компилируется для x86)?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">PVOID ptr <span style="color:#f92672">=</span> (PVOID)<span style="color:#ae81ff">0x87654321</span>;
-ULONGLONG wide_ptr <span style="color:#f92672">=</span> (ULONGLONG)ptr;
-</code></pre></div><p>Ответ - 0xffffffff87654321! Очевидно, что проблема в расширении знака, однако это совсем не очевидно из данного отрывка кода. Чтобы результат получился верным, код нужно переписать вот так:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">PVOID ptr <span style="color:#f92672">=</span> (PVOID)<span style="color:#ae81ff">0x87654321</span>;
-ULONGLONG wide_ptr <span style="color:#f92672">=</span> (ULONGLONG)(ULONG_PTR)ptr;
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>PVOID ptr <span style="color:#f92672">=</span> (PVOID)<span style="color:#ae81ff">0x87654321</span>;
+</span></span><span style="display:flex;"><span>ULONGLONG wide_ptr <span style="color:#f92672">=</span> (ULONGLONG)ptr;
+</span></span></code></pre></div><p>Ответ - 0xffffffff87654321! Очевидно, что проблема в расширении знака, однако это совсем не очевидно из данного отрывка кода. Чтобы результат получился верным, код нужно переписать вот так:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>PVOID ptr <span style="color:#f92672">=</span> (PVOID)<span style="color:#ae81ff">0x87654321</span>;
+</span></span><span style="display:flex;"><span>ULONGLONG wide_ptr <span style="color:#f92672">=</span> (ULONGLONG)(ULONG_PTR)ptr;
+</span></span></code></pre></div>
   </div>
   <div id="disqus_thread"></div>
 </div>

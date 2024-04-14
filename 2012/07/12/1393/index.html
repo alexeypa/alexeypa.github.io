@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -114,8 +104,8 @@
     </span>
     <p>Если вам вдруг зачем-то понадобилось проанализировать структуру минидампа не загружая его в отладчик, начните вот с этой статьи: <a href="http://moyix.blogspot.com/2008/05/parsing-windows-minidumps.html">http://moyix.blogspot.com/2008/05/parsing-windows-minidumps.html</a>. Автор написал <a href="http://kurtz.cs.wesleyan.edu/~bdolangavitt/memory/minidumps/minidump.py">скрипт на Python</a> (на основе <a href="http://construct.wikispaces.com">Construct</a>) для анализа дампов, который распознает все потоки, описанные на MSDN (а также недокументированный поток, хранящий информацию об описателях окон).</p>
 <p>PS. Скрипт открывает дамп в текстовом режиме, что очевидно не будет работать на Windows. Чтобы этого не случилось, последняя строчка скипта должна выглядеть вот так:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print MINIDUMP_HEADER<span style="color:#f92672">.</span>parse_stream(open(sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>], <span style="color:#e6db74">&#34;rb&#34;</span>))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print MINIDUMP_HEADER<span style="color:#f92672">.</span>parse_stream(open(sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>], <span style="color:#e6db74">&#34;rb&#34;</span>))
+</span></span></code></pre></div>
   </div>
   <div id="disqus_thread"></div>
 </div>

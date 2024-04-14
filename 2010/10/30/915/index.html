@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -121,14 +111,14 @@
 <p><a href="http://msdn.microsoft.com/en-us/library/7y32zxwh(v=VS.100).aspx">!MESSAGE</a> пригодится для дампа макросов в лог. Например:</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">!MESSAGE BUILD_PASS = $(BUILD_PASS)
-</code></pre></div><p>Выведет в лог номер прохода (PASS0, PASS1 или PASS2), в случае, если NMAKE, был запущен через BUILD в билд-окружении WDK.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>!MESSAGE BUILD_PASS = $(BUILD_PASS)
+</span></span></code></pre></div><p>Выведет в лог номер прохода (PASS0, PASS1 или PASS2), в случае, если NMAKE, был запущен через BUILD в билд-окружении WDK.</p>
 <ol start="3">
 <li>NMAKE умеет вызывать внешние команды на этапе препроцессора. Этим можно воспользоваться, чтобы, например, посмотреть параметры командной строки, которые BUILD передает в NMAKE (и массу других вещей, само собой). Достаточно добавить в SOURCES:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">!if [cmd /c pause]
-!endif
-</code></pre></div><p>Дойдя до той строки, NMAKE будет ждать ввода пользователя, позволяя тем самым внимательно посмотреть на то, что происходит в данный момент:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>!if [cmd /c pause]
+</span></span><span style="display:flex;"><span>!endif
+</span></span></code></pre></div><p>Дойдя до той строки, NMAKE будет ждать ввода пользователя, позволяя тем самым внимательно посмотреть на то, что происходит в данный момент:</p>
 <p><a href="/2010/10/build_pause.png"><img src="/2010/10/build_pause.png" alt="NMAKE остановлен в момент разбора SOURCES."></a></p>
 
   </div>

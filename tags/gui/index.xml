@@ -6,15 +6,14 @@
     <description>Recent content in GUI on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sat, 17 Feb 2007 14:26:32 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/gui/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Feb 2007 14:26:32 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/gui/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GUI имеет значение</title>
       <link>https://blog.not-a-kernel-guy.com/2007/02/17/150/</link>
       <pubDate>Sat, 17 Feb 2007 14:26:32 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/02/17/150/</guid>
       <description>&lt;p&gt;На этой неделе попробовал поработать в &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; – дистрибутиве Linux, который отпочковался от Debian. До этого на «машине для опытов» стояла &lt;a href=&#34;http://fedora.redhat.com/&#34;&gt;Fedora Core&lt;/a&gt; (в девичестве - &lt;a href=&#34;http://en.wikipedia.org/wiki/Red_Hat_Linux&#34;&gt;Red Hat Linux&lt;/a&gt;). Надо сказать, что впечатления от этого эксперимента довольно забавные. Фактически, Ubuntu и Fedora Core – это одна и та же система. Они используют практически идентичный набор программ - с точки зрения неискушенного пользователя, конечно. Понятно, что на Fedora Core можно поставить KDE вместо Gnome, да и менеджер пакетов у них разный. Всё равно это практически одна и та же система.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

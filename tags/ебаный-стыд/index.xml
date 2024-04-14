@@ -1,35 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ебаный стыд on Алексей Пахунов</title>
+    <title>Ебаный Стыд on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/%D0%B5%D0%B1%D0%B0%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D1%8B%D0%B4/</link>
-    <description>Recent content in Ебаный стыд on Алексей Пахунов</description>
+    <description>Recent content in Ебаный Стыд on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 07 Mar 2019 21:35:43 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B5%D0%B1%D0%B0%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D1%8B%D0%B4/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Mar 2019 21:35:43 -0800</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B5%D0%B1%D0%B0%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D1%8B%D0%B4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Скрытые угрозы</title>
       <link>https://blog.not-a-kernel-guy.com/2019/03/07/hidden-menace/</link>
       <pubDate>Thu, 07 Mar 2019 21:35:43 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2019/03/07/hidden-menace/</guid>
-      <description>&lt;p&gt;Ой, други мои! Ржу, не могу остановится. Текут слезы и болят бока. Набрел на
-шедевр махровой пропаганды, или как говорят в теперешней России, - вторник.
-Смотрите сами, а главное, - до самого конца:&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/2_WHa_92z-s&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;В 1984 Уинстон Смит описывает двухминутки ненависти как действо, в котором
-невозможно было не принять участие. После 30 секунд любой человек превращался
-в беснующегося фанатика. Тем не менее, эта ярость для главного героя книги
-оставалась абстрактной, ненаправленной эмоцией.&lt;/p&gt;
-&lt;p&gt;Не реалистично.&lt;/p&gt;
-&lt;p&gt;Знаете как выглядят настоящие двухминутки ненависти? Это когда посмотрят такой
-вот продукт и говорят &amp;ldquo;пропаганда и вранье, конечно, но вот одну вещь они
-правильно заметили&amp;hellip;&amp;rdquo;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ой, други мои! Ржу, не могу остановится. Текут слезы и болят бока. Набрел на&#xA;шедевр махровой пропаганды, или как говорят в теперешней России, - вторник.&#xA;Смотрите сами, а главное, - до самого конца:&lt;/p&gt;&#xA;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;  &lt;iframe src=&#34;https://www.youtube.com/embed/2_WHa_92z-s&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;В 1984 Уинстон Смит описывает двухминутки ненависти как действо, в котором&#xA;невозможно было не принять участие. После 30 секунд любой человек превращался&#xA;в беснующегося фанатика. Тем не менее, эта ярость для главного героя книги&#xA;оставалась абстрактной, ненаправленной эмоцией.&lt;/p&gt;&#xA;&lt;p&gt;Не реалистично.&lt;/p&gt;&#xA;&lt;p&gt;Знаете как выглядят настоящие двухминутки ненависти? Это когда посмотрят такой&#xA;вот продукт и говорят &amp;ldquo;пропаганда и вранье, конечно, но вот одну вещь они&#xA;правильно заметили&amp;hellip;&amp;rdquo;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,95 +6,70 @@
     <description>Recent content in PowerShell on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 24 May 2012 15:00:30 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 May 2012 15:00:30 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Как перевести SDDL в двоичный дескриптор безопасности</title>
       <link>https://blog.not-a-kernel-guy.com/2012/05/24/1338/</link>
       <pubDate>Thu, 24 May 2012 15:00:30 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2012/05/24/1338/</guid>
-      <description>&lt;p&gt;Некторые ключи реестра хранят дескрипторы безопасности (security descriptor) в двоичной форме (REG_BINARY). Пример - значение &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/windows/desktop/ms688679(v=vs.85).aspx&#34;&gt;AccessPermission&lt;/a&gt;, которое устанавливает дескриптор безопасности COM сервера. Редактировать такой дескриптор - одно удовольствие. :-)&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2012/05/editing_reg_binary.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2012/05/editing_reg_binary.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Некторые ключи реестра хранят дескрипторы безопасности (security descriptor) в двоичной форме (REG_BINARY). Пример - значение &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/windows/desktop/ms688679(v=vs.85).aspx&#34;&gt;AccessPermission&lt;/a&gt;, которое устанавливает дескриптор безопасности COM сервера. Редактировать такой дескриптор - одно удовольствие. :-)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2012/05/editing_reg_binary.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2012/05/editing_reg_binary.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>.NET обертка для IShellLink (инсталляция)</title>
       <link>https://blog.not-a-kernel-guy.com/2006/10/25/90/</link>
       <pubDate>Wed, 25 Oct 2006 15:59:38 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/10/25/90/</guid>
-      <description>Как и обещал, выкладываю ссылку на инсталляцию:
-  ShellLib (x86) - версия для 32-битного Windows XP/2003;
-  ShellLib (x64) - версия для 64-битного Windows XP/2003.
-  Инсталляция не содержит практически никакого пользовательского интерфейса - зачем он там нужен? Деинсталляция – через Add or Remove Programs. Инсталляция создавалась, как не трудно догадаться, с помощью WiX. :-) Исходный код инсталляционного скрипта можно скачать вместе с обновленными исходниками.</description>
+      <description>Как и обещал, выкладываю ссылку на инсталляцию:&#xA;ShellLib (x86) - версия для 32-битного Windows XP/2003;&#xA;ShellLib (x64) - версия для 64-битного Windows XP/2003.&#xA;Инсталляция не содержит практически никакого пользовательского интерфейса - зачем он там нужен? Деинсталляция – через Add or Remove Programs. Инсталляция создавалась, как не трудно догадаться, с помощью WiX. :-) Исходный код инсталляционного скрипта можно скачать вместе с обновленными исходниками.</description>
     </item>
-    
     <item>
       <title>История команд в PowerShell</title>
       <link>https://blog.not-a-kernel-guy.com/2006/10/23/88/</link>
       <pubDate>Mon, 23 Oct 2006 10:15:36 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/10/23/88/</guid>
-      <description>Хозяйке на заметку: глубина истории команд в PowerShell по умолчанию - 64 команды. С помощью $MaximumHistoryCount можно увеличить лимит до максимума в 32767 команд:
-$MaximumHistoryCount = 32767 </description>
+      <description>Хозяйке на заметку: глубина истории команд в PowerShell по умолчанию - 64 команды. С помощью $MaximumHistoryCount можно увеличить лимит до максимума в 32767 команд:&#xA;$MaximumHistoryCount = 32767 </description>
     </item>
-    
     <item>
       <title>.NET обертка для IShellLink</title>
       <link>https://blog.not-a-kernel-guy.com/2006/10/22/87/</link>
       <pubDate>Sun, 22 Oct 2006 22:30:31 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/10/22/87/</guid>
-      <description>&lt;p&gt;Наконец-то дописал .NET обертку для IShellLink (см. серию постов начиная с &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/10/04/76/&#34;&gt;Shortcuts, shell and COM apartments.&lt;/a&gt;). Теперь можно создавать и редактировать ярлыки прямо из PowerShell. :-)&lt;/p&gt;
-&lt;p&gt;Вот &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/10/ShellLink_src.zip&#34;&gt;ссылка на исходный код проекта&lt;/a&gt;. Немного позже, если дойдут руки, выложу ссылку на готовую инсталляцию.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Наконец-то дописал .NET обертку для IShellLink (см. серию постов начиная с &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/10/04/76/&#34;&gt;Shortcuts, shell and COM apartments.&lt;/a&gt;). Теперь можно создавать и редактировать ярлыки прямо из PowerShell. :-)&lt;/p&gt;&#xA;&lt;p&gt;Вот &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/10/ShellLink_src.zip&#34;&gt;ссылка на исходный код проекта&lt;/a&gt;. Немного позже, если дойдут руки, выложу ссылку на готовую инсталляцию.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Вышла Windows PowerShell RC2. </title>
       <link>https://blog.not-a-kernel-guy.com/2006/09/26/70/</link>
       <pubDate>Tue, 26 Sep 2006 18:42:55 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/09/26/70/</guid>
-      <description>http://blogs.msdn.com/powershell/archive/2006/09/26/Windows_PowerShell_RC2_Now_Available.aspx
-Утверждается, что добавилась возможность менять свойства WMI объектов через вызовы методов. Получается, что раньше они были доступны только для чтения. Гм. Надо бы поиграться.</description>
+      <description>http://blogs.msdn.com/powershell/archive/2006/09/26/Windows_PowerShell_RC2_Now_Available.aspx&#xA;Утверждается, что добавилась возможность менять свойства WMI объектов через вызовы методов. Получается, что раньше они были доступны только для чтения. Гм. Надо бы поиграться.</description>
     </item>
-    
     <item>
       <title>Как найти нужный процесс?</title>
       <link>https://blog.not-a-kernel-guy.com/2006/09/23/68/</link>
       <pubDate>Sat, 23 Sep 2006 22:52:58 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/09/23/68/</guid>
-      <description>Последнее время я только тем и занимался, что копался в недрах системных служб в отладчике. Половина из них использует &amp;ldquo;svchost.exe&amp;rdquo; в качестве исполняемого файла, что довольно неудобно, когда пытаешься подсоединиться к нужному процессу. Никогда не знаешь какой именно из многочисленных &amp;ldquo;svchost.exe&amp;rdquo; нужно выбрать.
-В Vista эта проблема решается наличием дополнительной страницы &amp;ldquo;Services&amp;rdquo; в Task Manager. Там в контекстном меню службы есть пункт &amp;ldquo;Go to the process&amp;rdquo;, который подсвечивает искомый процесс.</description>
+      <description>Последнее время я только тем и занимался, что копался в недрах системных служб в отладчике. Половина из них использует &amp;ldquo;svchost.exe&amp;rdquo; в качестве исполняемого файла, что довольно неудобно, когда пытаешься подсоединиться к нужному процессу. Никогда не знаешь какой именно из многочисленных &amp;ldquo;svchost.exe&amp;rdquo; нужно выбрать.&#xA;В Vista эта проблема решается наличием дополнительной страницы &amp;ldquo;Services&amp;rdquo; в Task Manager. Там в контекстном меню службы есть пункт &amp;ldquo;Go to the process&amp;rdquo;, который подсвечивает искомый процесс.</description>
     </item>
-    
     <item>
       <title>Раз пошла такая пьянка...</title>
       <link>https://blog.not-a-kernel-guy.com/2006/09/11/58/</link>
       <pubDate>Mon, 11 Sep 2006 22:21:44 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/09/11/58/</guid>
       <description>&amp;hellip; то грех не добавить блог команды, которая, собственно, и написала Windows PowerShell.</description>
     </item>
-    
     <item>
       <title>Пара интересных блогов, посвящённых PowerShell</title>
       <link>https://blog.not-a-kernel-guy.com/2006/09/11/57/</link>
       <pubDate>Mon, 11 Sep 2006 22:11:16 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/09/11/57/</guid>
       <description>Оказывается вокруг PowerShell существует целое сообщество почитателей. Вот пара интересных англоязычных блогов, целиком посвящённых PowerShell: Mow PowerShelled и PowerShell For Fun.</description>
     </item>
-    
     <item>
       <title>Windows PowerShell</title>
       <link>https://blog.not-a-kernel-guy.com/2006/09/10/47/</link>
       <pubDate>Sun, 10 Sep 2006 18:21:41 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/09/10/47/</guid>
       <description>&lt;p&gt;Участие в бесполезном споре Windows vs. Unix иногда приносит пользу. В ответ на &lt;a href=&#34;http://alenacpp.blogspot.com/2006/09/microsoft-robotics-studio.html#115751778421825463&#34;&gt;мою реплику&lt;/a&gt;, некто vansickle поделился ссылкой на &lt;a href=&#34;http://www.microsoft.com/windowsserver2003/technologies/management/powershell/default.mspx&#34;&gt;Windows PowerShell&lt;/a&gt;. В двух словах PowerShell это замена древнему cmd.exe, сочетающая Unix идеологию c Windows технологиями. Учитывая, что мне уже давно не даёт покоя вопрос &amp;ldquo;когда же, наконец, в Windows сделают нормальную консоль?&amp;rdquo;, я тут же решил попробовать PowerShell вживую.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

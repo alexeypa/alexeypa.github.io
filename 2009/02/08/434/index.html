@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -124,16 +114,16 @@ Signals the debugger that the specified event has occurred. This option is only 
 </blockquote>
 <p>Но в нашем случае, это не очень важно.</p>
 <p>Далее все разновидности WinDbg поддерживают удалённую отладку. Запустить WinDbg/CDB в режиме сервера можно с помощью параметра “–server”, например:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">cdb.exe -server npipe:pipe=debug notepad.exe
-</code></pre></div><p>Эта команда запускает notepad.exe в отладчике и позволяет присоединиться к сессии удаленно, через именованную трубу «debug». Маленькая хитрость заключается в том, чтобы вместо cdb.exe указать скрипт, который сформирует строку для запуска отладчика вместе с уникальным именем трубы:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">@cdb.exe -server npipe:pipe=aedebug-%1 -p %1 -e %2 –g
-</code></pre></div><p>Теперь достаточно поменять значение Debugger на «c:\dbg\amd64\aedebug.cmd&quot; %ld %ld» и готово:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>cdb.exe -server npipe:pipe=debug notepad.exe
+</span></span></code></pre></div><p>Эта команда запускает notepad.exe в отладчике и позволяет присоединиться к сессии удаленно, через именованную трубу «debug». Маленькая хитрость заключается в том, чтобы вместо cdb.exe указать скрипт, который сформирует строку для запуска отладчика вместе с уникальным именем трубы:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>@cdb.exe -server npipe:pipe=aedebug-%1 -p %1 -e %2 –g
+</span></span></code></pre></div><p>Теперь достаточно поменять значение Debugger на «c:\dbg\amd64\aedebug.cmd&quot; %ld %ld» и готово:</p>
 <p><img src="/2009/02/aedebug_cmd.png" alt="aedebug_cmd"></p>
 <p>Узнать имя трубы можно посмотрев параметры запуска cdb.exe:</p>
 <p><img src="/2009/02/aedebug_server.png" alt="aedebug_server"></p>
 <p>Теперь можно подключиться к отладчику из под непривилегированной учетной записи:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">windbg.exe –remote npipe:pipe=aedebug-2296,server=localhost
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>windbg.exe –remote npipe:pipe=aedebug-2296,server=localhost
+</span></span></code></pre></div>
   </div>
   <div id="disqus_thread"></div>
 </div>

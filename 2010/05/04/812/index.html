@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -116,9 +106,9 @@
 <p>Чтобы разобраться в чем тут дело, рассмотрим как работают функции GetThreadContext и SetThreadContext. Когда процессор переключается в режим ядра, операционная система сохраняет состояние регистров пользовательского режима в ядерном стеке. При обратном переключении, сохраненные значения вновь загружаются в регистры процессора. GetThreadContext и SetThreadContext принудительно переключает поток в режим ядра (посылают потоку kernel APC, фактически – прерывание) и читает или модифицирует пользовательский контекст прямо в стеке. Важное следствие такого подхода – поток может быть прерван в любой момент, за исключением немногочисленных  участков ядерного кода, защищенных от kernel APC.</p>
 <p>Проблема первая: при переходе в режим ядра не всегда сохраняются все регистры. С точки зрения NT существует три способа переключения в режим ядра: системный вызов, исключение (trap) и прерывание. При вызове системной функции  в соответствии с соглашением о вызовах не сохраняются volatile регистры. Ну а раз они не сохраняются, то и восстанавливаться они не будут. Соответственно попытка установить с помощью SetThreadContext, скажем EAX, может и не увенчается успехом.</p>
 <p>Проблема вторая: GetThreadContext и SetThreadContext – не единственные, кто модифицирует состояние регистров пользовательского режима. Существует функция NtContinue и диспетчер прерываний. Последний особенно интересен:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">xor 	eax, eax		; eax = 0
-mov 	[eax], eax		; [0] = 0 – Access Violation!
-</code></pre></div><p>С точки зрения приложения, результат выполнения второй инструкции состоит в том, что состояние регистров процессора (<a href="http://msdn.microsoft.com/en-us/library/ms679284%28v=VS.85%29.aspx">CONTEXT</a>) и информация об исключении (<a href="http://msdn.microsoft.com/en-us/library/aa363082%28VS.85%29.aspx">EXCEPTION_RECORD</a>) сохраняется в стеке, а управление передается на код диспетчера прерываний в NTDLL. Этакая «мега» инструкция. Конечно, вся эта работа выполняется ядром OS, но проблема состоит в том, что эта «мега» инструкция - неатомарная. Поток может быть прерван в процессе обработки исключения в ядре. С точки зрения пользовательского кода – прямо в середине инструкции. Эффект от SetThreadContext в этот момент не предсказуем. Поток либо переключится на контекст, переданный в SetThreadContext, либо диспетчер исключений переключит поток на код диспетчера прерываний в NTDLL. Все зависит от того, кто установит пользовательский контекст последним.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>xor 	eax, eax		; eax = 0
+</span></span><span style="display:flex;"><span>mov 	[eax], eax		; [0] = 0 – Access Violation!
+</span></span></code></pre></div><p>С точки зрения приложения, результат выполнения второй инструкции состоит в том, что состояние регистров процессора (<a href="http://msdn.microsoft.com/en-us/library/ms679284%28v=VS.85%29.aspx">CONTEXT</a>) и информация об исключении (<a href="http://msdn.microsoft.com/en-us/library/aa363082%28VS.85%29.aspx">EXCEPTION_RECORD</a>) сохраняется в стеке, а управление передается на код диспетчера прерываний в NTDLL. Этакая «мега» инструкция. Конечно, вся эта работа выполняется ядром OS, но проблема состоит в том, что эта «мега» инструкция - неатомарная. Поток может быть прерван в процессе обработки исключения в ядре. С точки зрения пользовательского кода – прямо в середине инструкции. Эффект от SetThreadContext в этот момент не предсказуем. Поток либо переключится на контекст, переданный в SetThreadContext, либо диспетчер исключений переключит поток на код диспетчера прерываний в NTDLL. Все зависит от того, кто установит пользовательский контекст последним.</p>
 <p>Проблема третья: Wow64. Если совсем коротко, то точка входа в 64-х битный код сидит в ring 3. По аналогии с точками входа в ядро, этот код сохраняет 32-х битное состояние процессора. В отличие точек входа в ядро, код в Wow64 абсолютно не защищен от прерывания с помощью kernel APC. В результате в некоторых редких ситуациях GetThreadContext может просто возвращать неправильный 32-х битный контекст (хотя Wow64 очень старается, чтобы обойти такие ситуации).</p>
 <p>Вот такая вот печальная история…</p>
 <p>PS. А теперь давайте посчитаем количество комментариев «Windows – must die». :-)</p>

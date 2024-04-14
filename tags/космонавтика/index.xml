@@ -6,61 +6,21 @@
     <description>Recent content in Космонавтика on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 29 Nov 2019 11:56:25 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D0%BD%D0%B0%D0%B2%D1%82%D0%B8%D0%BA%D0%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Nov 2019 11:56:25 -0800</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D0%BD%D0%B0%D0%B2%D1%82%D0%B8%D0%BA%D0%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Законы космической инженерии (Законы Акина)</title>
       <link>https://blog.not-a-kernel-guy.com/2019/11/29/akins_laws/</link>
       <pubDate>Fri, 29 Nov 2019 11:56:25 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2019/11/29/akins_laws/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://aero.umd.edu/clark/faculty/3/David-Akin&#34;&gt;Давид Акин&lt;/a&gt;, директор лаборатории космических систем на факультете
-аэрокосмической инженерии Мерилендского университета собрал список &lt;a href=&#34;https://spacecraft.ssl.umd.edu/akins_laws.html&#34;&gt;законов
-космической инженерии&lt;/a&gt;, которые удивительно точно описывают реальность
-разработки космических систем. Меня больше всего зацепил вот этот:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Your best design efforts will inevitably wind up being useless in the final
-design. Learn to live with the disappointment.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Ваши лучшие наработки в конечном итоге окажутся не нужны. Привыкайте жить с
-разочарованием.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Я как-то потратил несколько недель на оптимизацию кода, формирующего пакеты с
-телеметрией, с тем чтобы укорить его в несколько раз и сэкономить 10-15% общего
-времени выполнения. Что было очень важно, так как мы в очередной раз вылезли за
-допустимое время выполнения. Обложил юнит тестами со всех сторон&amp;hellip; На code
-review основной претензией к коду было &amp;ldquo;ну я верю, что это работает, но нельзя
-ли как-нибудь попроще?&amp;rdquo; Через несколько недель я в отпуск пошел, а в том коде
-нашли баг&amp;hellip; Было интересно и увлекательно.&lt;/p&gt;
-&lt;p&gt;А вот недавно, я просто удалил одну проверку в двух функциях, и сэкономил те же
-10-15%. Результат одинаковый, но затраченные усилия отличаются на два порядка.&lt;/p&gt;
-&lt;p&gt;Ну и, само-собой, классика:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Space is a completely unforgiving environment. If you screw up the engineering,
-somebody dies (and there&amp;rsquo;s no partial credit because most of the analysis was
-right&amp;hellip;)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Космос совершенно не прощает ошибок. Если вы ошиблись при разработке - кто-то
-умрет (и вы не получите частичный зачет за то, что большая часть анализа была
-верной)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Список широко цитируется в узких кругах, в том числе на Хабре публиковался
-&lt;a href=&#34;https://habr.com/ru/post/354936/&#34;&gt;перевод&lt;/a&gt; (правда не на 100% точный, как мне кажется).&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://aero.umd.edu/clark/faculty/3/David-Akin&#34;&gt;Давид Акин&lt;/a&gt;, директор лаборатории космических систем на факультете&#xA;аэрокосмической инженерии Мерилендского университета собрал список &lt;a href=&#34;https://spacecraft.ssl.umd.edu/akins_laws.html&#34;&gt;законов&#xA;космической инженерии&lt;/a&gt;, которые удивительно точно описывают реальность&#xA;разработки космических систем. Меня больше всего зацепил вот этот:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Your best design efforts will inevitably wind up being useless in the final&#xA;design. Learn to live with the disappointment.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Ваши лучшие наработки в конечном итоге окажутся не нужны. Привыкайте жить с&#xA;разочарованием.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Я как-то потратил несколько недель на оптимизацию кода, формирующего пакеты с&#xA;телеметрией, с тем чтобы укорить его в несколько раз и сэкономить 10-15% общего&#xA;времени выполнения. Что было очень важно, так как мы в очередной раз вылезли за&#xA;допустимое время выполнения. Обложил юнит тестами со всех сторон&amp;hellip; На code&#xA;review основной претензией к коду было &amp;ldquo;ну я верю, что это работает, но нельзя&#xA;ли как-нибудь попроще?&amp;rdquo; Через несколько недель я в отпуск пошел, а в том коде&#xA;нашли баг&amp;hellip; Было интересно и увлекательно.&lt;/p&gt;&#xA;&lt;p&gt;А вот недавно, я просто удалил одну проверку в двух функциях, и сэкономил те же&#xA;10-15%. Результат одинаковый, но затраченные усилия отличаются на два порядка.&lt;/p&gt;&#xA;&lt;p&gt;Ну и, само-собой, классика:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Space is a completely unforgiving environment. If you screw up the engineering,&#xA;somebody dies (and there&amp;rsquo;s no partial credit because most of the analysis was&#xA;right&amp;hellip;)&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Космос совершенно не прощает ошибок. Если вы ошиблись при разработке - кто-то&#xA;умрет (и вы не получите частичный зачет за то, что большая часть анализа была&#xA;верной)&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Список широко цитируется в узких кругах, в том числе на Хабре публиковался&#xA;&lt;a href=&#34;https://habr.com/ru/post/354936/&#34;&gt;перевод&lt;/a&gt; (правда не на 100% точный, как мне кажется).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Saturn V Apollo SA-500F Shake Test</title>
       <link>https://blog.not-a-kernel-guy.com/2015/02/21/1700/</link>
       <pubDate>Sat, 21 Feb 2015 19:34:12 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2015/02/21/1700/</guid>
-      <description>&lt;p&gt;Раньше все было по-другому, ближе к природе, что-ли:&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/PnsFFhKqXXo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;Раньше все было по-другому, ближе к природе, что-ли:&lt;/p&gt;&#xA;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;  &lt;iframe src=&#34;https://www.youtube.com/embed/PnsFFhKqXXo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

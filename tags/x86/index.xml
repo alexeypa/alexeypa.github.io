@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>x86 on Алексей Пахунов</title>
+    <title>X86 on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/x86/</link>
-    <description>Recent content in x86 on Алексей Пахунов</description>
+    <description>Recent content in X86 on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 24 Jul 2011 20:55:56 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/x86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jul 2011 20:55:56 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/x86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Можно ли использовать функцию RtlCaptureContext() из x86 кода?</title>
       <link>https://blog.not-a-kernel-guy.com/2011/07/24/1132/</link>
       <pubDate>Sun, 24 Jul 2011 20:55:56 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/07/24/1132/</guid>
-      <description>Вопрос из почты:
- The question is really simple: could we use RtlCaptureContext on X86? The MSDN (http://msdn.microsoft.com/en-us/library/ms680659(v=VS.85).aspx) says it’s only for 64 but the bug is for X86 and I see some kernel code are using it on x86.
-  Вопрос на самом деле очень прост: можем ли мы использовать функцию RtlCaptureContext на x86? MSDN говорит, что эта функция только для 64-х бит но баг-репорт (имеется ввиду баг-репорт, ранее упомянутый в письме) воспроизводится для x86 и я вижу, что код в ядре использует эту функцию на x86.</description>
+      <description>Вопрос из почты:&#xA;The question is really simple: could we use RtlCaptureContext on X86? The MSDN (http://msdn.microsoft.com/en-us/library/ms680659(v=VS.85).aspx) says it’s only for 64 but the bug is for X86 and I see some kernel code are using it on x86.&#xA;Вопрос на самом деле очень прост: можем ли мы использовать функцию RtlCaptureContext на x86? MSDN говорит, что эта функция только для 64-х бит но баг-репорт (имеется ввиду баг-репорт, ранее упомянутый в письме) воспроизводится для x86 и я вижу, что код в ядре использует эту функцию на x86.</description>
     </item>
-    
     <item>
       <title>Первая инструкция</title>
       <link>https://blog.not-a-kernel-guy.com/2010/04/07/808/</link>
       <pubDate>Wed, 07 Apr 2010 22:50:23 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/04/07/808/</guid>
-      <description>Маленькое открытие. После RESET# x86 процессоры начинают выполнение команд в реальном режиме (AKA real mode). CS и IP при этом устанавливаются в 0xf000 и 0xfff0 соответственно. Значит первая инструкция должна находится в пределах первого мегабайта, по адресу 0x000ffff0. Правильно? Не правильно. На самом деле, первая инструкция живет по адресу 0xfffffff0, так как база селектора CS после сброса устанавливается в 0xffff0000.
-Intel® 64 and IA-32 Architectures Software Developer’s Manual Volume 3A: System Programming Guide, Part 1 8.</description>
+      <description>Маленькое открытие. После RESET# x86 процессоры начинают выполнение команд в реальном режиме (AKA real mode). CS и IP при этом устанавливаются в 0xf000 и 0xfff0 соответственно. Значит первая инструкция должна находится в пределах первого мегабайта, по адресу 0x000ffff0. Правильно? Не правильно. На самом деле, первая инструкция живет по адресу 0xfffffff0, так как база селектора CS после сброса устанавливается в 0xffff0000.&#xA;Intel® 64 and IA-32 Architectures Software Developer’s Manual Volume 3A: System Programming Guide, Part 1 8.</description>
     </item>
-    
     <item>
       <title>Undefined instruction</title>
       <link>https://blog.not-a-kernel-guy.com/2008/10/20/361/</link>
       <pubDate>Mon, 20 Oct 2008 22:33:56 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/10/20/361/</guid>
       <description>&lt;p&gt;Набор команд x86-совместимых процессоров за годы эволюции набрал немалое количество всякой экзотики. Один из примеров такой экзотики – инструкция UD2. Задача этой инструкции состоит в том, чтобы… быть несуществующей инструкцией. Выполнение UD2 всегда приводит к генерации исключения «Invalid opcode». Отличие UD2 от любой другой несуществующей инструкции в том, что эта инструкция гарантированно не станет корректной инструкцией в будущем.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

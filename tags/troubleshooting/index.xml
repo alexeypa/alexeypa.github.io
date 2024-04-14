@@ -6,47 +6,35 @@
     <description>Recent content in Troubleshooting on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 25 Jun 2008 23:45:54 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Jun 2008 23:45:54 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>… и концы в воду</title>
       <link>https://blog.not-a-kernel-guy.com/2008/06/25/315/</link>
       <pubDate>Wed, 25 Jun 2008 23:45:54 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/06/25/315/</guid>
-      <description>&lt;p&gt;Эта неделя началась замечательно, - а именно с безуспешных попыток выяснить, почему валиться билд. Надо сказать, что и в невоенное-то время разобраться, что именно поломалось бывает непросто. Но в этот раз все было еще веселее чем обычно. Некая утилита (не будем показывать пальцем, хотя утилита написана на .NET :-) ), выдавала примерно следующий лог:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-no-highlight&#34; data-lang=&#34;no-highlight&#34;&gt;...
-&amp;gt; FooBar: parsing Z:\temp\tmp1234.tmp
-&amp;gt; FooBar: error XXXX, line 123, Z:\temp\tmp1234.tmp
-...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <description>&lt;p&gt;Эта неделя началась замечательно, - а именно с безуспешных попыток выяснить, почему валиться билд. Надо сказать, что и в невоенное-то время разобраться, что именно поломалось бывает непросто. Но в этот раз все было еще веселее чем обычно. Некая утилита (не будем показывать пальцем, хотя утилита написана на .NET :-) ), выдавала примерно следующий лог:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-no-highlight&#34; data-lang=&#34;no-highlight&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt; FooBar: parsing Z:\temp\tmp1234.tmp&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt; FooBar: error XXXX, line 123, Z:\temp\tmp1234.tmp&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Малышку верните!</title>
       <link>https://blog.not-a-kernel-guy.com/2008/05/20/312/</link>
       <pubDate>Tue, 20 May 2008 22:43:16 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/05/20/312/</guid>
       <description>&lt;p&gt;На днях у одной из тестовых машин, &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2008/05/16/311/&#34;&gt;занимающих жизненное пространство у меня в офисе&lt;/a&gt;, обнаружились проблемы с перегревом. Вернее сказать не у неё, а у машин из той же самой партии компьютеров. Под это дело организовали установку дополнительных кулеров на все подобные машины и, что б два раза не вставать, - обновление BIOS. Я, надо сказать, никаких проблем с перегревом не замечал, но мало ли. Ставят - чего ж отказываться.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Немного индивидуальности не повредит</title>
       <link>https://blog.not-a-kernel-guy.com/2007/06/07/195/</link>
       <pubDate>Thu, 07 Jun 2007 17:43:59 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/06/07/195/</guid>
       <description>&lt;p&gt;Сегодня с утра возился с решением забавной проблемы. Началось всё с того, что вчера Katy, наш администратор, обрадовала меня, сообщив что пришли заказанные диски и &lt;a href=&#34;http://www.byteccusa.com/product/enclosure/ME-747.htm&#34;&gt;FireWire контейнеры&lt;/a&gt; для них. К концу дня радость немного поугасла, так как выяснилось, что оба диска одновременно работать отказываются. Т.е. любой из них по отдельности работал как часы, а вот при подключении второго ничего не происходило. Диск не появлялся. :-(&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>An extended error has occurred</title>
       <link>https://blog.not-a-kernel-guy.com/2007/05/20/186/</link>
       <pubDate>Sun, 20 May 2007 15:36:58 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/05/20/186/</guid>
       <description>&lt;p&gt;Пару месяцев назад, я, за какой-то надобностью, попытался установить компонент Peer-to-Peer из сетевых компонент Windows XP, но у меня ничего не вышло. Сначала инсталлятор запросил дополнительные файлы из “C:\Windows\ServicePackFiles\i386”, которые я к тому времени успешно удалил за ненадобностью, затем он отказался от одноимённых файлов с инсталляционного диска Windows XP и, наконец, инсталляция прервалась, выдав напоследок очень понятное сообщение: «An extended error has occurred».&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

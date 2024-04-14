@@ -6,45 +6,28 @@
     <description>Recent content in Linux on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 18 Jul 2021 19:56:02 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Jul 2021 19:56:02 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Загрузка кода в чужой процесс на Linux</title>
       <link>https://blog.not-a-kernel-guy.com/2021/07/18/lx_preload/</link>
       <pubDate>Sun, 18 Jul 2021 19:56:02 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2021/07/18/lx_preload/</guid>
-      <description>&lt;p&gt;Оказывается грузить свой код в чужой процесс на Linux ничуть не менее
-увлекательно, чем на Windows. Я раньше не наведывался в этой темный угол, а вот
-на днях заглянул. Содержимое угла привычно обнадежило: залатанный древний
-загрузчик, дохлые мухи, пара растяжек, и грабли кругом. Все как мы любим. Задача
-была такая. Есть несколько загружаемых с помощью &lt;a href=&#34;https://stackoverflow.com/questions/426230/what-is-the-ld-preload-trick&#34;&gt;&lt;code&gt;LD_PRELOAD&lt;/code&gt;&lt;/a&gt; модулей.
-Модули переопределяют поведение небольшого числа POSIX функций. Требовалось
-перенести сборку модулей на более свежую версию GCC. Казалось что может быть
-проще?.. Да, давно уже не ощущал себя насколько наивным, аж ностальгия
-пробивает. Ниже следует список обнаруженных граблей.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Оказывается грузить свой код в чужой процесс на Linux ничуть не менее&#xA;увлекательно, чем на Windows. Я раньше не наведывался в этой темный угол, а вот&#xA;на днях заглянул. Содержимое угла привычно обнадежило: залатанный древний&#xA;загрузчик, дохлые мухи, пара растяжек, и грабли кругом. Все как мы любим. Задача&#xA;была такая. Есть несколько загружаемых с помощью &lt;a href=&#34;https://stackoverflow.com/questions/426230/what-is-the-ld-preload-trick&#34;&gt;&lt;code&gt;LD_PRELOAD&lt;/code&gt;&lt;/a&gt; модулей.&#xA;Модули переопределяют поведение небольшого числа POSIX функций. Требовалось&#xA;перенести сборку модулей на более свежую версию GCC. Казалось что может быть&#xA;проще?.. Да, давно уже не ощущал себя насколько наивным, аж ностальгия&#xA;пробивает. Ниже следует список обнаруженных граблей.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Linux, или туда и обратно</title>
       <link>https://blog.not-a-kernel-guy.com/2011/10/22/1204/</link>
       <pubDate>Sat, 22 Oct 2011 20:10:46 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/10/22/1204/</guid>
-      <description>Две истории про переход Windows программистов на Linux и обратно:
-  I sincerely tried, but I still hate Linux
-  Why I’ve finally had it with my Linux server and I’m moving back to Windows
-  Вторая особенно хороша - David Gewirtz там выпускает пар. Хотя пара разумных соображений в статье тоже есть.
- I talked with my ISP today. They told me that when they came in this morning, the server monitor was spewing an incredible number of error messages, and — in their words — it was erroring worse than they’ve ever seen.</description>
+      <description>Две истории про переход Windows программистов на Linux и обратно:&#xA;I sincerely tried, but I still hate Linux&#xA;Why I’ve finally had it with my Linux server and I’m moving back to Windows&#xA;Вторая особенно хороша - David Gewirtz там выпускает пар. Хотя пара разумных соображений в статье тоже есть.&#xA;I talked with my ISP today. They told me that when they came in this morning, the server monitor was spewing an incredible number of error messages, and — in their words — it was erroring worse than they’ve ever seen.</description>
     </item>
-    
     <item>
       <title>GUI имеет значение</title>
       <link>https://blog.not-a-kernel-guy.com/2007/02/17/150/</link>
       <pubDate>Sat, 17 Feb 2007 14:26:32 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/02/17/150/</guid>
       <description>&lt;p&gt;На этой неделе попробовал поработать в &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; – дистрибутиве Linux, который отпочковался от Debian. До этого на «машине для опытов» стояла &lt;a href=&#34;http://fedora.redhat.com/&#34;&gt;Fedora Core&lt;/a&gt; (в девичестве - &lt;a href=&#34;http://en.wikipedia.org/wiki/Red_Hat_Linux&#34;&gt;Red Hat Linux&lt;/a&gt;). Надо сказать, что впечатления от этого эксперимента довольно забавные. Фактически, Ubuntu и Fedora Core – это одна и та же система. Они используют практически идентичный набор программ - с точки зрения неискушенного пользователя, конечно. Понятно, что на Fedora Core можно поставить KDE вместо Gnome, да и менеджер пакетов у них разный. Всё равно это практически одна и та же система.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

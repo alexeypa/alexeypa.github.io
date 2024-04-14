@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -116,23 +106,23 @@
 <p>_Кстати, существует плагин, добавляющий в Trac средства рецензирования: <a href="http://www.trac-hacks.org/wiki/PeerReviewPlugin">PeerReviewPlugin</a>.
 _</p>
 <p>Итак что для этого нужно? Во-первых, поскольку Trac не может визуализировать посторонний diff, нужно позаботится о дополнительных ветках в структуре репозитория. Изначально, каждое изменение должно производиться в ветке, специально выделенной для рецензирования и лишь после внесения всех исправлений, изменения будут копироваться в основную ветку. Напрашивается вот такая схема:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">/trunk
-	/feature_foo
-		/feature_foo_review
-	/feature_bar
-		/feature_bar_review
-	/bugs
-		/bugs_review
-</code></pre></div><p><em><strong>Update:</strong> Замечу, что не смотря на отступы на схеме, все ветки создаются в одном и том же каталоге branches. Отступы на схеме нужно только чтобы показать порядок синхронизации веток, т.е. &ldquo;trunk &lt;-&gt; feature_foo &lt;-&gt; feature_foo_review&rdquo;, но не &ldquo;trunk &lt;-&gt; feature_foo_review&rdquo; напрямую.</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>/trunk
+</span></span><span style="display:flex;"><span>	/feature_foo
+</span></span><span style="display:flex;"><span>		/feature_foo_review
+</span></span><span style="display:flex;"><span>	/feature_bar
+</span></span><span style="display:flex;"><span>		/feature_bar_review
+</span></span><span style="display:flex;"><span>	/bugs
+</span></span><span style="display:flex;"><span>		/bugs_review
+</span></span></code></pre></div><p><em><strong>Update:</strong> Замечу, что не смотря на отступы на схеме, все ветки создаются в одном и том же каталоге branches. Отступы на схеме нужно только чтобы показать порядок синхронизации веток, т.е. &ldquo;trunk &lt;-&gt; feature_foo &lt;-&gt; feature_foo_review&rdquo;, но не &ldquo;trunk &lt;-&gt; feature_foo_review&rdquo; напрямую.</em></p>
 <p>Изменения сначала попадают в ветку «xxx_review». Отрецензированный код затем копируется в ветку «feature_xxx» или «bugs». Далее, изменения, пройдя соответствующее тестирования попадут в «trunk». В большом проекте такая иерархия может быть многоуровневой, однако все «_review» ветки будут оставаться в самом низу.</p>
 <p>Также имеет смысл использовать отдельные «_review» ветки для каждого разработчика:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">/trunk
-	/feature_foo
-		/feature_foo_xxx_review
-		/feature_foo_yyy_review
-		/feature_foo_zzz_review
-	/feature_bar
-</code></pre></div><p>Тем самым разработчики не будут мешать друг другу, коммитя непроверенный код.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>/trunk
+</span></span><span style="display:flex;"><span>	/feature_foo
+</span></span><span style="display:flex;"><span>		/feature_foo_xxx_review
+</span></span><span style="display:flex;"><span>		/feature_foo_yyy_review
+</span></span><span style="display:flex;"><span>		/feature_foo_zzz_review
+</span></span><span style="display:flex;"><span>	/feature_bar
+</span></span></code></pre></div><p>Тем самым разработчики не будут мешать друг другу, коммитя непроверенный код.</p>
 <p>Во-вторых, Trac предлагает очень удобные средства для просмотра изменений в репозитории.</p>
 <p><a href="/2007/02/trac_diff.png"><img src="/2007/02/trac_diff.thumbnail.png" alt="Trac changeset viewer."></a></p>
 <p>Автор кода может просто добавить ссылку на changeset с изменениями <a href="http://trac.edgewall.org/wiki/TracLinks">[xxx]</a> в комментариях к задаче (ticket), а затем присвоить задачу рецензенту. По завершению просмотра рецензент добавит свои комментарии по коду и присвоит задачу обратно автору кода.</p>

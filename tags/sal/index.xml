@@ -6,26 +6,21 @@
     <description>Recent content in SAL on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 31 Oct 2007 15:58:11 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/sal/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Oct 2007 15:58:11 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/sal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SAL аннотации</title>
       <link>https://blog.not-a-kernel-guy.com/2007/10/31/260/</link>
       <pubDate>Wed, 31 Oct 2007 15:58:11 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/10/31/260/</guid>
-      <description>&lt;p&gt;В последнее время я немного забросил Win32.Utf8 - на работе завал, так что, приходя домой, делать ничего особенного не хочется. Тем не менее, проект потихоньку движется и, на сегодняшний день, я добрался до разбора SAL аннотаций.&lt;/p&gt;
-&lt;p&gt;Основной источник информации, которым я пользуюсь - это заголовок sal.h из поставки Visual C++. В нем содержится достаточно подробное описание того, как составляются конструкции вроде &lt;code&gt;__deref_inout_ecount_part_opt&lt;/code&gt;. Кроме того, там же определены макросы, преобразующие SAL аннотации в набор директив для статического анализатора PREfast. По ним достаточно просто понять как SAL аннотации «работают на самом деле».&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Аналогичный заголовок есть в Platform SDK для Windows 2003 - specstrings.h. В Windows SDK для Vista все еще более запутано.&lt;/em&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;В последнее время я немного забросил Win32.Utf8 - на работе завал, так что, приходя домой, делать ничего особенного не хочется. Тем не менее, проект потихоньку движется и, на сегодняшний день, я добрался до разбора SAL аннотаций.&lt;/p&gt;&#xA;&lt;p&gt;Основной источник информации, которым я пользуюсь - это заголовок sal.h из поставки Visual C++. В нем содержится достаточно подробное описание того, как составляются конструкции вроде &lt;code&gt;__deref_inout_ecount_part_opt&lt;/code&gt;. Кроме того, там же определены макросы, преобразующие SAL аннотации в набор директив для статического анализатора PREfast. По ним достаточно просто понять как SAL аннотации «работают на самом деле».&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Аналогичный заголовок есть в Platform SDK для Windows 2003 - specstrings.h. В Windows SDK для Vista все еще более запутано.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Работа над ошибками</title>
       <link>https://blog.not-a-kernel-guy.com/2006/10/10/81/</link>
       <pubDate>Tue, 10 Oct 2006 20:42:27 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/10/10/81/</guid>
       <description>Наткнулся сегодня на блог Александра Ложечкина и на его пост SAL - кое-что новое для С++ в частности. В двух словах SAL (Standard Annotation Language) - это способ дать компилятору немного больше информации о том, как та или иная функция использует переданные ей параметры: in/out аттрибуты, размеры буферов и т.п. Компилятор, используя эту информацию, может делать дополнительные проверки кода, находя, скажем, ошибки переполнение буфера. Более того, статические анализаторы кода, тот же PREfast, также могут использовать эту информацию, повышая тем самым эффективность и точность анализа.</description>
     </item>
-    
   </channel>
 </rss>

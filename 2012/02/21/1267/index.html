@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -115,11 +105,11 @@
     <p>А давайте разберем антипаттерн - реализацию механизма уведомления о смене состояния чего-либо с помощью очереди сообщений. Для примера возьмем <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb530723(v=vs.85).aspx">Session Change Notifications</a> в Windows. Пример, как очевидно, совершенно произвольный и не имеющий никакого отношения к тому, что я их сегодня полдня ковырял. :-)</p>
 <p>По идее, все просто. Хотим отслеживать состояние сессий - регистрируем окошко или <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms683241(v=vs.85).aspx">обработчик</a>, куда будут посылаться уведомления о смене состояния сессий и все дела. Если присмотреться, то все не так просто. Как, к примеру, синхронизировать <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ee621014(v=vs.85).aspx">получение начального состояния всех сессий</a> и установку обработчика? Оба действия не атомарны и, следовательно, можно либо пропустить некоторые уведомления, либо получить уведомления, уже учтенные начальным состоянием сессий. Или другая проблема: состояние сессии, вычисленное по полученным уведомлениям может не соответствовать актуальному состоянию сессии. Т.е. получаем WTS_SESSION_LOGON, а сессия уже давно завершилась и даже соответствующее уведомление было послано, просто сообщение все еще сидит в очереди оконных сообщений необработанное. Именно с сессиями, такое вряд ли конечно может случиться на практике. Слишком они тяжеловесны. Но теоретически такое возможно. Хотя стресс тесты и не такое, бывает, находят.</p>
 <p>Возникает вопрос, а что же делать? Одно из возможных решений - разделить доставку уведомления о смене состояния и получение текущего состояния. Получение уведомления будет означать, что состояние, возможно, поменялось. Обработчик уведомления должен будет опросить текущее состояние и сравнить его с сохраненной копией. Опять же, в моем случае, все что мне нужно было отследить - это номер сессии, присоединенной в физической консоли. Для этого есть отдельная, и очень эффективная функция - <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa383835(v=vs.85).aspx">WTSGetActiveConsoleSessionId()</a>. Вот её полный листинг:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; uf kernel32!WTSGetActiveConsoleSessionId
-kernel32!WTSGetActiveConsoleSessionId:
-75133f49 a1d802fe7f      mov     eax,dword ptr [SharedUserData+0x2d8 (7ffe02d8)]
-75133f4e c3              ret
-</code></pre></div><p>:-)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000&gt; uf kernel32!WTSGetActiveConsoleSessionId
+</span></span><span style="display:flex;"><span>kernel32!WTSGetActiveConsoleSessionId:
+</span></span><span style="display:flex;"><span>75133f49 a1d802fe7f      mov     eax,dword ptr [SharedUserData+0x2d8 (7ffe02d8)]
+</span></span><span style="display:flex;"><span>75133f4e c3              ret
+</span></span></code></pre></div><p>:-)</p>
 <p>При таком подходе представления обработчика о текущем состоянии гораздо ближе к реальности, однако некоторые переходы между состояниями могут быть пропущены. В прочем, для асинхронных уведомлений это возможно в любом случае.</p>
 
   </div>

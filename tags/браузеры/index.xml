@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>браузеры on Алексей Пахунов</title>
+    <title>Браузеры on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D1%8B/</link>
-    <description>Recent content in браузеры on Алексей Пахунов</description>
+    <description>Recent content in Браузеры on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 15 Apr 2012 10:56:57 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D1%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Apr 2012 10:56:57 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D1%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>А вы знаете, что ваш браузер устарел?</title>
       <link>https://blog.not-a-kernel-guy.com/2012/04/15/1305/</link>
       <pubDate>Sun, 15 Apr 2012 10:56:57 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2012/04/15/1305/</guid>
-      <description>Вот пример, почему проверка версии браузера - зло (и адъ, и Содомъ с Гоморрой):
-
-Самое забавное, что это окошко нельзя закрыть. Проблема также усугубляется тем, что все это счастье показывается внутри iframe и выставить опции совместимости так просто не получается. Приходится копировать ссылку и открывать страницу в отдельном окне.
-Я вот, кстати, не понимаю. От 99% проверок на версию браузера можно было бы отказаться, если бы браузеры поддерживали проверку поддерживаемых фич.</description>
+      <description>Вот пример, почему проверка версии браузера - зло (и адъ, и Содомъ с Гоморрой):&#xA;Самое забавное, что это окошко нельзя закрыть. Проблема также усугубляется тем, что все это счастье показывается внутри iframe и выставить опции совместимости так просто не получается. Приходится копировать ссылку и открывать страницу в отдельном окне.&#xA;Я вот, кстати, не понимаю. От 99% проверок на версию браузера можно было бы отказаться, если бы браузеры поддерживали проверку поддерживаемых фич.</description>
     </item>
-    
   </channel>
 </rss>

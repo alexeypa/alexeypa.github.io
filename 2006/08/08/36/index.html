@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -114,16 +104,16 @@
     </span>
     <p>Реализация <a href="/2006/08/EffectiveUnitTests.cpp">алгоритма</a>, описанного в <a href="/2006/08/06/37/">первой части</a>. В принципе исходный код говорит сам за себя. Остановлюсь на некоторых деталях.</p>
 <p>Каждый элементарный тест описывается структурой:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Test</span>
-{
-    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> name;
-    <span style="color:#66d9ef">unsigned</span> type;
-    <span style="color:#66d9ef">unsigned</span> mask;
-    <span style="color:#66d9ef">bool</span> positive;
-    <span style="color:#66d9ef">bool</span> (<span style="color:#f92672">*</span> tearUp)();
-    <span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span> tearDown)();
-};
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Test</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unsigned</span> type;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unsigned</span> mask;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">bool</span> positive;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">bool</span> (<span style="color:#f92672">*</span> tearUp)();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span> tearDown)();
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><ul>
 <li>
 <p>name – задает имя теста. Имя желательно выбирать коротким, поскольку полное имя комбинации тестов включает в себя имена всех элементарных тестов;</p>
 </li>
@@ -144,11 +134,11 @@
 </li>
 </ul>
 <p>Константы <code>TEST_XXX</code> представляют собой битовую маску, где каждому биту соответствует свой тип теста. В процессе выбора очередного теста список выбранных тестов сопоставляется с маской совместимых тестов:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    <span style="color:#66d9ef">if</span> (
-        ((mask <span style="color:#f92672">&amp;</span> i<span style="color:#f92672">-&gt;</span>type) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">&amp;&amp;</span>
-        ((mask <span style="color:#f92672">&amp;</span> <span style="color:#f92672">~</span>(i<span style="color:#f92672">-&gt;</span>type <span style="color:#f92672">|</span> i<span style="color:#f92672">-&gt;</span>mask)) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>))
-    {
-</code></pre></div><p>Тест будет выбран только если тест еще не был выбран (первое условие), а также совместим с уже выбранными тестами. (второе условие).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (
+</span></span><span style="display:flex;"><span>        ((mask <span style="color:#f92672">&amp;</span> i<span style="color:#f92672">-&gt;</span>type) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>        ((mask <span style="color:#f92672">&amp;</span> <span style="color:#f92672">~</span>(i<span style="color:#f92672">-&gt;</span>type <span style="color:#f92672">|</span> i<span style="color:#f92672">-&gt;</span>mask)) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span>    {
+</span></span></code></pre></div><p>Тест будет выбран только если тест еще не был выбран (первое условие), а также совместим с уже выбранными тестами. (второе условие).</p>
 <p>В примере тесты группируются по категориям (или «вариантам»). Основной признак для такой группировки – в одну категорию попадают тесты, которые не могут входить ни в одну тестовую комбинацию одновременно.</p>
   </div>
   <div id="disqus_thread"></div>

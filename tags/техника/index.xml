@@ -6,228 +6,91 @@
     <description>Recent content in Техника on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 14 Feb 2018 20:15:47 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Feb 2018 20:15:47 -0800</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Потеря связи с зондом Deep Impact в 2013 году</title>
       <link>https://blog.not-a-kernel-guy.com/2018/02/14/epoxi/</link>
       <pubDate>Wed, 14 Feb 2018 20:15:47 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2018/02/14/epoxi/</guid>
-      <description>&lt;p&gt;12 января 2005 года с мыса Канаверал стартовал зонд Deep Impact, созданный для
-изучение внутреннего состава кометы 9P/Темпеля. Зонд достиг кометы в июле 2005
-года, после чего разделился на импактор и пролетную часть. 4 июля 2005 года
-370 килограммовый импактор успешно столкнулся с ядром кометы на скорости около
-10.3 км/с, выбросив в космос здоровенное облако пыли:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/3/3e/Deep_Impact_HRI.jpeg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/Deep_Impact_HRI.jpeg&#34; alt=&#34;&#34; title=&#34;Столкновение импактора с ядром кометы 9P/Темпеля&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Согласно измерениям, проведенным космическим аппаратом &lt;a href=&#34;https://en.wikipedia.org/wiki/Stardust_(spacecraft)&#34;&gt;Stardust&lt;/a&gt; в 2011
-году, диаметр кратера, образовавшегося в результате столкновения, составил около
-150 метров.&lt;/p&gt;
-&lt;p&gt;По завершению основной миссии, NASA направило зонд Deep Impact к комете
-103P/Хартли в рамках расширенной миссии &amp;ldquo;EPOXI&amp;rdquo;. Пролет этой кометы
-состоялся 4 ноября 2010 года:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/NASAHartley2Comet.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;В конце 2011 года, аппарат был отправлен на перехват астероида
-&lt;a href=&#34;https://en.wikipedia.org/wiki/(163249)_2002_GT&#34;&gt;(163249) 2002 GT&lt;/a&gt; пролет которого должен был состоятся в 2020 году. Однако
-в августе 2013 года контакт с аппаратом был потерян:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;3 сентября 2013&lt;/a&gt;:&lt;br&gt;
-&amp;hellip; Связь с аппаратом утеряна между 11 и 14 августа (связь с аппаратом
-поддерживается раз в неделю). Последний сеанс связи был проведен 8 августа.
-Проведенное расследование позволило установить причину неполадки. Дальнейшие
-усилия направлены на определение лучшего способа восстановить связь с
-аппаратом.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;23 сентября 2013&lt;/a&gt;:&lt;br&gt;
-&amp;hellip; все попытки передачи низкоуровневых аппаратных команд не увенчались
-успехом. На этом все возможные сценарии восстановления связи с аппаратом были
-исчерпаны. Мы рекомендовали NASA объявить аппарат утерянным. NASA официально
-заявило об утере аппарата в четверг 19 сентября.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;12 января 2005 года с мыса Канаверал стартовал зонд Deep Impact, созданный для&#xA;изучение внутреннего состава кометы 9P/Темпеля. Зонд достиг кометы в июле 2005&#xA;года, после чего разделился на импактор и пролетную часть. 4 июля 2005 года&#xA;370 килограммовый импактор успешно столкнулся с ядром кометы на скорости около&#xA;10.3 км/с, выбросив в космос здоровенное облако пыли:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/3/3e/Deep_Impact_HRI.jpeg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/Deep_Impact_HRI.jpeg&#34; alt=&#34;&#34; title=&#34;Столкновение импактора с ядром кометы 9P/Темпеля&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Согласно измерениям, проведенным космическим аппаратом &lt;a href=&#34;https://en.wikipedia.org/wiki/Stardust_(spacecraft)&#34;&gt;Stardust&lt;/a&gt; в 2011&#xA;году, диаметр кратера, образовавшегося в результате столкновения, составил около&#xA;150 метров.&lt;/p&gt;&#xA;&lt;p&gt;По завершению основной миссии, NASA направило зонд Deep Impact к комете&#xA;103P/Хартли в рамках расширенной миссии &amp;ldquo;EPOXI&amp;rdquo;. Пролет этой кометы&#xA;состоялся 4 ноября 2010 года:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/NASAHartley2Comet.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;В конце 2011 года, аппарат был отправлен на перехват астероида&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/(163249)_2002_GT&#34;&gt;(163249) 2002 GT&lt;/a&gt; пролет которого должен был состоятся в 2020 году. Однако&#xA;в августе 2013 года контакт с аппаратом был потерян:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;3 сентября 2013&lt;/a&gt;:&lt;br&gt;&#xA;&amp;hellip; Связь с аппаратом утеряна между 11 и 14 августа (связь с аппаратом&#xA;поддерживается раз в неделю). Последний сеанс связи был проведен 8 августа.&#xA;Проведенное расследование позволило установить причину неполадки. Дальнейшие&#xA;усилия направлены на определение лучшего способа восстановить связь с&#xA;аппаратом.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://epoxi.astro.umd.edu/1mission/status.shtml&#34;&gt;23 сентября 2013&lt;/a&gt;:&lt;br&gt;&#xA;&amp;hellip; все попытки передачи низкоуровневых аппаратных команд не увенчались&#xA;успехом. На этом все возможные сценарии восстановления связи с аппаратом были&#xA;исчерпаны. Мы рекомендовали NASA объявить аппарат утерянным. NASA официально&#xA;заявило об утере аппарата в четверг 19 сентября.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
-    
     <item>
       <title>Про частично успешный запуск Arian 5</title>
       <link>https://blog.not-a-kernel-guy.com/2018/01/29/arian/</link>
       <pubDate>Mon, 29 Jan 2018 21:31:48 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2018/01/29/arian/</guid>
-      <description>&lt;p&gt;Запуск Arian 5 с двумя спутниками на борту на прошлой неделе прошел частично
-успешно. Спутники были выведены на орбиту с заметно большим чем следовало
-наклонением. Но я хотел поговорить не об этом, а про немного смешную статью бы
-на &lt;a href=&#34;https://geektimes.ru&#34;&gt;https://geektimes.ru&lt;/a&gt; с отдающим желтизной заголовком: &lt;a href=&#34;https://geektimes.ru/post/297621/&#34;&gt;&amp;ldquo;Обман в прямом эфире
-при аварии «Ariane 5»&amp;quot;&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;hellip; но авария вызывает возмущение действиями Arianespace — ЦУПу с первых минут
-должно было быть ясно, что с ракетой творится что-то неладное, но комментатор
-продолжал вести репортаж, будто бы все в порядке. Что же случилось?&lt;/p&gt;
-&lt;p&gt;&amp;hellip; Но с точки зрения репутации и пиара это уже катастрофа — поведение
-диктора, рассказывающего об успешном пуске при отсутствии телеметрии, тем
-более, что в ЦУПе должны были заметить проблему еще раньше, сложно назвать
-иначе, нежели обманом.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;Запуск Arian 5 с двумя спутниками на борту на прошлой неделе прошел частично&#xA;успешно. Спутники были выведены на орбиту с заметно большим чем следовало&#xA;наклонением. Но я хотел поговорить не об этом, а про немного смешную статью бы&#xA;на &lt;a href=&#34;https://geektimes.ru&#34;&gt;https://geektimes.ru&lt;/a&gt; с отдающим желтизной заголовком: &lt;a href=&#34;https://geektimes.ru/post/297621/&#34;&gt;&amp;ldquo;Обман в прямом эфире&#xA;при аварии «Ariane 5»&amp;rdquo;&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;hellip; но авария вызывает возмущение действиями Arianespace — ЦУПу с первых минут&#xA;должно было быть ясно, что с ракетой творится что-то неладное, но комментатор&#xA;продолжал вести репортаж, будто бы все в порядке. Что же случилось?&lt;/p&gt;&#xA;&lt;p&gt;&amp;hellip; Но с точки зрения репутации и пиара это уже катастрофа — поведение&#xA;диктора, рассказывающего об успешном пуске при отсутствии телеметрии, тем&#xA;более, что в ЦУПе должны были заметить проблему еще раньше, сложно назвать&#xA;иначе, нежели обманом.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
-    
     <item>
       <title>Небесная твердь</title>
       <link>https://blog.not-a-kernel-guy.com/2017/11/28/empyrean/</link>
       <pubDate>Tue, 28 Nov 2017 20:46:07 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2017/11/28/empyrean/</guid>
-      <description>&lt;p&gt;Как все уже, наверное, знают, &lt;a href=&#34;https://geektimes.ru/post/295893/&#34;&gt;второй запуск с &amp;ldquo;Восточного&amp;rdquo; закончился неудачей&lt;/a&gt;. По слухам разгонный блок &amp;ldquo;Фрегат&amp;rdquo; навернулся
-о небесную твердь и сгинул в морской пучине, прихватив с собой Метеор-М и
-остальные 18 спутников. По &lt;a href=&#34;https://echo.msk.ru/news/2100738-echo.html&#34;&gt;другой версии&lt;/a&gt;,
-разгонный блок выдал импульс находясь в неправильной ориентации, упав в
-результате в океан.&lt;/p&gt;
-&lt;p&gt;Самый забавный момент во всей этой печальной истории, это, без сомнения,
-&lt;a href=&#34;https://lenta.ru/news/2017/11/28/lezutnanebo/&#34;&gt;высказывание Кураева&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Ответственность за неудачный запуск &amp;ldquo;Союза-2.1б&amp;rdquo; с космодрома Восточный лежит
-на благовещенском епископе Лукиане, который освящал ракету-носитель перед
-стартом. Об этом радиостанции &amp;ldquo;Говорит Москва&amp;rdquo; сказал протодиакон Андрей
-Кураев.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;Если человек нечто делает, а выходит плохо, то для него это вопрос
-задуматься, правильно ли он делает. Очень странно, что церковь вроде
-предоставляет услуги, но никогда не отвечает за качество этих услуг. В этом
-есть некоторая проблема&amp;rdquo;, — цитирует Кураева сайт радиостанции.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;На профильных сайтах стоит плач Ярославны: во-первых, - &amp;ldquo;просрали все полимеры&amp;rdquo;,
-а во-вторых, - &amp;ldquo;виновных на кол&amp;rdquo;. По последнему пункту я &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2017/06/10/culprit/&#34;&gt;уже высказывался&lt;/a&gt;. Наказать виновных, конечно, руки
-чешутся, но пользы от этого на самом деле не много. Мне лично больше интересно
-как именно пропустили подобную ошибку в программе. Профессиональный интерес,
-можно сказать.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Как все уже, наверное, знают, &lt;a href=&#34;https://geektimes.ru/post/295893/&#34;&gt;второй запуск с &amp;ldquo;Восточного&amp;rdquo; закончился неудачей&lt;/a&gt;. По слухам разгонный блок &amp;ldquo;Фрегат&amp;rdquo; навернулся&#xA;о небесную твердь и сгинул в морской пучине, прихватив с собой Метеор-М и&#xA;остальные 18 спутников. По &lt;a href=&#34;https://echo.msk.ru/news/2100738-echo.html&#34;&gt;другой версии&lt;/a&gt;,&#xA;разгонный блок выдал импульс находясь в неправильной ориентации, упав в&#xA;результате в океан.&lt;/p&gt;&#xA;&lt;p&gt;Самый забавный момент во всей этой печальной истории, это, без сомнения,&#xA;&lt;a href=&#34;https://lenta.ru/news/2017/11/28/lezutnanebo/&#34;&gt;высказывание Кураева&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Ответственность за неудачный запуск &amp;ldquo;Союза-2.1б&amp;rdquo; с космодрома Восточный лежит&#xA;на благовещенском епископе Лукиане, который освящал ракету-носитель перед&#xA;стартом. Об этом радиостанции &amp;ldquo;Говорит Москва&amp;rdquo; сказал протодиакон Андрей&#xA;Кураев.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;Если человек нечто делает, а выходит плохо, то для него это вопрос&#xA;задуматься, правильно ли он делает. Очень странно, что церковь вроде&#xA;предоставляет услуги, но никогда не отвечает за качество этих услуг. В этом&#xA;есть некоторая проблема&amp;rdquo;, — цитирует Кураева сайт радиостанции.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;На профильных сайтах стоит плач Ярославны: во-первых, - &amp;ldquo;просрали все полимеры&amp;rdquo;,&#xA;а во-вторых, - &amp;ldquo;виновных на кол&amp;rdquo;. По последнему пункту я &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2017/06/10/culprit/&#34;&gt;уже высказывался&lt;/a&gt;. Наказать виновных, конечно, руки&#xA;чешутся, но пользы от этого на самом деле не много. Мне лично больше интересно&#xA;как именно пропустили подобную ошибку в программе. Профессиональный интерес,&#xA;можно сказать.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Scorpius SR-M</title>
       <link>https://blog.not-a-kernel-guy.com/2017/06/20/scorpius/</link>
       <pubDate>Tue, 20 Jun 2017 20:32:57 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2017/06/20/scorpius/</guid>
-      <description>&lt;p&gt;Каждый год в предвестие Memorial Day у нас в городе проводится
-&lt;a href=&#34;https://www.youtube.com/watch?v=Dm8bmibSEtY&#34;&gt;военный парад&lt;/a&gt;.
-На сам парад мы, правда, еще не разу не попадали (только в пробки, посвященные
-перекрытию дорог по поводу парада). А вот на выставку военной техники - вполне.
-Выставка удобно расположилась на парковке &lt;a href=&#34;https://en.wikipedia.org/wiki/Del_Amo_Fashion_Center&#34;&gt;пятого по величине торгового центра в
-стране&lt;/a&gt;. Ну а чё? Наша
-страна сильна оружием и шоппингом. Грех не совместить&amp;hellip; ;-)&lt;/p&gt;
-&lt;p&gt;На выставке обнаружился необычный экспонат - суборбитальная ракета &lt;a href=&#34;http://www.scorpius.com/Documents/SR-M%20FactSheet.pdf&#34;&gt;Scorpius
-SR-M&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2017/06/scorpious-1.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/06/scorpious-1.jpg&#34; alt=&#34;Scorpius SR-M&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Каждый год в предвестие Memorial Day у нас в городе проводится&#xA;&lt;a href=&#34;https://www.youtube.com/watch?v=Dm8bmibSEtY&#34;&gt;военный парад&lt;/a&gt;.&#xA;На сам парад мы, правда, еще не разу не попадали (только в пробки, посвященные&#xA;перекрытию дорог по поводу парада). А вот на выставку военной техники - вполне.&#xA;Выставка удобно расположилась на парковке &lt;a href=&#34;https://en.wikipedia.org/wiki/Del_Amo_Fashion_Center&#34;&gt;пятого по величине торгового центра в&#xA;стране&lt;/a&gt;. Ну а чё? Наша&#xA;страна сильна оружием и шоппингом. Грех не совместить&amp;hellip; ;-)&lt;/p&gt;&#xA;&lt;p&gt;На выставке обнаружился необычный экспонат - суборбитальная ракета &lt;a href=&#34;http://www.scorpius.com/Documents/SR-M%20FactSheet.pdf&#34;&gt;Scorpius&#xA;SR-M&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2017/06/scorpious-1.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2017/06/scorpious-1.jpg&#34; alt=&#34;Scorpius SR-M&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Причины аварии посадочного демонстратора Schiaparelli</title>
       <link>https://blog.not-a-kernel-guy.com/2017/05/31/schiaparelli/</link>
       <pubDate>Wed, 31 May 2017 22:18:02 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2017/05/31/schiaparelli/</guid>
-      <description>&lt;p&gt;ESA опубликовало &lt;a href=&#34;http://exploration.esa.int/mars/59176-exomars-2016-schiaparelli-anomaly-inquiry/&#34;&gt;отчет&lt;/a&gt;
-о расследовании аварии посадочного демонстратора Schiaparelli, запущенного к
-Марсу в составе экспедиции ExoMars 2016. Посадочный модуль вошел в атмосферу
-Марса 19 октября 2016 года. Контакт с модулем был потерян за 43 секунды до
-ожидаемого момента посадки. На следующий день место посадки было
-сфотографировано камерами Mars Reconnaissance Orbiter. На снимках было найдено
-свежее большое темное пятно в ожидаемом районе посадки, а в километре от него -
-новое светлое пятно (парашют).&lt;/p&gt;
-&lt;p&gt;Очень занимательный отчет. Интересное начинается прямо в списке оборудования.
-Посадочный модуль был оборудован одним радаром и одним прибором инерционной
-навигации (IMU). Выход из строя любого из них означал неизбежную аварию при
-посадке. Я раньше думал, что на всем, что улетает дальше земной орбиты, все
-сенсоры резервируются в обязательном порядке.&lt;/p&gt;
-&lt;p&gt;Для симуляции и Монте-Карло моделирования посадки использовался внушительный
-список моделей, включая модель атмосферы, многотельное моделирование парашюта,
-модель теплового щита и т.д. Такой подход считается индустриальным стандартом
-и используется, в том числе, в NASA. Каждая из моделей, однако, требует
-тщательной проверки, так как одна единственная ошибка может фатально исказить
-результаты.&lt;/p&gt;</description>
+      <description>&lt;p&gt;ESA опубликовало &lt;a href=&#34;http://exploration.esa.int/mars/59176-exomars-2016-schiaparelli-anomaly-inquiry/&#34;&gt;отчет&lt;/a&gt;&#xA;о расследовании аварии посадочного демонстратора Schiaparelli, запущенного к&#xA;Марсу в составе экспедиции ExoMars 2016. Посадочный модуль вошел в атмосферу&#xA;Марса 19 октября 2016 года. Контакт с модулем был потерян за 43 секунды до&#xA;ожидаемого момента посадки. На следующий день место посадки было&#xA;сфотографировано камерами Mars Reconnaissance Orbiter. На снимках было найдено&#xA;свежее большое темное пятно в ожидаемом районе посадки, а в километре от него -&#xA;новое светлое пятно (парашют).&lt;/p&gt;&#xA;&lt;p&gt;Очень занимательный отчет. Интересное начинается прямо в списке оборудования.&#xA;Посадочный модуль был оборудован одним радаром и одним прибором инерционной&#xA;навигации (IMU). Выход из строя любого из них означал неизбежную аварию при&#xA;посадке. Я раньше думал, что на всем, что улетает дальше земной орбиты, все&#xA;сенсоры резервируются в обязательном порядке.&lt;/p&gt;&#xA;&lt;p&gt;Для симуляции и Монте-Карло моделирования посадки использовался внушительный&#xA;список моделей, включая модель атмосферы, многотельное моделирование парашюта,&#xA;модель теплового щита и т.д. Такой подход считается индустриальным стандартом&#xA;и используется, в том числе, в NASA. Каждая из моделей, однако, требует&#xA;тщательной проверки, так как одна единственная ошибка может фатально исказить&#xA;результаты.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Cassini&#39;s Grand Finale</title>
       <link>https://blog.not-a-kernel-guy.com/2017/04/08/cassini/</link>
       <pubDate>Sat, 08 Apr 2017 20:52:17 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2017/04/08/cassini/</guid>
-      <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://player.vimeo.com/video/210782375&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;vimeo video&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;</description>
+      <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;  &lt;iframe src=&#34;https://player.vimeo.com/video/210782375&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;vimeo video&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Руководство пользователя Space Shuttle</title>
       <link>https://blog.not-a-kernel-guy.com/2016/07/30/shuttle_manual/</link>
       <pubDate>Sat, 30 Jul 2016 19:33:19 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2016/07/30/shuttle_manual/</guid>
-      <description>&lt;p&gt;Чего только не найдешь у NASA в публичном доступе. Вот, например, - &lt;a href=&#34;https://www.nasa.gov/centers/johnson/pdf/390651main_shuttle_crew_operations_manual.pdf&#34;&gt;Руководство
-пользователя Space Shuttle&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The Shuttle Crew Operations Manual (SCOM)
-is a unique document containing information
-about each shuttle system and every phase of a
-generic space shuttle mission.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Небольшой документ, всего 1161 страница. В руководстве описывается:&lt;/p&gt;</description>
+      <description>&lt;p&gt;Чего только не найдешь у NASA в публичном доступе. Вот, например, - &lt;a href=&#34;https://www.nasa.gov/centers/johnson/pdf/390651main_shuttle_crew_operations_manual.pdf&#34;&gt;Руководство&#xA;пользователя Space Shuttle&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The Shuttle Crew Operations Manual (SCOM)&#xA;is a unique document containing information&#xA;about each shuttle system and every phase of a&#xA;generic space shuttle mission.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Небольшой документ, всего 1161 страница. В руководстве описывается:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Авария разгонного блока Centaur в 1999 году</title>
       <link>https://blog.not-a-kernel-guy.com/2014/01/09/1551/</link>
       <pubDate>Thu, 09 Jan 2014 23:37:19 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2014/01/09/1551/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://sunnyday.mit.edu/accidents/titan_1999_rpt.doc&#34;&gt;http://sunnyday.mit.edu/accidents/titan_1999_rpt.doc&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;30 апреля 1999 года в 12:30 со стартового комплекса LC40 на мысе Канаверал была запущена ракета-носитель Titan IV B-32 в конфигурации с разгонным блоком Titan Centaur (TC-14), которая должна была вывести спутник Milstar на геостационарную орбиту. Твердотопливные ускорители и первые две ступени отработали номинально. Centaur отделился от ракеты-носителя через 9 минут 12 секунд после запуска. Во время первого включения двигателя разгонный блок начал испытывать сложности с ориентацией по крену. При втором включении двигателя амплитуда колебаний значительно возросла, усиленная нестабильностью по рысканию и тангажу, что в конечном итоге привело к потере ориентации. Пытаясь бороться с потерей ориентации, Centaur в результате выработал все наличное топливо двигателей ориентации. Третье включение двигателя было досрочно прервано из-за потери ориентации. В результате возникших аномалий, спутник Milstar был выведен на низкую эллиптическую орбиту, вместо запланированной геостацонтарной.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://sunnyday.mit.edu/accidents/titan_1999_rpt.doc&#34;&gt;http://sunnyday.mit.edu/accidents/titan_1999_rpt.doc&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;30 апреля 1999 года в 12:30 со стартового комплекса LC40 на мысе Канаверал была запущена ракета-носитель Titan IV B-32 в конфигурации с разгонным блоком Titan Centaur (TC-14), которая должна была вывести спутник Milstar на геостационарную орбиту. Твердотопливные ускорители и первые две ступени отработали номинально. Centaur отделился от ракеты-носителя через 9 минут 12 секунд после запуска. Во время первого включения двигателя разгонный блок начал испытывать сложности с ориентацией по крену. При втором включении двигателя амплитуда колебаний значительно возросла, усиленная нестабильностью по рысканию и тангажу, что в конечном итоге привело к потере ориентации. Пытаясь бороться с потерей ориентации, Centaur в результате выработал все наличное топливо двигателей ориентации. Третье включение двигателя было досрочно прервано из-за потери ориентации. В результате возникших аномалий, спутник Milstar был выведен на низкую эллиптическую орбиту, вместо запланированной геостацонтарной.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
-    
     <item>
       <title>Невероятно</title>
       <link>https://blog.not-a-kernel-guy.com/2012/10/22/1431/</link>
       <pubDate>Mon, 22 Oct 2012 10:17:26 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2012/10/22/1431/</guid>
-      <description>Шаттл на улицах Лос-Анджелеса:
-  Очень красиво!</description>
+      <description>Шаттл на улицах Лос-Анджелеса:&#xA;Очень красиво!</description>
     </item>
-    
     <item>
       <title>Dragon полетел</title>
       <link>https://blog.not-a-kernel-guy.com/2010/12/09/952/</link>
       <pubDate>Thu, 09 Dec 2010 23:53:38 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/12/09/952/</guid>
-      <description>А тем временем в замке у шефаSpaceX успешно запустила и вернула с орбиты Dragon:</description>
+      <description>А тем временем в замке у шефа SpaceX успешно запустила и вернула с орбиты Dragon:</description>
     </item>
-    
     <item>
       <title>Falcon 9 вышел на орбиту!</title>
       <link>https://blog.not-a-kernel-guy.com/2010/06/04/829/</link>
       <pubDate>Fri, 04 Jun 2010 12:03:38 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/06/04/829/</guid>
-      <description>Только что Falcon 9 вышел на (пока промежуточную) орбиту! Falcon 1 сделал это только с третьей попытки. Не иначе как в SpaceX умеют учиться на своих ошибках. Молодцы!
-А вот и видео запуска:
-   Posted June 04, 2010 11:54 Pacific Time
-T+ 00:09:04 Falcon 9 has achieved Earth Orbit!
-  Posted June 04, 2010 11:54 Pacific Time
-T+ 00:08:50 Second Stage Engine Shut-Down
-  Posted June 04, 2010 11:50 Pacific Time</description>
+      <description>Только что Falcon 9 вышел на (пока промежуточную) орбиту! Falcon 1 сделал это только с третьей попытки. Не иначе как в SpaceX умеют учиться на своих ошибках. Молодцы!&#xA;А вот и видео запуска:&#xA;Posted June 04, 2010 11:54 Pacific Time&#xA;T+ 00:09:04 Falcon 9 has achieved Earth Orbit!&#xA;Posted June 04, 2010 11:54 Pacific Time&#xA;T+ 00:08:50 Second Stage Engine Shut-Down&#xA;Posted June 04, 2010 11:50 Pacific Time&#xA;T+ 00:05:35 As expected, the radiatively cooled expansion nozzle of the engine is glowing red hot.</description>
     </item>
-    
     <item>
       <title>Спутник приобрести не желаете?</title>
       <link>https://blog.not-a-kernel-guy.com/2007/09/06/235/</link>
       <pubDate>Thu, 06 Sep 2007 21:03:17 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/09/06/235/</guid>
-      <description>Точнее - &amp;ldquo;Спутник-1&amp;rdquo;. Недорого. Самовывоз. http://cgi.ebay.com/ws/eBayISAPI.dll?ViewItem&amp;amp;item;=160155029889.
-Источник: http://www.astronomy.ru/forum/index.php/topic,30799.0.html</description>
+      <description>Точнее - &amp;ldquo;Спутник-1&amp;rdquo;. Недорого. Самовывоз. http://cgi.ebay.com/ws/eBayISAPI.dll?ViewItem&amp;amp;item;=160155029889.&#xA;Источник: http://www.astronomy.ru/forum/index.php/topic,30799.0.html</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,104 +6,63 @@
     <description>Recent content in Win32 on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 14 Jun 2011 23:38:43 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/win32/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Jun 2011 23:38:43 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/win32/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Функция DeviceIoControlEx</title>
       <link>https://blog.not-a-kernel-guy.com/2011/06/14/1094/</link>
       <pubDate>Tue, 14 Jun 2011 23:38:43 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/06/14/1094/</guid>
       <description>&lt;p&gt;Win32 API предоставляет «Ex» варианты функций ReadFile и WriteFile, в то время как «Ex» варианта функции DeviceIoControl не предлагается. Исправить этот недостаток очень просто, так как соответствующая функция Native API документирована в MSDN: &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms648411(v=vs.85).aspx&#34;&gt;NtDeviceIoControlFile&lt;/a&gt; (хотя и помечена как «Deprecated»). Прототип новой функции будет выглядеть вот так:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Зачем нужен параметр lpClass в функции RegCreateKeyEx?</title>
       <link>https://blog.not-a-kernel-guy.com/2008/12/04/377/</link>
       <pubDate>Thu, 04 Dec 2008 22:07:21 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/12/04/377/</guid>
-      <description>&lt;p&gt;Любой разработчик, кто хоть раз создавал ключ в реестре с помощью функции &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms724844(VS.85).aspx&#34;&gt;RegCreateKeyEx&lt;/a&gt; задавался вопросом: «а зачем нужен параметр lpClass и что он означает?»&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;lpClass&lt;/em&gt; [in, optional]
-The user-defined class type of this key. This parameter may be ignored. This parameter can be NULL.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;Любой разработчик, кто хоть раз создавал ключ в реестре с помощью функции &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms724844(VS.85).aspx&#34;&gt;RegCreateKeyEx&lt;/a&gt; задавался вопросом: «а зачем нужен параметр lpClass и что он означает?»&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;lpClass&lt;/em&gt; [in, optional]&#xA;The user-defined class type of this key. This parameter may be ignored. This parameter can be NULL.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
-    
     <item>
       <title>Почему GetModuleFileName возвращает “system32” для 32-х битных библиотек под Wow64?</title>
       <link>https://blog.not-a-kernel-guy.com/2008/06/21/314/</link>
       <pubDate>Sat, 21 Jun 2008 15:39:58 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/06/21/314/</guid>
-      <description>Вопрос:
-32-х битный процесс запущен на 64-х битной системе. Почему для некоторых библиотек GetModuleFileName возвращает путь вида &amp;ldquo;%SystemRoot%\syswow64&amp;rdquo;, а для других - &amp;ldquo;%SystemRoot%\system32&amp;rdquo;, не смотря на то, что и первые, и вторые находятся в &amp;ldquo;%SystemRoot%\syswow64&amp;rdquo;?
-Ответ:
-Потому что загрузчик понятия не имеет о Wow64 и перенаправлении файловой системы в частности. Загрузчик просто сохраняет полное имя модуля во время загрузки и возвращает его копию в GetModuleFileName. Соответственно если библиотека была загружена как &amp;ldquo;%SystemRoot%\system32\foobar.</description>
+      <description>Вопрос:&#xA;32-х битный процесс запущен на 64-х битной системе. Почему для некоторых библиотек GetModuleFileName возвращает путь вида &amp;ldquo;%SystemRoot%\syswow64&amp;rdquo;, а для других - &amp;ldquo;%SystemRoot%\system32&amp;rdquo;, не смотря на то, что и первые, и вторые находятся в &amp;ldquo;%SystemRoot%\syswow64&amp;rdquo;?&#xA;Ответ:&#xA;Потому что загрузчик понятия не имеет о Wow64 и перенаправлении файловой системы в частности. Загрузчик просто сохраняет полное имя модуля во время загрузки и возвращает его копию в GetModuleFileName. Соответственно если библиотека была загружена как &amp;ldquo;%SystemRoot%\system32\foobar.</description>
     </item>
-    
     <item>
       <title>Недокументированные функции; Загрузка 32-х битных DLL в 64-х битный процесс</title>
       <link>https://blog.not-a-kernel-guy.com/2008/02/28/293/</link>
       <pubDate>Thu, 28 Feb 2008 23:07:13 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/02/28/293/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/10/18/256/&#34;&gt;Вопрос&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Скажите, а невозможность загрузки в 64bit-процесс 32bit DLL - фатальна, или же возможны какие-то хаки, недокументированные обходные пути?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Отвечаю здесь, так как ответ получился слушком длинным.&lt;/p&gt;
-&lt;p&gt;Во-первых, про любые недокументированные возможности меня спрашивать бесполезно. Даже если такая возможность существует, я всё равно о ней не расскажу. Этому есть несколько причин, включая очевидные вещи вроде NDA, законе об авторском праве и т.д. Еще одна причина, почему я не горю желанием это делать, - это то, что раскрывая детали реализации того или иного компонента, я тем самым лишаю этот компонент возможности развиваться и улучшатся в следующих версиях.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/10/18/256/&#34;&gt;Вопрос&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Скажите, а невозможность загрузки в 64bit-процесс 32bit DLL - фатальна, или же возможны какие-то хаки, недокументированные обходные пути?&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Отвечаю здесь, так как ответ получился слушком длинным.&lt;/p&gt;&#xA;&lt;p&gt;Во-первых, про любые недокументированные возможности меня спрашивать бесполезно. Даже если такая возможность существует, я всё равно о ней не расскажу. Этому есть несколько причин, включая очевидные вещи вроде NDA, законе об авторском праве и т.д. Еще одна причина, почему я не горю желанием это делать, - это то, что раскрывая детали реализации того или иного компонента, я тем самым лишаю этот компонент возможности развиваться и улучшатся в следующих версиях.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Помните, как я ругался на функцию GetRawInputDeviceList?</title>
       <link>https://blog.not-a-kernel-guy.com/2008/02/15/289/</link>
       <pubDate>Fri, 15 Feb 2008 22:06:19 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/02/15/289/</guid>
       <description>&lt;p&gt;Оказалось, что &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/12/05/268/&#34;&gt;это&lt;/a&gt; была ошибка в документации. Её поправили и посмотрите, &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/ms645598.aspx&#34;&gt;что получилось&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Пикник на обочине или не ходите, дети, в DllMain гулять, а то ноги оторвёт</title>
       <link>https://blog.not-a-kernel-guy.com/2008/01/30/284/</link>
       <pubDate>Wed, 30 Jan 2008 22:01:43 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/01/30/284/</guid>
       <description>&lt;p&gt;Точка входа в DLL, так же как и точка входа в программу, - это очень специальное место. Зона. В Зоне действуют свои правила касательно того, что можно делать, а что делать нельзя. В Зоне можно инициализировать локальные данные DLL, можно создавать критические секции. В Зоне нельзя динамически загружать другие Модули или создавать потоки. Любой Сталкер знает и следует &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/ms682583.aspx&#34;&gt;правилам Зоны&lt;/a&gt;. Все остальные рано или поздно нарушают правила и расплачиваются за это.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Эта страшная функция GetRawInputDeviceList</title>
       <link>https://blog.not-a-kernel-guy.com/2007/12/05/268/</link>
       <pubDate>Wed, 05 Dec 2007 23:35:35 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/12/05/268/</guid>
-      <description>&lt;p&gt;Функцию &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/ms645598.aspx&#34;&gt;GetRawInputDeviceList&lt;/a&gt; можно смело приводить в качестве антипримера правильно спроектированного API. Эта функция используется для получения списка описателей устройств ввода (raw input devices). Ничего сложного. Прототип функции тоже выглядит довольно невинно - всего три параметра, и, как кажется по началу, назначение каждого довольно очевидно.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;UINT &lt;span style=&#34;color:#a6e22e&#34;&gt;GetRawInputDeviceList&lt;/span&gt;(
-    __out_opt PRAWINPUTDEVICELIST pRawInputDeviceList,
-    __inout PUINT puiNumDevices,
-    __in UINT cbSize
-    );
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <description>&lt;p&gt;Функцию &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/ms645598.aspx&#34;&gt;GetRawInputDeviceList&lt;/a&gt; можно смело приводить в качестве антипримера правильно спроектированного API. Эта функция используется для получения списка описателей устройств ввода (raw input devices). Ничего сложного. Прототип функции тоже выглядит довольно невинно - всего три параметра, и, как кажется по началу, назначение каждого довольно очевидно.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;UINT &lt;span style=&#34;color:#a6e22e&#34;&gt;GetRawInputDeviceList&lt;/span&gt;(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    __out_opt PRAWINPUTDEVICELIST pRawInputDeviceList,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    __inout PUINT puiNumDevices,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    __in UINT cbSize&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    );&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>В чём разница между HKEY и HANDLE?</title>
       <link>https://blog.not-a-kernel-guy.com/2006/12/25/120/</link>
       <pubDate>Mon, 25 Dec 2006 23:19:55 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/12/25/120/</guid>
-      <description>&lt;p&gt;В комментариях к посту &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/10/31/93/&#34;&gt;про обертку для HANDLE&lt;/a&gt; зашла речь о разнице между HKEY и HANDLE. С одной стороны, они имеют много общего:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Ключ реестра это такой же объект ядра, как и файл. К примеру, CreateFile и RegCreateKeyEx используют одинаковые параметры для указания требуемого уровня доступа и прав доступа к ключу/файлу;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;HKEY, также как и HANDLE, можно скопировать с помощью функции DuplicateHandle.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;p&gt;В комментариях к посту &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/10/31/93/&#34;&gt;про обертку для HANDLE&lt;/a&gt; зашла речь о разнице между HKEY и HANDLE. С одной стороны, они имеют много общего:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Ключ реестра это такой же объект ядра, как и файл. К примеру, CreateFile и RegCreateKeyEx используют одинаковые параметры для указания требуемого уровня доступа и прав доступа к ключу/файлу;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;HKEY, также как и HANDLE, можно скопировать с помощью функции DuplicateHandle.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
   </channel>
 </rss>

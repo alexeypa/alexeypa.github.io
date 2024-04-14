@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -120,92 +110,92 @@
 <p>Покопавшись в отладчике я понял в чем дело.</p>
 <p>Начну издалека. Системные вызовы из 32-х битных приложений перехватываются Wow64. Wow64 транслирует 32-х битные параметры в 64-х битные, а затем выполняет системный вызов. Когда, например, приложение вызывает функцию ReleaseMutex() получается такая цепочка вызовов:</p>
 <p><a href="/2013/01/wow64_call_stack.png"><img src="/2013/01/wow64_call_stack.png" alt=""></a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000:x86&gt; uf ntdll32!NtReleaseMutant
-ntdll32!ZwReleaseMutant:
-77c1fb6c b81d000000      mov     eax,1Dh
-77c1fb71 b907000000      mov     ecx,7
-77c1fb76 8d542404        lea     edx,[esp+4]
-77c1fb7a 64ff15c0000000  call    dword ptr fs:[0C0h]
-77c1fb81 83c404          add     esp,4
-77c1fb84 c20800          ret     8
-</code></pre></div><p>Инструкция call выше выполняет переход на точку входа внутри Wow64. Для сравнения в 64-х разрядной версии используется инструкция syscall, которая выполняет переход в ядро:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; uf ntdll!NtReleaseMutant
-ntdll!NtReleaseMutant:
-00000000`77a71510 4c8bd1          mov     r10,rcx
-00000000`77a71513 b81d000000      mov     eax,1Dh
-00000000`77a71518 0f05            syscall
-00000000`77a7151a c3              ret
-</code></pre></div><p>При переключении между 32-х и 64-х битным кодом, Wow64 первым делом сохраняет 32-х разрядный контекст процессора (включая esi и edi) в специальной структуре CPUCONTEXT, на которую указывает TlsSlots[1] в 64-х битной версии TEB (Thread Environment Block). Когда ядро генерирует исключение пользовательского режима, первым дело управление получает Wow64. Wow64 формирует 32-х битный контекст, используя значения, сохраненные в CPUCONTEXT, и генерирует 32-х разрядное исключение с этим контекстом. В том числе, восстанавливаются и прежние значения esi и edi.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000:x86&gt; uf ntdll32!NtReleaseMutant
+</span></span><span style="display:flex;"><span>ntdll32!ZwReleaseMutant:
+</span></span><span style="display:flex;"><span>77c1fb6c b81d000000      mov     eax,1Dh
+</span></span><span style="display:flex;"><span>77c1fb71 b907000000      mov     ecx,7
+</span></span><span style="display:flex;"><span>77c1fb76 8d542404        lea     edx,[esp+4]
+</span></span><span style="display:flex;"><span>77c1fb7a 64ff15c0000000  call    dword ptr fs:[0C0h]
+</span></span><span style="display:flex;"><span>77c1fb81 83c404          add     esp,4
+</span></span><span style="display:flex;"><span>77c1fb84 c20800          ret     8
+</span></span></code></pre></div><p>Инструкция call выше выполняет переход на точку входа внутри Wow64. Для сравнения в 64-х разрядной версии используется инструкция syscall, которая выполняет переход в ядро:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000&gt; uf ntdll!NtReleaseMutant
+</span></span><span style="display:flex;"><span>ntdll!NtReleaseMutant:
+</span></span><span style="display:flex;"><span>00000000`77a71510 4c8bd1          mov     r10,rcx
+</span></span><span style="display:flex;"><span>00000000`77a71513 b81d000000      mov     eax,1Dh
+</span></span><span style="display:flex;"><span>00000000`77a71518 0f05            syscall
+</span></span><span style="display:flex;"><span>00000000`77a7151a c3              ret
+</span></span></code></pre></div><p>При переключении между 32-х и 64-х битным кодом, Wow64 первым делом сохраняет 32-х разрядный контекст процессора (включая esi и edi) в специальной структуре CPUCONTEXT, на которую указывает TlsSlots[1] в 64-х битной версии TEB (Thread Environment Block). Когда ядро генерирует исключение пользовательского режима, первым дело управление получает Wow64. Wow64 формирует 32-х битный контекст, используя значения, сохраненные в CPUCONTEXT, и генерирует 32-х разрядное исключение с этим контекстом. В том числе, восстанавливаются и прежние значения esi и edi.</p>
 <p>Почему же это не работает с исключением STATUS_INVALID_HANDLE? Дело в том, что Wow64 использует упрощенный (и более быстрый) вариант трансляции 32-х битных параметров в 64-х для некоторых системных вызовов. В том числе, для NtReleaseMutant. Смотрите:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">Breakpoint 0 hit
-eax=0000001d ebx=6a4f5584 ecx=00000007 edx=003ef764 esi=00000900 edi=00000000
-eip=77c1fb7a esp=003ef760 ebp=003ef76c iopl=0         nv up ei pl nz ac pe nc
-cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000216
-ntdll32!ZwReleaseMutant+0xe:
-77c1fb7a 64ff15c0000000  call    dword ptr fs:[0C0h]  fs:0053:000000c0=00000000
-0:000:x86&gt; t
-wow64cpu!X86SwitchTo64BitMode:
-74ae2320 ea1e27ae743300  jmp     0033:74AE271E
-0:000:x86&gt;
-wow64cpu!CpupReturnFromSimulatedCode:
-00000000`74ae271e 67448b0424      mov     r8d,dword ptr [esp]
-</code></pre></div><p>Функция wow64cpu!CpupReturnFromSimulatedCode - это точка возврата из x86 кода в Wow64:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; u wow64cpu!CpupReturnFromSimulatedCode
-wow64cpu!CpupReturnFromSimulatedCode:
-00000000`74ae271e 67448b0424      mov     r8d,dword ptr [esp]
-00000000`74ae2723 458985bc000000  mov     dword ptr [r13+0BCh],r8d
-00000000`74ae272a 4189a5c8000000  mov     dword ptr [r13+0C8h],esp
-00000000`74ae2731 498ba42480140000 mov     rsp,qword ptr [r12+1480h]
-00000000`74ae2739 4983a4248014000000 and   qword ptr [r12+1480h],0
-00000000`74ae2742 448bda          mov     r11d,edx
-wow64cpu!TurboDispatchJumpAddressStart:
-00000000`74ae2745 41ff24cf        jmp     qword ptr [r15+rcx*8]
-wow64cpu!TurboDispatchJumpAddressEnd:
-00000000`74ae2749 4189b5a4000000  mov     dword ptr [r13+0A4h],esi
-00000000`74ae2750 4189bda0000000  mov     dword ptr [r13+0A0h],edi
-00000000`74ae2757 41899da8000000  mov     dword ptr [r13+0A8h],ebx
-00000000`74ae275e 4189adb8000000  mov     dword ptr [r13+0B8h],ebp
-</code></pre></div><p>Первые три инструкции сохраняют eip и esp в CPUCONTEXT; две следующие - переключаются на 64-х битный стек. Инструкция по адресу wow64cpu!TurboDispatchJumpAddressStart выбирает обработчик, который будет конвертировать параметры в 64-х битный формат и выполнит системный вызов. Большинство системных вызовов обслуживаются обработчиком под индексом 0 (Индекс обработчика указывается в регистре rcx). Он начинается с метки wow64cpu!TurboDispatchJumpAddressEnd. Первым делом он как раз и сохраняет non-volatile регстры в CPUCONTEXT.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>Breakpoint 0 hit
+</span></span><span style="display:flex;"><span>eax=0000001d ebx=6a4f5584 ecx=00000007 edx=003ef764 esi=00000900 edi=00000000
+</span></span><span style="display:flex;"><span>eip=77c1fb7a esp=003ef760 ebp=003ef76c iopl=0         nv up ei pl nz ac pe nc
+</span></span><span style="display:flex;"><span>cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000216
+</span></span><span style="display:flex;"><span>ntdll32!ZwReleaseMutant+0xe:
+</span></span><span style="display:flex;"><span>77c1fb7a 64ff15c0000000  call    dword ptr fs:[0C0h]  fs:0053:000000c0=00000000
+</span></span><span style="display:flex;"><span>0:000:x86&gt; t
+</span></span><span style="display:flex;"><span>wow64cpu!X86SwitchTo64BitMode:
+</span></span><span style="display:flex;"><span>74ae2320 ea1e27ae743300  jmp     0033:74AE271E
+</span></span><span style="display:flex;"><span>0:000:x86&gt;
+</span></span><span style="display:flex;"><span>wow64cpu!CpupReturnFromSimulatedCode:
+</span></span><span style="display:flex;"><span>00000000`74ae271e 67448b0424      mov     r8d,dword ptr [esp]
+</span></span></code></pre></div><p>Функция wow64cpu!CpupReturnFromSimulatedCode - это точка возврата из x86 кода в Wow64:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000&gt; u wow64cpu!CpupReturnFromSimulatedCode
+</span></span><span style="display:flex;"><span>wow64cpu!CpupReturnFromSimulatedCode:
+</span></span><span style="display:flex;"><span>00000000`74ae271e 67448b0424      mov     r8d,dword ptr [esp]
+</span></span><span style="display:flex;"><span>00000000`74ae2723 458985bc000000  mov     dword ptr [r13+0BCh],r8d
+</span></span><span style="display:flex;"><span>00000000`74ae272a 4189a5c8000000  mov     dword ptr [r13+0C8h],esp
+</span></span><span style="display:flex;"><span>00000000`74ae2731 498ba42480140000 mov     rsp,qword ptr [r12+1480h]
+</span></span><span style="display:flex;"><span>00000000`74ae2739 4983a4248014000000 and   qword ptr [r12+1480h],0
+</span></span><span style="display:flex;"><span>00000000`74ae2742 448bda          mov     r11d,edx
+</span></span><span style="display:flex;"><span>wow64cpu!TurboDispatchJumpAddressStart:
+</span></span><span style="display:flex;"><span>00000000`74ae2745 41ff24cf        jmp     qword ptr [r15+rcx*8]
+</span></span><span style="display:flex;"><span>wow64cpu!TurboDispatchJumpAddressEnd:
+</span></span><span style="display:flex;"><span>00000000`74ae2749 4189b5a4000000  mov     dword ptr [r13+0A4h],esi
+</span></span><span style="display:flex;"><span>00000000`74ae2750 4189bda0000000  mov     dword ptr [r13+0A0h],edi
+</span></span><span style="display:flex;"><span>00000000`74ae2757 41899da8000000  mov     dword ptr [r13+0A8h],ebx
+</span></span><span style="display:flex;"><span>00000000`74ae275e 4189adb8000000  mov     dword ptr [r13+0B8h],ebp
+</span></span></code></pre></div><p>Первые три инструкции сохраняют eip и esp в CPUCONTEXT; две следующие - переключаются на 64-х битный стек. Инструкция по адресу wow64cpu!TurboDispatchJumpAddressStart выбирает обработчик, который будет конвертировать параметры в 64-х битный формат и выполнит системный вызов. Большинство системных вызовов обслуживаются обработчиком под индексом 0 (Индекс обработчика указывается в регистре rcx). Он начинается с метки wow64cpu!TurboDispatchJumpAddressEnd. Первым делом он как раз и сохраняет non-volatile регстры в CPUCONTEXT.</p>
 <p>NtReleaseMutant использует обработчик с индексом 7, он же - wow64cpu!Thunk2ArgSpNSp:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; u wow64cpu!Thunk2ArgSpNSp
-wow64cpu!Thunk2ArgSpNSp:
-00000000`74ae2d84 4d6313          movsxd  r10,dword ptr [r11]
-00000000`74ae2d87 418b5304        mov     edx,dword ptr [r11+4]
-00000000`74ae2d8b eb2d            jmp     wow64cpu!Thunk0Arg (00000000`74ae2dba)
-0:000&gt; u wow64cpu!Thunk0Arg
-wow64cpu!Thunk0Arg:
-00000000`74ae2dba e841000000      call    wow64cpu!CpupSyscallStub (00000000`74ae2e00)
-0:000&gt; u wow64cpu!CpupSyscallStub
-wow64cpu!CpupSyscallStub:
-00000000`74ae2e00 4189adb8000000  mov     dword ptr [r13+0B8h],ebp
-00000000`74ae2e07 0f05            syscall
-00000000`74ae2e09 c3              ret
-</code></pre></div><p>Видно, что non-volatile регистры не сохраняются в CPUCONTEXT и системный вызов выполняется из wow64cpu!CpupSyscallStub, а не ntdll!NtReleaseMutant.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000&gt; u wow64cpu!Thunk2ArgSpNSp
+</span></span><span style="display:flex;"><span>wow64cpu!Thunk2ArgSpNSp:
+</span></span><span style="display:flex;"><span>00000000`74ae2d84 4d6313          movsxd  r10,dword ptr [r11]
+</span></span><span style="display:flex;"><span>00000000`74ae2d87 418b5304        mov     edx,dword ptr [r11+4]
+</span></span><span style="display:flex;"><span>00000000`74ae2d8b eb2d            jmp     wow64cpu!Thunk0Arg (00000000`74ae2dba)
+</span></span><span style="display:flex;"><span>0:000&gt; u wow64cpu!Thunk0Arg
+</span></span><span style="display:flex;"><span>wow64cpu!Thunk0Arg:
+</span></span><span style="display:flex;"><span>00000000`74ae2dba e841000000      call    wow64cpu!CpupSyscallStub (00000000`74ae2e00)
+</span></span><span style="display:flex;"><span>0:000&gt; u wow64cpu!CpupSyscallStub
+</span></span><span style="display:flex;"><span>wow64cpu!CpupSyscallStub:
+</span></span><span style="display:flex;"><span>00000000`74ae2e00 4189adb8000000  mov     dword ptr [r13+0B8h],ebp
+</span></span><span style="display:flex;"><span>00000000`74ae2e07 0f05            syscall
+</span></span><span style="display:flex;"><span>00000000`74ae2e09 c3              ret
+</span></span></code></pre></div><p>Видно, что non-volatile регистры не сохраняются в CPUCONTEXT и системный вызов выполняется из wow64cpu!CpupSyscallStub, а не ntdll!NtReleaseMutant.</p>
 <p>Хотя esi и edi не сохраняются в CPUCONTEXT, они не используются в wow64cpu!Thunk2ArgSpNSp и, соответственно, ядро их корректно восстанавливает. В этом можно убедится посмотрев на конекст исключения в 64-х разрядном диспетчере:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">Breakpoint 1 hit
-ntdll!KiUserExceptionDispatcher:
-00000000`77a7124a fc              cld
-0:000&gt; .cxr @rsp
-rax=0000000049af579a rbx=000000006a4f5584 rcx=000000000017ddb0
-rdx=0000000074ae2dbf rsi=0000000000000900 rdi=0000000000000000
-rip=0000000077a712f7 rsp=000000000017e3c0 rbp=00000000003ef76c
- r8=000000000017e488  r9=00000000003ef76c r10=0000000000000000
-r11=0000000000000246 r12=000000007efdb000 r13=000000000017fd20
-r14=000000000017e500 r15=0000000074ae2450
-iopl=0         nv up ei pl nz na po nc
-cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000204
-ntdll!KiRaiseUserExceptionDispatcher+0x3a:
-00000000`77a712f7 8b8424c0000000  mov     eax,dword ptr [rsp+0C0h] ss:00000000`0017e480=c0000008
-</code></pre></div><p>Значения регистров портятся позже, когда Wow64 транслирует 64-х битное исключение в 32-х битное. Значения регистров при этом, как я уже упоминал, берутся из структуры CPUCONTEXT, содержимое которой к этому моменту устарело:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; dt poi(@$teb+1488)+4 ntdll32!_CONTEXT
-   +0x000 ContextFlags     : 0x1002f
-   ...
-   +0x09c Edi              : 0x40
-   +0x0a0 Esi              : 0x28
-   +0x0a4 Ebx              : 0x6a327f
-   +0x0a8 Edx              : 0
-   ...
-</code></pre></div><p>Пару слов о том, почему wow64cpu!Thunk2ArgSpNSp и другие “быстрые” обработчики не сохраняются эти регистры. Системные вызовы, как правило, не генерируют исключений. Вместо этого возвращаются код ошибки, тот же STATUS_ACCESS_DENIED. В случае же, когда исключение все-же случается, то либо оно и так фатально (скажем страница, хранящая CPUCONTEXT стала вдруг недоступна), либо используется полновестный обработчик (тот, что с нулевым индексом). Про трассировку описателей и исключение STATUS_INVALID_HANDLE, скороее всего, просто забыли. Что и не удивительно, если учесть, что все, в принципе, работает, если не пытаться продолжить выполниение после исключения STATUS_INVALID_HANDLE.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>Breakpoint 1 hit
+</span></span><span style="display:flex;"><span>ntdll!KiUserExceptionDispatcher:
+</span></span><span style="display:flex;"><span>00000000`77a7124a fc              cld
+</span></span><span style="display:flex;"><span>0:000&gt; .cxr @rsp
+</span></span><span style="display:flex;"><span>rax=0000000049af579a rbx=000000006a4f5584 rcx=000000000017ddb0
+</span></span><span style="display:flex;"><span>rdx=0000000074ae2dbf rsi=0000000000000900 rdi=0000000000000000
+</span></span><span style="display:flex;"><span>rip=0000000077a712f7 rsp=000000000017e3c0 rbp=00000000003ef76c
+</span></span><span style="display:flex;"><span> r8=000000000017e488  r9=00000000003ef76c r10=0000000000000000
+</span></span><span style="display:flex;"><span>r11=0000000000000246 r12=000000007efdb000 r13=000000000017fd20
+</span></span><span style="display:flex;"><span>r14=000000000017e500 r15=0000000074ae2450
+</span></span><span style="display:flex;"><span>iopl=0         nv up ei pl nz na po nc
+</span></span><span style="display:flex;"><span>cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000204
+</span></span><span style="display:flex;"><span>ntdll!KiRaiseUserExceptionDispatcher+0x3a:
+</span></span><span style="display:flex;"><span>00000000`77a712f7 8b8424c0000000  mov     eax,dword ptr [rsp+0C0h] ss:00000000`0017e480=c0000008
+</span></span></code></pre></div><p>Значения регистров портятся позже, когда Wow64 транслирует 64-х битное исключение в 32-х битное. Значения регистров при этом, как я уже упоминал, берутся из структуры CPUCONTEXT, содержимое которой к этому моменту устарело:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000&gt; dt poi(@$teb+1488)+4 ntdll32!_CONTEXT
+</span></span><span style="display:flex;"><span>   +0x000 ContextFlags     : 0x1002f
+</span></span><span style="display:flex;"><span>   ...
+</span></span><span style="display:flex;"><span>   +0x09c Edi              : 0x40
+</span></span><span style="display:flex;"><span>   +0x0a0 Esi              : 0x28
+</span></span><span style="display:flex;"><span>   +0x0a4 Ebx              : 0x6a327f
+</span></span><span style="display:flex;"><span>   +0x0a8 Edx              : 0
+</span></span><span style="display:flex;"><span>   ...
+</span></span></code></pre></div><p>Пару слов о том, почему wow64cpu!Thunk2ArgSpNSp и другие “быстрые” обработчики не сохраняются эти регистры. Системные вызовы, как правило, не генерируют исключений. Вместо этого возвращаются код ошибки, тот же STATUS_ACCESS_DENIED. В случае же, когда исключение все-же случается, то либо оно и так фатально (скажем страница, хранящая CPUCONTEXT стала вдруг недоступна), либо используется полновестный обработчик (тот, что с нулевым индексом). Про трассировку описателей и исключение STATUS_INVALID_HANDLE, скороее всего, просто забыли. Что и не удивительно, если учесть, что все, в принципе, работает, если не пытаться продолжить выполниение после исключения STATUS_INVALID_HANDLE.</p>
 <p>Самой простой вариант избежать этой проблемы - запретить “быстрые” обработчики ключём (недокументированным, вестимо) в реестре. Можно, затереть nop-ами код между wow64cpu!TurboDispatchJumpAddressStart и wow64cpu!TurboDispatchJumpAddressEnd. Еще вериант - перехварить ntdll!KiUserExceptionDispatcher. Или даже ntdll!KiRaiseUserExceptionDispatcher. Способы один другого краше.</p>
 <p>Вот така х&hellip;ня, малята! ;-)</p>
   </div>

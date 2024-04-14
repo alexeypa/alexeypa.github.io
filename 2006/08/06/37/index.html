@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -114,12 +104,12 @@
     </span>
     <p>Простой способ сократить число юнит тестов и сохранить 100% покрытие кода - разбить тесты на элементарные случаи и перебрать все комбинации. Этот способ хорошо подходит для тестирования отдельных функций и методов.</p>
 <p>Возьмем для примера функцию <code>OpenHandle()</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">HANDLE
-<span style="color:#a6e22e">OpenThread</span>(
-    DWORD dwDesiredAccess,
-    BOOL bInheritHandle,
-    DWORD dwThreadId);
-</code></pre></div><p>Результат этой функции зависит как от значения каждого из переданных параметров, так и от внешних условий, например от контекста безопасности (security context) процесса и DACL открываемого потока.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>HANDLE
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OpenThread</span>(
+</span></span><span style="display:flex;"><span>    DWORD dwDesiredAccess,
+</span></span><span style="display:flex;"><span>    BOOL bInheritHandle,
+</span></span><span style="display:flex;"><span>    DWORD dwThreadId);
+</span></span></code></pre></div><p>Результат этой функции зависит как от значения каждого из переданных параметров, так и от внешних условий, например от контекста безопасности (security context) процесса и DACL открываемого потока.</p>
 <p>Можно выделить следующие элементарные тесты:</p>
 <ul>
 <li>

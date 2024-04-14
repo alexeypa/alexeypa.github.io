@@ -6,18 +6,14 @@
     <description>Recent content in NMAKE on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sat, 30 Oct 2010 00:19:19 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/nmake/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Oct 2010 00:19:19 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/nmake/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Отладка NMAKE скриптов</title>
       <link>https://blog.not-a-kernel-guy.com/2010/10/30/915/</link>
       <pubDate>Sat, 30 Oct 2010 00:19:19 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/10/30/915/</guid>
-      <description>Раз уж я заговорил про BUILD и NMAKE, то вот несколько простых (и, в общем-то, очевидных) способов отладки NMAKE скриптов.
-  Директива препроцессора !ERROR очень полезна, когда нужно выяснить доходит ли управление до интересующей нас линии скрипта. Директива выводит указанный текст в сообщении об ошибке (U1050) и останавливает NMAKE.
-  !MESSAGE пригодится для дампа макросов в лог. Например:
-  !MESSAGE BUILD_PASS = $(BUILD_PASS) Выведет в лог номер прохода (PASS0, PASS1 или PASS2), в случае, если NMAKE, был запущен через BUILD в билд-окружении WDK.</description>
+      <description>Раз уж я заговорил про BUILD и NMAKE, то вот несколько простых (и, в общем-то, очевидных) способов отладки NMAKE скриптов.&#xA;Директива препроцессора !ERROR очень полезна, когда нужно выяснить доходит ли управление до интересующей нас линии скрипта. Директива выводит указанный текст в сообщении об ошибке (U1050) и останавливает NMAKE.&#xA;!MESSAGE пригодится для дампа макросов в лог. Например:&#xA;!MESSAGE BUILD_PASS = $(BUILD_PASS) Выведет в лог номер прохода (PASS0, PASS1 или PASS2), в случае, если NMAKE, был запущен через BUILD в билд-окружении WDK.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.90.1" />
+	<meta name="generator" content="Hugo 0.124.1">
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -27,20 +27,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -59,7 +49,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -92,13 +82,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      <a href="/index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -141,8 +131,8 @@
       
       По радио уже пару месяцев (если не дольше) крутят “Little Talks” в исполнении Of monsters and men.
 Там есть фраза:
- This ship will carry our bodies safe to shore
- Причем поется она так, что “this” присоединяется к предыдущей строчке, а “bodies safe to shore” - поется как отдельная строка. Так вот, когда эту песню начали крутить повсюду, мне на этой фразе постоянно слышалось очевидно неправильное “chip and caviar”. :-) В очередной раз, когда меня это безобразие окончательно достало и я уже собрался найти слова песни, по радио опять включили её и тут, наконец-то, до меня дошло, что первое слово - это ship.
+This ship will carry our bodies safe to shore
+Причем поется она так, что “this” присоединяется к предыдущей строчке, а “bodies safe to shore” - поется как отдельная строка. Так вот, когда эту песню начали крутить повсюду, мне на этой фразе постоянно слышалось очевидно неправильное “chip and caviar”. :-) В очередной раз, когда меня это безобразие окончательно достало и я уже собрался найти слова песни, по радио опять включили её и тут, наконец-то, до меня дошло, что первое слово - это ship.
       <a href="https://blog.not-a-kernel-guy.com/2012/06/26/1371/">Read On &rarr;</a>
       
     </div>
@@ -158,10 +148,11 @@
       </span>
       
       Интересно, что существует около десятка способов сделать копию экрана в Windows. Программно, без привлечения нестандартного оборудования или сторонних библиотек. Статья “Screen recording with WDDM 1.2” описывает наиболее часто используемые:
-  GDI: GetDC(NULL), а затем BitBlt(), чтобы скопировать данные из видеопамяти в системную.
-  Direct3D: метод IDirect3DDevice9::GetFrontBufferData() позволяет скопировать содержимое видеопамяти в системный буфер.
-  Mirror Display Driver: позволяет напрямую перехватывать команды отрисовки.
-  OpenGL: дает прямой доступ к отображаемому буферу в видеопамяти.
+GDI: GetDC(NULL), а затем BitBlt(), чтобы скопировать данные из видеопамяти в системную.
+Direct3D: метод IDirect3DDevice9::GetFrontBufferData() позволяет скопировать содержимое видеопамяти в системный буфер.
+Mirror Display Driver: позволяет напрямую перехватывать команды отрисовки.
+OpenGL: дает прямой доступ к отображаемому буферу в видеопамяти.
+Windows 8: появился специализированный интерфейс IDXGIOutputDuplication.
       <a href="https://blog.not-a-kernel-guy.com/2012/06/24/1362/">Read On &rarr;</a>
       
     </div>
@@ -256,7 +247,6 @@
       </span>
       
       Попался на глаза вот такой камень в парке:
-
 Ну а что, пожарный гидрант в лесу (на приличном расстоянии от ближайшего дома) я уже видел. Электричество тоже провели. Осталось Wi-Fi организовать и эскалатор поставить.
       
       
@@ -273,7 +263,6 @@
       </span>
       
       Вот пример, почему проверка версии браузера - зло (и адъ, и Содомъ с Гоморрой):
-
 Самое забавное, что это окошко нельзя закрыть. Проблема также усугубляется тем, что все это счастье показывается внутри iframe и выставить опции совместимости так просто не получается. Приходится копировать ссылку и открывать страницу в отдельном окне.
 Я вот, кстати, не понимаю. От 99% проверок на версию браузера можно было бы отказаться, если бы браузеры поддерживали проверку поддерживаемых фич.
       <a href="https://blog.not-a-kernel-guy.com/2012/04/15/1305/">Read On &rarr;</a>

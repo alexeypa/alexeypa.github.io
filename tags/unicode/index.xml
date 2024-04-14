@@ -6,18 +6,14 @@
     <description>Recent content in Unicode on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 23 Nov 2006 22:00:28 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/unicode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Nov 2006 22:00:28 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/unicode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Забавное чтиво про Unicode BOM</title>
       <link>https://blog.not-a-kernel-guy.com/2006/11/23/104/</link>
       <pubDate>Thu, 23 Nov 2006 22:00:28 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/11/23/104/</guid>
-      <description>Наткнулся сегодня на забавный пост в блоге Michael Kaplan: Every character has a story #4: U+feff (alternate title: UTF-8 is the BOM, dude!). Майкл умудряется интересно писать про скушные вещи вроде Unicode BOM, распознавание кодировок и т.п. Избранные места:
- Enter Microsoft.
-  (Yes, I know &amp;ndash; boo, hiss, etc.)_
-  But every 4-6 months another huge thread on the Unicode List gets started about how bad the BOM is for UTF-8 and how it breaks UNIX tools that have been around and able to support UTF-8 without change for decades and about how Microsoft is evil for shipping Notepad that causes all of these problems and how neither the W3C nor Unicode would have ever supported a UTF-8 BOM if Microsoft did not have Notepad doing it, and so on, and so on.</description>
+      <description>Наткнулся сегодня на забавный пост в блоге Michael Kaplan: Every character has a story #4: U+feff (alternate title: UTF-8 is the BOM, dude!). Майкл умудряется интересно писать про скушные вещи вроде Unicode BOM, распознавание кодировок и т.п. Избранные места:&#xA;Enter Microsoft.&#xA;(Yes, I know &amp;ndash; boo, hiss, etc.)_&#xA;But every 4-6 months another huge thread on the Unicode List gets started about how bad the BOM is for UTF-8 and how it breaks UNIX tools that have been around and able to support UTF-8 without change for decades and about how Microsoft is evil for shipping Notepad that causes all of these problems and how neither the W3C nor Unicode would have ever supported a UTF-8 BOM if Microsoft did not have Notepad doing it, and so on, and so on.</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,46 +6,35 @@
     <description>Recent content in РИТ&#43;&#43; on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 28 Apr 2011 22:09:14 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%80%D0%B8%D1%82++/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Apr 2011 22:09:14 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%80%D0%B8%D1%82++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Впечатления от поездки и конференции</title>
       <link>https://blog.not-a-kernel-guy.com/2011/04/28/1043/</link>
       <pubDate>Thu, 28 Apr 2011 22:09:14 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/04/28/1043/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Впечатления от поездки.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Пыльно, грязновато. Дороги и тротуары по обыкновению разбиты, однако заметно, что если выровнять тротуары и бордюры, разбить газоны, починить заборы, поддерживать это все в чистоте (и не делать более ничего другого), то запросто получается почти западная Европа.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;Впечатления от поездки.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Пыльно, грязновато. Дороги и тротуары по обыкновению разбиты, однако заметно, что если выровнять тротуары и бордюры, разбить газоны, починить заборы, поддерживать это все в чистоте (и не делать более ничего другого), то запросто получается почти западная Европа.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>РИТ&#43;&#43; 2011: Сетевая подсистема Windows глазами разработчика</title>
       <link>https://blog.not-a-kernel-guy.com/2011/04/26/1038/</link>
       <pubDate>Tue, 26 Apr 2011 02:25:23 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/04/26/1038/</guid>
-      <description>Слайды моего доклада на РИТ++ 2011: Сетевая подсистема Windows глазами разработчика. Спасибо за внимание. ;-)
-MD5: 9d095bbc517f564758ec98ca779fadd4 SHA1: 46bebb8991f5b977ffcf978f277eb82b3cc08140
-PDF версия: Сетевая подсистема Windows глазами разработчика.
-MD5: 74676d09b0fdf5fc87182eb814b9d997 SHA1: 8bd1aa1f3db39ac5fab1ede4bbb4b43a9a91e11e</description>
+      <description>Слайды моего доклада на РИТ++ 2011: Сетевая подсистема Windows глазами разработчика. Спасибо за внимание. ;-)&#xA;MD5: 9d095bbc517f564758ec98ca779fadd4 SHA1: 46bebb8991f5b977ffcf978f277eb82b3cc08140&#xA;PDF версия: Сетевая подсистема Windows глазами разработчика.&#xA;MD5: 74676d09b0fdf5fc87182eb814b9d997 SHA1: 8bd1aa1f3db39ac5fab1ede4bbb4b43a9a91e11e</description>
     </item>
-    
     <item>
       <title>Тезисы моего доклада на РИТ&#43;&#43; 2011</title>
       <link>https://blog.not-a-kernel-guy.com/2011/04/20/1027/</link>
       <pubDate>Wed, 20 Apr 2011 00:06:17 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/04/20/1027/</guid>
       <description>Цель доклада – познакомить разработчиков с принципами работы стека TCP/IP в Windows, его основными компонентами и связями между ними; объяснить, что именно происходит с данными на пути к приложению и от него, и как работа сетевого стека сказывается на приложениях. В докладе описываются NDIS, существующие возможности аппаратного ускорения, работа с прерываниями и асинхронным вводом-выводом, возможности настройки сетевых адаптеров и протокола TCP/IP, перечисляются программные интерфейсы, описывается Windows Filtering Platform и её связь с IPsec, антивирусными сканнерами и фаерволами.</description>
     </item>
-    
     <item>
       <title>РИТ&#43;&#43;, секция «RootConf»</title>
       <link>https://blog.not-a-kernel-guy.com/2011/04/02/1015/</link>
       <pubDate>Sat, 02 Apr 2011 21:54:58 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/04/02/1015/</guid>
       <description>Меня пригласили выступить на конференции РИТ++ 2011, которая пройдет в Москве в конце апреля. Предварительная тема доклада: «Сетевая подсистема Windows глазами разработчика. Краткий, неполный и, в основном, неверный обзор. :-)» Я собираюсь рассказать о том, как работает ядерная часть сетевой подсистемы, как данные попадают в user mode и что с ними происходит по пути. Заходите на огонёк.</description>
     </item>
-    
   </channel>
 </rss>

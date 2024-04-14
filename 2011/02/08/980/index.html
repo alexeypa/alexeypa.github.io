@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -113,12 +103,12 @@
     <a class="label" href="/tags/%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E">Интервью</a>
     </span>
     <p>А хотите задачку, которую я даю претендентам на контрактную позицию в нашей команде? Вот она, родимая. Есть библиотечная функция:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">char</span> <span style="color:#a6e22e">get_byte</span>();
-</code></pre></div><p>Функция читает байт из некоего соединения. При необходимости, функция ждет, пока не придет очередной байт. По соединению пересылаются пакеты следующего формата: два байта длины, за которыми следует данные. Длина пакета включает в себя заголовок пакета, т.е. те самые два байта.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#a6e22e">get_byte</span>();
+</span></span></code></pre></div><p>Функция читает байт из некоего соединения. При необходимости, функция ждет, пока не придет очередной байт. По соединению пересылаются пакеты следующего формата: два байта длины, за которыми следует данные. Длина пакета включает в себя заголовок пакета, т.е. те самые два байта.</p>
 <p><a href="/2011/02/packet_format.jpg"><img src="/2011/02/packet_format.jpg" alt="Формат пакета."></a></p>
 <p>Нужно написать функцию recv, получающую очередной пакет:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">size_t <span style="color:#a6e22e">recv</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> buf, size_t size);
-</code></pre></div><p>В buf передается указатель на буфер, куда должен быть записан пакет (полностью, включая заголовок). size указывает размер этого буфера. Функция возвращает полную длину пакета (включая заголовок) если пакет получен успешно. В случае ошибки возвращается 0.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>size_t <span style="color:#a6e22e">recv</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> buf, size_t size);
+</span></span></code></pre></div><p>В buf передается указатель на буфер, куда должен быть записан пакет (полностью, включая заголовок). size указывает размер этого буфера. Функция возвращает полную длину пакета (включая заголовок) если пакет получен успешно. В случае ошибки возвращается 0.</p>
 <p>Соединение, по которому пересылаются байты, не имеет помех. Посылающая сторона ведет себя хорошо и не подсовывает мусор. Функция recv вызывается на границе пакетов. Других потоков нет. Исключений нет.</p>
 <p>Написать на доске работающий код для этой задачки удается не более, чем одному из пяти претендентов. По крайней мере за последние пару месяцев.</p>
 

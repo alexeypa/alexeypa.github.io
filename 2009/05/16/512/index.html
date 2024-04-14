@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -125,78 +115,78 @@
 </ul>
 <p>Примеры:</p>
 <p>x86 сборка Far Manager 2.0 с включенным frame pointer omission:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000:x86&gt; .load outline
-0:000:x86&gt; !fnframe far!wmain
- Start of frame               --&gt; -0x78
-   -0x78   Saved registers      : 0x10 bytes
-   -0x64   strViewName          : class UnicodeString, 0x4 bytes
-   -0x60   strEditName          : class UnicodeString, 0x4 bytes
-   -0x5c   StartLine            : int, 0x4 bytes
-   -0x58   CntDestName          : int, 0x4 bytes
-   -0x54   DestNames            : class UnicodeString [2], 0x8 bytes
-   -0x4c   RectoreConsole       : int, 0x4 bytes
-   -0x48   StartChar            : int, 0x4 bytes
-   -0x44   __ConsoleRestore     : class TConsoleRestore, 0x24 bytes
-   -0x20   buf                  : char [15], 0xf bytes
-   +0x0    Return address       : 0x4 bytes
-   +0x4    Argc                 : int, 0x4 bytes
-   +0x8    Argv                 : wchar_t **, 0x4 bytes
- End of frame                 --&gt; +0xc
-0:000:x86&gt;
-</code></pre></div><p>x64 сборка того же Far Manager 2.0:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; !fnframe far!wmain
- Start of frame               --&gt; +0x0
-   +0x0    rcx home             : 0x8 bytes
-   +0x8    rdx home             : 0x8 bytes
-   +0x10   r8 home              : 0x8 bytes
-   +0x18   r9 home              : 0x8 bytes
-   +0x40   strEditName          : class UnicodeString, 0x8 bytes
-   +0x48   strViewName          : class UnicodeString, 0x8 bytes
-   +0x50   DestNames            : class UnicodeString [2], 0x10 bytes
-   +0x60   __ConsoleRestore     : class TConsoleRestore, 0x30 bytes
-   +0x98   buf                  : char [15], 0xf bytes
-   +0xb0   r15                  : 0x8 bytes
-   +0xb8   r14                  : 0x8 bytes
-   +0xc0   r13                  : 0x8 bytes
-   +0xc8   r12                  : 0x8 bytes
-   +0xd0   rdi                  : 0x8 bytes
-   +0xd8   rsi                  : 0x8 bytes
-   +0xe0   rbp                  : 0x8 bytes
-   +0xe8   Return address       : 0x8 bytes
- End of frame                 --&gt; +0xf0
-   +0xf0   Argc                 : int, 0x4 bytes
-   +0xf8   Argv                 : wchar_t **, 0x8 bytes
-   +0x100  rbx                  : 0x8 bytes
-0:000&gt;
-</code></pre></div><p>Публичные символы не описывают ntdll!KiUserExceptionDispatcher (точка входа диспетчера исключений пользовательского режима), но включенная в бинарный файл unwind information дает кое-какое представление об этой функции:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; !fnframe ntdll!KiUserExceptionDispatcher
- Start of frame               --&gt; +0x0
-   +0x0    rcx home             : 0x8 bytes
-   +0x8    rdx home             : 0x8 bytes
-   +0x10   r8 home              : 0x8 bytes
-   +0x18   r9 home              : 0x8 bytes
-   +0x90   rbx                  : 0x8 bytes
-   +0xa0   rbp                  : 0x8 bytes
-   +0xa8   rsi                  : 0x8 bytes
-   +0xb0   rdi                  : 0x8 bytes
-   +0xd8   r12                  : 0x8 bytes
-   +0xe0   r13                  : 0x8 bytes
-   +0xe8   r14                  : 0x8 bytes
-   +0xf0   r15                  : 0x8 bytes
-   +0x200  xmm6                 : 0x10 bytes
-   +0x210  xmm7                 : 0x10 bytes
-   +0x220  xmm8                 : 0x10 bytes
-   +0x230  xmm9                 : 0x10 bytes
-   +0x240  xmm10                : 0x10 bytes
-   +0x250  xmm11                : 0x10 bytes
-   +0x260  xmm12                : 0x10 bytes
-   +0x270  xmm13                : 0x10 bytes
-   +0x280  xmm14                : 0x10 bytes
-   +0x290  xmm15                : 0x10 bytes
-   +0x590  Machine frame        : 0x28 bytes
- End of frame                 --&gt; +0x5b8
-0:000&gt;
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000:x86&gt; .load outline
+</span></span><span style="display:flex;"><span>0:000:x86&gt; !fnframe far!wmain
+</span></span><span style="display:flex;"><span> Start of frame               --&gt; -0x78
+</span></span><span style="display:flex;"><span>   -0x78   Saved registers      : 0x10 bytes
+</span></span><span style="display:flex;"><span>   -0x64   strViewName          : class UnicodeString, 0x4 bytes
+</span></span><span style="display:flex;"><span>   -0x60   strEditName          : class UnicodeString, 0x4 bytes
+</span></span><span style="display:flex;"><span>   -0x5c   StartLine            : int, 0x4 bytes
+</span></span><span style="display:flex;"><span>   -0x58   CntDestName          : int, 0x4 bytes
+</span></span><span style="display:flex;"><span>   -0x54   DestNames            : class UnicodeString [2], 0x8 bytes
+</span></span><span style="display:flex;"><span>   -0x4c   RectoreConsole       : int, 0x4 bytes
+</span></span><span style="display:flex;"><span>   -0x48   StartChar            : int, 0x4 bytes
+</span></span><span style="display:flex;"><span>   -0x44   __ConsoleRestore     : class TConsoleRestore, 0x24 bytes
+</span></span><span style="display:flex;"><span>   -0x20   buf                  : char [15], 0xf bytes
+</span></span><span style="display:flex;"><span>   +0x0    Return address       : 0x4 bytes
+</span></span><span style="display:flex;"><span>   +0x4    Argc                 : int, 0x4 bytes
+</span></span><span style="display:flex;"><span>   +0x8    Argv                 : wchar_t **, 0x4 bytes
+</span></span><span style="display:flex;"><span> End of frame                 --&gt; +0xc
+</span></span><span style="display:flex;"><span>0:000:x86&gt;
+</span></span></code></pre></div><p>x64 сборка того же Far Manager 2.0:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000&gt; !fnframe far!wmain
+</span></span><span style="display:flex;"><span> Start of frame               --&gt; +0x0
+</span></span><span style="display:flex;"><span>   +0x0    rcx home             : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0x8    rdx home             : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0x10   r8 home              : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0x18   r9 home              : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0x40   strEditName          : class UnicodeString, 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0x48   strViewName          : class UnicodeString, 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0x50   DestNames            : class UnicodeString [2], 0x10 bytes
+</span></span><span style="display:flex;"><span>   +0x60   __ConsoleRestore     : class TConsoleRestore, 0x30 bytes
+</span></span><span style="display:flex;"><span>   +0x98   buf                  : char [15], 0xf bytes
+</span></span><span style="display:flex;"><span>   +0xb0   r15                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xb8   r14                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xc0   r13                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xc8   r12                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xd0   rdi                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xd8   rsi                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xe0   rbp                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xe8   Return address       : 0x8 bytes
+</span></span><span style="display:flex;"><span> End of frame                 --&gt; +0xf0
+</span></span><span style="display:flex;"><span>   +0xf0   Argc                 : int, 0x4 bytes
+</span></span><span style="display:flex;"><span>   +0xf8   Argv                 : wchar_t **, 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0x100  rbx                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>0:000&gt;
+</span></span></code></pre></div><p>Публичные символы не описывают ntdll!KiUserExceptionDispatcher (точка входа диспетчера исключений пользовательского режима), но включенная в бинарный файл unwind information дает кое-какое представление об этой функции:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000&gt; !fnframe ntdll!KiUserExceptionDispatcher
+</span></span><span style="display:flex;"><span> Start of frame               --&gt; +0x0
+</span></span><span style="display:flex;"><span>   +0x0    rcx home             : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0x8    rdx home             : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0x10   r8 home              : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0x18   r9 home              : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0x90   rbx                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xa0   rbp                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xa8   rsi                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xb0   rdi                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xd8   r12                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xe0   r13                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xe8   r14                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0xf0   r15                  : 0x8 bytes
+</span></span><span style="display:flex;"><span>   +0x200  xmm6                 : 0x10 bytes
+</span></span><span style="display:flex;"><span>   +0x210  xmm7                 : 0x10 bytes
+</span></span><span style="display:flex;"><span>   +0x220  xmm8                 : 0x10 bytes
+</span></span><span style="display:flex;"><span>   +0x230  xmm9                 : 0x10 bytes
+</span></span><span style="display:flex;"><span>   +0x240  xmm10                : 0x10 bytes
+</span></span><span style="display:flex;"><span>   +0x250  xmm11                : 0x10 bytes
+</span></span><span style="display:flex;"><span>   +0x260  xmm12                : 0x10 bytes
+</span></span><span style="display:flex;"><span>   +0x270  xmm13                : 0x10 bytes
+</span></span><span style="display:flex;"><span>   +0x280  xmm14                : 0x10 bytes
+</span></span><span style="display:flex;"><span>   +0x290  xmm15                : 0x10 bytes
+</span></span><span style="display:flex;"><span>   +0x590  Machine frame        : 0x28 bytes
+</span></span><span style="display:flex;"><span> End of frame                 --&gt; +0x5b8
+</span></span><span style="display:flex;"><span>0:000&gt;
+</span></span></code></pre></div>
   </div>
   <div id="disqus_thread"></div>
 </div>

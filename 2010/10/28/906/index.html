@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -115,64 +105,64 @@
     <p>Система сборки в <a href="http://www.microsoft.com/whdc/devtools/WDK/default.mspx">Windows Driver Kit</a> базируется на <a href="http://msdn.microsoft.com/en-us/library/ff542351(VS.85).aspx">утилите BUILD</a>. Эта утилита сканирует структуру проектов, отслеживает зависимости (к сожалению далеко не все) и подготавливает окружение для запуска <a href="http://msdn.microsoft.com/en-us/library/dd9y37ha.aspx">NMAKE</a>, который, собственно, и выполняет всю черновую работу по сборке. К сожалению, BUILD создавался и развивался по принципу «так получилось», исключительно эволюционным путем – как средство сборки исходников Windows. Так что эта утилита некоторыми неудобными ограничениями.</p>
 <p>Одно из них – полное непонимание переменных и директив препроцессора.</p>
 <p>К примеру, нужно исключить определённую директорию из дерева сборки если объявлен макрос NOBUILD. Пишем вот такой DIRS файл:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">!if defined(NOBUILD) 
-
-DIRS = \
-    foo \
-
-!else
-
-DIRS = \
-    foo \
-    bar \
-
-!endif
-</code></pre></div><p>Вне зависимости от того, объявлен макрос NOBUILD или нет, BUILD попытается собрать обе директории foo и bar. Более того, вот такой DIRS файл тоже не вызовет ошибку:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">Some random garbage in DIRS file.
-
-DIRS = \
-    foo \
-    bar \
-
-More random garbage.
-</code></pre></div><p>Почему? Потому, что BUILD просто сканирует файл в поиске текста, похожего на объявление директив DIRS и OPTIONAL_DIRS игнорируя остальной текст. Впрочем, макроподстановки разворачиваются правильно:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">FOO = \
-    foo \
-
-DIRS = \
-    $(FOO) \
-    bar \
-</code></pre></div><p>Аналогичная ситуация с файлом SOURCES. BUILD игнорирует директивы препроцессора, интересуясь только объявлением макроса SOURCES и его платформо-зависимых вариантов. Полностью, все эти директивы обрабатываются только утилитой NMAKE. Как же быть?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>!if defined(NOBUILD) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DIRS = \
+</span></span><span style="display:flex;"><span>    foo \
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>!else
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DIRS = \
+</span></span><span style="display:flex;"><span>    foo \
+</span></span><span style="display:flex;"><span>    bar \
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>!endif
+</span></span></code></pre></div><p>Вне зависимости от того, объявлен макрос NOBUILD или нет, BUILD попытается собрать обе директории foo и bar. Более того, вот такой DIRS файл тоже не вызовет ошибку:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>Some random garbage in DIRS file.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DIRS = \
+</span></span><span style="display:flex;"><span>    foo \
+</span></span><span style="display:flex;"><span>    bar \
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>More random garbage.
+</span></span></code></pre></div><p>Почему? Потому, что BUILD просто сканирует файл в поиске текста, похожего на объявление директив DIRS и OPTIONAL_DIRS игнорируя остальной текст. Впрочем, макроподстановки разворачиваются правильно:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>FOO = \
+</span></span><span style="display:flex;"><span>    foo \
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DIRS = \
+</span></span><span style="display:flex;"><span>    $(FOO) \
+</span></span><span style="display:flex;"><span>    bar \
+</span></span></code></pre></div><p>Аналогичная ситуация с файлом SOURCES. BUILD игнорирует директивы препроцессора, интересуясь только объявлением макроса SOURCES и его платформо-зависимых вариантов. Полностью, все эти директивы обрабатываются только утилитой NMAKE. Как же быть?</p>
 <p>Каждая директория, предназначенная для сборки, содержит файл MAKEFILE:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">#
-# DO NOT EDIT THIS FILE!!!  Edit .\sources. if you want to add a new source
-# file to this component.  This file merely indirects to the real make file
-# that is shared by all the components of NT OS/2
-#
-!INCLUDE $(NTMAKEENV)\makefile.def
-</code></pre></div><p>Именно этот файл читается NMAKE, для каждого из трех проходов (PASS0, PASS1 и PASS2). По умолчанию, он просто включает стандартные правила сборки, работающие с SOURCES. (Начиная с WDK для Vista MAKEFILE стал опциональным. В случае его отсутствия, автоматически используется MAKEFILE.DEF.) Примерное дерево включений make-файлов выглядит вот так:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">MAKEFILE
-+- MAKEFILE.DEF
-   +- MAKEFILE.NEW
-      +- MAKEFILE.PLT
-         +- PROJECT.MK
-      +- SOURCES
-      +- _OBJECTS.MAC
-      +- $(TARGET_DIRECTORY)mk.inc
-      +- MAKEFILE.INC
-      +- …
-</code></pre></div><p>Откуда видно, что MAKEFILE и MAKEFILE.INC – крайне полезны для нетривиальных манипуляций с логикой сборки. Так, чтобы решить оригинальную задачу, достаточно не включать MAKEFILE.DEF в случае, если объявлен макрос NOBUILD:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">!if !defined(NOBUILD)
-
-#
-# DO NOT EDIT THIS FILE!!!  Edit .\sources. if you want to add a new source
-# file to this component.  This file merely indirects to the real make file
-# that is shared by all the components of Windows NT
-#
-!INCLUDE $(NTMAKEENV)\makefile.def
-
-!endif
-</code></pre></div><p>В результате, BUILD по-прежнему вызовет NMAKE, но тот проигнорирует данную директорию.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>#
+</span></span><span style="display:flex;"><span># DO NOT EDIT THIS FILE!!!  Edit .\sources. if you want to add a new source
+</span></span><span style="display:flex;"><span># file to this component.  This file merely indirects to the real make file
+</span></span><span style="display:flex;"><span># that is shared by all the components of NT OS/2
+</span></span><span style="display:flex;"><span>#
+</span></span><span style="display:flex;"><span>!INCLUDE $(NTMAKEENV)\makefile.def
+</span></span></code></pre></div><p>Именно этот файл читается NMAKE, для каждого из трех проходов (PASS0, PASS1 и PASS2). По умолчанию, он просто включает стандартные правила сборки, работающие с SOURCES. (Начиная с WDK для Vista MAKEFILE стал опциональным. В случае его отсутствия, автоматически используется MAKEFILE.DEF.) Примерное дерево включений make-файлов выглядит вот так:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>MAKEFILE
+</span></span><span style="display:flex;"><span>+- MAKEFILE.DEF
+</span></span><span style="display:flex;"><span>   +- MAKEFILE.NEW
+</span></span><span style="display:flex;"><span>      +- MAKEFILE.PLT
+</span></span><span style="display:flex;"><span>         +- PROJECT.MK
+</span></span><span style="display:flex;"><span>      +- SOURCES
+</span></span><span style="display:flex;"><span>      +- _OBJECTS.MAC
+</span></span><span style="display:flex;"><span>      +- $(TARGET_DIRECTORY)mk.inc
+</span></span><span style="display:flex;"><span>      +- MAKEFILE.INC
+</span></span><span style="display:flex;"><span>      +- …
+</span></span></code></pre></div><p>Откуда видно, что MAKEFILE и MAKEFILE.INC – крайне полезны для нетривиальных манипуляций с логикой сборки. Так, чтобы решить оригинальную задачу, достаточно не включать MAKEFILE.DEF в случае, если объявлен макрос NOBUILD:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>!if !defined(NOBUILD)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#
+</span></span><span style="display:flex;"><span># DO NOT EDIT THIS FILE!!!  Edit .\sources. if you want to add a new source
+</span></span><span style="display:flex;"><span># file to this component.  This file merely indirects to the real make file
+</span></span><span style="display:flex;"><span># that is shared by all the components of Windows NT
+</span></span><span style="display:flex;"><span>#
+</span></span><span style="display:flex;"><span>!INCLUDE $(NTMAKEENV)\makefile.def
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>!endif
+</span></span></code></pre></div><p>В результате, BUILD по-прежнему вызовет NMAKE, но тот проигнорирует данную директорию.</p>
   </div>
   <div id="disqus_thread"></div>
 </div>

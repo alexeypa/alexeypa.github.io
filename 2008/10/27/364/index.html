@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -136,28 +126,28 @@
 </ul>
 <p>Чем это лучше того, что твориться в мире x86 кода? Стандартный формат кадра стека позволяет получать достоверную трассировку стека в любой момент времени, при условии, конечно, что компилятор генерирует код соответствующий соглашению о вызовах и если информация о состоянии процессора корректна. При этом абсолютно не используются символы (.pdb). Сравните это с x86, где совершенно корректный код может запросто свести с ума любой отладчик.</p>
 <p>Далее, все функции делятся на два типа: «frame» и «leaf». К первым относится любая функция вызывающая другие функции, сохраняющая nonvolatile регистры или использующая исключения. Функции, динамически выделяющие память в стеке с помощью _alloca, также относятся к этой категории. Все остальные – это «leaf» функции. Для каждой «frame» функции компилятор генерирует её описание (function entry), где подробно описываются все действия, выполняемые в прологе функции: от выделения места в стеке до списка сохраняемых регистров вместе с их смещениями в стеке. Пример можно посмотреть, выполнив в отладчике команду “.fnent <!-- raw HTML omitted -->”:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">0:000&gt; .fnent notepad!WinMain
-Debugger function entry 00000000`01f48250 for:
-(00000000`ff296dd4)   notepad!WinMain   |  (00000000`ff296fd0)   notepad!UpdateStatusBar
-Exact matches:
-    notepad!WinMain = &lt;no type information&gt;
-
-BeginAddress      = 00000000`00006dd4
-EndAddress        = 00000000`00006fc9
-UnwindInfoAddress = 00000000`0000dcc0
-
-Unwind info at 00000000`ff29dcc0, 14 bytes
-  version 1, flags 0, prolog 14, codes 8
-  frame reg 0, frame offs 0
-  00: offs 14, unwind op 4, op info 6
-  01: offs 12, unwind op 0, op info 0
-  02: offs 14, unwind op 4, op info 5
-  03: offs 11, unwind op 0, op info 0
-  04: offs 14, unwind op 4, op info 3
-  05: offs 10, unwind op 0, op info 0
-  06: offs 14, unwind op 2, op info d
-  07: offs 10, unwind op 0, op info 7
-</code></pre></div><p>Более подробно об этом можно почитать <a href="http://msdn.microsoft.com/en-us/library/ms794374.aspx">здесь</a>. Имея подобное описание «раскрутчик» стека может достоверно определить границы кадров функций в стеке и восстановить значение non-volatile регистров в каждом кадре в любой момент времени.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>0:000&gt; .fnent notepad!WinMain
+</span></span><span style="display:flex;"><span>Debugger function entry 00000000`01f48250 for:
+</span></span><span style="display:flex;"><span>(00000000`ff296dd4)   notepad!WinMain   |  (00000000`ff296fd0)   notepad!UpdateStatusBar
+</span></span><span style="display:flex;"><span>Exact matches:
+</span></span><span style="display:flex;"><span>    notepad!WinMain = &lt;no type information&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BeginAddress      = 00000000`00006dd4
+</span></span><span style="display:flex;"><span>EndAddress        = 00000000`00006fc9
+</span></span><span style="display:flex;"><span>UnwindInfoAddress = 00000000`0000dcc0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Unwind info at 00000000`ff29dcc0, 14 bytes
+</span></span><span style="display:flex;"><span>  version 1, flags 0, prolog 14, codes 8
+</span></span><span style="display:flex;"><span>  frame reg 0, frame offs 0
+</span></span><span style="display:flex;"><span>  00: offs 14, unwind op 4, op info 6
+</span></span><span style="display:flex;"><span>  01: offs 12, unwind op 0, op info 0
+</span></span><span style="display:flex;"><span>  02: offs 14, unwind op 4, op info 5
+</span></span><span style="display:flex;"><span>  03: offs 11, unwind op 0, op info 0
+</span></span><span style="display:flex;"><span>  04: offs 14, unwind op 4, op info 3
+</span></span><span style="display:flex;"><span>  05: offs 10, unwind op 0, op info 0
+</span></span><span style="display:flex;"><span>  06: offs 14, unwind op 2, op info d
+</span></span><span style="display:flex;"><span>  07: offs 10, unwind op 0, op info 7
+</span></span></code></pre></div><p>Более подробно об этом можно почитать <a href="http://msdn.microsoft.com/en-us/library/ms794374.aspx">здесь</a>. Имея подобное описание «раскрутчик» стека может достоверно определить границы кадров функций в стеке и восстановить значение non-volatile регистров в каждом кадре в любой момент времени.</p>
   </div>
   <div id="disqus_thread"></div>
 </div>

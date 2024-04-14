@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -114,139 +104,139 @@
     </span>
     <p>Вот эта программа печатает номер версии указанного пользователем модуля, который она берет из поля &ldquo;FileVersion&rdquo; ресурса VS_VERSION_INFO этого модуля. Имя модуля передается как первый параметр командной строки. Для работы с VS_VERSION_INFO используется стандартная библиотека version.dll.</p>
 <p><em>(далее идет много кода)</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#define _WIN32_WINNT 0x0501
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;windows.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printFileVersion</span>(
-    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> module
-    )
-{
-    DWORD handle;
-
-    <span style="color:#75715e">// Query size of the buffer we will need
-</span><span style="color:#75715e"></span>    DWORD size <span style="color:#f92672">=</span> GetFileVersionInfoSize(module, <span style="color:#f92672">&amp;</span>handle);
-
-    <span style="color:#66d9ef">if</span> (size)
-    {
-        <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> buffer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">char</span>[size];
-
-        <span style="color:#75715e">// Get own version information
-</span><span style="color:#75715e"></span>        BOOL res <span style="color:#f92672">=</span> GetFileVersionInfo(module, handle, size, buffer);
-
-        <span style="color:#66d9ef">if</span> (res)
-        {
-            <span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> ptr;
-            UINT length;
-
-            <span style="color:#75715e">// Get FileVersion from English section of version information
-</span><span style="color:#75715e"></span>            res <span style="color:#f92672">=</span> VerQueryValue(buffer, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">StringFileInfo</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">040904B0</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">FileVersion&#34;</span>, <span style="color:#f92672">&amp;</span>ptr, <span style="color:#f92672">&amp;</span>length);
-
-            <span style="color:#66d9ef">if</span> (res)
-            {
-                <span style="color:#75715e">// Print FileVersion
-</span><span style="color:#75715e"></span>                printf(<span style="color:#e6db74">&#34;File Version: &#39;%s&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ptr);
-            }
-        }
-
-        <span style="color:#66d9ef">delete</span>[] buffer;
-    }
-}
-
-<span style="color:#66d9ef">int</span> <span style="color:#66d9ef">__cdecl</span> <span style="color:#a6e22e">main</span>(
-    <span style="color:#66d9ef">int</span> argc,
-    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[]
-    )
-{
-    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>)
-    {
-        printf(<span style="color:#e6db74">&#34;Usage: fileversion.exe &lt;module-name&gt;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-        exit(<span style="color:#ae81ff">0</span>);
-    }
-
-    <span style="color:#66d9ef">char</span> buffer[MAX_PATH];
-    DWORD size <span style="color:#f92672">=</span> ExpandEnvironmentStrings(argv[<span style="color:#ae81ff">1</span>], buffer, MAX_PATH);
-
-    <span style="color:#66d9ef">if</span> (size <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> size <span style="color:#f92672">&lt;=</span> MAX_PATH)
-    {
-        printFileVersion(buffer);
-    }
-
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><p>Например, для &ldquo;%windir%\system32\notepad.exe&rdquo; на моей машине выводится:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">&gt; fileversion.exe %windir%\system32\notepad.exe
-File Version: &#39;6.0.6000.16386 (vista_rtm.061101-2205)&#39;
-</code></pre></div><p>Далее, предположим, что мы пользуемся 32-х битной версией fileversion.exe и мы хотим получить версию 64-х разрядного модуля, установленного в %windir%\system32. Wow64 <a href="http://msdn2.microsoft.com/en-us/library/aa384187.aspx">перенаправляет все файловые операции</a> из %windir%\system32 в %windir%\syswow64. Соответственно, нам нужно запретить перенаправление на время чтения ресурсов из файла:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#if !defined(_WIN64)
-</span><span style="color:#75715e"></span>BOOL <span style="color:#a6e22e">isWow64</span>()
-{
-    BOOL retval <span style="color:#f92672">=</span> FALSE;
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>IsWow64Process(GetCurrentProcess(), <span style="color:#f92672">&amp;</span>retval))
-    {
-        retval <span style="color:#f92672">=</span> FALSE;
-    }
-
-    <span style="color:#66d9ef">return</span> retval;
-}
-<span style="color:#75715e">#endif
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> <span style="color:#66d9ef">__cdecl</span> <span style="color:#a6e22e">main</span>(
-    <span style="color:#66d9ef">int</span> argc,
-    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[]
-    )
-{
-    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>)
-    {
-        printf(<span style="color:#e6db74">&#34;Usage: fileversion.exe &lt;module-name&gt; [native]</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-        exit(<span style="color:#ae81ff">0</span>);
-    }
-
-<span style="color:#75715e">#if !defined(_WIN64)
-</span><span style="color:#75715e"></span>    PVOID FsRedirection;
-
-    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&amp;&amp;</span> isWow64())
-    {
-        <span style="color:#75715e">// Disable Wow64 redirection if asked by a user
-</span><span style="color:#75715e"></span>        Wow64DisableWow64FsRedirection(<span style="color:#f92672">&amp;</span>FsRedirection);
-    }
-<span style="color:#75715e">#endif
-</span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">char</span> buffer[MAX_PATH];
-    DWORD size <span style="color:#f92672">=</span> ExpandEnvironmentStrings(argv[<span style="color:#ae81ff">1</span>], buffer, MAX_PATH);
-
-    <span style="color:#66d9ef">if</span> (size <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> size <span style="color:#f92672">&lt;=</span> MAX_PATH)
-    {
-        printFileVersion(buffer);
-    }
-
-<span style="color:#75715e">#if !defined(_WIN64)
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&amp;&amp;</span> isWow64())
-    {
-        <span style="color:#75715e">// Restore Wow64 redirection
-</span><span style="color:#75715e"></span>        Wow64RevertWow64FsRedirection(FsRedirection);
-    }
-<span style="color:#75715e">#endif
-</span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><p>Вопрос: почему попытка получить версию модуля может вызвать вот такое исключение при условии, что перенаправление файловой системы запрещено?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">(115c.574): Unknown exception - code c06d007e (!!! second chance !!!)
-KERNEL32!RaiseException+0x58:
-00000000`7532f35f c9              leave
-0:000:x86&gt; k
-ChildEBP          RetAddr           
-0017fd60 00402080 KERNEL32!RaiseException+0x58
-0017fdc8 0040119e rabbit!__delayLoadHelper2+0x13b [f:\sp\vctools\delayimp\delayhlp.cpp @ 331]
-0017fe0c 0040115b rabbit!_tailMerge_VERSION_dll+0xd
-0017ff30 004014a6 rabbit!main+0x8b [d:\projects\notepad2a\trunk\boost\rabbit\main.cpp @ 82]
-0017ff80 004012fd rabbit!__tmainCRTStartup+0x1a6 [f:\sp\vctools\crt_bld\self_x86\crt\src\crtexe.c @ 597]
-0017ff88 7538e3f3 rabbit!mainCRTStartup+0xd [f:\sp\vctools\crt_bld\self_x86\crt\src\crtexe.c @ 414]
-0017ff94 76fccfed KERNEL32!BaseThreadInitThunk+0xe
-0017ffd4 76fcd1ff ntdll_76f50000!__RtlUserThreadStart+0x23
-0017ffec 00000000 ntdll_76f50000!_RtlUserThreadStart+0x1b
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define _WIN32_WINNT 0x0501
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;windows.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printFileVersion</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> module
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    DWORD handle;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Query size of the buffer we will need
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    DWORD size <span style="color:#f92672">=</span> GetFileVersionInfoSize(module, <span style="color:#f92672">&amp;</span>handle);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (size)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> buffer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">char</span>[size];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Get own version information
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        BOOL res <span style="color:#f92672">=</span> GetFileVersionInfo(module, handle, size, buffer);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (res)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> ptr;
+</span></span><span style="display:flex;"><span>            UINT length;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Get FileVersion from English section of version information
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            res <span style="color:#f92672">=</span> VerQueryValue(buffer, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">StringFileInfo</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">040904B0</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">FileVersion&#34;</span>, <span style="color:#f92672">&amp;</span>ptr, <span style="color:#f92672">&amp;</span>length);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (res)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Print FileVersion
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                printf(<span style="color:#e6db74">&#34;File Version: &#39;%s&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ptr);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">delete</span>[] buffer;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#66d9ef">__cdecl</span> <span style="color:#a6e22e">main</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> argc,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[]
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Usage: fileversion.exe &lt;module-name&gt;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>        exit(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> buffer[MAX_PATH];
+</span></span><span style="display:flex;"><span>    DWORD size <span style="color:#f92672">=</span> ExpandEnvironmentStrings(argv[<span style="color:#ae81ff">1</span>], buffer, MAX_PATH);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (size <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> size <span style="color:#f92672">&lt;=</span> MAX_PATH)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printFileVersion(buffer);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Например, для &ldquo;%windir%\system32\notepad.exe&rdquo; на моей машине выводится:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>&gt; fileversion.exe %windir%\system32\notepad.exe
+</span></span><span style="display:flex;"><span>File Version: &#39;6.0.6000.16386 (vista_rtm.061101-2205)&#39;
+</span></span></code></pre></div><p>Далее, предположим, что мы пользуемся 32-х битной версией fileversion.exe и мы хотим получить версию 64-х разрядного модуля, установленного в %windir%\system32. Wow64 <a href="http://msdn2.microsoft.com/en-us/library/aa384187.aspx">перенаправляет все файловые операции</a> из %windir%\system32 в %windir%\syswow64. Соответственно, нам нужно запретить перенаправление на время чтения ресурсов из файла:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#if !defined(_WIN64)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>BOOL <span style="color:#a6e22e">isWow64</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    BOOL retval <span style="color:#f92672">=</span> FALSE;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>IsWow64Process(GetCurrentProcess(), <span style="color:#f92672">&amp;</span>retval))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        retval <span style="color:#f92672">=</span> FALSE;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> retval;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#66d9ef">__cdecl</span> <span style="color:#a6e22e">main</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> argc,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[]
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;Usage: fileversion.exe &lt;module-name&gt; [native]</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>        exit(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if !defined(_WIN64)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    PVOID FsRedirection;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&amp;&amp;</span> isWow64())
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Disable Wow64 redirection if asked by a user
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Wow64DisableWow64FsRedirection(<span style="color:#f92672">&amp;</span>FsRedirection);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> buffer[MAX_PATH];
+</span></span><span style="display:flex;"><span>    DWORD size <span style="color:#f92672">=</span> ExpandEnvironmentStrings(argv[<span style="color:#ae81ff">1</span>], buffer, MAX_PATH);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (size <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> size <span style="color:#f92672">&lt;=</span> MAX_PATH)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printFileVersion(buffer);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if !defined(_WIN64)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&amp;&amp;</span> isWow64())
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Restore Wow64 redirection
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Wow64RevertWow64FsRedirection(FsRedirection);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Вопрос: почему попытка получить версию модуля может вызвать вот такое исключение при условии, что перенаправление файловой системы запрещено?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>(115c.574): Unknown exception - code c06d007e (!!! second chance !!!)
+</span></span><span style="display:flex;"><span>KERNEL32!RaiseException+0x58:
+</span></span><span style="display:flex;"><span>00000000`7532f35f c9              leave
+</span></span><span style="display:flex;"><span>0:000:x86&gt; k
+</span></span><span style="display:flex;"><span>ChildEBP          RetAddr           
+</span></span><span style="display:flex;"><span>0017fd60 00402080 KERNEL32!RaiseException+0x58
+</span></span><span style="display:flex;"><span>0017fdc8 0040119e rabbit!__delayLoadHelper2+0x13b [f:\sp\vctools\delayimp\delayhlp.cpp @ 331]
+</span></span><span style="display:flex;"><span>0017fe0c 0040115b rabbit!_tailMerge_VERSION_dll+0xd
+</span></span><span style="display:flex;"><span>0017ff30 004014a6 rabbit!main+0x8b [d:\projects\notepad2a\trunk\boost\rabbit\main.cpp @ 82]
+</span></span><span style="display:flex;"><span>0017ff80 004012fd rabbit!__tmainCRTStartup+0x1a6 [f:\sp\vctools\crt_bld\self_x86\crt\src\crtexe.c @ 597]
+</span></span><span style="display:flex;"><span>0017ff88 7538e3f3 rabbit!mainCRTStartup+0xd [f:\sp\vctools\crt_bld\self_x86\crt\src\crtexe.c @ 414]
+</span></span><span style="display:flex;"><span>0017ff94 76fccfed KERNEL32!BaseThreadInitThunk+0xe
+</span></span><span style="display:flex;"><span>0017ffd4 76fcd1ff ntdll_76f50000!__RtlUserThreadStart+0x23
+</span></span><span style="display:flex;"><span>0017ffec 00000000 ntdll_76f50000!_RtlUserThreadStart+0x1b
+</span></span></code></pre></div>
   </div>
   <div id="disqus_thread"></div>
 </div>

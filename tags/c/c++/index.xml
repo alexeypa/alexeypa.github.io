@@ -5,111 +5,71 @@
     <link>https://blog.not-a-kernel-guy.com/tags/c/c&#43;&#43;/</link>
     <description>Recent content in C/C&#43;&#43; on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ru-ru</language><atom:link href="https://blog.not-a-kernel-guy.com/tags/c/c++/index.xml" rel="self" type="application/rss+xml" />
+    <language>ru-ru</language>
+    <lastBuildDate>Sun, 15 May 2011 22:10:44 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/c/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Список состояний конечного автомата</title>
       <link>https://blog.not-a-kernel-guy.com/2011/05/15/1069/</link>
       <pubDate>Sun, 15 May 2011 22:10:44 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/05/15/1069/</guid>
       <description>&lt;p&gt;Подсмотрел у коллеги простой и довольно удобный способ держать список состояний/событий конечного автомата в одном месте. А то обычно они норовят расползтись по разным углам: enum, объявляющий соответствующие константы, массив имен состояний для отладки, большой switch, выбирающий что делать, в зависимости от состояния…&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Вы, конечно, будете смеяться, …</title>
       <link>https://blog.not-a-kernel-guy.com/2011/05/04/1047/</link>
       <pubDate>Wed, 04 May 2011 22:26:07 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/05/04/1047/</guid>
-      <description>&amp;hellip; но я понятия не имел, что вложенные структуры в C/C++ можно инициализировать плоским списком значений. Есть, например, вот такая структура:
-struct foo { int value; }; struct bar { int value; }; struct foobar { foo value1; bar value2; int value3; }; Её можно инициализировать вот так:
-foobar data = { { 1 }, { 2 }, 3 }; А можно и так:
-foobar data = { 1, 2, 3 }; Компилятор съест оба варианта кода и не поморщится.</description>
+      <description>&amp;hellip; но я понятия не имел, что вложенные структуры в C/C++ можно инициализировать плоским списком значений. Есть, например, вот такая структура:&#xA;struct foo { int value; }; struct bar { int value; }; struct foobar { foo value1; bar value2; int value3; }; Её можно инициализировать вот так:&#xA;foobar data = { { 1 }, { 2 }, 3 }; А можно и так:&#xA;foobar data = { 1, 2, 3 }; Компилятор съест оба варианта кода и не поморщится.</description>
     </item>
-    
     <item>
       <title>Деманглинг имен в Visual C&#43;&#43;</title>
       <link>https://blog.not-a-kernel-guy.com/2009/11/11/672/</link>
       <pubDate>Wed, 11 Nov 2009 23:13:44 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/11/11/672/</guid>
-      <description>На днях пытался понять, отчего и почему крошечное приложение пухнет как на дрожжах при добавлении некоторых библиотек из Boost. Рассматривая сгенерированный map файл, выяснил, что утилита undname.exe поставляется вместе с Visual Studio и в состав Windows SDK не входит. Пришлось написать свою – там всего-то нужно вызвать одну функцию (UnDecorateSymbolName). По ходу дела нашел несколько интересных ссылок по теме:
-  Схема, по которой кодируются имена:
-  Microsoft C++ Name Mangling Scheme.</description>
+      <description>На днях пытался понять, отчего и почему крошечное приложение пухнет как на дрожжах при добавлении некоторых библиотек из Boost. Рассматривая сгенерированный map файл, выяснил, что утилита undname.exe поставляется вместе с Visual Studio и в состав Windows SDK не входит. Пришлось написать свою – там всего-то нужно вызвать одну функцию (UnDecorateSymbolName). По ходу дела нашел несколько интересных ссылок по теме:&#xA;Схема, по которой кодируются имена:&#xA;Microsoft C++ Name Mangling Scheme.&#xA;C++ Name Mangling/Demangling.</description>
     </item>
-    
     <item>
       <title>Возвращаясь к теме про фаззеры</title>
       <link>https://blog.not-a-kernel-guy.com/2008/01/31/285/</link>
       <pubDate>Thu, 31 Jan 2008 23:02:43 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/01/31/285/</guid>
       <description>&lt;p&gt;Вот код, которым я пользуюсь для написания стресс тестов и фаззеров в своих проектах. Класс EntropyGenerator - обертка вокруг генератора случайных чисел.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>SAL аннотации</title>
       <link>https://blog.not-a-kernel-guy.com/2007/10/31/260/</link>
       <pubDate>Wed, 31 Oct 2007 15:58:11 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/10/31/260/</guid>
-      <description>&lt;p&gt;В последнее время я немного забросил Win32.Utf8 - на работе завал, так что, приходя домой, делать ничего особенного не хочется. Тем не менее, проект потихоньку движется и, на сегодняшний день, я добрался до разбора SAL аннотаций.&lt;/p&gt;
-&lt;p&gt;Основной источник информации, которым я пользуюсь - это заголовок sal.h из поставки Visual C++. В нем содержится достаточно подробное описание того, как составляются конструкции вроде &lt;code&gt;__deref_inout_ecount_part_opt&lt;/code&gt;. Кроме того, там же определены макросы, преобразующие SAL аннотации в набор директив для статического анализатора PREfast. По ним достаточно просто понять как SAL аннотации «работают на самом деле».&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Аналогичный заголовок есть в Platform SDK для Windows 2003 - specstrings.h. В Windows SDK для Vista все еще более запутано.&lt;/em&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;В последнее время я немного забросил Win32.Utf8 - на работе завал, так что, приходя домой, делать ничего особенного не хочется. Тем не менее, проект потихоньку движется и, на сегодняшний день, я добрался до разбора SAL аннотаций.&lt;/p&gt;&#xA;&lt;p&gt;Основной источник информации, которым я пользуюсь - это заголовок sal.h из поставки Visual C++. В нем содержится достаточно подробное описание того, как составляются конструкции вроде &lt;code&gt;__deref_inout_ecount_part_opt&lt;/code&gt;. Кроме того, там же определены макросы, преобразующие SAL аннотации в набор директив для статического анализатора PREfast. По ним достаточно просто понять как SAL аннотации «работают на самом деле».&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Аналогичный заголовок есть в Platform SDK для Windows 2003 - specstrings.h. В Windows SDK для Vista все еще более запутано.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Boost переехал в Subversion репозиторий</title>
       <link>https://blog.not-a-kernel-guy.com/2007/08/28/230/</link>
       <pubDate>Tue, 28 Aug 2007 08:59:56 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/08/28/230/</guid>
       <description>Я как-то упустил из виду. Похоже, что Boost наконец-то переехал в Subversion репозиторий, а баги теперь ведутся в Trac. Давно пора.</description>
     </item>
-    
     <item>
       <title>sizeof(void) == 1</title>
       <link>https://blog.not-a-kernel-guy.com/2007/08/20/223/</link>
       <pubDate>Mon, 20 Aug 2007 10:25:28 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/08/20/223/</guid>
-      <description>&lt;p&gt;Наткнулся на забавную вещь. Вот такой код спокойно компилируется GCC (версия 3.4.2 (mingw-special)):&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;()
-{
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; ptr;
-
-    printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;sizeof(void): %d&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt;));
-
-    ptr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
-    printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;before increment: %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;n&amp;#34;&lt;/span&gt;, ptr);
-    ptr &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
-    printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;after increment: %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;n&amp;#34;&lt;/span&gt;, ptr);
-
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <description>&lt;p&gt;Наткнулся на забавную вещь. Вот такой код спокойно компилируется GCC (версия 3.4.2 (mingw-special)):&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;()&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; ptr;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;sizeof(void): %d&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt;));&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ptr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;before increment: %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;n&amp;#34;&lt;/span&gt;, ptr);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ptr &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;after increment: %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;n&amp;#34;&lt;/span&gt;, ptr);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>C&#43;&#43; обёртка для HANDLE</title>
       <link>https://blog.not-a-kernel-guy.com/2006/10/31/93/</link>
       <pubDate>Tue, 31 Oct 2006 23:21:05 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/10/31/93/</guid>
       <description>&lt;p&gt;Пару лет назад я пользовался вот такой C++ обёрткой для &lt;code&gt;HANDLE&lt;/code&gt; (часть методов и обработка ошибок опущены):&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Алёна C&#43;&#43;</title>
       <link>https://blog.not-a-kernel-guy.com/2006/08/19/29/</link>
       <pubDate>Sat, 19 Aug 2006 06:34:00 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/08/19/29/</guid>
-      <description>Мучая Blog Search наткнулся на блог Елены Сагалаевой - Алёна C++. Елена пишет много, интересно и «по теме» - С++, программирование, Windows и т.д.
-PS: Попутно добавил секцию «Blogs» справа. :-)</description>
+      <description>Мучая Blog Search наткнулся на блог Елены Сагалаевой - Алёна C++. Елена пишет много, интересно и «по теме» - С++, программирование, Windows и т.д.&#xA;PS: Попутно добавил секцию «Blogs» справа. :-)</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.90.1" />
+	<meta name="generator" content="Hugo 0.124.1">
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -27,20 +27,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -59,7 +49,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -92,13 +82,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      <a href="/index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -388,25 +378,25 @@ School Day также известный как &ldquo;гоните ваши д�
 легче, чем когда параметры разбросаны по файлу длиной в сотни строк.</p>
 <p>Как сделать код еще более понятным? К примеру, возьмем таблицу из предыдущего
 поста. Что с ней не так?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> {
-    <span style="color:#66d9ef">int</span> x;
-    <span style="color:#66d9ef">int</span> y;
-    std<span style="color:#f92672">::</span>string that_thing;
-    std<span style="color:#f92672">::</span>string this_key;
-    <span style="color:#66d9ef">bool</span> result;
-} <span style="color:#66d9ef">const</span> cases[] <span style="color:#f92672">=</span> {
-    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key2&#34;</span>, false},
-    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key2&#34;</span>, false},
-    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key2&#34;</span>, false},
-    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key1&#34;</span>, true },
-    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;thing2&#34;</span>, <span style="color:#e6db74">&#34;key1&#34;</span>, false},
-    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;thing2&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>,     false},
-    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;thing2&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>,     true },
-    {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;&#34;</span>,       <span style="color:#e6db74">&#34;&#34;</span>,     false},
-    {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;&#34;</span>,       <span style="color:#e6db74">&#34;&#34;</span>,     true },
-    {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;&#34;</span>,       <span style="color:#e6db74">&#34;&#34;</span>,     false},
-};
-</code></pre></div><p>В этой таблице слишком много знаков препинания: скобки, запятые, кавычки.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> x;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> y;
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>string that_thing;
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>string this_key;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">bool</span> result;
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">const</span> cases[] <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key2&#34;</span>, false},
+</span></span><span style="display:flex;"><span>    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key2&#34;</span>, false},
+</span></span><span style="display:flex;"><span>    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key2&#34;</span>, false},
+</span></span><span style="display:flex;"><span>    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;thing1&#34;</span>, <span style="color:#e6db74">&#34;key1&#34;</span>, true },
+</span></span><span style="display:flex;"><span>    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;thing2&#34;</span>, <span style="color:#e6db74">&#34;key1&#34;</span>, false},
+</span></span><span style="display:flex;"><span>    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;thing2&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>,     false},
+</span></span><span style="display:flex;"><span>    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;thing2&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>,     true },
+</span></span><span style="display:flex;"><span>    {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;&#34;</span>,       <span style="color:#e6db74">&#34;&#34;</span>,     false},
+</span></span><span style="display:flex;"><span>    {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;&#34;</span>,       <span style="color:#e6db74">&#34;&#34;</span>,     true },
+</span></span><span style="display:flex;"><span>    {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;&#34;</span>,       <span style="color:#e6db74">&#34;&#34;</span>,     false},
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>В этой таблице слишком много знаков препинания: скобки, запятые, кавычки.
 К параметрам в этой таблице неудобно писать комментарии и еще сложнее подружить
 удобно выровненные колонки с <a href="https://clang.llvm.org/docs/ClangFormat.html"><code>clang-format</code></a> (<code>clang-format off</code> - это
 единственный выход). Более того, столкнувшись с реальностью, подобная таблица
@@ -430,45 +420,45 @@ School Day также известный как &ldquo;гоните ваши д�
 понятные и читаемые юнит тесты. Начну немного издалека. Допустим мы хотим
 убедится, что определенный кусок кода работает правильно. Если бы мы имели дело
 с игрушечным примером, то это наш тест мог бы Примерно вот так:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">foobar</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)
-{
-    <span style="color:#66d9ef">return</span> (x <span style="color:#f92672">+</span> y) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> ((x <span style="color:#f92672">+</span> y) <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">ASSERT_FALSE(foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>));
-ASSERT_FALSE(foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>));
-ASSERT_FALSE(foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>));
-ASSERT_TRUE (foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>));
-ASSERT_FALSE(foobar(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>));
-ASSERT_FALSE(foobar(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>));
-ASSERT_TRUE (foobar(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>));
-ASSERT_FALSE(foobar(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>));
-ASSERT_TRUE (foobar(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>));
-ASSERT_FALSE(foobar(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>));
-...
-</code></pre></div><p>Такой тест достаточно легко читать. Достаточно понять конструкцию
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">foobar</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (x <span style="color:#f92672">+</span> y) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> ((x <span style="color:#f92672">+</span> y) <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>ASSERT_FALSE(foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>));
+</span></span><span style="display:flex;"><span>ASSERT_FALSE(foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span>ASSERT_FALSE(foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>));
+</span></span><span style="display:flex;"><span>ASSERT_TRUE (foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>));
+</span></span><span style="display:flex;"><span>ASSERT_FALSE(foobar(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>));
+</span></span><span style="display:flex;"><span>ASSERT_FALSE(foobar(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span>ASSERT_TRUE (foobar(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>));
+</span></span><span style="display:flex;"><span>ASSERT_FALSE(foobar(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>));
+</span></span><span style="display:flex;"><span>ASSERT_TRUE (foobar(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span>ASSERT_FALSE(foobar(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>));
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>Такой тест достаточно легко читать. Достаточно понять конструкцию
 <code>ASSERT_XXX(foobar(...))</code> после чего глаза сами фокусируются на входных
 значениях, автоматически отсеивая ненужный синтаксический мусор.</p>
 <p>Однако, если взять реальный код, то подобный пример превратиться в гораздо менее
 удобочитаемого монстра:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#f92672">::</span>unique_ptr<span style="color:#f92672">&lt;</span>Foobar<span style="color:#f92672">&gt;</span> rabbit <span style="color:#f92672">=</span>
-    create_foobar_with_abc(parent,
-        some_context,
-        more_stuff <span style="color:#f92672">+</span> that <span style="color:#f92672">+</span> is_required <span style="color:#f92672">+</span> to_create_foobar,
-        a,
-        b,
-        mock_c(),
-        logger);
-
-ASSERT_TRUE(
-    rabbit<span style="color:#f92672">-&gt;</span>connect(
-        this_thing,
-        that_key,
-        did_you_think_we_are_done_here <span style="color:#f92672">?</span> no : hell_no));
-
-ASSERT_TRUE(rabbit<span style="color:#f92672">-&gt;</span>wait_for_accept(timeout));
-
-ASSERT_FALSE(rabbit<span style="color:#f92672">-&gt;</span>foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>));
-</code></pre></div><p>&hellip; и так далее для каждого тест кейса. Подобный код легко превращается в
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>std<span style="color:#f92672">::</span>unique_ptr<span style="color:#f92672">&lt;</span>Foobar<span style="color:#f92672">&gt;</span> rabbit <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>    create_foobar_with_abc(parent,
+</span></span><span style="display:flex;"><span>        some_context,
+</span></span><span style="display:flex;"><span>        more_stuff <span style="color:#f92672">+</span> that <span style="color:#f92672">+</span> is_required <span style="color:#f92672">+</span> to_create_foobar,
+</span></span><span style="display:flex;"><span>        a,
+</span></span><span style="display:flex;"><span>        b,
+</span></span><span style="display:flex;"><span>        mock_c(),
+</span></span><span style="display:flex;"><span>        logger);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ASSERT_TRUE(
+</span></span><span style="display:flex;"><span>    rabbit<span style="color:#f92672">-&gt;</span>connect(
+</span></span><span style="display:flex;"><span>        this_thing,
+</span></span><span style="display:flex;"><span>        that_key,
+</span></span><span style="display:flex;"><span>        did_you_think_we_are_done_here <span style="color:#f92672">?</span> no : hell_no));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ASSERT_TRUE(rabbit<span style="color:#f92672">-&gt;</span>wait_for_accept(timeout));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ASSERT_FALSE(rabbit<span style="color:#f92672">-&gt;</span>foobar(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>));
+</span></span></code></pre></div><p>&hellip; и так далее для каждого тест кейса. Подобный код легко превращается в
 длинную простыню однообразного текста с незаметными, но важными вариациями во
 входных данных или параметрах инициализации.</p>
       <a href="https://blog.not-a-kernel-guy.com/2018/08/01/table-driven-unit-tests/">Read On &rarr;</a>

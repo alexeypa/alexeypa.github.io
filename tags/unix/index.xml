@@ -6,16 +6,14 @@
     <description>Recent content in Unix on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 10 Jan 2010 23:34:40 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/unix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jan 2010 23:34:40 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/unix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Поверхностное сравнение архитектуры консоли в Windows и Unix</title>
       <link>https://blog.not-a-kernel-guy.com/2010/01/10/753/</link>
       <pubDate>Sun, 10 Jan 2010 23:34:40 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/01/10/753/</guid>
-      <description>&lt;p&gt;Довольно интересно сравнить, как устроена консоль в Windows и Unix. Вот упрощенная схема как это работает в Unix:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2010/01/unix_console.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2010/01/unix_console.png&#34; alt=&#34;Консоль в Unix&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Довольно интересно сравнить, как устроена консоль в Windows и Unix. Вот упрощенная схема как это работает в Unix:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2010/01/unix_console.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2010/01/unix_console.png&#34; alt=&#34;Консоль в Unix&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

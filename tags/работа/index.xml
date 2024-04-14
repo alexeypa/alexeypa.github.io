@@ -6,344 +6,182 @@
     <description>Recent content in Работа on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sat, 12 Dec 2020 15:46:35 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Dec 2020 15:46:35 -0800</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Открытые позиции в моей команде</title>
       <link>https://blog.not-a-kernel-guy.com/2020/12/12/%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B5-%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B8-%D0%B2-%D0%BC%D0%BE%D0%B5%D0%B9-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B5/</link>
       <pubDate>Sat, 12 Dec 2020 15:46:35 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2020/12/12/%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B5-%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B8-%D0%B2-%D0%BC%D0%BE%D0%B5%D0%B9-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B5/</guid>
-      <description>&lt;p&gt;Пользуясь наплывом читателей по случаю &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2020/12/09/sn8/&#34;&gt;красивого взрыва SN8&lt;/a&gt;, прорекламирую открытые
-позиции в моей команде:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://boards.greenhouse.io/spacex/jobs/4994016002?gh_jid=4994016002&#34;&gt;Software Engineer (Embedded Linux Software)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://boards.greenhouse.io/spacex/jobs/4787115002?gh_jid=4787115002&#34;&gt;Senior Software Engineer (Embedded Linux Software)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;В двух словах мы ищем специалистов по разработке встраиваемых систем, ядру Linux, и
-систем реального времени.&lt;/p&gt;
-&lt;p&gt;Сразу скажу, что рассматриваются только жители США. Виза, за исключением уникальных
-случаев, не спонсируется. Почему так можно прочитать &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2020/05/24/job-at-spacex/&#34;&gt;здесь&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Понятное дело, что рекламировать позицию в США в блоге на русском не очень логично, но с
-другой стороны, почему бы и нет? Глядишь у кого-нибудь знакомые заинтересуются?&lt;/p&gt;</description>
+      <description>&lt;p&gt;Пользуясь наплывом читателей по случаю &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2020/12/09/sn8/&#34;&gt;красивого взрыва SN8&lt;/a&gt;, прорекламирую открытые&#xA;позиции в моей команде:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://boards.greenhouse.io/spacex/jobs/4994016002?gh_jid=4994016002&#34;&gt;Software Engineer (Embedded Linux Software)&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://boards.greenhouse.io/spacex/jobs/4787115002?gh_jid=4787115002&#34;&gt;Senior Software Engineer (Embedded Linux Software)&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;В двух словах мы ищем специалистов по разработке встраиваемых систем, ядру Linux, и&#xA;систем реального времени.&lt;/p&gt;&#xA;&lt;p&gt;Сразу скажу, что рассматриваются только жители США. Виза, за исключением уникальных&#xA;случаев, не спонсируется. Почему так можно прочитать &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2020/05/24/job-at-spacex/&#34;&gt;здесь&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Понятное дело, что рекламировать позицию в США в блоге на русском не очень логично, но с&#xA;другой стороны, почему бы и нет? Глядишь у кого-нибудь знакомые заинтересуются?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Do not contact me about jobs for the next 2 years</title>
       <link>https://blog.not-a-kernel-guy.com/2016/07/09/dont-spam-me-for-the-next-two-years/</link>
       <pubDate>Sat, 09 Jul 2016 12:59:45 +0300</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2016/07/09/dont-spam-me-for-the-next-two-years/</guid>
-      <description>&lt;p&gt;Хе-хе. &lt;a href=&#34;https://www.linkedin.com/pulse/do-contact-me-jobs-next-2-years-randall-hunt&#34;&gt;Do not contact me about jobs for the next 2 years&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;I receive upwards of 100 emails a day from automated recruiters. If you add to this spam I will be very unhappy. I am not interested in changing roles right now.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Знакомая проблема. Из Амазона, например, любят писать раз в шесть месяцев. Причем пишут два разных рекрутера с разницей в неделю. Надо бы их за &lt;a href=&#34;http://www.recruitingblogs.com/profiles/blogs/double-submittals&#34;&gt;double submittals&lt;/a&gt; дисквалифицировать.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Хе-хе. &lt;a href=&#34;https://www.linkedin.com/pulse/do-contact-me-jobs-next-2-years-randall-hunt&#34;&gt;Do not contact me about jobs for the next 2 years&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;I receive upwards of 100 emails a day from automated recruiters. If you add to this spam I will be very unhappy. I am not interested in changing roles right now.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Знакомая проблема. Из Амазона, например, любят писать раз в шесть месяцев. Причем пишут два разных рекрутера с разницей в неделю. Надо бы их за &lt;a href=&#34;http://www.recruitingblogs.com/profiles/blogs/double-submittals&#34;&gt;double submittals&lt;/a&gt; дисквалифицировать.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>SpaceX, переезд в LA и всякое разное...</title>
       <link>https://blog.not-a-kernel-guy.com/2013/10/25/1499/</link>
       <pubDate>Fri, 25 Oct 2013 22:38:05 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2013/10/25/1499/</guid>
-      <description>&lt;p&gt;Давненько я не писал… Пол года уже прошло. За это время много чего случилось, поэтому буду писать в стиле &lt;a href=&#34;http://blogs.msdn.com/b/michkap/&#34;&gt;Майкла Каплана&lt;/a&gt; - отдельными тезисами и без абзацев.&lt;/p&gt;
-&lt;p&gt;Во-первых, с середины октября я работаю Flight Software Developer’ом в &lt;a href=&#34;http://www.spacex.com&#34;&gt;SpaceX&lt;/a&gt;. SpaceX - это &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2008/09/29/346/&#34;&gt;первая частная компания запустившая спутник на орбиту&lt;/a&gt;. На данный момент у компании в активе вторая итерация &lt;a href=&#34;http://www.spacex.com/falcon9&#34;&gt;Falcon 9&lt;/a&gt; и успешно слетавший к Международной космической станции грузовой корабль &lt;a href=&#34;http://www.spacex.com/dragon&#34;&gt;Dragon&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Я работаю в группе Avionics, создающей софт для Falcon 9, Dragon и наземных систем, обслуживающих полет. Woo-hoo, baby!!!&lt;/p&gt;</description>
+      <description>&lt;p&gt;Давненько я не писал… Пол года уже прошло. За это время много чего случилось, поэтому буду писать в стиле &lt;a href=&#34;http://blogs.msdn.com/b/michkap/&#34;&gt;Майкла Каплана&lt;/a&gt; - отдельными тезисами и без абзацев.&lt;/p&gt;&#xA;&lt;p&gt;Во-первых, с середины октября я работаю Flight Software Developer’ом в &lt;a href=&#34;http://www.spacex.com&#34;&gt;SpaceX&lt;/a&gt;. SpaceX - это &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2008/09/29/346/&#34;&gt;первая частная компания запустившая спутник на орбиту&lt;/a&gt;. На данный момент у компании в активе вторая итерация &lt;a href=&#34;http://www.spacex.com/falcon9&#34;&gt;Falcon 9&lt;/a&gt; и успешно слетавший к Международной космической станции грузовой корабль &lt;a href=&#34;http://www.spacex.com/dragon&#34;&gt;Dragon&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Я работаю в группе Avionics, создающей софт для Falcon 9, Dragon и наземных систем, обслуживающих полет. Woo-hoo, baby!!!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Поиск работы в США - инструктаж</title>
       <link>https://blog.not-a-kernel-guy.com/2013/04/04/1494/</link>
       <pubDate>Thu, 04 Apr 2013 11:49:26 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2013/04/04/1494/</guid>
-      <description>Sergunka (forum.privet.com) скомпилировал очень реалистичную инструкцию как искать работу в США:
- Поиск работы в США
-  Решил обобщить свой более чем десятилетний опыт поиска работы в США на рынке ИТ. Так или иначе вопрос довольно злободневный и часто обсуждаемый в русском зарубежье.
-  Для человека неподготовленного к реалиям конкурентной борьбы на рынке США возможно многие соображения покажутся довольно экзотическими, но тем не менее лучше знать чем пребывать в неведении.</description>
+      <description>Sergunka (forum.privet.com) скомпилировал очень реалистичную инструкцию как искать работу в США:&#xA;Поиск работы в США&#xA;Решил обобщить свой более чем десятилетний опыт поиска работы в США на рынке ИТ. Так или иначе вопрос довольно злободневный и часто обсуждаемый в русском зарубежье.&#xA;Для человека неподготовленного к реалиям конкурентной борьбы на рынке США возможно многие соображения покажутся довольно экзотическими, но тем не менее лучше знать чем пребывать в неведении.&#xA;&amp;hellip;&#xA;продолжение тут.</description>
     </item>
-    
     <item>
       <title>Поиск работы за рубежом</title>
       <link>https://blog.not-a-kernel-guy.com/2012/01/11/1255/</link>
       <pubDate>Wed, 11 Jan 2012 20:41:18 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2012/01/11/1255/</guid>
-      <description>&lt;p&gt;Вопрос из почты (персональная информация удалена):&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Я так же как и вы родился и пока что живу в Украине, являюсь студентом &amp;hellip; на специальности &amp;hellip; я пока что на &amp;hellip; курсе, но заниматься программированием очень нравиться, и уже сейчас задумываюсь о том есть ли спрос на рынке труда. Я пробил вакансии и везде требуются с опытом работы. Я хочу вас спросить как проффисионала, человека который прошел уже этот этап, имеющего большой опыт, с охотой ли компании берут молодых специалистов, с чего начать, как можно перейти на работу зарубеж. Что можете посоветовать.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;У меня выдался относительно свободный вечер &lt;!-- raw HTML omitted --&gt;(да и вообще давать непрошенные советы - это мое хобби)&lt;!-- raw HTML omitted --&gt;, а поэтому вот:&lt;/p&gt;
-&lt;p&gt;Ситуация с поиском работы за рубежом для специалистов &lt;em&gt;востребованных IT специальностей&lt;/em&gt;, по сути, мало чем отличается от локального поиска работы. Вам нужно доказать что:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Вы подходите лучше других кандидатов на ту или иную позицию;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Затраты на ваш найм будут оправданы.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</description>
+      <description>&lt;p&gt;Вопрос из почты (персональная информация удалена):&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Я так же как и вы родился и пока что живу в Украине, являюсь студентом &amp;hellip; на специальности &amp;hellip; я пока что на &amp;hellip; курсе, но заниматься программированием очень нравиться, и уже сейчас задумываюсь о том есть ли спрос на рынке труда. Я пробил вакансии и везде требуются с опытом работы. Я хочу вас спросить как проффисионала, человека который прошел уже этот этап, имеющего большой опыт, с охотой ли компании берут молодых специалистов, с чего начать, как можно перейти на работу зарубеж. Что можете посоветовать.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;У меня выдался относительно свободный вечер &lt;!-- raw HTML omitted --&gt;(да и вообще давать непрошенные советы - это мое хобби)&lt;!-- raw HTML omitted --&gt;, а поэтому вот:&lt;/p&gt;&#xA;&lt;p&gt;Ситуация с поиском работы за рубежом для специалистов &lt;em&gt;востребованных IT специальностей&lt;/em&gt;, по сути, мало чем отличается от локального поиска работы. Вам нужно доказать что:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Вы подходите лучше других кандидатов на ту или иную позицию;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Затраты на ваш найм будут оправданы.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>Вести с полей</title>
       <link>https://blog.not-a-kernel-guy.com/2012/01/05/1250/</link>
       <pubDate>Thu, 05 Jan 2012 23:23:28 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2012/01/05/1250/</guid>
-      <description>Сегодня был мой последний день работы в Microsoft. Завтра мне еще будет нужно выполнить последние формальности, но рабочим днем завтра назвать язык не поворачивается. Доступа к почте и корпоративной сети у меня уже нет.
-В общей сложности я проработал в Microsoft больше семи лет. Начав самым базовым разработчиком (59-й уровень, на который нанимают толковых выпускников университета), дорос Senior SDE. Почти наверняка дорос бы и до Principal SDE, если бы остался ещё на пару лет.</description>
+      <description>Сегодня был мой последний день работы в Microsoft. Завтра мне еще будет нужно выполнить последние формальности, но рабочим днем завтра назвать язык не поворачивается. Доступа к почте и корпоративной сети у меня уже нет.&#xA;В общей сложности я проработал в Microsoft больше семи лет. Начав самым базовым разработчиком (59-й уровень, на который нанимают толковых выпускников университета), дорос Senior SDE. Почти наверняка дорос бы и до Principal SDE, если бы остался ещё на пару лет.</description>
     </item>
-    
     <item>
       <title>Запишите меня в астронавты</title>
       <link>https://blog.not-a-kernel-guy.com/2011/12/04/1225/</link>
       <pubDate>Sun, 04 Dec 2011 23:44:07 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/12/04/1225/</guid>
-      <description>NASA набирает астронавтов для полетов на МКС. Требования простые:
-  Бакалавр по инженерной специальности, биологии, физике или математике.
-  Три года профессионального опыта или 1000 часов налета на реактивном самолёте.
-  Не сильно испорченное зрение.
-  Физическая возможность влезть в ложемент Союза и скафандр для выхода в открытый космос.
-  Гражданство США.
-  Никто не желает попробовать? :-) Платят, кстати, не сильно много: от $65K до $142K.</description>
+      <description>NASA набирает астронавтов для полетов на МКС. Требования простые:&#xA;Бакалавр по инженерной специальности, биологии, физике или математике.&#xA;Три года профессионального опыта или 1000 часов налета на реактивном самолёте.&#xA;Не сильно испорченное зрение.&#xA;Физическая возможность влезть в ложемент Союза и скафандр для выхода в открытый космос.&#xA;Гражданство США.&#xA;Никто не желает попробовать? :-) Платят, кстати, не сильно много: от $65K до $142K. Зато бенефиты хорошие и можно потом книгу издать. :-)</description>
     </item>
-    
     <item>
       <title>Looking for Russian and Ukrainian graduates</title>
       <link>https://blog.not-a-kernel-guy.com/2011/09/28/1189/</link>
       <pubDate>Wed, 28 Sep 2011 06:48:43 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/09/28/1189/</guid>
-      <description>&lt;p&gt;Microsoft проведет очередной набор разработчиков в Киеве. На этот раз рассматриваются выпускники 2011 года и будущие выпускники 2012 года.&lt;/p&gt;
-&lt;p&gt;Пожалуйста, ссылайтесь на этот блог (blog.not-a-kernel-guy.com) при отправке резюме. Шансов на положительное решение это не прибавляет, но настроение автору блога поднимает. :-)&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Microsoft Corporation is coming to Ukraine and Russia to interview for our Software Development Engineer positions — FULL-TIME CANDIDATES!!!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Redmond, Washington, USA&lt;/strong&gt; (CV submissions due by &lt;strong&gt;October 10th&lt;/strong&gt; to be considered for the interviews!)&lt;/p&gt;
-&lt;p&gt;To Apply: please visit &lt;a href=&#34;http://www.microsoft.com/university&#34;&gt;www.microsoft.com/university&lt;/a&gt;. Applications are reviewed as they are received.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Microsoft проведет очередной набор разработчиков в Киеве. На этот раз рассматриваются выпускники 2011 года и будущие выпускники 2012 года.&lt;/p&gt;&#xA;&lt;p&gt;Пожалуйста, ссылайтесь на этот блог (blog.not-a-kernel-guy.com) при отправке резюме. Шансов на положительное решение это не прибавляет, но настроение автору блога поднимает. :-)&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Microsoft Corporation is coming to Ukraine and Russia to interview for our Software Development Engineer positions — FULL-TIME CANDIDATES!!!&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Redmond, Washington, USA&lt;/strong&gt; (CV submissions due by &lt;strong&gt;October 10th&lt;/strong&gt; to be considered for the interviews!)&lt;/p&gt;&#xA;&lt;p&gt;To Apply: please visit &lt;a href=&#34;http://www.microsoft.com/university&#34;&gt;www.microsoft.com/university&lt;/a&gt;. Applications are reviewed as they are received.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Команда Bing стала немного больше</title>
       <link>https://blog.not-a-kernel-guy.com/2011/08/23/1167/</link>
       <pubDate>Tue, 23 Aug 2011 13:18:54 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/08/23/1167/</guid>
       <description>На объявление Bing Search will be hosting a recruiting trip to Russia в этом блоге откликнулось, по словам рекрутера, больше 20-ти человек. Из них трое прошли все интервью и получили предложение о работе. Довольно неплохо, я полагаю.</description>
     </item>
-    
     <item>
       <title>Microsoft Advertising will be hosting a recruiting trip to Russia</title>
       <link>https://blog.not-a-kernel-guy.com/2011/07/25/1118/</link>
       <pubDate>Mon, 25 Jul 2011 08:00:43 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/07/25/1118/</guid>
-      <description>&lt;p&gt;Команда Microsoft Advertising собирается приехать в Москву в октябре собеседовать разработчиков из России и соседних стран, желающих &lt;!-- raw HTML omitted --&gt;вступить в ряды империи зла&lt;!-- raw HTML omitted --&gt; перебраться в США. Просьба, при посылке резюме ссылаться на меня (Alexey Pakhunov) - очень интересно посмотреть статистику. :-)&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;a href=&#34;http://advertising.microsoft.com/&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2011/07/Microsoft-Advertising.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://advertising.microsoft.com/&#34;&gt;Microsoft Advertising&lt;/a&gt; will be hosting a recruiting event in mid-October this year to recruit top talent from all over Russia and neighboring countries specifically focusing on Software Developers of all experience levels who are interested in relocating to the U.S. At this time, we are looking to hire engineers for the roles below. ALL roles require strong coding and development experience.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Software Development Engineer (SDE)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Software Development Engineer II (SDE II)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Principal SDE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Engineering Leads&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;If interested – please send your information and Resume/CV to the Recruiter organizing this event: &lt;a href=&#34;mailto:eugenial@microsoft.com&#34;&gt;eugenial@microsoft.com&lt;/a&gt; by Wednesday, August 31st.&lt;/strong&gt; We are focused on broad-based software development skills when considering potential candidates (across the board – no specific technology/product niche requirements). If you are strong in C++, C# or JAVA, we would love to hear from you!&lt;/p&gt;</description>
+      <description>&lt;p&gt;Команда Microsoft Advertising собирается приехать в Москву в октябре собеседовать разработчиков из России и соседних стран, желающих &lt;!-- raw HTML omitted --&gt;вступить в ряды империи зла&lt;!-- raw HTML omitted --&gt; перебраться в США. Просьба, при посылке резюме ссылаться на меня (Alexey Pakhunov) - очень интересно посмотреть статистику. :-)&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://advertising.microsoft.com/&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2011/07/Microsoft-Advertising.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://advertising.microsoft.com/&#34;&gt;Microsoft Advertising&lt;/a&gt; will be hosting a recruiting event in mid-October this year to recruit top talent from all over Russia and neighboring countries specifically focusing on Software Developers of all experience levels who are interested in relocating to the U.S. At this time, we are looking to hire engineers for the roles below. ALL roles require strong coding and development experience.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Software Development Engineer (SDE)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Software Development Engineer II (SDE II)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Principal SDE&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Engineering Leads&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;If interested – please send your information and Resume/CV to the Recruiter organizing this event: &lt;a href=&#34;mailto:eugenial@microsoft.com&#34;&gt;eugenial@microsoft.com&lt;/a&gt; by Wednesday, August 31st.&lt;/strong&gt; We are focused on broad-based software development skills when considering potential candidates (across the board – no specific technology/product niche requirements). If you are strong in C++, C# or JAVA, we would love to hear from you!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Bing Search will be hosting a recruiting trip to Russia</title>
       <link>https://blog.not-a-kernel-guy.com/2011/06/22/1109/</link>
       <pubDate>Wed, 22 Jun 2011 12:52:58 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/06/22/1109/</guid>
-      <description>&lt;p&gt;Пробежало по внутренней рассылке. Рекрутер (Anubha Mahajan) просила ссылаться на меня (Alexey Pakhunov), чтобы отследить кандидатов, пришедших с этого блога.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Bing will be hosting a recruiting event in late July/Early August this year  to recruit top talent from all over Russia for software developers of all seniorities and experience levels who are interested in relocating to the U.S. At this time, we are looking to fill the below opportunities and all roles require strong coding and development experience.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;SDE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;SDE II&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Principal SDE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Leads&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;If interested - please send your information and CV to the sourcing recruiter for this event at &lt;a href=&#34;mailto:anubham@microsoft.com&#34;&gt;anubham@microsoft.com&lt;/a&gt; by July 8th.&lt;/strong&gt; We are focused on broad-based software development skills when considering potential candidates (across the board – no specific technology/product niche requirements).  If you are good in C++, C# or JAVA, we’d like to hear about you!&lt;/p&gt;</description>
+      <description>&lt;p&gt;Пробежало по внутренней рассылке. Рекрутер (Anubha Mahajan) просила ссылаться на меня (Alexey Pakhunov), чтобы отследить кандидатов, пришедших с этого блога.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Bing will be hosting a recruiting event in late July/Early August this year  to recruit top talent from all over Russia for software developers of all seniorities and experience levels who are interested in relocating to the U.S. At this time, we are looking to fill the below opportunities and all roles require strong coding and development experience.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;SDE&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;SDE II&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Principal SDE&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Leads&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;If interested - please send your information and CV to the sourcing recruiter for this event at &lt;a href=&#34;mailto:anubham@microsoft.com&#34;&gt;anubham@microsoft.com&lt;/a&gt; by July 8th.&lt;/strong&gt; We are focused on broad-based software development skills when considering potential candidates (across the board – no specific technology/product niche requirements).  If you are good in C++, C# or JAVA, we’d like to hear about you!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Инфантилизм как он есть</title>
       <link>https://blog.not-a-kernel-guy.com/2011/03/30/1007/</link>
       <pubDate>Wed, 30 Mar 2011 20:00:59 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/03/30/1007/</guid>
-      <description>Попался замечательный топик на Привете. Не берусь сказать правда это или нет – все таки это пересказ через третьи руки. Тем не менее с проявлениями подобного инфантилизма сталкиваюсь чаще, чем хотелось бы.
-Оптимистичное начало:
- Подскажите, реально ли найти работу тестером после 2-месячных курсов? Человек не имеет никакого ИТ образования, кроме этих 2 месяца курсов с мужиком, которого нашли по газете&amp;hellip;
-  у человека предыдущее образование связано с социальными каким то науками - что то типа не то десткая психолошия, не то социология и что то с детьми&amp;hellip; То есть ни о каком выше среднего уровне компьютерного пользователя речи не иедт, навыков бухшалтерии нема.</description>
+      <description>Попался замечательный топик на Привете. Не берусь сказать правда это или нет – все таки это пересказ через третьи руки. Тем не менее с проявлениями подобного инфантилизма сталкиваюсь чаще, чем хотелось бы.&#xA;Оптимистичное начало:&#xA;Подскажите, реально ли найти работу тестером после 2-месячных курсов? Человек не имеет никакого ИТ образования, кроме этих 2 месяца курсов с мужиком, которого нашли по газете&amp;hellip;&#xA;у человека предыдущее образование связано с социальными каким то науками - что то типа не то десткая психолошия, не то социология и что то с детьми&amp;hellip; То есть ни о каком выше среднего уровне компьютерного пользователя речи не иедт, навыков бухшалтерии нема.</description>
     </item>
-    
     <item>
       <title>We are still hiring!</title>
       <link>https://blog.not-a-kernel-guy.com/2011/01/20/970/</link>
       <pubDate>Thu, 20 Jan 2011 11:12:50 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/01/20/970/</guid>
       <description>Раз уж заговорили про набор людей, - моя команда всё еще ищет двух Senior SDE с опытом разработки драйверов и другого низкоуровневого кода, а так же с хорошим пониманием сетевых технологий (протоколы, драйвера, и т.п.): We are hiring! Мы делаем новые H1B!</description>
     </item>
-    
     <item>
       <title>Microsoft проведёт очередной набор студентов и выпускников из России, Беларуси и Украины.</title>
       <link>https://blog.not-a-kernel-guy.com/2011/01/19/964/</link>
       <pubDate>Wed, 19 Jan 2011 23:18:13 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/01/19/964/</guid>
-      <description>Вот, по внутренней рассылке пробежало:
-Корпорация Microsoft проводит интервью для поступления на работу в Microsoft USA для студентов и выпускников из России, Беларуси и Украины в феврале 2011 года на должности:
-  Инженер по разработке программного обеспечения (SDE)
-  Инженер–тестировщик по разработке программного обеспечения (SDET)
-  Мы приглашаем студентов которые окончили ВУЗ в 2010 году или или собираются окончить ВУЗ в 2011 году на постоянную работу в Рэдмонд.</description>
+      <description>Вот, по внутренней рассылке пробежало:&#xA;Корпорация Microsoft проводит интервью для поступления на работу в Microsoft USA для студентов и выпускников из России, Беларуси и Украины в феврале 2011 года на должности:&#xA;Инженер по разработке программного обеспечения (SDE)&#xA;Инженер–тестировщик по разработке программного обеспечения (SDET)&#xA;Мы приглашаем студентов которые окончили ВУЗ в 2010 году или или собираются окончить ВУЗ в 2011 году на постоянную работу в Рэдмонд. Пожалуйста, присылайте ваши резюме до 1-го февраля 2011 года.</description>
     </item>
-    
     <item>
       <title>We are hiring!</title>
       <link>https://blog.not-a-kernel-guy.com/2010/12/08/945/</link>
       <pubDate>Wed, 08 Dec 2010 11:52:39 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/12/08/945/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://research.microsoft.com/en-us/labs/xcg/default.aspx&#34;&gt;Extreme Computing Group (XCG)&lt;/a&gt;, в которой я работаю, нанимает разработчиков. В том числе рассматриваются кандидаты из-за рубежа. Само собой, локальные кандидаты предпочтительней, но их как-то не очень заметно, так что у вас есть хороший шанс. Делаются как новые H1B, так и H1B transfer, насколько я могу судить. Позиции ищуться по ключевым словам «eXtreme Computing Group (XCG)». Вот пара ссылок:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://careers.microsoft.com/JobDetails.aspx?ss=&amp;amp;pg=0&amp;amp;so=&amp;amp;rw=1&amp;amp;jid=29602&amp;amp;jlang=EN&#34;&gt;Software Development Engineer, Senior - Extreme Computing Group&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://careers.microsoft.com/JobDetails.aspx?ss=&amp;amp;pg=0&amp;amp;so=&amp;amp;rw=4&amp;amp;jid=28954&amp;amp;jlang=EN&#34;&gt;Software Development Engineer, Senior - Extreme Computing Group&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;От себя добавлю, что проекты у нас сложные и интересные, а люди хорошие. :-) Подаваться нужно через &lt;a href=&#34;http://careers.microsoft.com&#34;&gt;http://careers.microsoft.com&lt;/a&gt;, в крайнем случае – пришлите резюме мне (&lt;a href=&#34;mailto:alexeypa@gmail.com&#34;&gt;alexeypa@gmail.com&lt;/a&gt;). На разбор писем я собираюсь потратить не так уж много времени. Никаких гарантий, что письмо посланное мне будет передано рекрутеру нет (я даже и не знаю, кто он), так что careers - надежнее.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://research.microsoft.com/en-us/labs/xcg/default.aspx&#34;&gt;Extreme Computing Group (XCG)&lt;/a&gt;, в которой я работаю, нанимает разработчиков. В том числе рассматриваются кандидаты из-за рубежа. Само собой, локальные кандидаты предпочтительней, но их как-то не очень заметно, так что у вас есть хороший шанс. Делаются как новые H1B, так и H1B transfer, насколько я могу судить. Позиции ищуться по ключевым словам «eXtreme Computing Group (XCG)». Вот пара ссылок:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://careers.microsoft.com/JobDetails.aspx?ss=&amp;amp;pg=0&amp;amp;so=&amp;amp;rw=1&amp;amp;jid=29602&amp;amp;jlang=EN&#34;&gt;Software Development Engineer, Senior - Extreme Computing Group&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://careers.microsoft.com/JobDetails.aspx?ss=&amp;amp;pg=0&amp;amp;so=&amp;amp;rw=4&amp;amp;jid=28954&amp;amp;jlang=EN&#34;&gt;Software Development Engineer, Senior - Extreme Computing Group&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;От себя добавлю, что проекты у нас сложные и интересные, а люди хорошие. :-) Подаваться нужно через &lt;a href=&#34;http://careers.microsoft.com&#34;&gt;http://careers.microsoft.com&lt;/a&gt;, в крайнем случае – пришлите резюме мне (&lt;a href=&#34;mailto:alexeypa@gmail.com&#34;&gt;alexeypa@gmail.com&lt;/a&gt;). На разбор писем я собираюсь потратить не так уж много времени. Никаких гарантий, что письмо посланное мне будет передано рекрутеру нет (я даже и не знаю, кто он), так что careers - надежнее.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Bing Development Team is hiring</title>
       <link>https://blog.not-a-kernel-guy.com/2010/08/31/886/</link>
       <pubDate>Tue, 31 Aug 2010 09:13:26 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/08/31/886/</guid>
-      <description>http://blogs.technet.com/b/career/archive/2010/08/30/3352634.aspx:
-Bing Development Team будет проводить проводить интервью в Москве в октября/ноябре 2010 г. Резюме можно присылать на адрес maconn@microsoft.com (Mat Connot).
-Microsoft Bing Mobile &amp;amp; Global Foundation Services Software Development Jobs based in Microsoft&amp;rsquo;s Corporate HQ in the U.S.
-For additional information and for instructions about how to apply: please email Mat Connot at maconn@microsoft.com.
-Software development positions (I, II, &amp;amp; Snr) are available on each of the teams below.</description>
+      <description>http://blogs.technet.com/b/career/archive/2010/08/30/3352634.aspx:&#xA;Bing Development Team будет проводить проводить интервью в Москве в октября/ноябре 2010 г. Резюме можно присылать на адрес maconn@microsoft.com (Mat Connot).&#xA;Microsoft Bing Mobile &amp;amp; Global Foundation Services Software Development Jobs based in Microsoft&amp;rsquo;s Corporate HQ in the U.S.&#xA;For additional information and for instructions about how to apply: please email Mat Connot at maconn@microsoft.com.&#xA;Software development positions (I, II, &amp;amp; Snr) are available on each of the teams below.</description>
     </item>
-    
     <item>
       <title>О разнице взглядов на привычные вещи</title>
       <link>https://blog.not-a-kernel-guy.com/2010/06/02/825/</link>
       <pubDate>Wed, 02 Jun 2010 22:51:59 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/06/02/825/</guid>
-      <description>&lt;p&gt;За последнее время мне пришлось побеседовать со многими соискателями на место разработчика в нашей команде. Нужно сказать, это было очень познавательно. Иногда - даже слишком.&lt;/p&gt;
-&lt;p&gt;Один из кандидатов, судя по резюме, очень и очень подходил под наши требования. Кроме того, у неги имелся солидный опыт за плечами. Несколько законченных проектов, каждый из которых подтверждал то или иное требование нашей позиции. В общем, очень многообещающий кандидат.&lt;/p&gt;</description>
+      <description>&lt;p&gt;За последнее время мне пришлось побеседовать со многими соискателями на место разработчика в нашей команде. Нужно сказать, это было очень познавательно. Иногда - даже слишком.&lt;/p&gt;&#xA;&lt;p&gt;Один из кандидатов, судя по резюме, очень и очень подходил под наши требования. Кроме того, у неги имелся солидный опыт за плечами. Несколько законченных проектов, каждый из которых подтверждал то или иное требование нашей позиции. В общем, очень многообещающий кандидат.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Надо бы название блога поменять...</title>
       <link>https://blog.not-a-kernel-guy.com/2009/11/15/678/</link>
       <pubDate>Sun, 15 Nov 2009 23:33:13 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/11/15/678/</guid>
-      <description>За окном шел дождь и рота красноармейцев, а я решил работу поменять. С понедельника перехожу в Extreme Computing Group, что при Microsoft Research, где буду ставить эксперименты нечеловеческиеработать над тем, чтобы дата-центры меньше кушали и больше думали. Примерно так. Надо бы название блога поменять…</description>
+      <description>За окном шел дождь и рота красноармейцев, а я решил работу поменять. С понедельника перехожу в Extreme Computing Group, что при Microsoft Research, где буду ставить эксперименты нечеловеческие работать над тем, чтобы дата-центры меньше кушали и больше думали. Примерно так. Надо бы название блога поменять…</description>
     </item>
-    
     <item>
       <title>Microsoft будет собеседовать кандидатов из России, Украины и Белaруси</title>
       <link>https://blog.not-a-kernel-guy.com/2008/01/02/275/</link>
       <pubDate>Wed, 02 Jan 2008 22:12:29 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/01/02/275/</guid>
-      <description>Очередной цикл собеседований планируется в феврале и июне. Как обычно набираются разработчики (SDE) и тестеры (SDET). До февраля времени осталось совсем не много, так что стоит поторопиться и отправить резюме до конца января. Адрес для отправки: russrec@microsoft.com. Предполагается, что успешным кандидатам предложат позиции в Редмонде и Вакувере.
-С требованиями к кандидатам и прочие подробности можно посмотреть здесь.
-Upd: В феврале будут набирать в Windows Core (Deployment, Kernel/VM и Networking). В июне - еще не ясно, скорее всего тоже в Windows.</description>
+      <description>Очередной цикл собеседований планируется в феврале и июне. Как обычно набираются разработчики (SDE) и тестеры (SDET). До февраля времени осталось совсем не много, так что стоит поторопиться и отправить резюме до конца января. Адрес для отправки: russrec@microsoft.com. Предполагается, что успешным кандидатам предложат позиции в Редмонде и Вакувере.&#xA;С требованиями к кандидатам и прочие подробности можно посмотреть здесь.&#xA;Upd: В феврале будут набирать в Windows Core (Deployment, Kernel/VM и Networking). В июне - еще не ясно, скорее всего тоже в Windows.</description>
     </item>
-    
     <item>
       <title>Начался набор студентов на стажировку в Редмонд на лето 2008 г</title>
       <link>https://blog.not-a-kernel-guy.com/2007/11/16/264/</link>
       <pubDate>Fri, 16 Nov 2007 23:08:44 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/11/16/264/</guid>
-      <description>Взято из блога Ларисы Сазоновой:
- На стажировку мы приглашаем разработчиков (Software Development Engineer) и тестеров (Software Development Engineer in Test) - студентов ведущих российских вузов.
-  _Будем рады получать резюме на адрес: _ruintern@microsoft.com.
- </description>
+      <description>Взято из блога Ларисы Сазоновой:&#xA;На стажировку мы приглашаем разработчиков (Software Development Engineer) и тестеров (Software Development Engineer in Test) - студентов ведущих российских вузов.&#xA;_Будем рады получать резюме на адрес: _ruintern@microsoft.com.</description>
     </item>
-    
     <item>
       <title>Про собеседования</title>
       <link>https://blog.not-a-kernel-guy.com/2007/10/12/254/</link>
       <pubDate>Fri, 12 Oct 2007 23:27:50 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/10/12/254/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://habrahabr.ru/blog/i_am_clever/27363.html&#34;&gt;Прочитал&lt;/a&gt; про &lt;a href=&#34;http://rsdn.ru/forum/message/2683747.flat.1.aspx&#34;&gt;собеседование в Яндексе&lt;/a&gt; и &lt;a href=&#34;http://rsdn.ru/forum/message/2685569.flat.aspx#2685569&#34;&gt;ответ сотрудника Яндекса&lt;/a&gt; и подумал что культура проведения собеседования (и персональная и корпоративная) такая штука, которую лучше иметь чем не иметь. :-)&lt;/p&gt;
-&lt;p&gt;Конечно же я сравниваю с тем, как интервью проводит Microsoft. Просто потому, что я два раза проходил очные интервью в Microsoft и оба раза впечатления были на голову выше чем впечатления от всех остальных интервью, которые мне довелось проходить. Кстати кроме этих двух было еще два заваленных телефонных интервью, но там все было честно - тогда мне не хватало опыта.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://habrahabr.ru/blog/i_am_clever/27363.html&#34;&gt;Прочитал&lt;/a&gt; про &lt;a href=&#34;http://rsdn.ru/forum/message/2683747.flat.1.aspx&#34;&gt;собеседование в Яндексе&lt;/a&gt; и &lt;a href=&#34;http://rsdn.ru/forum/message/2685569.flat.aspx#2685569&#34;&gt;ответ сотрудника Яндекса&lt;/a&gt; и подумал что культура проведения собеседования (и персональная и корпоративная) такая штука, которую лучше иметь чем не иметь. :-)&lt;/p&gt;&#xA;&lt;p&gt;Конечно же я сравниваю с тем, как интервью проводит Microsoft. Просто потому, что я два раза проходил очные интервью в Microsoft и оба раза впечатления были на голову выше чем впечатления от всех остальных интервью, которые мне довелось проходить. Кстати кроме этих двух было еще два заваленных телефонных интервью, но там все было честно - тогда мне не хватало опыта.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>По следам темы про резюме</title>
       <link>https://blog.not-a-kernel-guy.com/2007/10/08/251/</link>
       <pubDate>Mon, 08 Oct 2007 22:51:57 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/10/08/251/</guid>
       <description>(грозно) Кхе-кхе. Кто говорил, что резюме - суть ненужная бумажка? Товарищ, резюме которого я песочил в посте «Резюме на критику», свою вину осознал, полностью раскаялся :-) и уже прошел телефонное интервью с рекрутером из Microsoft. Теперь поедет на очное интервью в Москву в конце октября.</description>
     </item>
-    
     <item>
       <title>Резюме на критику</title>
       <link>https://blog.not-a-kernel-guy.com/2007/09/12/237/</link>
       <pubDate>Wed, 12 Sep 2007 22:40:39 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/09/12/237/</guid>
-      <description>&lt;p&gt;По следам новости про &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/08/29/232/&#34;&gt;очередной набор разработчиков из России, Украины и остальных прилегающих стран&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;На днях пришло письмо с просьбой покритиковать резюме, которое предполагалось послать на этот конкурс. Я уже было собирался отправить автора на &lt;a href=&#34;http://forum.privet.com/viewforum.php?f=2&amp;amp;sid=3864d972af0cb517aa8fc530c6e09582&#34;&gt;forum.privet.com&lt;/a&gt; – лучшее, на мой взгляд место, где можно обкатать резюме разработчика на соответствие американским стандартам. Или по крайней мере лучшее русскоязычное место. Но посмотрев на него внимательнее, я решил все-таки сделать это сам.&lt;/p&gt;</description>
+      <description>&lt;p&gt;По следам новости про &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/08/29/232/&#34;&gt;очередной набор разработчиков из России, Украины и остальных прилегающих стран&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;На днях пришло письмо с просьбой покритиковать резюме, которое предполагалось послать на этот конкурс. Я уже было собирался отправить автора на &lt;a href=&#34;http://forum.privet.com/viewforum.php?f=2&amp;amp;sid=3864d972af0cb517aa8fc530c6e09582&#34;&gt;forum.privet.com&lt;/a&gt; – лучшее, на мой взгляд место, где можно обкатать резюме разработчика на соответствие американским стандартам. Или по крайней мере лучшее русскоязычное место. Но посмотрев на него внимательнее, я решил все-таки сделать это сам.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Свежеоткрытый в Ванкувере центр разработки нанимает</title>
       <link>https://blog.not-a-kernel-guy.com/2007/09/08/236/</link>
       <pubDate>Sat, 08 Sep 2007 12:34:42 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/09/08/236/</guid>
-      <description>http://www.microsoft.com/canada/employment/search.mspx:
-Искать по ключевым словам &amp;ldquo;Canada&amp;rdquo;, &amp;ldquo;British Columbia&amp;rdquo;, &amp;ldquo;Vancouver&amp;rdquo;.
-PS: Кстати, а знаете почему этот центр называется &amp;ldquo;Microsoft Canada Development Centre&amp;rdquo;, а не &amp;ldquo;Microsoft Development Centre Canada&amp;rdquo;? Потому что аббревиатура MDCC уже занята: Microsoft Development Center Copenhagen. :-)</description>
+      <description>http://www.microsoft.com/canada/employment/search.mspx:&#xA;Искать по ключевым словам &amp;ldquo;Canada&amp;rdquo;, &amp;ldquo;British Columbia&amp;rdquo;, &amp;ldquo;Vancouver&amp;rdquo;.&#xA;PS: Кстати, а знаете почему этот центр называется &amp;ldquo;Microsoft Canada Development Centre&amp;rdquo;, а не &amp;ldquo;Microsoft Development Centre Canada&amp;rdquo;? Потому что аббревиатура MDCC уже занята: Microsoft Development Center Copenhagen. :-)</description>
     </item>
-    
     <item>
       <title>Microsoft will be recruiting candidates from Russia/Ukraine in October</title>
       <link>https://blog.not-a-kernel-guy.com/2007/08/29/232/</link>
       <pubDate>Wed, 29 Aug 2007 13:53:18 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/08/29/232/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Options are Good.&lt;/strong&gt;
-&lt;strong&gt;In life. And in your career.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;What fuels your passion?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Whether you are just about to receive your diploma from University or have been in the industry for years, we know deciding where to start your career or how to move to the next opportunity can be as nerve-wracking as it is exciting. Maybe you don’t know exactly what you want to do. The good thing is, at Microsoft, you have lots of options. Nowhere else will you have such a variety of products and technologies to get behind—or so many career paths to choose from. You’ll learn from people who have been in the industry for over 30 years. And most of all, you’ll have the resources to reach people all over the world with your work. It’s about taking your career as far as you want it to go—in any direction you choose.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;Options are Good.&lt;/strong&gt;&#xA;&lt;strong&gt;In life. And in your career.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;What fuels your passion?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Whether you are just about to receive your diploma from University or have been in the industry for years, we know deciding where to start your career or how to move to the next opportunity can be as nerve-wracking as it is exciting. Maybe you don’t know exactly what you want to do. The good thing is, at Microsoft, you have lots of options. Nowhere else will you have such a variety of products and technologies to get behind—or so many career paths to choose from. You’ll learn from people who have been in the industry for over 30 years. And most of all, you’ll have the resources to reach people all over the world with your work. It’s about taking your career as far as you want it to go—in any direction you choose.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

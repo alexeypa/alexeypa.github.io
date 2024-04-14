@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -115,15 +105,15 @@
     <p>Последнее время я только тем и занимался, что копался в недрах системных служб в отладчике. Половина из них использует &ldquo;svchost.exe&rdquo; в качестве исполняемого файла, что довольно неудобно, когда пытаешься подсоединиться к нужному процессу. Никогда не знаешь какой именно из многочисленных &ldquo;svchost.exe&rdquo; нужно выбрать.</p>
 <p>В Vista эта проблема решается наличием дополнительной страницы &ldquo;Services&rdquo; в Task Manager. Там в контекстном меню службы есть пункт &ldquo;Go to the process&rdquo;, который подсвечивает искомый процесс.</p>
 <p>В XP этой страницы нет, но оказалось что нужный идентификатор можно получить через WMI. Например вот так:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">get-wmiobject Win32_Service | where-object { $_.Name -eq &#34;rpcss&#34; }
-</code></pre></div><p>Строка &ldquo;ProcessId&rdquo; как раз и есть то, что нам нужно:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">ExitCode  : 0
-Name      : RpcSs
-ProcessId : 1292
-StartMode : Auto
-State     : Running
-Status    : OK
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>get-wmiobject Win32_Service | where-object { $_.Name -eq &#34;rpcss&#34; }
+</span></span></code></pre></div><p>Строка &ldquo;ProcessId&rdquo; как раз и есть то, что нам нужно:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>ExitCode  : 0
+</span></span><span style="display:flex;"><span>Name      : RpcSs
+</span></span><span style="display:flex;"><span>ProcessId : 1292
+</span></span><span style="display:flex;"><span>StartMode : Auto
+</span></span><span style="display:flex;"><span>State     : Running
+</span></span><span style="display:flex;"><span>Status    : OK
+</span></span></code></pre></div>
   </div>
   <div id="disqus_thread"></div>
 </div>

@@ -6,45 +6,35 @@
     <description>Recent content in Google on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 17 Oct 2012 10:05:29 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Oct 2012 10:05:29 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/google/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Там, где живет интернет</title>
       <link>https://blog.not-a-kernel-guy.com/2012/10/17/1423/</link>
       <pubDate>Wed, 17 Oct 2012 10:05:29 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2012/10/17/1423/</guid>
-      <description>Первая, как утверждается, фотосессия датацентра Google:
-
-Прямая ссылка: Where the Internet lives.</description>
+      <description>Первая, как утверждается, фотосессия датацентра Google:&#xA;Прямая ссылка: Where the Internet lives.</description>
     </item>
-    
     <item>
       <title>Первые две недели</title>
       <link>https://blog.not-a-kernel-guy.com/2012/01/22/1263/</link>
       <pubDate>Sun, 22 Jan 2012 19:34:08 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2012/01/22/1263/</guid>
       <description>&lt;p&gt;Мой первый день работы в Google случился всего две недели назад и пока у меня не получается внятно разложить свои впечатления по полочкам. Собственно говоря, толком поработать за эти две недели мне не пришлось. Первая неделя была полностью занята тренингами и прочими формальностями. Во время второй в Сиэтле случился &lt;a href=&#34;http://www.youtube.com/watch?v=rhZCyQ3emQg&#34;&gt;Snopocalypse&lt;/a&gt; - выпало, наверное, целых два дюйма снега. А может и три. По такому случаю закрылись все школы, а большинство компаний распустили работников по домам, чтобы те со спокойной совестью могли поехать в горы кататься на лыжах по укрытым свежим снегом склонам. Поэтому буду делиться впечатлениями в порядке их прихода в голову. :-)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Вести с полей</title>
       <link>https://blog.not-a-kernel-guy.com/2012/01/05/1250/</link>
       <pubDate>Thu, 05 Jan 2012 23:23:28 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2012/01/05/1250/</guid>
-      <description>Сегодня был мой последний день работы в Microsoft. Завтра мне еще будет нужно выполнить последние формальности, но рабочим днем завтра назвать язык не поворачивается. Доступа к почте и корпоративной сети у меня уже нет.
-В общей сложности я проработал в Microsoft больше семи лет. Начав самым базовым разработчиком (59-й уровень, на который нанимают толковых выпускников университета), дорос Senior SDE. Почти наверняка дорос бы и до Principal SDE, если бы остался ещё на пару лет.</description>
+      <description>Сегодня был мой последний день работы в Microsoft. Завтра мне еще будет нужно выполнить последние формальности, но рабочим днем завтра назвать язык не поворачивается. Доступа к почте и корпоративной сети у меня уже нет.&#xA;В общей сложности я проработал в Microsoft больше семи лет. Начав самым базовым разработчиком (59-й уровень, на который нанимают толковых выпускников университета), дорос Senior SDE. Почти наверняка дорос бы и до Principal SDE, если бы остался ещё на пару лет.</description>
     </item>
-    
     <item>
       <title>Google Code Search</title>
       <link>https://blog.not-a-kernel-guy.com/2006/10/05/77/</link>
       <pubDate>Thu, 05 Oct 2006 08:36:46 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2006/10/05/77/</guid>
       <description>Google презентовал Google Code Search - поиск по исходникам. Я, само собой, тут же попробовал найти исходники Windows. Не находит. :-) Если серьезно, то похоже, что поиск сделан на совесть. Поддерживаются регулярные выражения. Результат удобно подсвечивается. Можно свободно перемещаться по соседним исходникам. Удобно. Не хватает только подсветки синтаксиса. :-)</description>
     </item>
-    
   </channel>
 </rss>

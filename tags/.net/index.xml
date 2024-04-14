@@ -6,15 +6,14 @@
     <description>Recent content in .NET on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 18 Dec 2007 23:33:41 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Dec 2007 23:33:41 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Разрядность .NET сборок</title>
       <link>https://blog.not-a-kernel-guy.com/2007/12/18/272/</link>
       <pubDate>Tue, 18 Dec 2007 23:33:41 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/12/18/272/</guid>
       <description>&lt;p&gt;Вскоре после написания &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/10/24/258/&#34;&gt;поста про определение разрядности исполняемых файлов&lt;/a&gt; выяснилось, что в мире .NET «всё совсем по-другому».&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

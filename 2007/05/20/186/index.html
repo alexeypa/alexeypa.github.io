@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -114,23 +104,23 @@
     </span>
     <p>Пару месяцев назад, я, за какой-то надобностью, попытался установить компонент Peer-to-Peer из сетевых компонент Windows XP, но у меня ничего не вышло. Сначала инсталлятор запросил дополнительные файлы из “C:\Windows\ServicePackFiles\i386”, которые я к тому времени успешно удалил за ненадобностью, затем он отказался от одноимённых файлов с инсталляционного диска Windows XP и, наконец, инсталляция прервалась, выдав напоследок очень понятное сообщение: «An extended error has occurred».</p>
 <p>«Ну, нет - так нет», подумал я тогда и забыл о проблеме. Однако на днях захотелось выяснить, в чём же было дело. Повторная инсталляция закончилась всё тем же невразумительным сообщением об ошибке. При этом в каталоге Windows обнаружилось несколько свежих логов, в том числе «setupapi.log»:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">[2007/05/17 19:36:17 2760.37]
-#-198 Command line processed: &#34;C:\\WINDOWS\\system32\\sysocmgr.exe&#34; /y /i:C:\\WINDOWS\\system32\\sysoc.inf
-#-006 Setting security on key HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\PeerNet\\PNRP to &#34;D:(A;OICI;KA;;;SY)(A;OICI;KA;;;BA)(A;OICI;KA;;;LS)(A;OICI;KA;;;CO)(A;OICI;KR;;;AU)&#34;
-#E033 Error 1208: An extended error has occurred.
-#-035 Processing service Add/Delete section [p2p.Services].
-#E277 Add Service: Failed to secure service &#34;p2psvc&#34;. Error 1208: An extended error has occurred.
-#E033 Error 1208: An extended error has occurred.
-#E275 Error while installing services. Error 1208: An extended error has occurred.
-</code></pre></div><p>Очевидно, что что-то не так было с установкой службы «p2psvc». В реестре не обнаружилось никаких следов службы «p2psvc». Копание в .inf файлах, ответственных за установку этой службы, ясности тоже не прибавило. Однако Sysnternal’овский Process Monitor показал, что происходит во время инсталляции – сервис под именем «p2psvc» регистрируется, как и положено, однако из-за возникающей ошибки все изменения в реестре откатываются назад. Гм.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>[2007/05/17 19:36:17 2760.37]
+</span></span><span style="display:flex;"><span>#-198 Command line processed: &#34;C:\\WINDOWS\\system32\\sysocmgr.exe&#34; /y /i:C:\\WINDOWS\\system32\\sysoc.inf
+</span></span><span style="display:flex;"><span>#-006 Setting security on key HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\PeerNet\\PNRP to &#34;D:(A;OICI;KA;;;SY)(A;OICI;KA;;;BA)(A;OICI;KA;;;LS)(A;OICI;KA;;;CO)(A;OICI;KR;;;AU)&#34;
+</span></span><span style="display:flex;"><span>#E033 Error 1208: An extended error has occurred.
+</span></span><span style="display:flex;"><span>#-035 Processing service Add/Delete section [p2p.Services].
+</span></span><span style="display:flex;"><span>#E277 Add Service: Failed to secure service &#34;p2psvc&#34;. Error 1208: An extended error has occurred.
+</span></span><span style="display:flex;"><span>#E033 Error 1208: An extended error has occurred.
+</span></span><span style="display:flex;"><span>#E275 Error while installing services. Error 1208: An extended error has occurred.
+</span></span></code></pre></div><p>Очевидно, что что-то не так было с установкой службы «p2psvc». В реестре не обнаружилось никаких следов службы «p2psvc». Копание в .inf файлах, ответственных за установку этой службы, ясности тоже не прибавило. Однако Sysnternal’овский Process Monitor показал, что происходит во время инсталляции – сервис под именем «p2psvc» регистрируется, как и положено, однако из-за возникающей ошибки все изменения в реестре откатываются назад. Гм.</p>
 <p>Попробовал зайти с другого конца – выяснить какую роль играет «sysocmgr.exe». Оказалось что это тот самый инсталлятор, который запускается при нажатии на «Add/Remove Windows Components».</p>
 <p><img src="/2007/05/windows_components_wizard.png" alt="Windows Components Wizard"></p>
 <p>Если запустить его без параметров, показывается подсказка по допустимым параметрам командной строки, один из которых, «/f» - вызывает принудительную переустановку компонент «с чистого листа»:</p>
 <p><img src="/2007/05/windows_xp_setup.png" alt="Windows XP Setup"></p>
 <p>Казалось бы, вот оно решение, но на появление непонятной ошибки этот ключ никак не повлиял.</p>
 <p>В конце концов поиск в Google вывел меня на страницу <a href="http://www.jsifaq.com/SF/Tips/Tip.aspx?id=7558">JSI FAQ</a>. Не могу сказать, что описание проблемы было сильно похоже на мою, но сочетание слов security, setup и сообщения «Setup cannot copy the file» имели к ней прямое отношение. Как ни странно, восстановление secedit.sdb  с помощью вот этой команды помогло:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">esentutl /p %SystemRoot%\\security\\database\\secedit.sdb
-</code></pre></div><p>И после перезагрузки установка прошла как по маслу…</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>esentutl /p %SystemRoot%\\security\\database\\secedit.sdb
+</span></span></code></pre></div><p>И после перезагрузки установка прошла как по маслу…</p>
   </div>
   <div id="disqus_thread"></div>
 </div>

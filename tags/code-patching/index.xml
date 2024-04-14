@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Code patching on Алексей Пахунов</title>
+    <title>Code Patching on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/code-patching/</link>
-    <description>Recent content in Code patching on Алексей Пахунов</description>
+    <description>Recent content in Code Patching on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 04 Aug 2008 23:11:46 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/code-patching/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Aug 2008 23:11:46 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/code-patching/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Detours</title>
       <link>https://blog.not-a-kernel-guy.com/2008/08/04/327/</link>
       <pubDate>Mon, 04 Aug 2008 23:11:46 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/08/04/327/</guid>
-      <description>Сижу, разбираюсь как Detours перехватывает функции Win32 API. Сама идея известна. В начало функции пишется безусловный JMP на функцию перехватчик. Для того, чтобы вызвать оригинальную функции, её код, на место которого помещается JMP, копируется в буфер и дополняется безусловным JMP на первую нетронутую инструкцию.
-Интересно, однако, не это, а сколько дополнительных проверок делается, чтобы повысить надежность этого метода:
-  Поверяется, не указывает ли указатель на перехватываемую функцию, не на саму функцию, а на элемент таблицы импорта.</description>
+      <description>Сижу, разбираюсь как Detours перехватывает функции Win32 API. Сама идея известна. В начало функции пишется безусловный JMP на функцию перехватчик. Для того, чтобы вызвать оригинальную функции, её код, на место которого помещается JMP, копируется в буфер и дополняется безусловным JMP на первую нетронутую инструкцию.&#xA;Интересно, однако, не это, а сколько дополнительных проверок делается, чтобы повысить надежность этого метода:&#xA;Поверяется, не указывает ли указатель на перехватываемую функцию, не на саму функцию, а на элемент таблицы импорта.</description>
     </item>
-    
   </channel>
 </rss>

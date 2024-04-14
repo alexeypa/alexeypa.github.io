@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blue Origin - Космос on Алексей Пахунов</title>
+    <link>https://blog.not-a-kernel-guy.com/tags/blue-origin---%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81/</link>
+    <description>Recent content in Blue Origin - Космос on Алексей Пахунов</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 06 Aug 2016 10:14:07 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/blue-origin---%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AMA разработчиков из Blue Origin</title>
+      <link>https://blog.not-a-kernel-guy.com/2016/08/06/blue-origin-ama/</link>
+      <pubDate>Sat, 06 Aug 2016 10:14:07 -0700</pubDate>
+      <guid>https://blog.not-a-kernel-guy.com/2016/08/06/blue-origin-ama/</guid>
+      <description>&lt;p&gt;Разработчики из &lt;a href=&#34;https://www.blueorigin.com/&#34;&gt;Blue Origin&lt;/a&gt; отвечают на&#xA;&lt;a href=&#34;https://www.reddit.com/r/IAmA/comments/4wb6up/we_are_blue_origin_software_engineers_we_build/&#34;&gt;вопросы&lt;/a&gt;.&#xA;Довольно интересно. Судя по ответам Blue Origin очень похож на SpaceX несколько&#xA;лет назад - плоская иерархия, каждый разработчик отвечает на свои фичи от и до.&#xA;На практике это означает, что разработчик должен сам позаботится об интеграции&#xA;своего кода со всеми системами, убедится что все тесты, проверяющие новый код,&#xA;были сделаны, новые правила правильно для проверки данных написаны, и т.п.&lt;/p&gt;&#xA;&lt;p&gt;Стек технологий, подход к разработке, даже интервью при приеме на работу тоже&#xA;похожи.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

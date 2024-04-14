@@ -6,16 +6,14 @@
     <description>Recent content in Chromium on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 05 Feb 2013 01:12:53 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/chromium/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Feb 2013 01:12:53 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/chromium/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Будни Chromium разработчика</title>
       <link>https://blog.not-a-kernel-guy.com/2013/02/05/1467/</link>
       <pubDate>Tue, 05 Feb 2013 01:12:53 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2013/02/05/1467/</guid>
-      <description>&lt;p&gt;Хотите знать как выглядит процесс коммита в &lt;a href=&#34;http://www.chromium.org/Home&#34;&gt;Chromium&lt;/a&gt;? Есть у меня такие истории. Для затравки уточню терминологию. Chromium - это, фактически, open source версия &lt;a href=&#34;https://www.google.com/intl/en/chrome/browser/&#34;&gt;Chrome&lt;/a&gt;. Если взять Chromium и добавить немного закрытого кода и логотип Google, то получится Chrome. А вот если добавить немного закрытого кода и логотип Яндекс, то получится &lt;a href=&#34;http://browser.yandex.ru/&#34;&gt;Яндекс.Браузер&lt;/a&gt;. Исходники &lt;a href=&#34;https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp?hl=en&#34;&gt;Chrome Remote Desktop&lt;/a&gt;, над которым работаю я с коллегами, тоже собираются из репозитория Chromium.&lt;/p&gt;
-&lt;p&gt;Так вот, про процесс коммита.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Хотите знать как выглядит процесс коммита в &lt;a href=&#34;http://www.chromium.org/Home&#34;&gt;Chromium&lt;/a&gt;? Есть у меня такие истории. Для затравки уточню терминологию. Chromium - это, фактически, open source версия &lt;a href=&#34;https://www.google.com/intl/en/chrome/browser/&#34;&gt;Chrome&lt;/a&gt;. Если взять Chromium и добавить немного закрытого кода и логотип Google, то получится Chrome. А вот если добавить немного закрытого кода и логотип Яндекс, то получится &lt;a href=&#34;http://browser.yandex.ru/&#34;&gt;Яндекс.Браузер&lt;/a&gt;. Исходники &lt;a href=&#34;https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp?hl=en&#34;&gt;Chrome Remote Desktop&lt;/a&gt;, над которым работаю я с коллегами, тоже собираются из репозитория Chromium.&lt;/p&gt;&#xA;&lt;p&gt;Так вот, про процесс коммита.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

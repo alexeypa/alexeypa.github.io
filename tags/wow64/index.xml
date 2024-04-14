@@ -6,309 +6,182 @@
     <description>Recent content in Wow64 on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 09 Jan 2013 23:09:16 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/wow64/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Jan 2013 23:09:16 -0800</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/wow64/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Трассировка описателей. Вторая серия</title>
       <link>https://blog.not-a-kernel-guy.com/2013/01/09/1456/</link>
       <pubDate>Wed, 09 Jan 2013 23:09:16 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2013/01/09/1456/</guid>
-      <description>&lt;p&gt;Краткое содержание &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2012/12/04/1437/&#34;&gt;первой части&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Не получается продолжить выполнение кода после того, как было сгенерировано исключение STATUS_INVALID_HANDLE - почему-то портится сохраненный контекст процессора. В частности, не сохраняются non-volatile регистры esi и edi.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Некто Indy засомневался в том, что происходит именно это. Следует сказать, что засомневался он не без оснований. На самом деле, способы возбудить исключение пользовательского режима из кода в ядре можно пересчитать по пальцам одной руки и все они формируют конекст процессора одинаково. Получается, что если бы регистры не сохранялись, то не работали бы все исключения, а не избирательно STATUS_INVALID_HANDLE.&lt;/p&gt;
-&lt;p&gt;Покопавшись в отладчике я понял в чем дело.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Краткое содержание &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2012/12/04/1437/&#34;&gt;первой части&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Не получается продолжить выполнение кода после того, как было сгенерировано исключение STATUS_INVALID_HANDLE - почему-то портится сохраненный контекст процессора. В частности, не сохраняются non-volatile регистры esi и edi.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Некто Indy засомневался в том, что происходит именно это. Следует сказать, что засомневался он не без оснований. На самом деле, способы возбудить исключение пользовательского режима из кода в ядре можно пересчитать по пальцам одной руки и все они формируют конекст процессора одинаково. Получается, что если бы регистры не сохранялись, то не работали бы все исключения, а не избирательно STATUS_INVALID_HANDLE.&lt;/p&gt;&#xA;&lt;p&gt;Покопавшись в отладчике я понял в чем дело.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Ошибка в книге Windows Internals</title>
       <link>https://blog.not-a-kernel-guy.com/2012/08/16/1405/</link>
       <pubDate>Thu, 16 Aug 2012 13:01:39 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2012/08/16/1405/</guid>
-      <description>В новой редакции Windows Internals обнаружился старый-знакомый баг. Там приводится пример стека 32-х битной нити, выполняющейся под Wow64:
-
-Иллюстрация сопровождается комментарием:
- An example of a Wow64 thread inside Microsoft Office Word 2007 is shown in Figure 5-13. The highlighted stack frame and all stack frames below it are the 32-bit stack frames from the 32-bit stack. The stack frames above the highlighted frame are on the 64-bit stack.</description>
+      <description>В новой редакции Windows Internals обнаружился старый-знакомый баг. Там приводится пример стека 32-х битной нити, выполняющейся под Wow64:&#xA;Иллюстрация сопровождается комментарием:&#xA;An example of a Wow64 thread inside Microsoft Office Word 2007 is shown in Figure 5-13. The highlighted stack frame and all stack frames below it are the 32-bit stack frames from the 32-bit stack. The stack frames above the highlighted frame are on the 64-bit stack.&#xA;Что не совсем верно.</description>
     </item>
-    
     <item>
       <title>64 Bit Explained</title>
       <link>https://blog.not-a-kernel-guy.com/2010/07/23/861/</link>
       <pubDate>Fri, 23 Jul 2010 10:19:20 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/07/23/861/</guid>
-      <description>Вот. Истинная правда:
- Look, it’s really not that hard.
-  Programs are still in the same place, in %ProgramFiles%, unless you need the 32 bit version, which is in %ProgramFiles(x86)%, except on a 32 bit machine, where it’s still %ProgramFiles%.
-  All those dll’s are still in %SystemRoot%\System32, just now they’re 64 bit. The 32 bit ones, they’re in %SystemRoot%\SysWOW64. You’re with me so far, right? Oh, and the 16 bit ones are still in %SystemRoot%\System – moving them would just be weird.</description>
+      <description>Вот. Истинная правда:&#xA;Look, it’s really not that hard.&#xA;Programs are still in the same place, in %ProgramFiles%, unless you need the 32 bit version, which is in %ProgramFiles(x86)%, except on a 32 bit machine, where it’s still %ProgramFiles%.&#xA;All those dll’s are still in %SystemRoot%\System32, just now they’re 64 bit. The 32 bit ones, they’re in %SystemRoot%\SysWOW64. You’re with me so far, right? Oh, and the 16 bit ones are still in %SystemRoot%\System – moving them would just be weird.</description>
     </item>
-    
     <item>
       <title>«Угон» потоков</title>
       <link>https://blog.not-a-kernel-guy.com/2010/05/04/812/</link>
       <pubDate>Tue, 04 May 2010 23:21:24 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/05/04/812/</guid>
       <description>&lt;p&gt;Бывает так, что требуется выполнить свой код в контексте произвольного потока. Либо в своем потоке, но в то время когда поток выполняет чужой код. Например, сборщик мусора может хотеть перехватить управление, даже если поток крутит бесконечный цикл. Один из методов перехвата – использование функций &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms679362%28VS.85%29.aspx&#34;&gt;GetThreadContext&lt;/a&gt; и &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms680632%28v=VS.85%29.aspx&#34;&gt;SetThreadContext&lt;/a&gt;. Эти функции позволяют манипулировать контекстом потока – т.е. состоянием регистров процессора, в том числе и указателем на текущую выполняемую инструкцию. В простейшем случае перехватчик приостанавливает поток, сохраняет текущий контекст, модифицирует EIP, чтобы тот показывал на нужный код, и снова запускает поток. При обратном переключении просто восстанавливается ранее сохраненный контекст и все. Метод простой, эффективный и … неработающий. :-)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Сегментная адресация в x64</title>
       <link>https://blog.not-a-kernel-guy.com/2010/03/25/799/</link>
       <pubDate>Thu, 25 Mar 2010 22:50:47 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/03/25/799/</guid>
       <description>&lt;p&gt;В x64 сегментная адресация работает совсем не так, как в привычном x86. Прикладные программисты, живущие в &lt;a href=&#34;http://en.wikipedia.org/wiki/Flat_memory_model&#34;&gt;плоском мире&lt;/a&gt;, могли бы этого не заметить, но, к счастью или несчастью, «уши» этих отличий торчат и в user mode.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>AppCompat</title>
       <link>https://blog.not-a-kernel-guy.com/2009/12/08/703/</link>
       <pubDate>Tue, 08 Dec 2009 09:54:26 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/12/08/703/</guid>
       <description>&lt;p&gt;Словечко «AppCompat», появившееся в моем лексиконе за время работы над &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2009/06/09/571/&#34;&gt;Wow64&lt;/a&gt;, обозначает множество вещей. Чаще всего - геморрой. Иногда - великий геморрой. Происходит оно от «application compatibility» - т.е. совместимость OS с приложениями, она же - «обратная совместимость».&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Exception Chain Validation (ECV, SEHOP)</title>
       <link>https://blog.not-a-kernel-guy.com/2009/10/10/647/</link>
       <pubDate>Sat, 10 Oct 2009 20:37:24 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/10/10/647/</guid>
       <description>&lt;p&gt;Structure Exception Handler (SEH) overwrite - один из популярных способов передачи управления на вредоносный код, внедренный через ту или иную уязвимость (обычно – переполнение буфера). Иными словами, это один из способов подхватить заразу на свой компьютер через непропатченый браузер просто зайдя куда-нибудь с &lt;a href=&#34;http://www.thehun.net&#34;&gt;http://www.thehun.net&lt;/a&gt; почитать Пушкина на сон грядущий.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Wow64 поддерживает аппаратное ускорение в DirectX</title>
       <link>https://blog.not-a-kernel-guy.com/2009/08/17/628/</link>
       <pubDate>Mon, 17 Aug 2009 09:17:37 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/08/17/628/</guid>
-      <description>&lt;p&gt;Вопрос из почты:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Ты не подскажешь, есть ли hardware acceleration through DirectX for Wow64 processes? В Windows Internals написано, что его нет, но другие источники говорят, что есть (и большинство игр продолжают собирать as 32-bit, и они работают в 64-bit Windows).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Вот несколько ссылок, которые выдает поиск на msdn.microsoft.com:&lt;/p&gt;</description>
+      <description>&lt;p&gt;Вопрос из почты:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Ты не подскажешь, есть ли hardware acceleration through DirectX for Wow64 processes? В Windows Internals написано, что его нет, но другие источники говорят, что есть (и большинство игр продолжают собирать as 32-bit, и они работают в 64-bit Windows).&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Вот несколько ссылок, которые выдает поиск на msdn.microsoft.com:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Что нового в Windows 7: изменения в Wow64</title>
       <link>https://blog.not-a-kernel-guy.com/2009/06/09/571/</link>
       <pubDate>Tue, 09 Jun 2009 22:47:21 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/06/09/571/</guid>
-      <description>&lt;p&gt;Наконец-то обновилась документация в MSDN. Теперь можно спокойно рассказать, что изменилось в Wow64 с выходом Windows 7.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Был полностью переписан &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;механизм перенаправления реестра (Registry &lt;em&gt;Redirection&lt;/em&gt;)&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Была изменена структура реестра. Многие ключи, перенаправляемые ранее в Wow6432Node, теперь совместно используются 32-х и 64-х разрядными приложениями.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384235(VS.85).aspx&#34;&gt;Механизм синхронизации 32-х и 64-х ключей (Registry &lt;em&gt;Reflection&lt;/em&gt;)&lt;/a&gt; был с корнем выкорчеван и с позором изгнан из кода Windows. :-)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;В документацию&lt;/a&gt; было внесено множество дополнений и исправлений.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</description>
+      <description>&lt;p&gt;Наконец-то обновилась документация в MSDN. Теперь можно спокойно рассказать, что изменилось в Wow64 с выходом Windows 7.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Был полностью переписан &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;механизм перенаправления реестра (Registry &lt;em&gt;Redirection&lt;/em&gt;)&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Была изменена структура реестра. Многие ключи, перенаправляемые ранее в Wow6432Node, теперь совместно используются 32-х и 64-х разрядными приложениями.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384235(VS.85).aspx&#34;&gt;Механизм синхронизации 32-х и 64-х ключей (Registry &lt;em&gt;Reflection&lt;/em&gt;)&lt;/a&gt; был с корнем выкорчеван и с позором изгнан из кода Windows. :-)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;В документацию&lt;/a&gt; было внесено множество дополнений и исправлений.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>Даже и не думайте пользоваться функцией Wow64DisableWow64FsRedirection!</title>
       <link>https://blog.not-a-kernel-guy.com/2009/04/03/482/</link>
       <pubDate>Fri, 03 Apr 2009 10:17:54 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/04/03/482/</guid>
       <description>&lt;p&gt;Просто удивительно, насколько опасной может быть функция &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa365743(VS.85).aspx&#34;&gt;Wow64DisableWow64FsRedirection&lt;/a&gt;. Эта функция позволяет временно отключить перенаправление файловой системы в Wow64. Еще более удивительно, что лишь малая доля разработчиков соглашается менять свой код, даже после подробного объяснения, в чем, собственно, проблема.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Иногда люди воспринимают вещи слишком буквально</title>
       <link>https://blog.not-a-kernel-guy.com/2008/11/24/374/</link>
       <pubDate>Mon, 24 Nov 2008 23:31:32 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/11/24/374/</guid>
-      <description>&lt;p&gt;На днях свалился в inbox вопрос:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The documentation for &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms684954(VS.85).aspx&#34;&gt;QueueUserApc&lt;/a&gt; states &amp;ldquo;an APC cannot be queued from a 64-bit process to a 32-bit process or vice versa.&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;However on Vista Ultimate x64, we _can _queue a user APC from a 32-bit process to a 64-bit process. In our test application the 64-bit recipient crashes, we haven&amp;rsquo;t explored why just yet, but the point is that the operation should not succeed and the 64-bit application&amp;rsquo;s APC queue should never have the APC inserted.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Is it an OS bug?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Документация к функции QueueUserApc утверждает, что асинхронный вызов процедуры (APC) не может быть запрошен из 64-х битного процесса для выполнения в 32-х битном и наоборот.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Однако на Vista Ultimate x64 мы &lt;em&gt;можем&lt;/em&gt; выполнить асинхронный вызов пользовательского режима из 32-х битного процесса в 64-х битном процессе. В нашем тестовом приложении 64-х битный получатель падает и мы еще не выяснили почему, но дело в том, что операция (QueueUserApc) не должна завершаться успешно и асинхронный вызов не должен вставляться в очередь вызовов 64-х разрядного процесса.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Это баг ОС?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Вопрос примечателен тем, что это уже третье письмо на эту тему за последние два месяца, хотя функция QueueUserApc далеко не самая широко используемая функция Win32. Не иначе какой настойчивый клиент эту функцию мучает. :-)&lt;/p&gt;</description>
+      <description>&lt;p&gt;На днях свалился в inbox вопрос:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The documentation for &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms684954(VS.85).aspx&#34;&gt;QueueUserApc&lt;/a&gt; states &amp;ldquo;an APC cannot be queued from a 64-bit process to a 32-bit process or vice versa.&amp;rdquo;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;However on Vista Ultimate x64, we _can _queue a user APC from a 32-bit process to a 64-bit process. In our test application the 64-bit recipient crashes, we haven&amp;rsquo;t explored why just yet, but the point is that the operation should not succeed and the 64-bit application&amp;rsquo;s APC queue should never have the APC inserted.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Is it an OS bug?&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Документация к функции QueueUserApc утверждает, что асинхронный вызов процедуры (APC) не может быть запрошен из 64-х битного процесса для выполнения в 32-х битном и наоборот.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Однако на Vista Ultimate x64 мы &lt;em&gt;можем&lt;/em&gt; выполнить асинхронный вызов пользовательского режима из 32-х битного процесса в 64-х битном процессе. В нашем тестовом приложении 64-х битный получатель падает и мы еще не выяснили почему, но дело в том, что операция (QueueUserApc) не должна завершаться успешно и асинхронный вызов не должен вставляться в очередь вызовов 64-х разрядного процесса.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Это баг ОС?&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Вопрос примечателен тем, что это уже третье письмо на эту тему за последние два месяца, хотя функция QueueUserApc далеко не самая широко используемая функция Win32. Не иначе какой настойчивый клиент эту функцию мучает. :-)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Почему GetModuleFileName возвращает “system32” для 32-х битных библиотек под Wow64?</title>
       <link>https://blog.not-a-kernel-guy.com/2008/06/21/314/</link>
       <pubDate>Sat, 21 Jun 2008 15:39:58 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/06/21/314/</guid>
-      <description>Вопрос:
-32-х битный процесс запущен на 64-х битной системе. Почему для некоторых библиотек GetModuleFileName возвращает путь вида &amp;ldquo;%SystemRoot%\syswow64&amp;rdquo;, а для других - &amp;ldquo;%SystemRoot%\system32&amp;rdquo;, не смотря на то, что и первые, и вторые находятся в &amp;ldquo;%SystemRoot%\syswow64&amp;rdquo;?
-Ответ:
-Потому что загрузчик понятия не имеет о Wow64 и перенаправлении файловой системы в частности. Загрузчик просто сохраняет полное имя модуля во время загрузки и возвращает его копию в GetModuleFileName. Соответственно если библиотека была загружена как &amp;ldquo;%SystemRoot%\system32\foobar.</description>
+      <description>Вопрос:&#xA;32-х битный процесс запущен на 64-х битной системе. Почему для некоторых библиотек GetModuleFileName возвращает путь вида &amp;ldquo;%SystemRoot%\syswow64&amp;rdquo;, а для других - &amp;ldquo;%SystemRoot%\system32&amp;rdquo;, не смотря на то, что и первые, и вторые находятся в &amp;ldquo;%SystemRoot%\syswow64&amp;rdquo;?&#xA;Ответ:&#xA;Потому что загрузчик понятия не имеет о Wow64 и перенаправлении файловой системы в частности. Загрузчик просто сохраняет полное имя модуля во время загрузки и возвращает его копию в GetModuleFileName. Соответственно если библиотека была загружена как &amp;ldquo;%SystemRoot%\system32\foobar.</description>
     </item>
-    
     <item>
       <title>Отгадка</title>
       <link>https://blog.not-a-kernel-guy.com/2008/04/01/302/</link>
       <pubDate>Tue, 01 Apr 2008 22:28:00 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/04/01/302/</guid>
       <description>&lt;p&gt;В комментариях к &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2008/03/30/301/&#34;&gt;загадке&lt;/a&gt; ответ был дан почти сразу. Действительно, обработчик отложенной загрузки DLL попытается загрузить «version.dll» по имени, а не по полному пути. В результате загрузчик будет искать библиотеку, пользуясь &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/ms682586(VS.85).aspx&#34;&gt;правилами по умолчанию&lt;/a&gt;. Номер два в этом списке поиск DLL в system32, что при отключенном перенаправлении файловой системы, равноценно попытке загрузить 64-х битную DLL в 32-х битный процесс. Бум.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Загадка</title>
       <link>https://blog.not-a-kernel-guy.com/2008/03/30/301/</link>
       <pubDate>Sun, 30 Mar 2008 23:20:29 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/03/30/301/</guid>
-      <description>&lt;p&gt;Вот эта программа печатает номер версии указанного пользователем модуля, который она берет из поля &amp;ldquo;FileVersion&amp;rdquo; ресурса VS_VERSION_INFO этого модуля. Имя модуля передается как первый параметр командной строки. Для работы с VS_VERSION_INFO используется стандартная библиотека version.dll.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;(далее идет много кода)&lt;/em&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Вот эта программа печатает номер версии указанного пользователем модуля, который она берет из поля &amp;ldquo;FileVersion&amp;rdquo; ресурса VS_VERSION_INFO этого модуля. Имя модуля передается как первый параметр командной строки. Для работы с VS_VERSION_INFO используется стандартная библиотека version.dll.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(далее идет много кода)&lt;/em&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Недокументированные функции; Загрузка 32-х битных DLL в 64-х битный процесс</title>
       <link>https://blog.not-a-kernel-guy.com/2008/02/28/293/</link>
       <pubDate>Thu, 28 Feb 2008 23:07:13 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/02/28/293/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/10/18/256/&#34;&gt;Вопрос&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Скажите, а невозможность загрузки в 64bit-процесс 32bit DLL - фатальна, или же возможны какие-то хаки, недокументированные обходные пути?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Отвечаю здесь, так как ответ получился слушком длинным.&lt;/p&gt;
-&lt;p&gt;Во-первых, про любые недокументированные возможности меня спрашивать бесполезно. Даже если такая возможность существует, я всё равно о ней не расскажу. Этому есть несколько причин, включая очевидные вещи вроде NDA, законе об авторском праве и т.д. Еще одна причина, почему я не горю желанием это делать, - это то, что раскрывая детали реализации того или иного компонента, я тем самым лишаю этот компонент возможности развиваться и улучшатся в следующих версиях.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/10/18/256/&#34;&gt;Вопрос&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Скажите, а невозможность загрузки в 64bit-процесс 32bit DLL - фатальна, или же возможны какие-то хаки, недокументированные обходные пути?&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Отвечаю здесь, так как ответ получился слушком длинным.&lt;/p&gt;&#xA;&lt;p&gt;Во-первых, про любые недокументированные возможности меня спрашивать бесполезно. Даже если такая возможность существует, я всё равно о ней не расскажу. Этому есть несколько причин, включая очевидные вещи вроде NDA, законе об авторском праве и т.д. Еще одна причина, почему я не горю желанием это делать, - это то, что раскрывая детали реализации того или иного компонента, я тем самым лишаю этот компонент возможности развиваться и улучшатся в следующих версиях.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Зачем нужна маска KEY_WOW64_RES?</title>
       <link>https://blog.not-a-kernel-guy.com/2008/02/26/292/</link>
       <pubDate>Tue, 26 Feb 2008 14:47:38 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/02/26/292/</guid>
-      <description>Наткнулся на вопрос на форуме iXBT. В Windows SDK помимо флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY определена маска KEY_WOW64_RES. Зачем она нужна?
-#ifndef KEY_WOW64_RES  #define KEY_WOW64_RES (KEY_WOW64_64KEY | KEY_WOW64_32KEY) #endif Ответ: по большому счету она не нужна. В коде Wow64 она используется для выделения флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY из маски доступа для дальнейшей обработки. Указывать оба флага (и KEY_WOW64_64KEY и KEY_WOW64_32KEY) при вызове RegCreateKeyEx, RegOpenKeyEx или RegDeleteKeyEx нельзя, так что приложениям эта маска ни к чему.</description>
+      <description>Наткнулся на вопрос на форуме iXBT. В Windows SDK помимо флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY определена маска KEY_WOW64_RES. Зачем она нужна?&#xA;#ifndef KEY_WOW64_RES #define KEY_WOW64_RES (KEY_WOW64_64KEY | KEY_WOW64_32KEY) #endif Ответ: по большому счету она не нужна. В коде Wow64 она используется для выделения флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY из маски доступа для дальнейшей обработки. Указывать оба флага (и KEY_WOW64_64KEY и KEY_WOW64_32KEY) при вызове RegCreateKeyEx, RegOpenKeyEx или RegDeleteKeyEx нельзя, так что приложениям эта маска ни к чему.</description>
     </item>
-    
     <item>
       <title>“4GB will always be enough”</title>
       <link>https://blog.not-a-kernel-guy.com/2007/10/18/256/</link>
       <pubDate>Thu, 18 Oct 2007 21:50:34 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/10/18/256/</guid>
       <description>&lt;p&gt;Порой разработчики приложений просто поражают своей храбростью и безудержным оптимизмом. Свежий пример - на днях получаю письмо с просьбой разобраться почему 32-битное приложение, нормально работавшее в Windows Server 2003 for Itanium перестало запускаться в Windows Server 2008 for Itanium. Что особенно приятно, так это то, что вместо традиционного «приложение падает, если сделать то, то и вот то», просто прислали сессию отладчика, остановленную непосредственно перед вызовом NtAllocateVirtualMemory, который и приводил к падению.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Regedit</title>
       <link>https://blog.not-a-kernel-guy.com/2007/08/07/218/</link>
       <pubDate>Tue, 07 Aug 2007 19:43:18 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/08/07/218/</guid>
-      <description>&lt;p&gt;На моей машине в папке «%windir%» можно найти 6 (шесть!) копий «regedit.exe».&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2007/08/regedit_0.png&#34; alt=&#34;regedit.exe&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Что это? Опять коварный Microsoft? Не совсем так. Просто Regedit несколько раз менял свое положение в дереве каталогов.&lt;/p&gt;</description>
+      <description>&lt;p&gt;На моей машине в папке «%windir%» можно найти 6 (шесть!) копий «regedit.exe».&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2007/08/regedit_0.png&#34; alt=&#34;regedit.exe&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Что это? Опять коварный Microsoft? Не совсем так. Просто Regedit несколько раз менял свое положение в дереве каталогов.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Продолжение истории про ExitProcess. </title>
       <link>https://blog.not-a-kernel-guy.com/2007/07/18/212/</link>
       <pubDate>Wed, 18 Jul 2007 23:21:34 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/07/18/212/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/07/15/210/&#34;&gt;История про ExitProcess&lt;/a&gt; получила несколько неожиданное продолжение. Оказалось, что для того, чтобы избежать блокировки на критической секции, захваченной другим потоком во время ExitProcess, в функцию EnterCriticalSection был добавлен код, обрабатывающий эту ситуацию. Начиная с Windows XP EnterCriticalSection проверяет захвачена ли секция и, в случае если захвачена, сверяет идентификатор текущего потока с идентификатором захватчика. А вот дальнейшее поведение зависит от версии операционной системы.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Почему Wow64 использует перенаправление реестра и файловой системы?</title>
       <link>https://blog.not-a-kernel-guy.com/2007/06/26/203/</link>
       <pubDate>Tue, 26 Jun 2007 23:20:18 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/06/26/203/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/05/23/189/&#34;&gt;Понимаешь, до сих пор мне никто не может внятно сказать, почему нельзя было 64х приложения пихать в новый ключ Регистра, вместо перенаправления 32х на новое “место жительства”. Будь ласка, если это твоя специализация, обоснуй!&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Итак, почему же Wow64 использует перенаправление реестра и файловой системы вместо того, чтобы просто закрепить старые ключи реестра и “%windir%\system32” за 32-х разрядными приложениями и позволить 64-х битным приложениям определить новые ключи и использовать, скажем, “%windir%\system64” для 64-х битных системных библиотек? Это было бы довольно логично, особенно если учесть, что нечто подобное уже было проделано при переходе с Windows 3.x на Windows 95/NT.&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/05/23/189/&#34;&gt;Понимаешь, до сих пор мне никто не может внятно сказать, почему нельзя было 64х приложения пихать в новый ключ Регистра, вместо перенаправления 32х на новое “место жительства”. Будь ласка, если это твоя специализация, обоснуй!&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Итак, почему же Wow64 использует перенаправление реестра и файловой системы вместо того, чтобы просто закрепить старые ключи реестра и “%windir%\system32” за 32-х разрядными приложениями и позволить 64-х битным приложениям определить новые ключи и использовать, скажем, “%windir%\system64” для 64-х битных системных библиотек? Это было бы довольно логично, особенно если учесть, что нечто подобное уже было проделано при переходе с Windows 3.x на Windows 95/NT.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>&#34;Wow6432Node&#34; наносит ответный удар</title>
       <link>https://blog.not-a-kernel-guy.com/2007/05/23/189/</link>
       <pubDate>Wed, 23 May 2007 08:40:14 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/05/23/189/</guid>
-      <description>Это, пожалуй, будет мой самый любимый пост. Цитату не дам, иначе сильно порезать придется. Даже и не знаю что ответить человеку. :-)
-PS: Если кто не в курсе: Wow64 - это как раз моя епархия.</description>
+      <description>Это, пожалуй, будет мой самый любимый пост. Цитату не дам, иначе сильно порезать придется. Даже и не знаю что ответить человеку. :-)&#xA;PS: Если кто не в курсе: Wow64 - это как раз моя епархия.</description>
     </item>
-    
     <item>
       <title>Отладка кода на Itanium (IA-64)</title>
       <link>https://blog.not-a-kernel-guy.com/2007/05/10/183/</link>
       <pubDate>Thu, 10 May 2007 23:16:32 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/05/10/183/</guid>
-      <description>Несколько вводных статей об особенностях архитектуры IA-64, которые будут весьма кстати, если знакомство с Itanium запланировано на завтра, а отлаживать код нужно уже сейчас:
-  Under the hood: IA-64 Registers – обзор регистров процессора в архитектуре IA-64;
-  Under the hood: IA-64 Registers. Part 2 – продолжение статьи, описывающее как собственно происходит передача параметров при вызове функции;
-  Under the hood: Programming for 64-bit Windows – рассказывает о том, что такое global pointer (gp);</description>
+      <description>Несколько вводных статей об особенностях архитектуры IA-64, которые будут весьма кстати, если знакомство с Itanium запланировано на завтра, а отлаживать код нужно уже сейчас:&#xA;Under the hood: IA-64 Registers – обзор регистров процессора в архитектуре IA-64;&#xA;Under the hood: IA-64 Registers. Part 2 – продолжение статьи, описывающее как собственно происходит передача параметров при вызове функции;&#xA;Under the hood: Programming for 64-bit Windows – рассказывает о том, что такое global pointer (gp);</description>
     </item>
-    
     <item>
       <title>Вы используете «Wow6432Node» в своем коде? Немедленно прекратите!</title>
       <link>https://blog.not-a-kernel-guy.com/2007/05/07/181/</link>
       <pubDate>Mon, 07 May 2007 10:17:52 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/05/07/181/</guid>
-      <description>&lt;p&gt;Я уже упоминал несколько раз, что 64-х разрядные версии Windows используют два раздельных представления реестра – одно для 32-х разрядных приложений, а другое для 64-х разрядных. Как-то, я даже писал о том, &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/08/22/27/&#34;&gt;как это делается&lt;/a&gt;. Ключевых моментов там всего ничего:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Разделён не весь реестр, а лишь некоторые из ключей;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Физически 32-х разрядные ключи помещаются в ветки с именем «Wow6432Node»;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Приложения могут выбирать представление реестра с которым они хотят работать с помощью флагов KEY_WOW64_32KEY и KEY_WOW64_64KEY (см. &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/aa384129.aspx&#34;&gt;Accessing an Alternate Registry View&lt;/a&gt;).&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</description>
+      <description>&lt;p&gt;Я уже упоминал несколько раз, что 64-х разрядные версии Windows используют два раздельных представления реестра – одно для 32-х разрядных приложений, а другое для 64-х разрядных. Как-то, я даже писал о том, &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2006/08/22/27/&#34;&gt;как это делается&lt;/a&gt;. Ключевых моментов там всего ничего:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Разделён не весь реестр, а лишь некоторые из ключей;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Физически 32-х разрядные ключи помещаются в ветки с именем «Wow6432Node»;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Приложения могут выбирать представление реестра с которым они хотят работать с помощью флагов KEY_WOW64_32KEY и KEY_WOW64_64KEY (см. &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/aa384129.aspx&#34;&gt;Accessing an Alternate Registry View&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>Wow64: ограничение на максимальное число процессоров</title>
       <link>https://blog.not-a-kernel-guy.com/2007/05/03/179/</link>
       <pubDate>Thu, 03 May 2007 23:39:22 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/05/03/179/</guid>
       <description>&lt;p&gt;Бытует мнение, что хотя 64-х битные версии Windows поддерживают до 64-х процессоров, Wow64 ограничивает максимальное число процессоров для 32-х битных приложений 32 процессорами. Вероятнее всего причина появления подобного мнения заключается в том, что функции &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/ms683213.aspx&#34;&gt;GetProccessAffinityMask&lt;/a&gt;, &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/ms686223.aspx&#34;&gt;SetProcessAffinityMask&lt;/a&gt; и &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/ms686247.aspx&#34;&gt;SetThreadAffinityMask&lt;/a&gt;  используют 32 битные маски. Статья про &lt;a href=&#34;http://msdn.microsoft.com/library/default.asp?url=https://blog.not-a-kernel-guy.com/library/en-us/win64/win64/processor_affinity.asp&#34;&gt;особенности Wow64 в этой области&lt;/a&gt; тоже недостаточно подробна.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Регистрация COM объектов. Часть II. 64-х разрядная специфика</title>
       <link>https://blog.not-a-kernel-guy.com/2007/04/18/173/</link>
       <pubDate>Wed, 18 Apr 2007 10:57:42 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/04/18/173/</guid>
       <description>&lt;p&gt;Итак, продолжаем начатое в &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2007/04/13/172/&#34;&gt;первой части&lt;/a&gt;. 64-х разрядные версии Windows не разрешают смешивать 32-х и 64-х битный код в пределах одного процесса. В результате этого ограничения некоторые ветви реестра были также разделены на 32-х и 64-х разрядные. В частности, были разделены ключи, отвечающие за регистрацию COM компонент. Этот механизм называется &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/aa384232.aspx&#34;&gt;перенаправлением реестра (registry redirection)&lt;/a&gt; и реализуется средствами &lt;a href=&#34;http://en.wikipedia.org/wiki/WOW64&#34;&gt;Wow64&lt;/a&gt;. Механизм более или менее прозрачен для приложений в том смысле, что и 32-x и 64-х битные приложения используют одинаковые пути вида «HKEY_CLASSES_ROOT\Classes{…}», но работают, в конечном итоге, с разными ключами.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

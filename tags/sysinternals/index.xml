@@ -6,25 +6,21 @@
     <description>Recent content in Sysinternals on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 23 Mar 2008 22:46:19 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/sysinternals/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Mar 2008 22:46:19 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/sysinternals/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Process Monitor научился трассировать 32-х битный стек на x64</title>
       <link>https://blog.not-a-kernel-guy.com/2008/03/23/299/</link>
       <pubDate>Sun, 23 Mar 2008 22:46:19 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/03/23/299/</guid>
       <description>&lt;p&gt;Я как-то привык, что Process Monitor не умеет показывать 32-х битный стек события, которое произошло в 32-х разрядном процессе, выполняющемся под Wow64. Вместо этого он показывал только 64-х битный стек, что было абсолютно бесполезно, так как там по определению всегда светится wow64.dll сотоварищи. Однако после подсказки на &lt;a href=&#34;http://forum.sysinternals.com/forum_posts.asp?TID=13227#65748&#34;&gt;Sysinternals Forums&lt;/a&gt; выяснилось, что начиная с Vista SP1 это уже работает.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Как Process Explorer подменяет Task Manager</title>
       <link>https://blog.not-a-kernel-guy.com/2008/03/13/297/</link>
       <pubDate>Thu, 13 Mar 2008 21:41:33 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/03/13/297/</guid>
-      <description>&lt;p&gt;А знаете, как &lt;a href=&#34;http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx&#34;&gt;Process Explorer&lt;/a&gt; подменяет собой стандартный Task Manager?&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2008/03/procexp_1.png&#34; alt=&#34;Process Explorer: Replace Task Manager.&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;А знаете, как &lt;a href=&#34;http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx&#34;&gt;Process Explorer&lt;/a&gt; подменяет собой стандартный Task Manager?&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2008/03/procexp_1.png&#34; alt=&#34;Process Explorer: Replace Task Manager.&#34;&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

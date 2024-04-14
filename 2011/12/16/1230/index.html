@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -115,109 +105,109 @@
 </blockquote>
 <p>Короткий ответ: по всей видимости, потому, что нужный  счетчик не доступен через HKEY_PERFORMANCE_DATA.</p>
 <p>Длинный ответ: с .NET я сталкиваюсь не очень часто. Ничего лучше, чем банально взять дизассемблер для IL (intermediate language) и посмотреть на код, мне в голову не пришло. Ildasm.exe входит в состав SDK, но есть и другие варианты, - например <a href="http://www.jetbrains.com/resharper/">ReSharper</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">Ildasm.exe c:\Windows\Microsoft.NET\Framework64\v4.0.30319\System.dll
-</code></pre></div><p>IL достаточно прост, чтобы читать, не заглядывая в спецификацию. Основные моменты понятны и так, а разбираться с деталями мне как-то еще не требовалось. Интересующий нас метод очень прост:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">.method public hidebysig specialname instance valuetype [mscorlib]System.TimeSpan 
-        get_TotalProcessorTime() cil managed
-{
-  // Code size       19 (0x13)
-  .maxstack  8
-  IL_0000:  ldarg.0
-  IL_0001:  ldc.i4.4
-  IL_0002:  call       instance void System.Diagnostics.Process::EnsureState(valuetype System.Diagnostics.Process/State)
-  IL_0007:  ldarg.0
-  IL_0008:  call       instance class System.Diagnostics.ProcessThreadTimes System.Diagnostics.Process::GetProcessTimes()
-  IL_000d:  callvirt   instance valuetype [mscorlib]System.TimeSpan System.Diagnostics.ProcessThreadTimes::get_TotalProcessorTime()
-  IL_0012:  ret
-} // end of method Process::get_TotalProcessorTime
-</code></pre></div><p>Вызов Process::GetProcessTimes() возвращает заполненную структуру ProcessThreadTimes, содержащую, кроме всего прочего, уже вычисленные значения user time и kernel time. Последующий вызов ProcessThreadTimes::get_TotalProcessorTime() просто складывает эти два значения и возвращает полученный результат.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>Ildasm.exe c:\Windows\Microsoft.NET\Framework64\v4.0.30319\System.dll
+</span></span></code></pre></div><p>IL достаточно прост, чтобы читать, не заглядывая в спецификацию. Основные моменты понятны и так, а разбираться с деталями мне как-то еще не требовалось. Интересующий нас метод очень прост:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>.method public hidebysig specialname instance valuetype [mscorlib]System.TimeSpan 
+</span></span><span style="display:flex;"><span>        get_TotalProcessorTime() cil managed
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  // Code size       19 (0x13)
+</span></span><span style="display:flex;"><span>  .maxstack  8
+</span></span><span style="display:flex;"><span>  IL_0000:  ldarg.0
+</span></span><span style="display:flex;"><span>  IL_0001:  ldc.i4.4
+</span></span><span style="display:flex;"><span>  IL_0002:  call       instance void System.Diagnostics.Process::EnsureState(valuetype System.Diagnostics.Process/State)
+</span></span><span style="display:flex;"><span>  IL_0007:  ldarg.0
+</span></span><span style="display:flex;"><span>  IL_0008:  call       instance class System.Diagnostics.ProcessThreadTimes System.Diagnostics.Process::GetProcessTimes()
+</span></span><span style="display:flex;"><span>  IL_000d:  callvirt   instance valuetype [mscorlib]System.TimeSpan System.Diagnostics.ProcessThreadTimes::get_TotalProcessorTime()
+</span></span><span style="display:flex;"><span>  IL_0012:  ret
+</span></span><span style="display:flex;"><span>} // end of method Process::get_TotalProcessorTime
+</span></span></code></pre></div><p>Вызов Process::GetProcessTimes() возвращает заполненную структуру ProcessThreadTimes, содержащую, кроме всего прочего, уже вычисленные значения user time и kernel time. Последующий вызов ProcessThreadTimes::get_TotalProcessorTime() просто складывает эти два значения и возвращает полученный результат.</p>
 <p>Если взглянуть на Process::GetProcessTimes(), то видно, что тот просто вызывает Win32 функцию GetProcessTimes() и складывает полученные значения kernel и user time в возвращаемую структуру:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">...
-IL_0059:  ldflda     int64 System.Diagnostics.ProcessThreadTimes::create
-IL_005e:  ldloc.0
-IL_005f:  ldflda     int64 System.Diagnostics.ProcessThreadTimes::exit
-IL_0064:  ldloc.0
-IL_0065:  ldflda     int64 System.Diagnostics.ProcessThreadTimes::kernel
-IL_006a:  ldloc.0
-IL_006b:  ldflda     int64 System.Diagnostics.ProcessThreadTimes::user
-IL_0070:  call       bool Microsoft.Win32.NativeMethods::GetProcessTimes(class Microsoft.Win32.SafeHandles.SafeProcessHandle,
-                                                                         int64&amp;,
-                                                                         int64&amp;,
-                                                                         int64&amp;,
-                                                                         int64&amp;)
-...
-</code></pre></div><p>Функция GetProcessTimes() работает только для локальных процессов, так как идентифицирует процесс по переданному NT handle. Посмотрим теперь на какое-нибудь другое свойство, которое работает, в том числе, и для удаленных процессов. К примеру, на Process.HandleCount:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">.method public hidebysig specialname instance int32 
-        get_HandleCount() cil managed
-{
-  // Code size       19 (0x13)
-  .maxstack  8
-  IL_0000:  ldarg.0
-  IL_0001:  ldc.i4.8
-  IL_0002:  call       instance void System.Diagnostics.Process::EnsureState(valuetype System.Diagnostics.Process/State)
-  IL_0007:  ldarg.0
-  IL_0008:  ldfld      class System.Diagnostics.ProcessInfo System.Diagnostics.Process::processInfo
-  IL_000d:  ldfld      int32 System.Diagnostics.ProcessInfo::handleCount
-  IL_0012:  ret
-} // end of method Process::get_HandleCount
-</code></pre></div><p>В этом случае значение берется из структуры ProcessInfo, которая, по всей видимости, заполняется методом EnsureState(). Последний, в свою очередь, делает несколько не относящихся к делу проверок и вызывает ProcessManager::GetProcessInfos(), чтобы получить желаемую структуру. Еще через пару уровней вложенности становится понятно, что информация об удаленных процессах добывается через класс NtProcessManager, который читает счетчики из HKEY_PERFORMANCE_DATA удаленной машины. Подсказки в коде, ведущие к этому заключению выглядят вот так:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">.method private hidebysig static class System.Diagnostics.ProcessInfo[] 
-        GetProcessInfos(class System.Diagnostics.PerformanceCounterLib &#39;library&#39;) cil managed
-{
-...
-    IL_000e:  ldstr      &#34;230 232&#34;
-    IL_0013:  callvirt   instance uint8[] System.Diagnostics.PerformanceCounterLib::GetPerformanceData(string)
-    IL_0018:  stloc.1
-</code></pre></div><p>Имя PerformanceCounterLib говорит само за себя. А константа 230 – это идентификатор объекта Process из HKEY_PERFORMANCE_DATA.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">  .locals init (class [mscorlib]System.Collections.Hashtable V_0,
-           class [mscorlib]System.Collections.ArrayList V_1,
-           valuetype [mscorlib]System.Runtime.InteropServices.GCHandle V_2,
-           native int V_3,
-           class Microsoft.Win32.NativeMethods/PERF_DATA_BLOCK V_4,
-           native int V_5,
-           class Microsoft.Win32.NativeMethods/PERF_INSTANCE_DEFINITION V_6,
-           class Microsoft.Win32.NativeMethods/PERF_COUNTER_BLOCK V_7,
-           int32 V_8,
-           class Microsoft.Win32.NativeMethods/PERF_OBJECT_TYPE V_9,
-           native int V_10,
-           native int V_11,
-           class [mscorlib]System.Collections.ArrayList V_12,
-           int32 V_13,
-           class Microsoft.Win32.NativeMethods/PERF_COUNTER_DEFINITION V_14,
-           string V_15,
-           class Microsoft.Win32.NativeMethods/PERF_COUNTER_DEFINITION[] V_16,
-</code></pre></div><p>Структуры PERF_DATA_BLOCK, PERF_INSTANCE_DEFINITION и т.д. сразу напомнили содержимое winperf.h</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>IL_0059:  ldflda     int64 System.Diagnostics.ProcessThreadTimes::create
+</span></span><span style="display:flex;"><span>IL_005e:  ldloc.0
+</span></span><span style="display:flex;"><span>IL_005f:  ldflda     int64 System.Diagnostics.ProcessThreadTimes::exit
+</span></span><span style="display:flex;"><span>IL_0064:  ldloc.0
+</span></span><span style="display:flex;"><span>IL_0065:  ldflda     int64 System.Diagnostics.ProcessThreadTimes::kernel
+</span></span><span style="display:flex;"><span>IL_006a:  ldloc.0
+</span></span><span style="display:flex;"><span>IL_006b:  ldflda     int64 System.Diagnostics.ProcessThreadTimes::user
+</span></span><span style="display:flex;"><span>IL_0070:  call       bool Microsoft.Win32.NativeMethods::GetProcessTimes(class Microsoft.Win32.SafeHandles.SafeProcessHandle,
+</span></span><span style="display:flex;"><span>                                                                         int64&amp;,
+</span></span><span style="display:flex;"><span>                                                                         int64&amp;,
+</span></span><span style="display:flex;"><span>                                                                         int64&amp;,
+</span></span><span style="display:flex;"><span>                                                                         int64&amp;)
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>Функция GetProcessTimes() работает только для локальных процессов, так как идентифицирует процесс по переданному NT handle. Посмотрим теперь на какое-нибудь другое свойство, которое работает, в том числе, и для удаленных процессов. К примеру, на Process.HandleCount:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>.method public hidebysig specialname instance int32 
+</span></span><span style="display:flex;"><span>        get_HandleCount() cil managed
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  // Code size       19 (0x13)
+</span></span><span style="display:flex;"><span>  .maxstack  8
+</span></span><span style="display:flex;"><span>  IL_0000:  ldarg.0
+</span></span><span style="display:flex;"><span>  IL_0001:  ldc.i4.8
+</span></span><span style="display:flex;"><span>  IL_0002:  call       instance void System.Diagnostics.Process::EnsureState(valuetype System.Diagnostics.Process/State)
+</span></span><span style="display:flex;"><span>  IL_0007:  ldarg.0
+</span></span><span style="display:flex;"><span>  IL_0008:  ldfld      class System.Diagnostics.ProcessInfo System.Diagnostics.Process::processInfo
+</span></span><span style="display:flex;"><span>  IL_000d:  ldfld      int32 System.Diagnostics.ProcessInfo::handleCount
+</span></span><span style="display:flex;"><span>  IL_0012:  ret
+</span></span><span style="display:flex;"><span>} // end of method Process::get_HandleCount
+</span></span></code></pre></div><p>В этом случае значение берется из структуры ProcessInfo, которая, по всей видимости, заполняется методом EnsureState(). Последний, в свою очередь, делает несколько не относящихся к делу проверок и вызывает ProcessManager::GetProcessInfos(), чтобы получить желаемую структуру. Еще через пару уровней вложенности становится понятно, что информация об удаленных процессах добывается через класс NtProcessManager, который читает счетчики из HKEY_PERFORMANCE_DATA удаленной машины. Подсказки в коде, ведущие к этому заключению выглядят вот так:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>.method private hidebysig static class System.Diagnostics.ProcessInfo[] 
+</span></span><span style="display:flex;"><span>        GetProcessInfos(class System.Diagnostics.PerformanceCounterLib &#39;library&#39;) cil managed
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>    IL_000e:  ldstr      &#34;230 232&#34;
+</span></span><span style="display:flex;"><span>    IL_0013:  callvirt   instance uint8[] System.Diagnostics.PerformanceCounterLib::GetPerformanceData(string)
+</span></span><span style="display:flex;"><span>    IL_0018:  stloc.1
+</span></span></code></pre></div><p>Имя PerformanceCounterLib говорит само за себя. А константа 230 – это идентификатор объекта Process из HKEY_PERFORMANCE_DATA.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>  .locals init (class [mscorlib]System.Collections.Hashtable V_0,
+</span></span><span style="display:flex;"><span>           class [mscorlib]System.Collections.ArrayList V_1,
+</span></span><span style="display:flex;"><span>           valuetype [mscorlib]System.Runtime.InteropServices.GCHandle V_2,
+</span></span><span style="display:flex;"><span>           native int V_3,
+</span></span><span style="display:flex;"><span>           class Microsoft.Win32.NativeMethods/PERF_DATA_BLOCK V_4,
+</span></span><span style="display:flex;"><span>           native int V_5,
+</span></span><span style="display:flex;"><span>           class Microsoft.Win32.NativeMethods/PERF_INSTANCE_DEFINITION V_6,
+</span></span><span style="display:flex;"><span>           class Microsoft.Win32.NativeMethods/PERF_COUNTER_BLOCK V_7,
+</span></span><span style="display:flex;"><span>           int32 V_8,
+</span></span><span style="display:flex;"><span>           class Microsoft.Win32.NativeMethods/PERF_OBJECT_TYPE V_9,
+</span></span><span style="display:flex;"><span>           native int V_10,
+</span></span><span style="display:flex;"><span>           native int V_11,
+</span></span><span style="display:flex;"><span>           class [mscorlib]System.Collections.ArrayList V_12,
+</span></span><span style="display:flex;"><span>           int32 V_13,
+</span></span><span style="display:flex;"><span>           class Microsoft.Win32.NativeMethods/PERF_COUNTER_DEFINITION V_14,
+</span></span><span style="display:flex;"><span>           string V_15,
+</span></span><span style="display:flex;"><span>           class Microsoft.Win32.NativeMethods/PERF_COUNTER_DEFINITION[] V_16,
+</span></span></code></pre></div><p>Структуры PERF_DATA_BLOCK, PERF_INSTANCE_DEFINITION и т.д. сразу напомнили содержимое winperf.h</p>
 <p>Получается, что информация об удаленных процессах читается из HKEY_PERFORMANCE_DATA удаленной машины. Почему же нельзя точно также прочитать время, проведенное процессом в user и kernel mode? Видимо потому, что эти счетчики не доступны через HKEY_PERFORMANCE_DATA. Вот какие счётчики доступны для процесса:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">230 Process
-	144 % Privileged Time
-	6 % Processor Time
-	142 % User Time
-	1410 Creating Process ID
-	684 Elapsed Time
-	952 Handle Count
-	784 ID Process
-	1424 IO Data Bytes/sec
-	1416 IO Data Operations/sec
-	1426 IO Other Bytes/sec
-	1418 IO Other Operations/sec
-	1420 IO Read Bytes/sec
-	1412 IO Read Operations/sec
-	1422 IO Write Bytes/sec
-	1414 IO Write Operations/sec
-	28 Page Faults/sec
-	182 Page File Bytes Peak
-	184 Page File Bytes
-	58 Pool Nonpaged Bytes
-	56 Pool Paged Bytes
-	682 Priority Base
-	186 Private Bytes
-	680 Thread Count
-	174 Virtual Bytes
-	172 Virtual Bytes Peak
-	180 Working Set
-	178 Working Set Peak
-	1478 Working Set - Private
-</code></pre></div><p>Обратите внимание, что “Privileged Time” и “User Time” измеряются процентах. Т.е. считается текущее использование процессом CPU, а не общее время, проведенное процессом в обоих режимах.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>230 Process
+</span></span><span style="display:flex;"><span>	144 % Privileged Time
+</span></span><span style="display:flex;"><span>	6 % Processor Time
+</span></span><span style="display:flex;"><span>	142 % User Time
+</span></span><span style="display:flex;"><span>	1410 Creating Process ID
+</span></span><span style="display:flex;"><span>	684 Elapsed Time
+</span></span><span style="display:flex;"><span>	952 Handle Count
+</span></span><span style="display:flex;"><span>	784 ID Process
+</span></span><span style="display:flex;"><span>	1424 IO Data Bytes/sec
+</span></span><span style="display:flex;"><span>	1416 IO Data Operations/sec
+</span></span><span style="display:flex;"><span>	1426 IO Other Bytes/sec
+</span></span><span style="display:flex;"><span>	1418 IO Other Operations/sec
+</span></span><span style="display:flex;"><span>	1420 IO Read Bytes/sec
+</span></span><span style="display:flex;"><span>	1412 IO Read Operations/sec
+</span></span><span style="display:flex;"><span>	1422 IO Write Bytes/sec
+</span></span><span style="display:flex;"><span>	1414 IO Write Operations/sec
+</span></span><span style="display:flex;"><span>	28 Page Faults/sec
+</span></span><span style="display:flex;"><span>	182 Page File Bytes Peak
+</span></span><span style="display:flex;"><span>	184 Page File Bytes
+</span></span><span style="display:flex;"><span>	58 Pool Nonpaged Bytes
+</span></span><span style="display:flex;"><span>	56 Pool Paged Bytes
+</span></span><span style="display:flex;"><span>	682 Priority Base
+</span></span><span style="display:flex;"><span>	186 Private Bytes
+</span></span><span style="display:flex;"><span>	680 Thread Count
+</span></span><span style="display:flex;"><span>	174 Virtual Bytes
+</span></span><span style="display:flex;"><span>	172 Virtual Bytes Peak
+</span></span><span style="display:flex;"><span>	180 Working Set
+</span></span><span style="display:flex;"><span>	178 Working Set Peak
+</span></span><span style="display:flex;"><span>	1478 Working Set - Private
+</span></span></code></pre></div><p>Обратите внимание, что “Privileged Time” и “User Time” измеряются процентах. Т.е. считается текущее использование процессом CPU, а не общее время, проведенное процессом в обоих режимах.</p>
   </div>
   <div id="disqus_thread"></div>
 </div>

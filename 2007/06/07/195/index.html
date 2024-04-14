@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -116,24 +106,24 @@
 <p>Немного поискав в интернете, я наконец нашел вот <a href="http://forums.macosxhints.com/archive/index.php/t-60621.html">эту страничку</a>, которая рассказывала о аналогичной проблеме. Рецепт оказался прост:</p>
 <hr>
 <p>Two big clues were (1) a posting on the Coolmax forum, and (2) the following entry from one of the readme&rsquo;s for Prolific firmware.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">02/24/2003 - 
-1. Fix the problem of &#39;Unique ID with 1394 Serial No.&#39; 
-For two or more same PL-3507 IDE device on the same 1394 bus, the EUID64 should be unique. 
-The 1394 Serial No. is now used in the EEPROM to construct the unique EUID64 bytes (64bits = 8 bytes). 
-bytes #0 ~2 : Company ID (00 50 77 for Prolific) 
-bytes #3 : Device Type (HD/CD-ROM/DVD/MO...) 
-bytes #4~7 : 1394 Serial No. (modified by PL3507 EEPROM Writor) 
-
-Note: Must use PL-3507 EEPROM Writer V 0.0.0.6. 
-</code></pre></div><p>Of course this &ldquo;EEPROM Writer&rdquo; was nowhere to be found. But in the process of doing a firmware update, I noted that the updater utility had an option to save the current firmware to a &ldquo;.bin&rdquo; file. To make a long story short, what I eventually figured out is that this .bin file included everything, INCLUDING THE SECTION WITH THE &ldquo;1394 Serial No.&rdquo; above. I further determined that this Serial No. was IDENTICAL on all my enclosures. The manufacturer had NOT serialized the chips. (This is like buying several ethernet boards, all with the same mac address assigned - a no-no.)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>02/24/2003 - 
+</span></span><span style="display:flex;"><span>1. Fix the problem of &#39;Unique ID with 1394 Serial No.&#39; 
+</span></span><span style="display:flex;"><span>For two or more same PL-3507 IDE device on the same 1394 bus, the EUID64 should be unique. 
+</span></span><span style="display:flex;"><span>The 1394 Serial No. is now used in the EEPROM to construct the unique EUID64 bytes (64bits = 8 bytes). 
+</span></span><span style="display:flex;"><span>bytes #0 ~2 : Company ID (00 50 77 for Prolific) 
+</span></span><span style="display:flex;"><span>bytes #3 : Device Type (HD/CD-ROM/DVD/MO...) 
+</span></span><span style="display:flex;"><span>bytes #4~7 : 1394 Serial No. (modified by PL3507 EEPROM Writor) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Note: Must use PL-3507 EEPROM Writer V 0.0.0.6. 
+</span></span></code></pre></div><p>Of course this &ldquo;EEPROM Writer&rdquo; was nowhere to be found. But in the process of doing a firmware update, I noted that the updater utility had an option to save the current firmware to a &ldquo;.bin&rdquo; file. To make a long story short, what I eventually figured out is that this .bin file included everything, INCLUDING THE SECTION WITH THE &ldquo;1394 Serial No.&rdquo; above. I further determined that this Serial No. was IDENTICAL on all my enclosures. The manufacturer had NOT serialized the chips. (This is like buying several ethernet boards, all with the same mac address assigned - a no-no.)</p>
 <p>On a hunch, I used a hex editor and modified the serial number in the .bin file, and reflashed the firmware. Low and behold now my system &lsquo;saw&rsquo; that enclosure at the same time as one of the unmodified enclosures!</p>
 <p>My hunch was confirmed - the top portion of the flash is used to hold data, including this serial number. The normal firmware updates do not disturb this portion, but if you update with the previously saved .bin file, it allows you to overwrite the entire flash, including this data.</p>
 <p>So for people with improperly serialized PL-3507 based enclosures, there is a way to &lsquo;fix&rsquo; this, if you are sufficiently brave and willing to manually patch your firmware image.</p>
 <p>Get the firmware updater. The current version is at
 <a href="http://www.prolific.com.tw/support/files//IDE%20Storage/PL-3507/Firmware/fw_pl3507B_d042006.zip">http://www.prolific.com.tw/support/files//IDE%20Storage/PL-3507/Firmware/fw_pl3507B_d042006.zip</a>
 The zip includes both the most recent firmware and the updater utility. Please note the following from Prolific web-site:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">fw_pl3507B_d042006.zip 2006/5/19 108 KB 
-</code></pre></div><p>PL-3507B Firmware Update
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>fw_pl3507B_d042006.zip 2006/5/19 108 KB 
+</span></span></code></pre></div><p>PL-3507B Firmware Update
 F/W Version: 2006.04.20.149 [Checksum 4D6F]
 For Chip B and above versions only (w/ ICP Support)
 Warning: This firmware is intended ONLY for Prolific customers and not for end-users. If you are an end-user and still want to use this, use at your own risk. Use ICP v2.0.4 and firmware 09/22/2004 first if your current firmware is older than 04/10/2003.</p>

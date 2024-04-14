@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -117,49 +107,49 @@
 <p>Во-вторых, даже если на тест не влияют никакие внешние «раздражители», остаётся другая проблема - неизбежный рост сложности кода. Каждая новая ветка кода требует отдельного теста. В теории. На практике об этом забывают сразу же после завершения работы над юнит тестом для &ldquo;Hello world&rdquo;. Писать отдельный тест каждой комбинации входных параметров выходит крайне неэффективно. Тесты, покрывающие все или большую часть комбинаций входных параметров, очень скоро стремятся стать сложнее тестируемого кода, да и времени полный перебор отнимает изрядно. По этому, в ход идут тесты, генерирующие входные параметры случайным или псевдослучайным образом.</p>
 <p>Для тестирования парсеров используются так называемые фаззеры (fuzzers). Фаззер генерирует поток данных для парсера, в который случайным образом вносятся ошибки. Это может быть как случайная последовательность байт, так и ошибки формата данных на более высоком уровне. К примеру, для XML парсера можно проверять реакцию на поток случайных байт, поток случайных символов в правильной кодировке, поток тегов с привнесенными ошибками. Правильно написанный парсер должен корректно обрабатывать любые данные, поданные на вход. Корректность обработки проверяется в простейшем случае по отсутствию фатальных ошибок вроде разыменования неинициализированного указателя, либо периодическими проверками целостности внутреннего состояния парсера. Этот же принцип можно использовать не только для проверки парсеров, но и для тестирования отдельных классов, интерфейсов и т.д. Только в этом случае вместо внесения ошибок в данные на входе, фаззер будет привносить ошибки в правильную последовательность вызова методов класса или интерфейса.</p>
 <p>Хотя использование фаззеров позволяет эффективно отлавливать ошибки, в точки зрения повторяемости результатов фаззеры выглядят не очень хорошо. Случайность генерируемых ошибок фундаментальна. Отказ от неё ведет либо к полному перебору, либо к индивидуальным тестам, воспроизводящим лишь наиболее часто возникающие условия. Однако и со случайностью можно бороться, не отказываясь от неё. Любой уважающий себя тест обязан вести журнал выполняемых действий и полученных результатов. В случае сбоя по этому журналу можно будет восстановить последовательность событий. Если пойти немного дальше можно встроить возможность повторения всех проделанных действий непосредственно в тест. Тем самым разработчик сможет воспроизвести проблему тут же на месте, непосредственно в отладчике. Код может выглядеть примерно вот так:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span>
-<span style="color:#a6e22e">replayTest</span>(
-    <span style="color:#66d9ef">const</span> Log<span style="color:#f92672">&amp;</span> log
-    )
-{
-    ...
-    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>log.empty())
-    {
-        ...
-        <span style="color:#66d9ef">int</span> r <span style="color:#f92672">=</span> log.top();
-        log.pop_front();
-        ...
-    }
-    ...
-}
-
-<span style="color:#66d9ef">void</span>
-<span style="color:#a6e22e">doTest</span>()
-{
-    Log log;
-
-    <span style="color:#66d9ef">try</span>
-    {
-        ...
-        <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>)
-        {
-            ...
-            <span style="color:#66d9ef">int</span> r <span style="color:#f92672">=</span> rand();
-            log.push_back(r);
-            ...
-        }
-        ...
-    }
-    <span style="color:#66d9ef">catch</span> (...)
-    {
-        DebugBreak();
-
-        replayTest(log);
-
-        <span style="color:#66d9ef">throw</span>;
-    }
-}
-</code></pre></div><p>Любое исключение, достигшее «catch(…)», считается ошибкой. При этом будет вызвана функция «replayTest», которая воспроизведет в точности действия, приведшие к исключению. Этот пример можно сделать ещё лучше, вынеся последнюю итерацию цикла в отдельный блок кода и добавив возможность перезапустить «replayTest» несколько раз.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">replayTest</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> Log<span style="color:#f92672">&amp;</span> log
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>log.empty())
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> r <span style="color:#f92672">=</span> log.top();
+</span></span><span style="display:flex;"><span>        log.pop_front();
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">doTest</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Log log;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            ...
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> r <span style="color:#f92672">=</span> rand();
+</span></span><span style="display:flex;"><span>            log.push_back(r);
+</span></span><span style="display:flex;"><span>            ...
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">catch</span> (...)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        DebugBreak();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        replayTest(log);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Любое исключение, достигшее «catch(…)», считается ошибкой. При этом будет вызвана функция «replayTest», которая воспроизведет в точности действия, приведшие к исключению. Этот пример можно сделать ещё лучше, вынеся последнюю итерацию цикла в отдельный блок кода и добавив возможность перезапустить «replayTest» несколько раз.</p>
   </div>
   <div id="disqus_thread"></div>
 </div>

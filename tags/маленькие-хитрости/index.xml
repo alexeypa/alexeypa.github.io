@@ -1,122 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Маленькие хитрости on Алексей Пахунов</title>
+    <title>Маленькие Хитрости on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B5-%D1%85%D0%B8%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%B8/</link>
-    <description>Recent content in Маленькие хитрости on Алексей Пахунов</description>
+    <description>Recent content in Маленькие Хитрости on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 24 May 2012 15:00:30 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B5-%D1%85%D0%B8%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%B8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 May 2012 15:00:30 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B5-%D1%85%D0%B8%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Как перевести SDDL в двоичный дескриптор безопасности</title>
       <link>https://blog.not-a-kernel-guy.com/2012/05/24/1338/</link>
       <pubDate>Thu, 24 May 2012 15:00:30 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2012/05/24/1338/</guid>
-      <description>&lt;p&gt;Некторые ключи реестра хранят дескрипторы безопасности (security descriptor) в двоичной форме (REG_BINARY). Пример - значение &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/windows/desktop/ms688679(v=vs.85).aspx&#34;&gt;AccessPermission&lt;/a&gt;, которое устанавливает дескриптор безопасности COM сервера. Редактировать такой дескриптор - одно удовольствие. :-)&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2012/05/editing_reg_binary.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2012/05/editing_reg_binary.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Некторые ключи реестра хранят дескрипторы безопасности (security descriptor) в двоичной форме (REG_BINARY). Пример - значение &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/windows/desktop/ms688679(v=vs.85).aspx&#34;&gt;AccessPermission&lt;/a&gt;, которое устанавливает дескриптор безопасности COM сервера. Редактировать такой дескриптор - одно удовольствие. :-)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2012/05/editing_reg_binary.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2012/05/editing_reg_binary.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Установка обновлений из командной строки</title>
       <link>https://blog.not-a-kernel-guy.com/2010/10/26/902/</link>
       <pubDate>Tue, 26 Oct 2010 21:40:00 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/10/26/902/</guid>
-      <description>Вот на этой странице опубликован скрипт, который проверяет наличие обновлений Windows, скачивает их и устанавливает на машину из командной строки. Я его немного подправил, чтобы было удобнее запускать на нескольких машинах сразу через psexec. Взять его можно здесь: /2010/10/WUA_SearchDownloadInstall.vbs.
-Модифицированный скрипт понимает следующие ключи:
-d:\wsus&amp;gt;cscript //nologo WUA_SearchDownloadInstall.vbs /? Usage: cscript //nologo WUA_SearchDownloadInstall.vbs [/nodownload | ( /install [ /reboot ] ) ].   /nodownload – найденные обновление не будут скачиваться (и, соответственно, устанавливаться).</description>
+      <description>Вот на этой странице опубликован скрипт, который проверяет наличие обновлений Windows, скачивает их и устанавливает на машину из командной строки. Я его немного подправил, чтобы было удобнее запускать на нескольких машинах сразу через psexec. Взять его можно здесь: /2010/10/WUA_SearchDownloadInstall.vbs.&#xA;Модифицированный скрипт понимает следующие ключи:&#xA;d:\wsus&amp;gt;cscript //nologo WUA_SearchDownloadInstall.vbs /? Usage: cscript //nologo WUA_SearchDownloadInstall.vbs [/nodownload | ( /install [ /reboot ] ) ]. /nodownload – найденные обновление не будут скачиваться (и, соответственно, устанавливаться).</description>
     </item>
-    
     <item>
       <title>“This program requires Windows 2000 or newer operating system”</title>
       <link>https://blog.not-a-kernel-guy.com/2009/03/25/474/</link>
       <pubDate>Wed, 25 Mar 2009 13:25:50 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/03/25/474/</guid>
-      <description>Когда видишь такое сообщение на Windows 7, это означает, что разработчики приложения допустили ошибку либо в коде проверки версии операционной системы, либо, что менее вероятно, - в самом сообщении. Второй вариант возможен, если программа действительно не должна работать в новых версиях операционной системы. В обоих случаях, с точки зрения пользователя это чистой воды баг. То ли в коде, то ли в дизайне, то ли в маркетинговом отделе…
-В любом случае обходятся такие ограничения элементарно просто.</description>
+      <description>Когда видишь такое сообщение на Windows 7, это означает, что разработчики приложения допустили ошибку либо в коде проверки версии операционной системы, либо, что менее вероятно, - в самом сообщении. Второй вариант возможен, если программа действительно не должна работать в новых версиях операционной системы. В обоих случаях, с точки зрения пользователя это чистой воды баг. То ли в коде, то ли в дизайне, то ли в маркетинговом отделе…&#xA;В любом случае обходятся такие ограничения элементарно просто.</description>
     </item>
-    
     <item>
       <title>Маленькие хитрости «посмертной» отладки</title>
       <link>https://blog.not-a-kernel-guy.com/2009/02/08/434/</link>
       <pubDate>Sun, 08 Feb 2009 22:33:02 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/02/08/434/</guid>
-      <description>&lt;p&gt;Как то заметил, что в списке запущенных процессов постоянно болтается три штуки cdb.exe:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2009/02/aedebug_cdb.png&#34; alt=&#34;aedebug_cdb&#34;&gt;&lt;/p&gt;
-&lt;p&gt;CDB – это консольная версия WinDbg, которая у меня установлена в качестве &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/cc266343.aspx&#34;&gt;«посмертного» отладчика (postmortem debugger)&lt;/a&gt;.Обычно при этом падение приложения не проходит незамеченным - запускается консоль отладчика на весь экран. Трудно не заметить. В данном же случае, по всей видимости, фатальное исключение случалось в привилегированном процессе в отдельной сессии, соответственно и консоль создавалась в другой сессии.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Как то заметил, что в списке запущенных процессов постоянно болтается три штуки cdb.exe:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2009/02/aedebug_cdb.png&#34; alt=&#34;aedebug_cdb&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;CDB – это консольная версия WinDbg, которая у меня установлена в качестве &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/cc266343.aspx&#34;&gt;«посмертного» отладчика (postmortem debugger)&lt;/a&gt;.Обычно при этом падение приложения не проходит незамеченным - запускается консоль отладчика на весь экран. Трудно не заметить. В данном же случае, по всей видимости, фатальное исключение случалось в привилегированном процессе в отдельной сессии, соответственно и консоль создавалась в другой сессии.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Хозяйке на заметку</title>
       <link>https://blog.not-a-kernel-guy.com/2008/08/05/329/</link>
       <pubDate>Tue, 05 Aug 2008 21:54:50 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/08/05/329/</guid>
-      <description>Чтобы войти на машину с благозвучным названием &amp;ldquo;6XSD29G-052-18XS_32&amp;rdquo; под локальным пользователем, не нужно набивать полное имя пользователя как &amp;ldquo;6XSD29G-052-18XS_32\vasya&amp;rdquo;, проклиная при этом злого гения, запретившего Copy-Paste в поле ввода имени, и его коллегу, давшему компьютеру такое замечательное имя. Достаточно просто сказать &amp;ldquo;.\vasya&amp;rdquo; и все получится.
-PS. Знал бы об этом пять лет назад - день жизни сэкономил бы уже наверное. Хотя мог бы и сам догадаться… :-)</description>
+      <description>Чтобы войти на машину с благозвучным названием &amp;ldquo;6XSD29G-052-18XS_32&amp;rdquo; под локальным пользователем, не нужно набивать полное имя пользователя как &amp;ldquo;6XSD29G-052-18XS_32\vasya&amp;rdquo;, проклиная при этом злого гения, запретившего Copy-Paste в поле ввода имени, и его коллегу, давшему компьютеру такое замечательное имя. Достаточно просто сказать &amp;ldquo;.\vasya&amp;rdquo; и все получится.&#xA;PS. Знал бы об этом пять лет назад - день жизни сэкономил бы уже наверное. Хотя мог бы и сам догадаться… :-)</description>
     </item>
-    
     <item>
       <title>Как Process Explorer подменяет Task Manager</title>
       <link>https://blog.not-a-kernel-guy.com/2008/03/13/297/</link>
       <pubDate>Thu, 13 Mar 2008 21:41:33 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/03/13/297/</guid>
-      <description>&lt;p&gt;А знаете, как &lt;a href=&#34;http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx&#34;&gt;Process Explorer&lt;/a&gt; подменяет собой стандартный Task Manager?&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2008/03/procexp_1.png&#34; alt=&#34;Process Explorer: Replace Task Manager.&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;А знаете, как &lt;a href=&#34;http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx&#34;&gt;Process Explorer&lt;/a&gt; подменяет собой стандартный Task Manager?&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2008/03/procexp_1.png&#34; alt=&#34;Process Explorer: Replace Task Manager.&#34;&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Разрядность ключа «Image File Execution Options»</title>
       <link>https://blog.not-a-kernel-guy.com/2008/01/09/277/</link>
       <pubDate>Wed, 09 Jan 2008 23:34:16 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/01/09/277/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://blogs.msdn.com/junfeng/archive/2004/04/28/121871.aspx&#34;&gt;Ключ «Image File Execution Options»&lt;/a&gt; знаком, наверное, всем кто вынужден тратить много времени на отладку приложений. В частности, с его помощью можно указать системе всегда запускать определённый процесс под отладчиком. В этом же ключе &lt;a href=&#34;http://technet2.microsoft.com/windowsserver/en/library/b6af1963-3b75-42f2-860f-aff9354aefde1033.mspx?mfr=true&#34;&gt;утилита gflags.exe&lt;/a&gt; сохраняет выбранные отладочные опции и т.д. За подробностями рекомендую обратиться в Google, там есть много полезного.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Как посмотреть содержимое реестра из-под отладчика</title>
       <link>https://blog.not-a-kernel-guy.com/2007/12/29/274/</link>
       <pubDate>Sat, 29 Dec 2007 23:24:18 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/12/29/274/</guid>
-      <description>&lt;p&gt;_Сижу дома простуженный. Ни о чём писать не хочется, поэтому буду краток. _&lt;/p&gt;
-&lt;p&gt;Команда !dreg в WinDbg позволяет просматривать содержимое реестра прямо в процессе отладки. Это особенно удобно в двух случаях:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;При удалённой отладке, когда сессия отладчика - это единственный вид доступа к удалённой машине. Такое встречается сплошь и рядом, например, если удалённая машина находится в другой сети или домене;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;В случае, когда отладчик пользовательского режима контролируется ядерным отладчиком. Это тоже, в общем-то, &lt;a href=&#34;http://www.nynaeve.net/?p=30&#34;&gt;вариант удалённой отладки&lt;/a&gt;, только в этом случае до отлаживаемой машины достучаться кроме как через отладчик вообще никак нельзя.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;К сожалению !dreg не работает в ядерном отладчике, вернее работает, но показывает реестр той машины где запущен kd.exe, а не целевой, так бы этого не хотелось. Иначе бы счастье было бы полным.&lt;/p&gt;</description>
+      <description>&lt;p&gt;_Сижу дома простуженный. Ни о чём писать не хочется, поэтому буду краток. _&lt;/p&gt;&#xA;&lt;p&gt;Команда !dreg в WinDbg позволяет просматривать содержимое реестра прямо в процессе отладки. Это особенно удобно в двух случаях:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;При удалённой отладке, когда сессия отладчика - это единственный вид доступа к удалённой машине. Такое встречается сплошь и рядом, например, если удалённая машина находится в другой сети или домене;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;В случае, когда отладчик пользовательского режима контролируется ядерным отладчиком. Это тоже, в общем-то, &lt;a href=&#34;http://www.nynaeve.net/?p=30&#34;&gt;вариант удалённой отладки&lt;/a&gt;, только в этом случае до отлаживаемой машины достучаться кроме как через отладчик вообще никак нельзя.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;К сожалению !dreg не работает в ядерном отладчике, вернее работает, но показывает реестр той машины где запущен kd.exe, а не целевой, так бы этого не хотелось. Иначе бы счастье было бы полным.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Как определить разрядность .EXE или .DLL?</title>
       <link>https://blog.not-a-kernel-guy.com/2007/10/24/258/</link>
       <pubDate>Wed, 24 Oct 2007 22:21:07 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/10/24/258/</guid>
-      <description>&lt;p&gt;Как определить тип процессора для которого скомпилирован бинарный файл? Можно воспользоваться сборщиком из поставки Visual Studio 2005:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-no-highlight&#34; data-lang=&#34;no-highlight&#34;&gt;link.exe /dump /headers &amp;lt;.exe&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2007/10/dumpbin01.png&#34; alt=&#34;link.exe /dump /headers&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Как определить тип процессора для которого скомпилирован бинарный файл? Можно воспользоваться сборщиком из поставки Visual Studio 2005:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-no-highlight&#34; data-lang=&#34;no-highlight&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;link.exe /dump /headers &amp;lt;.exe&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2007/10/dumpbin01.png&#34; alt=&#34;link.exe /dump /headers&#34;&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Мышиная возня в коробке из под обуви</title>
       <link>https://blog.not-a-kernel-guy.com/2007/10/20/257/</link>
       <pubDate>Sat, 20 Oct 2007 23:26:55 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2007/10/20/257/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2007/10/mouse.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Последнее время я постоянно сталкиваюсь с одной проблемой, о которой я раньше никогда особенно не задумывался. А именно - манипуляции с большим количеством «временных» файлов. Я не случайно взял в кавычки слово «временных». Время жизни этих файлов - от нескольких дней до нескольких недель. Объем - сотни гигабайт, миллионы файлов. В принципе не очень-то и внушительный объем, учитывая размеры современных жестких дисков. Тем не менее уже на таких объемах возникают сложности.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2007/10/mouse.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Последнее время я постоянно сталкиваюсь с одной проблемой, о которой я раньше никогда особенно не задумывался. А именно - манипуляции с большим количеством «временных» файлов. Я не случайно взял в кавычки слово «временных». Время жизни этих файлов - от нескольких дней до нескольких недель. Объем - сотни гигабайт, миллионы файлов. В принципе не очень-то и внушительный объем, учитывая размеры современных жестких дисков. Тем не менее уже на таких объемах возникают сложности.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

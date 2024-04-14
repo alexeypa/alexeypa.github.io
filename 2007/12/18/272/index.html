@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -127,44 +117,43 @@
 </ul>
 <p>С точки зрения разрядности получаемых модулей тут важно то, что управляемый код по определению может выполняться на любой платформе (x86, amd64 и ia64), в то время как неуправляемый код предназначен для конкретного процессора. Т.е. можно бы было ожидать, что модули, собранные с /clr:pure или /clr:safe, можно использовать на любой платформе. На самом деле это не совсем так, о чём я и расскажу ниже.</p>
 <p>Далее. Модули, содержащие управляемый код, можно отличить от «нормальных» модулей по непустой «COM Descriptor Directory». Команда &ldquo;link /dump /headers&rdquo; показывает её в конце списка директорий в «PE Optional Header»:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">OPTIONAL HEADER VALUES
-             10B magic # (PE32)
-            8.00 linker version
-
-            ...
-
-               0 loader flags
-              10 number of directories
-               0 [       0] RVA [size] of Export Directory
-            87C4 [      64] RVA [size] of Import Directory
-            A000 [     6A8] RVA [size] of Resource Directory
-               0 [       0] RVA [size] of Exception Directory
-               0 [       0] RVA [size] of Certificates Directory
-            B000 [     190] RVA [size] of Base Relocation Directory
-            3100 [      1C] RVA [size] of Debug Directory
-               0 [       0] RVA [size] of Architecture Directory
-               0 [       0] RVA [size] of Global Pointer Directory
-               0 [       0] RVA [size] of Thread Storage Directory
-            3188 [      40] RVA [size] of Load Configuration Directory
-               0 [       0] RVA [size] of Bound Import Directory
-            3000 [      A8] RVA [size] of Import Address Table Directory
-               0 [       0] RVA [size] of Delay Import Directory
-            311C [      48] RVA [size] of COM Descriptor Directory
-               0 [       0] RVA [size] of Reserved Directory
-</code></pre></div><p>Несмотря на название, эта директория не имеет отношения к COM. Насколько я понимаю, название осталось с тех времен, когда CLR еще только начинал разрабатываться. Содержимое этой директории, или, по крайней мере, часть её содержимого, можно посмотреть с помощью утилиты CorFlags.exe из .NET SDK.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">&gt; CorFlags.exe clr_rabbit.exe
-    Microsoft (R) .NET Framework CorFlags Conversion Tool.  Version  2.0.50727.42
-    Copyright (c) Microsoft Corporation.  All rights reserved.
-
-    Version   : v2.0.50727
-    CLR Header: 2.5
-    PE        : PE32
-    CorFlags  : 0
-    ILONLY    : 0
-    32BIT     : 0
-    Signed    : 0
-
-</code></pre></div><p>Нас будут интересовать флаги ILONLY (только управляемый код) и 32BIT (32-х битный код), поскольку они непосредственно связаны с разрядностью сборки.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>OPTIONAL HEADER VALUES
+</span></span><span style="display:flex;"><span>             10B magic # (PE32)
+</span></span><span style="display:flex;"><span>            8.00 linker version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>               0 loader flags
+</span></span><span style="display:flex;"><span>              10 number of directories
+</span></span><span style="display:flex;"><span>               0 [       0] RVA [size] of Export Directory
+</span></span><span style="display:flex;"><span>            87C4 [      64] RVA [size] of Import Directory
+</span></span><span style="display:flex;"><span>            A000 [     6A8] RVA [size] of Resource Directory
+</span></span><span style="display:flex;"><span>               0 [       0] RVA [size] of Exception Directory
+</span></span><span style="display:flex;"><span>               0 [       0] RVA [size] of Certificates Directory
+</span></span><span style="display:flex;"><span>            B000 [     190] RVA [size] of Base Relocation Directory
+</span></span><span style="display:flex;"><span>            3100 [      1C] RVA [size] of Debug Directory
+</span></span><span style="display:flex;"><span>               0 [       0] RVA [size] of Architecture Directory
+</span></span><span style="display:flex;"><span>               0 [       0] RVA [size] of Global Pointer Directory
+</span></span><span style="display:flex;"><span>               0 [       0] RVA [size] of Thread Storage Directory
+</span></span><span style="display:flex;"><span>            3188 [      40] RVA [size] of Load Configuration Directory
+</span></span><span style="display:flex;"><span>               0 [       0] RVA [size] of Bound Import Directory
+</span></span><span style="display:flex;"><span>            3000 [      A8] RVA [size] of Import Address Table Directory
+</span></span><span style="display:flex;"><span>               0 [       0] RVA [size] of Delay Import Directory
+</span></span><span style="display:flex;"><span>            311C [      48] RVA [size] of COM Descriptor Directory
+</span></span><span style="display:flex;"><span>               0 [       0] RVA [size] of Reserved Directory
+</span></span></code></pre></div><p>Несмотря на название, эта директория не имеет отношения к COM. Насколько я понимаю, название осталось с тех времен, когда CLR еще только начинал разрабатываться. Содержимое этой директории, или, по крайней мере, часть её содержимого, можно посмотреть с помощью утилиты CorFlags.exe из .NET SDK.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>&gt; CorFlags.exe clr_rabbit.exe
+</span></span><span style="display:flex;"><span>    Microsoft (R) .NET Framework CorFlags Conversion Tool.  Version  2.0.50727.42
+</span></span><span style="display:flex;"><span>    Copyright (c) Microsoft Corporation.  All rights reserved.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Version   : v2.0.50727
+</span></span><span style="display:flex;"><span>    CLR Header: 2.5
+</span></span><span style="display:flex;"><span>    PE        : PE32
+</span></span><span style="display:flex;"><span>    CorFlags  : 0
+</span></span><span style="display:flex;"><span>    ILONLY    : 0
+</span></span><span style="display:flex;"><span>    32BIT     : 0
+</span></span><span style="display:flex;"><span>    Signed    : 0
+</span></span></code></pre></div><p>Нас будут интересовать флаги ILONLY (только управляемый код) и 32BIT (32-х битный код), поскольку они непосредственно связаны с разрядностью сборки.</p>
 <p>Я попробовал скомпилировать x86 и amd64 варианты стандартного &ldquo;Hello World&rdquo; для всех трёх значений флага /clr и посмотреть что получится. Получилась вот такая табличка:</p>
 <!-- raw HTML omitted -->
 <p>Отсюда можно сделать вот такие выводы:</p>

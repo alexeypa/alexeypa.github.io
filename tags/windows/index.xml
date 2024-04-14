@@ -6,290 +6,182 @@
     <description>Recent content in Windows on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 02 Apr 2014 21:48:25 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Apr 2014 21:48:25 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Возврат меню Пуск</title>
       <link>https://blog.not-a-kernel-guy.com/2014/04/02/1592/</link>
       <pubDate>Wed, 02 Apr 2014 21:48:25 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2014/04/02/1592/</guid>
-      <description>&lt;p&gt;Что за день сегодня! Сначала &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/02/1584/&#34;&gt;NASA учудило&lt;/a&gt;, теперь вот &lt;a href=&#34;http://www.theverge.com/2014/4/2/5574830/windows-9-start-menu-new-desktop-experience&#34;&gt;Microsoft показала сборку Windows 8, в которой есть меню Пуск&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;At its Build conference today, Microsoft announced a new Start Menu that looks like a hybrid of the best of Windows 7 and Windows 8. It&amp;rsquo;s around the same size as the Windows 7 menu, but also features miniature Live Tiles along one side.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0-300x199.jpg&#34; alt=&#34;Windows 8 and Start Menu&#34;&gt;&lt;/a&gt; Windows 8 and Start Menu&lt;/p&gt;</description>
+      <description>&lt;p&gt;Что за день сегодня! Сначала &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/02/1584/&#34;&gt;NASA учудило&lt;/a&gt;, теперь вот &lt;a href=&#34;http://www.theverge.com/2014/4/2/5574830/windows-9-start-menu-new-desktop-experience&#34;&gt;Microsoft показала сборку Windows 8, в которой есть меню Пуск&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;At its Build conference today, Microsoft announced a new Start Menu that looks like a hybrid of the best of Windows 7 and Windows 8. It&amp;rsquo;s around the same size as the Windows 7 menu, but also features miniature Live Tiles along one side.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0-300x199.jpg&#34; alt=&#34;Windows 8 and Start Menu&#34;&gt;&lt;/a&gt; Windows 8 and Start Menu&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Трассировка описателей. Вторая серия</title>
       <link>https://blog.not-a-kernel-guy.com/2013/01/09/1456/</link>
       <pubDate>Wed, 09 Jan 2013 23:09:16 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2013/01/09/1456/</guid>
-      <description>&lt;p&gt;Краткое содержание &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2012/12/04/1437/&#34;&gt;первой части&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Не получается продолжить выполнение кода после того, как было сгенерировано исключение STATUS_INVALID_HANDLE - почему-то портится сохраненный контекст процессора. В частности, не сохраняются non-volatile регистры esi и edi.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Некто Indy засомневался в том, что происходит именно это. Следует сказать, что засомневался он не без оснований. На самом деле, способы возбудить исключение пользовательского режима из кода в ядре можно пересчитать по пальцам одной руки и все они формируют конекст процессора одинаково. Получается, что если бы регистры не сохранялись, то не работали бы все исключения, а не избирательно STATUS_INVALID_HANDLE.&lt;/p&gt;
-&lt;p&gt;Покопавшись в отладчике я понял в чем дело.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Краткое содержание &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2012/12/04/1437/&#34;&gt;первой части&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Не получается продолжить выполнение кода после того, как было сгенерировано исключение STATUS_INVALID_HANDLE - почему-то портится сохраненный контекст процессора. В частности, не сохраняются non-volatile регистры esi и edi.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Некто Indy засомневался в том, что происходит именно это. Следует сказать, что засомневался он не без оснований. На самом деле, способы возбудить исключение пользовательского режима из кода в ядре можно пересчитать по пальцам одной руки и все они формируют конекст процессора одинаково. Получается, что если бы регистры не сохранялись, то не работали бы все исключения, а не избирательно STATUS_INVALID_HANDLE.&lt;/p&gt;&#xA;&lt;p&gt;Покопавшись в отладчике я понял в чем дело.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Как сделать копию экрана в Windows</title>
       <link>https://blog.not-a-kernel-guy.com/2012/06/24/1362/</link>
       <pubDate>Sun, 24 Jun 2012 23:11:35 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2012/06/24/1362/</guid>
-      <description>Интересно, что существует около десятка способов сделать копию экрана в Windows. Программно, без привлечения нестандартного оборудования или сторонних библиотек. Статья “Screen recording with WDDM 1.2” описывает наиболее часто используемые:
-  GDI: GetDC(NULL), а затем BitBlt(), чтобы скопировать данные из видеопамяти в системную.
-  Direct3D: метод IDirect3DDevice9::GetFrontBufferData() позволяет скопировать содержимое видеопамяти в системный буфер.
-  Mirror Display Driver: позволяет напрямую перехватывать команды отрисовки.
-  OpenGL: дает прямой доступ к отображаемому буферу в видеопамяти.</description>
+      <description>Интересно, что существует около десятка способов сделать копию экрана в Windows. Программно, без привлечения нестандартного оборудования или сторонних библиотек. Статья “Screen recording with WDDM 1.2” описывает наиболее часто используемые:&#xA;GDI: GetDC(NULL), а затем BitBlt(), чтобы скопировать данные из видеопамяти в системную.&#xA;Direct3D: метод IDirect3DDevice9::GetFrontBufferData() позволяет скопировать содержимое видеопамяти в системный буфер.&#xA;Mirror Display Driver: позволяет напрямую перехватывать команды отрисовки.&#xA;OpenGL: дает прямой доступ к отображаемому буферу в видеопамяти.&#xA;Windows 8: появился специализированный интерфейс IDXGIOutputDuplication.</description>
     </item>
-    
     <item>
       <title>Как работают виртуальные рабочие столы в Windows</title>
       <link>https://blog.not-a-kernel-guy.com/2011/09/13/1174/</link>
       <pubDate>Tue, 13 Sep 2011 04:46:31 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/09/13/1174/</guid>
-      <description>Читаю статью на Хабре про виртуальные рабочие столы в Windows. В конце статьи висит вопрос:
- UPD: Если вы знаете принцип работы подобных программ или какой-либо отдельной в частности, поделитесь этими знаниями, нам всем будет очень интересно.
- И «ответ» - цитата из комментария пользователя enktyptor:
- Многие «менеджеры десктопов» Windows работают по схожему принципу — они скрывают все окна (чуть ли не через SW_HIDE), относящиеся не к текущему десктопу (при этом как таковых «десктопов» в системе нет, есть скорее наборы окон).</description>
+      <description>Читаю статью на Хабре про виртуальные рабочие столы в Windows. В конце статьи висит вопрос:&#xA;UPD: Если вы знаете принцип работы подобных программ или какой-либо отдельной в частности, поделитесь этими знаниями, нам всем будет очень интересно.&#xA;И «ответ» - цитата из комментария пользователя enktyptor:&#xA;Многие «менеджеры десктопов» Windows работают по схожему принципу — они скрывают все окна (чуть ли не через SW_HIDE), относящиеся не к текущему десктопу (при этом как таковых «десктопов» в системе нет, есть скорее наборы окон).</description>
     </item>
-    
     <item>
       <title>Можно ли использовать функцию RtlCaptureContext() из x86 кода?</title>
       <link>https://blog.not-a-kernel-guy.com/2011/07/24/1132/</link>
       <pubDate>Sun, 24 Jul 2011 20:55:56 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/07/24/1132/</guid>
-      <description>Вопрос из почты:
- The question is really simple: could we use RtlCaptureContext on X86? The MSDN (http://msdn.microsoft.com/en-us/library/ms680659(v=VS.85).aspx) says it’s only for 64 but the bug is for X86 and I see some kernel code are using it on x86.
-  Вопрос на самом деле очень прост: можем ли мы использовать функцию RtlCaptureContext на x86? MSDN говорит, что эта функция только для 64-х бит но баг-репорт (имеется ввиду баг-репорт, ранее упомянутый в письме) воспроизводится для x86 и я вижу, что код в ядре использует эту функцию на x86.</description>
+      <description>Вопрос из почты:&#xA;The question is really simple: could we use RtlCaptureContext on X86? The MSDN (http://msdn.microsoft.com/en-us/library/ms680659(v=VS.85).aspx) says it’s only for 64 but the bug is for X86 and I see some kernel code are using it on x86.&#xA;Вопрос на самом деле очень прост: можем ли мы использовать функцию RtlCaptureContext на x86? MSDN говорит, что эта функция только для 64-х бит но баг-репорт (имеется ввиду баг-репорт, ранее упомянутый в письме) воспроизводится для x86 и я вижу, что код в ядре использует эту функцию на x86.</description>
     </item>
-    
     <item>
       <title>afd.sys</title>
       <link>https://blog.not-a-kernel-guy.com/2011/06/20/1099/</link>
       <pubDate>Mon, 20 Jun 2011 07:58:25 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/06/20/1099/</guid>
-      <description>Windows Sockets общаются с сетевым стеком через драйвер afd.sys. Происхождение этого имени для меня было загадкой до тех пор, пока я не заглянул в список «Non-Plug and Play Drivers» в Device Manager. Для этого нужно выбрать в меню «Show hidden devices». Оказалось, что это «Ancillary Function Driver for Winsock».
-
-За одно новое слово выучил. :-)</description>
+      <description>Windows Sockets общаются с сетевым стеком через драйвер afd.sys. Происхождение этого имени для меня было загадкой до тех пор, пока я не заглянул в список «Non-Plug and Play Drivers» в Device Manager. Для этого нужно выбрать в меню «Show hidden devices». Оказалось, что это «Ancillary Function Driver for Winsock».&#xA;За одно новое слово выучил. :-)</description>
     </item>
-    
     <item>
       <title>Функция DeviceIoControlEx</title>
       <link>https://blog.not-a-kernel-guy.com/2011/06/14/1094/</link>
       <pubDate>Tue, 14 Jun 2011 23:38:43 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/06/14/1094/</guid>
       <description>&lt;p&gt;Win32 API предоставляет «Ex» варианты функций ReadFile и WriteFile, в то время как «Ex» варианта функции DeviceIoControl не предлагается. Исправить этот недостаток очень просто, так как соответствующая функция Native API документирована в MSDN: &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms648411(v=vs.85).aspx&#34;&gt;NtDeviceIoControlFile&lt;/a&gt; (хотя и помечена как «Deprecated»). Прототип новой функции будет выглядеть вот так:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Неогороженное минное поле – это еще не повод по нему ходить</title>
       <link>https://blog.not-a-kernel-guy.com/2011/06/08/1088/</link>
       <pubDate>Wed, 08 Jun 2011 23:02:02 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/06/08/1088/</guid>
-      <description>&lt;p&gt;Пришло письмо с вопросом:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Обнаружилась следующая проблема:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Наша программа сохраняет и считывает последнюю открытую ею директорию в разделе реестра, где сохраняют последние посещенные ими директории и другие программы, а именно в ветке «HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU». Это в 32-х разрядной версии. Но оказывается, что в 64-х разрядной версии данной ветки реестра в узле HKCU не существует, а она находится в «HKEY_USERS&amp;lt;некий идентификатор пользователя&amp;gt;\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU».&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Так вот вопрос: как мне программно доступиться к этой ветке, если идентификатор пользователя неизвестен? Или, может, есть способ узнать этот идентификатор каким-то образом? А может где-то есть в реестре зеркало этой ветки, к которой можно получить доступ более простым способом?&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;Пришло письмо с вопросом:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Обнаружилась следующая проблема:&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Наша программа сохраняет и считывает последнюю открытую ею директорию в разделе реестра, где сохраняют последние посещенные ими директории и другие программы, а именно в ветке «HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU». Это в 32-х разрядной версии. Но оказывается, что в 64-х разрядной версии данной ветки реестра в узле HKCU не существует, а она находится в «HKEY_USERS&amp;lt;некий идентификатор пользователя&amp;gt;\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU».&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Так вот вопрос: как мне программно доступиться к этой ветке, если идентификатор пользователя неизвестен? Или, может, есть способ узнать этот идентификатор каким-то образом? А может где-то есть в реестре зеркало этой ветки, к которой можно получить доступ более простым способом?&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
-    
     <item>
       <title>РИТ&#43;&#43;, секция «RootConf»</title>
       <link>https://blog.not-a-kernel-guy.com/2011/04/02/1015/</link>
       <pubDate>Sat, 02 Apr 2011 21:54:58 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/04/02/1015/</guid>
       <description>Меня пригласили выступить на конференции РИТ++ 2011, которая пройдет в Москве в конце апреля. Предварительная тема доклада: «Сетевая подсистема Windows глазами разработчика. Краткий, неполный и, в основном, неверный обзор. :-)» Я собираюсь рассказать о том, как работает ядерная часть сетевой подсистемы, как данные попадают в user mode и что с ними происходит по пути. Заходите на огонёк.</description>
     </item>
-    
     <item>
       <title>NDIS, !ndiskd и DML</title>
       <link>https://blog.not-a-kernel-guy.com/2011/02/06/972/</link>
       <pubDate>Sun, 06 Feb 2011 22:19:08 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/02/06/972/</guid>
-      <description>&lt;p&gt;На работе понадобилось написать драйвер для сетевой карты. Я этого раньше никогда не делал и вообще с &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms817945.aspx&#34;&gt;NDIS&lt;/a&gt; дела не имел. А тут такая возможность! Делюсь впечатлениями.&lt;/p&gt;
-&lt;p&gt;В общем и целом NDIS мне понравился. Интерфейсы довольно логичны, хотя и многочисленны. Взаимосвязь между разными компонентами в большинстве случаев после недолгой медитации становится довольно очевидной. Все структуры снабжены заголовком с сигнатурой, версией и размером, что, помимо заботы об обратной совместимости, означает меньше проблем с отладкой. При необходимости нужную структуру можно просто найти в памяти.&lt;/p&gt;</description>
+      <description>&lt;p&gt;На работе понадобилось написать драйвер для сетевой карты. Я этого раньше никогда не делал и вообще с &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms817945.aspx&#34;&gt;NDIS&lt;/a&gt; дела не имел. А тут такая возможность! Делюсь впечатлениями.&lt;/p&gt;&#xA;&lt;p&gt;В общем и целом NDIS мне понравился. Интерфейсы довольно логичны, хотя и многочисленны. Взаимосвязь между разными компонентами в большинстве случаев после недолгой медитации становится довольно очевидной. Все структуры снабжены заголовком с сигнатурой, версией и размером, что, помимо заботы об обратной совместимости, означает меньше проблем с отладкой. При необходимости нужную структуру можно просто найти в памяти.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Windows on ARM</title>
       <link>https://blog.not-a-kernel-guy.com/2011/01/05/959/</link>
       <pubDate>Wed, 05 Jan 2011 16:04:44 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2011/01/05/959/</guid>
       <description>Ну чё? Мы стоили, строили и, наконец, построили: Microsoft Announces Support of System on a Chip Architectures From Intel, AMD, and ARM for Next Version of Windows. Отличная новость, я считаю.</description>
     </item>
-    
     <item>
       <title>«Угон» потоков</title>
       <link>https://blog.not-a-kernel-guy.com/2010/05/04/812/</link>
       <pubDate>Tue, 04 May 2010 23:21:24 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/05/04/812/</guid>
       <description>&lt;p&gt;Бывает так, что требуется выполнить свой код в контексте произвольного потока. Либо в своем потоке, но в то время когда поток выполняет чужой код. Например, сборщик мусора может хотеть перехватить управление, даже если поток крутит бесконечный цикл. Один из методов перехвата – использование функций &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms679362%28VS.85%29.aspx&#34;&gt;GetThreadContext&lt;/a&gt; и &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms680632%28v=VS.85%29.aspx&#34;&gt;SetThreadContext&lt;/a&gt;. Эти функции позволяют манипулировать контекстом потока – т.е. состоянием регистров процессора, в том числе и указателем на текущую выполняемую инструкцию. В простейшем случае перехватчик приостанавливает поток, сохраняет текущий контекст, модифицирует EIP, чтобы тот показывал на нужный код, и снова запускает поток. При обратном переключении просто восстанавливается ранее сохраненный контекст и все. Метод простой, эффективный и … неработающий. :-)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>«Непобедимый»</title>
       <link>https://blog.not-a-kernel-guy.com/2010/04/05/804/</link>
       <pubDate>Mon, 05 Apr 2010 22:26:10 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/04/05/804/</guid>
-      <description>Ну что сказать. Сложные и совершенные Itanium&amp;rsquo;ы проиграли битву маленьким и примитивным x86:
-  Microsoft прекращает поддержку процессоров Intel Itanium в своих продуктах.
-  Microsoft ending support for Itanium
-  </description>
+      <description>Ну что сказать. Сложные и совершенные Itanium&amp;rsquo;ы проиграли битву маленьким и примитивным x86:&#xA;Microsoft прекращает поддержку процессоров Intel Itanium в своих продуктах.&#xA;Microsoft ending support for Itanium</description>
     </item>
-    
     <item>
       <title>Поверхностное сравнение архитектуры консоли в Windows и Unix</title>
       <link>https://blog.not-a-kernel-guy.com/2010/01/10/753/</link>
       <pubDate>Sun, 10 Jan 2010 23:34:40 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/01/10/753/</guid>
-      <description>&lt;p&gt;Довольно интересно сравнить, как устроена консоль в Windows и Unix. Вот упрощенная схема как это работает в Unix:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2010/01/unix_console.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2010/01/unix_console.png&#34; alt=&#34;Консоль в Unix&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Довольно интересно сравнить, как устроена консоль в Windows и Unix. Вот упрощенная схема как это работает в Unix:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2010/01/unix_console.png&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2010/01/unix_console.png&#34; alt=&#34;Консоль в Unix&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Почему нельзя прервать вызов ReadConsole?</title>
       <link>https://blog.not-a-kernel-guy.com/2009/12/29/726/</link>
       <pubDate>Tue, 29 Dec 2009 23:26:20 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/12/29/726/</guid>
-      <description>&lt;p&gt;Представьте, что где-то в коде есть такой кусок:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;BOOL Res &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
-    ReadConsole(
-        GetStdHandle(STD_INPUT_HANDLE),
-        Buffer,
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(Buffer),
-        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;ReadChars,
-        NULL);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Теперь, скажем, нам в какой-то момент нужно корректно прервать вызов &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms684958%28VS.85%29.aspx&#34;&gt;ReadConsole()&lt;/a&gt; (из другого потока). Как это сделать?&lt;/p&gt;</description>
+      <description>&lt;p&gt;Представьте, что где-то в коде есть такой кусок:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;BOOL Res &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ReadConsole(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        GetStdHandle(STD_INPUT_HANDLE),&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Buffer,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(Buffer),&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;ReadChars,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        NULL);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Теперь, скажем, нам в какой-то момент нужно корректно прервать вызов &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ms684958%28VS.85%29.aspx&#34;&gt;ReadConsole()&lt;/a&gt; (из другого потока). Как это сделать?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>AppCompat</title>
       <link>https://blog.not-a-kernel-guy.com/2009/12/08/703/</link>
       <pubDate>Tue, 08 Dec 2009 09:54:26 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/12/08/703/</guid>
       <description>&lt;p&gt;Словечко «AppCompat», появившееся в моем лексиконе за время работы над &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2009/06/09/571/&#34;&gt;Wow64&lt;/a&gt;, обозначает множество вещей. Чаще всего - геморрой. Иногда - великий геморрой. Происходит оно от «application compatibility» - т.е. совместимость OS с приложениями, она же - «обратная совместимость».&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Что такое MinWin и зачем он нужен</title>
       <link>https://blog.not-a-kernel-guy.com/2009/12/03/696/</link>
       <pubDate>Thu, 03 Dec 2009 23:04:14 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/12/03/696/</guid>
       <description>&lt;p&gt;Я смотрю, что каждое упоминание слова «&lt;a href=&#34;http://en.wikipedia.org/wiki/MinWin&#34;&gt;MinWin&lt;/a&gt;» (последним &lt;a href=&#34;http://www.betanews.com/article/Mark-Russinovich-on-MinWin-the-new-core-of-Windows/1259792850&#34;&gt;отличился Марк Руссинович на PDC 2009&lt;/a&gt;) вызывает много вопросов, главный из которых – «что это такое и зачем оно вообще надо?» Попытаюсь ответить с меру своего понимания. Замечу, что свечку над MinWin я не держал, так что считать мои слова истиной в последней инстанции не стоит.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Что нового в Windows 7: изменения в Wow64</title>
       <link>https://blog.not-a-kernel-guy.com/2009/06/09/571/</link>
       <pubDate>Tue, 09 Jun 2009 22:47:21 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/06/09/571/</guid>
-      <description>&lt;p&gt;Наконец-то обновилась документация в MSDN. Теперь можно спокойно рассказать, что изменилось в Wow64 с выходом Windows 7.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Был полностью переписан &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;механизм перенаправления реестра (Registry &lt;em&gt;Redirection&lt;/em&gt;)&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Была изменена структура реестра. Многие ключи, перенаправляемые ранее в Wow6432Node, теперь совместно используются 32-х и 64-х разрядными приложениями.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384235(VS.85).aspx&#34;&gt;Механизм синхронизации 32-х и 64-х ключей (Registry &lt;em&gt;Reflection&lt;/em&gt;)&lt;/a&gt; был с корнем выкорчеван и с позором изгнан из кода Windows. :-)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;В документацию&lt;/a&gt; было внесено множество дополнений и исправлений.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</description>
+      <description>&lt;p&gt;Наконец-то обновилась документация в MSDN. Теперь можно спокойно рассказать, что изменилось в Wow64 с выходом Windows 7.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Был полностью переписан &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;механизм перенаправления реестра (Registry &lt;em&gt;Redirection&lt;/em&gt;)&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Была изменена структура реестра. Многие ключи, перенаправляемые ранее в Wow6432Node, теперь совместно используются 32-х и 64-х разрядными приложениями.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384235(VS.85).aspx&#34;&gt;Механизм синхронизации 32-х и 64-х ключей (Registry &lt;em&gt;Reflection&lt;/em&gt;)&lt;/a&gt; был с корнем выкорчеван и с позором изгнан из кода Windows. :-)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa384232(VS.85).aspx&#34;&gt;В документацию&lt;/a&gt; было внесено множество дополнений и исправлений.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>Отладка на кофейной гуще</title>
       <link>https://blog.not-a-kernel-guy.com/2009/05/22/532/</link>
       <pubDate>Fri, 22 May 2009 23:51:35 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/05/22/532/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2009/05/mall_fortunecrystalball.gif&#34; alt=&#34;mall_fortunecrystalball&#34;&gt;При определённой сноровке, можно отлаживать код прямо из любимого почтового клиента. На днях пришло письмо с вопросом. Некоторое приложение, будучи установленным в каталог отличный от “Program Files”, при запуске вызывало появление окна &lt;a href=&#34;http://en.wikipedia.org/wiki/User_Account_Control&#34;&gt;UAC&lt;/a&gt; с требованием повысить привилегии. Приложение работало нормально, в случае, если оно было установлено в “Program Files”. Как такое может быть?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Холивар на марше – ошибка в Windows 7 RC x86</title>
       <link>https://blog.not-a-kernel-guy.com/2009/05/12/501/</link>
       <pubDate>Tue, 12 May 2009 22:48:42 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2009/05/12/501/</guid>
-      <description>В Windows 7 RC x86 нашли ошибку. Довольно неприятную, надо сказать. В связи с чем в комментариях к заметке на ZDnet разгорелся очередной холивар. Почитайте, зело интересно.
-Пойти, что ли, в NASA работать? Писать софт, который управляет вспомогательным клапаном резервной задвижки дублирующей системы озонирования воздуха в кабине Ориона. Зато 100% доказанная корректность кода и никаких программных ошибок. Только сбои в железе и космические лучи. Ляпота! И никто не капает на мозги, не кричит «О боже, там баг!</description>
+      <description>В Windows 7 RC x86 нашли ошибку. Довольно неприятную, надо сказать. В связи с чем в комментариях к заметке на ZDnet разгорелся очередной холивар. Почитайте, зело интересно.&#xA;Пойти, что ли, в NASA работать? Писать софт, который управляет вспомогательным клапаном резервной задвижки дублирующей системы озонирования воздуха в кабине Ориона. Зато 100% доказанная корректность кода и никаких программных ошибок. Только сбои в железе и космические лучи. Ляпота! И никто не капает на мозги, не кричит «О боже, там баг!</description>
     </item>
-    
     <item>
       <title>PDC: Отзывы о Windows 7</title>
       <link>https://blog.not-a-kernel-guy.com/2008/10/28/370/</link>
       <pubDate>Tue, 28 Oct 2008 22:07:20 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/10/28/370/</guid>
       <description>Почитываю отзывы о показанной на PDC Windows 7. Нахваливают. Боже, и эти же самые люди ругали Vista. Куда катится мир? :-)</description>
     </item>
-    
     <item>
       <title>А что, собственно, происходит, когда бросается исключение?</title>
       <link>https://blog.not-a-kernel-guy.com/2008/10/15/355/</link>
       <pubDate>Wed, 15 Oct 2008 19:46:41 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/10/15/355/</guid>
       <description>&lt;p&gt;Нет, ну в общих чертах понятно - процессор генерирует исключение, операционная система находит нужный обработчик и вызывает его. А что происходит, если посмотреть подробнее? В Windows происходит примерно следующее.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Малышку верните!</title>
       <link>https://blog.not-a-kernel-guy.com/2008/05/20/312/</link>
       <pubDate>Tue, 20 May 2008 22:43:16 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/05/20/312/</guid>
       <description>&lt;p&gt;На днях у одной из тестовых машин, &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2008/05/16/311/&#34;&gt;занимающих жизненное пространство у меня в офисе&lt;/a&gt;, обнаружились проблемы с перегревом. Вернее сказать не у неё, а у машин из той же самой партии компьютеров. Под это дело организовали установку дополнительных кулеров на все подобные машины и, что б два раза не вставать, - обновление BIOS. Я, надо сказать, никаких проблем с перегревом не замечал, но мало ли. Ставят - чего ж отказываться.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>За последние две-три недели узнал много нового...</title>
       <link>https://blog.not-a-kernel-guy.com/2008/03/27/300/</link>
       <pubDate>Thu, 27 Mar 2008 21:40:52 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/03/27/300/</guid>
       <description>&lt;p&gt;За последние две-три недели узнал много нового про архитектуру amd64. Во-первых, я наткнулся сначала на документ, а затем на аналогичный &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/7kcdt6fy(VS.80).aspx&#34;&gt;раздел в MSDN&lt;/a&gt;, где толково описаны не только &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/9b372w95%28VS.80%29.aspx&#34;&gt;соглашения о вызовах&lt;/a&gt; (этого добра везде навалом), но и дано детальное описание того, как должен выглядеть &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/x4ea06t0%28VS.80%29.aspx&#34;&gt;стек функции&lt;/a&gt;, как происходит &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/8ydc79k6(VS.80).aspx&#34;&gt;раскрутка стека&lt;/a&gt;, что такое и зачем нужны &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/tawsa7cb%28VS.80%29.aspx&#34;&gt;пролог и эпилог функции&lt;/a&gt;. Полезный документ, особенно если нужно разобраться как работает stack unwinder.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Интимный, можно сказать, вопрос</title>
       <link>https://blog.not-a-kernel-guy.com/2008/03/13/298/</link>
       <pubDate>Thu, 13 Mar 2008 22:27:16 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/03/13/298/</guid>
-      <description>Я вот тут периодически читаю всякие ругательные статьи про Vista, и про то, как из нее можно выпилить конфетку, если отключить с десяток служб и, самое главное, если отключить ненавистный UAC. Тот самый, который User Account Control:
-Скажите, это я один такой извращенец, что я его не выключаю или это только я один не под локальным администратором работаю?
-Примечание: на моей рабочей станции я вынужден работать под учетной записью администратора и там UAC все-таки выключен.</description>
+      <description>Я вот тут периодически читаю всякие ругательные статьи про Vista, и про то, как из нее можно выпилить конфетку, если отключить с десяток служб и, самое главное, если отключить ненавистный UAC. Тот самый, который User Account Control:&#xA;Скажите, это я один такой извращенец, что я его не выключаю или это только я один не под локальным администратором работаю?&#xA;Примечание: на моей рабочей станции я вынужден работать под учетной записью администратора и там UAC все-таки выключен.</description>
     </item>
-    
   </channel>
 </rss>

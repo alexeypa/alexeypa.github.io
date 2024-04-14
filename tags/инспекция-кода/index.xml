@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Инспекция кода on Алексей Пахунов</title>
+    <title>Инспекция Кода on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/%D0%B8%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%B4%D0%B0/</link>
-    <description>Recent content in Инспекция кода on Алексей Пахунов</description>
+    <description>Recent content in Инспекция Кода on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 27 Nov 2016 17:54:01 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B8%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%B4%D0%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Nov 2016 17:54:01 -0800</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B8%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%B4%D0%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Идеальный инструмент для просмотра кода</title>
       <link>https://blog.not-a-kernel-guy.com/2016/11/27/an-ideal-code-review-tool/</link>
       <pubDate>Sun, 27 Nov 2016 17:54:01 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2016/11/27/an-ideal-code-review-tool/</guid>
-      <description>&lt;p&gt;&lt;em&gt;&lt;!-- raw HTML omitted --&gt;Здравствуйте. Меня зовут Алексей и я каждое утро просматриваю
-чужой код&amp;hellip;&lt;!-- raw HTML omitted --&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;За последнее время пришел к выводу, что ни один из известных мне инструментов
-для просмотра кода (в смысле &amp;ldquo;code review&amp;rdquo;) решительно не годится для выполнения
-своей главной функции.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;em&gt;&lt;!-- raw HTML omitted --&gt;Здравствуйте. Меня зовут Алексей и я каждое утро просматриваю&#xA;чужой код&amp;hellip;&lt;!-- raw HTML omitted --&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;За последнее время пришел к выводу, что ни один из известных мне инструментов&#xA;для просмотра кода (в смысле &amp;ldquo;code review&amp;rdquo;) решительно не годится для выполнения&#xA;своей главной функции.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cmd.exe on Алексей Пахунов</title>
+    <title>Cmd.exe on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/cmd.exe/</link>
-    <description>Recent content in cmd.exe on Алексей Пахунов</description>
+    <description>Recent content in Cmd.exe on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 15 Jun 2008 17:26:36 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/cmd.exe/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jun 2008 17:26:36 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/cmd.exe/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ценителям логичности и простоты cmd.exe посвящается…</title>
       <link>https://blog.not-a-kernel-guy.com/2008/06/15/313/</link>
       <pubDate>Sun, 15 Jun 2008 17:26:36 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/06/15/313/</guid>
       <description>Хорошая статья: Особенности реализации командного процессора cmd.exe операционных систем WinNT. Напрочь отбивает всякое желание связываться с написанием скриптов для cmd.exe. :-)</description>
     </item>
-    
   </channel>
 </rss>

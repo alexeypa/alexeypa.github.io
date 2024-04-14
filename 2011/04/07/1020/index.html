@@ -26,20 +26,10 @@
 
   
   
-  <link href="http://feeds.feedburner.com/not-a-kernel-guy" rel="alternate" type="application/rss+xml" title="Алексей Пахунов" />
+  
 
   <meta name="description" content="Блог про космос, программирование и всякое разное.">
   <meta name="keywords" content="">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1329392-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   
 </head>
 <body>
@@ -58,7 +48,7 @@
       
       <li class="sidebar-nav-item"><a href="/about">Об авторе</a></li>
       
-      <li class="sidebar-nav-item"><a href="http://feeds.feedburner.com/not-a-kernel-guy">Подписаться на RSS канал</a></li>
+      <li class="sidebar-nav-item"><a href="/index.xml">Подписаться на RSS канал</a></li>
       
       <li class="sidebar-nav-item"><a href="https://follow.it/fucjll?action=followPub">Почтовая рассылка</a></li>
       
@@ -91,13 +81,13 @@
       
       
       
-      <a href="http://feeds.feedburner.com/not-a-kernel-guy" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
-      </li>
+      
+    </li>
     </ul>
 
     
 
-    <p>Copyright &copy; 2006 - 2023 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -113,8 +103,8 @@
     <a class="label" href="/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0">Отладка</a>
     </span>
     <p>Сижу я сегодня на работе, никого не трогаю, отладчиком отладчик отлаживаю. А что, отладчик - тоже <!-- raw HTML omitted -->человек<!-- raw HTML omitted --> программа. Тем более что немногим ранее я его немножко совсем поломал, пытаясь добавить поддержку некоей конфигурации, которая текущей реинкарнацией отладчика не поддерживается. Ну вот, запускаю я его примерно вот таким образом:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-no-highlight" data-lang="no-highlight">windbg.exe kd.exe -k com:port=com1,baud=115200
-</code></pre></div><p>…и замечаю, что что-то не так. А именно - опять сломался наш корпоративный прокси. А я как раз хотел посмотреть в… ну скажем MSDN. Попробовал и так и сяк. Не работает, вылетает по таймауту. Ну хорошо, но тут начитают происходить еще более мистические вещи. Outlook вдруг перестает реагировать мышь и клавиатуру; IE вообще не запускается – процесс стартует, но окно не показывается. Несколько подозрительно для проблем с прокси.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-no-highlight" data-lang="no-highlight"><span style="display:flex;"><span>windbg.exe kd.exe -k com:port=com1,baud=115200
+</span></span></code></pre></div><p>…и замечаю, что что-то не так. А именно - опять сломался наш корпоративный прокси. А я как раз хотел посмотреть в… ну скажем MSDN. Попробовал и так и сяк. Не работает, вылетает по таймауту. Ну хорошо, но тут начитают происходить еще более мистические вещи. Outlook вдруг перестает реагировать мышь и клавиатуру; IE вообще не запускается – процесс стартует, но окно не показывается. Несколько подозрительно для проблем с прокси.</p>
 <p>Иду на другую машину. Открываю тот же сайт. Не работает – таймаут. Значит, все-таки, прокси шалит. Звоню в службу поддержки. Описываю ситуацию. Хорошо, говорит. Давай я на твою машину зайду. Запускаю Office Communicator, чтобы через него техник мог зайти через Windows Remote Assistance. Коммуникатор стартует и надежно повисает зеленой иконкой в трее, не реагирующей на нажатия клавиш. Очень подозрительно.</p>
 <p>Ну ладно, пробую отправить письмо с ключом для Remote Assistance. Окно письма с приложенным фалом появляется, забиваю поле «To», нажимаю «Send». А ну да, Outlook-то еще висит…</p>
 <p>Мысль, что «что-то здесь не так» продолжает зудеть. Отладчик, кстати, тоже повис. Хм. Убиваю все процессы: отладчик, IE, Outlook; снова запускаю IE – работает. Сайты открываются как положено. Запускаю отладчик – бум, IE повисает. Повторяю пару раз для надежности. Все верно, стоит запустить отладчик HTTP трафик отключается.</p>

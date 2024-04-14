@@ -1,71 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Високосные секунды on Алексей Пахунов</title>
+    <title>Високосные Секунды on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/%D0%B2%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D1%81%D0%BD%D1%8B%D0%B5-%D1%81%D0%B5%D0%BA%D1%83%D0%BD%D0%B4%D1%8B/</link>
-    <description>Recent content in Високосные секунды on Алексей Пахунов</description>
+    <description>Recent content in Високосные Секунды on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 01 Jan 2017 10:55:22 -0800</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B2%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D1%81%D0%BD%D1%8B%D0%B5-%D1%81%D0%B5%D0%BA%D1%83%D0%BD%D0%B4%D1%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2017 10:55:22 -0800</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/%D0%B2%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D1%81%D0%BD%D1%8B%D0%B5-%D1%81%D0%B5%D0%BA%D1%83%D0%BD%D0%B4%D1%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Самый длинный год</title>
       <link>https://blog.not-a-kernel-guy.com/2017/01/01/longest-year/</link>
       <pubDate>Sun, 01 Jan 2017 10:55:22 -0800</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2017/01/01/longest-year/</guid>
-      <description>&lt;p&gt;По случаю наступления нового года случился вот такой вопрос: &amp;ldquo;Какой год был
-самый длинный?&amp;rdquo; Даже если не залезать далеко в историю (наверняка при смене
-календарей происходило что-то интересное) ответить на этот вопрос сходу не
-получается. Во-первых, поскольку орбитальный период Земли не укладывается в
-целое количество суток, високосный год длиннее на один день. Во-вторых,
-чтобы компенсировать неравномерное вращение Земли, в UTC добавляются &lt;a href=&#34;https://en.wikipedia.org/wiki/Leap_second&#34;&gt;високосные
-секунды&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Если сверится с &lt;a href=&#34;http://maia.usno.navy.mil/ser7/tai-utc.dat&#34;&gt;текущей таблицей високосных секунд&lt;/a&gt;,
-то единственный високосный год в котором ввели &lt;em&gt;две&lt;/em&gt; високосные секунды (в июне
-и декабре) - 1972 (366 дней и две секунды). Соответствующие строки из таблицы
-указывают на 1 июля 1972 и 1 января 1973, так как таблица задает &lt;em&gt;новое&lt;/em&gt;
-смещение между атомным временем (TAI) и UTC:&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Однако и это еще не все. В период с начала 1961 года по конец 1971 года
-&lt;a href=&#34;https://en.wikipedia.org/wiki/International_Atomic_Time#History&#34;&gt;вводились дробные високосные секунды&lt;/a&gt;.
-Первые тринадцать строк из таблицы по ссылке выше описывают именно этот период:&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Для начала разберемся с обозначениями. JD обозначает &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%AE%D0%BB%D0%B8%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B0%D1%82%D0%B0&#34;&gt;юлианскую дату&lt;/a&gt;.
-Целая часть - это количество дней прошедших с 24 ноября 4714 года до н.э.
-Дробная часть - указывает на время прошедшее с последней смены дня. Юлианский
-день сменяется в полдень. Возьмем к примеру JD 2437512.5. JD 2437512
-соответствует полдню 31 августа 1961 года. Добавив полдня (0.5) получаем
-00:00:00 1 августа 1961 года.&lt;/p&gt;
-&lt;p&gt;MJD - это &lt;a href=&#34;https://en.wikipedia.org/wiki/Julian_day#Variants&#34;&gt;Modified Julian Date&lt;/a&gt;.
-Фактически, просто укороченная версия JD. Вычисляется как:&lt;/p&gt;
-&lt;p&gt;MJD = JD - 2400000.5&lt;/p&gt;
-&lt;p&gt;Каждая строка в таблице выше описывает переход из UTC в TAI как линейную функцию
-от MJD. Зная это можно посчитать приращение к продолжительности года по годам
-(в секундах):&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1961: 0.42304&lt;/li&gt;
-&lt;li&gt;1962: 0.40997&lt;/li&gt;
-&lt;li&gt;1963: 0.50997&lt;/li&gt;
-&lt;li&gt;1964: 0.77434&lt;/li&gt;
-&lt;li&gt;1965: 0.77304&lt;/li&gt;
-&lt;li&gt;1966: 0.94608&lt;/li&gt;
-&lt;li&gt;1967: 0.94608&lt;/li&gt;
-&lt;li&gt;1968: 0.84867&lt;/li&gt;
-&lt;li&gt;1969: 0.94608&lt;/li&gt;
-&lt;li&gt;1970: 0.94608&lt;/li&gt;
-&lt;li&gt;1971: 1.05384&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Получается, что 1972 год был самым длинным.&lt;/p&gt;
-&lt;p&gt;Еще один интересный момент - таблица високосных секунд начитается со смещения
-1.3728180 в 1961 году. Это, насколько я понимаю, объясняется тем, что шкалы
-атомного времени использовавшиеся &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B5%D0%BD%D0%BD%D0%BE-%D0%BC%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D1%81%D0%B5%D1%80%D0%B2%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D1%8F_%D0%A1%D0%A8%D0%90&#34;&gt;Военно-морской обсерваторией США&lt;/a&gt;
-и &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82_%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BE%D0%B2_%D0%B8_%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9&#34;&gt;Национальным институтом стандартов и технологий&lt;/a&gt; использовали JD 2436204.5 -
-00:00:00 1 января 1958 года в качестве точки отсчета. Этот момент совпадал с
-показаниями &lt;a href=&#34;https://en.wikipedia.org/wiki/Universal_Time#Versions&#34;&gt;UT2&lt;/a&gt;.
-Иными словами UTC и TAI в этот момент совпадали.&lt;/p&gt;</description>
+      <description>&lt;p&gt;По случаю наступления нового года случился вот такой вопрос: &amp;ldquo;Какой год был&#xA;самый длинный?&amp;rdquo; Даже если не залезать далеко в историю (наверняка при смене&#xA;календарей происходило что-то интересное) ответить на этот вопрос сходу не&#xA;получается. Во-первых, поскольку орбитальный период Земли не укладывается в&#xA;целое количество суток, високосный год длиннее на один день. Во-вторых,&#xA;чтобы компенсировать неравномерное вращение Земли, в UTC добавляются &lt;a href=&#34;https://en.wikipedia.org/wiki/Leap_second&#34;&gt;високосные&#xA;секунды&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Если сверится с &lt;a href=&#34;http://maia.usno.navy.mil/ser7/tai-utc.dat&#34;&gt;текущей таблицей високосных секунд&lt;/a&gt;,&#xA;то единственный високосный год в котором ввели &lt;em&gt;две&lt;/em&gt; високосные секунды (в июне&#xA;и декабре) - 1972 (366 дней и две секунды). Соответствующие строки из таблицы&#xA;указывают на 1 июля 1972 и 1 января 1973, так как таблица задает &lt;em&gt;новое&lt;/em&gt;&#xA;смещение между атомным временем (TAI) и UTC:&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Однако и это еще не все. В период с начала 1961 года по конец 1971 года&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/International_Atomic_Time#History&#34;&gt;вводились дробные високосные секунды&lt;/a&gt;.&#xA;Первые тринадцать строк из таблицы по ссылке выше описывают именно этот период:&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Для начала разберемся с обозначениями. JD обозначает &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%AE%D0%BB%D0%B8%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B0%D1%82%D0%B0&#34;&gt;юлианскую дату&lt;/a&gt;.&#xA;Целая часть - это количество дней прошедших с 24 ноября 4714 года до н.э.&#xA;Дробная часть - указывает на время прошедшее с последней смены дня. Юлианский&#xA;день сменяется в полдень. Возьмем к примеру JD 2437512.5. JD 2437512&#xA;соответствует полдню 31 августа 1961 года. Добавив полдня (0.5) получаем&#xA;00:00:00 1 августа 1961 года.&lt;/p&gt;&#xA;&lt;p&gt;MJD - это &lt;a href=&#34;https://en.wikipedia.org/wiki/Julian_day#Variants&#34;&gt;Modified Julian Date&lt;/a&gt;.&#xA;Фактически, просто укороченная версия JD. Вычисляется как:&lt;/p&gt;&#xA;&lt;p&gt;MJD = JD - 2400000.5&lt;/p&gt;&#xA;&lt;p&gt;Каждая строка в таблице выше описывает переход из UTC в TAI как линейную функцию&#xA;от MJD. Зная это можно посчитать приращение к продолжительности года по годам&#xA;(в секундах):&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;1961: 0.42304&lt;/li&gt;&#xA;&lt;li&gt;1962: 0.40997&lt;/li&gt;&#xA;&lt;li&gt;1963: 0.50997&lt;/li&gt;&#xA;&lt;li&gt;1964: 0.77434&lt;/li&gt;&#xA;&lt;li&gt;1965: 0.77304&lt;/li&gt;&#xA;&lt;li&gt;1966: 0.94608&lt;/li&gt;&#xA;&lt;li&gt;1967: 0.94608&lt;/li&gt;&#xA;&lt;li&gt;1968: 0.84867&lt;/li&gt;&#xA;&lt;li&gt;1969: 0.94608&lt;/li&gt;&#xA;&lt;li&gt;1970: 0.94608&lt;/li&gt;&#xA;&lt;li&gt;1971: 1.05384&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Получается, что 1972 год был самым длинным.&lt;/p&gt;&#xA;&lt;p&gt;Еще один интересный момент - таблица високосных секунд начитается со смещения&#xA;1.3728180 в 1961 году. Это, насколько я понимаю, объясняется тем, что шкалы&#xA;атомного времени использовавшиеся &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B5%D0%BD%D0%BD%D0%BE-%D0%BC%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D1%81%D0%B5%D1%80%D0%B2%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D1%8F_%D0%A1%D0%A8%D0%90&#34;&gt;Военно-морской обсерваторией США&lt;/a&gt;&#xA;и &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82_%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BE%D0%B2_%D0%B8_%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9&#34;&gt;Национальным институтом стандартов и технологий&lt;/a&gt; использовали JD 2436204.5 -&#xA;00:00:00 1 января 1958 года в качестве точки отсчета. Этот момент совпадал с&#xA;показаниями &lt;a href=&#34;https://en.wikipedia.org/wiki/Universal_Time#Versions&#34;&gt;UT2&lt;/a&gt;.&#xA;Иными словами UTC и TAI в этот момент совпадали.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

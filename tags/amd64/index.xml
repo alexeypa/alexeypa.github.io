@@ -1,38 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>amd64 on Алексей Пахунов</title>
+    <title>Amd64 on Алексей Пахунов</title>
     <link>https://blog.not-a-kernel-guy.com/tags/amd64/</link>
-    <description>Recent content in amd64 on Алексей Пахунов</description>
+    <description>Recent content in Amd64 on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 25 Mar 2010 22:50:47 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/amd64/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Mar 2010 22:50:47 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/amd64/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Сегментная адресация в x64</title>
       <link>https://blog.not-a-kernel-guy.com/2010/03/25/799/</link>
       <pubDate>Thu, 25 Mar 2010 22:50:47 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/03/25/799/</guid>
       <description>&lt;p&gt;В x64 сегментная адресация работает совсем не так, как в привычном x86. Прикладные программисты, живущие в &lt;a href=&#34;http://en.wikipedia.org/wiki/Flat_memory_model&#34;&gt;плоском мире&lt;/a&gt;, могли бы этого не заметить, но, к счастью или несчастью, «уши» этих отличий торчат и в user mode.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Как работает «раскрутчик» стека в x64</title>
       <link>https://blog.not-a-kernel-guy.com/2008/10/27/364/</link>
       <pubDate>Mon, 27 Oct 2008 22:39:31 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/10/27/364/</guid>
       <description>&lt;p&gt;В комментариях к предыдущем посте про исключения верно заметили, что exception chain в TEB используется только в x86 коде. И x64, и ia64 exception chain не используют вообще. Как же, в таком случае, выполняется «раскрутка» стека при обработке исключения?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>За последние две-три недели узнал много нового...</title>
       <link>https://blog.not-a-kernel-guy.com/2008/03/27/300/</link>
       <pubDate>Thu, 27 Mar 2008 21:40:52 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2008/03/27/300/</guid>
       <description>&lt;p&gt;За последние две-три недели узнал много нового про архитектуру amd64. Во-первых, я наткнулся сначала на документ, а затем на аналогичный &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/7kcdt6fy(VS.80).aspx&#34;&gt;раздел в MSDN&lt;/a&gt;, где толково описаны не только &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/9b372w95%28VS.80%29.aspx&#34;&gt;соглашения о вызовах&lt;/a&gt; (этого добра везде навалом), но и дано детальное описание того, как должен выглядеть &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/x4ea06t0%28VS.80%29.aspx&#34;&gt;стек функции&lt;/a&gt;, как происходит &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/8ydc79k6(VS.80).aspx&#34;&gt;раскрутка стека&lt;/a&gt;, что такое и зачем нужны &lt;a href=&#34;http://msdn2.microsoft.com/en-us/library/tawsa7cb%28VS.80%29.aspx&#34;&gt;пролог и эпилог функции&lt;/a&gt;. Полезный документ, особенно если нужно разобраться как работает stack unwinder.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

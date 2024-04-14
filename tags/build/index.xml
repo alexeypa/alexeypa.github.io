@@ -6,29 +6,21 @@
     <description>Recent content in BUILD on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 02 Apr 2014 21:48:25 -0700</lastBuildDate><atom:link href="https://blog.not-a-kernel-guy.com/tags/build/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Apr 2014 21:48:25 -0700</lastBuildDate>
+    <atom:link href="https://blog.not-a-kernel-guy.com/tags/build/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Возврат меню Пуск</title>
       <link>https://blog.not-a-kernel-guy.com/2014/04/02/1592/</link>
       <pubDate>Wed, 02 Apr 2014 21:48:25 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2014/04/02/1592/</guid>
-      <description>&lt;p&gt;Что за день сегодня! Сначала &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/02/1584/&#34;&gt;NASA учудило&lt;/a&gt;, теперь вот &lt;a href=&#34;http://www.theverge.com/2014/4/2/5574830/windows-9-start-menu-new-desktop-experience&#34;&gt;Microsoft показала сборку Windows 8, в которой есть меню Пуск&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;At its Build conference today, Microsoft announced a new Start Menu that looks like a hybrid of the best of Windows 7 and Windows 8. It&amp;rsquo;s around the same size as the Windows 7 menu, but also features miniature Live Tiles along one side.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0-300x199.jpg&#34; alt=&#34;Windows 8 and Start Menu&#34;&gt;&lt;/a&gt; Windows 8 and Start Menu&lt;/p&gt;</description>
+      <description>&lt;p&gt;Что за день сегодня! Сначала &lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/02/1584/&#34;&gt;NASA учудило&lt;/a&gt;, теперь вот &lt;a href=&#34;http://www.theverge.com/2014/4/2/5574830/windows-9-start-menu-new-desktop-experience&#34;&gt;Microsoft показала сборку Windows 8, в которой есть меню Пуск&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;At its Build conference today, Microsoft announced a new Start Menu that looks like a hybrid of the best of Windows 7 and Windows 8. It&amp;rsquo;s around the same size as the Windows 7 menu, but also features miniature Live Tiles along one side.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2014/04/2014-04-01_23-03-12.0_standard_800.0-300x199.jpg&#34; alt=&#34;Windows 8 and Start Menu&#34;&gt;&lt;/a&gt; Windows 8 and Start Menu&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Обход некоторых ограничений утилиты BUILD</title>
       <link>https://blog.not-a-kernel-guy.com/2010/10/28/906/</link>
       <pubDate>Thu, 28 Oct 2010 01:37:35 -0700</pubDate>
-      
       <guid>https://blog.not-a-kernel-guy.com/2010/10/28/906/</guid>
-      <description>&lt;p&gt;Система сборки в &lt;a href=&#34;http://www.microsoft.com/whdc/devtools/WDK/default.mspx&#34;&gt;Windows Driver Kit&lt;/a&gt; базируется на &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ff542351(VS.85).aspx&#34;&gt;утилите BUILD&lt;/a&gt;. Эта утилита сканирует структуру проектов, отслеживает зависимости (к сожалению далеко не все) и подготавливает окружение для запуска &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/dd9y37ha.aspx&#34;&gt;NMAKE&lt;/a&gt;, который, собственно, и выполняет всю черновую работу по сборке. К сожалению, BUILD создавался и развивался по принципу «так получилось», исключительно эволюционным путем – как средство сборки исходников Windows. Так что эта утилита некоторыми неудобными ограничениями.&lt;/p&gt;
-&lt;p&gt;Одно из них – полное непонимание переменных и директив препроцессора.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Система сборки в &lt;a href=&#34;http://www.microsoft.com/whdc/devtools/WDK/default.mspx&#34;&gt;Windows Driver Kit&lt;/a&gt; базируется на &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/ff542351(VS.85).aspx&#34;&gt;утилите BUILD&lt;/a&gt;. Эта утилита сканирует структуру проектов, отслеживает зависимости (к сожалению далеко не все) и подготавливает окружение для запуска &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/dd9y37ha.aspx&#34;&gt;NMAKE&lt;/a&gt;, который, собственно, и выполняет всю черновую работу по сборке. К сожалению, BUILD создавался и развивался по принципу «так получилось», исключительно эволюционным путем – как средство сборки исходников Windows. Так что эта утилита некоторыми неудобными ограничениями.&lt;/p&gt;&#xA;&lt;p&gt;Одно из них – полное непонимание переменных и директив препроцессора.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
