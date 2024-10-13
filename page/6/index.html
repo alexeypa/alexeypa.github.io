@@ -121,6 +121,27 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2018/07/30/sky-triage/">Что это за хрень в небе была?</a>
+      </h1>
+      <span class="post-date">Jul 30, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/07/30/sky-triage/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81">Космос</a>
+      </span>
+      
+      <p>О! Отличная, годная блок-схема, дающая ответ на вопрос &ldquo;Что это за хрень в небе
+была?&rdquo; в девяноста случаях из ста (по клику открывается более крупный вариант):</p>
+<p><a href="/2018/07/what_was_that_thing_in_the_sky.png"><img src="/2018/07/what_was_that_thing_in_the_sky_small.png" alt=""></a></p>
+<p>Картинка - перевод <a href="https://www.reddit.com/r/Astronomy/comments/92zks3/what_was_that_thing_in_the_sky_official_thread/">оригинала</a>.</p>
+<p>От себя могу добавить, что ветку с планетой можно уточнить. В трех четвертях
+случаев там будет Венера, а еще в 24% случаев - Юпитер.</p>
+<p>Пассаж про сверхновую тоже хорош. Бетельгейзе, мы ждем. :-)</p>
+      <a href="https://blog.not-a-kernel-guy.com/2018/07/30/sky-triage/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2018/07/29/good-bad-ugly/">Хороший, плохой, злой</a>
       </h1>
       <span class="post-date">Jul 29, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/07/29/good-bad-ugly/#disqus_thread">Comments</a>
@@ -391,42 +412,6 @@ University Earth Institute</a>.</p>
 который будет заниматься системой управления ракеты-носителя. Позиция открыта в
 Днепре. Есть желающие дерзнуть? :-)</p>
       <a href="https://blog.not-a-kernel-guy.com/2018/05/22/skyrora/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2018/05/15/subgit/">SubGit</a>
-      </h1>
-      <span class="post-date">May 15, 2018 &middot; <a href="https://blog.not-a-kernel-guy.com/2018/05/15/subgit/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/svn">SVN</a><a class="label" href="/tags/git">Git</a>
-      </span>
-      
-      <p>Получил непрошенное подтверждение <a href="/2018/04/22/svn-git/">тезиса про вред реализации веток через
-операцию копирования в Subversion</a>. Вторую неделю бодаюсь с импортом SVN в
-Git с помощью <a href="https://subgit.com/">SubGit</a>. SubGit довольно неплохо с этим справляется. Особенно
-хорошо то, что он может постоянно синхронизировать SVN и Git, делая переход с
-одного на другой плавным и безболезненным. Он даже со всякими
-противоестественными манипуляциями со структурой веток в SVN репозитории
-справляется.</p>
-<p>Но и на старуху найдется свой Раскольников. При создании одного из зеркал был
-указан не корневой адрес SVN, а https://foobar/svn/xyz. Зеркало прекрасно
-жило своей зеркальной жизню, пока не было обнаружено, что часть истории
-отсутствует. Для её восстановления родился план - заново импортировать все из
-корня (https://foobar/svn), а затем, уже на стороне Git, - сшить старую и новую
-историю вместе.</p>
-<p>Отличный был план. И, что самое главное, и SubGit и Git все эти фокусы позволяют
-и поддерживают. За одним маленьким исключением&hellip; Как выяснилось, менять адрес
-с https://foobar/svn/xyz на https://foobar/svn категорически не получается.
-Вернее получается, но результат выходит как-то не очень. SubGit пытается
-импортировать историю (и находит все правильные коммиты, что характерно), но
-затем пытается заново засунуть их обратно в SVN. SVN кричит &ldquo;что вы в меня это
-пихаете?&rdquo; SubGit ужасно смущается, бормочет многоэтажные стек-трейсы в лог и
-заодно сносит <code>master</code> к праотцам.</p>
-<p>Эх&hellip; Буду теперь с <code>git replace</code> возится&hellip;</p>
-      <a href="https://blog.not-a-kernel-guy.com/2018/05/15/subgit/">Read On &rarr;</a>
       
     </div>
     

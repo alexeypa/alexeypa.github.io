@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 21 Apr 2023 07:57:59 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2024 08:16:03 -0700</lastBuildDate>
     <atom:link href="https://blog.not-a-kernel-guy.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Пятый полет Starship</title>
+      <link>https://blog.not-a-kernel-guy.com/2024/10/13/booster12-catch/</link>
+      <pubDate>Sun, 13 Oct 2024 08:16:03 -0700</pubDate>
+      <guid>https://blog.not-a-kernel-guy.com/2024/10/13/booster12-catch/</guid>
+      <description>&lt;p&gt;Просто нет слов. &lt;a href=&#34;https://www.spacex.com/launches/mission/?missionId=starship-flight-5&#34;&gt;Пятый испытательный полет Starship&lt;/a&gt; прошел как&#xA;по маслу. Запустили с первой попытки. Все двигатели отработали все включения как&#xA;надо. Starship сел в запланированном месте в Индийском океане, прямо рядом с&#xA;буйком, - в результате у нас теперь есть видео посадки со стороны. Ну и самое&#xA;интересное - поймали бустер с первой попытки, как будто он всегда так и летал:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2024/10/booster12_catch.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Starship, конечно, подгорел при входе в атмосферу, но вроде как меньше чем в&#xA;прошлый раз. Довести посадку с орбитальной скорости до обыденности потребует&#xA;не один десяток полетов.&lt;/p&gt;&#xA;&lt;p&gt;Еще было бы здорово научиться разгонять ловцов креветок из зоны запуска хотя-бы&#xA;за полчаса до T-0. А то как то стемно каждый раз гадать до последнего успеет ли&#xA;они или придется запуск переносить.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Впечатления от запуска</title>
       <link>https://blog.not-a-kernel-guy.com/2023/04/21/rud/</link>
@@ -175,13 +182,6 @@
       <pubDate>Tue, 18 Feb 2020 22:02:34 -0800</pubDate>
       <guid>https://blog.not-a-kernel-guy.com/2020/02/18/moon-mars-clouds/</guid>
       <description>&lt;p&gt;Композитная фотография соединения Луны и Марса (сделанная вскоре после окончания&#xA;покрытия Марса Луной) за авторством &lt;a href=&#34;https://www.instagram.com/cosmic_background/&#34;&gt;Эндрю Маккарти&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2020/02/3tn9874prqh41.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2020/02/3tn9874prqh41_small.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Последнее предложение</title>
-      <link>https://blog.not-a-kernel-guy.com/2020/01/27/final-offer/</link>
-      <pubDate>Mon, 27 Jan 2020 23:12:45 -0800</pubDate>
-      <guid>https://blog.not-a-kernel-guy.com/2020/01/27/final-offer/</guid>
-      <description>&lt;p&gt;Наткнулся на канал короткометражных фантастических фильмов &lt;a href=&#34;https://www.youtube.com/channel/UC7sDT8jZ76VLV1u__krUutA&#34;&gt;DUST&lt;/a&gt;. Понравилось.&#xA;Рекомендую.&lt;/p&gt;&#xA;&lt;p&gt;Например, хороший фильм про бюрократию и про то, почему важно всегда читать&#xA;контракты перед тем, как их подписывать:&lt;/p&gt;&#xA;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;  &lt;iframe src=&#34;https://www.youtube.com/embed/rv8kOzRZK8g&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

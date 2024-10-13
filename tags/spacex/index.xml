@@ -6,8 +6,15 @@
     <description>Recent content in SpaceX on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 21 Apr 2023 07:57:59 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2024 08:16:03 -0700</lastBuildDate>
     <atom:link href="https://blog.not-a-kernel-guy.com/tags/spacex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Пятый полет Starship</title>
+      <link>https://blog.not-a-kernel-guy.com/2024/10/13/booster12-catch/</link>
+      <pubDate>Sun, 13 Oct 2024 08:16:03 -0700</pubDate>
+      <guid>https://blog.not-a-kernel-guy.com/2024/10/13/booster12-catch/</guid>
+      <description>&lt;p&gt;Просто нет слов. &lt;a href=&#34;https://www.spacex.com/launches/mission/?missionId=starship-flight-5&#34;&gt;Пятый испытательный полет Starship&lt;/a&gt; прошел как&#xA;по маслу. Запустили с первой попытки. Все двигатели отработали все включения как&#xA;надо. Starship сел в запланированном месте в Индийском океане, прямо рядом с&#xA;буйком, - в результате у нас теперь есть видео посадки со стороны. Ну и самое&#xA;интересное - поймали бустер с первой попытки, как будто он всегда так и летал:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2024/10/booster12_catch.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Starship, конечно, подгорел при входе в атмосферу, но вроде как меньше чем в&#xA;прошлый раз. Довести посадку с орбитальной скорости до обыденности потребует&#xA;не один десяток полетов.&lt;/p&gt;&#xA;&lt;p&gt;Еще было бы здорово научиться разгонять ловцов креветок из зоны запуска хотя-бы&#xA;за полчаса до T-0. А то как то стемно каждый раз гадать до последнего успеет ли&#xA;они или придется запуск переносить.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Впечатления от запуска</title>
       <link>https://blog.not-a-kernel-guy.com/2023/04/21/rud/</link>
@@ -175,13 +182,6 @@
       <pubDate>Tue, 06 Feb 2018 10:17:26 -0800</pubDate>
       <guid>https://blog.not-a-kernel-guy.com/2018/02/06/two-hours/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.reddit.com/r/spacex/comments/7vg63x/rspacex_falcon_heavy_test_flight_official_launch/&#34;&gt;Табличка с обновлениями времени запуска&lt;/a&gt;&#xA;выглядит презабавно. Запуск fh_demo состоится через два часа&amp;hellip; и так на&#xA;протяжении нескольких часов:&lt;/p&gt;&#xA;&lt;table&gt;&#xA;&lt;thead&gt;&#xA;&lt;tr&gt;&#xA;&lt;th&gt;Time&lt;/th&gt;&#xA;&lt;th&gt;Update&lt;/th&gt;&#xA;&lt;/tr&gt;&#xA;&lt;/thead&gt;&#xA;&lt;tbody&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;T-2:02&lt;/td&gt;&#xA;&lt;td&gt;more &amp;lsquo;clock management&amp;rsquo;; 20:15 UTC&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;T-2:02&lt;/td&gt;&#xA;&lt;td&gt;new launchtime: 20:10 UTC due to &amp;lsquo;clock management&amp;rsquo;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;T-2:10&lt;/td&gt;&#xA;&lt;td&gt;Aaaaaaand r/SpaceX has liftoff! at 17:55 UTC r/SpaceX has reached 200,000 subscribers. Hello and welcome to all newcomers!&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;T-2:14&lt;/td&gt;&#xA;&lt;td&gt;wayward wind getting in our way &amp;hellip; new launch time 20:05 UTC&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;T-2:24&lt;/td&gt;&#xA;&lt;td&gt;Another push back to 19:50 UTC due to upper level winds&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;T-2:23&lt;/td&gt;&#xA;&lt;td&gt;Well&amp;hellip; This this is now a countUP. New reset for 19:20 UTC due to upper level wind shear&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;T-2:16&lt;/td&gt;&#xA;&lt;td&gt;Launch profile including fairing recovery&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;T-RESET&lt;/td&gt;&#xA;&lt;td&gt;It looks like the launch timer has reset to 19:00 UTC&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;T-2:09&lt;/td&gt;&#xA;&lt;td&gt;All systems remain go for today’s test flight of Falcon Heavy.&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
-    </item>
-    <item>
-      <title>Чайник Рассела</title>
-      <link>https://blog.not-a-kernel-guy.com/2018/02/05/kettle/</link>
-      <pubDate>Mon, 05 Feb 2018 23:14:31 -0800</pubDate>
-      <guid>https://blog.not-a-kernel-guy.com/2018/02/05/kettle/</guid>
-      <description>&lt;p&gt;Завтра в 15:30 UTC запускаем Heavy. Последние баги закрыты, тесты прогнаны, софт&#xA;выпущен в продакшн. Если вовремя трансляции будут показывать Mission Control - я&#xA;сижу в первом ряду в правом нижнем углу. :-)&lt;/p&gt;&#xA;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;  &lt;iframe src=&#34;https://www.youtube.com/embed/wbSwFU6tY1c&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;P.S. Вот интересно, положил Элон в багажник &lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D0%B9%D0%BD%D0%B8%D0%BA_%D0%A0%D0%B0%D1%81%D1%81%D0%B5%D0%BB%D0%B0&#34;&gt;чайник&lt;/a&gt;&#xA;, или нет?&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2018/02/fh_demo_tesla.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2018/02/fh_demo_tesla_small.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
