@@ -5,10 +5,69 @@
     <description>Recent content on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 13 Oct 2024 08:16:03 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2024 20:25:39 -0700</lastBuildDate>
     
         <atom:link href="https://blog.not-a-kernel-guy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Санкции не работают</title>
+      <link>https://blog.not-a-kernel-guy.com/2024/10/23/sanctions/</link>
+      <pubDate>Wed, 23 Oct 2024 20:25:39 -0700</pubDate>
+      
+      <guid>https://blog.not-a-kernel-guy.com/2024/10/23/sanctions/</guid>
+      <description>&lt;p&gt;Не без злорадства наблюдаю за &lt;a href=&#34;https://habr.com/ru/news/852632/&#34;&gt;эпичным баттхёртом&lt;/a&gt;, воздеванием рук, и
+&lt;a href=&#34;https://habr.com/ru/news/852962/&#34;&gt;плачем Ярославны&lt;/a&gt; по поводу &lt;a href=&#34;https://lore.kernel.org/all/2024101835-tiptop-blip-09ed@gregkh/&#34;&gt;удаления подсанкционных русских из списка
+мейнтенеров Linux&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Линус, красавчик, тоже &lt;a href=&#34;https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/&#34;&gt;подлил масла в огонь&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;As to sending me a revert patch - please use whatever mush you call
+brains. I&amp;rsquo;m Finnish. Did you think I&amp;rsquo;d be &lt;em&gt;supporting&lt;/em&gt; Russian
+aggression? Apparently it&amp;rsquo;s not just lack of real news, it&amp;rsquo;s lack of
+history knowledge too.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Касательно писем с обратным патчем - пожалуйста включите ту кашу, которую вы
+называете мозгами. Я - финн. Вы что думали, я буду &lt;em&gt;поддерживать&lt;/em&gt; российскую
+агрессию? Похоже вы не только настояшие новости не смотрите, вы еще и историю
+не знаете.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Вой на болотах стоит - под тысячу комментариев только на одном Хабре накатали.&lt;/p&gt;
+&lt;p&gt;Так, а что собственно случилось? Да ничего нового - это те самые санкции,
+которые не работают. 6 апреля 2022 года вышел &lt;a href=&#34;https://www.federalregister.gov/documents/2022/04/08/2022-07757/prohibiting-new-investment-in-and-certain-services-to-the-russian-federation-in-response-to&#34;&gt;президентский указ №14071&lt;/a&gt;,
+запрещающий новые инвестиции в российскую федерацию, экспорт, ре-экспорт,
+продажу, и поставку в российскую федерацию услуг из перечня, который будет
+позднее определен казначейством в консультации с государственным департаментом.&lt;/p&gt;
+&lt;p&gt;Казначейство &lt;a href=&#34;https://ofac.treasury.gov/sanctions-programs-and-country-information/russian-harmful-foreign-activities-sanctions&#34;&gt;принялось за работу&lt;/a&gt; и, в консультации с государственным
+департаментом, 12 июня 2024 выкатило &lt;a href=&#34;https://ofac.treasury.gov/media/932951/download?inline&#34;&gt;документ&lt;/a&gt;, определивший, что оказание
+IT услуг и разработка софта входят в санкционный списк.&lt;/p&gt;
+&lt;p&gt;Дополнительно, в 2017 году федеральный судья создал &lt;a href=&#34;https://www.theregister.com/2017/05/13/gnu_gpl_enforceable_contract/&#34;&gt;прецедент&lt;/a&gt;, согласно
+которому лицензия GPL - это контракт. Помимо всего прочего, это означает
+разработка по лицензии GPL также попадает в вышеназванный санкционный список.&lt;/p&gt;
+&lt;p&gt;Решение казначейства выступило в силу 12 сентября 2024 года.&lt;/p&gt;
+&lt;p&gt;Linux Foundarion - американская компания, Линус Торвальдс и другие разработчики
+постоянно проживающие в США - &amp;ldquo;US persons&amp;rdquo;, как это определено в &lt;a href=&#34;https://www.federalregister.gov/documents/2022/04/08/2022-07757/prohibiting-new-investment-in-and-certain-services-to-the-russian-federation-in-response-to&#34;&gt;указе
+№14071&lt;/a&gt;, - соответственно они обязаны выполнять санкцонный режим. Имыми
+словами не работать с людьми, находящимися на территории российской федерации
+(за исключением случаев &lt;a href=&#34;https://ofac.treasury.gov/media/932951/download?inline&#34;&gt;определенных казначейством&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;То есть за что боролись, - на то и напоролись. &amp;ldquo;The dildo of consequences rarely
+arrives lubed&amp;rdquo; (c).&lt;/p&gt;
+&lt;p&gt;А к чему тут злорадство? Да при том, что эта ситуация красиво и наглядно
+подсвечивает лицемерие позиции &amp;ldquo;мы вне политики&amp;rdquo;. Я помню, как где-то в конце
+марта - начале апреля 2022 года на Хабре появилась статья, про то, как люди
+в Ирпине пережили наступление на Киев. Статья была подчеркнуто не про войну.
+Речь шла про чисто практичные проблемы: аккумуляторы, связь, логистика. Эта
+статья провисела пару часов и была снесена &amp;ldquo;за политику&amp;rdquo;. Типа это чисто
+технический ресурс, то-сё.&lt;/p&gt;
+&lt;p&gt;На самом деле конечно понятно, что дело в том, что банально неудобно, неприятно,
+да и просто стыдно - каждая такая тема напоминает о войне и о том, кто её начал.
+Поэтому легче о войне не говорить.&lt;/p&gt;
+&lt;p&gt;Но теперь зацепило за живое. Не где-то там ракета в жилой дом, а здесь и сейчас
+меня любимого макают головой, причем просто за паспорт. И тут оказывается, что о
+политике на &amp;ldquo;сугубо техническом&amp;rdquo; ресурсе можно говорить. И громко возмущатся про
+коллективную ответственность, дискриминацию и все такое. &amp;ldquo;Я-то тут при чем?&amp;rdquo; (с)&lt;/p&gt;
+&lt;p&gt;Ну поздравляю, теперь политика пришла к вам сама.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Пятый полет Starship</title>
@@ -1195,17 +1254,6 @@ IPv4 заголовка), которые покрываются контроль
 восприимчивы к фактам как только они окажутся в среде без еды, воды и кислорода&amp;rdquo;,
 сказал исследователь.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Соединение Луны и Марса</title>
-      <link>https://blog.not-a-kernel-guy.com/2020/02/18/moon-mars-clouds/</link>
-      <pubDate>Tue, 18 Feb 2020 22:02:34 -0800</pubDate>
-      
-      <guid>https://blog.not-a-kernel-guy.com/2020/02/18/moon-mars-clouds/</guid>
-      <description>&lt;p&gt;Композитная фотография соединения Луны и Марса (сделанная вскоре после окончания
-покрытия Марса Луной) за авторством &lt;a href=&#34;https://www.instagram.com/cosmic_background/&#34;&gt;Эндрю Маккарти&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.not-a-kernel-guy.com/2020/02/3tn9874prqh41.jpg&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2020/02/3tn9874prqh41_small.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
