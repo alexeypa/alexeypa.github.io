@@ -88,7 +88,7 @@
 
     
 
-    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2025 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -118,6 +118,40 @@
   </li>
 </ul>
 
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/11/24/374/">Иногда люди воспринимают вещи слишком буквально</a>
+      </h1>
+      <span class="post-date">Nov 24, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/11/24/374/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/wow64">Wow64</a>
+      </span>
+      
+      <p>На днях свалился в inbox вопрос:</p>
+<blockquote>
+<p>The documentation for <a href="http://msdn.microsoft.com/en-us/library/ms684954(VS.85).aspx">QueueUserApc</a> states &ldquo;an APC cannot be queued from a 64-bit process to a 32-bit process or vice versa.&rdquo;</p>
+</blockquote>
+<blockquote>
+<p>However on Vista Ultimate x64, we _can _queue a user APC from a 32-bit process to a 64-bit process. In our test application the 64-bit recipient crashes, we haven&rsquo;t explored why just yet, but the point is that the operation should not succeed and the 64-bit application&rsquo;s APC queue should never have the APC inserted.</p>
+</blockquote>
+<blockquote>
+<p>Is it an OS bug?</p>
+</blockquote>
+<blockquote>
+<p>Документация к функции QueueUserApc утверждает, что асинхронный вызов процедуры (APC) не может быть запрошен из 64-х битного процесса для выполнения в 32-х битном и наоборот.</p>
+</blockquote>
+<blockquote>
+<p>Однако на Vista Ultimate x64 мы <em>можем</em> выполнить асинхронный вызов пользовательского режима из 32-х битного процесса в 64-х битном процессе. В нашем тестовом приложении 64-х битный получатель падает и мы еще не выяснили почему, но дело в том, что операция (QueueUserApc) не должна завершаться успешно и асинхронный вызов не должен вставляться в очередь вызовов 64-х разрядного процесса.</p>
+</blockquote>
+<blockquote>
+<p>Это баг ОС?</p>
+</blockquote>
+<p>Вопрос примечателен тем, что это уже третье письмо на эту тему за последние два месяца, хотя функция QueueUserApc далеко не самая широко используемая функция Win32. Не иначе какой настойчивый клиент эту функцию мучает. :-)</p>
+      <a href="https://blog.not-a-kernel-guy.com/2008/11/24/374/">Read On &rarr;</a>
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -257,22 +291,6 @@
 ©2008 Reason Magazine.
 Схема, конечно, не полна и не совсем точна. Но общее представление даёт. :-)
       
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2008/09/19/337/">Вернулся</a>
-      </h1>
-      <span class="post-date">Sep 19, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/09/19/337/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA">Отпуск</a>
-      </span>
-      
-      <p>Впечатления от поездки лучше всего описываются фразой: «&hellip; но через пару недель привыкаешь».</p>
-<p>Было пару забавных моментов. Например, на Южном ЖД вокзале в Киеве на эскалаторе заметил пиктограмму, изображающую человека, который держит свинью подмышкой – мол, нефиг домашним животным кататься на эскалаторе без сопровождения. Взрослых.</p>
-      <a href="https://blog.not-a-kernel-guy.com/2008/09/19/337/">Read On &rarr;</a>
       
     </div>
     

@@ -88,7 +88,7 @@
 
     
 
-    <p>Copyright &copy; 2006 - 2024 <a href="/license/">License</a><br/>
+    <p>Copyright &copy; 2006 - 2025 <a href="/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
 
   </div>
@@ -118,6 +118,22 @@
   </li>
 </ul>
 
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2010/10/28/906/">Обход некоторых ограничений утилиты BUILD</a>
+      </h1>
+      <span class="post-date">Oct 28, 2010 &middot; <a href="https://blog.not-a-kernel-guy.com/2010/10/28/906/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/build">BUILD</a><a class="label" href="/tags/wdk">WDK</a>
+      </span>
+      
+      <p>Система сборки в <a href="http://www.microsoft.com/whdc/devtools/WDK/default.mspx">Windows Driver Kit</a> базируется на <a href="http://msdn.microsoft.com/en-us/library/ff542351(VS.85).aspx">утилите BUILD</a>. Эта утилита сканирует структуру проектов, отслеживает зависимости (к сожалению далеко не все) и подготавливает окружение для запуска <a href="http://msdn.microsoft.com/en-us/library/dd9y37ha.aspx">NMAKE</a>, который, собственно, и выполняет всю черновую работу по сборке. К сожалению, BUILD создавался и развивался по принципу «так получилось», исключительно эволюционным путем – как средство сборки исходников Windows. Так что эта утилита некоторыми неудобными ограничениями.</p>
+<p>Одно из них – полное непонимание переменных и директив препроцессора.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2010/10/28/906/">Read On &rarr;</a>
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -271,21 +287,6 @@ All those dll’s are still in %SystemRoot%\System32, just now they’re 64 bit.
       
       Тут интересная дискуссия про &ldquo;неработающую&rdquo; OutputDebugString завязалась в комментариях, если кто пропустил. Читать вот примерно отсюда.
       
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2010/07/11/854/">Пошли мы как-то с коллегой на охоту…</a>
-      </h1>
-      <span class="post-date">Jul 11, 2010 &middot; <a href="https://blog.not-a-kernel-guy.com/2010/07/11/854/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0">Отладка</a>
-      </span>
-      
-      <p>Давно я про отладку не писал. Так вот пошли мы как-то с коллегой на Багов охотится. Вышли мы на двух таких матерых, опытных Багов. Их и помотали они нас…</p>
-      <a href="https://blog.not-a-kernel-guy.com/2010/07/11/854/">Read On &rarr;</a>
       
     </div>
     
