@@ -121,6 +121,24 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2012/08/16/1405/">Ошибка в книге Windows Internals</a>
+      </h1>
+      <span class="post-date">Aug 16, 2012 &middot; <a href="https://blog.not-a-kernel-guy.com/2012/08/16/1405/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/process-explorer">Process Explorer</a><a class="label" href="/tags/windows-internals-book">Windows Internals book</a><a class="label" href="/tags/windows-kernel">Windows Kernel</a><a class="label" href="/tags/wow64">Wow64</a>
+      </span>
+      
+      В новой редакции Windows Internals обнаружился старый-знакомый баг. Там приводится пример стека 32-х битной нити, выполняющейся под Wow64:
+Иллюстрация сопровождается комментарием:
+An example of a Wow64 thread inside Microsoft Office Word 2007 is shown in Figure 5-13. The highlighted stack frame and all stack frames below it are the 32-bit stack frames from the 32-bit stack. The stack frames above the highlighted frame are on the 64-bit stack.
+Что не совсем верно.
+      <a href="https://blog.not-a-kernel-guy.com/2012/08/16/1405/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2012/07/14/1399/">Про фонетику</a>
       </h1>
       <span class="post-date">Jul 14, 2012 &middot; <a href="https://blog.not-a-kernel-guy.com/2012/07/14/1399/#disqus_thread">Comments</a>
@@ -264,22 +282,6 @@ Windows 8: появился специализированный интерфе�
       
       Ух ты, оказывается, первая часть 6-ой редакции Windows Internals вышла в марте: RTM’d today: Windows Internals, Sixth Edition, Part 1! В отличие от 5-ой редакции, в список резензентов которой я, можно сказать, попал просто за компанию - главным образом потому, что работал тогда в команде Window Kernel, в этот раз я ждал возможности поучаствовать в создании книги с нетерпением. В этот раз мне было что сказать - не даром я с Wow64 нянчился столько времени.
       <a href="https://blog.not-a-kernel-guy.com/2012/05/10/1326/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2012/05/04/1317/">Битва титанов: Visual Studio 2010 против Sophos Antivirus</a>
-      </h1>
-      <span class="post-date">May 4, 2012 &middot; <a href="https://blog.not-a-kernel-guy.com/2012/05/04/1317/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Инструменты</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/wtf">WTF</a>
-      </span>
-      
-      <p>По рассылке пришло описание бага ну просто феерической кавайности: <a href="http://connect.microsoft.com/VisualStudio/feedback/details/649139/vs2010-does-complete-rebuild-based-on-completely-unrelated-file">http://connect.microsoft.com/VisualStudio/feedback/details/649139/vs2010-does-complete-rebuild-based-on-completely-unrelated-file</a>. Если вкраце, то присутсвие Sophos Antivirus на машине, заставляет Visual Studio делать полный билд вместо инкрементального. Почему? Потому что MSBuild полагает, что файл “%ProgramData%\Sophos\Sophos Anti-Virus\config\Config.bops” (который, понятно, ни к MSBuild, ни к собираемому проекту никак не относится) является вводом каждого target’а в проекте. По какой-то причине, этот файл обновляется очень часто, что и вызывает полную пересборку всего проекта. WTF?</p>
-<p><a href="/2012/05/house_wtf.jpg"><img src="/2012/05/house_wtf.jpg" alt=""></a></p>
-      <a href="https://blog.not-a-kernel-guy.com/2012/05/04/1317/">Read On &rarr;</a>
       
     </div>
     

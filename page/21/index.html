@@ -121,6 +121,22 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2013/02/05/1467/">Будни Chromium разработчика</a>
+      </h1>
+      <span class="post-date">Feb 5, 2013 &middot; <a href="https://blog.not-a-kernel-guy.com/2013/02/05/1467/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/chromium">Chromium</a><a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a>
+      </span>
+      
+      <p>Хотите знать как выглядит процесс коммита в <a href="http://www.chromium.org/Home">Chromium</a>? Есть у меня такие истории. Для затравки уточню терминологию. Chromium - это, фактически, open source версия <a href="https://www.google.com/intl/en/chrome/browser/">Chrome</a>. Если взять Chromium и добавить немного закрытого кода и логотип Google, то получится Chrome. А вот если добавить немного закрытого кода и логотип Яндекс, то получится <a href="http://browser.yandex.ru/">Яндекс.Браузер</a>. Исходники <a href="https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp?hl=en">Chrome Remote Desktop</a>, над которым работаю я с коллегами, тоже собираются из репозитория Chromium.</p>
+<p>Так вот, про процесс коммита.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2013/02/05/1467/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2013/01/15/1462/">Техническая поддержка пользователей</a>
       </h1>
       <span class="post-date">Jan 15, 2013 &middot; <a href="https://blog.not-a-kernel-guy.com/2013/01/15/1462/#disqus_thread">Comments</a>
@@ -270,24 +286,6 @@ You create illuminated manuscripts displaying the glory of machines that fly thr
       
       Для продукта, над которым я сейчас работаю, нужно было сделать инсталляцию под Windows. Установить несколько файлов, создать пару ключей в реестре, обновиться на более свежую версию,.. - как раз работа для WiX. WiX, - он, конечно, не без греха. Все-таки, это всего лишь обертка вокруг Windows Installer, чьё нетривиальное нутро то и дело дает о себе знать. Взять хотя-бы тот факт, что Windows Installer понимает черытех компонентный номер версии (a.b.c.d), но при сравнии номеров версий принимает во внимание только старшие три числа.
       <a href="https://blog.not-a-kernel-guy.com/2012/09/23/1412/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2012/08/16/1405/">Ошибка в книге Windows Internals</a>
-      </h1>
-      <span class="post-date">Aug 16, 2012 &middot; <a href="https://blog.not-a-kernel-guy.com/2012/08/16/1405/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/process-explorer">Process Explorer</a><a class="label" href="/tags/windows-internals-book">Windows Internals book</a><a class="label" href="/tags/windows-kernel">Windows Kernel</a><a class="label" href="/tags/wow64">Wow64</a>
-      </span>
-      
-      В новой редакции Windows Internals обнаружился старый-знакомый баг. Там приводится пример стека 32-х битной нити, выполняющейся под Wow64:
-Иллюстрация сопровождается комментарием:
-An example of a Wow64 thread inside Microsoft Office Word 2007 is shown in Figure 5-13. The highlighted stack frame and all stack frames below it are the 32-bit stack frames from the 32-bit stack. The stack frames above the highlighted frame are on the 64-bit stack.
-Что не совсем верно.
-      <a href="https://blog.not-a-kernel-guy.com/2012/08/16/1405/">Read On &rarr;</a>
       
     </div>
     

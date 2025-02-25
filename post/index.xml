@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Алексей Пахунов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 20 Jan 2025 19:05:01 -0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Feb 2025 20:06:10 -0800</lastBuildDate>
     <atom:link href="https://blog.not-a-kernel-guy.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ёбаный стыд</title>
+      <link>https://blog.not-a-kernel-guy.com/2025/02/24/humiliation-and-disgrace/</link>
+      <pubDate>Mon, 24 Feb 2025 20:06:10 -0800</pubDate>
+      <guid>https://blog.not-a-kernel-guy.com/2025/02/24/humiliation-and-disgrace/</guid>
+      <description>&lt;p&gt;На одинадцатый год аннексии Крыма, через три года полномасштабной войны,&#xA;представитель США в ООН голосует против резолюции, называющей россию агрессором.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://apnews.com/article/un-russia-ukraine-war-resolution-trump-zelenskyy-cde221e5850196776525403e788c272c&#34;&gt;&lt;img src=&#34;https://blog.not-a-kernel-guy.com/2025/02/us-joins-russia-resolution.webp&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Какой позор! Никогда бы не смог представить, что такое может произойти.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>451 градус по Фаренгейту</title>
       <link>https://blog.not-a-kernel-guy.com/2025/01/20/p/</link>
@@ -175,13 +182,6 @@
       <pubDate>Sun, 24 May 2020 12:21:54 -0700</pubDate>
       <guid>https://blog.not-a-kernel-guy.com/2020/05/24/job-at-spacex/</guid>
       <description>&lt;p&gt;Мне с завидной регулярностью задают один и тот же вопрос: &amp;ldquo;Нанимает ли SpaceX из-за&#xA;рубежа?&amp;rdquo; Я решил оформить ответ в виде поста, чтобы можно было на него ссылаться в&#xA;будущем.&lt;/p&gt;&#xA;&lt;p&gt;Ниже следует мое личное мнение. Пожалуйста, не воспринимайте его как буквальное&#xA;руководство к действию. Короче, &amp;ldquo;This is not a legal advice. Talk to your lawyer&amp;rdquo;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Контрольная сумма UDP</title>
-      <link>https://blog.not-a-kernel-guy.com/2020/04/11/udp-checksum/</link>
-      <pubDate>Sat, 11 Apr 2020 21:16:34 -0700</pubDate>
-      <guid>https://blog.not-a-kernel-guy.com/2020/04/11/udp-checksum/</guid>
-      <description>&lt;p&gt;Большинство проектов, над которыми я когда-либо работал, так или иначе&#xA;не работают без передачи данных по сети. Последним проектом не&#xA;выходящим за рамки одного компьютера была поддержка &lt;a href=&#34;https://blog.not-a-kernel-guy.com/tags/wow64/&#34;&gt;Wow64&lt;/a&gt; в ядре&#xA;Windows. Тем не менее возится с кодом, непосредственно обрабатывающим IP&#xA;пакеты мне довелось всего пару раз. Оба раза я столкнулся с одной и той&#xA;же ошибкой вычисления контрольных сумм в IP стеке. В одном случае,&#xA;сетевая карта ошибочно помечала хорошие пакеты как испорченные. В другом -&#xA;две библиотеки, написанные разными людьми, неверно вычисляли контрольную&#xA;сумму некоторых пакетов. Одна из библиотек широко использовалась в&#xA;&amp;ldquo;боевых&amp;rdquo; условиях. Немного удивительно, что ошибка оставалась незамеченной&#xA;так долго.&lt;/p&gt;&#xA;&lt;p&gt;Корнями этот баг уходит в 1980-й год, когда был опубликована &lt;a href=&#34;https://tools.ietf.org/html/rfc768&#34;&gt;спецификация&#xA;протокола UDP&lt;/a&gt;. Чтобы разобраться в чем заключается ошибка, нужно&#xA;сначала разобраться как работают контрольные суммы в IP стеке. В IPv4 пакете&#xA;есть две контрольные суммы: контрольная сумма IPv4 заголовка и контрольная&#xA;сумма протокола следующего уровня (UDP, TCP, ICMP, и т.п.). Контрольная&#xA;сумма IPv4 заголовка защищает только IPv4 заголовок. Контрольная сумма&#xA;протокола следующего уровня защищает тело пакета и некоторые поля из&#xA;заголовка.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

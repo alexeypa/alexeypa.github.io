@@ -121,6 +121,72 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2017/01/01/longest-year/">Самый длинный год</a>
+      </h1>
+      <span class="post-date">Jan 1, 2017 &middot; <a href="https://blog.not-a-kernel-guy.com/2017/01/01/longest-year/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%B2%D1%80%D0%B5%D0%BC%D1%8F">Время</a><a class="label" href="/tags/%D0%B2%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D1%81%D0%BD%D1%8B%D0%B5-%D1%81%D0%B5%D0%BA%D1%83%D0%BD%D0%B4%D1%8B">Високосные секунды</a>
+      </span>
+      
+      <p>По случаю наступления нового года случился вот такой вопрос: &ldquo;Какой год был
+самый длинный?&rdquo; Даже если не залезать далеко в историю (наверняка при смене
+календарей происходило что-то интересное) ответить на этот вопрос сходу не
+получается. Во-первых, поскольку орбитальный период Земли не укладывается в
+целое количество суток, високосный год длиннее на один день. Во-вторых,
+чтобы компенсировать неравномерное вращение Земли, в UTC добавляются <a href="https://en.wikipedia.org/wiki/Leap_second">високосные
+секунды</a>.</p>
+<p>Если сверится с <a href="http://maia.usno.navy.mil/ser7/tai-utc.dat">текущей таблицей високосных секунд</a>,
+то единственный високосный год в котором ввели <em>две</em> високосные секунды (в июне
+и декабре) - 1972 (366 дней и две секунды). Соответствующие строки из таблицы
+указывают на 1 июля 1972 и 1 января 1973, так как таблица задает <em>новое</em>
+смещение между атомным временем (TAI) и UTC:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Однако и это еще не все. В период с начала 1961 года по конец 1971 года
+<a href="https://en.wikipedia.org/wiki/International_Atomic_Time#History">вводились дробные високосные секунды</a>.
+Первые тринадцать строк из таблицы по ссылке выше описывают именно этот период:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Для начала разберемся с обозначениями. JD обозначает <a href="https://ru.wikipedia.org/wiki/%D0%AE%D0%BB%D0%B8%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B0%D1%82%D0%B0">юлианскую дату</a>.
+Целая часть - это количество дней прошедших с 24 ноября 4714 года до н.э.
+Дробная часть - указывает на время прошедшее с последней смены дня. Юлианский
+день сменяется в полдень. Возьмем к примеру JD 2437512.5. JD 2437512
+соответствует полдню 31 августа 1961 года. Добавив полдня (0.5) получаем
+00:00:00 1 августа 1961 года.</p>
+<p>MJD - это <a href="https://en.wikipedia.org/wiki/Julian_day#Variants">Modified Julian Date</a>.
+Фактически, просто укороченная версия JD. Вычисляется как:</p>
+<p>MJD = JD - 2400000.5</p>
+<p>Каждая строка в таблице выше описывает переход из UTC в TAI как линейную функцию
+от MJD. Зная это можно посчитать приращение к продолжительности года по годам
+(в секундах):</p>
+<ul>
+<li>1961: 0.42304</li>
+<li>1962: 0.40997</li>
+<li>1963: 0.50997</li>
+<li>1964: 0.77434</li>
+<li>1965: 0.77304</li>
+<li>1966: 0.94608</li>
+<li>1967: 0.94608</li>
+<li>1968: 0.84867</li>
+<li>1969: 0.94608</li>
+<li>1970: 0.94608</li>
+<li>1971: 1.05384</li>
+</ul>
+<p>Получается, что 1972 год был самым длинным.</p>
+<p>Еще один интересный момент - таблица високосных секунд начитается со смещения
+1.3728180 в 1961 году. Это, насколько я понимаю, объясняется тем, что шкалы
+атомного времени использовавшиеся <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B5%D0%BD%D0%BD%D0%BE-%D0%BC%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D1%81%D0%B5%D1%80%D0%B2%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D1%8F_%D0%A1%D0%A8%D0%90">Военно-морской обсерваторией США</a>
+и <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82_%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BE%D0%B2_%D0%B8_%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9">Национальным институтом стандартов и технологий</a> использовали JD 2436204.5 -
+00:00:00 1 января 1958 года в качестве точки отсчета. Этот момент совпадал с
+показаниями <a href="https://en.wikipedia.org/wiki/Universal_Time#Versions">UT2</a>.
+Иными словами UTC и TAI в этот момент совпадали.</p>
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2016/12/04/internet-connection/">Сила флага</a>
       </h1>
       <span class="post-date">Dec 4, 2016 &middot; <a href="https://blog.not-a-kernel-guy.com/2016/12/04/internet-connection/#disqus_thread">Comments</a>
@@ -360,62 +426,6 @@ The Q&amp;A audience folk are absolutely insane, but not in a good way.</p>
 были сделаны, новые правила правильно для проверки данных написаны, и т.п.</p>
 <p>Стек технологий, подход к разработке, даже интервью при приеме на работу тоже
 похожи.</p>
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2016/08/01/before-common-sense-was-invented/">Piasecki PA-97 Helistat</a>
-      </h1>
-      <span class="post-date">Aug 1, 2016 &middot; <a href="https://blog.not-a-kernel-guy.com/2016/08/01/before-common-sense-was-invented/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/%D0%B2%D1%81%D1%8F%D0%BA%D0%B0%D1%8F-%D0%B2%D1%81%D1%8F%D1%87%D0%B8%D0%BD%D0%B0">Всякая всячина</a>
-      </span>
-      
-      <p>26 апреля 1986 года совершил свой первый полет экспериментальный дирижабль
-<a href="https://en.wikipedia.org/wiki/Piasecki_PA-97">Piasecki PA-97 Helistat</a>,
-построенный по заказу <a href="https://en.wikipedia.org/wiki/United_States_Forest_Service">US Forest Service</a>.
-Первый полет совпал с катастрофой на Чернобыльской АЭС, что, по идее, должно
-было навести конструкторов сего изделия на определенные размышления.
-Демонстрационный дирижабль был <del>собран на коленке</del> построен из оболочки
-отправленного на пенсию флотского дирижабля и четырех вертолетов
-<a href="https://en.wikipedia.org/wiki/Sikorsky_H-34">H-34J</a> (тоже, надо понимать, не
-первой свежести). Вертолетам отрубили хвосты и они были посажены на раму из
-алюминиевых труб.</p>
-<p>Википедия обтекаемо утверждает, что &ldquo;Criticism has been expressed of
-the structural qualities and stress analysis of this framework&rdquo;. На самом деле
-видео экспериментального полета (совершенного 1 июля 1986 года) просто пронизано
-предчувствием неизбежного:</p>
-<blockquote>
-<p>Even as it wheeled out to the tarmac some folks are sceptical of the design.</p>
-</blockquote>
-<blockquote>
-<p>Еще в процессе выкатывания на поле некоторые наблюдатели высказывает сомнения в дизайне [изделия].</p>
-</blockquote>
-<blockquote>
-<ul>
-<li>Boys got guts I&rsquo;ll tell you that.</li>
-<li>Why is that?</li>
-<li>I&rsquo;ll be honest with you, looks like a hell of a configuration, you know what I mean?</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>У парней кишка не тонка.</li>
-<li>Почему бы это?</li>
-<li>Я буду честен с вами. Выглядит как та еще хрень, если вы понимаете о чем я.</li>
-</ul>
-</blockquote>
-<p>Сразу после взлета, из-за вибраций отвалился правый задний вертолет. Его лопасти
-посекли оболочку. Из-за нарушенной центровки и вибрации поотваливались остальные
-три вертолета. Пробитая оболочка, теряя гелий, рухнула вниз, убив одного из
-пилотов. US Forest Service потратила на этот проект $40 млн.</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/Hikdnvqxjrc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
       
       
     </div>
