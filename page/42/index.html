@@ -121,6 +121,21 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2008/04/01/302/">Отгадка</a>
+      </h1>
+      <span class="post-date">Apr 1, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/04/01/302/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Программирование</a><a class="label" href="/tags/wow64">Wow64</a>
+      </span>
+      
+      <p>В комментариях к <a href="/2008/03/30/301/">загадке</a> ответ был дан почти сразу. Действительно, обработчик отложенной загрузки DLL попытается загрузить «version.dll» по имени, а не по полному пути. В результате загрузчик будет искать библиотеку, пользуясь <a href="http://msdn2.microsoft.com/en-us/library/ms682586(VS.85).aspx">правилами по умолчанию</a>. Номер два в этом списке поиск DLL в system32, что при отключенном перенаправлении файловой системы, равноценно попытке загрузить 64-х битную DLL в 32-х битный процесс. Бум.</p>
+      <a href="https://blog.not-a-kernel-guy.com/2008/04/01/302/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2008/03/30/301/">Загадка</a>
       </h1>
       <span class="post-date">Mar 30, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/03/30/301/#disqus_thread">Comments</a>
@@ -261,22 +276,6 @@
 <p>Отвечаю здесь, так как ответ получился слушком длинным.</p>
 <p>Во-первых, про любые недокументированные возможности меня спрашивать бесполезно. Даже если такая возможность существует, я всё равно о ней не расскажу. Этому есть несколько причин, включая очевидные вещи вроде NDA, законе об авторском праве и т.д. Еще одна причина, почему я не горю желанием это делать, - это то, что раскрывая детали реализации того или иного компонента, я тем самым лишаю этот компонент возможности развиваться и улучшатся в следующих версиях.</p>
       <a href="https://blog.not-a-kernel-guy.com/2008/02/28/293/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2008/02/26/292/">Зачем нужна маска KEY_WOW64_RES?</a>
-      </h1>
-      <span class="post-date">Feb 26, 2008 &middot; <a href="https://blog.not-a-kernel-guy.com/2008/02/26/292/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/wow64">Wow64</a>
-      </span>
-      
-      Наткнулся на вопрос на форуме iXBT. В Windows SDK помимо флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY определена маска KEY_WOW64_RES. Зачем она нужна?
-#ifndef KEY_WOW64_RES #define KEY_WOW64_RES (KEY_WOW64_64KEY | KEY_WOW64_32KEY) #endif Ответ: по большому счету она не нужна. В коде Wow64 она используется для выделения флагов KEY_WOW64_64KEY и KEY_WOW64_32KEY из маски доступа для дальнейшей обработки. Указывать оба флага (и KEY_WOW64_64KEY и KEY_WOW64_32KEY) при вызове RegCreateKeyEx, RegOpenKeyEx или RegDeleteKeyEx нельзя, так что приложениям эта маска ни к чему.
-      <a href="https://blog.not-a-kernel-guy.com/2008/02/26/292/">Read On &rarr;</a>
       
     </div>
     

@@ -121,6 +121,24 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://blog.not-a-kernel-guy.com/2006/12/05/109/">Каталог dllcache и с чем его едят</a>
+      </h1>
+      <span class="post-date">Dec 5, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/12/05/109/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="/tags/windows">Windows</a>
+      </span>
+      
+      <p>Тут <a href="/2006/10/13/84/">в комментариях</a> зашла речь о роли каталога &ldquo;%SystemRoot%\system32\dllcache&rdquo; и причинах почему он занимает столько места. Отвечаю здесь, так как это может быть интересно многим.</p>
+<blockquote>
+<p>Для того чтобы убедиться, что каталог dllcache - это всего лишь никак не используемая свалка копий исполняемых модулей достаточно воспользоваться утилитой ProcessExplorer. В среднем это около пол гига украденных у пользователя. Даже, если это был бы действительно кеш, любому маломальски опытному человеку понятно, что скорость доступа к файлам в каталоге такой длинны будем еще хуже чем к их оригиналам.</p>
+</blockquote>
+      <a href="https://blog.not-a-kernel-guy.com/2006/12/05/109/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://blog.not-a-kernel-guy.com/2006/12/04/108/">Lost in translation</a>
       </h1>
       <span class="post-date">Dec 4, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/12/04/108/#disqus_thread">Comments</a>
@@ -273,22 +291,6 @@ But every 4-6 months another huge thread on the Unicode List gets started about 
       
       <p>Не секрет, что возможности утилиты build.exe тесно завязаны на стандартное окружение, предоставляемое WDK. Это окружение формируется скриптами makefile.def, makefile.new, makefile.plt и т.д. из директории bin. Анализируя их, можно обнаружить много интересного.</p>
       <a href="https://blog.not-a-kernel-guy.com/2006/11/15/100/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://blog.not-a-kernel-guy.com/2006/11/14/99/">Windows x64 vs. Windows Help</a>
-      </h1>
-      <span class="post-date">Nov 14, 2006 &middot; <a href="https://blog.not-a-kernel-guy.com/2006/11/14/99/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="/tags/wow64">Wow64</a>
-      </span>
-      
-      Одна из не очень удобных особенностей Windows x64 - отсутствие программы для просмотра справочных файлов в формате .hlp. WinHlp32.exe поставляющийся с 32-х битными версиями системы был написан еще во времена Windows 3.1 и по сей день остаётся 16-ти битным приложением. Вместо того, чтобы переписать его под 32 бита было принято волевое решение - в поддержке формата .hlp на 64-х битных системах отказать! Видимо с целью дальнейшей популяризации .chm.
-В принципе, меня это не особенно тревожило, до тех пор пока не пришлось поставить консольные утилиты от WinZip 9-ой версии.
-      <a href="https://blog.not-a-kernel-guy.com/2006/11/14/99/">Read On &rarr;</a>
       
     </div>
     

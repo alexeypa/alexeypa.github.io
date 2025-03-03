@@ -2,14 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.not-a-kernel-guy.com/2025/03/02/blue-ghost/</loc>
+    <lastmod>2025-03-02T15:19:42-08:00</lastmod>
+  </url><url>
     <loc>https://blog.not-a-kernel-guy.com/post/</loc>
-    <lastmod>2025-02-24T20:06:10-08:00</lastmod>
+    <lastmod>2025-03-02T15:19:42-08:00</lastmod>
   </url><url>
     <loc>https://blog.not-a-kernel-guy.com/tags/</loc>
-    <lastmod>2025-02-24T20:06:10-08:00</lastmod>
+    <lastmod>2025-03-02T15:19:42-08:00</lastmod>
   </url><url>
     <loc>https://blog.not-a-kernel-guy.com/</loc>
-    <lastmod>2025-02-24T20:06:10-08:00</lastmod>
+    <lastmod>2025-03-02T15:19:42-08:00</lastmod>
+  </url><url>
+    <loc>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81/</loc>
+    <lastmod>2025-03-02T15:19:42-08:00</lastmod>
   </url><url>
     <loc>https://blog.not-a-kernel-guy.com/2025/02/24/humiliation-and-disgrace/</loc>
     <lastmod>2025-02-24T20:06:10-08:00</lastmod>
@@ -84,9 +90,6 @@
     <lastmod>2021-02-22T20:30:51-08:00</lastmod>
   </url><url>
     <loc>https://blog.not-a-kernel-guy.com/2021/02/22/perseverance/</loc>
-    <lastmod>2021-02-22T20:30:51-08:00</lastmod>
-  </url><url>
-    <loc>https://blog.not-a-kernel-guy.com/tags/%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D1%81/</loc>
     <lastmod>2021-02-22T20:30:51-08:00</lastmod>
   </url><url>
     <loc>https://blog.not-a-kernel-guy.com/2021/01/31/py3/</loc>
